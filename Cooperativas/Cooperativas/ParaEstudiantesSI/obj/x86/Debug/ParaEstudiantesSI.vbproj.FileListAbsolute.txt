@@ -1,0 +1,73 @@
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.interfaz.resources
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.Resources.resources
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.pdb
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe.config
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.pdb
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.xml
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.exe
+c:\users\mike\documents\visual studio 2010\Projects\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.xml
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe.config
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.exe
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.xml
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.pdb
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.pdb
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.xml
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.interfaz.resources
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.Resources.resources
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe.config
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.exe
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.xml
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.pdb
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.pdb
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.xml
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.interfaz.resources
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.Resources.resources
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - respaldo\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe.config
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.exe
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.xml
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.pdb
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.pdb
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.xml
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.interfaz.resources
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.Resources.resources
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Aaruiz\Desktop\Fabián\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\O. Fabian\Desktop\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe.config
+C:\Users\O. Fabian\Desktop\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.exe
+C:\Users\O. Fabian\Desktop\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.xml
+C:\Users\O. Fabian\Desktop\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.pdb
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe.config
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.exe
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.xml
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.pdb
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.pdb
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.xml
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.interfaz.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.Resources.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\II SEMESTE 11\SISTEMAS\Tarea conexion\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\ParaEstudiantesSI.exe.config
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.exe
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.xml
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.pdb
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.interfaz.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ParaEstudiantesSI.Resources.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog

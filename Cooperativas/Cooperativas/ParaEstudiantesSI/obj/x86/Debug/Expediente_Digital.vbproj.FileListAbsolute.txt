@@ -1,0 +1,84 @@
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe.config
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\Expediente_Digital.pdb
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\bin\Debug\Expediente_Digital.xml
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.interfaz.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Resources.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.exe
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.xml
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\ParaEstudiantesSI - final\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.pdb
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe.config
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.exe
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.xml
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.pdb
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.pdb
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.xml
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Informacion_Accidente.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.interfaz.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Resources.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Acceso_Usuario.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Informacion_Trabajador.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Pantalla_Principal.resources
+C:\Users\O. Fabian\Documents\Archivos Personales\Archivos TEC\I SEMESTRE 12\Sistemas de Información\Proyecto\Proyecto Expediente Digital\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Relacion_Laboral.resources
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe.config
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.exe
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.xml
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.pdb
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe.config
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.exe
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.xml
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.pdb
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.pdb
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.xml
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Resources.resources
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.pdb
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.xml
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Acceso_Usuario.resources
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Informacion_Trabajador.resources
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Informacion_Accidente.resources
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.interfaz.resources
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Resources.resources
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Pantalla_Principal.resources
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Relacion_Laboral.resources
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Ventana_Acceso.resources
+C:\Users\User\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Ventana_Principal.resources
+C:\Users\O. Fabian\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Ventana_Acceso.resources
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe.config
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.pdb
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.xml
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Resources.resources
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Ventana_Principal.resources
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Ventana_Acceso.resources
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.exe
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.xml
+C:\Users\Aaron\Dropbox\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.pdb
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe.config
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.exe
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.pdb
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Expediente_Digital.xml
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Resources.resources
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.exe
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.xml
+C:\Users\Aaron\Desktop\Proyecto Exp Digital sistemas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Expediente_Digital.pdb

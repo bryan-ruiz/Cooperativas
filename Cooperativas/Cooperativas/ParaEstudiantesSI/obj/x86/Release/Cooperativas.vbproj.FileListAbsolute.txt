@@ -1,0 +1,11 @@
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Release\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Release\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Release\Cooperativas.exe
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Release\Cooperativas.pdb
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Release\Cooperativas.xml
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Release\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Release\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Release\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Release\Cooperativas.exe
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Release\Cooperativas.xml
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Release\Cooperativas.pdb

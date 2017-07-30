@@ -1,0 +1,367 @@
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\Cooperativas\Expediente Digital\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.licensekey.dll
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Jint.dll
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v4\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v5 with pdf\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v6\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v7\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v8\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v9\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v10\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v11\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v14\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AdHocReportingExcelClientLib.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AdHocReportingExcelClientLib.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.ReporteSocios.resources
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AdHocReportingExcelClientLib.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AdHocReportingExcelClientLib.dll
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Aaron\Desktop\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AdHocReportingExcelClientLib.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AdHocReportingExcelClientLib.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AdHocReportingExcelClientLib.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AdHocReportingExcelClientLib.dll
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.ReporteSocios.resources
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+C:\Users\Joha\Downloads\v17\v17\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.config
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe.manifest
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.application
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.exe
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.pdb
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Cooperativas.xml
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.pdfa.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xtra.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\itextsharp.xml
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AcroPDFLib.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AdHocReportingExcelClientLib.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AdHocReportingExcelClientLib.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AdHocReportingExcelClientLib.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AdHocReportingExcelClientLib.dll
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.ResolveComReference.cache
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Resources.resources
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.ReporteSocios.resources
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.resources
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Principal.resources
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Ventana_Acceso.resources
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbproj.GenerateResource.Cache
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe.manifest
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.application
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
+E:\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
