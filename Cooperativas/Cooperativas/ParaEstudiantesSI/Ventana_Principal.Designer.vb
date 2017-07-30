@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Ventana_Principal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Ventana_Principal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana_Principal))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -52,7 +52,6 @@ Partial Class Ventana_Principal
         Me.DateTimeSociosFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBoxSocios1erApellido = New System.Windows.Forms.TextBox()
-        Me.ButtonSociosReporteMatricula = New System.Windows.Forms.Button()
         Me.TextBoxSocios2doApellido = New System.Windows.Forms.TextBox()
         Me.ButtonSociosModificar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -376,7 +375,6 @@ Partial Class Ventana_Principal
         Me.GroupBox4.Controls.Add(Me.DateTimeSociosFechaNacimiento)
         Me.GroupBox4.Controls.Add(Me.Label3)
         Me.GroupBox4.Controls.Add(Me.TextBoxSocios1erApellido)
-        Me.GroupBox4.Controls.Add(Me.ButtonSociosReporteMatricula)
         Me.GroupBox4.Controls.Add(Me.TextBoxSocios2doApellido)
         Me.GroupBox4.Controls.Add(Me.ButtonSociosModificar)
         Me.GroupBox4.Controls.Add(Me.Label4)
@@ -587,7 +585,7 @@ Partial Class Ventana_Principal
         Me.ButtonSociosSalir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSociosSalir.ForeColor = System.Drawing.Color.White
         Me.ButtonSociosSalir.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.ButtonSociosSalir.Location = New System.Drawing.Point(520, 390)
+        Me.ButtonSociosSalir.Location = New System.Drawing.Point(520, 341)
         Me.ButtonSociosSalir.Name = "ButtonSociosSalir"
         Me.ButtonSociosSalir.Size = New System.Drawing.Size(153, 40)
         Me.ButtonSociosSalir.TabIndex = 122
@@ -670,19 +668,6 @@ Partial Class Ventana_Principal
         Me.TextBoxSocios1erApellido.Name = "TextBoxSocios1erApellido"
         Me.TextBoxSocios1erApellido.Size = New System.Drawing.Size(236, 22)
         Me.TextBoxSocios1erApellido.TabIndex = 102
-        '
-        'ButtonSociosReporteMatricula
-        '
-        Me.ButtonSociosReporteMatricula.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonSociosReporteMatricula.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSociosReporteMatricula.ForeColor = System.Drawing.Color.White
-        Me.ButtonSociosReporteMatricula.Image = CType(resources.GetObject("ButtonSociosReporteMatricula.Image"), System.Drawing.Image)
-        Me.ButtonSociosReporteMatricula.Location = New System.Drawing.Point(520, 327)
-        Me.ButtonSociosReporteMatricula.Name = "ButtonSociosReporteMatricula"
-        Me.ButtonSociosReporteMatricula.Size = New System.Drawing.Size(152, 40)
-        Me.ButtonSociosReporteMatricula.TabIndex = 120
-        Me.ButtonSociosReporteMatricula.Text = "Reporte Matrícula"
-        Me.ButtonSociosReporteMatricula.UseVisualStyleBackColor = False
         '
         'TextBoxSocios2doApellido
         '
@@ -3363,7 +3348,6 @@ Partial Class Ventana_Principal
     Friend WithEvents DateTimeSociosFechaIngreso As System.Windows.Forms.DateTimePicker
     Friend WithEvents DateTimeSociosFechaNacimiento As System.Windows.Forms.DateTimePicker
     Friend WithEvents ButtonSociosSalir As System.Windows.Forms.Button
-    Friend WithEvents ButtonSociosReporteMatricula As System.Windows.Forms.Button
     Friend WithEvents ButtonSociosModificar As System.Windows.Forms.Button
     Friend WithEvents ButtonSociosConsultar As System.Windows.Forms.Button
     Friend WithEvents ButtonSociosInsertar As System.Windows.Forms.Button

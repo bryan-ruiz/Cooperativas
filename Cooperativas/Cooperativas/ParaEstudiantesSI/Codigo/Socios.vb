@@ -317,9 +317,6 @@ Public Class Socios
         End Try
     End Sub
 
-
-
-
     'Genera un reporte de de matrícula en PDF'
     Public Sub generarReporteDeMatricula()
         'Exporting to PDF

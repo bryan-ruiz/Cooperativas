@@ -38,12 +38,6 @@ Public Class Ventana_Principal
         Print.Show()
     End Sub
 
-    'Reporte de Matrícula 
-    Private Sub ButtonSociosReporteMatricula_Click(sender As Object, e As EventArgs) Handles ButtonSociosReporteMatricula.Click
-        socios.generarReporteDeMatricula()
-        Print.Show()
-    End Sub
-
     'Salir de la app
     Private Sub ButtonSociosSalir_Click(sender As Object, e As EventArgs) Handles ButtonSociosSalir.Click
         Me.Close()
