@@ -75,6 +75,16 @@ Namespace My
                 Return CType(Me("Ejemplo_SIConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\CoopeBD.mdb")>  _
+        Public ReadOnly Property CoopeBDConnectionString() As String
+            Get
+                Return CType(Me("CoopeBDConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
