@@ -300,6 +300,7 @@ Partial Class Ventana_Principal
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Excedentes = New System.Windows.Forms.GroupBox()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.Label111 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -2105,6 +2106,7 @@ Partial Class Ventana_Principal
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.Label111)
         Me.GroupBox3.Controls.Add(Me.TextBox22)
         Me.GroupBox3.Controls.Add(Me.Label88)
         Me.GroupBox3.Controls.Add(Me.TextBox19)
@@ -2209,7 +2211,7 @@ Partial Class Ventana_Principal
         'TextBox14
         '
         Me.TextBox14.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(324, 585)
+        Me.TextBox14.Location = New System.Drawing.Point(136, 569)
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.Size = New System.Drawing.Size(154, 22)
         Me.TextBox14.TabIndex = 189
@@ -2218,7 +2220,7 @@ Partial Class Ventana_Principal
         '
         Me.Label86.AutoSize = True
         Me.Label86.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label86.Location = New System.Drawing.Point(245, 587)
+        Me.Label86.Location = New System.Drawing.Point(57, 571)
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(74, 16)
         Me.Label86.TabIndex = 188
@@ -2228,7 +2230,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker23.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker23.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker23.Location = New System.Drawing.Point(553, 585)
+        Me.DateTimePicker23.Location = New System.Drawing.Point(365, 569)
         Me.DateTimePicker23.Name = "DateTimePicker23"
         Me.DateTimePicker23.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker23.Size = New System.Drawing.Size(111, 22)
@@ -2238,7 +2240,7 @@ Partial Class Ventana_Principal
         '
         Me.Label87.AutoSize = True
         Me.Label87.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label87.Location = New System.Drawing.Point(496, 588)
+        Me.Label87.Location = New System.Drawing.Point(308, 572)
         Me.Label87.Name = "Label87"
         Me.Label87.Size = New System.Drawing.Size(51, 16)
         Me.Label87.TabIndex = 187
@@ -2247,7 +2249,7 @@ Partial Class Ventana_Principal
         'TextBox13
         '
         Me.TextBox13.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.Location = New System.Drawing.Point(324, 544)
+        Me.TextBox13.Location = New System.Drawing.Point(136, 528)
         Me.TextBox13.Name = "TextBox13"
         Me.TextBox13.Size = New System.Drawing.Size(154, 22)
         Me.TextBox13.TabIndex = 185
@@ -2256,7 +2258,7 @@ Partial Class Ventana_Principal
         '
         Me.Label84.AutoSize = True
         Me.Label84.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label84.Location = New System.Drawing.Point(252, 546)
+        Me.Label84.Location = New System.Drawing.Point(64, 530)
         Me.Label84.Name = "Label84"
         Me.Label84.Size = New System.Drawing.Size(67, 16)
         Me.Label84.TabIndex = 184
@@ -2266,7 +2268,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker22.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker22.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker22.Location = New System.Drawing.Point(553, 544)
+        Me.DateTimePicker22.Location = New System.Drawing.Point(365, 528)
         Me.DateTimePicker22.Name = "DateTimePicker22"
         Me.DateTimePicker22.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker22.Size = New System.Drawing.Size(111, 22)
@@ -2276,7 +2278,7 @@ Partial Class Ventana_Principal
         '
         Me.Label85.AutoSize = True
         Me.Label85.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label85.Location = New System.Drawing.Point(496, 547)
+        Me.Label85.Location = New System.Drawing.Point(308, 531)
         Me.Label85.Name = "Label85"
         Me.Label85.Size = New System.Drawing.Size(51, 16)
         Me.Label85.TabIndex = 183
@@ -2285,7 +2287,7 @@ Partial Class Ventana_Principal
         'TextBox12
         '
         Me.TextBox12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.Location = New System.Drawing.Point(324, 502)
+        Me.TextBox12.Location = New System.Drawing.Point(136, 486)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(154, 22)
         Me.TextBox12.TabIndex = 181
@@ -2294,7 +2296,7 @@ Partial Class Ventana_Principal
         '
         Me.Label51.AutoSize = True
         Me.Label51.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.Location = New System.Drawing.Point(252, 504)
+        Me.Label51.Location = New System.Drawing.Point(64, 488)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(67, 16)
         Me.Label51.TabIndex = 180
@@ -2304,7 +2306,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker21.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker21.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker21.Location = New System.Drawing.Point(553, 502)
+        Me.DateTimePicker21.Location = New System.Drawing.Point(365, 486)
         Me.DateTimePicker21.Name = "DateTimePicker21"
         Me.DateTimePicker21.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker21.Size = New System.Drawing.Size(111, 22)
@@ -2314,7 +2316,7 @@ Partial Class Ventana_Principal
         '
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(496, 505)
+        Me.Label52.Location = New System.Drawing.Point(308, 489)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(51, 16)
         Me.Label52.TabIndex = 179
@@ -2323,7 +2325,7 @@ Partial Class Ventana_Principal
         'TextBox11
         '
         Me.TextBox11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.Location = New System.Drawing.Point(324, 462)
+        Me.TextBox11.Location = New System.Drawing.Point(136, 446)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(154, 22)
         Me.TextBox11.TabIndex = 177
@@ -2332,7 +2334,7 @@ Partial Class Ventana_Principal
         '
         Me.Label49.AutoSize = True
         Me.Label49.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(252, 464)
+        Me.Label49.Location = New System.Drawing.Point(64, 448)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(67, 16)
         Me.Label49.TabIndex = 176
@@ -2342,7 +2344,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker20.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker20.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker20.Location = New System.Drawing.Point(553, 462)
+        Me.DateTimePicker20.Location = New System.Drawing.Point(365, 446)
         Me.DateTimePicker20.Name = "DateTimePicker20"
         Me.DateTimePicker20.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker20.Size = New System.Drawing.Size(111, 22)
@@ -2352,7 +2354,7 @@ Partial Class Ventana_Principal
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(496, 465)
+        Me.Label50.Location = New System.Drawing.Point(308, 449)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(51, 16)
         Me.Label50.TabIndex = 175
@@ -2361,7 +2363,7 @@ Partial Class Ventana_Principal
         'TextBox10
         '
         Me.TextBox10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(324, 419)
+        Me.TextBox10.Location = New System.Drawing.Point(136, 403)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(154, 22)
         Me.TextBox10.TabIndex = 173
@@ -2370,7 +2372,7 @@ Partial Class Ventana_Principal
         '
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.Location = New System.Drawing.Point(252, 421)
+        Me.Label47.Location = New System.Drawing.Point(64, 405)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(67, 16)
         Me.Label47.TabIndex = 172
@@ -2380,7 +2382,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker19.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker19.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker19.Location = New System.Drawing.Point(553, 419)
+        Me.DateTimePicker19.Location = New System.Drawing.Point(365, 403)
         Me.DateTimePicker19.Name = "DateTimePicker19"
         Me.DateTimePicker19.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker19.Size = New System.Drawing.Size(111, 22)
@@ -2390,7 +2392,7 @@ Partial Class Ventana_Principal
         '
         Me.Label48.AutoSize = True
         Me.Label48.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(496, 422)
+        Me.Label48.Location = New System.Drawing.Point(308, 406)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(51, 16)
         Me.Label48.TabIndex = 171
@@ -2399,7 +2401,7 @@ Partial Class Ventana_Principal
         'TextBox9
         '
         Me.TextBox9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(324, 377)
+        Me.TextBox9.Location = New System.Drawing.Point(136, 361)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(154, 22)
         Me.TextBox9.TabIndex = 169
@@ -2408,7 +2410,7 @@ Partial Class Ventana_Principal
         '
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(252, 379)
+        Me.Label45.Location = New System.Drawing.Point(64, 363)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(67, 16)
         Me.Label45.TabIndex = 168
@@ -2418,7 +2420,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker18.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker18.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker18.Location = New System.Drawing.Point(553, 377)
+        Me.DateTimePicker18.Location = New System.Drawing.Point(365, 361)
         Me.DateTimePicker18.Name = "DateTimePicker18"
         Me.DateTimePicker18.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker18.Size = New System.Drawing.Size(111, 22)
@@ -2428,7 +2430,7 @@ Partial Class Ventana_Principal
         '
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(496, 380)
+        Me.Label46.Location = New System.Drawing.Point(308, 364)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(51, 16)
         Me.Label46.TabIndex = 167
@@ -2437,7 +2439,7 @@ Partial Class Ventana_Principal
         'TextBox8
         '
         Me.TextBox8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(324, 336)
+        Me.TextBox8.Location = New System.Drawing.Point(136, 320)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(154, 22)
         Me.TextBox8.TabIndex = 165
@@ -2446,7 +2448,7 @@ Partial Class Ventana_Principal
         '
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(252, 338)
+        Me.Label42.Location = New System.Drawing.Point(64, 322)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(67, 16)
         Me.Label42.TabIndex = 164
@@ -2456,7 +2458,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker17.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker17.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker17.Location = New System.Drawing.Point(553, 336)
+        Me.DateTimePicker17.Location = New System.Drawing.Point(365, 320)
         Me.DateTimePicker17.Name = "DateTimePicker17"
         Me.DateTimePicker17.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker17.Size = New System.Drawing.Size(111, 22)
@@ -2466,7 +2468,7 @@ Partial Class Ventana_Principal
         '
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(496, 339)
+        Me.Label44.Location = New System.Drawing.Point(308, 323)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(51, 16)
         Me.Label44.TabIndex = 163
@@ -2475,7 +2477,7 @@ Partial Class Ventana_Principal
         'TextBox7
         '
         Me.TextBox7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(324, 296)
+        Me.TextBox7.Location = New System.Drawing.Point(136, 280)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(154, 22)
         Me.TextBox7.TabIndex = 161
@@ -2484,7 +2486,7 @@ Partial Class Ventana_Principal
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(252, 298)
+        Me.Label34.Location = New System.Drawing.Point(64, 282)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(67, 16)
         Me.Label34.TabIndex = 160
@@ -2494,7 +2496,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker16.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker16.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker16.Location = New System.Drawing.Point(553, 296)
+        Me.DateTimePicker16.Location = New System.Drawing.Point(365, 280)
         Me.DateTimePicker16.Name = "DateTimePicker16"
         Me.DateTimePicker16.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker16.Size = New System.Drawing.Size(111, 22)
@@ -2504,7 +2506,7 @@ Partial Class Ventana_Principal
         '
         Me.Label41.AutoSize = True
         Me.Label41.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.Location = New System.Drawing.Point(496, 299)
+        Me.Label41.Location = New System.Drawing.Point(308, 283)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(51, 16)
         Me.Label41.TabIndex = 159
@@ -2513,7 +2515,7 @@ Partial Class Ventana_Principal
         'TextBox6
         '
         Me.TextBox6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(324, 257)
+        Me.TextBox6.Location = New System.Drawing.Point(136, 241)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(154, 22)
         Me.TextBox6.TabIndex = 157
@@ -2522,7 +2524,7 @@ Partial Class Ventana_Principal
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(252, 259)
+        Me.Label29.Location = New System.Drawing.Point(64, 243)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(67, 16)
         Me.Label29.TabIndex = 156
@@ -2532,7 +2534,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(553, 257)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(365, 241)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker1.Size = New System.Drawing.Size(111, 22)
@@ -2542,7 +2544,7 @@ Partial Class Ventana_Principal
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(496, 260)
+        Me.Label30.Location = New System.Drawing.Point(308, 244)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(51, 16)
         Me.Label30.TabIndex = 155
@@ -2551,7 +2553,7 @@ Partial Class Ventana_Principal
         'TextBox5
         '
         Me.TextBox5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(324, 219)
+        Me.TextBox5.Location = New System.Drawing.Point(136, 203)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(154, 22)
         Me.TextBox5.TabIndex = 153
@@ -2560,7 +2562,7 @@ Partial Class Ventana_Principal
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(252, 221)
+        Me.Label28.Location = New System.Drawing.Point(64, 205)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(67, 16)
         Me.Label28.TabIndex = 143
@@ -2630,7 +2632,7 @@ Partial Class Ventana_Principal
         '
         Me.DateTimePicker2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(553, 219)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(365, 203)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimePicker2.Size = New System.Drawing.Size(111, 22)
@@ -2725,7 +2727,7 @@ Partial Class Ventana_Principal
         '
         Me.Label43.AutoSize = True
         Me.Label43.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.Location = New System.Drawing.Point(496, 222)
+        Me.Label43.Location = New System.Drawing.Point(308, 206)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(51, 16)
         Me.Label43.TabIndex = 129
@@ -3287,6 +3289,16 @@ Partial Class Ventana_Principal
         Me.TabPage8.Text = "Settings"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
+        'Label111
+        '
+        Me.Label111.AutoSize = True
+        Me.Label111.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label111.Location = New System.Drawing.Point(491, 206)
+        Me.Label111.Name = "Label111"
+        Me.Label111.Size = New System.Drawing.Size(51, 16)
+        Me.Label111.TabIndex = 194
+        Me.Label111.Text = "Fecha:"
+        '
         'Ventana_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3603,4 +3615,5 @@ Partial Class Ventana_Principal
     Friend WithEvents TextBox39 As TextBox
     Friend WithEvents TextBox41 As TextBox
     Friend WithEvents TextBox40 As TextBox
+    Friend WithEvents Label111 As Label
 End Class
