@@ -27,11 +27,6 @@ Public Class Ventana_Principal
         socios.actualizar()
     End Sub
 
-    'Limpiar Socios
-    Private Sub ButtonSociosLimpiar_Click(sender As Object, e As EventArgs) Handles ButtonSociosLimpiar.Click
-        socios.limpiar()
-    End Sub
-
     'Reporte de Socios (Activos o activos más inactivos)
     Private Sub ButtonSociosReporteDeSocios_Click(sender As Object, e As EventArgs) Handles ButtonSociosReporteDeSocios.Click
         socios.generarReporteDeSocios()
