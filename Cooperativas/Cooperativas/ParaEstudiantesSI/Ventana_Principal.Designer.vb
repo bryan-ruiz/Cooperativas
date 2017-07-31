@@ -88,7 +88,6 @@ Partial Class Ventana_Principal
         Me.Label79 = New System.Windows.Forms.Label()
         Me.Label80 = New System.Windows.Forms.Label()
         Me.Label81 = New System.Windows.Forms.Label()
-        Me.Label82 = New System.Windows.Forms.Label()
         Me.Label83 = New System.Windows.Forms.Label()
         Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.DateTimePicker10 = New System.Windows.Forms.DateTimePicker()
@@ -100,22 +99,18 @@ Partial Class Ventana_Principal
         Me.Label74 = New System.Windows.Forms.Label()
         Me.Label75 = New System.Windows.Forms.Label()
         Me.Label76 = New System.Windows.Forms.Label()
-        Me.Label77 = New System.Windows.Forms.Label()
         Me.Label68 = New System.Windows.Forms.Label()
         Me.Label69 = New System.Windows.Forms.Label()
         Me.Label70 = New System.Windows.Forms.Label()
         Me.Label71 = New System.Windows.Forms.Label()
-        Me.Label72 = New System.Windows.Forms.Label()
         Me.Label63 = New System.Windows.Forms.Label()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.Label65 = New System.Windows.Forms.Label()
         Me.Label66 = New System.Windows.Forms.Label()
-        Me.Label67 = New System.Windows.Forms.Label()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.Label58 = New System.Windows.Forms.Label()
         Me.Label59 = New System.Windows.Forms.Label()
         Me.Label60 = New System.Windows.Forms.Label()
-        Me.Label61 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.ComboBox7 = New System.Windows.Forms.ComboBox()
         Me.DateTimePicker14 = New System.Windows.Forms.DateTimePicker()
@@ -127,7 +122,6 @@ Partial Class Ventana_Principal
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label56 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -301,6 +295,12 @@ Partial Class Ventana_Principal
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Excedentes = New System.Windows.Forms.GroupBox()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.Label67 = New System.Windows.Forms.Label()
+        Me.Label111 = New System.Windows.Forms.Label()
+        Me.Label72 = New System.Windows.Forms.Label()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label77 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -899,6 +899,12 @@ Partial Class Ventana_Principal
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Label77)
+        Me.GroupBox1.Controls.Add(Me.Label61)
+        Me.GroupBox1.Controls.Add(Me.Label72)
+        Me.GroupBox1.Controls.Add(Me.Label111)
+        Me.GroupBox1.Controls.Add(Me.Label67)
+        Me.GroupBox1.Controls.Add(Me.Label56)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button20)
         Me.GroupBox1.Controls.Add(Me.Button19)
@@ -911,7 +917,6 @@ Partial Class Ventana_Principal
         Me.GroupBox1.Controls.Add(Me.Label79)
         Me.GroupBox1.Controls.Add(Me.Label80)
         Me.GroupBox1.Controls.Add(Me.Label81)
-        Me.GroupBox1.Controls.Add(Me.Label82)
         Me.GroupBox1.Controls.Add(Me.Label83)
         Me.GroupBox1.Controls.Add(Me.ComboBox5)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker10)
@@ -923,22 +928,18 @@ Partial Class Ventana_Principal
         Me.GroupBox1.Controls.Add(Me.Label74)
         Me.GroupBox1.Controls.Add(Me.Label75)
         Me.GroupBox1.Controls.Add(Me.Label76)
-        Me.GroupBox1.Controls.Add(Me.Label77)
         Me.GroupBox1.Controls.Add(Me.Label68)
         Me.GroupBox1.Controls.Add(Me.Label69)
         Me.GroupBox1.Controls.Add(Me.Label70)
         Me.GroupBox1.Controls.Add(Me.Label71)
-        Me.GroupBox1.Controls.Add(Me.Label72)
         Me.GroupBox1.Controls.Add(Me.Label63)
         Me.GroupBox1.Controls.Add(Me.Label64)
         Me.GroupBox1.Controls.Add(Me.Label65)
         Me.GroupBox1.Controls.Add(Me.Label66)
-        Me.GroupBox1.Controls.Add(Me.Label67)
         Me.GroupBox1.Controls.Add(Me.Label57)
         Me.GroupBox1.Controls.Add(Me.Label58)
         Me.GroupBox1.Controls.Add(Me.Label59)
         Me.GroupBox1.Controls.Add(Me.Label60)
-        Me.GroupBox1.Controls.Add(Me.Label61)
         Me.GroupBox1.Controls.Add(Me.Label62)
         Me.GroupBox1.Controls.Add(Me.ComboBox7)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker14)
@@ -950,7 +951,6 @@ Partial Class Ventana_Principal
         Me.GroupBox1.Controls.Add(Me.Label24)
         Me.GroupBox1.Controls.Add(Me.Label25)
         Me.GroupBox1.Controls.Add(Me.Label36)
-        Me.GroupBox1.Controls.Add(Me.Label56)
         Me.GroupBox1.Controls.Add(Me.Label22)
         Me.GroupBox1.Controls.Add(Me.Label20)
         Me.GroupBox1.Controls.Add(Me.Label18)
@@ -1142,16 +1142,6 @@ Partial Class Ventana_Principal
         Me.Label81.TabIndex = 229
         Me.Label81.Text = "Tipo Asociado:"
         '
-        'Label82
-        '
-        Me.Label82.AutoSize = True
-        Me.Label82.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label82.Location = New System.Drawing.Point(630, 457)
-        Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(57, 16)
-        Me.Label82.TabIndex = 228
-        Me.Label82.Text = "Cédula:"
-        '
         'Label83
         '
         Me.Label83.AutoSize = True
@@ -1254,16 +1244,6 @@ Partial Class Ventana_Principal
         Me.Label76.TabIndex = 217
         Me.Label76.Text = "Tipo Asociado:"
         '
-        'Label77
-        '
-        Me.Label77.AutoSize = True
-        Me.Label77.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label77.Location = New System.Drawing.Point(627, 340)
-        Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(57, 16)
-        Me.Label77.TabIndex = 216
-        Me.Label77.Text = "Cédula:"
-        '
         'Label68
         '
         Me.Label68.AutoSize = True
@@ -1303,16 +1283,6 @@ Partial Class Ventana_Principal
         Me.Label71.Size = New System.Drawing.Size(102, 16)
         Me.Label71.TabIndex = 212
         Me.Label71.Text = "Tipo Asociado:"
-        '
-        'Label72
-        '
-        Me.Label72.AutoSize = True
-        Me.Label72.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label72.Location = New System.Drawing.Point(627, 282)
-        Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(57, 16)
-        Me.Label72.TabIndex = 211
-        Me.Label72.Text = "Cédula:"
         '
         'Label63
         '
@@ -1354,16 +1324,6 @@ Partial Class Ventana_Principal
         Me.Label66.TabIndex = 207
         Me.Label66.Text = "Tipo Asociado:"
         '
-        'Label67
-        '
-        Me.Label67.AutoSize = True
-        Me.Label67.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label67.Location = New System.Drawing.Point(629, 222)
-        Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(57, 16)
-        Me.Label67.TabIndex = 206
-        Me.Label67.Text = "Cédula:"
-        '
         'Label57
         '
         Me.Label57.AutoSize = True
@@ -1403,16 +1363,6 @@ Partial Class Ventana_Principal
         Me.Label60.Size = New System.Drawing.Size(102, 16)
         Me.Label60.TabIndex = 202
         Me.Label60.Text = "Tipo Asociado:"
-        '
-        'Label61
-        '
-        Me.Label61.AutoSize = True
-        Me.Label61.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label61.Location = New System.Drawing.Point(629, 399)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(57, 16)
-        Me.Label61.TabIndex = 201
-        Me.Label61.Text = "Cédula:"
         '
         'Label62
         '
@@ -1515,16 +1465,6 @@ Partial Class Ventana_Principal
         Me.Label36.Size = New System.Drawing.Size(102, 16)
         Me.Label36.TabIndex = 190
         Me.Label36.Text = "Tipo Asociado:"
-        '
-        'Label56
-        '
-        Me.Label56.AutoSize = True
-        Me.Label56.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.Location = New System.Drawing.Point(627, 160)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(57, 16)
-        Me.Label56.TabIndex = 189
-        Me.Label56.Text = "Cédula:"
         '
         'Label22
         '
@@ -1845,11 +1785,11 @@ Partial Class Ventana_Principal
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(627, 103)
+        Me.Label17.Location = New System.Drawing.Point(616, 98)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(57, 16)
+        Me.Label17.Size = New System.Drawing.Size(152, 16)
         Me.Label17.TabIndex = 146
-        Me.Label17.Text = "Cédula:"
+        Me.Label17.Text = "Cédula/Num Asociado:"
         '
         'Button3
         '
@@ -3302,6 +3242,66 @@ Partial Class Ventana_Principal
         Me.TabPage8.Text = "Settings"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label56.Location = New System.Drawing.Point(616, 162)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(152, 16)
+        Me.Label56.TabIndex = 242
+        Me.Label56.Text = "Cédula/Num Asociado:"
+        '
+        'Label67
+        '
+        Me.Label67.AutoSize = True
+        Me.Label67.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label67.Location = New System.Drawing.Point(616, 222)
+        Me.Label67.Name = "Label67"
+        Me.Label67.Size = New System.Drawing.Size(152, 16)
+        Me.Label67.TabIndex = 243
+        Me.Label67.Text = "Cédula/Num Asociado:"
+        '
+        'Label111
+        '
+        Me.Label111.AutoSize = True
+        Me.Label111.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label111.Location = New System.Drawing.Point(616, 282)
+        Me.Label111.Name = "Label111"
+        Me.Label111.Size = New System.Drawing.Size(152, 16)
+        Me.Label111.TabIndex = 244
+        Me.Label111.Text = "Cédula/Num Asociado:"
+        '
+        'Label72
+        '
+        Me.Label72.AutoSize = True
+        Me.Label72.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label72.Location = New System.Drawing.Point(616, 340)
+        Me.Label72.Name = "Label72"
+        Me.Label72.Size = New System.Drawing.Size(152, 16)
+        Me.Label72.TabIndex = 245
+        Me.Label72.Text = "Cédula/Num Asociado:"
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label61.Location = New System.Drawing.Point(616, 400)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(152, 16)
+        Me.Label61.TabIndex = 246
+        Me.Label61.Text = "Cédula/Num Asociado:"
+        '
+        'Label77
+        '
+        Me.Label77.AutoSize = True
+        Me.Label77.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label77.Location = New System.Drawing.Point(616, 459)
+        Me.Label77.Name = "Label77"
+        Me.Label77.Size = New System.Drawing.Size(152, 16)
+        Me.Label77.TabIndex = 247
+        Me.Label77.Text = "Cédula/Num Asociado:"
+        '
         'Ventana_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3444,7 +3444,6 @@ Partial Class Ventana_Principal
     Friend WithEvents Label79 As Label
     Friend WithEvents Label80 As Label
     Friend WithEvents Label81 As Label
-    Friend WithEvents Label82 As Label
     Friend WithEvents Label83 As Label
     Friend WithEvents ComboBox5 As ComboBox
     Friend WithEvents DateTimePicker10 As DateTimePicker
@@ -3456,22 +3455,18 @@ Partial Class Ventana_Principal
     Friend WithEvents Label74 As Label
     Friend WithEvents Label75 As Label
     Friend WithEvents Label76 As Label
-    Friend WithEvents Label77 As Label
     Friend WithEvents Label68 As Label
     Friend WithEvents Label69 As Label
     Friend WithEvents Label70 As Label
     Friend WithEvents Label71 As Label
-    Friend WithEvents Label72 As Label
     Friend WithEvents Label63 As Label
     Friend WithEvents Label64 As Label
     Friend WithEvents Label65 As Label
     Friend WithEvents Label66 As Label
-    Friend WithEvents Label67 As Label
     Friend WithEvents Label57 As Label
     Friend WithEvents Label58 As Label
     Friend WithEvents Label59 As Label
     Friend WithEvents Label60 As Label
-    Friend WithEvents Label61 As Label
     Friend WithEvents Label62 As Label
     Friend WithEvents ComboBox7 As ComboBox
     Friend WithEvents DateTimePicker14 As DateTimePicker
@@ -3483,7 +3478,6 @@ Partial Class Ventana_Principal
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents Label36 As Label
-    Friend WithEvents Label56 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label18 As Label
@@ -3619,4 +3613,10 @@ Partial Class Ventana_Principal
     Friend WithEvents TextBox39 As TextBox
     Friend WithEvents TextBox41 As TextBox
     Friend WithEvents TextBox40 As TextBox
+    Friend WithEvents Label77 As Label
+    Friend WithEvents Label61 As Label
+    Friend WithEvents Label72 As Label
+    Friend WithEvents Label111 As Label
+    Friend WithEvents Label67 As Label
+    Friend WithEvents Label56 As Label
 End Class

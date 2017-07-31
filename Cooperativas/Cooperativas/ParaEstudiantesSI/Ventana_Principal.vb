@@ -81,6 +81,15 @@ Public Class Ventana_Principal
     Private Sub RadioButtonSociosReporteTodos_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonSociosReporteTodos.CheckedChanged
 
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Close()
+        Ventana_Acceso.Close()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+    End Sub
 End Class
 
 
