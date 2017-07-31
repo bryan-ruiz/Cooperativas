@@ -179,7 +179,6 @@ Partial Class Ventana_Principal
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.TextBoxNombreEmpresa_RelacionLaboral = New System.Windows.Forms.TextBox()
@@ -1847,9 +1846,9 @@ Partial Class Ventana_Principal
         Me.Label17.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.Location = New System.Drawing.Point(627, 103)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(57, 16)
+        Me.Label17.Size = New System.Drawing.Size(160, 16)
         Me.Label17.TabIndex = 146
-        Me.Label17.Text = "Cédula:"
+        Me.Label17.Text = "Cédula / Num Asociado:"
         '
         'Button3
         '
@@ -1966,7 +1965,6 @@ Partial Class Ventana_Principal
         Me.GroupBox2.Controls.Add(Me.RadioButton1)
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.Button6)
-        Me.GroupBox2.Controls.Add(Me.Button8)
         Me.GroupBox2.Controls.Add(Me.Button10)
         Me.GroupBox2.Controls.Add(Me.Label31)
         Me.GroupBox2.Controls.Add(Me.TextBoxNombreEmpresa_RelacionLaboral)
@@ -1977,7 +1975,7 @@ Partial Class Ventana_Principal
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(123, 96)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(758, 388)
+        Me.GroupBox2.Size = New System.Drawing.Size(758, 358)
         Me.GroupBox2.TabIndex = 143
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Gestión de Usuarios"
@@ -2012,7 +2010,7 @@ Partial Class Ventana_Principal
         Me.Button5.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.White
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(528, 263)
+        Me.Button5.Location = New System.Drawing.Point(529, 217)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(125, 40)
         Me.Button5.TabIndex = 12
@@ -2025,25 +2023,12 @@ Partial Class Ventana_Principal
         Me.Button6.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
-        Me.Button6.Location = New System.Drawing.Point(528, 187)
+        Me.Button6.Location = New System.Drawing.Point(529, 141)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(125, 40)
         Me.Button6.TabIndex = 10
         Me.Button6.Text = "Eliminar"
         Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button8.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Image = CType(resources.GetObject("Button8.Image"), System.Drawing.Image)
-        Me.Button8.Location = New System.Drawing.Point(528, 87)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(125, 40)
-        Me.Button8.TabIndex = 7
-        Me.Button8.Text = "Consultar"
-        Me.Button8.UseVisualStyleBackColor = False
         '
         'Button10
         '
@@ -2051,7 +2036,7 @@ Partial Class Ventana_Principal
         Me.Button10.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button10.ForeColor = System.Drawing.Color.White
         Me.Button10.Image = CType(resources.GetObject("Button10.Image"), System.Drawing.Image)
-        Me.Button10.Location = New System.Drawing.Point(528, 134)
+        Me.Button10.Location = New System.Drawing.Point(529, 88)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(125, 40)
         Me.Button10.TabIndex = 8
@@ -3390,7 +3375,6 @@ Partial Class Ventana_Principal
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents TextBoxNombreEmpresa_RelacionLaboral As System.Windows.Forms.TextBox

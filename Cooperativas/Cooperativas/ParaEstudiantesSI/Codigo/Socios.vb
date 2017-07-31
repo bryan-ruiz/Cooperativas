@@ -263,10 +263,8 @@ Public Class Socios
         Dim tipoReporte As String = ""
         If (Ventana_Principal.RadioButtonSociosReporteTodos.Checked = True) Then
             tipoReporte = Ventana_Principal.RadioButtonSociosReporteTodos.Text
-            MessageBox.Show("Entro a if 1: " + tipoReporte)
         Else
             tipoReporte = "Activos"
-            MessageBox.Show("Entro a if 1: " + tipoReporte)
         End If
         Try
             Dim valores As List(Of SocioClase)
@@ -275,7 +273,7 @@ Public Class Socios
             BD.CerrarConexion()
 
             'Exporting to PDF
-            Dim folderPath As String = "C:\Reportes\"
+            Dim folderPath As String = "C:\Reportes\reporteSocios.pdf"
             If Not Directory.Exists(folderPath) Then
                 Directory.CreateDirectory(folderPath)
             End If
