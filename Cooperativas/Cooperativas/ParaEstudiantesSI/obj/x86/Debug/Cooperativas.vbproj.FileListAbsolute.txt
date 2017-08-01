@@ -396,3 +396,4 @@ C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\Cooperativas\Par
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\CoopeBD.mdb
