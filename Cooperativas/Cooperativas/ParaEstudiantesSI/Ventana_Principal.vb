@@ -5,7 +5,7 @@ Public Class Ventana_Principal
 
     Dim BD As ConexionBD = New ConexionBD
     Dim socios As Socios = New Socios
-
+    Dim comites As Comites = New Comites
 
     '//////////////////////////
     '///////  SOCIOS //////////
@@ -82,8 +82,40 @@ Public Class Ventana_Principal
         Ventana_Acceso.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoPresidente.Click
+        comites.buscar("presidente")
+    End Sub
 
+    Private Sub ButtonBuscar_asociadoVicePresidente_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoVicePresidente.Click
+        comites.buscar("vicePresidente")
+    End Sub
+
+    Private Sub ButtonBuscar_asociadoSecretaria_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoSecretaria.Click
+        comites.buscar("secretaria")
+    End Sub
+
+    Private Sub ButtonBuscar_asociadoVocal1_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoVocal1.Click
+        comites.buscar("vocal1")
+    End Sub
+
+    Private Sub ButtonBuscar_asociadoVocal2_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoVocal2.Click
+        comites.buscar("vocal2")
+    End Sub
+
+    Private Sub ButtonBuscar_asociadoSuplente1_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoSuplente1.Click
+        comites.buscar("suplente1")
+    End Sub
+
+    Private Sub ButtonBuscar_asociadoSuplente2_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoSuplente2.Click
+        comites.buscar("suplente2")
+    End Sub
+
+    Private Sub ButtonConsultar_InformacionAccidente_Click(sender As Object, e As EventArgs) Handles ButtonConsultar_InformacionAccidente.Click
+
+    End Sub
+
+    Private Sub ButtonSociosLimpiar_Click(sender As Object, e As EventArgs) Handles ButtonSociosLimpiar.Click
+        socios.limpiar()
     End Sub
 End Class
 

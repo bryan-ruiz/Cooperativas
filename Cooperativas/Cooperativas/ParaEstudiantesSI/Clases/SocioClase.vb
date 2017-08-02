@@ -17,6 +17,7 @@
     Public estado As String
     Public fechaRetiro As DateTime
     Public notasRetiro As String
+    Public menor As String
 
     Public Sub socioClaseCostructor(ByVal cedulap As String, ByVal numAsocp As String, ByVal nombrep As String,
                           ByVal primerApellidop As String, ByVal segundoApellidop As String,
@@ -24,7 +25,7 @@
                           ByVal responsablep As String, ByVal beneficiariop As String, ByVal fechaIngresop As DateTime,
                           ByVal seccionp As String, ByVal ocupacionEspecialidadp As String,
                           ByVal direccionp As String, ByVal generop As String, ByVal estadop As String,
-                          ByVal fechaRetirop As DateTime, ByVal notasRetirop As String)
+                          ByVal fechaRetirop As DateTime, ByVal notasRetirop As String, ByVal menorp As String)
         nombre = nombrep
         numAsoc = numAsocp
         cedula = cedulap
@@ -43,7 +44,7 @@
         estado = estadop
         fechaRetiro = fechaRetirop
         notasRetiro = notasRetirop
-
+        menor = menorp
     End Sub
 
 End Class
