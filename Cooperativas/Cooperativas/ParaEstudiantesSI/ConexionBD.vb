@@ -217,14 +217,6 @@ Public Class ConexionBD
     End Function
 
 
-
-
-
-
-
-
-
-
     Function eliminar_relacion(ByVal cod As String) As Integer
         Dim res As Integer = 0
         Try
@@ -243,5 +235,35 @@ Public Class ConexionBD
         Return res
     End Function
 
+    ''/////////////////////////  FUNCIONES DE COMITE EN BASE DE DATOS
+    Function obtenerDatosdeUnComite(ByVal idComite As String) As List(Of ComiteClase)
+        Dim MyList As New List(Of ComiteClase)
+        Try
+            SQL = "SELECT CONSEJOS.* FROM [CONSEJOS] WHERE ((tipoConsejo)= '" & idComite & "')"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim nuevosocio As ComiteClase = New ComiteClase
+                    Try
+                        nuevosocio.comiteClaseCostructor(reader.GetString(1), reader.GetString(2), reader.GetString(3),
+                                                    reader.GetString(4), reader.GetDateTime(5), reader.GetDateTime(6),
+                                                    reader.GetString(7), reader.GetString(8))
+                        MyList.Add(nuevosocio)
+                    Catch ex As Exception
+
+                    End Try
+
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
 
 End Class

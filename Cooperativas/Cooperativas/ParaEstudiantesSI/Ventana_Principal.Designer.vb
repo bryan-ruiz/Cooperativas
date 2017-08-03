@@ -95,7 +95,6 @@ Partial Class Ventana_Principal
         Me.Label80 = New System.Windows.Forms.Label()
         Me.Label81 = New System.Windows.Forms.Label()
         Me.Label83 = New System.Windows.Forms.Label()
-        Me.ComboBoxMenor_ComiteSuplente2 = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerFechaVence_ComiteSuplente2 = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxTipo_ComiteSuplente2 = New System.Windows.Forms.TextBox()
         Me.DateTimePickerFechaRige_ComiteSuplente2 = New System.Windows.Forms.DateTimePicker()
@@ -118,7 +117,6 @@ Partial Class Ventana_Principal
         Me.Label59 = New System.Windows.Forms.Label()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
-        Me.ComboBoxMenor_ComiteSuplente1 = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerFechaVence_ComiteSuplente1 = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxTipo_ComiteSuplente1 = New System.Windows.Forms.TextBox()
         Me.DateTimePickerFechaRige_ComiteSuplente1 = New System.Windows.Forms.DateTimePicker()
@@ -132,25 +130,21 @@ Partial Class Ventana_Principal
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.ComboBoxMenor_ComiteSecretaria = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerFechaVence_ComiteSecretaria = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxTipo_ComiteSecretaria = New System.Windows.Forms.TextBox()
         Me.DateTimePickerFechaRige_ComiteSecretaria = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxID_ComiteSecretaria = New System.Windows.Forms.TextBox()
         Me.TextBoxComitesSecretaria = New System.Windows.Forms.TextBox()
-        Me.ComboBoxMenor_ComiteVocal2 = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerFechaVence_ComiteVocal2 = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxTipo_ComiteVocal2 = New System.Windows.Forms.TextBox()
         Me.DateTimePickerFechaRige_ComiteVocal2 = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxID_ComiteVocal2 = New System.Windows.Forms.TextBox()
         Me.TextBoxComitesVocal2 = New System.Windows.Forms.TextBox()
-        Me.ComboBoxMenor_ComiteVocal1 = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerFechaVence_ComiteVocal1 = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxTipo_ComiteVocal1 = New System.Windows.Forms.TextBox()
         Me.DateTimePickerFechaRige_ComiteVocal1 = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxID_ComiteVocal1 = New System.Windows.Forms.TextBox()
         Me.TextBoxComitesVocal1 = New System.Windows.Forms.TextBox()
-        Me.ComboBoxMenor_ComiteVicePresidente = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerFechaVence_ComiteVicePresidente = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxTipo_ComiteVicePresidente = New System.Windows.Forms.TextBox()
         Me.DateTimePickerFechaRige_ComiteVicePresidente = New System.Windows.Forms.DateTimePicker()
@@ -158,7 +152,6 @@ Partial Class Ventana_Principal
         Me.TextBoxComitesVicepresidente = New System.Windows.Forms.TextBox()
         Me.Label55 = New System.Windows.Forms.Label()
         Me.Label54 = New System.Windows.Forms.Label()
-        Me.ComboBoxMenor_ComitePresidente = New System.Windows.Forms.ComboBox()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.DateTimePickerFechaVence_ComitePresidente = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxTipo_comitePresidente = New System.Windows.Forms.TextBox()
@@ -305,6 +298,13 @@ Partial Class Ventana_Principal
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.RadioButtonSociosMenorNo = New System.Windows.Forms.RadioButton()
         Me.RadioButtonSociosMenorSi = New System.Windows.Forms.RadioButton()
+        Me.TextBoxComiteMenorPresi = New System.Windows.Forms.TextBox()
+        Me.TextBoxComiteMenorViceP = New System.Windows.Forms.TextBox()
+        Me.TextBoxComiteMenorSec = New System.Windows.Forms.TextBox()
+        Me.TextBoxComiteMenorVoc1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxComiteMenorVoc2 = New System.Windows.Forms.TextBox()
+        Me.TextBoxComiteMenorSupl1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxComiteMenorSupl2 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -906,6 +906,13 @@ Partial Class Ventana_Principal
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.TextBoxComiteMenorSupl2)
+        Me.GroupBox1.Controls.Add(Me.TextBoxComiteMenorSupl1)
+        Me.GroupBox1.Controls.Add(Me.TextBoxComiteMenorVoc2)
+        Me.GroupBox1.Controls.Add(Me.TextBoxComiteMenorVoc1)
+        Me.GroupBox1.Controls.Add(Me.TextBoxComiteMenorSec)
+        Me.GroupBox1.Controls.Add(Me.TextBoxComiteMenorViceP)
+        Me.GroupBox1.Controls.Add(Me.TextBoxComiteMenorPresi)
         Me.GroupBox1.Controls.Add(Me.Label77)
         Me.GroupBox1.Controls.Add(Me.Label61)
         Me.GroupBox1.Controls.Add(Me.Label72)
@@ -925,7 +932,6 @@ Partial Class Ventana_Principal
         Me.GroupBox1.Controls.Add(Me.Label80)
         Me.GroupBox1.Controls.Add(Me.Label81)
         Me.GroupBox1.Controls.Add(Me.Label83)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxMenor_ComiteSuplente2)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaVence_ComiteSuplente2)
         Me.GroupBox1.Controls.Add(Me.TextBoxTipo_ComiteSuplente2)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaRige_ComiteSuplente2)
@@ -948,7 +954,6 @@ Partial Class Ventana_Principal
         Me.GroupBox1.Controls.Add(Me.Label59)
         Me.GroupBox1.Controls.Add(Me.Label60)
         Me.GroupBox1.Controls.Add(Me.Label62)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxMenor_ComiteSuplente1)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaVence_ComiteSuplente1)
         Me.GroupBox1.Controls.Add(Me.TextBoxTipo_ComiteSuplente1)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaRige_ComiteSuplente1)
@@ -962,25 +967,21 @@ Partial Class Ventana_Principal
         Me.GroupBox1.Controls.Add(Me.Label20)
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Controls.Add(Me.Label15)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxMenor_ComiteSecretaria)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaVence_ComiteSecretaria)
         Me.GroupBox1.Controls.Add(Me.TextBoxTipo_ComiteSecretaria)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaRige_ComiteSecretaria)
         Me.GroupBox1.Controls.Add(Me.TextBoxID_ComiteSecretaria)
         Me.GroupBox1.Controls.Add(Me.TextBoxComitesSecretaria)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxMenor_ComiteVocal2)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaVence_ComiteVocal2)
         Me.GroupBox1.Controls.Add(Me.TextBoxTipo_ComiteVocal2)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaRige_ComiteVocal2)
         Me.GroupBox1.Controls.Add(Me.TextBoxID_ComiteVocal2)
         Me.GroupBox1.Controls.Add(Me.TextBoxComitesVocal2)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxMenor_ComiteVocal1)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaVence_ComiteVocal1)
         Me.GroupBox1.Controls.Add(Me.TextBoxTipo_ComiteVocal1)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaRige_ComiteVocal1)
         Me.GroupBox1.Controls.Add(Me.TextBoxID_ComiteVocal1)
         Me.GroupBox1.Controls.Add(Me.TextBoxComitesVocal1)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxMenor_ComiteVicePresidente)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaVence_ComiteVicePresidente)
         Me.GroupBox1.Controls.Add(Me.TextBoxTipo_ComiteVicePresidente)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaRige_ComiteVicePresidente)
@@ -988,7 +989,6 @@ Partial Class Ventana_Principal
         Me.GroupBox1.Controls.Add(Me.TextBoxComitesVicepresidente)
         Me.GroupBox1.Controls.Add(Me.Label55)
         Me.GroupBox1.Controls.Add(Me.Label54)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxMenor_ComitePresidente)
         Me.GroupBox1.Controls.Add(Me.Label53)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerFechaVence_ComitePresidente)
         Me.GroupBox1.Controls.Add(Me.TextBoxTipo_comitePresidente)
@@ -1219,16 +1219,6 @@ Partial Class Ventana_Principal
         Me.Label83.TabIndex = 227
         Me.Label83.Text = "Suplente2:"
         '
-        'ComboBoxMenor_ComiteSuplente2
-        '
-        Me.ComboBoxMenor_ComiteSuplente2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxMenor_ComiteSuplente2.Items.AddRange(New Object() {"Si", "No"})
-        Me.ComboBoxMenor_ComiteSuplente2.Location = New System.Drawing.Point(384, 478)
-        Me.ComboBoxMenor_ComiteSuplente2.Name = "ComboBoxMenor_ComiteSuplente2"
-        Me.ComboBoxMenor_ComiteSuplente2.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBoxMenor_ComiteSuplente2.TabIndex = 226
-        Me.ComboBoxMenor_ComiteSuplente2.Text = "Si"
-        '
         'DateTimePickerFechaVence_ComiteSuplente2
         '
         Me.DateTimePickerFechaVence_ComiteSuplente2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1441,16 +1431,6 @@ Partial Class Ventana_Principal
         Me.Label62.TabIndex = 200
         Me.Label62.Text = "Suplente1:"
         '
-        'ComboBoxMenor_ComiteSuplente1
-        '
-        Me.ComboBoxMenor_ComiteSuplente1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxMenor_ComiteSuplente1.Items.AddRange(New Object() {"Si", "No"})
-        Me.ComboBoxMenor_ComiteSuplente1.Location = New System.Drawing.Point(383, 420)
-        Me.ComboBoxMenor_ComiteSuplente1.Name = "ComboBoxMenor_ComiteSuplente1"
-        Me.ComboBoxMenor_ComiteSuplente1.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBoxMenor_ComiteSuplente1.TabIndex = 199
-        Me.ComboBoxMenor_ComiteSuplente1.Text = "Si"
-        '
         'DateTimePickerFechaVence_ComiteSuplente1
         '
         Me.DateTimePickerFechaVence_ComiteSuplente1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1573,16 +1553,6 @@ Partial Class Ventana_Principal
         Me.Label15.TabIndex = 185
         Me.Label15.Text = "Vicepresidente:"
         '
-        'ComboBoxMenor_ComiteSecretaria
-        '
-        Me.ComboBoxMenor_ComiteSecretaria.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxMenor_ComiteSecretaria.Items.AddRange(New Object() {"Si", "No"})
-        Me.ComboBoxMenor_ComiteSecretaria.Location = New System.Drawing.Point(381, 242)
-        Me.ComboBoxMenor_ComiteSecretaria.Name = "ComboBoxMenor_ComiteSecretaria"
-        Me.ComboBoxMenor_ComiteSecretaria.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBoxMenor_ComiteSecretaria.TabIndex = 184
-        Me.ComboBoxMenor_ComiteSecretaria.Text = "Si"
-        '
         'DateTimePickerFechaVence_ComiteSecretaria
         '
         Me.DateTimePickerFechaVence_ComiteSecretaria.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1624,16 +1594,6 @@ Partial Class Ventana_Principal
         Me.TextBoxComitesSecretaria.Name = "TextBoxComitesSecretaria"
         Me.TextBoxComitesSecretaria.Size = New System.Drawing.Size(236, 22)
         Me.TextBoxComitesSecretaria.TabIndex = 179
-        '
-        'ComboBoxMenor_ComiteVocal2
-        '
-        Me.ComboBoxMenor_ComiteVocal2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxMenor_ComiteVocal2.Items.AddRange(New Object() {"Si", "No"})
-        Me.ComboBoxMenor_ComiteVocal2.Location = New System.Drawing.Point(381, 360)
-        Me.ComboBoxMenor_ComiteVocal2.Name = "ComboBoxMenor_ComiteVocal2"
-        Me.ComboBoxMenor_ComiteVocal2.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBoxMenor_ComiteVocal2.TabIndex = 172
-        Me.ComboBoxMenor_ComiteVocal2.Text = "Si"
         '
         'DateTimePickerFechaVence_ComiteVocal2
         '
@@ -1677,16 +1637,6 @@ Partial Class Ventana_Principal
         Me.TextBoxComitesVocal2.Size = New System.Drawing.Size(236, 22)
         Me.TextBoxComitesVocal2.TabIndex = 167
         '
-        'ComboBoxMenor_ComiteVocal1
-        '
-        Me.ComboBoxMenor_ComiteVocal1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxMenor_ComiteVocal1.Items.AddRange(New Object() {"Si", "No"})
-        Me.ComboBoxMenor_ComiteVocal1.Location = New System.Drawing.Point(381, 302)
-        Me.ComboBoxMenor_ComiteVocal1.Name = "ComboBoxMenor_ComiteVocal1"
-        Me.ComboBoxMenor_ComiteVocal1.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBoxMenor_ComiteVocal1.TabIndex = 166
-        Me.ComboBoxMenor_ComiteVocal1.Text = "Si"
-        '
         'DateTimePickerFechaVence_ComiteVocal1
         '
         Me.DateTimePickerFechaVence_ComiteVocal1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1728,16 +1678,6 @@ Partial Class Ventana_Principal
         Me.TextBoxComitesVocal1.Name = "TextBoxComitesVocal1"
         Me.TextBoxComitesVocal1.Size = New System.Drawing.Size(236, 22)
         Me.TextBoxComitesVocal1.TabIndex = 161
-        '
-        'ComboBoxMenor_ComiteVicePresidente
-        '
-        Me.ComboBoxMenor_ComiteVicePresidente.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxMenor_ComiteVicePresidente.Items.AddRange(New Object() {"Si", "No"})
-        Me.ComboBoxMenor_ComiteVicePresidente.Location = New System.Drawing.Point(381, 181)
-        Me.ComboBoxMenor_ComiteVicePresidente.Name = "ComboBoxMenor_ComiteVicePresidente"
-        Me.ComboBoxMenor_ComiteVicePresidente.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBoxMenor_ComiteVicePresidente.TabIndex = 160
-        Me.ComboBoxMenor_ComiteVicePresidente.Text = "Si"
         '
         'DateTimePickerFechaVence_ComiteVicePresidente
         '
@@ -1800,16 +1740,6 @@ Partial Class Ventana_Principal
         Me.Label54.Size = New System.Drawing.Size(41, 16)
         Me.Label54.TabIndex = 153
         Me.Label54.Text = "Rige:"
-        '
-        'ComboBoxMenor_ComitePresidente
-        '
-        Me.ComboBoxMenor_ComitePresidente.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxMenor_ComitePresidente.Items.AddRange(New Object() {"Si", "No"})
-        Me.ComboBoxMenor_ComitePresidente.Location = New System.Drawing.Point(381, 122)
-        Me.ComboBoxMenor_ComitePresidente.Name = "ComboBoxMenor_ComitePresidente"
-        Me.ComboBoxMenor_ComitePresidente.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBoxMenor_ComitePresidente.TabIndex = 152
-        Me.ComboBoxMenor_ComitePresidente.Text = "Si"
         '
         'Label53
         '
@@ -3350,6 +3280,62 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosMenorSi.Text = "Si"
         Me.RadioButtonSociosMenorSi.UseVisualStyleBackColor = True
         '
+        'TextBoxComiteMenorPresi
+        '
+        Me.TextBoxComiteMenorPresi.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxComiteMenorPresi.Location = New System.Drawing.Point(379, 124)
+        Me.TextBoxComiteMenorPresi.Name = "TextBoxComiteMenorPresi"
+        Me.TextBoxComiteMenorPresi.Size = New System.Drawing.Size(56, 22)
+        Me.TextBoxComiteMenorPresi.TabIndex = 248
+        '
+        'TextBoxComiteMenorViceP
+        '
+        Me.TextBoxComiteMenorViceP.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxComiteMenorViceP.Location = New System.Drawing.Point(379, 183)
+        Me.TextBoxComiteMenorViceP.Name = "TextBoxComiteMenorViceP"
+        Me.TextBoxComiteMenorViceP.Size = New System.Drawing.Size(56, 22)
+        Me.TextBoxComiteMenorViceP.TabIndex = 249
+        '
+        'TextBoxComiteMenorSec
+        '
+        Me.TextBoxComiteMenorSec.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxComiteMenorSec.Location = New System.Drawing.Point(381, 244)
+        Me.TextBoxComiteMenorSec.Name = "TextBoxComiteMenorSec"
+        Me.TextBoxComiteMenorSec.Size = New System.Drawing.Size(56, 22)
+        Me.TextBoxComiteMenorSec.TabIndex = 250
+        '
+        'TextBoxComiteMenorVoc1
+        '
+        Me.TextBoxComiteMenorVoc1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxComiteMenorVoc1.Location = New System.Drawing.Point(379, 303)
+        Me.TextBoxComiteMenorVoc1.Name = "TextBoxComiteMenorVoc1"
+        Me.TextBoxComiteMenorVoc1.Size = New System.Drawing.Size(56, 22)
+        Me.TextBoxComiteMenorVoc1.TabIndex = 251
+        '
+        'TextBoxComiteMenorVoc2
+        '
+        Me.TextBoxComiteMenorVoc2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxComiteMenorVoc2.Location = New System.Drawing.Point(379, 361)
+        Me.TextBoxComiteMenorVoc2.Name = "TextBoxComiteMenorVoc2"
+        Me.TextBoxComiteMenorVoc2.Size = New System.Drawing.Size(56, 22)
+        Me.TextBoxComiteMenorVoc2.TabIndex = 252
+        '
+        'TextBoxComiteMenorSupl1
+        '
+        Me.TextBoxComiteMenorSupl1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxComiteMenorSupl1.Location = New System.Drawing.Point(382, 421)
+        Me.TextBoxComiteMenorSupl1.Name = "TextBoxComiteMenorSupl1"
+        Me.TextBoxComiteMenorSupl1.Size = New System.Drawing.Size(56, 22)
+        Me.TextBoxComiteMenorSupl1.TabIndex = 253
+        '
+        'TextBoxComiteMenorSupl2
+        '
+        Me.TextBoxComiteMenorSupl2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxComiteMenorSupl2.Location = New System.Drawing.Point(385, 479)
+        Me.TextBoxComiteMenorSupl2.Name = "TextBoxComiteMenorSupl2"
+        Me.TextBoxComiteMenorSupl2.Size = New System.Drawing.Size(56, 22)
+        Me.TextBoxComiteMenorSupl2.TabIndex = 254
+        '
         'Ventana_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3485,7 +3471,6 @@ Partial Class Ventana_Principal
     Friend WithEvents Label17 As Label
     Friend WithEvents Label55 As Label
     Friend WithEvents Label54 As Label
-    Friend WithEvents ComboBoxMenor_ComitePresidente As ComboBox
     Friend WithEvents Label53 As Label
     Friend WithEvents DateTimePickerFechaVence_ComitePresidente As DateTimePicker
     Friend WithEvents TextBoxTipo_comitePresidente As TextBox
@@ -3495,7 +3480,6 @@ Partial Class Ventana_Principal
     Friend WithEvents Label80 As Label
     Friend WithEvents Label81 As Label
     Friend WithEvents Label83 As Label
-    Friend WithEvents ComboBoxMenor_ComiteSuplente2 As ComboBox
     Friend WithEvents DateTimePickerFechaVence_ComiteSuplente2 As DateTimePicker
     Friend WithEvents TextBoxTipo_ComiteSuplente2 As TextBox
     Friend WithEvents DateTimePickerFechaRige_ComiteSuplente2 As DateTimePicker
@@ -3518,7 +3502,6 @@ Partial Class Ventana_Principal
     Friend WithEvents Label59 As Label
     Friend WithEvents Label60 As Label
     Friend WithEvents Label62 As Label
-    Friend WithEvents ComboBoxMenor_ComiteSuplente1 As ComboBox
     Friend WithEvents DateTimePickerFechaVence_ComiteSuplente1 As DateTimePicker
     Friend WithEvents TextBoxTipo_ComiteSuplente1 As TextBox
     Friend WithEvents DateTimePickerFechaRige_ComiteSuplente1 As DateTimePicker
@@ -3532,25 +3515,21 @@ Partial Class Ventana_Principal
     Friend WithEvents Label20 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents ComboBoxMenor_ComiteSecretaria As ComboBox
     Friend WithEvents DateTimePickerFechaVence_ComiteSecretaria As DateTimePicker
     Friend WithEvents TextBoxTipo_ComiteSecretaria As TextBox
     Friend WithEvents DateTimePickerFechaRige_ComiteSecretaria As DateTimePicker
     Friend WithEvents TextBoxID_ComiteSecretaria As TextBox
     Friend WithEvents TextBoxComitesSecretaria As TextBox
-    Friend WithEvents ComboBoxMenor_ComiteVocal2 As ComboBox
     Friend WithEvents DateTimePickerFechaVence_ComiteVocal2 As DateTimePicker
     Friend WithEvents TextBoxTipo_ComiteVocal2 As TextBox
     Friend WithEvents DateTimePickerFechaRige_ComiteVocal2 As DateTimePicker
     Friend WithEvents TextBoxID_ComiteVocal2 As TextBox
     Friend WithEvents TextBoxComitesVocal2 As TextBox
-    Friend WithEvents ComboBoxMenor_ComiteVocal1 As ComboBox
     Friend WithEvents DateTimePickerFechaVence_ComiteVocal1 As DateTimePicker
     Friend WithEvents TextBoxTipo_ComiteVocal1 As TextBox
     Friend WithEvents DateTimePickerFechaRige_ComiteVocal1 As DateTimePicker
     Friend WithEvents TextBoxID_ComiteVocal1 As TextBox
     Friend WithEvents TextBoxComitesVocal1 As TextBox
-    Friend WithEvents ComboBoxMenor_ComiteVicePresidente As ComboBox
     Friend WithEvents DateTimePickerFechaVence_ComiteVicePresidente As DateTimePicker
     Friend WithEvents TextBoxTipo_ComiteVicePresidente As TextBox
     Friend WithEvents DateTimePickerFechaRige_ComiteVicePresidente As DateTimePicker
@@ -3673,4 +3652,11 @@ Partial Class Ventana_Principal
     Friend WithEvents Panel3 As Panel
     Friend WithEvents RadioButtonSociosMenorNo As RadioButton
     Friend WithEvents RadioButtonSociosMenorSi As RadioButton
+    Friend WithEvents TextBoxComiteMenorSupl2 As TextBox
+    Friend WithEvents TextBoxComiteMenorSupl1 As TextBox
+    Friend WithEvents TextBoxComiteMenorVoc2 As TextBox
+    Friend WithEvents TextBoxComiteMenorVoc1 As TextBox
+    Friend WithEvents TextBoxComiteMenorSec As TextBox
+    Friend WithEvents TextBoxComiteMenorViceP As TextBox
+    Friend WithEvents TextBoxComiteMenorPresi As TextBox
 End Class

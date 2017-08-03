@@ -8,4 +8,20 @@
     Public cedual As String
     Public tipo As String
 
+    Public Sub comiteClaseCostructor(ByVal tipoConsejop As String, ByVal nombreCompletop As String,
+                                    ByVal ocupacionp As String, ByVal menorp As String,
+                                    ByVal fechaRigep As DateTime, ByVal fechaVencep As DateTime,
+                                    ByVal cedulap As String, ByVal tipop As String)
+        tipoConsejo = tipoConsejop
+        nombreCompleto = nombreCompletop
+        ocupacion = ocupacionp
+        menor = menorp
+        fechaRige = fechaRigep
+        fechaVence = fechaVencep
+        cedual = cedulap
+        tipo = tipop
+    End Sub
+
+
+
 End Class

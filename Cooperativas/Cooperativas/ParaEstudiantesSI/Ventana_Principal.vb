@@ -111,7 +111,8 @@ Public Class Ventana_Principal
     End Sub
 
     Private Sub ButtonConsultar_InformacionAccidente_Click(sender As Object, e As EventArgs) Handles ButtonConsultar_InformacionAccidente.Click
-
+        comites.limpiar()
+        comites.consultar()
     End Sub
 
     Private Sub ButtonSociosLimpiar_Click(sender As Object, e As EventArgs) Handles ButtonSociosLimpiar.Click
