@@ -98,6 +98,31 @@ Public Class ConexionBD
 
     End Function
 
+    Function obtenerDatosReporteDeComites(ByVal idTipo As String) As List(Of ComiteClase)
+        Dim MyList As New List(Of ComiteClase)
+        Try
+            SQL = "SELECT COMITES.* FROM [COMITES] WHERE ((tipoConsejo) = '" & idTipo & "')"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim nuevosocio As ComiteClase = New ComiteClase
+                    nuevosocio.comiteClaseCostructor(reader.GetString(1), reader.GetString(2), reader.GetString(3),
+                                                    reader.GetString(4), reader.GetDateTime(5), reader.GetDateTime(6),
+                                                    reader.GetString(7), reader.GetString(8))
+                    MyList.Add(nuevosocio)
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de que madre: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
     Function obtenerDatosReporteDeSocios(ByVal tipoReporte As String) As List(Of SocioClase)
         Dim MyList As New List(Of SocioClase)
         Try
@@ -134,7 +159,6 @@ Public Class ConexionBD
         End Try
         Return MyList
     End Function
-
 
     'Selecciona todos los campos de un Socio por número de socio
     Function consultarSocioPorNumAsociado(ByVal numAsociado As String) As List(Of String)
@@ -264,6 +288,29 @@ Public Class ConexionBD
             MessageBox.Show("Error en la base de datos: " + ex.Message)
         End Try
         Return MyList
+    End Function
+
+    ''Para poder actualizar a un comité
+    Function actualizarComite(ByVal nombreCompleto As String, ByVal ocupacion As String,
+                             ByVal menor As String, ByVal fechaRige As Date,
+                             ByVal fechaVence As Date, ByVal cedula As String,
+                              ByVal tipoConsejo As String, ByVal puesto As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "UPDATE [CONSEJOS] SET nombreCompleto = '" & nombreCompleto & "', " & "ocpacion = '" & ocupacion & "', " & "menor = '" & menor & "', " & "fechaRige = '" & fechaRige & "',  " & "fechaVence = '" & fechaVence & "', " & "cedula = '" & cedula & "' WHERE ((tipoConsejo) = '" & tipoConsejo & "' and (tipo) = '" & puesto & "' )"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+
+        Return res
     End Function
 
 End Class
