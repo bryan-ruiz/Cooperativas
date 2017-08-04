@@ -130,7 +130,9 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ComiteClase.vb" />
     <Compile Include="Clases\SocioClase.vb" />
+    <Compile Include="Codigo\Comites.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="ConexionBD.vb" />
     <Compile Include="CoopeBDDataSet.Designer.vb">
