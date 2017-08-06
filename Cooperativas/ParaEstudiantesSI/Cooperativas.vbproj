@@ -130,9 +130,16 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ComiteClase.vb" />
     <Compile Include="Clases\SocioClase.vb" />
+    <Compile Include="Codigo\Comites.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="ConexionBD.vb" />
+    <Compile Include="CoopeBDDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoopeBDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -197,6 +204,17 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="CoopeBDDataSet.xsc">
+      <DependentUpon>CoopeBDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CoopeBDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CoopeBDDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CoopeBDDataSet.xss">
+      <DependentUpon>CoopeBDDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Cooperativas_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -209,6 +227,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CoopeBD.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagen\btn2.png" />
     <Content Include="Imagen\coopePrueba.jpg" />
     <Content Include="Imagen\fondo.jpg" />

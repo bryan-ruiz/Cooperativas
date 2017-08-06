@@ -78,14 +78,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cooperativas.exe" size="8512400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cooperativas.exe" size="8551312">
       <assemblyIdentity name="Cooperativas" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>wwHnqwEoly5EDhA5giFFc6ZKJL4=</dsig:DigestValue>
+        <dsig:DigestValue>iSEysMhHzHA01My2SWa2ZHJ99Uk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -185,13 +185,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Cooperativas.exe.config" size="1365">
+  <file name="CoopeBD.mdb" size="1638400" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>eeEkU5qBnZE7/jitT4jiJ8Fxf9g=</dsig:DigestValue>
+      <dsig:DigestValue>gQK54So6BWJRXatk2oaM6HQNpvc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Cooperativas.exe.config" size="1591">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>zhCaeLcjGPoE3/MKdO1mL/TR+n8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Imagen\btn2.png" size="2414">

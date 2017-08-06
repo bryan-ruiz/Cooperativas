@@ -67,6 +67,14 @@ Public Class Socios
                         Ventana_Principal.RadioButtonSociosActivo.Checked = False
                         Ventana_Principal.RadioButtonSociosRetirado.Checked = True
                     End If
+                    If valores.Item(18).Equals("No") Then
+                        Ventana_Principal.RadioButtonSociosMenorNo.Checked = True
+                        Ventana_Principal.RadioButtonSociosMenorSi.Checked = False
+                    End If
+                    If valores.Item(18).Equals("Si") Then
+                        Ventana_Principal.RadioButtonSociosMenorSi.Checked = True
+                        Ventana_Principal.RadioButtonSociosMenorNo.Checked = False
+                    End If
                     Ventana_Principal.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
                     Ventana_Principal.TextBoxSociosNotasRetiro.Text = valores.Item(17)
 
@@ -104,7 +112,7 @@ Public Class Socios
         Dim estado As String = ""
         Dim fechaRetiro As Date = Ventana_Principal.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
         Dim notasRetiro As String = Ventana_Principal.TextBoxSociosNotasRetiro.Text
-
+        Dim menor As String = ""
         'Para el genero
         If (Ventana_Principal.RadioButtonSociosMasculino.Checked = True) Then
             genero = Ventana_Principal.RadioButtonSociosMasculino.Text
@@ -112,6 +120,12 @@ Public Class Socios
             genero = Ventana_Principal.RadioButtonSociosFemenino.Text
         End If
 
+        'Para ver si es menor
+        If (Ventana_Principal.RadioButtonSociosMenorNo.Checked = True) Then
+            menor = Ventana_Principal.RadioButtonSociosMenorNo.Text
+        Else
+            menor = Ventana_Principal.RadioButtonSociosMenorSi.Text
+        End If
         'Para el estado
         If (Ventana_Principal.RadioButtonSociosActivo.Checked = True) Then
             estado = Ventana_Principal.RadioButtonSociosActivo.Text
@@ -124,7 +138,8 @@ Public Class Socios
         Else
             Try
                 BD.ConectarBD()
-                Dim insertado As Integer = BD.insertarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro)
+                Dim insertado As Integer = BD.insertarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad,
+                                                            direccion, genero, estado, fechaRetiro, notasRetiro, menor)
 
                 If insertado = 1 Then
                     MessageBox.Show("Socio ingresado con éxito!")
@@ -159,6 +174,7 @@ Public Class Socios
         Dim direccion As String = Ventana_Principal.TextBoxSociosDireccion.Text
         Dim genero As String = ""
         Dim estado As String = ""
+        Dim menor As String = ""
         Dim fechaRetiro As Date = Ventana_Principal.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
         Dim notasRetiro As String = Ventana_Principal.TextBoxSociosNotasRetiro.Text
 
@@ -168,7 +184,12 @@ Public Class Socios
         Else
             genero = Ventana_Principal.RadioButtonSociosFemenino.Text
         End If
-
+        'Para ver si es menor
+        If (Ventana_Principal.RadioButtonSociosMenorNo.Checked = True) Then
+            menor = Ventana_Principal.RadioButtonSociosMenorNo.Text
+        Else
+            menor = Ventana_Principal.RadioButtonSociosMenorSi.Text
+        End If
         'Para el estado
         If (Ventana_Principal.RadioButtonSociosActivo.Checked = True) Then
             estado = Ventana_Principal.RadioButtonSociosActivo.Text
@@ -181,7 +202,8 @@ Public Class Socios
         Else
             Try
                 BD.ConectarBD()
-                Dim modificado = BD.actualizarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro)
+                Dim modificado = BD.actualizarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad,
+                                                    direccion, genero, estado, fechaRetiro, notasRetiro, menor)
                 If modificado = 1 Then
                     MessageBox.Show("Socio actualizado con éxito!")
                     limpiar()
@@ -263,10 +285,8 @@ Public Class Socios
         Dim tipoReporte As String = ""
         If (Ventana_Principal.RadioButtonSociosReporteTodos.Checked = True) Then
             tipoReporte = Ventana_Principal.RadioButtonSociosReporteTodos.Text
-            MessageBox.Show("Entro a if 1: " + tipoReporte)
         Else
             tipoReporte = "Activos"
-            MessageBox.Show("Entro a if 1: " + tipoReporte)
         End If
         Try
             Dim valores As List(Of SocioClase)
@@ -275,7 +295,7 @@ Public Class Socios
             BD.CerrarConexion()
 
             'Exporting to PDF
-            Dim folderPath As String = "C:\Reportes\"
+            Dim folderPath As String = "C:\Reportes\reporteSocios.pdf"
             If Not Directory.Exists(folderPath) Then
                 Directory.CreateDirectory(folderPath)
             End If
@@ -316,9 +336,6 @@ Public Class Socios
             MessageBox.Show("Error de: " + ex.ToString)
         End Try
     End Sub
-
-
-
 
     'Genera un reporte de de matrícula en PDF'
     Public Sub generarReporteDeMatricula()
