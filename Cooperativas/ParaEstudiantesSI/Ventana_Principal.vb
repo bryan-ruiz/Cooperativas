@@ -7,7 +7,7 @@ Public Class Ventana_Principal
     Dim socios As Socios = New Socios
     Dim comites As Comites = New Comites
     Dim usuarios As Usuarios = New Usuarios
-    Dim configuration As Configuracion = New Configuracion
+    Dim configuracion As Configuracion = New Configuracion
 
 
     '//////////////////////////
@@ -177,7 +177,7 @@ Public Class Ventana_Principal
 
 
     Private Sub ConfigurationButtonConsultar_Click(sender As Object, e As EventArgs) Handles ConfigurationButtonConsultar.Click
-        configuration.consultar()
+        configuracion.consultar()
     End Sub
 
     Private Sub ConfigurationButtonActualizar_Click(sender As Object, e As EventArgs) Handles ConfigurationButtonActualizar.Click
