@@ -49,7 +49,7 @@ Public Class Comites
     End Sub
 
     Public Sub escribirDatos(ByVal valores As List(Of ComiteClase),
-                             ByVal pdfDoc As iTextSharp.text.Document)
+                             ByVal pdfDoc As iTextSharp.text.Document, ByVal writer As iTextSharp.text.pdf.PdfWriter)
         If valores.Count = 0 Then
             pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
             pdfDoc.Add(New Paragraph("************ No se poseen datos del comité ******************"))
@@ -58,8 +58,9 @@ Public Class Comites
         Dim contador As Integer = 0
         Dim conta As Integer = 0
         While contador < valores.Count
-            If conta = 2 Then
+            If conta = 3 Then
                 pdfDoc.NewPage()
+                encabezadoPDF(writer, pdfDoc)
                 conta = 0
             End If
             conta = conta + 1
@@ -78,13 +79,13 @@ Public Class Comites
     Public Sub generarReporteDeComites()
         Try
             'Exporting to PDF
-            Dim folderPath As String = "C:\Reportes\reporteComites.pdf"
+            Dim folderPath As String = "C:\Reportes\"
             If Not Directory.Exists(folderPath) Then
                 Directory.CreateDirectory(folderPath)
             End If
 
             Dim pdfDoc As New Document()
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(folderPath & "reporteSocios.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(folderPath & "reporteComites.pdf", FileMode.Create))
             pdfDoc.Open()
             encabezadoPDF(pdfWrite, pdfDoc)
             Dim valores As List(Of ComiteClase)
@@ -92,23 +93,23 @@ Public Class Comites
             BD.ConectarBD()
             valores = BD.obtenerDatosdeUnComite("Consejo de administración")
             pdfDoc.Add(New Paragraph("                                           COMITÉ CONSEJO DE ADMINISTRACIÓN "))
-            escribirDatos(valores, pdfDoc)
+            escribirDatos(valores, pdfDoc, pdfWrite)
             valores = BD.obtenerDatosdeUnComite("Vigilancia")
             pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
             pdfDoc.Add(New Paragraph("                                              COMITÉ DE VIGILANCIA "))
-            escribirDatos(valores, pdfDoc)
+            escribirDatos(valores, pdfDoc, pdfWrite)
             valores = BD.obtenerDatosdeUnComite("Asesor")
             pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
             pdfDoc.Add(New Paragraph("                                              COMITÉ DE ASESOR "))
-            escribirDatos(valores, pdfDoc)
+            escribirDatos(valores, pdfDoc, pdfWrite)
             valores = BD.obtenerDatosdeUnComite("Ahorro")
             pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
             pdfDoc.Add(New Paragraph("                                              COMITÉ DE AHORRO "))
-            escribirDatos(valores, pdfDoc)
+            escribirDatos(valores, pdfDoc, pdfWrite)
             valores = BD.obtenerDatosdeUnComite("Educación Bienestar Social")
             pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
             pdfDoc.Add(New Paragraph("                                    COMITÉ DE EDUCACIÓN Y BIENESTAR SOCIAL "))
-            escribirDatos(valores, pdfDoc)
+            escribirDatos(valores, pdfDoc, pdfWrite)
             BD.CerrarConexion()
 
             pdfDoc.Close()
@@ -343,7 +344,7 @@ Public Class Comites
         ElseIf tipo = "suplente1" Then
             cedula = Ventana_Principal.TextBoxID_ComiteSuplente1.Text
         ElseIf tipo = "suplente2" Then
-            cedula = Ventana_Principal.TextBoxID_ComiteSuplente1.Text
+            cedula = Ventana_Principal.TextBoxID_ComiteSuplente2.Text
         End If
 
         If (cedula = "") Then

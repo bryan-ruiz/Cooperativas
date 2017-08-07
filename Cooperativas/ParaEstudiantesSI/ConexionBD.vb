@@ -116,10 +116,8 @@ Public Class ConexionBD
         Dim MyList As New List(Of SocioClase)
         Try
             If tipoReporte = "Activos" Then
-                MessageBox.Show("entrs activos 23")
                 SQL = "SELECT SOCIOS.* FROM [SOCIOS] WHERE ((estado) = 'Activo')"
             Else
-                MessageBox.Show("entrs activos 24")
                 SQL = "SELECT SOCIOS.* FROM [SOCIOS]"
             End If
 

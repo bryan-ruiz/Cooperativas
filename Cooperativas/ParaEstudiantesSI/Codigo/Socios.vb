@@ -295,7 +295,7 @@ Public Class Socios
             BD.CerrarConexion()
 
             'Exporting to PDF
-            Dim folderPath As String = "C:\Reportes\reporteSocios.pdf"
+            Dim folderPath As String = "C:\Reportes\"
             If Not Directory.Exists(folderPath) Then
                 Directory.CreateDirectory(folderPath)
             End If
@@ -310,6 +310,7 @@ Public Class Socios
             While contador < valores.Count
                 If conta = 2 Then
                     pdfDoc.NewPage()
+                    OnStartPage(pdfWrite, pdfDoc)
                     conta = 0
                 End If
                 conta = conta + 1
