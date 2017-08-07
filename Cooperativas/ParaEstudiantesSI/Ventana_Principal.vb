@@ -6,6 +6,9 @@ Public Class Ventana_Principal
     Dim BD As ConexionBD = New ConexionBD
     Dim socios As Socios = New Socios
     Dim comites As Comites = New Comites
+    Dim usuarios As Usuarios = New Usuarios
+
+
 
     '//////////////////////////
     '///////  SOCIOS //////////
@@ -156,6 +159,19 @@ Public Class Ventana_Principal
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Close()
         Ventana_Acceso.Close()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosSalir.Click
+        Me.Close()
+        Ventana_Acceso.Close()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosEliminar.Click
+        usuarios.eliminar()
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosInsertar.Click
+        usuarios.insertar()
     End Sub
 
     ''Esta es la ventana correcta nuevo master

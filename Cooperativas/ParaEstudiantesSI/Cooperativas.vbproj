@@ -134,6 +134,7 @@
     <Compile Include="Clases\SocioClase.vb" />
     <Compile Include="Codigo\Comites.vb" />
     <Compile Include="Codigo\Socios.vb" />
+    <Compile Include="Codigo\Usuarios.vb" />
     <Compile Include="ConexionBD.vb" />
     <Compile Include="CoopeBDDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -297,6 +298,9 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AxAcroPDFLib\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

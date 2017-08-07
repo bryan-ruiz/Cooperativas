@@ -40,6 +40,50 @@ Public Class ConexionBD
         End Try
     End Sub
 
+    'Inserta un Socio  
+    Function insertarUsuario(ByVal rol As String, ByVal usuario As String, ByVal contrasena As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "INSERT INTO [USUARIOS]" &
+           "(Usuario, Rol, Contrasena)" &
+            "VALUES ('" + usuario + "', '" + rol + "', '" + contrasena + "')"
+            'Comando para ejecutar el query'
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return res
+    End Function
+
+    'Inserta un Socio  
+    Function eliminarUsuario(ByVal usuario As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es eliminar'
+
+            SQL = "DELETE FROM [USUARIOS]" &
+            "WHERE Usuario = ('" + usuario + "')"
+            'Comando para ejecutar el query'
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return res
+    End Function
+
     'Selecciona todos los campos de un Socio por número de cédula
     Function consultarSocioPorCedula(ByVal cedula As String) As List(Of String)
         Dim MyList As New List(Of String)
