@@ -281,7 +281,7 @@ Public Class ConexionBD
         Return MyList
     End Function
 
-    ''/////////////////////////  FUNCIONES DE COMITE EN BASE DE DATOS
+    'FUNCIONES DE COMITE EN BASE DE DATOS
     Function obtenerDatosdeUnComite(ByVal idComite As String) As List(Of ComiteClase)
         Dim MyList As New List(Of ComiteClase)
         Try
@@ -333,6 +333,37 @@ Public Class ConexionBD
         End Try
 
         Return res
+    End Function
+
+    'FUNCIONES DE COMITE EN BASE DE DATOS
+    Function obtenerDatosdeConfiguration(ByVal periodo As String) As List(Of ConfiguracionClase)
+        Dim MyList As New List(Of ConfiguracionClase)
+        Try
+            SQL = "SELECT CONFIGURACION.* FROM [CONFIGURACION] WHERE ((periodo)= '" & periodo & "')"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim nuevaConfiguracion As ConfiguracionClase = New ConfiguracionClase
+                    Try
+                        nuevaConfiguracion.configuracionClaseCostructor(reader.GetString(1), reader.GetString(2), reader.GetString(3),
+                                                    reader.GetString(4), reader.GetDateTime(5), reader.GetDateTime(6), reader.GetString(7), reader.GetString(8),
+                                                    reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), reader.GetString(14))
+                        MyList.Add(nuevaConfiguracion)
+                    Catch ex As Exception
+
+                    End Try
+
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
     End Function
 
 End Class

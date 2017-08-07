@@ -239,7 +239,7 @@ Partial Class Ventana_Principal
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.ButtonConsultarSocio = New System.Windows.Forms.Button()
+        Me.CertificadosButtonConsultar = New System.Windows.Forms.Button()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -248,7 +248,7 @@ Partial Class Ventana_Principal
         Me.Button12 = New System.Windows.Forms.Button()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Button14 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonActualizar = New System.Windows.Forms.Button()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.ButtonSociosReporte = New System.Windows.Forms.Button()
         Me.Label40 = New System.Windows.Forms.Label()
@@ -308,6 +308,7 @@ Partial Class Ventana_Principal
         Me.Excedentes = New System.Windows.Forms.GroupBox()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.ConfigurationButtonConsultar = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Button23 = New System.Windows.Forms.Button()
         Me.Label138 = New System.Windows.Forms.Label()
@@ -316,37 +317,37 @@ Partial Class Ventana_Principal
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.Label139 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.ConfiguracionRadioButtonIngresos = New System.Windows.Forms.RadioButton()
+        Me.ConfigurationRadioButtonGasto = New System.Windows.Forms.RadioButton()
         Me.TextBox47 = New System.Windows.Forms.TextBox()
         Me.Label137 = New System.Windows.Forms.Label()
         Me.Label136 = New System.Windows.Forms.Label()
         Me.Label135 = New System.Windows.Forms.Label()
         Me.Label134 = New System.Windows.Forms.Label()
-        Me.TextBox45 = New System.Windows.Forms.TextBox()
-        Me.TextBox46 = New System.Windows.Forms.TextBox()
-        Me.TextBox44 = New System.Windows.Forms.TextBox()
+        Me.ConfiguracionTextBoxTelefono = New System.Windows.Forms.TextBox()
+        Me.ConfiguracionTextBoxCedulaJuridica = New System.Windows.Forms.TextBox()
+        Me.ConfiguracionTextBoxCooperativa = New System.Windows.Forms.TextBox()
         Me.Label133 = New System.Windows.Forms.Label()
         Me.Label132 = New System.Windows.Forms.Label()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.DateTimePicker49 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfigurationButtonActualizar = New System.Windows.Forms.Button()
+        Me.ConfiguracionDateTimePickerFecha10 = New System.Windows.Forms.DateTimePicker()
         Me.Label131 = New System.Windows.Forms.Label()
-        Me.DateTimePicker48 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker44 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker45 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker46 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker47 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker42 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker43 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker41 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker40 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfiguracionDateTimePickerFecha9 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfiguracionDateTimePickerFecha8 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfiguracionDateTimePickerFecha6 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfiguracionDateTimePickerFecha5 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfiguracionDateTimePickerFecha4 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfiguracionDateTimePickerFecha3 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfiguracionDateTimePickerFecha2 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfiguracionDateTimePickerFecha1 = New System.Windows.Forms.DateTimePicker()
         Me.Label128 = New System.Windows.Forms.Label()
         Me.Label129 = New System.Windows.Forms.Label()
         Me.Label130 = New System.Windows.Forms.Label()
         Me.Label125 = New System.Windows.Forms.Label()
         Me.Label126 = New System.Windows.Forms.Label()
         Me.Label127 = New System.Windows.Forms.Label()
-        Me.TextBox43 = New System.Windows.Forms.TextBox()
+        Me.ConfiguracionTextBoxPeriodo = New System.Windows.Forms.TextBox()
         Me.Label124 = New System.Windows.Forms.Label()
         Me.Label123 = New System.Windows.Forms.Label()
         Me.Label122 = New System.Windows.Forms.Label()
@@ -2241,7 +2242,7 @@ Partial Class Ventana_Principal
         Me.GroupBox3.Controls.Add(Me.TextBox5)
         Me.GroupBox3.Controls.Add(Me.Label28)
         Me.GroupBox3.Controls.Add(Me.Label21)
-        Me.GroupBox3.Controls.Add(Me.ButtonConsultarSocio)
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonConsultar)
         Me.GroupBox3.Controls.Add(Me.Label35)
         Me.GroupBox3.Controls.Add(Me.TextBox1)
         Me.GroupBox3.Controls.Add(Me.Label37)
@@ -2250,7 +2251,7 @@ Partial Class Ventana_Principal
         Me.GroupBox3.Controls.Add(Me.Button12)
         Me.GroupBox3.Controls.Add(Me.TextBox3)
         Me.GroupBox3.Controls.Add(Me.TextBox4)
-        Me.GroupBox3.Controls.Add(Me.Button14)
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonActualizar)
         Me.GroupBox3.Controls.Add(Me.Label39)
         Me.GroupBox3.Controls.Add(Me.ButtonSociosReporte)
         Me.GroupBox3.Controls.Add(Me.Label40)
@@ -2715,19 +2716,19 @@ Partial Class Ventana_Principal
         Me.Label21.TabIndex = 142
         Me.Label21.Text = "Periodo:"
         '
-        'ButtonConsultarSocio
+        'CertificadosButtonConsultar
         '
-        Me.ButtonConsultarSocio.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonConsultarSocio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonConsultarSocio.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonConsultarSocio.ForeColor = System.Drawing.Color.White
-        Me.ButtonConsultarSocio.Image = CType(resources.GetObject("ButtonConsultarSocio.Image"), System.Drawing.Image)
-        Me.ButtonConsultarSocio.Location = New System.Drawing.Point(750, 48)
-        Me.ButtonConsultarSocio.Name = "ButtonConsultarSocio"
-        Me.ButtonConsultarSocio.Size = New System.Drawing.Size(152, 40)
-        Me.ButtonConsultarSocio.TabIndex = 141
-        Me.ButtonConsultarSocio.Text = "Consultar"
-        Me.ButtonConsultarSocio.UseVisualStyleBackColor = False
+        Me.CertificadosButtonConsultar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CertificadosButtonConsultar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonConsultar.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonConsultar.Image = CType(resources.GetObject("CertificadosButtonConsultar.Image"), System.Drawing.Image)
+        Me.CertificadosButtonConsultar.Location = New System.Drawing.Point(750, 48)
+        Me.CertificadosButtonConsultar.Name = "CertificadosButtonConsultar"
+        Me.CertificadosButtonConsultar.Size = New System.Drawing.Size(152, 40)
+        Me.CertificadosButtonConsultar.TabIndex = 141
+        Me.CertificadosButtonConsultar.Text = "Consultar"
+        Me.CertificadosButtonConsultar.UseVisualStyleBackColor = False
         '
         'Label35
         '
@@ -2804,18 +2805,18 @@ Partial Class Ventana_Principal
         Me.TextBox4.Size = New System.Drawing.Size(236, 22)
         Me.TextBox4.TabIndex = 103
         '
-        'Button14
+        'CertificadosButtonActualizar
         '
-        Me.Button14.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button14.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button14.ForeColor = System.Drawing.Color.White
-        Me.Button14.Image = CType(resources.GetObject("Button14.Image"), System.Drawing.Image)
-        Me.Button14.Location = New System.Drawing.Point(750, 103)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(152, 40)
-        Me.Button14.TabIndex = 119
-        Me.Button14.Text = "Actualizar"
-        Me.Button14.UseVisualStyleBackColor = False
+        Me.CertificadosButtonActualizar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonActualizar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonActualizar.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonActualizar.Image = CType(resources.GetObject("CertificadosButtonActualizar.Image"), System.Drawing.Image)
+        Me.CertificadosButtonActualizar.Location = New System.Drawing.Point(750, 103)
+        Me.CertificadosButtonActualizar.Name = "CertificadosButtonActualizar"
+        Me.CertificadosButtonActualizar.Size = New System.Drawing.Size(152, 40)
+        Me.CertificadosButtonActualizar.TabIndex = 119
+        Me.CertificadosButtonActualizar.Text = "Actualizar"
+        Me.CertificadosButtonActualizar.UseVisualStyleBackColor = False
         '
         'Label39
         '
@@ -3407,6 +3408,7 @@ Partial Class Ventana_Principal
         '
         'GroupBox7
         '
+        Me.GroupBox7.Controls.Add(Me.ConfigurationButtonConsultar)
         Me.GroupBox7.Controls.Add(Me.Button22)
         Me.GroupBox7.Controls.Add(Me.Button23)
         Me.GroupBox7.Controls.Add(Me.Label138)
@@ -3418,30 +3420,30 @@ Partial Class Ventana_Principal
         Me.GroupBox7.Controls.Add(Me.Label136)
         Me.GroupBox7.Controls.Add(Me.Label135)
         Me.GroupBox7.Controls.Add(Me.Label134)
-        Me.GroupBox7.Controls.Add(Me.TextBox45)
-        Me.GroupBox7.Controls.Add(Me.TextBox46)
-        Me.GroupBox7.Controls.Add(Me.TextBox44)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionTextBoxTelefono)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionTextBoxCedulaJuridica)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionTextBoxCooperativa)
         Me.GroupBox7.Controls.Add(Me.Label133)
         Me.GroupBox7.Controls.Add(Me.Label132)
-        Me.GroupBox7.Controls.Add(Me.Button8)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker49)
+        Me.GroupBox7.Controls.Add(Me.ConfigurationButtonActualizar)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha10)
         Me.GroupBox7.Controls.Add(Me.Label131)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker48)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker44)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker45)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker46)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker47)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker42)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker43)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker41)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker40)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha9)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha8)
+        Me.GroupBox7.Controls.Add(Me.DateTimePicker45ConfiguracionDateTimePickerFecha7)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha6)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha5)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha4)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha3)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha2)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha1)
         Me.GroupBox7.Controls.Add(Me.Label128)
         Me.GroupBox7.Controls.Add(Me.Label129)
         Me.GroupBox7.Controls.Add(Me.Label130)
         Me.GroupBox7.Controls.Add(Me.Label125)
         Me.GroupBox7.Controls.Add(Me.Label126)
         Me.GroupBox7.Controls.Add(Me.Label127)
-        Me.GroupBox7.Controls.Add(Me.TextBox43)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionTextBoxPeriodo)
         Me.GroupBox7.Controls.Add(Me.Label124)
         Me.GroupBox7.Controls.Add(Me.Label123)
         Me.GroupBox7.Controls.Add(Me.Label122)
@@ -3453,6 +3455,19 @@ Partial Class Ventana_Principal
         Me.GroupBox7.TabIndex = 0
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Configuración"
+        '
+        'ConfigurationButtonConsultar
+        '
+        Me.ConfigurationButtonConsultar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ConfigurationButtonConsultar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ConfigurationButtonConsultar.ForeColor = System.Drawing.Color.White
+        Me.ConfigurationButtonConsultar.Image = CType(resources.GetObject("ConfigurationButtonConsultar.Image"), System.Drawing.Image)
+        Me.ConfigurationButtonConsultar.Location = New System.Drawing.Point(621, 75)
+        Me.ConfigurationButtonConsultar.Name = "ConfigurationButtonConsultar"
+        Me.ConfigurationButtonConsultar.Size = New System.Drawing.Size(193, 43)
+        Me.ConfigurationButtonConsultar.TabIndex = 163
+        Me.ConfigurationButtonConsultar.Text = "Consultar"
+        Me.ConfigurationButtonConsultar.UseVisualStyleBackColor = False
         '
         'Button22
         '
@@ -3531,34 +3546,34 @@ Partial Class Ventana_Principal
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.RadioButton5)
-        Me.Panel4.Controls.Add(Me.RadioButton6)
+        Me.Panel4.Controls.Add(Me.ConfiguracionRadioButtonIngresos)
+        Me.Panel4.Controls.Add(Me.ConfigurationRadioButtonGasto)
         Me.Panel4.Location = New System.Drawing.Point(630, 298)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(246, 34)
         Me.Panel4.TabIndex = 156
         '
-        'RadioButton5
+        'ConfiguracionRadioButtonIngresos
         '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Checked = True
-        Me.RadioButton5.Location = New System.Drawing.Point(14, 5)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(76, 23)
-        Me.RadioButton5.TabIndex = 141
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "Entrada"
-        Me.RadioButton5.UseVisualStyleBackColor = True
+        Me.ConfiguracionRadioButtonIngresos.AutoSize = True
+        Me.ConfiguracionRadioButtonIngresos.Checked = True
+        Me.ConfiguracionRadioButtonIngresos.Location = New System.Drawing.Point(14, 5)
+        Me.ConfiguracionRadioButtonIngresos.Name = "ConfiguracionRadioButtonIngresos"
+        Me.ConfiguracionRadioButtonIngresos.Size = New System.Drawing.Size(74, 23)
+        Me.ConfiguracionRadioButtonIngresos.TabIndex = 141
+        Me.ConfiguracionRadioButtonIngresos.TabStop = True
+        Me.ConfiguracionRadioButtonIngresos.Text = "Ingreso"
+        Me.ConfiguracionRadioButtonIngresos.UseVisualStyleBackColor = True
         '
-        'RadioButton6
+        'ConfigurationRadioButtonGasto
         '
-        Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Location = New System.Drawing.Point(105, 5)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(66, 23)
-        Me.RadioButton6.TabIndex = 142
-        Me.RadioButton6.Text = "Salida"
-        Me.RadioButton6.UseVisualStyleBackColor = True
+        Me.ConfigurationRadioButtonGasto.AutoSize = True
+        Me.ConfigurationRadioButtonGasto.Location = New System.Drawing.Point(105, 5)
+        Me.ConfigurationRadioButtonGasto.Name = "ConfigurationRadioButtonGasto"
+        Me.ConfigurationRadioButtonGasto.Size = New System.Drawing.Size(62, 23)
+        Me.ConfigurationRadioButtonGasto.TabIndex = 142
+        Me.ConfigurationRadioButtonGasto.Text = "Gasto"
+        Me.ConfigurationRadioButtonGasto.UseVisualStyleBackColor = True
         '
         'TextBox47
         '
@@ -3603,26 +3618,26 @@ Partial Class Ventana_Principal
         Me.Label134.TabIndex = 124
         Me.Label134.Text = "Ced Jurídica:"
         '
-        'TextBox45
+        'ConfiguracionTextBoxTelefono
         '
-        Me.TextBox45.Location = New System.Drawing.Point(198, 156)
-        Me.TextBox45.Name = "TextBox45"
-        Me.TextBox45.Size = New System.Drawing.Size(250, 26)
-        Me.TextBox45.TabIndex = 123
+        Me.ConfiguracionTextBoxTelefono.Location = New System.Drawing.Point(198, 156)
+        Me.ConfiguracionTextBoxTelefono.Name = "ConfiguracionTextBoxTelefono"
+        Me.ConfiguracionTextBoxTelefono.Size = New System.Drawing.Size(250, 26)
+        Me.ConfiguracionTextBoxTelefono.TabIndex = 123
         '
-        'TextBox46
+        'ConfiguracionTextBoxCedulaJuridica
         '
-        Me.TextBox46.Location = New System.Drawing.Point(198, 124)
-        Me.TextBox46.Name = "TextBox46"
-        Me.TextBox46.Size = New System.Drawing.Size(250, 26)
-        Me.TextBox46.TabIndex = 122
+        Me.ConfiguracionTextBoxCedulaJuridica.Location = New System.Drawing.Point(198, 124)
+        Me.ConfiguracionTextBoxCedulaJuridica.Name = "ConfiguracionTextBoxCedulaJuridica"
+        Me.ConfiguracionTextBoxCedulaJuridica.Size = New System.Drawing.Size(250, 26)
+        Me.ConfiguracionTextBoxCedulaJuridica.TabIndex = 122
         '
-        'TextBox44
+        'ConfiguracionTextBoxCooperativa
         '
-        Me.TextBox44.Location = New System.Drawing.Point(198, 92)
-        Me.TextBox44.Name = "TextBox44"
-        Me.TextBox44.Size = New System.Drawing.Size(250, 26)
-        Me.TextBox44.TabIndex = 121
+        Me.ConfiguracionTextBoxCooperativa.Location = New System.Drawing.Point(198, 92)
+        Me.ConfiguracionTextBoxCooperativa.Name = "ConfiguracionTextBoxCooperativa"
+        Me.ConfiguracionTextBoxCooperativa.Size = New System.Drawing.Size(250, 26)
+        Me.ConfiguracionTextBoxCooperativa.TabIndex = 121
         '
         'Label133
         '
@@ -3642,26 +3657,26 @@ Partial Class Ventana_Principal
         Me.Label132.TabIndex = 119
         Me.Label132.Text = "Fechas Límite - Certificados"
         '
-        'Button8
+        'ConfigurationButtonActualizar
         '
-        Me.Button8.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button8.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Image = CType(resources.GetObject("Button8.Image"), System.Drawing.Image)
-        Me.Button8.Location = New System.Drawing.Point(621, 76)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(193, 58)
-        Me.Button8.TabIndex = 118
-        Me.Button8.Text = "Guardar "
-        Me.Button8.UseVisualStyleBackColor = False
+        Me.ConfigurationButtonActualizar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ConfigurationButtonActualizar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ConfigurationButtonActualizar.ForeColor = System.Drawing.Color.White
+        Me.ConfigurationButtonActualizar.Image = CType(resources.GetObject("ConfigurationButtonActualizar.Image"), System.Drawing.Image)
+        Me.ConfigurationButtonActualizar.Location = New System.Drawing.Point(621, 124)
+        Me.ConfigurationButtonActualizar.Name = "ConfigurationButtonActualizar"
+        Me.ConfigurationButtonActualizar.Size = New System.Drawing.Size(193, 43)
+        Me.ConfigurationButtonActualizar.TabIndex = 118
+        Me.ConfigurationButtonActualizar.Text = "Actualizar"
+        Me.ConfigurationButtonActualizar.UseVisualStyleBackColor = False
         '
-        'DateTimePicker49
+        'ConfiguracionDateTimePickerFecha10
         '
-        Me.DateTimePicker49.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker49.Location = New System.Drawing.Point(311, 577)
-        Me.DateTimePicker49.Name = "DateTimePicker49"
-        Me.DateTimePicker49.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker49.TabIndex = 22
+        Me.ConfiguracionDateTimePickerFecha10.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha10.Location = New System.Drawing.Point(311, 577)
+        Me.ConfiguracionDateTimePickerFecha10.Name = "ConfiguracionDateTimePickerFecha10"
+        Me.ConfiguracionDateTimePickerFecha10.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha10.TabIndex = 22
         '
         'Label131
         '
@@ -3672,77 +3687,77 @@ Partial Class Ventana_Principal
         Me.Label131.TabIndex = 21
         Me.Label131.Text = "10º Tracto - Fecha límite:"
         '
-        'DateTimePicker48
+        'ConfiguracionDateTimePickerFecha9
         '
-        Me.DateTimePicker48.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker48.Location = New System.Drawing.Point(311, 543)
-        Me.DateTimePicker48.Name = "DateTimePicker48"
-        Me.DateTimePicker48.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker48.TabIndex = 20
+        Me.ConfiguracionDateTimePickerFecha9.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha9.Location = New System.Drawing.Point(311, 543)
+        Me.ConfiguracionDateTimePickerFecha9.Name = "ConfiguracionDateTimePickerFecha9"
+        Me.ConfiguracionDateTimePickerFecha9.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha9.TabIndex = 20
         '
-        'DateTimePicker44
+        'ConfiguracionDateTimePickerFecha8
         '
-        Me.DateTimePicker44.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker44.Location = New System.Drawing.Point(311, 507)
-        Me.DateTimePicker44.Name = "DateTimePicker44"
-        Me.DateTimePicker44.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker44.TabIndex = 19
+        Me.ConfiguracionDateTimePickerFecha8.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha8.Location = New System.Drawing.Point(311, 507)
+        Me.ConfiguracionDateTimePickerFecha8.Name = "ConfiguracionDateTimePickerFecha8"
+        Me.ConfiguracionDateTimePickerFecha8.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha8.TabIndex = 19
         '
-        'DateTimePicker45
+        'DateTimePicker45ConfiguracionDateTimePickerFecha7
         '
-        Me.DateTimePicker45.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker45.Location = New System.Drawing.Point(311, 472)
-        Me.DateTimePicker45.Name = "DateTimePicker45"
-        Me.DateTimePicker45.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker45.TabIndex = 18
+        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.Location = New System.Drawing.Point(311, 472)
+        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.Name = "DateTimePicker45ConfiguracionDateTimePickerFecha7"
+        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.Size = New System.Drawing.Size(129, 26)
+        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.TabIndex = 18
         '
-        'DateTimePicker46
+        'ConfiguracionDateTimePickerFecha6
         '
-        Me.DateTimePicker46.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker46.Location = New System.Drawing.Point(311, 439)
-        Me.DateTimePicker46.Name = "DateTimePicker46"
-        Me.DateTimePicker46.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker46.TabIndex = 17
+        Me.ConfiguracionDateTimePickerFecha6.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha6.Location = New System.Drawing.Point(311, 439)
+        Me.ConfiguracionDateTimePickerFecha6.Name = "ConfiguracionDateTimePickerFecha6"
+        Me.ConfiguracionDateTimePickerFecha6.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha6.TabIndex = 17
         '
-        'DateTimePicker47
+        'ConfiguracionDateTimePickerFecha5
         '
-        Me.DateTimePicker47.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker47.Location = New System.Drawing.Point(311, 404)
-        Me.DateTimePicker47.Name = "DateTimePicker47"
-        Me.DateTimePicker47.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker47.TabIndex = 16
+        Me.ConfiguracionDateTimePickerFecha5.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha5.Location = New System.Drawing.Point(311, 404)
+        Me.ConfiguracionDateTimePickerFecha5.Name = "ConfiguracionDateTimePickerFecha5"
+        Me.ConfiguracionDateTimePickerFecha5.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha5.TabIndex = 16
         '
-        'DateTimePicker42
+        'ConfiguracionDateTimePickerFecha4
         '
-        Me.DateTimePicker42.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker42.Location = New System.Drawing.Point(311, 373)
-        Me.DateTimePicker42.Name = "DateTimePicker42"
-        Me.DateTimePicker42.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker42.TabIndex = 15
+        Me.ConfiguracionDateTimePickerFecha4.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha4.Location = New System.Drawing.Point(311, 373)
+        Me.ConfiguracionDateTimePickerFecha4.Name = "ConfiguracionDateTimePickerFecha4"
+        Me.ConfiguracionDateTimePickerFecha4.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha4.TabIndex = 15
         '
-        'DateTimePicker43
+        'ConfiguracionDateTimePickerFecha3
         '
-        Me.DateTimePicker43.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker43.Location = New System.Drawing.Point(311, 338)
-        Me.DateTimePicker43.Name = "DateTimePicker43"
-        Me.DateTimePicker43.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker43.TabIndex = 14
+        Me.ConfiguracionDateTimePickerFecha3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha3.Location = New System.Drawing.Point(311, 338)
+        Me.ConfiguracionDateTimePickerFecha3.Name = "ConfiguracionDateTimePickerFecha3"
+        Me.ConfiguracionDateTimePickerFecha3.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha3.TabIndex = 14
         '
-        'DateTimePicker41
+        'ConfiguracionDateTimePickerFecha2
         '
-        Me.DateTimePicker41.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker41.Location = New System.Drawing.Point(311, 305)
-        Me.DateTimePicker41.Name = "DateTimePicker41"
-        Me.DateTimePicker41.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker41.TabIndex = 13
+        Me.ConfiguracionDateTimePickerFecha2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha2.Location = New System.Drawing.Point(311, 305)
+        Me.ConfiguracionDateTimePickerFecha2.Name = "ConfiguracionDateTimePickerFecha2"
+        Me.ConfiguracionDateTimePickerFecha2.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha2.TabIndex = 13
         '
-        'DateTimePicker40
+        'ConfiguracionDateTimePickerFecha1
         '
-        Me.DateTimePicker40.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker40.Location = New System.Drawing.Point(311, 270)
-        Me.DateTimePicker40.Name = "DateTimePicker40"
-        Me.DateTimePicker40.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker40.TabIndex = 12
+        Me.ConfiguracionDateTimePickerFecha1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha1.Location = New System.Drawing.Point(311, 270)
+        Me.ConfiguracionDateTimePickerFecha1.Name = "ConfiguracionDateTimePickerFecha1"
+        Me.ConfiguracionDateTimePickerFecha1.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha1.TabIndex = 12
         '
         'Label128
         '
@@ -3798,12 +3813,12 @@ Partial Class Ventana_Principal
         Me.Label127.TabIndex = 6
         Me.Label127.Text = "1º Tracto - Fecha límite:"
         '
-        'TextBox43
+        'ConfiguracionTextBoxPeriodo
         '
-        Me.TextBox43.Location = New System.Drawing.Point(198, 61)
-        Me.TextBox43.Name = "TextBox43"
-        Me.TextBox43.Size = New System.Drawing.Size(250, 26)
-        Me.TextBox43.TabIndex = 5
+        Me.ConfiguracionTextBoxPeriodo.Location = New System.Drawing.Point(198, 61)
+        Me.ConfiguracionTextBoxPeriodo.Name = "ConfiguracionTextBoxPeriodo"
+        Me.ConfiguracionTextBoxPeriodo.Size = New System.Drawing.Size(250, 26)
+        Me.ConfiguracionTextBoxPeriodo.TabIndex = 5
         '
         'Label124
         '
@@ -3924,12 +3939,12 @@ Partial Class Ventana_Principal
     Friend WithEvents Button12 As Button
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Button14 As Button
+    Friend WithEvents CertificadosButtonActualizar As Button
     Friend WithEvents Label39 As Label
     Friend WithEvents ButtonSociosReporte As Button
     Friend WithEvents Label40 As Label
     Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents ButtonConsultarSocio As Button
+    Friend WithEvents CertificadosButtonConsultar As Button
     Friend WithEvents RadioButtonUsuariosColaborador As RadioButton
     Friend WithEvents RadioButtonUsuariosAdmin As RadioButton
     Friend WithEvents TextBox15 As TextBox
@@ -4036,25 +4051,25 @@ Partial Class Ventana_Principal
     Friend WithEvents Label121 As Label
     Friend WithEvents Label124 As Label
     Friend WithEvents Label123 As Label
-    Friend WithEvents DateTimePicker49 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha10 As DateTimePicker
     Friend WithEvents Label131 As Label
-    Friend WithEvents DateTimePicker48 As DateTimePicker
-    Friend WithEvents DateTimePicker44 As DateTimePicker
-    Friend WithEvents DateTimePicker45 As DateTimePicker
-    Friend WithEvents DateTimePicker46 As DateTimePicker
-    Friend WithEvents DateTimePicker47 As DateTimePicker
-    Friend WithEvents DateTimePicker42 As DateTimePicker
-    Friend WithEvents DateTimePicker43 As DateTimePicker
-    Friend WithEvents DateTimePicker41 As DateTimePicker
-    Friend WithEvents DateTimePicker40 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha9 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha8 As DateTimePicker
+    Friend WithEvents DateTimePicker45ConfiguracionDateTimePickerFecha7 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha6 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha5 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha4 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha3 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha2 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha1 As DateTimePicker
     Friend WithEvents Label128 As Label
     Friend WithEvents Label129 As Label
     Friend WithEvents Label130 As Label
     Friend WithEvents Label125 As Label
     Friend WithEvents Label126 As Label
     Friend WithEvents Label127 As Label
-    Friend WithEvents TextBox43 As TextBox
-    Friend WithEvents Button8 As Button
+    Friend WithEvents ConfiguracionTextBoxPeriodo As TextBox
+    Friend WithEvents ConfigurationButtonActualizar As Button
     Friend WithEvents CoopeBDDataSetBindingSource As BindingSource
     Friend WithEvents CoopeBDDataSet As CoopeBDDataSet
     Friend WithEvents Button22 As Button
@@ -4065,16 +4080,16 @@ Partial Class Ventana_Principal
     Friend WithEvents RadioButton4 As RadioButton
     Friend WithEvents Label139 As Label
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents RadioButton5 As RadioButton
-    Friend WithEvents RadioButton6 As RadioButton
+    Friend WithEvents ConfiguracionRadioButtonIngresos As RadioButton
+    Friend WithEvents ConfigurationRadioButtonGasto As RadioButton
     Friend WithEvents TextBox47 As TextBox
     Friend WithEvents Label137 As Label
     Friend WithEvents Label136 As Label
     Friend WithEvents Label135 As Label
     Friend WithEvents Label134 As Label
-    Friend WithEvents TextBox45 As TextBox
-    Friend WithEvents TextBox46 As TextBox
-    Friend WithEvents TextBox44 As TextBox
+    Friend WithEvents ConfiguracionTextBoxTelefono As TextBox
+    Friend WithEvents ConfiguracionTextBoxCedulaJuridica As TextBox
+    Friend WithEvents ConfiguracionTextBoxCooperativa As TextBox
     Friend WithEvents Label133 As Label
     Friend WithEvents Label132 As Label
     Friend WithEvents Label30 As Label
@@ -4230,4 +4245,5 @@ Partial Class Ventana_Principal
     Friend WithEvents Label27 As Label
     Friend WithEvents TextBoxComitesPresidente As TextBox
     Friend WithEvents Label43 As Label
+    Friend WithEvents ConfigurationButtonConsultar As Button
 End Class

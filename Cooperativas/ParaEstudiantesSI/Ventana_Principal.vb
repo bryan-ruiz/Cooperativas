@@ -7,13 +7,12 @@ Public Class Ventana_Principal
     Dim socios As Socios = New Socios
     Dim comites As Comites = New Comites
     Dim usuarios As Usuarios = New Usuarios
-
+    Dim configuration As Configuracion = New Configuracion
 
 
     '//////////////////////////
     '///////  SOCIOS //////////
     '//////////////////////////
-
 
     'Consultar Socios por Cedula
     Private Sub ButtonSociosConsultar_Click(sender As Object, e As EventArgs)
@@ -60,26 +59,6 @@ Public Class Ventana_Principal
         Me.LabelSociosNotasRetiro.Visible = value
     End Sub
 
-    Private Sub TextBox34_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub ButtonSociosReporte_Click(sender As Object, e As EventArgs) Handles ButtonSociosReporte.Click
-
-    End Sub
-
-    Private Sub ButtonConsultarSocio_Click(sender As Object, e As EventArgs) Handles ButtonConsultarSocio.Click
-
-    End Sub
-
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
-
-    End Sub
-
-    Private Sub RadioButtonSociosReporteTodos_CheckedChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub ButtonSociosConsultar_Click_1(sender As Object, e As EventArgs) Handles ButtonSociosConsultar.Click
         socios.consultar()
     End Sub
@@ -113,6 +92,12 @@ Public Class Ventana_Principal
     Private Sub RadioButtonSociosRetirado_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButtonSociosRetirado.CheckedChanged
         mostrarOcultarCamposRetiro(True)
     End Sub
+
+
+    '//////////////////////////
+    '///////  COMITES //////////
+    '//////////////////////////
+
 
     Private Sub ButtonBuscar_asociadoPresidente_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoPresidente.Click
         Comites.buscar("presidente")
@@ -166,12 +151,37 @@ Public Class Ventana_Principal
         Ventana_Acceso.Close()
     End Sub
 
+    '//////////////////////////
+    '///////  USUARIOS //////////
+    '//////////////////////////
+
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosEliminar.Click
         usuarios.eliminar()
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosInsertar.Click
         usuarios.insertar()
+    End Sub
+
+    '//////////////////////////
+    '///////  CERTIFICADOS //////////
+    '//////////////////////////
+
+    Private Sub CertificadosButtonConsultar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonConsultar.Click
+
+    End Sub
+
+    '//////////////////////////
+    '///////  CONFIGURACION //////////
+    '//////////////////////////
+
+
+    Private Sub ConfigurationButtonConsultar_Click(sender As Object, e As EventArgs) Handles ConfigurationButtonConsultar.Click
+        configuration.consultar()
+    End Sub
+
+    Private Sub ConfigurationButtonActualizar_Click(sender As Object, e As EventArgs) Handles ConfigurationButtonActualizar.Click
+
     End Sub
 
     ''Esta es la ventana correcta nuevo master
