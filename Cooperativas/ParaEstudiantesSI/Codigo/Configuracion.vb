@@ -6,7 +6,7 @@ Public Class Configuracion
     Dim BD As ConexionBD = New ConexionBD
 
     Public Sub consultar()
-        Dim valores As List(Of ComiteClase)
+        Dim valores As List(Of ConfiguracionClase)
         Dim periodo As String = Ventana_Principal.ConfiguracionTextBoxPeriodo.Text
 
         Try
