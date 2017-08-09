@@ -339,7 +339,7 @@ Public Class ConexionBD
     Function obtenerDatosdeConfiguration(ByVal periodo As String) As List(Of ConfiguracionClase)
         Dim MyList As New List(Of ConfiguracionClase)
         Try
-            SQL = "SELECT CONFIGURACION.* FROM [CONFIGURACION] WHERE ((periodo)= '" & periodo & "')"
+            SQL = "SELECT CONFIGURACION.* FROM [CONFIGURACION] WHERE ((periodo) = '" & periodo & "')"
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -348,13 +348,14 @@ Public Class ConexionBD
                     Dim nuevaConfiguracion As ConfiguracionClase = New ConfiguracionClase
                     Try
                         nuevaConfiguracion.configuracionClaseCostructor(reader.GetString(1), reader.GetString(2), reader.GetString(3),
-                                                    reader.GetString(4), reader.GetDateTime(5), reader.GetDateTime(6), reader.GetString(7), reader.GetString(8),
-                                                    reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), reader.GetString(14))
+                                                    reader.GetString(4), reader.GetDateTime(5), reader.GetDateTime(6),
+                                                    reader.GetDateTime(7), reader.GetDateTime(8), reader.GetDateTime(9),
+                                                    reader.GetDateTime(10), reader.GetDateTime(11), reader.GetDateTime(12),
+                                                    reader.GetDateTime(13), reader.GetDateTime(14))
                         MyList.Add(nuevaConfiguracion)
                     Catch ex As Exception
-
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
                     End Try
-
                 End While
                 reader.Close()
             Else

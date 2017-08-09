@@ -334,7 +334,7 @@ Partial Class Ventana_Principal
         Me.Label131 = New System.Windows.Forms.Label()
         Me.ConfiguracionDateTimePickerFecha9 = New System.Windows.Forms.DateTimePicker()
         Me.ConfiguracionDateTimePickerFecha8 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7 = New System.Windows.Forms.DateTimePicker()
+        Me.ConfiguracionDateTimePickerFecha7 = New System.Windows.Forms.DateTimePicker()
         Me.ConfiguracionDateTimePickerFecha6 = New System.Windows.Forms.DateTimePicker()
         Me.ConfiguracionDateTimePickerFecha5 = New System.Windows.Forms.DateTimePicker()
         Me.ConfiguracionDateTimePickerFecha4 = New System.Windows.Forms.DateTimePicker()
@@ -3430,7 +3430,7 @@ Partial Class Ventana_Principal
         Me.GroupBox7.Controls.Add(Me.Label131)
         Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha9)
         Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha8)
-        Me.GroupBox7.Controls.Add(Me.DateTimePicker45ConfiguracionDateTimePickerFecha7)
+        Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha7)
         Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha6)
         Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha5)
         Me.GroupBox7.Controls.Add(Me.ConfiguracionDateTimePickerFecha4)
@@ -3603,7 +3603,7 @@ Partial Class Ventana_Principal
         'Label135
         '
         Me.Label135.AutoSize = True
-        Me.Label135.Location = New System.Drawing.Point(126, 159)
+        Me.Label135.Location = New System.Drawing.Point(203, 160)
         Me.Label135.Name = "Label135"
         Me.Label135.Size = New System.Drawing.Size(70, 19)
         Me.Label135.TabIndex = 125
@@ -3612,7 +3612,7 @@ Partial Class Ventana_Principal
         'Label134
         '
         Me.Label134.AutoSize = True
-        Me.Label134.Location = New System.Drawing.Point(101, 127)
+        Me.Label134.Location = New System.Drawing.Point(178, 128)
         Me.Label134.Name = "Label134"
         Me.Label134.Size = New System.Drawing.Size(96, 19)
         Me.Label134.TabIndex = 124
@@ -3620,21 +3620,21 @@ Partial Class Ventana_Principal
         '
         'ConfiguracionTextBoxTelefono
         '
-        Me.ConfiguracionTextBoxTelefono.Location = New System.Drawing.Point(198, 156)
+        Me.ConfiguracionTextBoxTelefono.Location = New System.Drawing.Point(275, 157)
         Me.ConfiguracionTextBoxTelefono.Name = "ConfiguracionTextBoxTelefono"
         Me.ConfiguracionTextBoxTelefono.Size = New System.Drawing.Size(250, 26)
         Me.ConfiguracionTextBoxTelefono.TabIndex = 123
         '
         'ConfiguracionTextBoxCedulaJuridica
         '
-        Me.ConfiguracionTextBoxCedulaJuridica.Location = New System.Drawing.Point(198, 124)
+        Me.ConfiguracionTextBoxCedulaJuridica.Location = New System.Drawing.Point(275, 125)
         Me.ConfiguracionTextBoxCedulaJuridica.Name = "ConfiguracionTextBoxCedulaJuridica"
         Me.ConfiguracionTextBoxCedulaJuridica.Size = New System.Drawing.Size(250, 26)
         Me.ConfiguracionTextBoxCedulaJuridica.TabIndex = 122
         '
         'ConfiguracionTextBoxCooperativa
         '
-        Me.ConfiguracionTextBoxCooperativa.Location = New System.Drawing.Point(198, 92)
+        Me.ConfiguracionTextBoxCooperativa.Location = New System.Drawing.Point(275, 93)
         Me.ConfiguracionTextBoxCooperativa.Name = "ConfiguracionTextBoxCooperativa"
         Me.ConfiguracionTextBoxCooperativa.Size = New System.Drawing.Size(250, 26)
         Me.ConfiguracionTextBoxCooperativa.TabIndex = 121
@@ -3642,7 +3642,7 @@ Partial Class Ventana_Principal
         'Label133
         '
         Me.Label133.AutoSize = True
-        Me.Label133.Location = New System.Drawing.Point(109, 95)
+        Me.Label133.Location = New System.Drawing.Point(186, 96)
         Me.Label133.Name = "Label133"
         Me.Label133.Size = New System.Drawing.Size(87, 19)
         Me.Label133.TabIndex = 120
@@ -3703,13 +3703,13 @@ Partial Class Ventana_Principal
         Me.ConfiguracionDateTimePickerFecha8.Size = New System.Drawing.Size(129, 26)
         Me.ConfiguracionDateTimePickerFecha8.TabIndex = 19
         '
-        'DateTimePicker45ConfiguracionDateTimePickerFecha7
+        'ConfiguracionDateTimePickerFecha7
         '
-        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.Location = New System.Drawing.Point(311, 472)
-        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.Name = "DateTimePicker45ConfiguracionDateTimePickerFecha7"
-        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.Size = New System.Drawing.Size(129, 26)
-        Me.DateTimePicker45ConfiguracionDateTimePickerFecha7.TabIndex = 18
+        Me.ConfiguracionDateTimePickerFecha7.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ConfiguracionDateTimePickerFecha7.Location = New System.Drawing.Point(311, 472)
+        Me.ConfiguracionDateTimePickerFecha7.Name = "ConfiguracionDateTimePickerFecha7"
+        Me.ConfiguracionDateTimePickerFecha7.Size = New System.Drawing.Size(129, 26)
+        Me.ConfiguracionDateTimePickerFecha7.TabIndex = 18
         '
         'ConfiguracionDateTimePickerFecha6
         '
@@ -3815,7 +3815,7 @@ Partial Class Ventana_Principal
         '
         'ConfiguracionTextBoxPeriodo
         '
-        Me.ConfiguracionTextBoxPeriodo.Location = New System.Drawing.Point(198, 61)
+        Me.ConfiguracionTextBoxPeriodo.Location = New System.Drawing.Point(275, 62)
         Me.ConfiguracionTextBoxPeriodo.Name = "ConfiguracionTextBoxPeriodo"
         Me.ConfiguracionTextBoxPeriodo.Size = New System.Drawing.Size(250, 26)
         Me.ConfiguracionTextBoxPeriodo.TabIndex = 5
@@ -3850,7 +3850,7 @@ Partial Class Ventana_Principal
         'Label121
         '
         Me.Label121.AutoSize = True
-        Me.Label121.Location = New System.Drawing.Point(135, 63)
+        Me.Label121.Location = New System.Drawing.Point(212, 64)
         Me.Label121.Name = "Label121"
         Me.Label121.Size = New System.Drawing.Size(61, 19)
         Me.Label121.TabIndex = 1
@@ -4055,7 +4055,7 @@ Partial Class Ventana_Principal
     Friend WithEvents Label131 As Label
     Friend WithEvents ConfiguracionDateTimePickerFecha9 As DateTimePicker
     Friend WithEvents ConfiguracionDateTimePickerFecha8 As DateTimePicker
-    Friend WithEvents DateTimePicker45ConfiguracionDateTimePickerFecha7 As DateTimePicker
+    Friend WithEvents ConfiguracionDateTimePickerFecha7 As DateTimePicker
     Friend WithEvents ConfiguracionDateTimePickerFecha6 As DateTimePicker
     Friend WithEvents ConfiguracionDateTimePickerFecha5 As DateTimePicker
     Friend WithEvents ConfiguracionDateTimePickerFecha4 As DateTimePicker
