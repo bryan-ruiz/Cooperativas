@@ -255,29 +255,29 @@ Partial Class Ventana_Principal
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label99 = New System.Windows.Forms.Label()
-        Me.DateTimePicker25 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker26 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker_IngresosFechaFinal = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker_IngresosFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label98 = New System.Windows.Forms.Label()
         Me.Label97 = New System.Windows.Forms.Label()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
+        Me.Button_IngresosReporteIngresos = New System.Windows.Forms.Button()
+        Me.Button_IngresosInsertar = New System.Windows.Forms.Button()
+        Me.Button_IngresosCalcularTotal = New System.Windows.Forms.Button()
+        Me.ComboBox_IngresosCodigCuenta = New System.Windows.Forms.ComboBox()
         Me.Label96 = New System.Windows.Forms.Label()
-        Me.TextBox36 = New System.Windows.Forms.TextBox()
+        Me.TextBox_IngresosTotal = New System.Windows.Forms.TextBox()
         Me.Label95 = New System.Windows.Forms.Label()
-        Me.TextBox35 = New System.Windows.Forms.TextBox()
-        Me.TextBox34 = New System.Windows.Forms.TextBox()
-        Me.TextBox31 = New System.Windows.Forms.TextBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TextBox_IngresosPrecioUnitario = New System.Windows.Forms.TextBox()
+        Me.TextBox_IngresosCantidad = New System.Windows.Forms.TextBox()
+        Me.TextBox_IngresosDescripcion = New System.Windows.Forms.TextBox()
+        Me.TextBox_IngresosCliente = New System.Windows.Forms.TextBox()
+        Me.TextBox_IngresosFacturaRecibos = New System.Windows.Forms.TextBox()
         Me.Label94 = New System.Windows.Forms.Label()
         Me.Label93 = New System.Windows.Forms.Label()
         Me.Label92 = New System.Windows.Forms.Label()
         Me.Label91 = New System.Windows.Forms.Label()
         Me.Label90 = New System.Windows.Forms.Label()
         Me.Label89 = New System.Windows.Forms.Label()
-        Me.DateTimePicker24 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker_IngresosFecha = New System.Windows.Forms.DateTimePicker()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Label108 = New System.Windows.Forms.Label()
@@ -2866,29 +2866,29 @@ Partial Class Ventana_Principal
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.Label99)
-        Me.GroupBox5.Controls.Add(Me.DateTimePicker25)
-        Me.GroupBox5.Controls.Add(Me.DateTimePicker26)
+        Me.GroupBox5.Controls.Add(Me.DateTimePicker_IngresosFechaFinal)
+        Me.GroupBox5.Controls.Add(Me.DateTimePicker_IngresosFechaInicio)
         Me.GroupBox5.Controls.Add(Me.Label98)
         Me.GroupBox5.Controls.Add(Me.Label97)
-        Me.GroupBox5.Controls.Add(Me.Button11)
-        Me.GroupBox5.Controls.Add(Me.Button7)
-        Me.GroupBox5.Controls.Add(Me.Button4)
-        Me.GroupBox5.Controls.Add(Me.ComboBox8)
+        Me.GroupBox5.Controls.Add(Me.Button_IngresosReporteIngresos)
+        Me.GroupBox5.Controls.Add(Me.Button_IngresosInsertar)
+        Me.GroupBox5.Controls.Add(Me.Button_IngresosCalcularTotal)
+        Me.GroupBox5.Controls.Add(Me.ComboBox_IngresosCodigCuenta)
         Me.GroupBox5.Controls.Add(Me.Label96)
-        Me.GroupBox5.Controls.Add(Me.TextBox36)
+        Me.GroupBox5.Controls.Add(Me.TextBox_IngresosTotal)
         Me.GroupBox5.Controls.Add(Me.Label95)
-        Me.GroupBox5.Controls.Add(Me.TextBox35)
-        Me.GroupBox5.Controls.Add(Me.TextBox34)
-        Me.GroupBox5.Controls.Add(Me.TextBox31)
-        Me.GroupBox5.Controls.Add(Me.TextBox28)
-        Me.GroupBox5.Controls.Add(Me.TextBox25)
+        Me.GroupBox5.Controls.Add(Me.TextBox_IngresosPrecioUnitario)
+        Me.GroupBox5.Controls.Add(Me.TextBox_IngresosCantidad)
+        Me.GroupBox5.Controls.Add(Me.TextBox_IngresosDescripcion)
+        Me.GroupBox5.Controls.Add(Me.TextBox_IngresosCliente)
+        Me.GroupBox5.Controls.Add(Me.TextBox_IngresosFacturaRecibos)
         Me.GroupBox5.Controls.Add(Me.Label94)
         Me.GroupBox5.Controls.Add(Me.Label93)
         Me.GroupBox5.Controls.Add(Me.Label92)
         Me.GroupBox5.Controls.Add(Me.Label91)
         Me.GroupBox5.Controls.Add(Me.Label90)
         Me.GroupBox5.Controls.Add(Me.Label89)
-        Me.GroupBox5.Controls.Add(Me.DateTimePicker24)
+        Me.GroupBox5.Controls.Add(Me.DateTimePicker_IngresosFecha)
         Me.GroupBox5.ForeColor = System.Drawing.Color.White
         Me.GroupBox5.Location = New System.Drawing.Point(75, 20)
         Me.GroupBox5.Name = "GroupBox5"
@@ -2906,21 +2906,21 @@ Partial Class Ventana_Principal
         Me.Label99.TabIndex = 24
         Me.Label99.Text = "Generar Reporte de Ingresos"
         '
-        'DateTimePicker25
+        'DateTimePicker_IngresosFechaFinal
         '
-        Me.DateTimePicker25.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker25.Location = New System.Drawing.Point(649, 173)
-        Me.DateTimePicker25.Name = "DateTimePicker25"
-        Me.DateTimePicker25.Size = New System.Drawing.Size(144, 26)
-        Me.DateTimePicker25.TabIndex = 23
+        Me.DateTimePicker_IngresosFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker_IngresosFechaFinal.Location = New System.Drawing.Point(649, 173)
+        Me.DateTimePicker_IngresosFechaFinal.Name = "DateTimePicker_IngresosFechaFinal"
+        Me.DateTimePicker_IngresosFechaFinal.Size = New System.Drawing.Size(144, 26)
+        Me.DateTimePicker_IngresosFechaFinal.TabIndex = 23
         '
-        'DateTimePicker26
+        'DateTimePicker_IngresosFechaInicio
         '
-        Me.DateTimePicker26.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker26.Location = New System.Drawing.Point(649, 141)
-        Me.DateTimePicker26.Name = "DateTimePicker26"
-        Me.DateTimePicker26.Size = New System.Drawing.Size(144, 26)
-        Me.DateTimePicker26.TabIndex = 22
+        Me.DateTimePicker_IngresosFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker_IngresosFechaInicio.Location = New System.Drawing.Point(649, 141)
+        Me.DateTimePicker_IngresosFechaInicio.Name = "DateTimePicker_IngresosFechaInicio"
+        Me.DateTimePicker_IngresosFechaInicio.Size = New System.Drawing.Size(144, 26)
+        Me.DateTimePicker_IngresosFechaInicio.TabIndex = 22
         '
         'Label98
         '
@@ -2940,47 +2940,47 @@ Partial Class Ventana_Principal
         Me.Label97.TabIndex = 19
         Me.Label97.Text = "Hasta:"
         '
-        'Button11
+        'Button_IngresosReporteIngresos
         '
-        Me.Button11.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.Button11.Location = New System.Drawing.Point(595, 223)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(198, 44)
-        Me.Button11.TabIndex = 18
-        Me.Button11.Text = "Reporte Ingresos"
-        Me.Button11.UseVisualStyleBackColor = True
+        Me.Button_IngresosReporteIngresos.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_IngresosReporteIngresos.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.Button_IngresosReporteIngresos.Location = New System.Drawing.Point(595, 223)
+        Me.Button_IngresosReporteIngresos.Name = "Button_IngresosReporteIngresos"
+        Me.Button_IngresosReporteIngresos.Size = New System.Drawing.Size(198, 44)
+        Me.Button_IngresosReporteIngresos.TabIndex = 18
+        Me.Button_IngresosReporteIngresos.Text = "Reporte Ingresos"
+        Me.Button_IngresosReporteIngresos.UseVisualStyleBackColor = True
         '
-        'Button7
+        'Button_IngresosInsertar
         '
-        Me.Button7.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.Button7.Location = New System.Drawing.Point(231, 388)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(254, 44)
-        Me.Button7.TabIndex = 17
-        Me.Button7.Text = "Agregar Ingreso"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.Button_IngresosInsertar.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_IngresosInsertar.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.Button_IngresosInsertar.Location = New System.Drawing.Point(231, 388)
+        Me.Button_IngresosInsertar.Name = "Button_IngresosInsertar"
+        Me.Button_IngresosInsertar.Size = New System.Drawing.Size(254, 44)
+        Me.Button_IngresosInsertar.TabIndex = 17
+        Me.Button_IngresosInsertar.Text = "Agregar Ingreso"
+        Me.Button_IngresosInsertar.UseVisualStyleBackColor = True
         '
-        'Button4
+        'Button_IngresosCalcularTotal
         '
-        Me.Button4.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.Button4.Location = New System.Drawing.Point(231, 273)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(254, 44)
-        Me.Button4.TabIndex = 16
-        Me.Button4.Text = "Calcular Total"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button_IngresosCalcularTotal.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_IngresosCalcularTotal.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.Button_IngresosCalcularTotal.Location = New System.Drawing.Point(231, 273)
+        Me.Button_IngresosCalcularTotal.Name = "Button_IngresosCalcularTotal"
+        Me.Button_IngresosCalcularTotal.Size = New System.Drawing.Size(254, 44)
+        Me.Button_IngresosCalcularTotal.TabIndex = 16
+        Me.Button_IngresosCalcularTotal.Text = "Calcular Total"
+        Me.Button_IngresosCalcularTotal.UseVisualStyleBackColor = True
         '
-        'ComboBox8
+        'ComboBox_IngresosCodigCuenta
         '
-        Me.ComboBox8.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox8.FormattingEnabled = True
-        Me.ComboBox8.Location = New System.Drawing.Point(231, 355)
-        Me.ComboBox8.Name = "ComboBox8"
-        Me.ComboBox8.Size = New System.Drawing.Size(254, 27)
-        Me.ComboBox8.TabIndex = 15
+        Me.ComboBox_IngresosCodigCuenta.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_IngresosCodigCuenta.FormattingEnabled = True
+        Me.ComboBox_IngresosCodigCuenta.Location = New System.Drawing.Point(231, 355)
+        Me.ComboBox_IngresosCodigCuenta.Name = "ComboBox_IngresosCodigCuenta"
+        Me.ComboBox_IngresosCodigCuenta.Size = New System.Drawing.Size(254, 27)
+        Me.ComboBox_IngresosCodigCuenta.TabIndex = 15
         '
         'Label96
         '
@@ -2991,12 +2991,12 @@ Partial Class Ventana_Principal
         Me.Label96.TabIndex = 14
         Me.Label96.Text = "Código de Cuenta:"
         '
-        'TextBox36
+        'TextBox_IngresosTotal
         '
-        Me.TextBox36.Location = New System.Drawing.Point(231, 323)
-        Me.TextBox36.Name = "TextBox36"
-        Me.TextBox36.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox36.TabIndex = 13
+        Me.TextBox_IngresosTotal.Location = New System.Drawing.Point(231, 323)
+        Me.TextBox_IngresosTotal.Name = "TextBox_IngresosTotal"
+        Me.TextBox_IngresosTotal.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_IngresosTotal.TabIndex = 13
         '
         'Label95
         '
@@ -3007,41 +3007,41 @@ Partial Class Ventana_Principal
         Me.Label95.TabIndex = 12
         Me.Label95.Text = "Total:"
         '
-        'TextBox35
+        'TextBox_IngresosPrecioUnitario
         '
-        Me.TextBox35.Location = New System.Drawing.Point(231, 241)
-        Me.TextBox35.Name = "TextBox35"
-        Me.TextBox35.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox35.TabIndex = 11
+        Me.TextBox_IngresosPrecioUnitario.Location = New System.Drawing.Point(231, 241)
+        Me.TextBox_IngresosPrecioUnitario.Name = "TextBox_IngresosPrecioUnitario"
+        Me.TextBox_IngresosPrecioUnitario.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_IngresosPrecioUnitario.TabIndex = 11
         '
-        'TextBox34
+        'TextBox_IngresosCantidad
         '
-        Me.TextBox34.Location = New System.Drawing.Point(231, 209)
-        Me.TextBox34.Name = "TextBox34"
-        Me.TextBox34.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox34.TabIndex = 10
+        Me.TextBox_IngresosCantidad.Location = New System.Drawing.Point(231, 209)
+        Me.TextBox_IngresosCantidad.Name = "TextBox_IngresosCantidad"
+        Me.TextBox_IngresosCantidad.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_IngresosCantidad.TabIndex = 10
         '
-        'TextBox31
+        'TextBox_IngresosDescripcion
         '
-        Me.TextBox31.Location = New System.Drawing.Point(231, 157)
-        Me.TextBox31.Multiline = True
-        Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.Size = New System.Drawing.Size(254, 46)
-        Me.TextBox31.TabIndex = 9
+        Me.TextBox_IngresosDescripcion.Location = New System.Drawing.Point(231, 157)
+        Me.TextBox_IngresosDescripcion.Multiline = True
+        Me.TextBox_IngresosDescripcion.Name = "TextBox_IngresosDescripcion"
+        Me.TextBox_IngresosDescripcion.Size = New System.Drawing.Size(254, 46)
+        Me.TextBox_IngresosDescripcion.TabIndex = 9
         '
-        'TextBox28
+        'TextBox_IngresosCliente
         '
-        Me.TextBox28.Location = New System.Drawing.Point(231, 125)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox28.TabIndex = 8
+        Me.TextBox_IngresosCliente.Location = New System.Drawing.Point(231, 125)
+        Me.TextBox_IngresosCliente.Name = "TextBox_IngresosCliente"
+        Me.TextBox_IngresosCliente.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_IngresosCliente.TabIndex = 8
         '
-        'TextBox25
+        'TextBox_IngresosFacturaRecibos
         '
-        Me.TextBox25.Location = New System.Drawing.Point(231, 93)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox25.TabIndex = 7
+        Me.TextBox_IngresosFacturaRecibos.Location = New System.Drawing.Point(231, 93)
+        Me.TextBox_IngresosFacturaRecibos.Name = "TextBox_IngresosFacturaRecibos"
+        Me.TextBox_IngresosFacturaRecibos.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_IngresosFacturaRecibos.TabIndex = 7
         '
         'Label94
         '
@@ -3097,13 +3097,13 @@ Partial Class Ventana_Principal
         Me.Label89.TabIndex = 1
         Me.Label89.Text = "Fecha:"
         '
-        'DateTimePicker24
+        'DateTimePicker_IngresosFecha
         '
-        Me.DateTimePicker24.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker24.Location = New System.Drawing.Point(231, 61)
-        Me.DateTimePicker24.Name = "DateTimePicker24"
-        Me.DateTimePicker24.Size = New System.Drawing.Size(254, 26)
-        Me.DateTimePicker24.TabIndex = 0
+        Me.DateTimePicker_IngresosFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker_IngresosFecha.Location = New System.Drawing.Point(231, 61)
+        Me.DateTimePicker_IngresosFecha.Name = "DateTimePicker_IngresosFecha"
+        Me.DateTimePicker_IngresosFecha.Size = New System.Drawing.Size(254, 26)
+        Me.DateTimePicker_IngresosFecha.TabIndex = 0
         '
         'TabPage7
         '
@@ -3977,30 +3977,30 @@ Partial Class Ventana_Principal
     Friend WithEvents TabPage8 As TabPage
     Friend WithEvents Excedentes As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents TextBox31 As TextBox
-    Friend WithEvents TextBox28 As TextBox
-    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents TextBox_IngresosDescripcion As TextBox
+    Friend WithEvents TextBox_IngresosCliente As TextBox
+    Friend WithEvents TextBox_IngresosFacturaRecibos As TextBox
     Friend WithEvents Label94 As Label
     Friend WithEvents Label93 As Label
     Friend WithEvents Label92 As Label
     Friend WithEvents Label91 As Label
     Friend WithEvents Label90 As Label
     Friend WithEvents Label89 As Label
-    Friend WithEvents DateTimePicker24 As DateTimePicker
+    Friend WithEvents DateTimePicker_IngresosFecha As DateTimePicker
     Friend WithEvents Label99 As Label
-    Friend WithEvents DateTimePicker25 As DateTimePicker
-    Friend WithEvents DateTimePicker26 As DateTimePicker
+    Friend WithEvents DateTimePicker_IngresosFechaFinal As DateTimePicker
+    Friend WithEvents DateTimePicker_IngresosFechaInicio As DateTimePicker
     Friend WithEvents Label98 As Label
     Friend WithEvents Label97 As Label
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents ComboBox8 As ComboBox
+    Friend WithEvents Button_IngresosReporteIngresos As Button
+    Friend WithEvents Button_IngresosInsertar As Button
+    Friend WithEvents Button_IngresosCalcularTotal As Button
+    Friend WithEvents ComboBox_IngresosCodigCuenta As ComboBox
     Friend WithEvents Label96 As Label
-    Friend WithEvents TextBox36 As TextBox
+    Friend WithEvents TextBox_IngresosTotal As TextBox
     Friend WithEvents Label95 As Label
-    Friend WithEvents TextBox35 As TextBox
-    Friend WithEvents TextBox34 As TextBox
+    Friend WithEvents TextBox_IngresosPrecioUnitario As TextBox
+    Friend WithEvents TextBox_IngresosCantidad As TextBox
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents Label108 As Label
     Friend WithEvents DateTimePicker28 As DateTimePicker
