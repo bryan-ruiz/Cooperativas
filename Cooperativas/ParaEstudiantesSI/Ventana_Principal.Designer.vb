@@ -309,17 +309,17 @@ Partial Class Ventana_Principal
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.ConfigurationButtonConsultar = New System.Windows.Forms.Button()
-        Me.Button22 = New System.Windows.Forms.Button()
-        Me.Button23 = New System.Windows.Forms.Button()
+        Me.Button_ConfiguracionEliminarCodigoCuenta = New System.Windows.Forms.Button()
+        Me.Button_ConfiguracionInsertarCodigoCuenta = New System.Windows.Forms.Button()
         Me.Label138 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton_ConfiguracionProyectoProductivoSI = New System.Windows.Forms.RadioButton()
+        Me.RadioButton_ConfiguracionProyectoProductivoNO = New System.Windows.Forms.RadioButton()
         Me.Label139 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.ConfiguracionRadioButtonIngresos = New System.Windows.Forms.RadioButton()
         Me.ConfigurationRadioButtonGasto = New System.Windows.Forms.RadioButton()
-        Me.TextBox47 = New System.Windows.Forms.TextBox()
+        Me.TextBox_ConfiguracionCuentaDescripcion = New System.Windows.Forms.TextBox()
         Me.Label137 = New System.Windows.Forms.Label()
         Me.Label136 = New System.Windows.Forms.Label()
         Me.Label135 = New System.Windows.Forms.Label()
@@ -3409,13 +3409,13 @@ Partial Class Ventana_Principal
         'GroupBox7
         '
         Me.GroupBox7.Controls.Add(Me.ConfigurationButtonConsultar)
-        Me.GroupBox7.Controls.Add(Me.Button22)
-        Me.GroupBox7.Controls.Add(Me.Button23)
+        Me.GroupBox7.Controls.Add(Me.Button_ConfiguracionEliminarCodigoCuenta)
+        Me.GroupBox7.Controls.Add(Me.Button_ConfiguracionInsertarCodigoCuenta)
         Me.GroupBox7.Controls.Add(Me.Label138)
         Me.GroupBox7.Controls.Add(Me.Panel3)
         Me.GroupBox7.Controls.Add(Me.Label139)
         Me.GroupBox7.Controls.Add(Me.Panel4)
-        Me.GroupBox7.Controls.Add(Me.TextBox47)
+        Me.GroupBox7.Controls.Add(Me.TextBox_ConfiguracionCuentaDescripcion)
         Me.GroupBox7.Controls.Add(Me.Label137)
         Me.GroupBox7.Controls.Add(Me.Label136)
         Me.GroupBox7.Controls.Add(Me.Label135)
@@ -3469,31 +3469,31 @@ Partial Class Ventana_Principal
         Me.ConfigurationButtonConsultar.Text = "Consultar"
         Me.ConfigurationButtonConsultar.UseVisualStyleBackColor = False
         '
-        'Button22
+        'Button_ConfiguracionEliminarCodigoCuenta
         '
-        Me.Button22.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button22.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button22.ForeColor = System.Drawing.Color.White
-        Me.Button22.Image = CType(resources.GetObject("Button22.Image"), System.Drawing.Image)
-        Me.Button22.Location = New System.Drawing.Point(630, 437)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(152, 40)
-        Me.Button22.TabIndex = 162
-        Me.Button22.Text = "Eliminar Código"
-        Me.Button22.UseVisualStyleBackColor = False
+        Me.Button_ConfiguracionEliminarCodigoCuenta.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button_ConfiguracionEliminarCodigoCuenta.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_ConfiguracionEliminarCodigoCuenta.ForeColor = System.Drawing.Color.White
+        Me.Button_ConfiguracionEliminarCodigoCuenta.Image = CType(resources.GetObject("Button_ConfiguracionEliminarCodigoCuenta.Image"), System.Drawing.Image)
+        Me.Button_ConfiguracionEliminarCodigoCuenta.Location = New System.Drawing.Point(630, 437)
+        Me.Button_ConfiguracionEliminarCodigoCuenta.Name = "Button_ConfiguracionEliminarCodigoCuenta"
+        Me.Button_ConfiguracionEliminarCodigoCuenta.Size = New System.Drawing.Size(152, 40)
+        Me.Button_ConfiguracionEliminarCodigoCuenta.TabIndex = 162
+        Me.Button_ConfiguracionEliminarCodigoCuenta.Text = "Eliminar Código"
+        Me.Button_ConfiguracionEliminarCodigoCuenta.UseVisualStyleBackColor = False
         '
-        'Button23
+        'Button_ConfiguracionInsertarCodigoCuenta
         '
-        Me.Button23.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button23.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button23.ForeColor = System.Drawing.Color.White
-        Me.Button23.Image = CType(resources.GetObject("Button23.Image"), System.Drawing.Image)
-        Me.Button23.Location = New System.Drawing.Point(630, 385)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(152, 40)
-        Me.Button23.TabIndex = 161
-        Me.Button23.Text = "Insertar Código"
-        Me.Button23.UseVisualStyleBackColor = False
+        Me.Button_ConfiguracionInsertarCodigoCuenta.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button_ConfiguracionInsertarCodigoCuenta.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_ConfiguracionInsertarCodigoCuenta.ForeColor = System.Drawing.Color.White
+        Me.Button_ConfiguracionInsertarCodigoCuenta.Image = CType(resources.GetObject("Button_ConfiguracionInsertarCodigoCuenta.Image"), System.Drawing.Image)
+        Me.Button_ConfiguracionInsertarCodigoCuenta.Location = New System.Drawing.Point(630, 385)
+        Me.Button_ConfiguracionInsertarCodigoCuenta.Name = "Button_ConfiguracionInsertarCodigoCuenta"
+        Me.Button_ConfiguracionInsertarCodigoCuenta.Size = New System.Drawing.Size(152, 40)
+        Me.Button_ConfiguracionInsertarCodigoCuenta.TabIndex = 161
+        Me.Button_ConfiguracionInsertarCodigoCuenta.Text = "Insertar Código"
+        Me.Button_ConfiguracionInsertarCodigoCuenta.UseVisualStyleBackColor = False
         '
         'Label138
         '
@@ -3506,34 +3506,34 @@ Partial Class Ventana_Principal
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.RadioButton3)
-        Me.Panel3.Controls.Add(Me.RadioButton4)
+        Me.Panel3.Controls.Add(Me.RadioButton_ConfiguracionProyectoProductivoSI)
+        Me.Panel3.Controls.Add(Me.RadioButton_ConfiguracionProyectoProductivoNO)
         Me.Panel3.Location = New System.Drawing.Point(630, 338)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(246, 34)
         Me.Panel3.TabIndex = 158
         '
-        'RadioButton3
+        'RadioButton_ConfiguracionProyectoProductivoSI
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Checked = True
-        Me.RadioButton3.Location = New System.Drawing.Point(14, 5)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(40, 23)
-        Me.RadioButton3.TabIndex = 141
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Sí"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.AutoSize = True
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.Checked = True
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.Location = New System.Drawing.Point(14, 5)
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.Name = "RadioButton_ConfiguracionProyectoProductivoSI"
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.Size = New System.Drawing.Size(40, 23)
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.TabIndex = 141
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.TabStop = True
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.Text = "Sí"
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'RadioButton_ConfiguracionProyectoProductivoNO
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(75, 5)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(45, 23)
-        Me.RadioButton4.TabIndex = 142
-        Me.RadioButton4.Text = "No"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.AutoSize = True
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.Location = New System.Drawing.Point(75, 5)
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.Name = "RadioButton_ConfiguracionProyectoProductivoNO"
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.Size = New System.Drawing.Size(45, 23)
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.TabIndex = 142
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.Text = "No"
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.UseVisualStyleBackColor = True
         '
         'Label139
         '
@@ -3575,12 +3575,12 @@ Partial Class Ventana_Principal
         Me.ConfigurationRadioButtonGasto.Text = "Gasto"
         Me.ConfigurationRadioButtonGasto.UseVisualStyleBackColor = True
         '
-        'TextBox47
+        'TextBox_ConfiguracionCuentaDescripcion
         '
-        Me.TextBox47.Location = New System.Drawing.Point(630, 266)
-        Me.TextBox47.Name = "TextBox47"
-        Me.TextBox47.Size = New System.Drawing.Size(250, 26)
-        Me.TextBox47.TabIndex = 128
+        Me.TextBox_ConfiguracionCuentaDescripcion.Location = New System.Drawing.Point(630, 266)
+        Me.TextBox_ConfiguracionCuentaDescripcion.Name = "TextBox_ConfiguracionCuentaDescripcion"
+        Me.TextBox_ConfiguracionCuentaDescripcion.Size = New System.Drawing.Size(250, 26)
+        Me.TextBox_ConfiguracionCuentaDescripcion.TabIndex = 128
         '
         'Label137
         '
@@ -4072,17 +4072,17 @@ Partial Class Ventana_Principal
     Friend WithEvents ConfigurationButtonActualizar As Button
     Friend WithEvents CoopeBDDataSetBindingSource As BindingSource
     Friend WithEvents CoopeBDDataSet As CoopeBDDataSet
-    Friend WithEvents Button22 As Button
-    Friend WithEvents Button23 As Button
+    Friend WithEvents Button_ConfiguracionEliminarCodigoCuenta As Button
+    Friend WithEvents Button_ConfiguracionInsertarCodigoCuenta As Button
     Friend WithEvents Label138 As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents RadioButton_ConfiguracionProyectoProductivoSI As RadioButton
+    Friend WithEvents RadioButton_ConfiguracionProyectoProductivoNO As RadioButton
     Friend WithEvents Label139 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents ConfiguracionRadioButtonIngresos As RadioButton
     Friend WithEvents ConfigurationRadioButtonGasto As RadioButton
-    Friend WithEvents TextBox47 As TextBox
+    Friend WithEvents TextBox_ConfiguracionCuentaDescripcion As TextBox
     Friend WithEvents Label137 As Label
     Friend WithEvents Label136 As Label
     Friend WithEvents Label135 As Label

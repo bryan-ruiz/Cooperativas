@@ -42454,7 +42454,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="Button22.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Button_ConfiguracionEliminarCodigoCuenta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAlgAAADICAYAAAA0n5+2AAAABGdBTUEAALGPC/xhBQAACZhJREFUeF7t
         3XuQlWUBx/F3pmlqppkmp3FsLEdLzcpprKYcRvM6hpqUlzQtNbEw1DIpU/OWAoI3vIHKgsAKgoqAd0h3
@@ -42501,7 +42501,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="Button23.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Button_ConfiguracionInsertarCodigoCuenta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAlgAAADICAYAAAA0n5+2AAAABGdBTUEAALGPC/xhBQAACZhJREFUeF7t
         3XuQlWUBx/F3pmlqppkmp3FsLEdLzcpprKYcRvM6hpqUlzQtNbEw1DIpU/OWAoI3vIHKgsAKgoqAd0h3

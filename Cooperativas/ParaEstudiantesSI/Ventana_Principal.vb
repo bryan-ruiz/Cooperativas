@@ -184,6 +184,10 @@ Public Class Ventana_Principal
 
     End Sub
 
+    Private Sub Button_ConfiguracionInsertarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionInsertarCodigoCuenta.Click
+        configuracion.insertarCuenta()
+    End Sub
+
     ''Esta es la ventana correcta nuevo master
 End Class
 

@@ -367,4 +367,25 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+
+
+    Function insertarCuenta(ByVal cod_Descripcion As String, ByVal tipo As String,
+                           ByVal proyecto_Productivo As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "INSERT INTO [CUENTAS]" &
+           "(cod_Descripcion,tipo, proyecto_Productivo)" &
+            "VALUES ('" + cod_Descripcion + "', '" + tipo + "', '" + proyecto_Productivo + "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+
+        Return res
+    End Function
 End Class

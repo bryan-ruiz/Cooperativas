@@ -5,6 +5,48 @@ Imports System.IO
 Public Class Configuracion
     Dim BD As ConexionBD = New ConexionBD
 
+    Public Sub insertarCuenta()
+        Dim valores As Integer
+        Dim id As String = Ventana_Principal.TextBox_ConfiguracionCuentaDescripcion.Text
+        Dim tipo As String
+        Dim proyecto_Productivo As String
+
+        If (id = "") Then
+            MessageBox.Show("Debe ingresar el codigo y descripción de la cuenta")
+        End If
+
+        If (Ventana_Principal.ConfiguracionRadioButtonIngresos.Checked = True) Then
+            tipo = Ventana_Principal.ConfiguracionRadioButtonIngresos.Text
+        Else
+            tipo = Ventana_Principal.ConfigurationRadioButtonGasto.Text
+        End If
+
+        If (Ventana_Principal.RadioButton_ConfiguracionProyectoProductivoSI.Checked = True) Then
+            proyecto_Productivo = Ventana_Principal.RadioButton_ConfiguracionProyectoProductivoSI.Text
+        Else
+            proyecto_Productivo = Ventana_Principal.RadioButton_ConfiguracionProyectoProductivoNO.Text
+        End If
+
+        Try
+            BD.ConectarBD()
+            valores = BD.insertarCuenta(id, tipo, proyecto_Productivo)
+            If valores <> 0 Then
+                MessageBox.Show("Se ha realizado exitosamente")
+            Else
+                MessageBox.Show("Error al insertar cuenta")
+            End If
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+            'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+        End Try
+    End Sub
+
+
+
+
+
     Public Sub consultar()
         Dim valores As List(Of ConfiguracionClase)
         Dim periodo As String = Ventana_Principal.ConfiguracionTextBoxPeriodo.Text
