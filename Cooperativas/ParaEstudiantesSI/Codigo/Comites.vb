@@ -241,7 +241,7 @@ Public Class Comites
 
     End Sub
 
-
+    'Llena los campos con los datos de la consulta
     Public Sub llenarDatos(ByVal valores As List(Of ComiteClase))
         Dim conta As Integer = 0
         While conta < valores.Count

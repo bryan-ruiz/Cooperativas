@@ -15,9 +15,11 @@
     Public fechaLimite9 As DateTime
     Public fechaLimite10 As DateTime
 
-    Public Sub configuracionClaseCostructor(ByVal periodop As String, ByVal cooperativap As String, ByVal cedulaJuridicap As String, ByVal telefonop As String,
-                                    ByVal fechaLimite1p As DateTime, ByVal fechaLimite2p As DateTime, ByVal fechaLimite3p As DateTime, ByVal fechaLimite4p As DateTime,
-                                            ByVal fechaLimite5p As DateTime, ByVal fechaLimite6p As DateTime, ByVal fechaLimite7p As DateTime, ByVal fechaLimite8p As DateTime,
+    Public Sub configuracionClaseCostructor(ByVal periodop As String, ByVal cooperativap As String, ByVal cedulaJuridicap As String,
+                                            ByVal telefonop As String, ByVal fechaLimite1p As DateTime, ByVal fechaLimite2p As DateTime,
+                                            ByVal fechaLimite3p As DateTime, ByVal fechaLimite4p As DateTime,
+                                            ByVal fechaLimite5p As DateTime, ByVal fechaLimite6p As DateTime,
+                                            ByVal fechaLimite7p As DateTime, ByVal fechaLimite8p As DateTime,
                                             ByVal fechaLimite9p As DateTime, ByVal fechaLimite10p As DateTime)
         periodo = periodop
         cooperativa = cooperativap
@@ -34,7 +36,5 @@
         fechaLimite9 = fechaLimite9p
         fechaLimite10 = fechaLimite10p
     End Sub
-
-
 
 End Class
