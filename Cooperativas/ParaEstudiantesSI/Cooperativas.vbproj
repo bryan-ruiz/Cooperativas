@@ -132,9 +132,12 @@
   <ItemGroup>
     <Compile Include="Clases\ComiteClase.vb" />
     <Compile Include="Clases\ConfiguracionClase.vb" />
+    <Compile Include="Clases\CuentaClase.vb" />
+    <Compile Include="Clases\IngresoClase.vb" />
     <Compile Include="Clases\SocioClase.vb" />
     <Compile Include="Codigo\Comites.vb" />
     <Compile Include="Codigo\Configuracion.vb" />
+    <Compile Include="Codigo\Ingreso.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="Codigo\Usuarios.vb" />
     <Compile Include="ConexionBD.vb" />

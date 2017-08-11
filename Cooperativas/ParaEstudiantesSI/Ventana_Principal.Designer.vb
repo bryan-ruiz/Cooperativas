@@ -2975,6 +2975,7 @@ Partial Class Ventana_Principal
         '
         'ComboBox_IngresosCodigCuenta
         '
+        Me.ComboBox_IngresosCodigCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox_IngresosCodigCuenta.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_IngresosCodigCuenta.FormattingEnabled = True
         Me.ComboBox_IngresosCodigCuenta.Location = New System.Drawing.Point(231, 355)

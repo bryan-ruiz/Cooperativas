@@ -10,7 +10,6 @@ Public Class ConexionBD
     Dim objAdap2 As OleDbDataAdapter 'Lo utilizaremos ejecutar consultas'
     Dim conectadoBD As Boolean = False 'Nos indica si estamos conectados a la BD, inicia como falso'
     Public SQL As String 'Se utiliza para escribir el Query que se quiere ejecutar'
-
     'Iniciar Conexion'
     Sub ConectarBD()
         Try
@@ -228,14 +227,6 @@ Public Class ConexionBD
     End Function
 
 
-
-
-
-
-
-
-
-
     Function eliminar_relacion(ByVal cod As String) As Integer
         Dim res As Integer = 0
         Try
@@ -367,7 +358,8 @@ Public Class ConexionBD
         Return MyList
     End Function
 
-
+    ''/////////////////////////////////////////////////////////////////////
+    '''                 CUENTAS
 
     Function insertarCuenta(ByVal cod_Descripcion As String, ByVal tipo As String,
                            ByVal proyecto_Productivo As String) As Integer
@@ -385,7 +377,99 @@ Public Class ConexionBD
         Catch ex As Exception
             MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
         End Try
-
         Return res
+    End Function
+
+    ''/////////////////////////////////////////////////////////////////////
+    '''                 INGRESOS
+
+    Function obtenerIngresos(ByVal fechaI As String, ByVal fechaF As String) As List(Of IngresoClase)
+        Dim MyList As New List(Of IngresoClase)
+        Try
+            MessageBox.Show("fecha: " + fechaI + "   " + fechaF)
+
+            SQL = "SELECT fecha,cliente,descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura FROM [INGRESOS]
+                where fecha= #9/8/2017#"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Try
+                        Dim nuevaCuenta As IngresoClase = New IngresoClase
+                        nuevaCuenta.ingresoClaseCostructor(reader.GetDateTime(0),
+                                                           reader.GetString(1), reader.GetString(2),
+                                                           reader.GetString(3), reader.GetString(4),
+                                                           reader.GetString(5), reader.GetString(6),
+                                                           reader.GetString(7))
+                        MyList.Add(nuevaCuenta)
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return MyList
+    End Function
+
+    Function insertarIngresos(ByVal fechap As DateTime,
+                             ByVal clientep As String,
+                             ByVal descripcripcionp As String,
+                             ByVal cantidadp As String,
+                             ByVal precioUnitariop As String,
+                             ByVal totalp As String,
+                             ByVal codCuentap As String,
+                             ByVal facturaRecibop As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "INSERT INTO [INGRESOS]" &
+           "(fecha,cliente, descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura)" &
+            "VALUES ('" + fechap + "', '" + clientep + "', '" +
+            descripcripcionp + "', " + cantidadp + ", " +
+            precioUnitariop + ", " + totalp + ", '" +
+            codCuentap + "', '" + facturaRecibop + "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return res
+    End Function
+
+    Function consultarCuentas() As List(Of CuentaClase)
+        Dim MyList As New List(Of CuentaClase)
+        Try
+            SQL = "SELECT CUENTAS.* FROM [CUENTAS]"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Try
+                        Dim nuevaCuenta As CuentaClase = New CuentaClase
+                        nuevaCuenta.cuentaClaseCostructor(reader.GetString(1),
+                                                          reader.GetString(2),
+                                                          reader.GetString(3))
+                        MyList.Add(nuevaCuenta)
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return MyList
     End Function
 End Class

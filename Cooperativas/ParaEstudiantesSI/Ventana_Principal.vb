@@ -7,7 +7,9 @@ Public Class Ventana_Principal
     Dim socios As Socios = New Socios
     Dim comites As Comites = New Comites
     Dim usuarios As Usuarios = New Usuarios
+    Dim ingreso As Ingreso = New Ingreso
     Dim configuracion As Configuracion = New Configuracion
+
 
 
     '//////////////////////////
@@ -187,6 +189,24 @@ Public Class Ventana_Principal
     Private Sub Button_ConfiguracionInsertarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionInsertarCodigoCuenta.Click
         configuracion.insertarCuenta()
     End Sub
+
+    Private Sub Button_IngresosInsertar_Click(sender As Object, e As EventArgs) Handles Button_IngresosInsertar.Click
+        ingreso.insertarIngreso()
+    End Sub
+
+    Private Sub cargar(sender As Object, e As EventArgs) Handles MyBase.Load
+        ingreso.obtenerDatosSeleccionarCuenta()
+    End Sub
+
+    Private Sub Button_IngresosCalcularTotal_Click(sender As Object, e As EventArgs) Handles Button_IngresosCalcularTotal.Click
+        ingreso.calcular()
+    End Sub
+
+    Private Sub Button_IngresosReporteIngresos_Click(sender As Object, e As EventArgs) Handles Button_IngresosReporteIngresos.Click
+        ingreso.generarReporteIngresos()
+        Print.Show()
+    End Sub
+
 
     ''Esta es la ventana correcta nuevo master
 End Class

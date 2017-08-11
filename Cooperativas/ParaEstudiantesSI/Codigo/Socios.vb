@@ -338,22 +338,4 @@ Public Class Socios
         End Try
     End Sub
 
-    'Genera un reporte de de matrícula en PDF'
-    Public Sub generarReporteDeMatricula()
-        'Exporting to PDF
-        Dim folderPath As String = "C:\Reportes\"
-        If Not Directory.Exists(folderPath) Then
-            Directory.CreateDirectory(folderPath)
-        End If
-
-        Dim pdfDoc As New Document()
-        Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(folderPath & "reporteMatricula.pdf", FileMode.Create))
-        pdfDoc.Open()
-        pdfDoc.Add(New Paragraph("matricula"))
-        pdfDoc.NewPage()
-        pdfDoc.Add(New Paragraph("pag 2 texto"))
-        pdfDoc.Close()
-        MessageBox.Show("Reporte generado con éxito en C:/Reportes/")
-    End Sub
-
 End Class
