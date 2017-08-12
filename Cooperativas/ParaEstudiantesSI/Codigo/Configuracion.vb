@@ -43,9 +43,28 @@ Public Class Configuracion
         End Try
     End Sub
 
+    Public Sub eliminarCuenta()
+        Dim valores As Integer
+        Dim id As String = Ventana_Principal.TextBox_ConfiguracionCuentaDescripcion.Text
+        If (id = "") Then
+            MessageBox.Show("Debe ingresar el codigo y descripción de la cuenta")
+        End If
 
+        Try
+            BD.ConectarBD()
+            valores = BD.eliminarCuenta(id)
+            If valores <> 0 Then
+                MessageBox.Show("Se ha realizado exitosamente")
+            Else
+                MessageBox.Show("Error: no se encontró la cuenta")
+            End If
 
-
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+            'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+        End Try
+    End Sub
 
     Public Sub consultar()
         Dim valores As List(Of ConfiguracionClase)

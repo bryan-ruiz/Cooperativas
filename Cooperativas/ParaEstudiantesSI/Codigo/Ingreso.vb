@@ -72,6 +72,7 @@ Public Class Ingreso
             valores = BD.consultarCuentas()
             If valores.Count <> 0 Then
                 estado = True
+                Ventana_Principal.ComboBox_IngresosCodigCuenta.Items.Clear()
                 Dim contador As Integer = 0
                 Dim conta As Integer = 0
                 While valores.Count > contador
@@ -95,6 +96,15 @@ Public Class Ingreso
             estado = False
             MessageBox.Show("Error de: " + ex.ToString)
         End Try
+    End Sub
+
+    Public Sub limpiar()
+        Ventana_Principal.TextBox_IngresosFacturaRecibos.Text = ""
+        Ventana_Principal.TextBox_IngresosCliente.Text = ""
+        Ventana_Principal.TextBox_IngresosDescripcion.Text = ""
+        Ventana_Principal.TextBox_IngresosCantidad.Text = ""
+        Ventana_Principal.TextBox_IngresosPrecioUnitario.Text = ""
+        Ventana_Principal.TextBox_IngresosTotal.Text = ""
     End Sub
 
     Public Sub insertarIngreso()
@@ -126,6 +136,7 @@ Public Class Ingreso
             valores = BD.insertarIngresos(fecha, cliente, descripcion, cantidad,
                                           precioUnitario, total, codCuenta, factura)
             If valores <> 0 Then
+                limpiar()
                 MessageBox.Show("Se ha realizado exitosamente")
             Else
                 MessageBox.Show("Error al insertar cuenta")

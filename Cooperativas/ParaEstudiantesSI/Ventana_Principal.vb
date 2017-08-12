@@ -189,6 +189,8 @@ Public Class Ventana_Principal
 
     Private Sub Button_ConfiguracionInsertarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionInsertarCodigoCuenta.Click
         configuracion.insertarCuenta()
+        ingreso.obtenerDatosSeleccionarCuenta()
+        gasto.obtenerDatosSeleccionarCuenta()
     End Sub
 
     Private Sub Button_IngresosInsertar_Click(sender As Object, e As EventArgs) Handles Button_IngresosInsertar.Click
@@ -220,6 +222,12 @@ Public Class Ventana_Principal
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
         gasto.generarReporteGastos()
         Print.Show()
+    End Sub
+
+    Private Sub Button_ConfiguracionEliminarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionEliminarCodigoCuenta.Click
+        configuracion.eliminarCuenta()
+        ingreso.obtenerDatosSeleccionarCuenta()
+        gasto.obtenerDatosSeleccionarCuenta()
     End Sub
 
 

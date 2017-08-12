@@ -62,7 +62,7 @@ Cooperativas
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="M:Cooperativas.ConexionBD.insertarCuenta(System.String,System.String,System.String)">
+<member name="M:Cooperativas.ConexionBD.eliminarCuenta(System.String)">
                  CUENTAS
 </member>
 <member name="M:Cooperativas.ConexionBD.obtenerIngresos(System.String,System.String)">

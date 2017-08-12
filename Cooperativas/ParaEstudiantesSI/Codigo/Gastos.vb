@@ -23,6 +23,7 @@ Public Class Gastos
             valores = BD.consultarCuentas()
             If valores.Count <> 0 Then
                 estado = True
+                Ventana_Principal.ComboBox_GastosCodCuenta.Items.Clear()
                 Dim contador As Integer = 0
                 Dim conta As Integer = 0
                 While valores.Count > contador
@@ -46,6 +47,15 @@ Public Class Gastos
             estado = False
             MessageBox.Show("Error de: " + ex.ToString)
         End Try
+    End Sub
+
+    Public Sub limpiar()
+        Ventana_Principal.TextBox_GastosFacturaRecibo.Text = ""
+        Ventana_Principal.TextBox_GastosProveedor.Text = ""
+        Ventana_Principal.TextBox_GastosDescripcion.Text = ""
+        Ventana_Principal.TextBox_GastosCantidad.Text = ""
+        Ventana_Principal.TextBox_GastosPrecioUnitario.Text = ""
+        Ventana_Principal.TextBox_GastosTotal.Text = ""
     End Sub
 
     Public Sub insertarGasto()
@@ -77,6 +87,7 @@ Public Class Gastos
             valores = BD.insertarGastos(fecha, cliente, descripcion, cantidad,
                                           precioUnitario, total, codCuenta, factura)
             If valores <> 0 Then
+                limpiar()
                 MessageBox.Show("Se ha realizado exitosamente")
             Else
                 MessageBox.Show("Error al insertar cuenta")
