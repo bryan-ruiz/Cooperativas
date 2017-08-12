@@ -51,7 +51,7 @@ Public Class Ingreso
 
     Public Sub generarReporteIngresos()
         Dim fechaInicial As String = Ventana_Principal.DateTimePicker_IngresosFechaInicio.Text
-        Dim fechaFinal As String = Ventana_Principal.DateTimePicker_IngresosFecha.Text
+        Dim fechaFinal As String = Ventana_Principal.DateTimePicker_IngresosFechaFinal.Text
         Try
             Dim valores As List(Of IngresoClase)
             BD.ConectarBD()

@@ -281,29 +281,29 @@ Partial Class Ventana_Principal
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Label108 = New System.Windows.Forms.Label()
-        Me.DateTimePicker28 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker29 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker_GastosFechaF = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker_GastosFechaI = New System.Windows.Forms.DateTimePicker()
         Me.Label109 = New System.Windows.Forms.Label()
         Me.Label110 = New System.Windows.Forms.Label()
         Me.Button21 = New System.Windows.Forms.Button()
-        Me.DateTimePicker27 = New System.Windows.Forms.DateTimePicker()
-        Me.Button13 = New System.Windows.Forms.Button()
+        Me.DateTimePicker_GastosFecha = New System.Windows.Forms.DateTimePicker()
+        Me.Button_GastosAgregar = New System.Windows.Forms.Button()
         Me.Label107 = New System.Windows.Forms.Label()
-        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button_GastosCalcular = New System.Windows.Forms.Button()
         Me.Label106 = New System.Windows.Forms.Label()
-        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox_GastosCodCuenta = New System.Windows.Forms.ComboBox()
         Me.Label105 = New System.Windows.Forms.Label()
         Me.Label100 = New System.Windows.Forms.Label()
         Me.Label104 = New System.Windows.Forms.Label()
-        Me.TextBox37 = New System.Windows.Forms.TextBox()
+        Me.TextBox_GastosTotal = New System.Windows.Forms.TextBox()
         Me.Label103 = New System.Windows.Forms.Label()
         Me.Label101 = New System.Windows.Forms.Label()
         Me.Label102 = New System.Windows.Forms.Label()
-        Me.TextBox38 = New System.Windows.Forms.TextBox()
-        Me.TextBox42 = New System.Windows.Forms.TextBox()
-        Me.TextBox39 = New System.Windows.Forms.TextBox()
-        Me.TextBox41 = New System.Windows.Forms.TextBox()
-        Me.TextBox40 = New System.Windows.Forms.TextBox()
+        Me.TextBox_GastosPrecioUnitario = New System.Windows.Forms.TextBox()
+        Me.TextBox_GastosFacturaRecibo = New System.Windows.Forms.TextBox()
+        Me.TextBox_GastosCantidad = New System.Windows.Forms.TextBox()
+        Me.TextBox_GastosProveedor = New System.Windows.Forms.TextBox()
+        Me.TextBox_GastosDescripcion = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Excedentes = New System.Windows.Forms.GroupBox()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
@@ -3121,29 +3121,29 @@ Partial Class Ventana_Principal
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.Label108)
-        Me.GroupBox6.Controls.Add(Me.DateTimePicker28)
-        Me.GroupBox6.Controls.Add(Me.DateTimePicker29)
+        Me.GroupBox6.Controls.Add(Me.DateTimePicker_GastosFechaF)
+        Me.GroupBox6.Controls.Add(Me.DateTimePicker_GastosFechaI)
         Me.GroupBox6.Controls.Add(Me.Label109)
         Me.GroupBox6.Controls.Add(Me.Label110)
         Me.GroupBox6.Controls.Add(Me.Button21)
-        Me.GroupBox6.Controls.Add(Me.DateTimePicker27)
-        Me.GroupBox6.Controls.Add(Me.Button13)
+        Me.GroupBox6.Controls.Add(Me.DateTimePicker_GastosFecha)
+        Me.GroupBox6.Controls.Add(Me.Button_GastosAgregar)
         Me.GroupBox6.Controls.Add(Me.Label107)
-        Me.GroupBox6.Controls.Add(Me.Button16)
+        Me.GroupBox6.Controls.Add(Me.Button_GastosCalcular)
         Me.GroupBox6.Controls.Add(Me.Label106)
-        Me.GroupBox6.Controls.Add(Me.ComboBox9)
+        Me.GroupBox6.Controls.Add(Me.ComboBox_GastosCodCuenta)
         Me.GroupBox6.Controls.Add(Me.Label105)
         Me.GroupBox6.Controls.Add(Me.Label100)
         Me.GroupBox6.Controls.Add(Me.Label104)
-        Me.GroupBox6.Controls.Add(Me.TextBox37)
+        Me.GroupBox6.Controls.Add(Me.TextBox_GastosTotal)
         Me.GroupBox6.Controls.Add(Me.Label103)
         Me.GroupBox6.Controls.Add(Me.Label101)
         Me.GroupBox6.Controls.Add(Me.Label102)
-        Me.GroupBox6.Controls.Add(Me.TextBox38)
-        Me.GroupBox6.Controls.Add(Me.TextBox42)
-        Me.GroupBox6.Controls.Add(Me.TextBox39)
-        Me.GroupBox6.Controls.Add(Me.TextBox41)
-        Me.GroupBox6.Controls.Add(Me.TextBox40)
+        Me.GroupBox6.Controls.Add(Me.TextBox_GastosPrecioUnitario)
+        Me.GroupBox6.Controls.Add(Me.TextBox_GastosFacturaRecibo)
+        Me.GroupBox6.Controls.Add(Me.TextBox_GastosCantidad)
+        Me.GroupBox6.Controls.Add(Me.TextBox_GastosProveedor)
+        Me.GroupBox6.Controls.Add(Me.TextBox_GastosDescripcion)
         Me.GroupBox6.ForeColor = System.Drawing.Color.White
         Me.GroupBox6.Location = New System.Drawing.Point(75, 20)
         Me.GroupBox6.Name = "GroupBox6"
@@ -3161,21 +3161,21 @@ Partial Class Ventana_Principal
         Me.Label108.TabIndex = 41
         Me.Label108.Text = "Generar Reporte de Gastos"
         '
-        'DateTimePicker28
+        'DateTimePicker_GastosFechaF
         '
-        Me.DateTimePicker28.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker28.Location = New System.Drawing.Point(642, 177)
-        Me.DateTimePicker28.Name = "DateTimePicker28"
-        Me.DateTimePicker28.Size = New System.Drawing.Size(144, 26)
-        Me.DateTimePicker28.TabIndex = 40
+        Me.DateTimePicker_GastosFechaF.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker_GastosFechaF.Location = New System.Drawing.Point(642, 177)
+        Me.DateTimePicker_GastosFechaF.Name = "DateTimePicker_GastosFechaF"
+        Me.DateTimePicker_GastosFechaF.Size = New System.Drawing.Size(144, 26)
+        Me.DateTimePicker_GastosFechaF.TabIndex = 40
         '
-        'DateTimePicker29
+        'DateTimePicker_GastosFechaI
         '
-        Me.DateTimePicker29.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker29.Location = New System.Drawing.Point(642, 145)
-        Me.DateTimePicker29.Name = "DateTimePicker29"
-        Me.DateTimePicker29.Size = New System.Drawing.Size(144, 26)
-        Me.DateTimePicker29.TabIndex = 39
+        Me.DateTimePicker_GastosFechaI.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker_GastosFechaI.Location = New System.Drawing.Point(642, 145)
+        Me.DateTimePicker_GastosFechaI.Name = "DateTimePicker_GastosFechaI"
+        Me.DateTimePicker_GastosFechaI.Size = New System.Drawing.Size(144, 26)
+        Me.DateTimePicker_GastosFechaI.TabIndex = 39
         '
         'Label109
         '
@@ -3206,25 +3206,25 @@ Partial Class Ventana_Principal
         Me.Button21.Text = "Reporte Gastos"
         Me.Button21.UseVisualStyleBackColor = True
         '
-        'DateTimePicker27
+        'DateTimePicker_GastosFecha
         '
-        Me.DateTimePicker27.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker27.Location = New System.Drawing.Point(231, 61)
-        Me.DateTimePicker27.Name = "DateTimePicker27"
-        Me.DateTimePicker27.Size = New System.Drawing.Size(254, 26)
-        Me.DateTimePicker27.TabIndex = 18
+        Me.DateTimePicker_GastosFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker_GastosFecha.Location = New System.Drawing.Point(231, 61)
+        Me.DateTimePicker_GastosFecha.Name = "DateTimePicker_GastosFecha"
+        Me.DateTimePicker_GastosFecha.Size = New System.Drawing.Size(254, 26)
+        Me.DateTimePicker_GastosFecha.TabIndex = 18
         '
-        'Button13
+        'Button_GastosAgregar
         '
-        Me.Button13.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button13.ForeColor = System.Drawing.Color.White
-        Me.Button13.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.Button13.Location = New System.Drawing.Point(230, 388)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(254, 44)
-        Me.Button13.TabIndex = 35
-        Me.Button13.Text = "Agregar Gasto"
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.Button_GastosAgregar.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_GastosAgregar.ForeColor = System.Drawing.Color.White
+        Me.Button_GastosAgregar.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.Button_GastosAgregar.Location = New System.Drawing.Point(230, 388)
+        Me.Button_GastosAgregar.Name = "Button_GastosAgregar"
+        Me.Button_GastosAgregar.Size = New System.Drawing.Size(254, 44)
+        Me.Button_GastosAgregar.TabIndex = 35
+        Me.Button_GastosAgregar.Text = "Agregar Gasto"
+        Me.Button_GastosAgregar.UseVisualStyleBackColor = True
         '
         'Label107
         '
@@ -3236,17 +3236,17 @@ Partial Class Ventana_Principal
         Me.Label107.TabIndex = 19
         Me.Label107.Text = "Fecha:"
         '
-        'Button16
+        'Button_GastosCalcular
         '
-        Me.Button16.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button16.ForeColor = System.Drawing.Color.White
-        Me.Button16.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.Button16.Location = New System.Drawing.Point(230, 273)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(254, 44)
-        Me.Button16.TabIndex = 34
-        Me.Button16.Text = "Calcular Total"
-        Me.Button16.UseVisualStyleBackColor = True
+        Me.Button_GastosCalcular.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_GastosCalcular.ForeColor = System.Drawing.Color.White
+        Me.Button_GastosCalcular.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.Button_GastosCalcular.Location = New System.Drawing.Point(230, 273)
+        Me.Button_GastosCalcular.Name = "Button_GastosCalcular"
+        Me.Button_GastosCalcular.Size = New System.Drawing.Size(254, 44)
+        Me.Button_GastosCalcular.TabIndex = 34
+        Me.Button_GastosCalcular.Text = "Calcular Total"
+        Me.Button_GastosCalcular.UseVisualStyleBackColor = True
         '
         'Label106
         '
@@ -3258,16 +3258,14 @@ Partial Class Ventana_Principal
         Me.Label106.TabIndex = 20
         Me.Label106.Text = "Factura o Recibo:"
         '
-        'ComboBox9
+        'ComboBox_GastosCodCuenta
         '
-        Me.ComboBox9.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox9.FormattingEnabled = True
-        Me.ComboBox9.Items.AddRange(New Object() {"S-01", "S-02", "S-03", "S-04", "S-05", "S-06", "S-07"})
-        Me.ComboBox9.Location = New System.Drawing.Point(230, 355)
-        Me.ComboBox9.Name = "ComboBox9"
-        Me.ComboBox9.Size = New System.Drawing.Size(254, 27)
-        Me.ComboBox9.TabIndex = 33
-        Me.ComboBox9.Text = "S-01"
+        Me.ComboBox_GastosCodCuenta.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_GastosCodCuenta.FormattingEnabled = True
+        Me.ComboBox_GastosCodCuenta.Location = New System.Drawing.Point(230, 355)
+        Me.ComboBox_GastosCodCuenta.Name = "ComboBox_GastosCodCuenta"
+        Me.ComboBox_GastosCodCuenta.Size = New System.Drawing.Size(254, 27)
+        Me.ComboBox_GastosCodCuenta.TabIndex = 33
         '
         'Label105
         '
@@ -3299,12 +3297,12 @@ Partial Class Ventana_Principal
         Me.Label104.TabIndex = 22
         Me.Label104.Text = "Descripción:"
         '
-        'TextBox37
+        'TextBox_GastosTotal
         '
-        Me.TextBox37.Location = New System.Drawing.Point(230, 323)
-        Me.TextBox37.Name = "TextBox37"
-        Me.TextBox37.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox37.TabIndex = 31
+        Me.TextBox_GastosTotal.Location = New System.Drawing.Point(230, 323)
+        Me.TextBox_GastosTotal.Name = "TextBox_GastosTotal"
+        Me.TextBox_GastosTotal.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_GastosTotal.TabIndex = 31
         '
         'Label103
         '
@@ -3336,41 +3334,41 @@ Partial Class Ventana_Principal
         Me.Label102.TabIndex = 24
         Me.Label102.Text = "Precio Unitario:"
         '
-        'TextBox38
+        'TextBox_GastosPrecioUnitario
         '
-        Me.TextBox38.Location = New System.Drawing.Point(230, 241)
-        Me.TextBox38.Name = "TextBox38"
-        Me.TextBox38.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox38.TabIndex = 29
+        Me.TextBox_GastosPrecioUnitario.Location = New System.Drawing.Point(230, 241)
+        Me.TextBox_GastosPrecioUnitario.Name = "TextBox_GastosPrecioUnitario"
+        Me.TextBox_GastosPrecioUnitario.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_GastosPrecioUnitario.TabIndex = 29
         '
-        'TextBox42
+        'TextBox_GastosFacturaRecibo
         '
-        Me.TextBox42.Location = New System.Drawing.Point(230, 93)
-        Me.TextBox42.Name = "TextBox42"
-        Me.TextBox42.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox42.TabIndex = 25
+        Me.TextBox_GastosFacturaRecibo.Location = New System.Drawing.Point(230, 93)
+        Me.TextBox_GastosFacturaRecibo.Name = "TextBox_GastosFacturaRecibo"
+        Me.TextBox_GastosFacturaRecibo.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_GastosFacturaRecibo.TabIndex = 25
         '
-        'TextBox39
+        'TextBox_GastosCantidad
         '
-        Me.TextBox39.Location = New System.Drawing.Point(230, 209)
-        Me.TextBox39.Name = "TextBox39"
-        Me.TextBox39.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox39.TabIndex = 28
+        Me.TextBox_GastosCantidad.Location = New System.Drawing.Point(230, 209)
+        Me.TextBox_GastosCantidad.Name = "TextBox_GastosCantidad"
+        Me.TextBox_GastosCantidad.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_GastosCantidad.TabIndex = 28
         '
-        'TextBox41
+        'TextBox_GastosProveedor
         '
-        Me.TextBox41.Location = New System.Drawing.Point(230, 125)
-        Me.TextBox41.Name = "TextBox41"
-        Me.TextBox41.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox41.TabIndex = 26
+        Me.TextBox_GastosProveedor.Location = New System.Drawing.Point(230, 125)
+        Me.TextBox_GastosProveedor.Name = "TextBox_GastosProveedor"
+        Me.TextBox_GastosProveedor.Size = New System.Drawing.Size(254, 26)
+        Me.TextBox_GastosProveedor.TabIndex = 26
         '
-        'TextBox40
+        'TextBox_GastosDescripcion
         '
-        Me.TextBox40.Location = New System.Drawing.Point(230, 157)
-        Me.TextBox40.Multiline = True
-        Me.TextBox40.Name = "TextBox40"
-        Me.TextBox40.Size = New System.Drawing.Size(254, 46)
-        Me.TextBox40.TabIndex = 27
+        Me.TextBox_GastosDescripcion.Location = New System.Drawing.Point(230, 157)
+        Me.TextBox_GastosDescripcion.Multiline = True
+        Me.TextBox_GastosDescripcion.Name = "TextBox_GastosDescripcion"
+        Me.TextBox_GastosDescripcion.Size = New System.Drawing.Size(254, 46)
+        Me.TextBox_GastosDescripcion.TabIndex = 27
         '
         'TabPage5
         '
@@ -4004,29 +4002,29 @@ Partial Class Ventana_Principal
     Friend WithEvents TextBox_IngresosCantidad As TextBox
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents Label108 As Label
-    Friend WithEvents DateTimePicker28 As DateTimePicker
-    Friend WithEvents DateTimePicker29 As DateTimePicker
+    Friend WithEvents DateTimePicker_GastosFechaF As DateTimePicker
+    Friend WithEvents DateTimePicker_GastosFechaI As DateTimePicker
     Friend WithEvents Label109 As Label
     Friend WithEvents Label110 As Label
     Friend WithEvents Button21 As Button
-    Friend WithEvents DateTimePicker27 As DateTimePicker
-    Friend WithEvents Button13 As Button
+    Friend WithEvents DateTimePicker_GastosFecha As DateTimePicker
+    Friend WithEvents Button_GastosAgregar As Button
     Friend WithEvents Label107 As Label
-    Friend WithEvents Button16 As Button
+    Friend WithEvents Button_GastosCalcular As Button
     Friend WithEvents Label106 As Label
-    Friend WithEvents ComboBox9 As ComboBox
+    Friend WithEvents ComboBox_GastosCodCuenta As ComboBox
     Friend WithEvents Label105 As Label
     Friend WithEvents Label100 As Label
     Friend WithEvents Label104 As Label
-    Friend WithEvents TextBox37 As TextBox
+    Friend WithEvents TextBox_GastosTotal As TextBox
     Friend WithEvents Label103 As Label
     Friend WithEvents Label101 As Label
     Friend WithEvents Label102 As Label
-    Friend WithEvents TextBox38 As TextBox
-    Friend WithEvents TextBox42 As TextBox
-    Friend WithEvents TextBox39 As TextBox
-    Friend WithEvents TextBox41 As TextBox
-    Friend WithEvents TextBox40 As TextBox
+    Friend WithEvents TextBox_GastosPrecioUnitario As TextBox
+    Friend WithEvents TextBox_GastosFacturaRecibo As TextBox
+    Friend WithEvents TextBox_GastosCantidad As TextBox
+    Friend WithEvents TextBox_GastosProveedor As TextBox
+    Friend WithEvents TextBox_GastosDescripcion As TextBox
     Friend WithEvents Label111 As Label
     Friend WithEvents DateTimePicker30 As DateTimePicker
     Friend WithEvents DateTimePicker31 As DateTimePicker

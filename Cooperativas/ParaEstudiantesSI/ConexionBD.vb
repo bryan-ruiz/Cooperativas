@@ -389,7 +389,7 @@ Public Class ConexionBD
             MessageBox.Show("fecha: " + fechaI + "   " + fechaF)
 
             SQL = "SELECT fecha,cliente,descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura FROM [INGRESOS]
-                where fecha= #9/8/2017#"
+                where fecha < " & fechaI & " and fecha > " & fechaF
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -444,6 +444,41 @@ Public Class ConexionBD
         End Try
         Return res
     End Function
+
+
+    ''/////////////////////////////////////////////////////////////////////
+    '''                 GASTOS
+
+    Function insertarGastos(ByVal fechap As DateTime,
+                             ByVal clientep As String,
+                             ByVal descripcripcionp As String,
+                             ByVal cantidadp As String,
+                             ByVal precioUnitariop As String,
+                             ByVal totalp As String,
+                             ByVal codCuentap As String,
+                             ByVal facturaRecibop As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "INSERT INTO [GASTOS]" &
+           "(fecha,proveedor, descripcion,cantidad,precioUnitario,total,codCuenta,facturaRecibo)" &
+            "VALUES ('" + fechap + "', '" + clientep + "', '" +
+            descripcripcionp + "', " + cantidadp + ", " +
+            precioUnitariop + ", " + totalp + ", '" +
+            codCuentap + "', '" + facturaRecibop + "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return res
+    End Function
+
+
+    ''//////////////////////////////////////////////////////////////////
 
     Function consultarCuentas() As List(Of CuentaClase)
         Dim MyList As New List(Of CuentaClase)
