@@ -49,29 +49,19 @@ Public Class Configuracion
 
     Public Sub consultar()
         Dim valores As List(Of ConfiguracionClase)
-        Dim periodo As String = Ventana_Principal.ConfiguracionTextBoxPeriodo.Text
-
-        If (periodo = "") Then
-            MessageBox.Show("Debe ingresar el periodo a consultar")
-            limpiar()
-        Else
-            Try
-                BD.ConectarBD()
-                valores = BD.obtenerDatosdeConfiguration(periodo)
-                If valores.Count <> 0 Then
-                    llenarDatos(valores)
-                Else
-                    MessageBox.Show("El Periodo a consultar no existe")
-                    limpiar()
-                End If
-
-                BD.CerrarConexion()
-
-
-            Catch ex As Exception
-                MessageBox.Show("Error de: " + ex.ToString)
-            End Try
-        End If
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerDatosdeConfiguration()
+            If valores.Count <> 0 Then
+                llenarDatos(valores)
+            Else
+                MessageBox.Show("El Periodo a consultar no existe")
+                limpiar()
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+        End Try
     End Sub
 
     'Limpia los campos de Socios'
@@ -83,6 +73,7 @@ Public Class Configuracion
     Public Sub llenarDatos(ByVal valores As List(Of ConfiguracionClase))
         Dim conta As Integer = 0
         While conta < valores.Count
+            Ventana_Principal.ConfiguracionTextBoxPeriodo.Text = valores(conta).periodo
             Ventana_Principal.ConfiguracionTextBoxCooperativa.Text = valores(conta).cooperativa
             Ventana_Principal.ConfiguracionTextBoxCedulaJuridica.Text = valores(conta).cedulaJuridica
             Ventana_Principal.ConfiguracionTextBoxTelefono.Text = valores(conta).telefono

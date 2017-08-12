@@ -327,10 +327,10 @@ Public Class ConexionBD
     End Function
 
     'FUNCIONES DE COMITE EN BASE DE DATOS
-    Function obtenerDatosdeConfiguration(ByVal periodo As String) As List(Of ConfiguracionClase)
+    Function obtenerDatosdeConfiguration() As List(Of ConfiguracionClase)
         Dim MyList As New List(Of ConfiguracionClase)
         Try
-            SQL = "SELECT CONFIGURACION.* FROM [CONFIGURACION] WHERE ((periodo) = '" & periodo & "')"
+            SQL = "SELECT CONFIGURACION.* FROM [CONFIGURACION]"
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -386,8 +386,6 @@ Public Class ConexionBD
     Function obtenerIngresos(ByVal fechaI As String, ByVal fechaF As String) As List(Of IngresoClase)
         Dim MyList As New List(Of IngresoClase)
         Try
-            MessageBox.Show("fecha: " + fechaI + "   " + fechaF)
-
             SQL = "SELECT fecha,cliente,descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura FROM [INGRESOS]"
 
             If conectadoBD = True Then
@@ -453,8 +451,6 @@ Public Class ConexionBD
     Function obtenerGastos(ByVal fechaI As String, ByVal fechaF As String) As List(Of GastoClase)
         Dim MyList As New List(Of GastoClase)
         Try
-            MessageBox.Show("fecha: " + fechaI + "   " + fechaF)
-
             SQL = "SELECT fecha,proveedor,descripcion,cantidad,precioUnitario,total,codCuenta,facturaRecibo FROM [GASTOS]"
 
             If conectadoBD = True Then
@@ -543,4 +539,5 @@ Public Class ConexionBD
         End Try
         Return MyList
     End Function
+
 End Class
