@@ -388,8 +388,7 @@ Public Class ConexionBD
         Try
             MessageBox.Show("fecha: " + fechaI + "   " + fechaF)
 
-            SQL = "SELECT fecha,cliente,descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura FROM [INGRESOS]
-                where fecha < " & fechaI & " and fecha > " & fechaF
+            SQL = "SELECT fecha,cliente,descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura FROM [INGRESOS]"
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -402,7 +401,9 @@ Public Class ConexionBD
                                                            reader.GetString(3), reader.GetString(4),
                                                            reader.GetString(5), reader.GetString(6),
                                                            reader.GetString(7))
-                        MyList.Add(nuevaCuenta)
+                        If nuevaCuenta.fecha >= fechaI And nuevaCuenta.fecha <= fechaF Then
+                            MyList.Add(nuevaCuenta)
+                        End If
                     Catch ex As Exception
                         MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
                     End Try
@@ -448,6 +449,41 @@ Public Class ConexionBD
 
     ''/////////////////////////////////////////////////////////////////////
     '''                 GASTOS
+
+    Function obtenerGastos(ByVal fechaI As String, ByVal fechaF As String) As List(Of GastoClase)
+        Dim MyList As New List(Of GastoClase)
+        Try
+            MessageBox.Show("fecha: " + fechaI + "   " + fechaF)
+
+            SQL = "SELECT fecha,proveedor,descripcion,cantidad,precioUnitario,total,codCuenta,facturaRecibo FROM [GASTOS]"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Try
+                        Dim nuevaCuenta As GastoClase = New GastoClase
+                        nuevaCuenta.ingresoClaseCostructor(reader.GetDateTime(0),
+                                                           reader.GetString(1), reader.GetString(2),
+                                                           reader.GetString(3), reader.GetString(4),
+                                                           reader.GetString(5), reader.GetString(6),
+                                                           reader.GetString(7))
+                        If nuevaCuenta.fecha >= fechaI And nuevaCuenta.fecha <= fechaF Then
+                            MyList.Add(nuevaCuenta)
+                        End If
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return MyList
+    End Function
 
     Function insertarGastos(ByVal fechap As DateTime,
                              ByVal clientep As String,

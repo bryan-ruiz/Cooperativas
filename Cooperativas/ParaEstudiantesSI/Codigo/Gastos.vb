@@ -131,4 +131,52 @@ Public Class Gastos
             'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
         End Try
     End Sub
+
+    Public Sub generarReporteGastos()
+        Dim fechaInicial As String = Ventana_Principal.DateTimePicker_GastosFechaI.Text
+        Dim fechaFinal As String = Ventana_Principal.DateTimePicker_GastosFechaF.Text
+        Try
+            Dim valores As List(Of GastoClase)
+            BD.ConectarBD()
+            valores = BD.obtenerGastos(fechaInicial, fechaFinal)
+            BD.CerrarConexion()
+
+            'Exporting to PDF
+            Dim folderPath As String = "C:\Reportes\"
+            If Not Directory.Exists(folderPath) Then
+                Directory.CreateDirectory(folderPath)
+            End If
+
+            Dim pdfDoc As New Document()
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(folderPath & "reporteGastos.pdf", FileMode.Create))
+            pdfDoc.Open()
+            OnStartPage(pdfWrite, pdfDoc)
+
+            Dim contador As Integer = 0
+            Dim conta As Integer = 0
+            While contador < valores.Count
+                MessageBox.Show("Si tengo algo")
+                If conta = 2 Then
+                    pdfDoc.NewPage()
+                    OnStartPage(pdfWrite, pdfDoc)
+                    conta = 0
+                End If
+                conta = conta + 1
+                pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
+                pdfDoc.Add(New Paragraph("Fecha:   " + valores(contador).fecha))
+                pdfDoc.Add(New Paragraph("Proveedor:    " + valores(contador).proveedor))
+                pdfDoc.Add(New Paragraph("Descripción: " + valores(contador).descripcripcion))
+                pdfDoc.Add(New Paragraph("Cantidad:  " + valores(contador).cantidad))
+                pdfDoc.Add(New Paragraph("Precio unitario: " + valores(contador).precioUnitario))
+                pdfDoc.Add(New Paragraph("Total: " + valores(contador).total))
+                pdfDoc.Add(New Paragraph("Código de cuenta:  " + valores(contador).codCuenta))
+                pdfDoc.Add(New Paragraph("Recibo/Factura:   " + valores(contador).facturaRecibo))
+                contador = contador + 1
+            End While
+            pdfDoc.Close()
+            MessageBox.Show("Reporte generado con éxito en C:/Reportes/")
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+        End Try
+    End Sub
 End Class

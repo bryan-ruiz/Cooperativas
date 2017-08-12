@@ -217,6 +217,11 @@ Public Class Ventana_Principal
         gasto.insertarGasto()
     End Sub
 
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        gasto.generarReporteGastos()
+        Print.Show()
+    End Sub
+
 
     ''Esta es la ventana correcta nuevo master
 End Class
