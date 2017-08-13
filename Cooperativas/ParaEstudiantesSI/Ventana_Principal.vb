@@ -8,6 +8,7 @@ Public Class Ventana_Principal
     Dim comites As Comites = New Comites
     Dim usuarios As Usuarios = New Usuarios
     Dim ingreso As Ingreso = New Ingreso
+    Dim gasto As Gastos = New Gastos
     Dim configuracion As Configuracion = New Configuracion
 
 
@@ -196,6 +197,7 @@ Public Class Ventana_Principal
 
     Private Sub cargar(sender As Object, e As EventArgs) Handles MyBase.Load
         ingreso.obtenerDatosSeleccionarCuenta()
+        gasto.obtenerDatosSeleccionarCuenta()
     End Sub
 
     Private Sub Button_IngresosCalcularTotal_Click(sender As Object, e As EventArgs) Handles Button_IngresosCalcularTotal.Click
@@ -205,6 +207,14 @@ Public Class Ventana_Principal
     Private Sub Button_IngresosReporteIngresos_Click(sender As Object, e As EventArgs) Handles Button_IngresosReporteIngresos.Click
         ingreso.generarReporteIngresos()
         Print.Show()
+    End Sub
+
+    Private Sub Button_GastosCalcular_Click(sender As Object, e As EventArgs) Handles Button_GastosCalcular.Click
+        gasto.calcular()
+    End Sub
+
+    Private Sub Button_GastosAgregar_Click(sender As Object, e As EventArgs) Handles Button_GastosAgregar.Click
+        gasto.insertarGasto()
     End Sub
 
 

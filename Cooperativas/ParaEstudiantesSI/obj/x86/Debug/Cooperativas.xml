@@ -68,6 +68,9 @@ Cooperativas
 <member name="M:Cooperativas.ConexionBD.obtenerIngresos(System.String,System.String)">
                  INGRESOS
 </member>
+<member name="M:Cooperativas.ConexionBD.insertarGastos(System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+                 GASTOS
+</member>
 <member name="T:Cooperativas.CoopeBDDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.
