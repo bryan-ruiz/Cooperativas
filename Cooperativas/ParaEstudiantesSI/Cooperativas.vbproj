@@ -133,6 +133,7 @@
     <Compile Include="Clases\ComiteClase.vb" />
     <Compile Include="Clases\ConfiguracionClase.vb" />
     <Compile Include="Clases\CuentaClase.vb" />
+    <Compile Include="Clases\EncabezadoClase.vb" />
     <Compile Include="Clases\GastoClase.vb" />
     <Compile Include="Clases\IngresoClase.vb" />
     <Compile Include="Clases\SocioClase.vb" />
