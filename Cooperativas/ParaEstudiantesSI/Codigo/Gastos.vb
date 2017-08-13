@@ -69,17 +69,14 @@ Public Class Gastos
         Dim total As String = Ventana_Principal.TextBox_GastosTotal.Text
         Dim codCuenta As String = Ventana_Principal.ComboBox_GastosCodCuenta.Text
 
-        If (factura = "" Or cliente = "" Or descripcion = "" Or cantidad = "" Or
-            precioUnitario = "" Or total = "" Or codCuenta = "" Or estado = False) Then
-            MessageBox.Show("Error: Espacios en blanco o datos faltantes")
+        If (factura = "" Or cliente = "" Or descripcion = "" Or total = "" Or codCuenta = "" Or estado = False) Then
+            MessageBox.Show("No deben haber campos requeridos en blanco!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
             Return
         End If
         Try
-            Integer.Parse(cantidad)
-            Integer.Parse(precioUnitario)
             Integer.Parse(total)
         Catch ex As Exception
-            MessageBox.Show("Error datos no numéricos en espacios requeridos")
+            MessageBox.Show("Error datos no numéricos en espacios requeridos!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
             Return
         End Try
         Try

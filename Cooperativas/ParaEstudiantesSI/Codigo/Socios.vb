@@ -143,10 +143,10 @@ Public Class Socios
                                                             direccion, genero, estado, fechaRetiro, notasRetiro, menor)
 
                 If insertado = 1 Then
-                    MessageBox.Show("Socio ingresado con éxito!")
+                    MessageBox.Show("Asociado ingresado con éxito!.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                     limpiar()
                 Else
-                    MessageBox.Show("Error al ingresar el Socio")
+                    MessageBox.Show("Error al ingresar el Asociado")
                     limpiar()
                 End If
                 'Muy importante cerrar conexion despues de cada consulta'
@@ -209,7 +209,7 @@ Public Class Socios
                     MessageBox.Show("Socio actualizado con éxito!")
                     limpiar()
                 Else
-                    MessageBox.Show("Error al actualizar la información del Socio")
+                    MessageBox.Show("Error al actualizar la información del Asociado")
                     limpiar()
                 End If
                 BD.CerrarConexion()
