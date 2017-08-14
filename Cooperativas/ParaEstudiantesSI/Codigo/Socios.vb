@@ -273,25 +273,31 @@ Public Class Socios
                     conta = 0
                 End If
                 conta = conta + 1
+
+                Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL)
+
                 pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
-                pdfDoc.Add(New Paragraph("Cédula:   " + valores(contador).cedula))
-                pdfDoc.Add(New Paragraph("Num. Asociado:    " + valores(contador).numAsoc))
-                pdfDoc.Add(New Paragraph("Nombre completo:  " + valores(contador).nombre + " " + valores(contador).primerApellido + " " + valores(contador).segundoApellido))
-                pdfDoc.Add(New Paragraph("Fecha de nacimiento:  " + valores(contador).fechaNacimineto))
-                pdfDoc.Add(New Paragraph("Teléfono: " + valores(contador).telefono))
-                pdfDoc.Add(New Paragraph("Responsable:  " + valores(contador).responsable))
-                pdfDoc.Add(New Paragraph("Beneficiario: " + valores(contador).beneficiario))
-                pdfDoc.Add(New Paragraph("Fecha de ingreso: " + valores(contador).fechaIngreso))
-                pdfDoc.Add(New Paragraph("Sección:  " + valores(contador).seccion))
-                pdfDoc.Add(New Paragraph("Ocupación/Especialidad:   " + valores(contador).ocupacionEspecialidad))
-                pdfDoc.Add(New Paragraph("Dirección:    " + valores(contador).direccion))
-                pdfDoc.Add(New Paragraph("Género:   " + valores(contador).genero))
-                pdfDoc.Add(New Paragraph("Estado:   " + valores(contador).estado))
-                pdfDoc.Add(New Paragraph("Cuota de matrícula:   " + valores(contador).cuotaMatricula))
+                pdfDoc.Add(New Paragraph("Cédula:   " + valores(contador).cedula, FontStype))
+                pdfDoc.Add(New Paragraph("Num. Asociado:    " + valores(contador).numAsoc, FontStype))
+                pdfDoc.Add(New Paragraph("Nombre completo:  " + valores(contador).nombre + " " + valores(contador).primerApellido + " " + valores(contador).segundoApellido, FontStype))
+                pdfDoc.Add(New Paragraph("Fecha de nacimiento:  " + valores(contador).fechaNacimineto, FontStype))
+                pdfDoc.Add(New Paragraph("Teléfono: " + valores(contador).telefono, FontStype))
+                pdfDoc.Add(New Paragraph("Responsable:  " + valores(contador).responsable, FontStype))
+                pdfDoc.Add(New Paragraph("Beneficiario: " + valores(contador).beneficiario, FontStype))
+                pdfDoc.Add(New Paragraph("Fecha de ingreso: " + valores(contador).fechaIngreso, FontStype))
+                pdfDoc.Add(New Paragraph("Sección:  " + valores(contador).seccion, FontStype))
+                pdfDoc.Add(New Paragraph("Ocupación/Especialidad:   " + valores(contador).ocupacionEspecialidad, FontStype))
+                pdfDoc.Add(New Paragraph("Dirección:    " + valores(contador).direccion, FontStype))
+                pdfDoc.Add(New Paragraph("Género:   " + valores(contador).genero, FontStype))
+                pdfDoc.Add(New Paragraph("Estado:   " + valores(contador).estado, FontStype))
+                pdfDoc.Add(New Paragraph("Cuota de matrícula:   " + valores(contador).cuotaMatricula, FontStype))
+
+
+
                 contador = contador + 1
             End While
             pdfDoc.Close()
-            MessageBox.Show("Reporte generado con éxito en C:/Reportes/")
+            MessageBox.Show("Reporte generado con éxito en C:/Reportes/.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
             MessageBox.Show("Error de: " + ex.ToString)
         End Try

@@ -34,9 +34,10 @@ Public Class EncabezadoClase
         cbEncabezado = writer.DirectContent
         With cbEncabezado
             .BeginText()
-            .SetFontAndSize(FontFactory.GetFont(FontFactory.HELVETICA_BOLD, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL).BaseFont, 8)
+            .SetFontAndSize(FontFactory.GetFont(FontFactory.HELVETICA_BOLD, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL).BaseFont, 9)
             .SetColorFill(iTextSharp.text.BaseColor.BLACK)
-            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, valores(0).cooperativa, 290, 760, 0)
+            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Cooperativa: " + valores(0).cooperativa, 290, 770, 0)
+            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Ced Jurídica: " + valores(0).cedulaJuridica, 290, 760, 0)
             .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Tel: " + valores(0).telefono, 290, 750, 0)
             .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy"), 290, 740, 0)
             .EndText()
@@ -46,20 +47,22 @@ Public Class EncabezadoClase
         '-----------------------------------------------------------------------------------------
         cbPie = writer.DirectContent
         cbPie.BeginText()
-        cbPie.SetFontAndSize(FontFactory.GetFont(FontFactory.HELVETICA, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL).BaseFont, 10)
+        cbPie.SetFontAndSize(FontFactory.GetFont(FontFactory.HELVETICA, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL).BaseFont, 8)
         cbPie.SetColorFill(iTextSharp.text.BaseColor.BLACK)
         cbPie.ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Página: " & writer.PageNumber, 540, 25, 0)
         cbPie.EndText()
         '-----------------------------------------------------------------------------------------
         ' LOGOS DEL DOCUMENTO
         '-----------------------------------------------------------------------------------------
-        oImagen = iTextSharp.text.Image.GetInstance("..\..\Imagen\coopePrueba.jpg")
+        oImagen = iTextSharp.text.Image.GetInstance("..\..\Imagen\MEP_Logo.png")
         oImagen.SetAbsolutePosition(28, 737)
-        oImagen.ScalePercent(20)                 'Ajuste porcentual de la imagen
-        document.Add(oImagen)                    'Se agrega la imagen al documento
+        'Ajuste porcentual de la imagen
+        oImagen.ScalePercent(50)
+        'Se agrega la imagen al documento
+        document.Add(oImagen)
 
         Dim contador As Integer = 0
-        While contador < 4
+        While contador < 5
             document.Add(New Paragraph(" "))
             contador = contador + 1
         End While

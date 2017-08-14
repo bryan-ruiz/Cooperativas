@@ -50,7 +50,6 @@ Partial Class Ventana_Principal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ButtonSociosSalir = New System.Windows.Forms.Button()
         Me.TextBoxSociosCedula = New System.Windows.Forms.TextBox()
-        Me.ButtonSociosLimpiar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DateTimeSociosFechaIngreso = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxSociosNombre = New System.Windows.Forms.TextBox()
@@ -430,7 +429,6 @@ Partial Class Ventana_Principal
         Me.GroupBox4.Controls.Add(Me.Label2)
         Me.GroupBox4.Controls.Add(Me.ButtonSociosSalir)
         Me.GroupBox4.Controls.Add(Me.TextBoxSociosCedula)
-        Me.GroupBox4.Controls.Add(Me.ButtonSociosLimpiar)
         Me.GroupBox4.Controls.Add(Me.Label3)
         Me.GroupBox4.Controls.Add(Me.DateTimeSociosFechaIngreso)
         Me.GroupBox4.Controls.Add(Me.TextBoxSociosNombre)
@@ -544,7 +542,7 @@ Partial Class Ventana_Principal
         '
         Me.Panel5.Controls.Add(Me.RadioButtonSociosReporteActivo)
         Me.Panel5.Controls.Add(Me.RadioButtonSociosReporteTodos)
-        Me.Panel5.Location = New System.Drawing.Point(520, 240)
+        Me.Panel5.Location = New System.Drawing.Point(520, 207)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(160, 35)
         Me.Panel5.TabIndex = 154
@@ -564,7 +562,7 @@ Partial Class Ventana_Principal
         'RadioButtonSociosReporteTodos
         '
         Me.RadioButtonSociosReporteTodos.AutoSize = True
-        Me.RadioButtonSociosReporteTodos.Location = New System.Drawing.Point(88, 5)
+        Me.RadioButtonSociosReporteTodos.Location = New System.Drawing.Point(83, 5)
         Me.RadioButtonSociosReporteTodos.Name = "RadioButtonSociosReporteTodos"
         Me.RadioButtonSociosReporteTodos.Size = New System.Drawing.Size(71, 27)
         Me.RadioButtonSociosReporteTodos.TabIndex = 153
@@ -664,7 +662,7 @@ Partial Class Ventana_Principal
         Me.ButtonSociosReporteDeSocios.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSociosReporteDeSocios.ForeColor = System.Drawing.Color.White
         Me.ButtonSociosReporteDeSocios.Image = CType(resources.GetObject("ButtonSociosReporteDeSocios.Image"), System.Drawing.Image)
-        Me.ButtonSociosReporteDeSocios.Location = New System.Drawing.Point(520, 281)
+        Me.ButtonSociosReporteDeSocios.Location = New System.Drawing.Point(520, 248)
         Me.ButtonSociosReporteDeSocios.Name = "ButtonSociosReporteDeSocios"
         Me.ButtonSociosReporteDeSocios.Size = New System.Drawing.Size(152, 40)
         Me.ButtonSociosReporteDeSocios.TabIndex = 140
@@ -688,7 +686,7 @@ Partial Class Ventana_Principal
         Me.ButtonSociosSalir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSociosSalir.ForeColor = System.Drawing.Color.White
         Me.ButtonSociosSalir.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.ButtonSociosSalir.Location = New System.Drawing.Point(520, 341)
+        Me.ButtonSociosSalir.Location = New System.Drawing.Point(520, 308)
         Me.ButtonSociosSalir.Name = "ButtonSociosSalir"
         Me.ButtonSociosSalir.Size = New System.Drawing.Size(153, 40)
         Me.ButtonSociosSalir.TabIndex = 122
@@ -702,19 +700,6 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosCedula.Name = "TextBoxSociosCedula"
         Me.TextBoxSociosCedula.Size = New System.Drawing.Size(236, 22)
         Me.TextBoxSociosCedula.TabIndex = 100
-        '
-        'ButtonSociosLimpiar
-        '
-        Me.ButtonSociosLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonSociosLimpiar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSociosLimpiar.ForeColor = System.Drawing.Color.White
-        Me.ButtonSociosLimpiar.Image = CType(resources.GetObject("ButtonSociosLimpiar.Image"), System.Drawing.Image)
-        Me.ButtonSociosLimpiar.Location = New System.Drawing.Point(520, 194)
-        Me.ButtonSociosLimpiar.Name = "ButtonSociosLimpiar"
-        Me.ButtonSociosLimpiar.Size = New System.Drawing.Size(152, 40)
-        Me.ButtonSociosLimpiar.TabIndex = 121
-        Me.ButtonSociosLimpiar.Text = "Limpiar"
-        Me.ButtonSociosLimpiar.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -4117,7 +4102,6 @@ Partial Class Ventana_Principal
     Friend WithEvents Label2 As Label
     Friend WithEvents ButtonSociosSalir As Button
     Friend WithEvents TextBoxSociosCedula As TextBox
-    Friend WithEvents ButtonSociosLimpiar As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents DateTimeSociosFechaIngreso As DateTimePicker
     Friend WithEvents TextBoxSociosNombre As TextBox
