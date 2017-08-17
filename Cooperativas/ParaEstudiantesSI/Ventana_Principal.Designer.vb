@@ -666,7 +666,7 @@ Partial Class Ventana_Principal
         Me.ButtonSociosReporteDeSocios.Name = "ButtonSociosReporteDeSocios"
         Me.ButtonSociosReporteDeSocios.Size = New System.Drawing.Size(152, 40)
         Me.ButtonSociosReporteDeSocios.TabIndex = 140
-        Me.ButtonSociosReporteDeSocios.Text = "Reporte Socios"
+        Me.ButtonSociosReporteDeSocios.Text = "Generar Reporte"
         Me.ButtonSociosReporteDeSocios.UseVisualStyleBackColor = False
         '
         'Label2
