@@ -226,6 +226,9 @@ Public Class Ventana_Principal
         gasto.obtenerDatosSeleccionarCuenta()
     End Sub
 
+    Private Sub CertificadosButtonSalir_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSalir.Click
+
+    End Sub
 
     ''Esta es la ventana correcta nuevo master
 End Class
