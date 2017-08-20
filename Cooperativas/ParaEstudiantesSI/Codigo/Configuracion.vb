@@ -106,6 +106,12 @@ Public Class Configuracion
             Ventana_Principal.ConfiguracionDateTimePickerFecha8.Value = Date.Parse(valores(conta).fechaLimite8)
             Ventana_Principal.ConfiguracionDateTimePickerFecha9.Value = Date.Parse(valores(conta).fechaLimite9)
             Ventana_Principal.ConfiguracionDateTimePickerFecha10.Value = Date.Parse(valores(conta).fechaLimite10)
+            Ventana_Principal.ConfiguracionTextBoxLegal.Text = valores(conta).legal
+            Ventana_Principal.ConfiguracionTextBoxEducacion.Text = valores(conta).educacion
+            Ventana_Principal.ConfiguracionTextBoxBienestarSocial.Text = valores(conta).bienestarSocial
+            Ventana_Principal.ConfiguracionTextBoxInstitucional.Text = valores(conta).institucional
+            Ventana_Principal.ConfiguracionTextBoxPatrimonial.Text = valores(conta).patrimonial
+
             conta = conta + 1
         End While
     End Sub

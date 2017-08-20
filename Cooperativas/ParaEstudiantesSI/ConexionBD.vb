@@ -342,7 +342,8 @@ Public Class ConexionBD
                                                     reader.GetString(4), reader.GetDateTime(5), reader.GetDateTime(6),
                                                     reader.GetDateTime(7), reader.GetDateTime(8), reader.GetDateTime(9),
                                                     reader.GetDateTime(10), reader.GetDateTime(11), reader.GetDateTime(12),
-                                                    reader.GetDateTime(13), reader.GetDateTime(14))
+                                                    reader.GetDateTime(13), reader.GetDateTime(14), reader.GetString(15),
+                                                    reader.GetString(16), reader.GetString(17), reader.GetString(18), reader.GetString(19))
                         MyList.Add(nuevaConfiguracion)
                     Catch ex As Exception
                         MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)

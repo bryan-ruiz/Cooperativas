@@ -78,14 +78,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cooperativas.exe" size="8576912">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cooperativas.exe" size="8577936">
       <assemblyIdentity name="Cooperativas" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Mem1z78S4pHvpCk7pFsnG/HnDW0=</dsig:DigestValue>
+        <dsig:DigestValue>hYbpGCgS7H2XKQbgEGuQQNOeVBI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
