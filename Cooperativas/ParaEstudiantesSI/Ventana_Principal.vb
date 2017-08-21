@@ -180,7 +180,7 @@ Public Class Ventana_Principal
     End Sub
 
     Private Sub ConfigurationButtonActualizar_Click(sender As Object, e As EventArgs) Handles ConfigurationButtonActualizar.Click
-
+        configuracion.actualizar()
     End Sub
 
     Private Sub Button_ConfiguracionInsertarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionInsertarCodigoCuenta.Click

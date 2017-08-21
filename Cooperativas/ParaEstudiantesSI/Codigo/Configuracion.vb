@@ -66,6 +66,7 @@ Public Class Configuracion
         End Try
     End Sub
 
+    'Consulta todos los datos de la tabla de Configuración'
     Public Sub consultar()
         Dim valores As List(Of ConfiguracionClase)
         Try
@@ -114,6 +115,47 @@ Public Class Configuracion
 
             conta = conta + 1
         End While
+    End Sub
+
+    'Actualiza todos los datos en la tabla de Configuracion'
+    Public Sub actualizar()
+        Dim periodo As String = Ventana_Principal.ConfiguracionTextBoxPeriodo.Text
+        Dim cooperativa As String = Ventana_Principal.ConfiguracionTextBoxCooperativa.Text
+        Dim cedulaJuridica As String = Ventana_Principal.ConfiguracionTextBoxCedulaJuridica.Text
+        Dim telefono As String = Ventana_Principal.ConfiguracionTextBoxTelefono.Text
+        Dim fecha1 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha1.Value.ToString("dd/MM/yyyy")
+        Dim fecha2 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha2.Value.ToString("dd/MM/yyyy")
+        Dim fecha3 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha3.Value.ToString("dd/MM/yyyy")
+        Dim fecha4 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha4.Value.ToString("dd/MM/yyyy")
+        Dim fecha5 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha5.Value.ToString("dd/MM/yyyy")
+        Dim fecha6 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha6.Value.ToString("dd/MM/yyyy")
+        Dim fecha7 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha7.Value.ToString("dd/MM/yyyy")
+        Dim fecha8 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha8.Value.ToString("dd/MM/yyyy")
+        Dim fecha9 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha9.Value.ToString("dd/MM/yyyy")
+        Dim fecha10 As Date = Ventana_Principal.ConfiguracionDateTimePickerFecha10.Value.ToString("dd/MM/yyyy")
+        Dim legal As String = Ventana_Principal.ConfiguracionTextBoxLegal.Text
+        Dim educacion As String = Ventana_Principal.ConfiguracionTextBoxEducacion.Text
+        Dim bienestarSocial As String = Ventana_Principal.ConfiguracionTextBoxBienestarSocial.Text
+        Dim institucional As String = Ventana_Principal.ConfiguracionTextBoxInstitucional.Text
+        Dim patrimonial As String = Ventana_Principal.ConfiguracionTextBoxPatrimonial.Text
+
+        If (periodo = "" Or cooperativa = "" Or cedulaJuridica = "" Or legal = "" Or educacion = "" Or bienestarSocial = "" Or institucional = "" Or patrimonial = "") Then
+            MessageBox.Show("No deben haber campos vacíos!")
+        Else
+            Try
+                BD.ConectarBD()
+                Dim modificado = BD.actualizarConfiguracion(periodo, cooperativa, cedulaJuridica, telefono, fecha1, fecha2, fecha3, fecha4, fecha5,
+                                                            fecha6, fecha7, fecha8, fecha9, fecha10, legal, educacion, bienestarSocial, institucional, patrimonial)
+                If modificado = 1 Then
+                    MessageBox.Show("Configuración actualizada con éxito!")
+                Else
+                    MessageBox.Show("Error al actualizar la información de la Configuración")
+                End If
+                BD.CerrarConexion()
+            Catch ex As Exception
+                MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+            End Try
+        End If
     End Sub
 
 End Class

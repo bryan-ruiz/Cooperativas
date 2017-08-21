@@ -3348,7 +3348,7 @@ Partial Class Ventana_Principal
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage5.Size = New System.Drawing.Size(997, 675)
         Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "Excedentes"
+        Me.TabPage5.Text = "Informe Económico"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
         'Excedentes
@@ -3359,7 +3359,7 @@ Partial Class Ventana_Principal
         Me.Excedentes.Size = New System.Drawing.Size(918, 624)
         Me.Excedentes.TabIndex = 0
         Me.Excedentes.TabStop = False
-        Me.Excedentes.Text = "Excedentes"
+        Me.Excedentes.Text = "Informe Económico"
         '
         'TabPage8
         '
