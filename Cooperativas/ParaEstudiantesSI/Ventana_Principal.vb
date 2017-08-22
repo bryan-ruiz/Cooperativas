@@ -244,7 +244,16 @@ Public Class Ventana_Principal
         gasto.obtenerDatosSeleccionarCuenta()
     End Sub
 
-    ''Esta es la ventana correcta nuevo master
+    Private Sub CertificadosButtonSaveTracto1_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto1.Click
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        End If
+    End Sub
+
+
 End Class
 
 
