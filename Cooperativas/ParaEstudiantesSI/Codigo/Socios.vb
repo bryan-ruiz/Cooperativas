@@ -139,10 +139,12 @@ Public Class Socios
         Else
             Try
                 BD.ConectarBD()
-                Dim insertado As Integer = BD.insertarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad,
-                                                            direccion, genero, estado, fechaRetiro, notasRetiro, menor)
+                Dim insertado As Integer = BD.insertarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario,
+                                                            fechaIngreso, seccion, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
 
-                If insertado = 1 Then
+                Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
+
+                If (insertado = 1 And certificadoXSocio = 1) Then
                     MessageBox.Show("Asociado ingresado con éxito!.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                     limpiar()
                 Else

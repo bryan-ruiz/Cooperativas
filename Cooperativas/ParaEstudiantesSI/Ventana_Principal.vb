@@ -163,10 +163,26 @@ Public Class Ventana_Principal
     End Sub
 
     '//////////////////////////
-    '///////  CERTIFICADOS //////////
+    '///////  CERTIFICADOS ////
     '//////////////////////////
 
     Private Sub CertificadosButtonConsultar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonConsultar.Click
+
+    End Sub
+
+    Private Sub CertificadosButtonGuardar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonGuardar.Click
+
+    End Sub
+
+    Private Sub CertificadosButtonComprobante_Click(sender As Object, e As EventArgs) Handles CertificadosButtonComprobante.Click
+
+    End Sub
+
+    Private Sub CertificadosButtonCerrarPeriodo_Click(sender As Object, e As EventArgs) Handles CertificadosButtonCerrarPeriodo.Click
+
+    End Sub
+
+    Private Sub CertificadosButtonSalir_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSalir.Click
 
     End Sub
 
@@ -224,10 +240,6 @@ Public Class Ventana_Principal
         configuracion.eliminarCuenta()
         ingreso.obtenerDatosSeleccionarCuenta()
         gasto.obtenerDatosSeleccionarCuenta()
-    End Sub
-
-    Private Sub CertificadosButtonSalir_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSalir.Click
-
     End Sub
 
     ''Esta es la ventana correcta nuevo master

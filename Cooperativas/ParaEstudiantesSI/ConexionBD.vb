@@ -120,7 +120,6 @@ Public Class ConexionBD
                 SQL = "SELECT SOCIOS.* FROM [SOCIOS]"
             End If
 
-
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -186,6 +185,32 @@ Public Class ConexionBD
            "(cedula, numAsociado, nombre, primerApellido, segundoApellido, fechaNacimiento, telefono, cuotaMatricula, responsable, beneficiario, fechaIngreso, seccion, ocupacionEspecialidad, direccion, genero, estado, fechaRetiro, notasRetiro,menor)" &
             "VALUES ('" + cedula + "', '" + numAsociado + "', '" + nombre + "', '" + apellidoUno + "', '" + apellidoDos + "', '" + fechaNacimiento + "', '" + telefono + "', '" + cuota + "' , '" + responsable + "', '" + beneficiario + "', '" + fechaIngreso + "',
             '" + seccion + "', '" + especialidad + "', '" + direccion + "', '" + genero + "', '" + estado + "', '" + fechaRetiro + "', '" + notasRetiro + "', '" + menor + "')"
+            'Comando para ejecutar el query'
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+
+        Return res
+    End Function
+
+    'Inserta un Certificado X Socio
+    Function insertarCertificadoXSocio(ByVal cedulaAsociado As String, ByVal numAsociado As String, ByVal tracto1 As String, ByVal tracto2 As String, ByVal tracto3 As String,
+                                       ByVal tracto4 As String, ByVal tracto5 As String, ByVal tracto6 As String, ByVal tracto7 As String, ByVal tracto8 As String, ByVal tracto9 As String, ByVal tracto10 As String,
+                                       acumuladoAnterior As String, ByVal total As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "INSERT INTO [CERTIFICADOS]" &
+           "(cedulaAsociado, numAsociado, tracto1, tracto2, tracto3, tracto4, tracto5, tracto6, tracto7, tracto8, tracto9, tracto10, acumuladoAnterior, total)" &
+            "VALUES ('" + cedulaAsociado + "', '" + numAsociado + "', '" + tracto1 + "', '" + tracto2 + "', '" + tracto3 + "', '" + tracto4 + "', '" + tracto5 + "', '" + tracto6 + "' ,
+            '" + tracto7 + "', '" + tracto8 + "', '" + tracto9 + "', '" + tracto10 + "', '" + acumuladoAnterior + "', '" + total + "')"
             'Comando para ejecutar el query'
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
