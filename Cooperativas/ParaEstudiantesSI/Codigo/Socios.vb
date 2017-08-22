@@ -8,6 +8,7 @@ Public Class Socios
     Dim encabezado As EncabezadoClase = New EncabezadoClase
 
     Public Sub consultar()
+
         Dim valores As List(Of String)
         Dim cedula As String = Ventana_Principal.TextBoxSociosCedula.Text
         Dim numAsociado As String = Ventana_Principal.TextBoxSociosNumAsociado.Text

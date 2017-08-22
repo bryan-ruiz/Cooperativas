@@ -202,28 +202,28 @@ Partial Class Ventana_Principal
         Me.Label114 = New System.Windows.Forms.Label()
         Me.Label112 = New System.Windows.Forms.Label()
         Me.Label111 = New System.Windows.Forms.Label()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTotalPeriodo = New System.Windows.Forms.TextBox()
         Me.Label88 = New System.Windows.Forms.Label()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxAcumAnterior = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto10 = New System.Windows.Forms.TextBox()
         Me.Label86 = New System.Windows.Forms.Label()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto9 = New System.Windows.Forms.TextBox()
         Me.Label84 = New System.Windows.Forms.Label()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto8 = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto7 = New System.Windows.Forms.TextBox()
         Me.Label49 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto6 = New System.Windows.Forms.TextBox()
         Me.Label47 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto5 = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto4 = New System.Windows.Forms.TextBox()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto3 = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto2 = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.CertificadosTextboxTracto1 = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.CertificadosButtonConsultar = New System.Windows.Forms.Button()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -2067,28 +2067,28 @@ Partial Class Ventana_Principal
         Me.GroupBox3.Controls.Add(Me.Label114)
         Me.GroupBox3.Controls.Add(Me.Label112)
         Me.GroupBox3.Controls.Add(Me.Label111)
-        Me.GroupBox3.Controls.Add(Me.TextBox22)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTotalPeriodo)
         Me.GroupBox3.Controls.Add(Me.Label88)
-        Me.GroupBox3.Controls.Add(Me.TextBox19)
-        Me.GroupBox3.Controls.Add(Me.TextBox14)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxAcumAnterior)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto10)
         Me.GroupBox3.Controls.Add(Me.Label86)
-        Me.GroupBox3.Controls.Add(Me.TextBox13)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto9)
         Me.GroupBox3.Controls.Add(Me.Label84)
-        Me.GroupBox3.Controls.Add(Me.TextBox12)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto8)
         Me.GroupBox3.Controls.Add(Me.Label51)
-        Me.GroupBox3.Controls.Add(Me.TextBox11)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto7)
         Me.GroupBox3.Controls.Add(Me.Label49)
-        Me.GroupBox3.Controls.Add(Me.TextBox10)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto6)
         Me.GroupBox3.Controls.Add(Me.Label47)
-        Me.GroupBox3.Controls.Add(Me.TextBox9)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto5)
         Me.GroupBox3.Controls.Add(Me.Label45)
-        Me.GroupBox3.Controls.Add(Me.TextBox8)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto4)
         Me.GroupBox3.Controls.Add(Me.Label42)
-        Me.GroupBox3.Controls.Add(Me.TextBox7)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto3)
         Me.GroupBox3.Controls.Add(Me.Label34)
-        Me.GroupBox3.Controls.Add(Me.TextBox6)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto2)
         Me.GroupBox3.Controls.Add(Me.Label29)
-        Me.GroupBox3.Controls.Add(Me.TextBox5)
+        Me.GroupBox3.Controls.Add(Me.CertificadosTextboxTracto1)
         Me.GroupBox3.Controls.Add(Me.Label28)
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonConsultar)
         Me.GroupBox3.Controls.Add(Me.Label37)
@@ -2351,13 +2351,13 @@ Partial Class Ventana_Principal
         Me.Label111.TabIndex = 194
         Me.Label111.Text = "Fecha Límite:"
         '
-        'TextBox22
+        'CertificadosTextboxTotalPeriodo
         '
-        Me.TextBox22.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox22.Location = New System.Drawing.Point(161, 79)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(118, 22)
-        Me.TextBox22.TabIndex = 193
+        Me.CertificadosTextboxTotalPeriodo.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTotalPeriodo.Location = New System.Drawing.Point(161, 79)
+        Me.CertificadosTextboxTotalPeriodo.Name = "CertificadosTextboxTotalPeriodo"
+        Me.CertificadosTextboxTotalPeriodo.Size = New System.Drawing.Size(118, 22)
+        Me.CertificadosTextboxTotalPeriodo.TabIndex = 193
         '
         'Label88
         '
@@ -2369,21 +2369,21 @@ Partial Class Ventana_Principal
         Me.Label88.TabIndex = 192
         Me.Label88.Text = "Total del Periodo:"
         '
-        'TextBox19
+        'CertificadosTextboxAcumAnterior
         '
-        Me.TextBox19.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox19.Location = New System.Drawing.Point(161, 48)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(118, 22)
-        Me.TextBox19.TabIndex = 191
+        Me.CertificadosTextboxAcumAnterior.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxAcumAnterior.Location = New System.Drawing.Point(161, 48)
+        Me.CertificadosTextboxAcumAnterior.Name = "CertificadosTextboxAcumAnterior"
+        Me.CertificadosTextboxAcumAnterior.Size = New System.Drawing.Size(118, 22)
+        Me.CertificadosTextboxAcumAnterior.TabIndex = 191
         '
-        'TextBox14
+        'CertificadosTextboxTracto10
         '
-        Me.TextBox14.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(243, 572)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox14.TabIndex = 189
+        Me.CertificadosTextboxTracto10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto10.Location = New System.Drawing.Point(243, 572)
+        Me.CertificadosTextboxTracto10.Name = "CertificadosTextboxTracto10"
+        Me.CertificadosTextboxTracto10.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto10.TabIndex = 189
         '
         'Label86
         '
@@ -2395,13 +2395,13 @@ Partial Class Ventana_Principal
         Me.Label86.TabIndex = 188
         Me.Label86.Text = "10º Tracto:"
         '
-        'TextBox13
+        'CertificadosTextboxTracto9
         '
-        Me.TextBox13.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.Location = New System.Drawing.Point(243, 531)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox13.TabIndex = 185
+        Me.CertificadosTextboxTracto9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto9.Location = New System.Drawing.Point(243, 531)
+        Me.CertificadosTextboxTracto9.Name = "CertificadosTextboxTracto9"
+        Me.CertificadosTextboxTracto9.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto9.TabIndex = 185
         '
         'Label84
         '
@@ -2413,13 +2413,13 @@ Partial Class Ventana_Principal
         Me.Label84.TabIndex = 184
         Me.Label84.Text = "9º Tracto:"
         '
-        'TextBox12
+        'CertificadosTextboxTracto8
         '
-        Me.TextBox12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.Location = New System.Drawing.Point(243, 489)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox12.TabIndex = 181
+        Me.CertificadosTextboxTracto8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto8.Location = New System.Drawing.Point(243, 489)
+        Me.CertificadosTextboxTracto8.Name = "CertificadosTextboxTracto8"
+        Me.CertificadosTextboxTracto8.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto8.TabIndex = 181
         '
         'Label51
         '
@@ -2431,13 +2431,13 @@ Partial Class Ventana_Principal
         Me.Label51.TabIndex = 180
         Me.Label51.Text = "8º Tracto:"
         '
-        'TextBox11
+        'CertificadosTextboxTracto7
         '
-        Me.TextBox11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.Location = New System.Drawing.Point(243, 449)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox11.TabIndex = 177
+        Me.CertificadosTextboxTracto7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto7.Location = New System.Drawing.Point(243, 449)
+        Me.CertificadosTextboxTracto7.Name = "CertificadosTextboxTracto7"
+        Me.CertificadosTextboxTracto7.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto7.TabIndex = 177
         '
         'Label49
         '
@@ -2449,13 +2449,13 @@ Partial Class Ventana_Principal
         Me.Label49.TabIndex = 176
         Me.Label49.Text = "7º Tracto:"
         '
-        'TextBox10
+        'CertificadosTextboxTracto6
         '
-        Me.TextBox10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(243, 406)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox10.TabIndex = 173
+        Me.CertificadosTextboxTracto6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto6.Location = New System.Drawing.Point(243, 406)
+        Me.CertificadosTextboxTracto6.Name = "CertificadosTextboxTracto6"
+        Me.CertificadosTextboxTracto6.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto6.TabIndex = 173
         '
         'Label47
         '
@@ -2467,13 +2467,13 @@ Partial Class Ventana_Principal
         Me.Label47.TabIndex = 172
         Me.Label47.Text = "6º Tracto:"
         '
-        'TextBox9
+        'CertificadosTextboxTracto5
         '
-        Me.TextBox9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(243, 364)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox9.TabIndex = 169
+        Me.CertificadosTextboxTracto5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto5.Location = New System.Drawing.Point(243, 364)
+        Me.CertificadosTextboxTracto5.Name = "CertificadosTextboxTracto5"
+        Me.CertificadosTextboxTracto5.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto5.TabIndex = 169
         '
         'Label45
         '
@@ -2485,13 +2485,13 @@ Partial Class Ventana_Principal
         Me.Label45.TabIndex = 168
         Me.Label45.Text = "5º Tracto:"
         '
-        'TextBox8
+        'CertificadosTextboxTracto4
         '
-        Me.TextBox8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(243, 323)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox8.TabIndex = 165
+        Me.CertificadosTextboxTracto4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto4.Location = New System.Drawing.Point(243, 323)
+        Me.CertificadosTextboxTracto4.Name = "CertificadosTextboxTracto4"
+        Me.CertificadosTextboxTracto4.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto4.TabIndex = 165
         '
         'Label42
         '
@@ -2503,13 +2503,13 @@ Partial Class Ventana_Principal
         Me.Label42.TabIndex = 164
         Me.Label42.Text = "4º Tracto:"
         '
-        'TextBox7
+        'CertificadosTextboxTracto3
         '
-        Me.TextBox7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(243, 283)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox7.TabIndex = 161
+        Me.CertificadosTextboxTracto3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto3.Location = New System.Drawing.Point(243, 283)
+        Me.CertificadosTextboxTracto3.Name = "CertificadosTextboxTracto3"
+        Me.CertificadosTextboxTracto3.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto3.TabIndex = 161
         '
         'Label34
         '
@@ -2521,13 +2521,13 @@ Partial Class Ventana_Principal
         Me.Label34.TabIndex = 160
         Me.Label34.Text = "3º Tracto:"
         '
-        'TextBox6
+        'CertificadosTextboxTracto2
         '
-        Me.TextBox6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(243, 244)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox6.TabIndex = 157
+        Me.CertificadosTextboxTracto2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto2.Location = New System.Drawing.Point(243, 244)
+        Me.CertificadosTextboxTracto2.Name = "CertificadosTextboxTracto2"
+        Me.CertificadosTextboxTracto2.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto2.TabIndex = 157
         '
         'Label29
         '
@@ -2539,13 +2539,13 @@ Partial Class Ventana_Principal
         Me.Label29.TabIndex = 156
         Me.Label29.Text = "2º Tracto:"
         '
-        'TextBox5
+        'CertificadosTextboxTracto1
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(243, 206)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox5.TabIndex = 153
+        Me.CertificadosTextboxTracto1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosTextboxTracto1.Location = New System.Drawing.Point(243, 206)
+        Me.CertificadosTextboxTracto1.Name = "CertificadosTextboxTracto1"
+        Me.CertificadosTextboxTracto1.Size = New System.Drawing.Size(154, 22)
+        Me.CertificadosTextboxTracto1.TabIndex = 153
         '
         'Label28
         '
@@ -4026,29 +4026,29 @@ Partial Class Ventana_Principal
     Friend WithEvents CertificadosButtonConsultar As Button
     Friend WithEvents RadioButtonUsuariosColaborador As RadioButton
     Friend WithEvents RadioButtonUsuariosAdmin As RadioButton
-    Friend WithEvents TextBox14 As TextBox
+    Friend WithEvents CertificadosTextboxTracto10 As TextBox
     Friend WithEvents Label86 As Label
-    Friend WithEvents TextBox13 As TextBox
+    Friend WithEvents CertificadosTextboxTracto9 As TextBox
     Friend WithEvents Label84 As Label
-    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents CertificadosTextboxTracto8 As TextBox
     Friend WithEvents Label51 As Label
-    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents CertificadosTextboxTracto7 As TextBox
     Friend WithEvents Label49 As Label
-    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents CertificadosTextboxTracto6 As TextBox
     Friend WithEvents Label47 As Label
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents CertificadosTextboxTracto5 As TextBox
     Friend WithEvents Label45 As Label
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents CertificadosTextboxTracto4 As TextBox
     Friend WithEvents Label42 As Label
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents CertificadosTextboxTracto3 As TextBox
     Friend WithEvents Label34 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents CertificadosTextboxTracto2 As TextBox
     Friend WithEvents Label29 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents CertificadosTextboxTracto1 As TextBox
     Friend WithEvents Label28 As Label
-    Friend WithEvents TextBox22 As TextBox
+    Friend WithEvents CertificadosTextboxTotalPeriodo As TextBox
     Friend WithEvents Label88 As Label
-    Friend WithEvents TextBox19 As TextBox
+    Friend WithEvents CertificadosTextboxAcumAnterior As TextBox
     Friend WithEvents TabPage6 As TabPage
     Friend WithEvents TabPage7 As TabPage
     Friend WithEvents TabPage8 As TabPage

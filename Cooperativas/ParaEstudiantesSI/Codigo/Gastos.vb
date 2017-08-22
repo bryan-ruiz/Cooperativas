@@ -6,6 +6,8 @@ Public Class Gastos
     Dim BD As ConexionBD = New ConexionBD
     Dim estado As Boolean = True
     Dim encabezado As EncabezadoClase = New EncabezadoClase
+
+    'Calcula cantidad * precioUnitario
     Public Sub calcular()
         Try
             Dim cantidad As Integer = Integer.Parse(Ventana_Principal.TextBox_GastosCantidad.Text)

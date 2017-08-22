@@ -10,6 +10,7 @@ Public Class Ventana_Principal
     Dim ingreso As Ingreso = New Ingreso
     Dim gasto As Gastos = New Gastos
     Dim configuracion As Configuracion = New Configuracion
+    Dim certificados As Certificados = New Certificados
 
 
 
@@ -167,7 +168,7 @@ Public Class Ventana_Principal
     '//////////////////////////
 
     Private Sub CertificadosButtonConsultar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonConsultar.Click
-
+        certificados.consultar()
     End Sub
 
     Private Sub CertificadosButtonGuardar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonGuardar.Click
@@ -183,7 +184,8 @@ Public Class Ventana_Principal
     End Sub
 
     Private Sub CertificadosButtonSalir_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSalir.Click
-
+        Me.Close()
+        Ventana_Acceso.Close()
     End Sub
 
     '//////////////////////////
