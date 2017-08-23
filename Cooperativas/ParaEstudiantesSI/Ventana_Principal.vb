@@ -245,6 +245,7 @@ Public Class Ventana_Principal
     End Sub
 
     Private Sub CertificadosButtonSaveTracto1_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto1.Click
+        'TESTING COMPARE DATES
         Dim GETDATE As DateTime = DateTime.Today
         Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
         '<>
