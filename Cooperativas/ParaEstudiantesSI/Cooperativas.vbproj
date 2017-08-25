@@ -136,6 +136,7 @@
     <Compile Include="Clases\EncabezadoClase.vb" />
     <Compile Include="Clases\GastoClase.vb" />
     <Compile Include="Clases\IngresoClase.vb" />
+    <Compile Include="Clases\Singleton.vb" />
     <Compile Include="Clases\SocioClase.vb" />
     <Compile Include="Codigo\Certificados.vb" />
     <Compile Include="Codigo\Comites.vb" />

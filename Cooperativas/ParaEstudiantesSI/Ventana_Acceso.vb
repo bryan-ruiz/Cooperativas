@@ -9,12 +9,18 @@
             TextBoxlogin.Text = ""
             TextBoxContraseña.Text = ""
         Else
-
-            If (TextBoxlogin.Text = "admin") Then
-                If (TextBoxContraseña.Text = "xmen") Then
-                    Me.Hide()
-                    Ventana_Principal.Show()
-                    Ventana_Principal.Refresh()
+            Dim usuario As Usuarios = New Usuarios
+            usuario.buscar()
+            If (TextBoxlogin.Text = Singleton.usuario) Then
+                If (TextBoxContraseña.Text = Singleton.contrasena) Then
+                    If Singleton.permisos = "0" Then
+                        MsgBox("No tiene licencia para acceder. Comuniquese con su proveedor.")
+                    Else
+                        usuario.login()
+                        Me.Hide()
+                        Ventana_Principal.Show()
+                        Ventana_Principal.Refresh()
+                    End If
                 Else
                     MsgBox("El nombre de usuario o contraseña es incorrecto")
                     TextBoxlogin.Text = ""

@@ -26,8 +26,8 @@ Partial Class Print
         Me.ButtonPrintAbrirPDF = New System.Windows.Forms.Button()
         Me.ButtonPrintSalir = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
+        '---------------Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
+        '---------------CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonPrintAbrirPDF
@@ -64,13 +64,13 @@ Partial Class Print
         '
         'AxAcroPDF1
         '
-        Me.AxAcroPDF1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AxAcroPDF1.Enabled = True
-        Me.AxAcroPDF1.Location = New System.Drawing.Point(0, 0)
-        Me.AxAcroPDF1.Name = "AxAcroPDF1"
-        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF1.Size = New System.Drawing.Size(1047, 693)
-        Me.AxAcroPDF1.TabIndex = 0
+        '---------------Me.AxAcroPDF1.Dock = System.Windows.Forms.DockStyle.Fill
+        '---------------Me.AxAcroPDF1.Enabled = True
+        '---------------Me.AxAcroPDF1.Location = New System.Drawing.Point(0, 0)
+        '---------------Me.AxAcroPDF1.Name = "AxAcroPDF1"
+        '---------------Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
+        '---------------Me.AxAcroPDF1.Size = New System.Drawing.Size(1047, 693)
+        '---------------Me.AxAcroPDF1.TabIndex = 0
         '
         'Print
         '
@@ -79,16 +79,16 @@ Partial Class Print
         Me.ClientSize = New System.Drawing.Size(1047, 693)
         Me.Controls.Add(Me.ButtonPrintSalir)
         Me.Controls.Add(Me.ButtonPrintAbrirPDF)
-        Me.Controls.Add(Me.AxAcroPDF1)
+        '---------------Me.Controls.Add(Me.AxAcroPDF1)
         Me.Name = "Print"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Print"
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
+        '---------------CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents ButtonPrintAbrirPDF As Button
     Friend WithEvents ButtonPrintSalir As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
+    '-----------------------------------Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
 End Class

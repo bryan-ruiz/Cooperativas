@@ -39,14 +39,15 @@ Public Class ConexionBD
         End Try
     End Sub
 
-    'Inserta un Socio  
-    Function insertarUsuario(ByVal rol As String, ByVal usuario As String, ByVal contrasena As String) As Integer
+
+    'Inserta un usuario  
+    Function insertarUsuario(ByVal rol As String, ByVal usuario As String, ByVal contrasena As String, ByVal permisos As String) As Integer
         Dim res As Integer = 0
         Try
             'Declaramos el query que queremos ejecutar, en este caso es insertar'
             SQL = "INSERT INTO [USUARIOS]" &
-           "(Usuario, Rol, Contrasena)" &
-            "VALUES ('" + usuario + "', '" + rol + "', '" + contrasena + "')"
+           "(Usuario, Rol, Contrasena, Permisos)" &
+            "VALUES ('" + usuario + "', '" + rol + "', '" + contrasena + "', '" + permisos + "')"
             'Comando para ejecutar el query'
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
@@ -61,7 +62,27 @@ Public Class ConexionBD
         Return res
     End Function
 
-    'Inserta un Socio  
+
+    'Aumentar veces login usuario  
+    Function loginNuevo(ByVal permisos As String, ByVal usuario As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "UPDATE [USUARIOS] SET Permisos = '" & permisos & "' WHERE ((Usuario) = '" & usuario & "')"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return res
+    End Function
+
+    'Eliminar un usuario  
     Function eliminarUsuario(ByVal usuario As String) As Integer
         Dim res As Integer = 0
         Try
@@ -82,6 +103,38 @@ Public Class ConexionBD
         End Try
         Return res
     End Function
+
+    'Buscar un usuario  
+    Function buscarUsuario(ByVal usuario As String, ByVal contrasena As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es eliminar'
+
+            SQL = "Select USUARIOS.* FROM [USUARIOS]" &
+            "WHERE Usuario = ('" + usuario + "') AND Contrasena = ('" + contrasena + "')"
+            'Comando para ejecutar el query'
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return MyList
+    End Function
+
+
 
     'Selecciona todos los campos de un Socio por número de cédula
     Function consultarSocioPorCedula(ByVal cedula As String) As List(Of String)
@@ -645,6 +698,124 @@ Public Class ConexionBD
 
         Return MyList
 
+    End Function
+
+    'Actualiza un tracto de certificados
+    Function actualizarTracto(ByVal tracto As String, ByVal cedula As String, ByVal monto As String) As Integer
+        Dim res As Integer = 0
+        Try
+            If tracto = "1" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'    WHERE ((cedula) = '" & id & "' or (numAsociado)= '" & id & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto1 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            ElseIf tracto = "2" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'
+                SQL = "UPDATE [CERTIFICADOS] Set tracto2 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            ElseIf tracto = "3" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'
+                SQL = "UPDATE [CERTIFICADOS] SET tracto3 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            ElseIf tracto = "4" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'
+                SQL = "UPDATE [CERTIFICADOS] SET tracto4 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            ElseIf tracto = "5" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'
+                SQL = "UPDATE [CERTIFICADOS] SET tracto5 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            ElseIf tracto = "6" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'
+                SQL = "UPDATE [CERTIFICADOS] SET tracto6 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            ElseIf tracto = "7" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'
+                SQL = "UPDATE [CERTIFICADOS] SET tracto7 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            ElseIf tracto = "8" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'
+                SQL = "UPDATE [CERTIFICADOS] SET tracto8 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            ElseIf tracto = "9" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'
+                SQL = "UPDATE [CERTIFICADOS] SET tracto9 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            ElseIf tracto = "10" Then
+                'Declaramos el query que queremos ejecutar, en este caso es insertar'
+                SQL = "UPDATE [CERTIFICADOS] SET tracto10 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            End If
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+
+        Return res
+    End Function
+
+
+    'Selecciona cedula, num asociado y datos de los certificados por Asociado
+    Function totalEnCertificado(ByVal cedula As String, ByVal monto As String) As Integer
+        Dim MyList As Integer = 0
+        Try
+            SQL = "UPDATE [CERTIFICADOS] SET total = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    'Selecciona cedula, num asociado y datos de los certificados por Asociado
+    Function sumarTractosEnCertificados(ByVal cedula As String) As Integer
+        Dim MyList As Integer = 0
+        Try
+            SQL = "SELECT CERTIFICADOS.*  FROM [CERTIFICADOS] 
+                    WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer
+                    For conta = 3 To reader.FieldCount - 3
+                        MyList += reader(conta)
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    'Selecciona cedula, num asociado y datos de los certificados por Asociado
+    Function cerrarCertificado(ByVal cedula As String, ByVal montoTotalViejo As String, ByVal monto As String) As Integer
+        Dim MyList As Integer = 0
+        Try
+            SQL = "UPDATE [CERTIFICADOS] SET acumuladoAnterior = '" & montoTotalViejo & "', " & "tracto1 = '" & monto & "', " & "tracto2 = '" & monto & "', " & "tracto3 = '" & monto & "',
+" & "tracto4 = '" & monto & "', " & "tracto5 = '" & monto & "', " & "tracto6 = '" & monto & "', " & "tracto7 = '" & monto & "',
+" & "tracto8 = '" & monto & "',   " & "tracto9 = '" & monto & "',  " & "tracto10 = '" & monto & "',  " & "total = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
     End Function
 
 End Class

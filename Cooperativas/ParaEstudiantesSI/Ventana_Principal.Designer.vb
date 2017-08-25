@@ -25,8 +25,6 @@ Partial Class Ventana_Principal
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana_Principal))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.CoopeBDDataSet = New Cooperativas.CoopeBDDataSet()
-        Me.CoopeBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -181,6 +179,15 @@ Partial Class Ventana_Principal
         Me.Label43 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto2 = New System.Windows.Forms.Button()
         Me.CertificadosButtonSaveTracto1 = New System.Windows.Forms.Button()
         Me.CertificadosButtonCerrarPeriodo = New System.Windows.Forms.Button()
         Me.Label30 = New System.Windows.Forms.Label()
@@ -235,7 +242,6 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSalir = New System.Windows.Forms.Button()
         Me.CertificadosTextboxPrimerApellido = New System.Windows.Forms.TextBox()
         Me.CertificadosTextboxSegundoApellido = New System.Windows.Forms.TextBox()
-        Me.CertificadosButtonGuardar = New System.Windows.Forms.Button()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.CertificadosButtonComprobante = New System.Windows.Forms.Button()
         Me.Label40 = New System.Windows.Forms.Label()
@@ -363,18 +369,9 @@ Partial Class Ventana_Principal
         Me.Label123 = New System.Windows.Forms.Label()
         Me.Label122 = New System.Windows.Forms.Label()
         Me.Label121 = New System.Windows.Forms.Label()
-        Me.CertificadosButtonSaveTracto2 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
+        Me.CoopeBDDataSet = New Cooperativas.CoopeBDDataSet()
+        Me.CoopeBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1.SuspendLayout()
-        CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -395,6 +392,8 @@ Partial Class Ventana_Principal
         Me.GroupBox7.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -414,16 +413,6 @@ Partial Class Ventana_Principal
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1005, 707)
         Me.TabControl1.TabIndex = 0
-        '
-        'CoopeBDDataSet
-        '
-        Me.CoopeBDDataSet.DataSetName = "CoopeBDDataSet"
-        Me.CoopeBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CoopeBDDataSetBindingSource
-        '
-        Me.CoopeBDDataSetBindingSource.DataSource = Me.CoopeBDDataSet
-        Me.CoopeBDDataSetBindingSource.Position = 0
         '
         'TabPage1
         '
@@ -2127,7 +2116,6 @@ Partial Class Ventana_Principal
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonSalir)
         Me.GroupBox3.Controls.Add(Me.CertificadosTextboxPrimerApellido)
         Me.GroupBox3.Controls.Add(Me.CertificadosTextboxSegundoApellido)
-        Me.GroupBox3.Controls.Add(Me.CertificadosButtonGuardar)
         Me.GroupBox3.Controls.Add(Me.Label39)
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonComprobante)
         Me.GroupBox3.Controls.Add(Me.Label40)
@@ -2139,6 +2127,123 @@ Partial Class Ventana_Principal
         Me.GroupBox3.TabIndex = 142
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Certificados"
+        '
+        'Button12
+        '
+        Me.Button12.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button12.ForeColor = System.Drawing.Color.White
+        Me.Button12.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.Button12.Location = New System.Drawing.Point(556, 563)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(54, 31)
+        Me.Button12.TabIndex = 251
+        Me.Button12.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button12.UseVisualStyleBackColor = False
+        '
+        'Button11
+        '
+        Me.Button11.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button11.ForeColor = System.Drawing.Color.White
+        Me.Button11.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.Button11.Location = New System.Drawing.Point(556, 522)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(54, 31)
+        Me.Button11.TabIndex = 250
+        Me.Button11.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button11.UseVisualStyleBackColor = False
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.ForeColor = System.Drawing.Color.White
+        Me.Button10.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.Button10.Location = New System.Drawing.Point(556, 480)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(54, 31)
+        Me.Button10.TabIndex = 249
+        Me.Button10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button10.UseVisualStyleBackColor = False
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.ForeColor = System.Drawing.Color.White
+        Me.Button9.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.Button9.Location = New System.Drawing.Point(556, 440)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(54, 31)
+        Me.Button9.TabIndex = 248
+        Me.Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.ForeColor = System.Drawing.Color.White
+        Me.Button8.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.Button8.Location = New System.Drawing.Point(556, 397)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(54, 31)
+        Me.Button8.TabIndex = 247
+        Me.Button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.ForeColor = System.Drawing.Color.White
+        Me.Button7.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.Button7.Location = New System.Drawing.Point(556, 356)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(54, 31)
+        Me.Button7.TabIndex = 246
+        Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.Color.White
+        Me.Button6.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.Button6.Location = New System.Drawing.Point(556, 315)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(54, 31)
+        Me.Button6.TabIndex = 245
+        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.ForeColor = System.Drawing.Color.White
+        Me.Button5.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.Button5.Location = New System.Drawing.Point(556, 274)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(54, 31)
+        Me.Button5.TabIndex = 244
+        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'CertificadosButtonSaveTracto2
+        '
+        Me.CertificadosButtonSaveTracto2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto2.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto2.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto2.Location = New System.Drawing.Point(556, 234)
+        Me.CertificadosButtonSaveTracto2.Name = "CertificadosButtonSaveTracto2"
+        Me.CertificadosButtonSaveTracto2.Size = New System.Drawing.Size(54, 31)
+        Me.CertificadosButtonSaveTracto2.TabIndex = 243
+        Me.CertificadosButtonSaveTracto2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto2.UseVisualStyleBackColor = False
         '
         'CertificadosButtonSaveTracto1
         '
@@ -2670,19 +2775,6 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxSegundoApellido.Name = "CertificadosTextboxSegundoApellido"
         Me.CertificadosTextboxSegundoApellido.Size = New System.Drawing.Size(236, 22)
         Me.CertificadosTextboxSegundoApellido.TabIndex = 103
-        '
-        'CertificadosButtonGuardar
-        '
-        Me.CertificadosButtonGuardar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonGuardar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonGuardar.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonGuardar.Image = CType(resources.GetObject("CertificadosButtonGuardar.Image"), System.Drawing.Image)
-        Me.CertificadosButtonGuardar.Location = New System.Drawing.Point(747, 141)
-        Me.CertificadosButtonGuardar.Name = "CertificadosButtonGuardar"
-        Me.CertificadosButtonGuardar.Size = New System.Drawing.Size(152, 40)
-        Me.CertificadosButtonGuardar.TabIndex = 119
-        Me.CertificadosButtonGuardar.Text = "Guardar"
-        Me.CertificadosButtonGuardar.UseVisualStyleBackColor = False
         '
         'Label39
         '
@@ -3980,122 +4072,15 @@ Partial Class Ventana_Principal
         Me.Label121.TabIndex = 1
         Me.Label121.Text = "Periodo:"
         '
-        'CertificadosButtonSaveTracto2
+        'CoopeBDDataSet
         '
-        Me.CertificadosButtonSaveTracto2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto2.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto2.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto2.Location = New System.Drawing.Point(556, 234)
-        Me.CertificadosButtonSaveTracto2.Name = "CertificadosButtonSaveTracto2"
-        Me.CertificadosButtonSaveTracto2.Size = New System.Drawing.Size(54, 31)
-        Me.CertificadosButtonSaveTracto2.TabIndex = 243
-        Me.CertificadosButtonSaveTracto2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto2.UseVisualStyleBackColor = False
+        Me.CoopeBDDataSet.DataSetName = "CoopeBDDataSet"
+        Me.CoopeBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Button5
+        'CoopeBDDataSetBindingSource
         '
-        Me.Button5.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button5.Location = New System.Drawing.Point(556, 274)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(54, 31)
-        Me.Button5.TabIndex = 244
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button6.Location = New System.Drawing.Point(556, 315)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(54, 31)
-        Me.Button6.TabIndex = 245
-        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button7.Location = New System.Drawing.Point(556, 356)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(54, 31)
-        Me.Button7.TabIndex = 246
-        Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button8.Location = New System.Drawing.Point(556, 397)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(54, 31)
-        Me.Button8.TabIndex = 247
-        Me.Button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Button9
-        '
-        Me.Button9.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button9.Location = New System.Drawing.Point(556, 440)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(54, 31)
-        Me.Button9.TabIndex = 248
-        Me.Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button9.UseVisualStyleBackColor = False
-        '
-        'Button10
-        '
-        Me.Button10.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button10.Location = New System.Drawing.Point(556, 480)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(54, 31)
-        Me.Button10.TabIndex = 249
-        Me.Button10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button10.UseVisualStyleBackColor = False
-        '
-        'Button11
-        '
-        Me.Button11.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.ForeColor = System.Drawing.Color.White
-        Me.Button11.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button11.Location = New System.Drawing.Point(556, 522)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(54, 31)
-        Me.Button11.TabIndex = 250
-        Me.Button11.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button11.UseVisualStyleBackColor = False
-        '
-        'Button12
-        '
-        Me.Button12.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.ForeColor = System.Drawing.Color.White
-        Me.Button12.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button12.Location = New System.Drawing.Point(556, 563)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(54, 31)
-        Me.Button12.TabIndex = 251
-        Me.Button12.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button12.UseVisualStyleBackColor = False
+        Me.CoopeBDDataSetBindingSource.DataSource = Me.CoopeBDDataSet
+        Me.CoopeBDDataSetBindingSource.Position = 0
         '
         'Ventana_Principal
         '
@@ -4110,8 +4095,6 @@ Partial Class Ventana_Principal
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cooperativas"
         Me.TabControl1.ResumeLayout(False)
-        CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
@@ -4144,6 +4127,8 @@ Partial Class Ventana_Principal
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -4168,7 +4153,6 @@ Partial Class Ventana_Principal
     Friend WithEvents CertificadosButtonSalir As Button
     Friend WithEvents CertificadosTextboxPrimerApellido As TextBox
     Friend WithEvents CertificadosTextboxSegundoApellido As TextBox
-    Friend WithEvents CertificadosButtonGuardar As Button
     Friend WithEvents Label39 As Label
     Friend WithEvents CertificadosButtonComprobante As Button
     Friend WithEvents Label40 As Label

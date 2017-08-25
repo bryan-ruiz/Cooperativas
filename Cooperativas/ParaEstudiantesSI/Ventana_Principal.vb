@@ -156,11 +156,19 @@ Public Class Ventana_Principal
     '//////////////////////////
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosEliminar.Click
-        usuarios.eliminar()
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+        Else
+            usuarios.eliminar()
+        End If
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosInsertar.Click
-        usuarios.insertar()
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+        Else
+            usuarios.insertar()
+        End If
     End Sub
 
     '//////////////////////////
@@ -171,7 +179,7 @@ Public Class Ventana_Principal
         certificados.consultar()
     End Sub
 
-    Private Sub CertificadosButtonGuardar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonGuardar.Click
+    Private Sub CertificadosButtonGuardar_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -180,7 +188,7 @@ Public Class Ventana_Principal
     End Sub
 
     Private Sub CertificadosButtonCerrarPeriodo_Click(sender As Object, e As EventArgs) Handles CertificadosButtonCerrarPeriodo.Click
-
+        certificados.cerrarCertificado()
     End Sub
 
     Private Sub CertificadosButtonSalir_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSalir.Click
@@ -194,17 +202,31 @@ Public Class Ventana_Principal
 
 
     Private Sub ConfigurationButtonConsultar_Click(sender As Object, e As EventArgs) Handles ConfigurationButtonConsultar.Click
-        configuracion.consultar()
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+        Else
+            configuracion.consultar()
+        End If
     End Sub
 
     Private Sub ConfigurationButtonActualizar_Click(sender As Object, e As EventArgs) Handles ConfigurationButtonActualizar.Click
-        configuracion.actualizar()
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+        Else
+            configuracion.actualizar()
+        End If
+
     End Sub
 
     Private Sub Button_ConfiguracionInsertarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionInsertarCodigoCuenta.Click
-        configuracion.insertarCuenta()
-        ingreso.obtenerDatosSeleccionarCuenta()
-        gasto.obtenerDatosSeleccionarCuenta()
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+        Else
+            configuracion.insertarCuenta()
+            ingreso.obtenerDatosSeleccionarCuenta()
+            gasto.obtenerDatosSeleccionarCuenta()
+        End If
+
     End Sub
 
     Private Sub Button_IngresosInsertar_Click(sender As Object, e As EventArgs) Handles Button_IngresosInsertar.Click
@@ -239,9 +261,14 @@ Public Class Ventana_Principal
     End Sub
 
     Private Sub Button_ConfiguracionEliminarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionEliminarCodigoCuenta.Click
-        configuracion.eliminarCuenta()
-        ingreso.obtenerDatosSeleccionarCuenta()
-        gasto.obtenerDatosSeleccionarCuenta()
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+        Else
+            configuracion.eliminarCuenta()
+            ingreso.obtenerDatosSeleccionarCuenta()
+            gasto.obtenerDatosSeleccionarCuenta()
+        End If
+
     End Sub
 
     Private Sub CertificadosButtonSaveTracto1_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto1.Click
@@ -251,10 +278,128 @@ Public Class Ventana_Principal
         '<>
         If fecha.CompareTo(GETDATE) < 0 Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("1")
+            certificados.sumarTractosEnCertificados()
         End If
     End Sub
 
+    Private Sub CertificadosButtonSaveTracto2_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto2.Click
+        'TESTING COMPARE DATES
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("2")
+            certificados.sumarTractosEnCertificados()
+        End If
+    End Sub
 
+    Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
+        'TESTING COMPARE DATES
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("3")
+            certificados.sumarTractosEnCertificados()
+        End If
+    End Sub
+
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
+        'TESTING COMPARE DATES
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("4")
+            certificados.sumarTractosEnCertificados()
+        End If
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        'TESTING COMPARE DATES
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("5")
+            certificados.sumarTractosEnCertificados()
+        End If
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        'TESTING COMPARE DATES
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("6")
+            certificados.sumarTractosEnCertificados()
+        End If
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        'TESTING COMPARE DATES
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("7")
+            certificados.sumarTractosEnCertificados()
+        End If
+    End Sub
+
+    Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles Button10.Click
+        'TESTING COMPARE DATES
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("8")
+            certificados.sumarTractosEnCertificados()
+        End If
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        'TESTING COMPARE DATES
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("9")
+            certificados.sumarTractosEnCertificados()
+        End If
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        'TESTING COMPARE DATES
+        Dim GETDATE As DateTime = DateTime.Today
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+        '<>
+        If fecha.CompareTo(GETDATE) < 0 Then
+            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
+        Else
+            certificados.editarTracto("10")
+            certificados.sumarTractosEnCertificados()
+        End If
+    End Sub
 End Class
 
 

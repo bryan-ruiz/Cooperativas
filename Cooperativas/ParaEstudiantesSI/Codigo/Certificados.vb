@@ -50,6 +50,99 @@ Public Class Certificados
         End If
     End Sub
 
+    'cerrar certificado
+    Public Sub cerrarCertificado()
+        Dim monto As String = "0"
+        Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+        Try
+            BD.ConectarBD()
+            Dim hecho As Integer = BD.sumarTractosEnCertificados(cedula)
+            If hecho = 0 Then
+                BD.cerrarCertificado(cedula, hecho, monto)
+            Else
+                MessageBox.Show("Listo.")
+                Ventana_Principal.CertificadosTextboxTracto1.Text = "0"
+                Ventana_Principal.CertificadosTextboxTracto2.Text = "0"
+                Ventana_Principal.CertificadosTextboxTracto3.Text = "0"
+                Ventana_Principal.CertificadosTextboxTracto4.Text = "0"
+                Ventana_Principal.CertificadosTextboxTracto5.Text = "0"
+                Ventana_Principal.CertificadosTextboxTracto6.Text = "0"
+                Ventana_Principal.CertificadosTextboxTracto7.Text = "0"
+                Ventana_Principal.CertificadosTextboxTracto8.Text = "0"
+                Ventana_Principal.CertificadosTextboxTracto9.Text = "0"
+                Ventana_Principal.CertificadosTextboxTracto10.Text = "0"
+                Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = "0"
+                Ventana_Principal.CertificadosTextboxAcumAnterior.Text = hecho
+                BD.cerrarCertificado(cedula, hecho, monto)
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+        End Try
+    End Sub
+
+    'sumar tractos
+    Public Sub sumarTractosEnCertificados()
+        Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+        Try
+            BD.ConectarBD()
+            Dim hecho As Integer = BD.sumarTractosEnCertificados(cedula)
+            If hecho = 0 Then
+                'MessageBox.Show("Ha ocurrido un error.")
+                Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = hecho
+            Else
+                Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = hecho
+                hecho = BD.totalEnCertificado(cedula, CStr(hecho))
+                If hecho = 0 Then
+                    MessageBox.Show("Ha ocurrido un error.")
+                End If
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+        End Try
+    End Sub
+
+
+    'Update tracto
+    Public Sub editarTracto(ByVal numeroTracto As String)
+        Dim monto As String = ""
+        Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+        If numeroTracto = "1" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto1.Text
+        ElseIf numeroTracto = "2" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto2.Text
+        ElseIf numeroTracto = "3" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto3.Text
+        ElseIf numeroTracto = "4" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto4.Text
+        ElseIf numeroTracto = "5" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto5.Text
+        ElseIf numeroTracto = "6" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto6.Text
+        ElseIf numeroTracto = "7" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto7.Text
+        ElseIf numeroTracto = "8" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto8.Text
+        ElseIf numeroTracto = "9" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto9.Text
+        ElseIf numeroTracto = "10" Then
+            monto = Ventana_Principal.CertificadosTextboxTracto10.Text
+        End If
+        Try
+            BD.ConectarBD()
+            Dim hecho As Integer = BD.actualizarTracto(numeroTracto, cedula, monto)
+            If hecho = 0 Then
+                MessageBox.Show("Ha ocurrido un error.")
+            Else
+                MessageBox.Show("Guardado.")
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+        End Try
+    End Sub
+
     'Consulta las fechas limite para pagar certificados
     Public Sub consultarFechasLimite()
         Dim fechas As List(Of ConfiguracionClase)
@@ -60,7 +153,6 @@ Public Class Certificados
                 llenarDatosFechaLimite(fechas)
             Else
                 MessageBox.Show("El Periodo a consultar no existe")
-
             End If
             BD.CerrarConexion()
         Catch ex As Exception
@@ -85,6 +177,8 @@ Public Class Certificados
             conta = conta + 1
         End While
     End Sub
+
+
 
 
 End Class
