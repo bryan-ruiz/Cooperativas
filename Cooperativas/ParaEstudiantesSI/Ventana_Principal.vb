@@ -156,19 +156,22 @@ Public Class Ventana_Principal
     '//////////////////////////
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosEliminar.Click
-        If Singleton.rol = "Colaborador" Then
-            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
-        Else
-            usuarios.eliminar()
-        End If
+        MessageBox.Show("No tiene licencia para eliminar usuarios. Contacte al administrador del Sistema.")
+        'If Singleton.rol = "Colaborador" Then
+        'MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+        'Else
+        'usuarios.eliminar()
+        'End If
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosInsertar.Click
-        If Singleton.rol = "Colaborador" Then
-            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
-        Else
-            usuarios.insertar()
-        End If
+        MessageBox.Show("No tiene licencia para crear usuarios. Contacte al administrador del Sistema.")
+
+        'If Singleton.rol = "Colaborador" Then
+        'MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+        'Else
+        'usuarios.insertar()
+        'End If
     End Sub
 
     '//////////////////////////
@@ -271,12 +274,32 @@ Public Class Ventana_Principal
 
     End Sub
 
-    Private Sub CertificadosButtonSaveTracto1_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto1.Click
-        'TESTING COMPARE DATES
+
+
+
+    'Valida la fecha límite
+    Private Function validarFecha(ByVal fecha As DateTime) As Boolean
+        Dim value As Boolean = False
         Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
+
+        If fecha.CompareTo(GETDATE) > 0 Then
+            value = False
+        End If
         If fecha.CompareTo(GETDATE) < 0 Then
+            value = True
+        End If
+
+        Return value
+
+    End Function
+
+
+
+
+    Private Sub CertificadosButtonSaveTracto1_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto1.Click
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("1")
@@ -285,11 +308,9 @@ Public Class Ventana_Principal
     End Sub
 
     Private Sub CertificadosButtonSaveTracto2_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto2.Click
-        'TESTING COMPARE DATES
-        Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
-        If fecha.CompareTo(GETDATE) < 0 Then
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha2.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("2")
@@ -297,12 +318,10 @@ Public Class Ventana_Principal
         End If
     End Sub
 
-    Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
-        'TESTING COMPARE DATES
-        Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
-        If fecha.CompareTo(GETDATE) < 0 Then
+    Private Sub CertificadosButtonSaveTracto3_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto3.Click
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha3.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("3")
@@ -310,12 +329,10 @@ Public Class Ventana_Principal
         End If
     End Sub
 
-    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
-        'TESTING COMPARE DATES
-        Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
-        If fecha.CompareTo(GETDATE) < 0 Then
+    Private Sub CertificadosButtonSaveTracto4_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto4.Click
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha4.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("4")
@@ -323,12 +340,10 @@ Public Class Ventana_Principal
         End If
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        'TESTING COMPARE DATES
-        Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
-        If fecha.CompareTo(GETDATE) < 0 Then
+    Private Sub CertificadosButtonSaveTracto5_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto5.Click
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha5.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("5")
@@ -336,12 +351,10 @@ Public Class Ventana_Principal
         End If
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        'TESTING COMPARE DATES
-        Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
-        If fecha.CompareTo(GETDATE) < 0 Then
+    Private Sub CertificadosButtonSaveTracto6_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto6.Click
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha6.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("6")
@@ -349,12 +362,10 @@ Public Class Ventana_Principal
         End If
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        'TESTING COMPARE DATES
-        Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
-        If fecha.CompareTo(GETDATE) < 0 Then
+    Private Sub CertificadosButtonSaveTracto7_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto7.Click
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha7.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("7")
@@ -362,12 +373,10 @@ Public Class Ventana_Principal
         End If
     End Sub
 
-    Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles Button10.Click
-        'TESTING COMPARE DATES
-        Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
-        If fecha.CompareTo(GETDATE) < 0 Then
+    Private Sub CertificadosButtonSaveTracto8_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto8.Click
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha8.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("8")
@@ -375,12 +384,10 @@ Public Class Ventana_Principal
         End If
     End Sub
 
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        'TESTING COMPARE DATES
-        Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
-        If fecha.CompareTo(GETDATE) < 0 Then
+    Private Sub CertificadosButtonSaveTracto9_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto9.Click
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha9.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("9")
@@ -388,12 +395,10 @@ Public Class Ventana_Principal
         End If
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        'TESTING COMPARE DATES
-        Dim GETDATE As DateTime = DateTime.Today
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-        '<>
-        If fecha.CompareTo(GETDATE) < 0 Then
+    Private Sub CertificadosButtonSaveTracto10_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto10.Click
+        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha10.Value
+
+        If validarFecha(fecha) Then
             MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
         Else
             certificados.editarTracto("10")

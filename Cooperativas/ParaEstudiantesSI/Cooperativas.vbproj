@@ -244,6 +244,7 @@
     <Content Include="Imagen\btn2.png" />
     <Content Include="Imagen\coopePrueba.jpg" />
     <Content Include="Imagen\fondo.jpg" />
+    <None Include="Imagen\loginImage.jpg" />
     <None Include="Imagen\save1.png" />
     <None Include="Resources\search1.png" />
     <None Include="Resources\search.png" />

@@ -103,11 +103,11 @@ Public Class Certificados
         End Try
     End Sub
 
-
-    'Update tracto
+    'Update tracto with value "numeroTracto"
     Public Sub editarTracto(ByVal numeroTracto As String)
         Dim monto As String = ""
         Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+
         If numeroTracto = "1" Then
             monto = Ventana_Principal.CertificadosTextboxTracto1.Text
         ElseIf numeroTracto = "2" Then
@@ -129,13 +129,14 @@ Public Class Certificados
         ElseIf numeroTracto = "10" Then
             monto = Ventana_Principal.CertificadosTextboxTracto10.Text
         End If
+
         Try
             BD.ConectarBD()
             Dim hecho As Integer = BD.actualizarTracto(numeroTracto, cedula, monto)
             If hecho = 0 Then
                 MessageBox.Show("Ha ocurrido un error.")
             Else
-                MessageBox.Show("Guardado.")
+                MessageBox.Show("Se ha guardado el Tracto seleccionado!")
             End If
             BD.CerrarConexion()
         Catch ex As Exception

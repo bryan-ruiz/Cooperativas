@@ -45,7 +45,7 @@ Public Class Usuarios
         Dim contrasena As String = Ventana_Acceso.TextBoxContraseña.Text
         Dim singleton As Singleton = Singleton.Instance()
         If (usuario = "" Or contrasena = "") Then
-            MessageBox.Show("No pueden haber campos vacíos!")
+            MessageBox.Show("No deben haber campos vacíos!")
         Else
             Try
                 BD.ConectarBD()

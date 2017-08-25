@@ -179,14 +179,14 @@ Partial Class Ventana_Principal
         Me.Label43 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto10 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto9 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto8 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto7 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto6 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto5 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto4 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto3 = New System.Windows.Forms.Button()
         Me.CertificadosButtonSaveTracto2 = New System.Windows.Forms.Button()
         Me.CertificadosButtonSaveTracto1 = New System.Windows.Forms.Button()
         Me.CertificadosButtonCerrarPeriodo = New System.Windows.Forms.Button()
@@ -2039,9 +2039,8 @@ Partial Class Ventana_Principal
         '
         'TabPage4
         '
-        Me.TabPage4.BackColor = System.Drawing.Color.Transparent
-        Me.TabPage4.BackgroundImage = CType(resources.GetObject("TabPage4.BackgroundImage"), System.Drawing.Image)
-        Me.TabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPage4.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TabPage4.Controls.Add(Me.GroupBox3)
         Me.TabPage4.Location = New System.Drawing.Point(4, 28)
         Me.TabPage4.Name = "TabPage4"
@@ -2052,15 +2051,17 @@ Partial Class Ventana_Principal
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox3.Controls.Add(Me.Button12)
-        Me.GroupBox3.Controls.Add(Me.Button11)
-        Me.GroupBox3.Controls.Add(Me.Button10)
-        Me.GroupBox3.Controls.Add(Me.Button9)
-        Me.GroupBox3.Controls.Add(Me.Button8)
-        Me.GroupBox3.Controls.Add(Me.Button7)
-        Me.GroupBox3.Controls.Add(Me.Button6)
-        Me.GroupBox3.Controls.Add(Me.Button5)
+        Me.GroupBox3.BackColor = System.Drawing.Color.White
+        Me.GroupBox3.BackgroundImage = Global.Cooperativas.My.Resources.Resources.fondo
+        Me.GroupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto10)
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto9)
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto8)
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto7)
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto6)
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto5)
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto4)
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto3)
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto2)
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto1)
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonCerrarPeriodo)
@@ -2119,118 +2120,119 @@ Partial Class Ventana_Principal
         Me.GroupBox3.Controls.Add(Me.Label39)
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonComprobante)
         Me.GroupBox3.Controls.Add(Me.Label40)
+        Me.GroupBox3.Cursor = System.Windows.Forms.Cursors.Default
         Me.GroupBox3.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.GroupBox3.Location = New System.Drawing.Point(31, 15)
+        Me.GroupBox3.Location = New System.Drawing.Point(2, 3)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(939, 642)
+        Me.GroupBox3.Size = New System.Drawing.Size(992, 669)
         Me.GroupBox3.TabIndex = 142
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Certificados"
         '
-        'Button12
+        'CertificadosButtonSaveTracto10
         '
-        Me.Button12.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.ForeColor = System.Drawing.Color.White
-        Me.Button12.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button12.Location = New System.Drawing.Point(556, 563)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(54, 31)
-        Me.Button12.TabIndex = 251
-        Me.Button12.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button12.UseVisualStyleBackColor = False
+        Me.CertificadosButtonSaveTracto10.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto10.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto10.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto10.Location = New System.Drawing.Point(556, 563)
+        Me.CertificadosButtonSaveTracto10.Name = "CertificadosButtonSaveTracto10"
+        Me.CertificadosButtonSaveTracto10.Size = New System.Drawing.Size(54, 31)
+        Me.CertificadosButtonSaveTracto10.TabIndex = 251
+        Me.CertificadosButtonSaveTracto10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto10.UseVisualStyleBackColor = False
         '
-        'Button11
+        'CertificadosButtonSaveTracto9
         '
-        Me.Button11.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.ForeColor = System.Drawing.Color.White
-        Me.Button11.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button11.Location = New System.Drawing.Point(556, 522)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(54, 31)
-        Me.Button11.TabIndex = 250
-        Me.Button11.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button11.UseVisualStyleBackColor = False
+        Me.CertificadosButtonSaveTracto9.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto9.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto9.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto9.Location = New System.Drawing.Point(556, 522)
+        Me.CertificadosButtonSaveTracto9.Name = "CertificadosButtonSaveTracto9"
+        Me.CertificadosButtonSaveTracto9.Size = New System.Drawing.Size(54, 31)
+        Me.CertificadosButtonSaveTracto9.TabIndex = 250
+        Me.CertificadosButtonSaveTracto9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto9.UseVisualStyleBackColor = False
         '
-        'Button10
+        'CertificadosButtonSaveTracto8
         '
-        Me.Button10.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button10.Location = New System.Drawing.Point(556, 480)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(54, 31)
-        Me.Button10.TabIndex = 249
-        Me.Button10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button10.UseVisualStyleBackColor = False
+        Me.CertificadosButtonSaveTracto8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto8.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto8.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto8.Location = New System.Drawing.Point(556, 480)
+        Me.CertificadosButtonSaveTracto8.Name = "CertificadosButtonSaveTracto8"
+        Me.CertificadosButtonSaveTracto8.Size = New System.Drawing.Size(54, 31)
+        Me.CertificadosButtonSaveTracto8.TabIndex = 249
+        Me.CertificadosButtonSaveTracto8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto8.UseVisualStyleBackColor = False
         '
-        'Button9
+        'CertificadosButtonSaveTracto7
         '
-        Me.Button9.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button9.Location = New System.Drawing.Point(556, 440)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(54, 31)
-        Me.Button9.TabIndex = 248
-        Me.Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button9.UseVisualStyleBackColor = False
+        Me.CertificadosButtonSaveTracto7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto7.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto7.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto7.Location = New System.Drawing.Point(556, 440)
+        Me.CertificadosButtonSaveTracto7.Name = "CertificadosButtonSaveTracto7"
+        Me.CertificadosButtonSaveTracto7.Size = New System.Drawing.Size(54, 31)
+        Me.CertificadosButtonSaveTracto7.TabIndex = 248
+        Me.CertificadosButtonSaveTracto7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto7.UseVisualStyleBackColor = False
         '
-        'Button8
+        'CertificadosButtonSaveTracto6
         '
-        Me.Button8.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button8.Location = New System.Drawing.Point(556, 397)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(54, 31)
-        Me.Button8.TabIndex = 247
-        Me.Button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button8.UseVisualStyleBackColor = False
+        Me.CertificadosButtonSaveTracto6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto6.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto6.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto6.Location = New System.Drawing.Point(556, 397)
+        Me.CertificadosButtonSaveTracto6.Name = "CertificadosButtonSaveTracto6"
+        Me.CertificadosButtonSaveTracto6.Size = New System.Drawing.Size(54, 31)
+        Me.CertificadosButtonSaveTracto6.TabIndex = 247
+        Me.CertificadosButtonSaveTracto6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto6.UseVisualStyleBackColor = False
         '
-        'Button7
+        'CertificadosButtonSaveTracto5
         '
-        Me.Button7.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button7.Location = New System.Drawing.Point(556, 356)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(54, 31)
-        Me.Button7.TabIndex = 246
-        Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.CertificadosButtonSaveTracto5.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto5.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto5.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto5.Location = New System.Drawing.Point(556, 356)
+        Me.CertificadosButtonSaveTracto5.Name = "CertificadosButtonSaveTracto5"
+        Me.CertificadosButtonSaveTracto5.Size = New System.Drawing.Size(54, 31)
+        Me.CertificadosButtonSaveTracto5.TabIndex = 246
+        Me.CertificadosButtonSaveTracto5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto5.UseVisualStyleBackColor = False
         '
-        'Button6
+        'CertificadosButtonSaveTracto4
         '
-        Me.Button6.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button6.Location = New System.Drawing.Point(556, 315)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(54, 31)
-        Me.Button6.TabIndex = 245
-        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.CertificadosButtonSaveTracto4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto4.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto4.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto4.Location = New System.Drawing.Point(556, 315)
+        Me.CertificadosButtonSaveTracto4.Name = "CertificadosButtonSaveTracto4"
+        Me.CertificadosButtonSaveTracto4.Size = New System.Drawing.Size(54, 31)
+        Me.CertificadosButtonSaveTracto4.TabIndex = 245
+        Me.CertificadosButtonSaveTracto4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto4.UseVisualStyleBackColor = False
         '
-        'Button5
+        'CertificadosButtonSaveTracto3
         '
-        Me.Button5.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.Button5.Location = New System.Drawing.Point(556, 274)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(54, 31)
-        Me.Button5.TabIndex = 244
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.CertificadosButtonSaveTracto3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto3.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto3.Image = Global.Cooperativas.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto3.Location = New System.Drawing.Point(556, 274)
+        Me.CertificadosButtonSaveTracto3.Name = "CertificadosButtonSaveTracto3"
+        Me.CertificadosButtonSaveTracto3.Size = New System.Drawing.Size(54, 31)
+        Me.CertificadosButtonSaveTracto3.TabIndex = 244
+        Me.CertificadosButtonSaveTracto3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto3.UseVisualStyleBackColor = False
         '
         'CertificadosButtonSaveTracto2
         '
@@ -2264,7 +2266,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonCerrarPeriodo.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonCerrarPeriodo.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonCerrarPeriodo.Image = CType(resources.GetObject("CertificadosButtonCerrarPeriodo.Image"), System.Drawing.Image)
-        Me.CertificadosButtonCerrarPeriodo.Location = New System.Drawing.Point(747, 254)
+        Me.CertificadosButtonCerrarPeriodo.Location = New System.Drawing.Point(747, 199)
         Me.CertificadosButtonCerrarPeriodo.Name = "CertificadosButtonCerrarPeriodo"
         Me.CertificadosButtonCerrarPeriodo.Size = New System.Drawing.Size(152, 40)
         Me.CertificadosButtonCerrarPeriodo.TabIndex = 216
@@ -2274,7 +2276,9 @@ Partial Class Ventana_Principal
         'Label30
         '
         Me.Label30.AutoSize = True
+        Me.Label30.BackColor = System.Drawing.Color.Transparent
         Me.Label30.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.White
         Me.Label30.Location = New System.Drawing.Point(312, 45)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(138, 16)
@@ -2402,6 +2406,7 @@ Partial Class Ventana_Principal
         'Label119
         '
         Me.Label119.AutoSize = True
+        Me.Label119.BackColor = System.Drawing.Color.Transparent
         Me.Label119.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label119.Location = New System.Drawing.Point(327, 575)
         Me.Label119.Name = "Label119"
@@ -2412,7 +2417,9 @@ Partial Class Ventana_Principal
         'Label120
         '
         Me.Label120.AutoSize = True
+        Me.Label120.BackColor = System.Drawing.Color.Transparent
         Me.Label120.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label120.ForeColor = System.Drawing.Color.White
         Me.Label120.Location = New System.Drawing.Point(327, 535)
         Me.Label120.Name = "Label120"
         Me.Label120.Size = New System.Drawing.Size(95, 16)
@@ -2422,7 +2429,9 @@ Partial Class Ventana_Principal
         'Label115
         '
         Me.Label115.AutoSize = True
+        Me.Label115.BackColor = System.Drawing.Color.Transparent
         Me.Label115.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label115.ForeColor = System.Drawing.Color.White
         Me.Label115.Location = New System.Drawing.Point(327, 487)
         Me.Label115.Name = "Label115"
         Me.Label115.Size = New System.Drawing.Size(95, 16)
@@ -2432,7 +2441,9 @@ Partial Class Ventana_Principal
         'Label116
         '
         Me.Label116.AutoSize = True
+        Me.Label116.BackColor = System.Drawing.Color.Transparent
         Me.Label116.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label116.ForeColor = System.Drawing.Color.White
         Me.Label116.Location = New System.Drawing.Point(327, 447)
         Me.Label116.Name = "Label116"
         Me.Label116.Size = New System.Drawing.Size(95, 16)
@@ -2442,7 +2453,9 @@ Partial Class Ventana_Principal
         'Label117
         '
         Me.Label117.AutoSize = True
+        Me.Label117.BackColor = System.Drawing.Color.Transparent
         Me.Label117.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label117.ForeColor = System.Drawing.Color.White
         Me.Label117.Location = New System.Drawing.Point(327, 407)
         Me.Label117.Name = "Label117"
         Me.Label117.Size = New System.Drawing.Size(95, 16)
@@ -2452,7 +2465,9 @@ Partial Class Ventana_Principal
         'Label118
         '
         Me.Label118.AutoSize = True
+        Me.Label118.BackColor = System.Drawing.Color.Transparent
         Me.Label118.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label118.ForeColor = System.Drawing.Color.White
         Me.Label118.Location = New System.Drawing.Point(327, 367)
         Me.Label118.Name = "Label118"
         Me.Label118.Size = New System.Drawing.Size(95, 16)
@@ -2462,7 +2477,9 @@ Partial Class Ventana_Principal
         'Label113
         '
         Me.Label113.AutoSize = True
+        Me.Label113.BackColor = System.Drawing.Color.Transparent
         Me.Label113.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label113.ForeColor = System.Drawing.Color.White
         Me.Label113.Location = New System.Drawing.Point(327, 328)
         Me.Label113.Name = "Label113"
         Me.Label113.Size = New System.Drawing.Size(95, 16)
@@ -2472,7 +2489,9 @@ Partial Class Ventana_Principal
         'Label114
         '
         Me.Label114.AutoSize = True
+        Me.Label114.BackColor = System.Drawing.Color.Transparent
         Me.Label114.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label114.ForeColor = System.Drawing.Color.White
         Me.Label114.Location = New System.Drawing.Point(327, 288)
         Me.Label114.Name = "Label114"
         Me.Label114.Size = New System.Drawing.Size(95, 16)
@@ -2482,7 +2501,9 @@ Partial Class Ventana_Principal
         'Label112
         '
         Me.Label112.AutoSize = True
+        Me.Label112.BackColor = System.Drawing.Color.Transparent
         Me.Label112.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label112.ForeColor = System.Drawing.Color.White
         Me.Label112.Location = New System.Drawing.Point(327, 248)
         Me.Label112.Name = "Label112"
         Me.Label112.Size = New System.Drawing.Size(95, 16)
@@ -2492,7 +2513,9 @@ Partial Class Ventana_Principal
         'Label111
         '
         Me.Label111.AutoSize = True
+        Me.Label111.BackColor = System.Drawing.Color.Transparent
         Me.Label111.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label111.ForeColor = System.Drawing.Color.White
         Me.Label111.Location = New System.Drawing.Point(327, 208)
         Me.Label111.Name = "Label111"
         Me.Label111.Size = New System.Drawing.Size(95, 16)
@@ -2510,7 +2533,9 @@ Partial Class Ventana_Principal
         'Label88
         '
         Me.Label88.AutoSize = True
+        Me.Label88.BackColor = System.Drawing.Color.Transparent
         Me.Label88.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label88.ForeColor = System.Drawing.Color.White
         Me.Label88.Location = New System.Drawing.Point(33, 82)
         Me.Label88.Name = "Label88"
         Me.Label88.Size = New System.Drawing.Size(121, 16)
@@ -2536,7 +2561,9 @@ Partial Class Ventana_Principal
         'Label86
         '
         Me.Label86.AutoSize = True
+        Me.Label86.BackColor = System.Drawing.Color.Transparent
         Me.Label86.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label86.ForeColor = System.Drawing.Color.White
         Me.Label86.Location = New System.Drawing.Point(82, 574)
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(74, 16)
@@ -2554,7 +2581,9 @@ Partial Class Ventana_Principal
         'Label84
         '
         Me.Label84.AutoSize = True
+        Me.Label84.BackColor = System.Drawing.Color.Transparent
         Me.Label84.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label84.ForeColor = System.Drawing.Color.White
         Me.Label84.Location = New System.Drawing.Point(89, 533)
         Me.Label84.Name = "Label84"
         Me.Label84.Size = New System.Drawing.Size(67, 16)
@@ -2572,7 +2601,9 @@ Partial Class Ventana_Principal
         'Label51
         '
         Me.Label51.AutoSize = True
+        Me.Label51.BackColor = System.Drawing.Color.Transparent
         Me.Label51.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label51.ForeColor = System.Drawing.Color.White
         Me.Label51.Location = New System.Drawing.Point(89, 491)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(67, 16)
@@ -2590,7 +2621,9 @@ Partial Class Ventana_Principal
         'Label49
         '
         Me.Label49.AutoSize = True
+        Me.Label49.BackColor = System.Drawing.Color.Transparent
         Me.Label49.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label49.ForeColor = System.Drawing.Color.White
         Me.Label49.Location = New System.Drawing.Point(89, 451)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(67, 16)
@@ -2608,7 +2641,9 @@ Partial Class Ventana_Principal
         'Label47
         '
         Me.Label47.AutoSize = True
+        Me.Label47.BackColor = System.Drawing.Color.Transparent
         Me.Label47.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.ForeColor = System.Drawing.Color.White
         Me.Label47.Location = New System.Drawing.Point(89, 408)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(67, 16)
@@ -2626,7 +2661,9 @@ Partial Class Ventana_Principal
         'Label45
         '
         Me.Label45.AutoSize = True
+        Me.Label45.BackColor = System.Drawing.Color.Transparent
         Me.Label45.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.ForeColor = System.Drawing.Color.White
         Me.Label45.Location = New System.Drawing.Point(89, 366)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(67, 16)
@@ -2644,7 +2681,9 @@ Partial Class Ventana_Principal
         'Label42
         '
         Me.Label42.AutoSize = True
+        Me.Label42.BackColor = System.Drawing.Color.Transparent
         Me.Label42.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.ForeColor = System.Drawing.Color.White
         Me.Label42.Location = New System.Drawing.Point(89, 325)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(67, 16)
@@ -2662,7 +2701,9 @@ Partial Class Ventana_Principal
         'Label34
         '
         Me.Label34.AutoSize = True
+        Me.Label34.BackColor = System.Drawing.Color.Transparent
         Me.Label34.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.ForeColor = System.Drawing.Color.White
         Me.Label34.Location = New System.Drawing.Point(89, 285)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(67, 16)
@@ -2680,7 +2721,9 @@ Partial Class Ventana_Principal
         'Label29
         '
         Me.Label29.AutoSize = True
+        Me.Label29.BackColor = System.Drawing.Color.Transparent
         Me.Label29.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.White
         Me.Label29.Location = New System.Drawing.Point(89, 246)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(67, 16)
@@ -2698,7 +2741,9 @@ Partial Class Ventana_Principal
         'Label28
         '
         Me.Label28.AutoSize = True
+        Me.Label28.BackColor = System.Drawing.Color.Transparent
         Me.Label28.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.ForeColor = System.Drawing.Color.White
         Me.Label28.Location = New System.Drawing.Point(89, 208)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(67, 16)
@@ -2722,7 +2767,9 @@ Partial Class Ventana_Principal
         'Label37
         '
         Me.Label37.AutoSize = True
+        Me.Label37.BackColor = System.Drawing.Color.Transparent
         Me.Label37.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.ForeColor = System.Drawing.Color.White
         Me.Label37.Location = New System.Drawing.Point(388, 73)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(62, 16)
@@ -2740,7 +2787,9 @@ Partial Class Ventana_Principal
         'Label38
         '
         Me.Label38.AutoSize = True
+        Me.Label38.BackColor = System.Drawing.Color.Transparent
         Me.Label38.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.ForeColor = System.Drawing.Color.White
         Me.Label38.Location = New System.Drawing.Point(369, 101)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(81, 16)
@@ -2753,7 +2802,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSalir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSalir.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSalir.Image = CType(resources.GetObject("CertificadosButtonSalir.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSalir.Location = New System.Drawing.Point(747, 309)
+        Me.CertificadosButtonSalir.Location = New System.Drawing.Point(747, 254)
         Me.CertificadosButtonSalir.Name = "CertificadosButtonSalir"
         Me.CertificadosButtonSalir.Size = New System.Drawing.Size(152, 40)
         Me.CertificadosButtonSalir.TabIndex = 122
@@ -2779,7 +2828,9 @@ Partial Class Ventana_Principal
         'Label39
         '
         Me.Label39.AutoSize = True
+        Me.Label39.BackColor = System.Drawing.Color.Transparent
         Me.Label39.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.ForeColor = System.Drawing.Color.White
         Me.Label39.Location = New System.Drawing.Point(369, 129)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(81, 16)
@@ -2792,7 +2843,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonComprobante.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonComprobante.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonComprobante.Image = CType(resources.GetObject("CertificadosButtonComprobante.Image"), System.Drawing.Image)
-        Me.CertificadosButtonComprobante.Location = New System.Drawing.Point(747, 197)
+        Me.CertificadosButtonComprobante.Location = New System.Drawing.Point(747, 142)
         Me.CertificadosButtonComprobante.Name = "CertificadosButtonComprobante"
         Me.CertificadosButtonComprobante.Size = New System.Drawing.Size(152, 40)
         Me.CertificadosButtonComprobante.TabIndex = 117
@@ -2802,7 +2853,9 @@ Partial Class Ventana_Principal
         'Label40
         '
         Me.Label40.AutoSize = True
+        Me.Label40.BackColor = System.Drawing.Color.Transparent
         Me.Label40.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.Color.White
         Me.Label40.Location = New System.Drawing.Point(50, 51)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(103, 16)
@@ -4470,13 +4523,13 @@ Partial Class Ventana_Principal
     Friend WithEvents ConfiguracionTextBoxLegal As TextBox
     Friend WithEvents Label61 As Label
     Friend WithEvents CertificadosButtonSaveTracto1 As Button
-    Friend WithEvents Button12 As Button
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button10 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents CertificadosButtonSaveTracto10 As Button
+    Friend WithEvents CertificadosButtonSaveTracto9 As Button
+    Friend WithEvents CertificadosButtonSaveTracto8 As Button
+    Friend WithEvents CertificadosButtonSaveTracto7 As Button
+    Friend WithEvents CertificadosButtonSaveTracto6 As Button
+    Friend WithEvents CertificadosButtonSaveTracto5 As Button
+    Friend WithEvents CertificadosButtonSaveTracto4 As Button
+    Friend WithEvents CertificadosButtonSaveTracto3 As Button
     Friend WithEvents CertificadosButtonSaveTracto2 As Button
 End Class

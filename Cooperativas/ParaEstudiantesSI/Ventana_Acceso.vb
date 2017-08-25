@@ -5,7 +5,7 @@
     End Sub
     Private Sub ButtonInsertar_InformacionAccidente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonIngresar.Click
         If (TextBoxlogin.Text = "" Or TextBoxContraseña.Text = "") Then
-            MsgBox("Debe llenar todos los campos")
+            MsgBox("Debe llenar todos los campos para Ingresar")
             TextBoxlogin.Text = ""
             TextBoxContraseña.Text = ""
         Else
@@ -14,7 +14,7 @@
             If (TextBoxlogin.Text = Singleton.usuario) Then
                 If (TextBoxContraseña.Text = Singleton.contrasena) Then
                     If Singleton.permisos = "0" Then
-                        MsgBox("No tiene licencia para acceder. Comuniquese con su proveedor.")
+                        MsgBox("Su licencia ha caducado. Contacte al Administrador del Sistema.")
                     Else
                         usuario.login()
                         Me.Hide()
