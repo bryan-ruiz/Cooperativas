@@ -6,7 +6,9 @@ Public Class Socios
 
     Dim BD As ConexionBD = New ConexionBD
     Dim encabezado As EncabezadoClase = New EncabezadoClase
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
+    'consulta un asociado
     Public Sub consultar()
 
         Dim valores As List(Of String)
@@ -14,13 +16,13 @@ Public Class Socios
         Dim numAsociado As String = Ventana_Principal.TextBoxSociosNumAsociado.Text
 
         If (cedula <> "" And numAsociado <> "") Then
-            MessageBox.Show("Debe ingresar la cédula o el número de asociado para consultar pero no ambos")
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado)
             limpiar()
             Return
         End If
 
         If (Ventana_Principal.TextBoxSociosCedula.Text = "" And Ventana_Principal.TextBoxSociosNumAsociado.Text = "") Then
-            MessageBox.Show("Debe ingresar la cédula o el número de asociado para consultar")
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado)
             limpiar()
         Else
             Try
@@ -81,7 +83,7 @@ Public Class Socios
                     Ventana_Principal.TextBoxSociosNotasRetiro.Text = valores.Item(17)
 
                 Else
-                    MessageBox.Show("El Socio no se encuentra registrado")
+                    MessageBox.Show(variablesGlobales.noExistenDatos)
                     limpiar()
                 End If
                 'Muy importante cerrar conexion despues de cada consulta'
@@ -136,7 +138,7 @@ Public Class Socios
         End If
 
         If (cedula = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
-            MessageBox.Show("No pueden haber campos vacíos!")
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
         Else
             Try
                 BD.ConectarBD()
@@ -146,10 +148,10 @@ Public Class Socios
                 Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
 
                 If (insertado = 1 And certificadoXSocio = 1) Then
-                    MessageBox.Show("Asociado ingresado con éxito!.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                    MessageBox.Show(variablesGlobales.datosIngresadosConExito, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                     limpiar()
                 Else
-                    MessageBox.Show("Error al ingresar el Asociado")
+                    MessageBox.Show(variablesGlobales.errorIngresandoDatos, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     limpiar()
                 End If
                 'Muy importante cerrar conexion despues de cada consulta'
@@ -202,17 +204,17 @@ Public Class Socios
         End If
 
         If (cedula = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
-            MessageBox.Show("No pueden haber campos vacíos!")
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
         Else
             Try
                 BD.ConectarBD()
                 Dim modificado = BD.actualizarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad,
                                                     direccion, genero, estado, fechaRetiro, notasRetiro, menor)
                 If modificado = 1 Then
-                    MessageBox.Show("Socio actualizado con éxito!")
+                    MessageBox.Show(variablesGlobales.datosActualizadosConExito)
                     limpiar()
                 Else
-                    MessageBox.Show("Error al actualizar la información del Asociado")
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos)
                     limpiar()
                 End If
                 BD.CerrarConexion()
@@ -238,9 +240,6 @@ Public Class Socios
         Ventana_Principal.TextBoxSociosDireccion.Text = ""
         Ventana_Principal.TextBoxSociosNotasRetiro.Text = ""
     End Sub
-
-
-
 
     'Genera un reporte de los Socios en PDF'
     Public Sub generarReporteDeSocios()
@@ -295,12 +294,12 @@ Public Class Socios
                 pdfDoc.Add(New Paragraph("Estado:   " + valores(contador).estado, FontStype))
                 pdfDoc.Add(New Paragraph("Cuota de matrícula:   " + valores(contador).cuotaMatricula, FontStype))
 
-
-
                 contador = contador + 1
+
             End While
+
             pdfDoc.Close()
-            MessageBox.Show("Reporte generado con éxito en C:/Reportes/.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
             MessageBox.Show("Error de: " + ex.ToString)
         End Try

@@ -274,136 +274,50 @@ Public Class Ventana_Principal
 
     End Sub
 
-    'Valida la fecha límite
-    Private Function validarFecha(ByVal fecha As DateTime) As Boolean
-        Dim value As Boolean = False
-        Dim GETDATE As DateTime = DateTime.Today
-
-        If fecha.CompareTo(GETDATE) > 0 Then
-            value = False
-        End If
-        If fecha.CompareTo(GETDATE) < 0 Then
-            value = True
-        End If
-
-        Return value
-
-    End Function
-
     Private Sub CertificadosButtonSaveTracto1_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto1.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("1")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("1", Me.CertificadosDateTimePickerFecha1.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto2_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto2.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha2.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("2")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("2", Me.CertificadosDateTimePickerFecha2.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto3_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto3.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha3.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("3")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("3", Me.CertificadosDateTimePickerFecha3.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto4_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto4.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha4.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("4")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("4", Me.CertificadosDateTimePickerFecha4.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto5_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto5.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha5.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("5")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("5", Me.CertificadosDateTimePickerFecha5.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto6_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto6.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha6.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("6")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("6", Me.CertificadosDateTimePickerFecha6.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto7_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto7.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha7.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("7")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("7", Me.CertificadosDateTimePickerFecha7.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto8_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto8.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha8.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("8")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("8", Me.CertificadosDateTimePickerFecha8.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto9_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto9.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha9.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("9")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("9", Me.CertificadosDateTimePickerFecha9.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto10_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto10.Click
-        Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha10.Value
-
-        If validarFecha(fecha) Then
-            MessageBox.Show("No se puede ingresar el Tracto debido a que la fecha límite es menor a la fecha actual")
-        Else
-            certificados.editarTracto("10")
-            certificados.sumarTractosEnCertificados()
-        End If
+        certificados.validarTracto("10", Me.CertificadosDateTimePickerFecha10.Value)
     End Sub
 
 
-    '//////////////////////////
-    '///////  INFORME ECONÓMICO //////////
-    '//////////////////////////
+    '/////////////////////////////
+    '///////  INFORME ECONÓMICO //
+    '/////////////////////////////
 
     Private Sub InformeButtonGenerarInforme_Click(sender As Object, e As EventArgs) Handles InformeButtonGenerarInforme.Click
 

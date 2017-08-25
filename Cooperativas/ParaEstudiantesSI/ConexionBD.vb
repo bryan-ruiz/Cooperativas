@@ -23,7 +23,7 @@ Public Class ConexionBD
             conectadoBD = True
         Catch ex As Exception
             conectadoBD = False
-            MessageBox.Show("Se presentó la siguiente exepción: " & ex.ToString)
+            MessageBox.Show("Se presentó la siguiente error: " & ex.ToString)
         End Try
     End Sub
 

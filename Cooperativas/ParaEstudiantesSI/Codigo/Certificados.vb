@@ -3,9 +3,11 @@ Imports iTextSharp.text.pdf
 Imports System.IO
 
 Public Class Certificados
+
     Dim BD As ConexionBD = New ConexionBD
     Dim estado As Boolean = True
     Dim encabezado As EncabezadoClase = New EncabezadoClase
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     Public Sub consultar()
 
@@ -13,7 +15,7 @@ Public Class Certificados
         Dim cedulaOnumAsociado As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
 
         If (cedulaOnumAsociado = "") Then
-            MessageBox.Show("Debe ingresar la Cédula o el Número de asociado para consultar")
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado)
         Else
             Try
                 BD.ConectarBD()
@@ -39,7 +41,7 @@ Public Class Certificados
                     consultarFechasLimite()
 
                 Else
-                    MessageBox.Show("El Socio no se encuentra registrado")
+                    MessageBox.Show(variablesGlobales.noExistenDatos)
                     Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text = ""
                 End If
                 'Cierro conexion'
@@ -50,7 +52,7 @@ Public Class Certificados
         End If
     End Sub
 
-    'cerrar certificado
+    'Cierra el periodo para Certificados
     Public Sub cerrarCertificado()
         Dim monto As String = "0"
         Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
@@ -60,7 +62,7 @@ Public Class Certificados
             If hecho = 0 Then
                 BD.cerrarCertificado(cedula, hecho, monto)
             Else
-                MessageBox.Show("Listo.")
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito)
                 Ventana_Principal.CertificadosTextboxTracto1.Text = "0"
                 Ventana_Principal.CertificadosTextboxTracto2.Text = "0"
                 Ventana_Principal.CertificadosTextboxTracto3.Text = "0"
@@ -94,7 +96,7 @@ Public Class Certificados
                 Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = hecho
                 hecho = BD.totalEnCertificado(cedula, CStr(hecho))
                 If hecho = 0 Then
-                    MessageBox.Show("Ha ocurrido un error.")
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos)
                 End If
             End If
             BD.CerrarConexion()
@@ -134,9 +136,9 @@ Public Class Certificados
             BD.ConectarBD()
             Dim hecho As Integer = BD.actualizarTracto(numeroTracto, cedula, monto)
             If hecho = 0 Then
-                MessageBox.Show("Ha ocurrido un error.")
+                MessageBox.Show(variablesGlobales.errorActualizandoDatos)
             Else
-                MessageBox.Show("Se ha guardado el Tracto seleccionado!")
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito)
             End If
             BD.CerrarConexion()
         Catch ex As Exception
@@ -153,7 +155,7 @@ Public Class Certificados
             If fechas.Count <> 0 Then
                 llenarDatosFechaLimite(fechas)
             Else
-                MessageBox.Show("El Periodo a consultar no existe")
+                MessageBox.Show(variablesGlobales.noExistenDatos)
             End If
             BD.CerrarConexion()
         Catch ex As Exception
@@ -177,6 +179,32 @@ Public Class Certificados
             Ventana_Principal.CertificadosDateTimePickerFecha10.Value = Date.Parse(valores(conta).fechaLimite10)
             conta = conta + 1
         End While
+    End Sub
+
+    'Valida la fecha límite
+    Private Function validarFecha(ByVal fecha As DateTime) As Boolean
+        Dim value As Boolean = False
+        Dim GETDATE As DateTime = DateTime.Today
+
+        If fecha.CompareTo(GETDATE) > 0 Then
+            value = False
+        End If
+        If fecha.CompareTo(GETDATE) < 0 Then
+            value = True
+        End If
+
+        Return value
+
+    End Function
+
+    'Valida la fecha del tracto y llama a actualizar tracto
+    Public Sub validarTracto(ByVal numTracto As String, ByVal fecha As DateTime)
+        If validarFecha(fecha) Then
+            MessageBox.Show(variablesGlobales.errorFechaLimiteMenorActual)
+        Else
+            editarTracto(numTracto)
+            sumarTractosEnCertificados()
+        End If
     End Sub
 
 

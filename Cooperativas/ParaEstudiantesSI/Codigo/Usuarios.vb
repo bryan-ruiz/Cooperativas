@@ -3,7 +3,10 @@ Imports itextsharp.text.pdf
 Imports System.IO
 
 Public Class Usuarios
+
     Dim BD As ConexionBD = New ConexionBD
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+
     'Insertar Usuario
     Public Sub insertar()
         Dim rol As String = ""
@@ -18,17 +21,17 @@ Public Class Usuarios
         End If
 
         If (usuario = "" Or contrasena = "") Then
-            MessageBox.Show("No pueden haber campos vacíos!")
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
         Else
             Try
                 BD.ConectarBD()
                 Dim insertado As Integer = BD.insertarUsuario(rol, usuario, contrasena, permisos)
 
                 If insertado = 1 Then
-                    MessageBox.Show("Usuario ingresado con éxito!")
+                    MessageBox.Show(variablesGlobales.datosIngresadosConExito)
                     limpiar()
                 Else
-                    MessageBox.Show("Error al ingresar el Usuario")
+                    MessageBox.Show(variablesGlobales.errorIngresandoDatos)
                     limpiar()
                 End If
                 'Muy importante cerrar conexion despues de cada consulta'
@@ -45,7 +48,7 @@ Public Class Usuarios
         Dim contrasena As String = Ventana_Acceso.TextBoxContraseña.Text
         Dim singleton As Singleton = Singleton.Instance()
         If (usuario = "" Or contrasena = "") Then
-            MessageBox.Show("No deben haber campos vacíos!")
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
         Else
             Try
                 BD.ConectarBD()
@@ -85,17 +88,17 @@ Public Class Usuarios
         Dim usuario As String = Ventana_Principal.TextBoxUsuariosUsuario.Text
 
         If (usuario = "") Then
-            MessageBox.Show("No pueden haber campos vacíos!")
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
         Else
             Try
                 BD.ConectarBD()
                 Dim insertado As Integer = BD.eliminarUsuario(usuario)
 
                 If insertado = 1 Then
-                    MessageBox.Show("Usuario eliminado con éxito!")
+                    MessageBox.Show(variablesGlobales.datosEliminadosConExito)
                     limpiar()
                 Else
-                    MessageBox.Show("Error al eliminar el Usuario")
+                    MessageBox.Show(variablesGlobales.errorEliminandoDatos)
                     limpiar()
                 End If
                 'Muy importante cerrar conexion despues de cada consulta'
