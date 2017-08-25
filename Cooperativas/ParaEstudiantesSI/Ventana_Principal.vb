@@ -274,9 +274,6 @@ Public Class Ventana_Principal
 
     End Sub
 
-
-
-
     'Valida la fecha límite
     Private Function validarFecha(ByVal fecha As DateTime) As Boolean
         Dim value As Boolean = False
@@ -292,9 +289,6 @@ Public Class Ventana_Principal
         Return value
 
     End Function
-
-
-
 
     Private Sub CertificadosButtonSaveTracto1_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto1.Click
         Dim fecha As DateTime = Me.CertificadosDateTimePickerFecha1.Value
@@ -404,6 +398,15 @@ Public Class Ventana_Principal
             certificados.editarTracto("10")
             certificados.sumarTractosEnCertificados()
         End If
+    End Sub
+
+
+    '//////////////////////////
+    '///////  INFORME ECONÓMICO //////////
+    '//////////////////////////
+
+    Private Sub InformeButtonGenerarInforme_Click(sender As Object, e As EventArgs) Handles InformeButtonGenerarInforme.Click
+
     End Sub
 End Class
 

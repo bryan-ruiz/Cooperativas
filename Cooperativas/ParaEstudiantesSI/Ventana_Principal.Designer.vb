@@ -371,6 +371,11 @@ Partial Class Ventana_Principal
         Me.Label121 = New System.Windows.Forms.Label()
         Me.CoopeBDDataSet = New Cooperativas.CoopeBDDataSet()
         Me.CoopeBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label87 = New System.Windows.Forms.Label()
+        Me.InformeButtonGenerarInforme = New System.Windows.Forms.Button()
+        Me.InformeDateTimePickerDesde = New System.Windows.Forms.DateTimePicker()
+        Me.InformeDateTimePickerHasta = New System.Windows.Forms.DateTimePicker()
+        Me.Label132 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -386,6 +391,7 @@ Partial Class Ventana_Principal
         Me.TabPage7.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.Excedentes.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabPage8.SuspendLayout()
@@ -2136,7 +2142,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto10.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto10.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto10.Location = New System.Drawing.Point(556, 563)
+        Me.CertificadosButtonSaveTracto10.Location = New System.Drawing.Point(585, 566)
         Me.CertificadosButtonSaveTracto10.Name = "CertificadosButtonSaveTracto10"
         Me.CertificadosButtonSaveTracto10.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto10.TabIndex = 251
@@ -2149,7 +2155,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto9.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto9.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto9.Location = New System.Drawing.Point(556, 522)
+        Me.CertificadosButtonSaveTracto9.Location = New System.Drawing.Point(585, 525)
         Me.CertificadosButtonSaveTracto9.Name = "CertificadosButtonSaveTracto9"
         Me.CertificadosButtonSaveTracto9.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto9.TabIndex = 250
@@ -2162,7 +2168,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto8.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto8.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto8.Location = New System.Drawing.Point(556, 480)
+        Me.CertificadosButtonSaveTracto8.Location = New System.Drawing.Point(585, 483)
         Me.CertificadosButtonSaveTracto8.Name = "CertificadosButtonSaveTracto8"
         Me.CertificadosButtonSaveTracto8.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto8.TabIndex = 249
@@ -2175,7 +2181,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto7.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto7.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto7.Location = New System.Drawing.Point(556, 440)
+        Me.CertificadosButtonSaveTracto7.Location = New System.Drawing.Point(585, 443)
         Me.CertificadosButtonSaveTracto7.Name = "CertificadosButtonSaveTracto7"
         Me.CertificadosButtonSaveTracto7.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto7.TabIndex = 248
@@ -2188,7 +2194,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto6.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto6.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto6.Location = New System.Drawing.Point(556, 397)
+        Me.CertificadosButtonSaveTracto6.Location = New System.Drawing.Point(585, 400)
         Me.CertificadosButtonSaveTracto6.Name = "CertificadosButtonSaveTracto6"
         Me.CertificadosButtonSaveTracto6.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto6.TabIndex = 247
@@ -2201,7 +2207,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto5.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto5.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto5.Location = New System.Drawing.Point(556, 356)
+        Me.CertificadosButtonSaveTracto5.Location = New System.Drawing.Point(585, 359)
         Me.CertificadosButtonSaveTracto5.Name = "CertificadosButtonSaveTracto5"
         Me.CertificadosButtonSaveTracto5.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto5.TabIndex = 246
@@ -2214,7 +2220,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto4.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto4.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto4.Location = New System.Drawing.Point(556, 315)
+        Me.CertificadosButtonSaveTracto4.Location = New System.Drawing.Point(585, 318)
         Me.CertificadosButtonSaveTracto4.Name = "CertificadosButtonSaveTracto4"
         Me.CertificadosButtonSaveTracto4.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto4.TabIndex = 245
@@ -2227,7 +2233,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto3.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto3.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto3.Location = New System.Drawing.Point(556, 274)
+        Me.CertificadosButtonSaveTracto3.Location = New System.Drawing.Point(585, 277)
         Me.CertificadosButtonSaveTracto3.Name = "CertificadosButtonSaveTracto3"
         Me.CertificadosButtonSaveTracto3.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto3.TabIndex = 244
@@ -2240,7 +2246,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto2.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto2.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto2.Location = New System.Drawing.Point(556, 234)
+        Me.CertificadosButtonSaveTracto2.Location = New System.Drawing.Point(585, 237)
         Me.CertificadosButtonSaveTracto2.Name = "CertificadosButtonSaveTracto2"
         Me.CertificadosButtonSaveTracto2.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto2.TabIndex = 243
@@ -2253,7 +2259,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSaveTracto1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto1.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto1.Image = Global.Cooperativas.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto1.Location = New System.Drawing.Point(556, 195)
+        Me.CertificadosButtonSaveTracto1.Location = New System.Drawing.Point(585, 198)
         Me.CertificadosButtonSaveTracto1.Name = "CertificadosButtonSaveTracto1"
         Me.CertificadosButtonSaveTracto1.Size = New System.Drawing.Size(54, 31)
         Me.CertificadosButtonSaveTracto1.TabIndex = 242
@@ -2266,7 +2272,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonCerrarPeriodo.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonCerrarPeriodo.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonCerrarPeriodo.Image = CType(resources.GetObject("CertificadosButtonCerrarPeriodo.Image"), System.Drawing.Image)
-        Me.CertificadosButtonCerrarPeriodo.Location = New System.Drawing.Point(747, 199)
+        Me.CertificadosButtonCerrarPeriodo.Location = New System.Drawing.Point(777, 174)
         Me.CertificadosButtonCerrarPeriodo.Name = "CertificadosButtonCerrarPeriodo"
         Me.CertificadosButtonCerrarPeriodo.Size = New System.Drawing.Size(152, 40)
         Me.CertificadosButtonCerrarPeriodo.TabIndex = 216
@@ -2298,7 +2304,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha10.Enabled = False
         Me.CertificadosDateTimePickerFecha10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha10.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha10.Location = New System.Drawing.Point(428, 572)
+        Me.CertificadosDateTimePickerFecha10.Location = New System.Drawing.Point(457, 575)
         Me.CertificadosDateTimePickerFecha10.Name = "CertificadosDateTimePickerFecha10"
         Me.CertificadosDateTimePickerFecha10.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha10.Size = New System.Drawing.Size(111, 22)
@@ -2309,7 +2315,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha9.Enabled = False
         Me.CertificadosDateTimePickerFecha9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha9.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha9.Location = New System.Drawing.Point(428, 531)
+        Me.CertificadosDateTimePickerFecha9.Location = New System.Drawing.Point(457, 534)
         Me.CertificadosDateTimePickerFecha9.Name = "CertificadosDateTimePickerFecha9"
         Me.CertificadosDateTimePickerFecha9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha9.Size = New System.Drawing.Size(111, 22)
@@ -2320,7 +2326,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha8.Enabled = False
         Me.CertificadosDateTimePickerFecha8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha8.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha8.Location = New System.Drawing.Point(428, 486)
+        Me.CertificadosDateTimePickerFecha8.Location = New System.Drawing.Point(457, 489)
         Me.CertificadosDateTimePickerFecha8.Name = "CertificadosDateTimePickerFecha8"
         Me.CertificadosDateTimePickerFecha8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha8.Size = New System.Drawing.Size(111, 22)
@@ -2331,7 +2337,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha7.Enabled = False
         Me.CertificadosDateTimePickerFecha7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha7.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha7.Location = New System.Drawing.Point(428, 446)
+        Me.CertificadosDateTimePickerFecha7.Location = New System.Drawing.Point(457, 449)
         Me.CertificadosDateTimePickerFecha7.Name = "CertificadosDateTimePickerFecha7"
         Me.CertificadosDateTimePickerFecha7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha7.Size = New System.Drawing.Size(111, 22)
@@ -2342,7 +2348,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha6.Enabled = False
         Me.CertificadosDateTimePickerFecha6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha6.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha6.Location = New System.Drawing.Point(428, 403)
+        Me.CertificadosDateTimePickerFecha6.Location = New System.Drawing.Point(457, 406)
         Me.CertificadosDateTimePickerFecha6.Name = "CertificadosDateTimePickerFecha6"
         Me.CertificadosDateTimePickerFecha6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha6.Size = New System.Drawing.Size(111, 22)
@@ -2353,7 +2359,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha5.Enabled = False
         Me.CertificadosDateTimePickerFecha5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha5.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha5.Location = New System.Drawing.Point(428, 361)
+        Me.CertificadosDateTimePickerFecha5.Location = New System.Drawing.Point(457, 364)
         Me.CertificadosDateTimePickerFecha5.Name = "CertificadosDateTimePickerFecha5"
         Me.CertificadosDateTimePickerFecha5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha5.Size = New System.Drawing.Size(111, 22)
@@ -2364,7 +2370,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha4.Enabled = False
         Me.CertificadosDateTimePickerFecha4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha4.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha4.Location = New System.Drawing.Point(428, 320)
+        Me.CertificadosDateTimePickerFecha4.Location = New System.Drawing.Point(457, 323)
         Me.CertificadosDateTimePickerFecha4.Name = "CertificadosDateTimePickerFecha4"
         Me.CertificadosDateTimePickerFecha4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha4.Size = New System.Drawing.Size(111, 22)
@@ -2375,7 +2381,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha3.Enabled = False
         Me.CertificadosDateTimePickerFecha3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha3.Location = New System.Drawing.Point(428, 280)
+        Me.CertificadosDateTimePickerFecha3.Location = New System.Drawing.Point(457, 283)
         Me.CertificadosDateTimePickerFecha3.Name = "CertificadosDateTimePickerFecha3"
         Me.CertificadosDateTimePickerFecha3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha3.Size = New System.Drawing.Size(111, 22)
@@ -2386,7 +2392,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha2.Enabled = False
         Me.CertificadosDateTimePickerFecha2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha2.Location = New System.Drawing.Point(428, 241)
+        Me.CertificadosDateTimePickerFecha2.Location = New System.Drawing.Point(457, 244)
         Me.CertificadosDateTimePickerFecha2.Name = "CertificadosDateTimePickerFecha2"
         Me.CertificadosDateTimePickerFecha2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha2.Size = New System.Drawing.Size(111, 22)
@@ -2397,7 +2403,7 @@ Partial Class Ventana_Principal
         Me.CertificadosDateTimePickerFecha1.Enabled = False
         Me.CertificadosDateTimePickerFecha1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosDateTimePickerFecha1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha1.Location = New System.Drawing.Point(428, 203)
+        Me.CertificadosDateTimePickerFecha1.Location = New System.Drawing.Point(457, 206)
         Me.CertificadosDateTimePickerFecha1.Name = "CertificadosDateTimePickerFecha1"
         Me.CertificadosDateTimePickerFecha1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CertificadosDateTimePickerFecha1.Size = New System.Drawing.Size(111, 22)
@@ -2408,7 +2414,7 @@ Partial Class Ventana_Principal
         Me.Label119.AutoSize = True
         Me.Label119.BackColor = System.Drawing.Color.Transparent
         Me.Label119.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label119.Location = New System.Drawing.Point(327, 575)
+        Me.Label119.Location = New System.Drawing.Point(356, 578)
         Me.Label119.Name = "Label119"
         Me.Label119.Size = New System.Drawing.Size(95, 16)
         Me.Label119.TabIndex = 203
@@ -2420,7 +2426,7 @@ Partial Class Ventana_Principal
         Me.Label120.BackColor = System.Drawing.Color.Transparent
         Me.Label120.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label120.ForeColor = System.Drawing.Color.White
-        Me.Label120.Location = New System.Drawing.Point(327, 535)
+        Me.Label120.Location = New System.Drawing.Point(356, 538)
         Me.Label120.Name = "Label120"
         Me.Label120.Size = New System.Drawing.Size(95, 16)
         Me.Label120.TabIndex = 202
@@ -2432,7 +2438,7 @@ Partial Class Ventana_Principal
         Me.Label115.BackColor = System.Drawing.Color.Transparent
         Me.Label115.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label115.ForeColor = System.Drawing.Color.White
-        Me.Label115.Location = New System.Drawing.Point(327, 487)
+        Me.Label115.Location = New System.Drawing.Point(356, 490)
         Me.Label115.Name = "Label115"
         Me.Label115.Size = New System.Drawing.Size(95, 16)
         Me.Label115.TabIndex = 201
@@ -2444,7 +2450,7 @@ Partial Class Ventana_Principal
         Me.Label116.BackColor = System.Drawing.Color.Transparent
         Me.Label116.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label116.ForeColor = System.Drawing.Color.White
-        Me.Label116.Location = New System.Drawing.Point(327, 447)
+        Me.Label116.Location = New System.Drawing.Point(356, 450)
         Me.Label116.Name = "Label116"
         Me.Label116.Size = New System.Drawing.Size(95, 16)
         Me.Label116.TabIndex = 200
@@ -2456,7 +2462,7 @@ Partial Class Ventana_Principal
         Me.Label117.BackColor = System.Drawing.Color.Transparent
         Me.Label117.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label117.ForeColor = System.Drawing.Color.White
-        Me.Label117.Location = New System.Drawing.Point(327, 407)
+        Me.Label117.Location = New System.Drawing.Point(356, 410)
         Me.Label117.Name = "Label117"
         Me.Label117.Size = New System.Drawing.Size(95, 16)
         Me.Label117.TabIndex = 199
@@ -2468,7 +2474,7 @@ Partial Class Ventana_Principal
         Me.Label118.BackColor = System.Drawing.Color.Transparent
         Me.Label118.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label118.ForeColor = System.Drawing.Color.White
-        Me.Label118.Location = New System.Drawing.Point(327, 367)
+        Me.Label118.Location = New System.Drawing.Point(356, 370)
         Me.Label118.Name = "Label118"
         Me.Label118.Size = New System.Drawing.Size(95, 16)
         Me.Label118.TabIndex = 198
@@ -2480,7 +2486,7 @@ Partial Class Ventana_Principal
         Me.Label113.BackColor = System.Drawing.Color.Transparent
         Me.Label113.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label113.ForeColor = System.Drawing.Color.White
-        Me.Label113.Location = New System.Drawing.Point(327, 328)
+        Me.Label113.Location = New System.Drawing.Point(356, 331)
         Me.Label113.Name = "Label113"
         Me.Label113.Size = New System.Drawing.Size(95, 16)
         Me.Label113.TabIndex = 197
@@ -2492,7 +2498,7 @@ Partial Class Ventana_Principal
         Me.Label114.BackColor = System.Drawing.Color.Transparent
         Me.Label114.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label114.ForeColor = System.Drawing.Color.White
-        Me.Label114.Location = New System.Drawing.Point(327, 288)
+        Me.Label114.Location = New System.Drawing.Point(356, 291)
         Me.Label114.Name = "Label114"
         Me.Label114.Size = New System.Drawing.Size(95, 16)
         Me.Label114.TabIndex = 196
@@ -2504,7 +2510,7 @@ Partial Class Ventana_Principal
         Me.Label112.BackColor = System.Drawing.Color.Transparent
         Me.Label112.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label112.ForeColor = System.Drawing.Color.White
-        Me.Label112.Location = New System.Drawing.Point(327, 248)
+        Me.Label112.Location = New System.Drawing.Point(356, 251)
         Me.Label112.Name = "Label112"
         Me.Label112.Size = New System.Drawing.Size(95, 16)
         Me.Label112.TabIndex = 195
@@ -2516,7 +2522,7 @@ Partial Class Ventana_Principal
         Me.Label111.BackColor = System.Drawing.Color.Transparent
         Me.Label111.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label111.ForeColor = System.Drawing.Color.White
-        Me.Label111.Location = New System.Drawing.Point(327, 208)
+        Me.Label111.Location = New System.Drawing.Point(356, 211)
         Me.Label111.Name = "Label111"
         Me.Label111.Size = New System.Drawing.Size(95, 16)
         Me.Label111.TabIndex = 194
@@ -2553,7 +2559,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto10
         '
         Me.CertificadosTextboxTracto10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto10.Location = New System.Drawing.Point(161, 572)
+        Me.CertificadosTextboxTracto10.Location = New System.Drawing.Point(190, 575)
         Me.CertificadosTextboxTracto10.Name = "CertificadosTextboxTracto10"
         Me.CertificadosTextboxTracto10.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto10.TabIndex = 189
@@ -2564,7 +2570,7 @@ Partial Class Ventana_Principal
         Me.Label86.BackColor = System.Drawing.Color.Transparent
         Me.Label86.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label86.ForeColor = System.Drawing.Color.White
-        Me.Label86.Location = New System.Drawing.Point(82, 574)
+        Me.Label86.Location = New System.Drawing.Point(111, 577)
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(74, 16)
         Me.Label86.TabIndex = 188
@@ -2573,7 +2579,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto9
         '
         Me.CertificadosTextboxTracto9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto9.Location = New System.Drawing.Point(161, 531)
+        Me.CertificadosTextboxTracto9.Location = New System.Drawing.Point(190, 534)
         Me.CertificadosTextboxTracto9.Name = "CertificadosTextboxTracto9"
         Me.CertificadosTextboxTracto9.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto9.TabIndex = 185
@@ -2584,7 +2590,7 @@ Partial Class Ventana_Principal
         Me.Label84.BackColor = System.Drawing.Color.Transparent
         Me.Label84.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label84.ForeColor = System.Drawing.Color.White
-        Me.Label84.Location = New System.Drawing.Point(89, 533)
+        Me.Label84.Location = New System.Drawing.Point(118, 536)
         Me.Label84.Name = "Label84"
         Me.Label84.Size = New System.Drawing.Size(67, 16)
         Me.Label84.TabIndex = 184
@@ -2593,7 +2599,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto8
         '
         Me.CertificadosTextboxTracto8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto8.Location = New System.Drawing.Point(161, 489)
+        Me.CertificadosTextboxTracto8.Location = New System.Drawing.Point(190, 492)
         Me.CertificadosTextboxTracto8.Name = "CertificadosTextboxTracto8"
         Me.CertificadosTextboxTracto8.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto8.TabIndex = 181
@@ -2604,7 +2610,7 @@ Partial Class Ventana_Principal
         Me.Label51.BackColor = System.Drawing.Color.Transparent
         Me.Label51.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label51.ForeColor = System.Drawing.Color.White
-        Me.Label51.Location = New System.Drawing.Point(89, 491)
+        Me.Label51.Location = New System.Drawing.Point(118, 494)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(67, 16)
         Me.Label51.TabIndex = 180
@@ -2613,7 +2619,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto7
         '
         Me.CertificadosTextboxTracto7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto7.Location = New System.Drawing.Point(161, 449)
+        Me.CertificadosTextboxTracto7.Location = New System.Drawing.Point(190, 452)
         Me.CertificadosTextboxTracto7.Name = "CertificadosTextboxTracto7"
         Me.CertificadosTextboxTracto7.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto7.TabIndex = 177
@@ -2624,7 +2630,7 @@ Partial Class Ventana_Principal
         Me.Label49.BackColor = System.Drawing.Color.Transparent
         Me.Label49.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label49.ForeColor = System.Drawing.Color.White
-        Me.Label49.Location = New System.Drawing.Point(89, 451)
+        Me.Label49.Location = New System.Drawing.Point(118, 454)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(67, 16)
         Me.Label49.TabIndex = 176
@@ -2633,7 +2639,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto6
         '
         Me.CertificadosTextboxTracto6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto6.Location = New System.Drawing.Point(161, 406)
+        Me.CertificadosTextboxTracto6.Location = New System.Drawing.Point(190, 409)
         Me.CertificadosTextboxTracto6.Name = "CertificadosTextboxTracto6"
         Me.CertificadosTextboxTracto6.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto6.TabIndex = 173
@@ -2644,7 +2650,7 @@ Partial Class Ventana_Principal
         Me.Label47.BackColor = System.Drawing.Color.Transparent
         Me.Label47.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label47.ForeColor = System.Drawing.Color.White
-        Me.Label47.Location = New System.Drawing.Point(89, 408)
+        Me.Label47.Location = New System.Drawing.Point(118, 411)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(67, 16)
         Me.Label47.TabIndex = 172
@@ -2653,7 +2659,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto5
         '
         Me.CertificadosTextboxTracto5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto5.Location = New System.Drawing.Point(161, 364)
+        Me.CertificadosTextboxTracto5.Location = New System.Drawing.Point(190, 367)
         Me.CertificadosTextboxTracto5.Name = "CertificadosTextboxTracto5"
         Me.CertificadosTextboxTracto5.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto5.TabIndex = 169
@@ -2664,7 +2670,7 @@ Partial Class Ventana_Principal
         Me.Label45.BackColor = System.Drawing.Color.Transparent
         Me.Label45.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.White
-        Me.Label45.Location = New System.Drawing.Point(89, 366)
+        Me.Label45.Location = New System.Drawing.Point(118, 369)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(67, 16)
         Me.Label45.TabIndex = 168
@@ -2673,7 +2679,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto4
         '
         Me.CertificadosTextboxTracto4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto4.Location = New System.Drawing.Point(161, 323)
+        Me.CertificadosTextboxTracto4.Location = New System.Drawing.Point(190, 326)
         Me.CertificadosTextboxTracto4.Name = "CertificadosTextboxTracto4"
         Me.CertificadosTextboxTracto4.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto4.TabIndex = 165
@@ -2684,7 +2690,7 @@ Partial Class Ventana_Principal
         Me.Label42.BackColor = System.Drawing.Color.Transparent
         Me.Label42.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label42.ForeColor = System.Drawing.Color.White
-        Me.Label42.Location = New System.Drawing.Point(89, 325)
+        Me.Label42.Location = New System.Drawing.Point(118, 328)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(67, 16)
         Me.Label42.TabIndex = 164
@@ -2693,7 +2699,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto3
         '
         Me.CertificadosTextboxTracto3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto3.Location = New System.Drawing.Point(161, 283)
+        Me.CertificadosTextboxTracto3.Location = New System.Drawing.Point(190, 286)
         Me.CertificadosTextboxTracto3.Name = "CertificadosTextboxTracto3"
         Me.CertificadosTextboxTracto3.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto3.TabIndex = 161
@@ -2704,7 +2710,7 @@ Partial Class Ventana_Principal
         Me.Label34.BackColor = System.Drawing.Color.Transparent
         Me.Label34.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.ForeColor = System.Drawing.Color.White
-        Me.Label34.Location = New System.Drawing.Point(89, 285)
+        Me.Label34.Location = New System.Drawing.Point(118, 288)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(67, 16)
         Me.Label34.TabIndex = 160
@@ -2713,7 +2719,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto2
         '
         Me.CertificadosTextboxTracto2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto2.Location = New System.Drawing.Point(161, 244)
+        Me.CertificadosTextboxTracto2.Location = New System.Drawing.Point(190, 247)
         Me.CertificadosTextboxTracto2.Name = "CertificadosTextboxTracto2"
         Me.CertificadosTextboxTracto2.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto2.TabIndex = 157
@@ -2724,7 +2730,7 @@ Partial Class Ventana_Principal
         Me.Label29.BackColor = System.Drawing.Color.Transparent
         Me.Label29.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.Color.White
-        Me.Label29.Location = New System.Drawing.Point(89, 246)
+        Me.Label29.Location = New System.Drawing.Point(118, 249)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(67, 16)
         Me.Label29.TabIndex = 156
@@ -2733,7 +2739,7 @@ Partial Class Ventana_Principal
         'CertificadosTextboxTracto1
         '
         Me.CertificadosTextboxTracto1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosTextboxTracto1.Location = New System.Drawing.Point(161, 206)
+        Me.CertificadosTextboxTracto1.Location = New System.Drawing.Point(190, 209)
         Me.CertificadosTextboxTracto1.Name = "CertificadosTextboxTracto1"
         Me.CertificadosTextboxTracto1.Size = New System.Drawing.Size(154, 22)
         Me.CertificadosTextboxTracto1.TabIndex = 153
@@ -2744,7 +2750,7 @@ Partial Class Ventana_Principal
         Me.Label28.BackColor = System.Drawing.Color.Transparent
         Me.Label28.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.White
-        Me.Label28.Location = New System.Drawing.Point(89, 208)
+        Me.Label28.Location = New System.Drawing.Point(118, 211)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(67, 16)
         Me.Label28.TabIndex = 143
@@ -2757,7 +2763,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonConsultar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonConsultar.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonConsultar.Image = CType(resources.GetObject("CertificadosButtonConsultar.Image"), System.Drawing.Image)
-        Me.CertificadosButtonConsultar.Location = New System.Drawing.Point(747, 86)
+        Me.CertificadosButtonConsultar.Location = New System.Drawing.Point(777, 61)
         Me.CertificadosButtonConsultar.Name = "CertificadosButtonConsultar"
         Me.CertificadosButtonConsultar.Size = New System.Drawing.Size(152, 40)
         Me.CertificadosButtonConsultar.TabIndex = 141
@@ -2802,7 +2808,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonSalir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSalir.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSalir.Image = CType(resources.GetObject("CertificadosButtonSalir.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSalir.Location = New System.Drawing.Point(747, 254)
+        Me.CertificadosButtonSalir.Location = New System.Drawing.Point(777, 229)
         Me.CertificadosButtonSalir.Name = "CertificadosButtonSalir"
         Me.CertificadosButtonSalir.Size = New System.Drawing.Size(152, 40)
         Me.CertificadosButtonSalir.TabIndex = 122
@@ -2843,7 +2849,7 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonComprobante.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonComprobante.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonComprobante.Image = CType(resources.GetObject("CertificadosButtonComprobante.Image"), System.Drawing.Image)
-        Me.CertificadosButtonComprobante.Location = New System.Drawing.Point(747, 142)
+        Me.CertificadosButtonComprobante.Location = New System.Drawing.Point(777, 117)
         Me.CertificadosButtonComprobante.Name = "CertificadosButtonComprobante"
         Me.CertificadosButtonComprobante.Size = New System.Drawing.Size(152, 40)
         Me.CertificadosButtonComprobante.TabIndex = 117
@@ -3383,7 +3389,7 @@ Partial Class Ventana_Principal
         '
         'TabPage5
         '
-        Me.TabPage5.BackgroundImage = Global.Cooperativas.My.Resources.Resources.fondo
+        Me.TabPage5.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TabPage5.Controls.Add(Me.Excedentes)
         Me.TabPage5.Location = New System.Drawing.Point(4, 28)
@@ -3392,14 +3398,20 @@ Partial Class Ventana_Principal
         Me.TabPage5.Size = New System.Drawing.Size(997, 675)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Informe Económico"
-        Me.TabPage5.UseVisualStyleBackColor = True
         '
         'Excedentes
         '
+        Me.Excedentes.BackgroundImage = Global.Cooperativas.My.Resources.Resources.fondo
+        Me.Excedentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Excedentes.Controls.Add(Me.Label132)
+        Me.Excedentes.Controls.Add(Me.InformeDateTimePickerHasta)
+        Me.Excedentes.Controls.Add(Me.InformeDateTimePickerDesde)
+        Me.Excedentes.Controls.Add(Me.Label87)
+        Me.Excedentes.Controls.Add(Me.InformeButtonGenerarInforme)
         Me.Excedentes.ForeColor = System.Drawing.Color.White
-        Me.Excedentes.Location = New System.Drawing.Point(33, 19)
+        Me.Excedentes.Location = New System.Drawing.Point(2, 2)
         Me.Excedentes.Name = "Excedentes"
-        Me.Excedentes.Size = New System.Drawing.Size(918, 624)
+        Me.Excedentes.Size = New System.Drawing.Size(995, 673)
         Me.Excedentes.TabIndex = 0
         Me.Excedentes.TabStop = False
         Me.Excedentes.Text = "Informe Económico"
@@ -4135,6 +4147,66 @@ Partial Class Ventana_Principal
         Me.CoopeBDDataSetBindingSource.DataSource = Me.CoopeBDDataSet
         Me.CoopeBDDataSetBindingSource.Position = 0
         '
+        'Label87
+        '
+        Me.Label87.AutoSize = True
+        Me.Label87.BackColor = System.Drawing.Color.Transparent
+        Me.Label87.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label87.ForeColor = System.Drawing.Color.White
+        Me.Label87.Location = New System.Drawing.Point(355, 113)
+        Me.Label87.Name = "Label87"
+        Me.Label87.Size = New System.Drawing.Size(51, 16)
+        Me.Label87.TabIndex = 218
+        Me.Label87.Text = "Desde:"
+        '
+        'InformeButtonGenerarInforme
+        '
+        Me.InformeButtonGenerarInforme.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.InformeButtonGenerarInforme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.InformeButtonGenerarInforme.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InformeButtonGenerarInforme.ForeColor = System.Drawing.Color.White
+        Me.InformeButtonGenerarInforme.Image = CType(resources.GetObject("InformeButtonGenerarInforme.Image"), System.Drawing.Image)
+        Me.InformeButtonGenerarInforme.Location = New System.Drawing.Point(412, 195)
+        Me.InformeButtonGenerarInforme.Name = "InformeButtonGenerarInforme"
+        Me.InformeButtonGenerarInforme.Size = New System.Drawing.Size(160, 40)
+        Me.InformeButtonGenerarInforme.TabIndex = 216
+        Me.InformeButtonGenerarInforme.Text = "Generar Informe"
+        Me.InformeButtonGenerarInforme.UseVisualStyleBackColor = False
+        '
+        'InformeDateTimePickerDesde
+        '
+        Me.InformeDateTimePickerDesde.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InformeDateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.InformeDateTimePickerDesde.Location = New System.Drawing.Point(412, 111)
+        Me.InformeDateTimePickerDesde.MaxDate = New Date(9998, 12, 4, 0, 0, 0, 0)
+        Me.InformeDateTimePickerDesde.Name = "InformeDateTimePickerDesde"
+        Me.InformeDateTimePickerDesde.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.InformeDateTimePickerDesde.Size = New System.Drawing.Size(160, 22)
+        Me.InformeDateTimePickerDesde.TabIndex = 219
+        '
+        'InformeDateTimePickerHasta
+        '
+        Me.InformeDateTimePickerHasta.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InformeDateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.InformeDateTimePickerHasta.Location = New System.Drawing.Point(412, 145)
+        Me.InformeDateTimePickerHasta.MaxDate = New Date(9998, 12, 4, 0, 0, 0, 0)
+        Me.InformeDateTimePickerHasta.Name = "InformeDateTimePickerHasta"
+        Me.InformeDateTimePickerHasta.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.InformeDateTimePickerHasta.Size = New System.Drawing.Size(160, 22)
+        Me.InformeDateTimePickerHasta.TabIndex = 220
+        '
+        'Label132
+        '
+        Me.Label132.AutoSize = True
+        Me.Label132.BackColor = System.Drawing.Color.Transparent
+        Me.Label132.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label132.ForeColor = System.Drawing.Color.White
+        Me.Label132.Location = New System.Drawing.Point(359, 148)
+        Me.Label132.Name = "Label132"
+        Me.Label132.Size = New System.Drawing.Size(47, 16)
+        Me.Label132.TabIndex = 221
+        Me.Label132.Text = "Hasta:"
+        '
         'Ventana_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4170,6 +4242,8 @@ Partial Class Ventana_Principal
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
+        Me.Excedentes.ResumeLayout(False)
+        Me.Excedentes.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -4532,4 +4606,9 @@ Partial Class Ventana_Principal
     Friend WithEvents CertificadosButtonSaveTracto4 As Button
     Friend WithEvents CertificadosButtonSaveTracto3 As Button
     Friend WithEvents CertificadosButtonSaveTracto2 As Button
+    Friend WithEvents Label132 As Label
+    Friend WithEvents InformeDateTimePickerHasta As DateTimePicker
+    Friend WithEvents InformeDateTimePickerDesde As DateTimePicker
+    Friend WithEvents Label87 As Label
+    Friend WithEvents InformeButtonGenerarInforme As Button
 End Class
