@@ -142,6 +142,7 @@
     <Compile Include="Codigo\Comites.vb" />
     <Compile Include="Codigo\Configuracion.vb" />
     <Compile Include="Codigo\Gastos.vb" />
+    <Compile Include="Codigo\InformeEconomico.vb" />
     <Compile Include="Codigo\Ingreso.vb" />
     <Compile Include="Codigo\MensajesGlobales.vb" />
     <Compile Include="Codigo\Socios.vb" />
