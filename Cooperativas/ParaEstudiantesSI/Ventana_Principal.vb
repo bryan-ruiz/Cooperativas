@@ -11,51 +11,44 @@ Public Class Ventana_Principal
     Dim gasto As Gastos = New Gastos
     Dim configuracion As Configuracion = New Configuracion
     Dim certificados As Certificados = New Certificados
-
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
 
     '//////////////////////////
     '///////  SOCIOS //////////
     '//////////////////////////
 
-    'Consultar Socios por Cedula
     Private Sub ButtonSociosConsultar_Click(sender As Object, e As EventArgs)
         socios.consultar()
     End Sub
 
-    'Insertar Socios
     Private Sub ButtonSociosInsertar_Click(sender As Object, e As EventArgs)
         socios.insertar()
     End Sub
 
-    'Actualizar Socios
     Private Sub ButtonSociosModificar_Click(sender As Object, e As EventArgs)
         socios.actualizar()
     End Sub
 
-    'Reporte de Socios (Activos o activos más inactivos)
+    'Reporte de Socios (Activos o Todos (activos más inactivos))
     Private Sub ButtonSociosReporteDeSocios_Click(sender As Object, e As EventArgs)
         socios.generarReporteDeSocios()
         Print.Show()
     End Sub
 
-    'Salir de la app
     Private Sub ButtonSociosSalir_Click(sender As Object, e As EventArgs)
         Me.Close()
         Ventana_Acceso.Close()
     End Sub
 
-    'Radio socio retirado
     Private Sub RadioButtonSociosRetirado_CheckedChanged(sender As Object, e As EventArgs)
         mostrarOcultarCamposRetiro(True)
     End Sub
 
-    'Radio socio activo
     Private Sub RadioButtonSociosActivo_CheckedChanged(sender As Object, e As EventArgs)
         mostrarOcultarCamposRetiro(False)
     End Sub
 
-    'Muestra u oculta los campos de retiro 
     Private Sub mostrarOcultarCamposRetiro(ByVal value As Boolean)
         Me.TextBoxSociosNotasRetiro.Visible = value
         Me.DateTimeSociosFechaRetiro.Visible = value
@@ -97,7 +90,6 @@ Public Class Ventana_Principal
     '//////////////////////////
     '///////  COMITES //////////
     '//////////////////////////
-
 
     Private Sub ButtonBuscar_asociadoPresidente_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoPresidente.Click
         Comites.buscar("presidente")
@@ -151,12 +143,16 @@ Public Class Ventana_Principal
         Ventana_Acceso.Close()
     End Sub
 
+
     '//////////////////////////
     '///////  USUARIOS //////////
     '//////////////////////////
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosEliminar.Click
-        MessageBox.Show("No tiene licencia para eliminar usuarios. Contacte al administrador del Sistema.")
+
+        'TEMPORAL PARA LA VERSION BETA
+        MessageBox.Show("No tiene licencia para eliminar usuarios. Contacte al Administrador del Sistema.")
+
         'If Singleton.rol = "Colaborador" Then
         'MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
         'Else
@@ -165,7 +161,9 @@ Public Class Ventana_Principal
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosInsertar.Click
-        MessageBox.Show("No tiene licencia para crear usuarios. Contacte al administrador del Sistema.")
+
+        'TEMPORAL PARA LA VERSION BETA
+        MessageBox.Show("No tiene licencia para crear usuarios. Contacte al Administrador del Sistema.")
 
         'If Singleton.rol = "Colaborador" Then
         'MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
@@ -174,16 +172,13 @@ Public Class Ventana_Principal
         'End If
     End Sub
 
+
     '//////////////////////////
     '///////  CERTIFICADOS ////
     '//////////////////////////
 
     Private Sub CertificadosButtonConsultar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonConsultar.Click
         certificados.consultar()
-    End Sub
-
-    Private Sub CertificadosButtonGuardar_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub CertificadosButtonComprobante_Click(sender As Object, e As EventArgs) Handles CertificadosButtonComprobante.Click
@@ -199,14 +194,14 @@ Public Class Ventana_Principal
         Ventana_Acceso.Close()
     End Sub
 
-    '//////////////////////////
-    '///////  CONFIGURACION //////////
-    '//////////////////////////
 
+    '//////////////////////////
+    '///////  CONFIGURACION ///
+    '//////////////////////////
 
     Private Sub ConfigurationButtonConsultar_Click(sender As Object, e As EventArgs) Handles ConfigurationButtonConsultar.Click
         If Singleton.rol = "Colaborador" Then
-            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
         Else
             configuracion.consultar()
         End If
@@ -214,7 +209,7 @@ Public Class Ventana_Principal
 
     Private Sub ConfigurationButtonActualizar_Click(sender As Object, e As EventArgs) Handles ConfigurationButtonActualizar.Click
         If Singleton.rol = "Colaborador" Then
-            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
         Else
             configuracion.actualizar()
         End If
@@ -223,9 +218,20 @@ Public Class Ventana_Principal
 
     Private Sub Button_ConfiguracionInsertarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionInsertarCodigoCuenta.Click
         If Singleton.rol = "Colaborador" Then
-            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
         Else
             configuracion.insertarCuenta()
+            ingreso.obtenerDatosSeleccionarCuenta()
+            gasto.obtenerDatosSeleccionarCuenta()
+        End If
+
+    End Sub
+
+    Private Sub Button_ConfiguracionEliminarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionEliminarCodigoCuenta.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
+        Else
+            configuracion.eliminarCuenta()
             ingreso.obtenerDatosSeleccionarCuenta()
             gasto.obtenerDatosSeleccionarCuenta()
         End If
@@ -261,17 +267,6 @@ Public Class Ventana_Principal
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
         gasto.generarReporteGastos()
         Print.Show()
-    End Sub
-
-    Private Sub Button_ConfiguracionEliminarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionEliminarCodigoCuenta.Click
-        If Singleton.rol = "Colaborador" Then
-            MessageBox.Show("Se requiere tener permiso de Administrador para realizar acción.")
-        Else
-            configuracion.eliminarCuenta()
-            ingreso.obtenerDatosSeleccionarCuenta()
-            gasto.obtenerDatosSeleccionarCuenta()
-        End If
-
     End Sub
 
     Private Sub CertificadosButtonSaveTracto1_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto1.Click
@@ -322,6 +317,7 @@ Public Class Ventana_Principal
     Private Sub InformeButtonGenerarInforme_Click(sender As Object, e As EventArgs) Handles InformeButtonGenerarInforme.Click
 
     End Sub
+
 End Class
 
 

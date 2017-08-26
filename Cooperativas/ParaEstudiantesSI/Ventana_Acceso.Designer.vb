@@ -24,13 +24,13 @@ Partial Class Ventana_Acceso
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana_Acceso))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonIngresar = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TextBoxContraseña = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.TextBoxlogin = New System.Windows.Forms.TextBox()
         Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,6 +52,18 @@ Partial Class Ventana_Acceso
         Me.Panel1.Size = New System.Drawing.Size(619, 484)
         Me.Panel1.TabIndex = 0
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(211, 22)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(239, 22)
+        Me.Label1.TabIndex = 145
+        Me.Label1.Text = "Gestión de Cooperativas"
+        '
         'ButtonIngresar
         '
         Me.ButtonIngresar.BackColor = System.Drawing.SystemColors.ControlLight
@@ -69,9 +81,9 @@ Partial Class Ventana_Acceso
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.Cooperativas.My.Resources.Resources.loginImage
-        Me.PictureBox2.Location = New System.Drawing.Point(249, 69)
+        Me.PictureBox2.Location = New System.Drawing.Point(249, 76)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(142, 126)
+        Me.PictureBox2.Size = New System.Drawing.Size(142, 110)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 144
         Me.PictureBox2.TabStop = False
@@ -115,18 +127,6 @@ Partial Class Ventana_Acceso
         Me.Label27.Size = New System.Drawing.Size(60, 16)
         Me.Label27.TabIndex = 122
         Me.Label27.Text = "Usuario:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(211, 22)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(239, 22)
-        Me.Label1.TabIndex = 145
-        Me.Label1.Text = "Gestión de Cooperativas"
         '
         'Ventana_Acceso
         '

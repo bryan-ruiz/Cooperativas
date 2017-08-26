@@ -299,6 +299,11 @@ Partial Class Ventana_Principal
         Me.TextBox_GastosDescripcion = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Excedentes = New System.Windows.Forms.GroupBox()
+        Me.Label132 = New System.Windows.Forms.Label()
+        Me.InformeDateTimePickerHasta = New System.Windows.Forms.DateTimePicker()
+        Me.InformeDateTimePickerDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label87 = New System.Windows.Forms.Label()
+        Me.InformeButtonGenerarInforme = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.RadioButtonUsuariosColaborador = New System.Windows.Forms.RadioButton()
@@ -369,13 +374,15 @@ Partial Class Ventana_Principal
         Me.Label123 = New System.Windows.Forms.Label()
         Me.Label122 = New System.Windows.Forms.Label()
         Me.Label121 = New System.Windows.Forms.Label()
+        Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.Label140 = New System.Windows.Forms.Label()
+        Me.Label136 = New System.Windows.Forms.Label()
         Me.CoopeBDDataSet = New Cooperativas.CoopeBDDataSet()
         Me.CoopeBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label87 = New System.Windows.Forms.Label()
-        Me.InformeButtonGenerarInforme = New System.Windows.Forms.Button()
-        Me.InformeDateTimePickerDesde = New System.Windows.Forms.DateTimePicker()
-        Me.InformeDateTimePickerHasta = New System.Windows.Forms.DateTimePicker()
-        Me.Label132 = New System.Windows.Forms.Label()
+        Me.Label141 = New System.Windows.Forms.Label()
+        Me.Label142 = New System.Windows.Forms.Label()
+        Me.Label143 = New System.Windows.Forms.Label()
+        Me.Label144 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -398,6 +405,7 @@ Partial Class Ventana_Principal
         Me.GroupBox7.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.TabPage9.SuspendLayout()
         CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -412,6 +420,7 @@ Partial Class Ventana_Principal
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage8)
+        Me.TabControl1.Controls.Add(Me.TabPage9)
         Me.TabControl1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.TabControl1.Location = New System.Drawing.Point(3, 1)
@@ -3403,6 +3412,7 @@ Partial Class Ventana_Principal
         '
         Me.Excedentes.BackgroundImage = Global.Cooperativas.My.Resources.Resources.fondo
         Me.Excedentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Excedentes.Controls.Add(Me.Label144)
         Me.Excedentes.Controls.Add(Me.Label132)
         Me.Excedentes.Controls.Add(Me.InformeDateTimePickerHasta)
         Me.Excedentes.Controls.Add(Me.InformeDateTimePickerDesde)
@@ -3415,6 +3425,66 @@ Partial Class Ventana_Principal
         Me.Excedentes.TabIndex = 0
         Me.Excedentes.TabStop = False
         Me.Excedentes.Text = "Informe Económico"
+        '
+        'Label132
+        '
+        Me.Label132.AutoSize = True
+        Me.Label132.BackColor = System.Drawing.Color.Transparent
+        Me.Label132.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label132.ForeColor = System.Drawing.Color.White
+        Me.Label132.Location = New System.Drawing.Point(363, 194)
+        Me.Label132.Name = "Label132"
+        Me.Label132.Size = New System.Drawing.Size(47, 16)
+        Me.Label132.TabIndex = 221
+        Me.Label132.Text = "Hasta:"
+        '
+        'InformeDateTimePickerHasta
+        '
+        Me.InformeDateTimePickerHasta.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InformeDateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.InformeDateTimePickerHasta.Location = New System.Drawing.Point(416, 191)
+        Me.InformeDateTimePickerHasta.MaxDate = New Date(9998, 12, 4, 0, 0, 0, 0)
+        Me.InformeDateTimePickerHasta.Name = "InformeDateTimePickerHasta"
+        Me.InformeDateTimePickerHasta.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.InformeDateTimePickerHasta.Size = New System.Drawing.Size(160, 22)
+        Me.InformeDateTimePickerHasta.TabIndex = 220
+        '
+        'InformeDateTimePickerDesde
+        '
+        Me.InformeDateTimePickerDesde.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InformeDateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.InformeDateTimePickerDesde.Location = New System.Drawing.Point(416, 157)
+        Me.InformeDateTimePickerDesde.MaxDate = New Date(9998, 12, 4, 0, 0, 0, 0)
+        Me.InformeDateTimePickerDesde.Name = "InformeDateTimePickerDesde"
+        Me.InformeDateTimePickerDesde.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.InformeDateTimePickerDesde.Size = New System.Drawing.Size(160, 22)
+        Me.InformeDateTimePickerDesde.TabIndex = 219
+        '
+        'Label87
+        '
+        Me.Label87.AutoSize = True
+        Me.Label87.BackColor = System.Drawing.Color.Transparent
+        Me.Label87.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label87.ForeColor = System.Drawing.Color.White
+        Me.Label87.Location = New System.Drawing.Point(359, 159)
+        Me.Label87.Name = "Label87"
+        Me.Label87.Size = New System.Drawing.Size(51, 16)
+        Me.Label87.TabIndex = 218
+        Me.Label87.Text = "Desde:"
+        '
+        'InformeButtonGenerarInforme
+        '
+        Me.InformeButtonGenerarInforme.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.InformeButtonGenerarInforme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.InformeButtonGenerarInforme.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InformeButtonGenerarInforme.ForeColor = System.Drawing.Color.White
+        Me.InformeButtonGenerarInforme.Image = CType(resources.GetObject("InformeButtonGenerarInforme.Image"), System.Drawing.Image)
+        Me.InformeButtonGenerarInforme.Location = New System.Drawing.Point(416, 241)
+        Me.InformeButtonGenerarInforme.Name = "InformeButtonGenerarInforme"
+        Me.InformeButtonGenerarInforme.Size = New System.Drawing.Size(160, 40)
+        Me.InformeButtonGenerarInforme.TabIndex = 216
+        Me.InformeButtonGenerarInforme.Text = "Generar Informe"
+        Me.InformeButtonGenerarInforme.UseVisualStyleBackColor = False
         '
         'TabPage3
         '
@@ -4137,6 +4207,47 @@ Partial Class Ventana_Principal
         Me.Label121.TabIndex = 1
         Me.Label121.Text = "Periodo:"
         '
+        'TabPage9
+        '
+        Me.TabPage9.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TabPage9.BackgroundImage = Global.Cooperativas.My.Resources.Resources.fondo
+        Me.TabPage9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPage9.Controls.Add(Me.Label143)
+        Me.TabPage9.Controls.Add(Me.Label142)
+        Me.TabPage9.Controls.Add(Me.Label141)
+        Me.TabPage9.Controls.Add(Me.Label140)
+        Me.TabPage9.Controls.Add(Me.Label136)
+        Me.TabPage9.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage9.Name = "TabPage9"
+        Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage9.Size = New System.Drawing.Size(997, 675)
+        Me.TabPage9.TabIndex = 8
+        Me.TabPage9.Text = "Acerca de"
+        '
+        'Label140
+        '
+        Me.Label140.AutoSize = True
+        Me.Label140.BackColor = System.Drawing.Color.Transparent
+        Me.Label140.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label140.ForeColor = System.Drawing.Color.White
+        Me.Label140.Location = New System.Drawing.Point(421, 340)
+        Me.Label140.Name = "Label140"
+        Me.Label140.Size = New System.Drawing.Size(122, 20)
+        Me.Label140.TabIndex = 177
+        Me.Label140.Text = "Versión 1.0 @2017"
+        '
+        'Label136
+        '
+        Me.Label136.AutoSize = True
+        Me.Label136.BackColor = System.Drawing.Color.Transparent
+        Me.Label136.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label136.ForeColor = System.Drawing.Color.White
+        Me.Label136.Location = New System.Drawing.Point(324, 100)
+        Me.Label136.Name = "Label136"
+        Me.Label136.Size = New System.Drawing.Size(355, 22)
+        Me.Label136.TabIndex = 176
+        Me.Label136.Text = "Acerca de ""Gestión de Cooperativas"""
+        '
         'CoopeBDDataSet
         '
         Me.CoopeBDDataSet.DataSetName = "CoopeBDDataSet"
@@ -4147,65 +4258,54 @@ Partial Class Ventana_Principal
         Me.CoopeBDDataSetBindingSource.DataSource = Me.CoopeBDDataSet
         Me.CoopeBDDataSetBindingSource.Position = 0
         '
-        'Label87
+        'Label141
         '
-        Me.Label87.AutoSize = True
-        Me.Label87.BackColor = System.Drawing.Color.Transparent
-        Me.Label87.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label87.ForeColor = System.Drawing.Color.White
-        Me.Label87.Location = New System.Drawing.Point(355, 113)
-        Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(51, 16)
-        Me.Label87.TabIndex = 218
-        Me.Label87.Text = "Desde:"
+        Me.Label141.AutoSize = True
+        Me.Label141.BackColor = System.Drawing.Color.Transparent
+        Me.Label141.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label141.ForeColor = System.Drawing.Color.White
+        Me.Label141.Location = New System.Drawing.Point(146, 293)
+        Me.Label141.Name = "Label141"
+        Me.Label141.Size = New System.Drawing.Size(705, 20)
+        Me.Label141.TabIndex = 178
+        Me.Label141.Text = "Agradecimientos: A Dios por todas las bendiciones que me da. A Ing. Kenneth Rojas" &
+    " B, Bryan Ruiz y Johanna Ruiz."
         '
-        'InformeButtonGenerarInforme
+        'Label142
         '
-        Me.InformeButtonGenerarInforme.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.InformeButtonGenerarInforme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.InformeButtonGenerarInforme.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InformeButtonGenerarInforme.ForeColor = System.Drawing.Color.White
-        Me.InformeButtonGenerarInforme.Image = CType(resources.GetObject("InformeButtonGenerarInforme.Image"), System.Drawing.Image)
-        Me.InformeButtonGenerarInforme.Location = New System.Drawing.Point(412, 195)
-        Me.InformeButtonGenerarInforme.Name = "InformeButtonGenerarInforme"
-        Me.InformeButtonGenerarInforme.Size = New System.Drawing.Size(160, 40)
-        Me.InformeButtonGenerarInforme.TabIndex = 216
-        Me.InformeButtonGenerarInforme.Text = "Generar Informe"
-        Me.InformeButtonGenerarInforme.UseVisualStyleBackColor = False
+        Me.Label142.AutoSize = True
+        Me.Label142.BackColor = System.Drawing.Color.Transparent
+        Me.Label142.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label142.ForeColor = System.Drawing.Color.White
+        Me.Label142.Location = New System.Drawing.Point(228, 246)
+        Me.Label142.Name = "Label142"
+        Me.Label142.Size = New System.Drawing.Size(520, 20)
+        Me.Label142.TabIndex = 179
+        Me.Label142.Text = "Información: Sistema elaborado para la gestión de diversas Cooperativas nacionale" &
+    "s."
         '
-        'InformeDateTimePickerDesde
+        'Label143
         '
-        Me.InformeDateTimePickerDesde.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InformeDateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.InformeDateTimePickerDesde.Location = New System.Drawing.Point(412, 111)
-        Me.InformeDateTimePickerDesde.MaxDate = New Date(9998, 12, 4, 0, 0, 0, 0)
-        Me.InformeDateTimePickerDesde.Name = "InformeDateTimePickerDesde"
-        Me.InformeDateTimePickerDesde.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.InformeDateTimePickerDesde.Size = New System.Drawing.Size(160, 22)
-        Me.InformeDateTimePickerDesde.TabIndex = 219
+        Me.Label143.AutoSize = True
+        Me.Label143.BackColor = System.Drawing.Color.Transparent
+        Me.Label143.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label143.ForeColor = System.Drawing.Color.White
+        Me.Label143.Location = New System.Drawing.Point(294, 201)
+        Me.Label143.Name = "Label143"
+        Me.Label143.Size = New System.Drawing.Size(398, 20)
+        Me.Label143.TabIndex = 180
+        Me.Label143.Text = "Elaborado por: Ing. Aarón Ruiz. Email: aruiz.avantica@gmail.com"
         '
-        'InformeDateTimePickerHasta
+        'Label144
         '
-        Me.InformeDateTimePickerHasta.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InformeDateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.InformeDateTimePickerHasta.Location = New System.Drawing.Point(412, 145)
-        Me.InformeDateTimePickerHasta.MaxDate = New Date(9998, 12, 4, 0, 0, 0, 0)
-        Me.InformeDateTimePickerHasta.Name = "InformeDateTimePickerHasta"
-        Me.InformeDateTimePickerHasta.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.InformeDateTimePickerHasta.Size = New System.Drawing.Size(160, 22)
-        Me.InformeDateTimePickerHasta.TabIndex = 220
-        '
-        'Label132
-        '
-        Me.Label132.AutoSize = True
-        Me.Label132.BackColor = System.Drawing.Color.Transparent
-        Me.Label132.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label132.ForeColor = System.Drawing.Color.White
-        Me.Label132.Location = New System.Drawing.Point(359, 148)
-        Me.Label132.Name = "Label132"
-        Me.Label132.Size = New System.Drawing.Size(47, 16)
-        Me.Label132.TabIndex = 221
-        Me.Label132.Text = "Hasta:"
+        Me.Label144.AutoSize = True
+        Me.Label144.BackColor = System.Drawing.Color.Transparent
+        Me.Label144.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label144.Location = New System.Drawing.Point(396, 75)
+        Me.Label144.Name = "Label144"
+        Me.Label144.Size = New System.Drawing.Size(189, 26)
+        Me.Label144.TabIndex = 222
+        Me.Label144.Text = "Informe Económico:"
         '
         'Ventana_Principal
         '
@@ -4254,6 +4354,8 @@ Partial Class Ventana_Principal
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.TabPage9.ResumeLayout(False)
+        Me.TabPage9.PerformLayout()
         CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -4611,4 +4713,11 @@ Partial Class Ventana_Principal
     Friend WithEvents InformeDateTimePickerDesde As DateTimePicker
     Friend WithEvents Label87 As Label
     Friend WithEvents InformeButtonGenerarInforme As Button
+    Friend WithEvents TabPage9 As TabPage
+    Friend WithEvents Label140 As Label
+    Friend WithEvents Label136 As Label
+    Friend WithEvents Label143 As Label
+    Friend WithEvents Label142 As Label
+    Friend WithEvents Label141 As Label
+    Friend WithEvents Label144 As Label
 End Class

@@ -13,14 +13,19 @@ Public Class ConexionBD
     'Iniciar Conexion'
     Sub ConectarBD()
         Try
-            'Establezco la conexion con la BD'
-            '& My.Application.Info.DirectoryPath &, representa la direccion donde se encuentra el proyecto'
-            objConexion = New OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0; Data Source=" & "C:/BD/CoopeBD.mdb")
+            'WORKING WITHOUT PASSWORD ON THE DATA BASE
+            'objConexion = New OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0; Data Source=" & "C:/BD/CoopeBD.mdb")
+
+            'WORKING WITH PASSWORD ON THE DATA BASE
+            objConexion = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source =" & "C:/BD/CoopeBD.mdb;Jet OLEDB:Database Password=C454gr154;")
+
             'objConexion = New OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0; Data Source=" & My.Application.Info.DirectoryPath & "/BD.mdb")
+
             'Abro la conexion'
             objConexion.Open()
             'Valido que se esta conectado'
             conectadoBD = True
+
         Catch ex As Exception
             conectadoBD = False
             MessageBox.Show("Se presentó la siguiente error: " & ex.ToString)
