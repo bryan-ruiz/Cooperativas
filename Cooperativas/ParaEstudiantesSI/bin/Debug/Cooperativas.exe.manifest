@@ -78,14 +78,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cooperativas.exe" size="8722832">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cooperativas.exe" size="8730000">
       <assemblyIdentity name="Cooperativas" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>NlpzW1YLo7A3hyqw2kmGqJPmQ6M=</dsig:DigestValue>
+        <dsig:DigestValue>pF4TBqZLwWYhF8khV4Y5HwpyaXs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="aa\Cooperativas.resources.dll" size="4096">
+      <assemblyIdentity name="Cooperativas.resources" version="1.0.0.0" language="aa" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>55wWIETW+0Cv38d8lWesLXD3C7k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -200,6 +200,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Print.aa.resx">
+      <DependentUpon>Print.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteSocios.resx">
       <DependentUpon>ReporteSocios.vb</DependentUpon>
     </EmbeddedResource>

@@ -553,3 +553,6 @@ C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesS
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.exe
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.xml
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.pdb
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\aa\Cooperativas.resources.dll
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.aa.resources
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\aa\Cooperativas.resources.dll
