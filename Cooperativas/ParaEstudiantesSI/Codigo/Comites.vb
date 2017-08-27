@@ -3,23 +3,28 @@ Imports iTextSharp.text.pdf
 Imports System.IO
 
 Public Class Comites
+
     Dim BD As ConexionBD = New ConexionBD
     Dim encabezado As EncabezadoClase = New EncabezadoClase
-    Public Sub escribirDatos(ByVal valores As List(Of ComiteClase),
-                             ByVal pdfDoc As iTextSharp.text.Document, ByVal writer As iTextSharp.text.pdf.PdfWriter)
+
+    Public Sub escribirDatos(ByVal valores As List(Of ComiteClase), ByVal pdfDoc As iTextSharp.text.Document, ByVal writer As iTextSharp.text.pdf.PdfWriter)
+
         If valores.Count = 0 Then
             pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
             pdfDoc.Add(New Paragraph("************ No se poseen datos del comité ******************"))
             Return
         End If
+
         Dim contador As Integer = 0
         Dim conta As Integer = 0
+
         While contador < valores.Count
             If conta = 3 Then
                 pdfDoc.NewPage()
                 encabezado.encabezado(writer, pdfDoc)
                 conta = 0
             End If
+
             conta = conta + 1
             pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
             pdfDoc.Add(New Paragraph("Cargo:   " + valores(contador).tipo))
@@ -31,6 +36,7 @@ Public Class Comites
             pdfDoc.Add(New Paragraph("Fecha vence: " + valores(contador).fechaVence))
             contador = contador + 1
         End While
+
     End Sub
 
     Public Sub generarReporteDeComites()

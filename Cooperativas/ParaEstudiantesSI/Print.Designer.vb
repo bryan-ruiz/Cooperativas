@@ -22,12 +22,9 @@ Partial Class Print
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Print))
         Me.ButtonPrintAbrirPDF = New System.Windows.Forms.Button()
         Me.ButtonPrintSalir = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        '---------------Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
-        '---------------CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonPrintAbrirPDF
@@ -62,28 +59,17 @@ Partial Class Print
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'AxAcroPDF1
-        '
-        '---------------Me.AxAcroPDF1.Dock = System.Windows.Forms.DockStyle.Fill
-        '---------------Me.AxAcroPDF1.Enabled = True
-        '---------------Me.AxAcroPDF1.Location = New System.Drawing.Point(0, 0)
-        '---------------Me.AxAcroPDF1.Name = "AxAcroPDF1"
-        '---------------Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        '---------------Me.AxAcroPDF1.Size = New System.Drawing.Size(1047, 693)
-        '---------------Me.AxAcroPDF1.TabIndex = 0
-        '
         'Print
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.CadetBlue
         Me.ClientSize = New System.Drawing.Size(1047, 693)
         Me.Controls.Add(Me.ButtonPrintSalir)
         Me.Controls.Add(Me.ButtonPrintAbrirPDF)
-        '---------------Me.Controls.Add(Me.AxAcroPDF1)
         Me.Name = "Print"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Print"
-        '---------------CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
