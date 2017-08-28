@@ -824,7 +824,7 @@ Public Class ConexionBD
     End Function
 
     'Obtiene los ingresos o gastos por proyecto productivo
-    Function obtenerInformeIngresosOGasto(ByVal ingresoOGasto As String, ByVal proyectoProductivo As String, ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of String)
+    Function obtenerInformeIngresosTotales(ByVal ingresoOGasto As String, ByVal proyectoProductivo As String, ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of String)
         Dim MyList As New List(Of String)
         Try
             SQL = "SELECT INGRESOS.codigoDeCuenta, Sum(INGRESOS.total) As suma 
@@ -835,11 +835,6 @@ Public Class ConexionBD
                         And INGRESOS.fecha BETWEEN #" & fechaDesde & "# And #" & fechaHasta & "#
                     GROUP BY INGRESOS.codigoDeCuenta;"
 
-            'WHERE OrderDate BETWEEN #07/04/1996# AND #07/09/1996#;
-            'And INGRESOS.fecha >= '" & fechaDesde & "' 
-            'And INGRESOS.fecha < '" & fechaHasta & "' 
-
-            'pregunto antes si estoy conectado a la base de datos' < > =
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 Dim reader = command.ExecuteReader()
@@ -847,7 +842,42 @@ Public Class ConexionBD
                     Dim conta As Integer = 0
                     For conta = 0 To reader.FieldCount - 1
 
-                        MsgBox(String.Concat(" ", reader(conta)))
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    'Obtiene los gastos por proyecto productivo
+    Function obtenerInformeGastosTotales(ByVal ingresoOGasto As String, ByVal proyectoProductivo As String, ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT GASTOS.codigoDeCuenta, Sum(GASTOS.total) As suma 
+                    FROM GASTOS, CUENTAS 
+                    WHERE(((GASTOS.codigoDeCuenta) = [CUENTAS].[cod_Descripcion]) 
+                        And ((CUENTAS.tipo) = '" & ingresoOGasto & "') 
+                        And ((CUENTAS.proyecto_Productivo) = '" & proyectoProductivo & "'))
+                        And GASTOS.fecha BETWEEN #" & fechaDesde & "# And #" & fechaHasta & "#
+                    GROUP BY GASTOS.codigoDeCuenta;"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
 
                         MyList.Add(reader(conta))
                     Next conta

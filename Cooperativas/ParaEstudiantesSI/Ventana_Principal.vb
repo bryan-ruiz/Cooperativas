@@ -320,4 +320,8 @@ Public Class Ventana_Principal
         Print.Show()
     End Sub
 
+    Private Sub InformeEconomicoButtonSalir_Click(sender As Object, e As EventArgs) Handles InformeEconomicoButtonSalir.Click
+        Me.Close()
+        Ventana_Acceso.Close()
+    End Sub
 End Class

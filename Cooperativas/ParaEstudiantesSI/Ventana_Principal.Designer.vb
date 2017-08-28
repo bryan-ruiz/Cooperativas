@@ -26,6 +26,11 @@ Partial Class Ventana_Principal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana_Principal))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.CoopeBDDataSet = New Cooperativas.CoopeBDDataSet()
+        Me.CoopeBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RadioButtonSociosMenorNo = New System.Windows.Forms.RadioButton()
@@ -78,7 +83,6 @@ Partial Class Ventana_Principal
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.TextBoxSociosBeneficiario = New System.Windows.Forms.TextBox()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.Label46 = New System.Windows.Forms.Label()
@@ -177,7 +181,6 @@ Partial Class Ventana_Principal
         Me.Label27 = New System.Windows.Forms.Label()
         Me.TextBoxComitesPresidente = New System.Windows.Forms.TextBox()
         Me.Label43 = New System.Windows.Forms.Label()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.CertificadosButtonSaveTracto10 = New System.Windows.Forms.Button()
         Me.CertificadosButtonSaveTracto9 = New System.Windows.Forms.Button()
@@ -297,8 +300,8 @@ Partial Class Ventana_Principal
         Me.TextBox_GastosCantidad = New System.Windows.Forms.TextBox()
         Me.TextBox_GastosProveedor = New System.Windows.Forms.TextBox()
         Me.TextBox_GastosDescripcion = New System.Windows.Forms.TextBox()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Excedentes = New System.Windows.Forms.GroupBox()
+        Me.Label144 = New System.Windows.Forms.Label()
         Me.Label132 = New System.Windows.Forms.Label()
         Me.InformeDateTimePickerHasta = New System.Windows.Forms.DateTimePicker()
         Me.InformeDateTimePickerDesde = New System.Windows.Forms.DateTimePicker()
@@ -375,29 +378,29 @@ Partial Class Ventana_Principal
         Me.Label122 = New System.Windows.Forms.Label()
         Me.Label121 = New System.Windows.Forms.Label()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.Label143 = New System.Windows.Forms.Label()
+        Me.Label142 = New System.Windows.Forms.Label()
+        Me.Label141 = New System.Windows.Forms.Label()
         Me.Label140 = New System.Windows.Forms.Label()
         Me.Label136 = New System.Windows.Forms.Label()
-        Me.CoopeBDDataSet = New Cooperativas.CoopeBDDataSet()
-        Me.CoopeBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label141 = New System.Windows.Forms.Label()
-        Me.Label142 = New System.Windows.Forms.Label()
-        Me.Label143 = New System.Windows.Forms.Label()
-        Me.Label144 = New System.Windows.Forms.Label()
+        Me.InformeEconomicoButtonSalir = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.TabPage4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.TabPage7.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
-        Me.TabPage5.SuspendLayout()
         Me.Excedentes.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -406,8 +409,6 @@ Partial Class Ventana_Principal
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.TabPage9.SuspendLayout()
-        CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -440,6 +441,52 @@ Partial Class Ventana_Principal
         Me.TabPage1.Size = New System.Drawing.Size(997, 675)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gestión de Asociados"
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPage2.Controls.Add(Me.GroupBox1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(997, 675)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Gestión de Comités"
+        '
+        'TabPage4
+        '
+        Me.TabPage4.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.TabPage4.Controls.Add(Me.GroupBox3)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(997, 675)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Certificados"
+        '
+        'TabPage5
+        '
+        Me.TabPage5.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPage5.Controls.Add(Me.Excedentes)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(997, 675)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Informe Económico"
+        '
+        'CoopeBDDataSet
+        '
+        Me.CoopeBDDataSet.DataSetName = "CoopeBDDataSet"
+        Me.CoopeBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CoopeBDDataSetBindingSource
+        '
+        Me.CoopeBDDataSetBindingSource.DataSource = Me.CoopeBDDataSet
+        Me.CoopeBDDataSetBindingSource.Position = 0
         '
         'GroupBox4
         '
@@ -1004,18 +1051,6 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosBeneficiario.Name = "TextBoxSociosBeneficiario"
         Me.TextBoxSociosBeneficiario.Size = New System.Drawing.Size(236, 22)
         Me.TextBoxSociosBeneficiario.TabIndex = 109
-        '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPage2.Controls.Add(Me.GroupBox1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 28)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(997, 675)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Gestión de Comités"
         '
         'GroupBox1
         '
@@ -2053,18 +2088,6 @@ Partial Class Ventana_Principal
         Me.Label43.Size = New System.Drawing.Size(135, 16)
         Me.Label43.TabIndex = 122
         Me.Label43.Text = "Nombre del Comité:"
-        '
-        'TabPage4
-        '
-        Me.TabPage4.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.TabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.TabPage4.Controls.Add(Me.GroupBox3)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 28)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(997, 675)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Certificados"
         '
         'GroupBox3
         '
@@ -3398,22 +3421,11 @@ Partial Class Ventana_Principal
         Me.TextBox_GastosDescripcion.Size = New System.Drawing.Size(254, 46)
         Me.TextBox_GastosDescripcion.TabIndex = 27
         '
-        'TabPage5
-        '
-        Me.TabPage5.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.TabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPage5.Controls.Add(Me.Excedentes)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 28)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(997, 675)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "Informe Económico"
-        '
         'Excedentes
         '
         Me.Excedentes.BackgroundImage = Global.Cooperativas.My.Resources.Resources.fondo
         Me.Excedentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Excedentes.Controls.Add(Me.InformeEconomicoButtonSalir)
         Me.Excedentes.Controls.Add(Me.Label144)
         Me.Excedentes.Controls.Add(Me.Label132)
         Me.Excedentes.Controls.Add(Me.InformeDateTimePickerHasta)
@@ -3427,6 +3439,17 @@ Partial Class Ventana_Principal
         Me.Excedentes.TabIndex = 0
         Me.Excedentes.TabStop = False
         Me.Excedentes.Text = "Informe Económico"
+        '
+        'Label144
+        '
+        Me.Label144.AutoSize = True
+        Me.Label144.BackColor = System.Drawing.Color.Transparent
+        Me.Label144.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label144.Location = New System.Drawing.Point(396, 75)
+        Me.Label144.Name = "Label144"
+        Me.Label144.Size = New System.Drawing.Size(189, 26)
+        Me.Label144.TabIndex = 222
+        Me.Label144.Text = "Informe Económico:"
         '
         'Label132
         '
@@ -3481,9 +3504,9 @@ Partial Class Ventana_Principal
         Me.InformeButtonGenerarInforme.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.InformeButtonGenerarInforme.ForeColor = System.Drawing.Color.White
         Me.InformeButtonGenerarInforme.Image = CType(resources.GetObject("InformeButtonGenerarInforme.Image"), System.Drawing.Image)
-        Me.InformeButtonGenerarInforme.Location = New System.Drawing.Point(416, 241)
+        Me.InformeButtonGenerarInforme.Location = New System.Drawing.Point(416, 242)
         Me.InformeButtonGenerarInforme.Name = "InformeButtonGenerarInforme"
-        Me.InformeButtonGenerarInforme.Size = New System.Drawing.Size(160, 40)
+        Me.InformeButtonGenerarInforme.Size = New System.Drawing.Size(160, 41)
         Me.InformeButtonGenerarInforme.TabIndex = 216
         Me.InformeButtonGenerarInforme.Text = "Generar Informe"
         Me.InformeButtonGenerarInforme.UseVisualStyleBackColor = False
@@ -4226,6 +4249,44 @@ Partial Class Ventana_Principal
         Me.TabPage9.TabIndex = 8
         Me.TabPage9.Text = "Acerca de"
         '
+        'Label143
+        '
+        Me.Label143.AutoSize = True
+        Me.Label143.BackColor = System.Drawing.Color.Transparent
+        Me.Label143.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label143.ForeColor = System.Drawing.Color.White
+        Me.Label143.Location = New System.Drawing.Point(294, 201)
+        Me.Label143.Name = "Label143"
+        Me.Label143.Size = New System.Drawing.Size(398, 20)
+        Me.Label143.TabIndex = 180
+        Me.Label143.Text = "Elaborado por: Ing. Aarón Ruiz. Email: aruiz.avantica@gmail.com"
+        '
+        'Label142
+        '
+        Me.Label142.AutoSize = True
+        Me.Label142.BackColor = System.Drawing.Color.Transparent
+        Me.Label142.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label142.ForeColor = System.Drawing.Color.White
+        Me.Label142.Location = New System.Drawing.Point(228, 246)
+        Me.Label142.Name = "Label142"
+        Me.Label142.Size = New System.Drawing.Size(520, 20)
+        Me.Label142.TabIndex = 179
+        Me.Label142.Text = "Información: Sistema elaborado para la gestión de diversas Cooperativas nacionale" &
+    "s."
+        '
+        'Label141
+        '
+        Me.Label141.AutoSize = True
+        Me.Label141.BackColor = System.Drawing.Color.Transparent
+        Me.Label141.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label141.ForeColor = System.Drawing.Color.White
+        Me.Label141.Location = New System.Drawing.Point(146, 293)
+        Me.Label141.Name = "Label141"
+        Me.Label141.Size = New System.Drawing.Size(705, 20)
+        Me.Label141.TabIndex = 178
+        Me.Label141.Text = "Agradecimientos: A Dios por todas las bendiciones que me da. A Ing. Kenneth Rojas" &
+    " B, Bryan Ruiz y Johanna Ruiz."
+        '
         'Label140
         '
         Me.Label140.AutoSize = True
@@ -4250,64 +4311,19 @@ Partial Class Ventana_Principal
         Me.Label136.TabIndex = 176
         Me.Label136.Text = "Acerca de ""Gestión de Cooperativas"""
         '
-        'CoopeBDDataSet
+        'InformeEconomicoButtonSalir
         '
-        Me.CoopeBDDataSet.DataSetName = "CoopeBDDataSet"
-        Me.CoopeBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CoopeBDDataSetBindingSource
-        '
-        Me.CoopeBDDataSetBindingSource.DataSource = Me.CoopeBDDataSet
-        Me.CoopeBDDataSetBindingSource.Position = 0
-        '
-        'Label141
-        '
-        Me.Label141.AutoSize = True
-        Me.Label141.BackColor = System.Drawing.Color.Transparent
-        Me.Label141.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label141.ForeColor = System.Drawing.Color.White
-        Me.Label141.Location = New System.Drawing.Point(146, 293)
-        Me.Label141.Name = "Label141"
-        Me.Label141.Size = New System.Drawing.Size(705, 20)
-        Me.Label141.TabIndex = 178
-        Me.Label141.Text = "Agradecimientos: A Dios por todas las bendiciones que me da. A Ing. Kenneth Rojas" &
-    " B, Bryan Ruiz y Johanna Ruiz."
-        '
-        'Label142
-        '
-        Me.Label142.AutoSize = True
-        Me.Label142.BackColor = System.Drawing.Color.Transparent
-        Me.Label142.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label142.ForeColor = System.Drawing.Color.White
-        Me.Label142.Location = New System.Drawing.Point(228, 246)
-        Me.Label142.Name = "Label142"
-        Me.Label142.Size = New System.Drawing.Size(520, 20)
-        Me.Label142.TabIndex = 179
-        Me.Label142.Text = "Información: Sistema elaborado para la gestión de diversas Cooperativas nacionale" &
-    "s."
-        '
-        'Label143
-        '
-        Me.Label143.AutoSize = True
-        Me.Label143.BackColor = System.Drawing.Color.Transparent
-        Me.Label143.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label143.ForeColor = System.Drawing.Color.White
-        Me.Label143.Location = New System.Drawing.Point(294, 201)
-        Me.Label143.Name = "Label143"
-        Me.Label143.Size = New System.Drawing.Size(398, 20)
-        Me.Label143.TabIndex = 180
-        Me.Label143.Text = "Elaborado por: Ing. Aarón Ruiz. Email: aruiz.avantica@gmail.com"
-        '
-        'Label144
-        '
-        Me.Label144.AutoSize = True
-        Me.Label144.BackColor = System.Drawing.Color.Transparent
-        Me.Label144.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label144.Location = New System.Drawing.Point(396, 75)
-        Me.Label144.Name = "Label144"
-        Me.Label144.Size = New System.Drawing.Size(189, 26)
-        Me.Label144.TabIndex = 222
-        Me.Label144.Text = "Informe Económico:"
+        Me.InformeEconomicoButtonSalir.BackColor = System.Drawing.Color.RoyalBlue
+        Me.InformeEconomicoButtonSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.InformeEconomicoButtonSalir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InformeEconomicoButtonSalir.ForeColor = System.Drawing.Color.White
+        Me.InformeEconomicoButtonSalir.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.InformeEconomicoButtonSalir.Location = New System.Drawing.Point(416, 300)
+        Me.InformeEconomicoButtonSalir.Name = "InformeEconomicoButtonSalir"
+        Me.InformeEconomicoButtonSalir.Size = New System.Drawing.Size(162, 40)
+        Me.InformeEconomicoButtonSalir.TabIndex = 223
+        Me.InformeEconomicoButtonSalir.Text = "Salir"
+        Me.InformeEconomicoButtonSalir.UseVisualStyleBackColor = False
         '
         'Ventana_Principal
         '
@@ -4323,6 +4339,11 @@ Partial Class Ventana_Principal
         Me.Text = "Cooperativas"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage5.ResumeLayout(False)
+        CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -4331,10 +4352,8 @@ Partial Class Ventana_Principal
         Me.Panel2.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.TabPage4.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.TabPage6.ResumeLayout(False)
@@ -4343,7 +4362,6 @@ Partial Class Ventana_Principal
         Me.TabPage7.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        Me.TabPage5.ResumeLayout(False)
         Me.Excedentes.ResumeLayout(False)
         Me.Excedentes.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
@@ -4358,8 +4376,6 @@ Partial Class Ventana_Principal
         Me.Panel4.PerformLayout()
         Me.TabPage9.ResumeLayout(False)
         Me.TabPage9.PerformLayout()
-        CType(Me.CoopeBDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CoopeBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -4722,4 +4738,5 @@ Partial Class Ventana_Principal
     Friend WithEvents Label142 As Label
     Friend WithEvents Label141 As Label
     Friend WithEvents Label144 As Label
+    Friend WithEvents InformeEconomicoButtonSalir As Button
 End Class

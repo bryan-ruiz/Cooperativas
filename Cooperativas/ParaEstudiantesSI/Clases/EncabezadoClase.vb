@@ -36,7 +36,7 @@ Public Class EncabezadoClase
             .BeginText()
             .SetFontAndSize(FontFactory.GetFont(FontFactory.HELVETICA_BOLD, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL).BaseFont, 9)
             .SetColorFill(iTextSharp.text.BaseColor.BLACK)
-            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Cooperativa: " + valores(0).cooperativa, 290, 770, 0)
+            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "" + valores(0).cooperativa, 290, 770, 0) 'nombre de la coope
             .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Ced Jurídica: " + valores(0).cedulaJuridica, 290, 760, 0)
             .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Tel: " + valores(0).telefono, 290, 750, 0)
             .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy"), 290, 740, 0)
