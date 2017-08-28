@@ -167,17 +167,30 @@ Public Class InformeEconomico
             For Each value In totalOtrosIngresos
                 table.AddCell(value)
             Next
+
+            table.AddCell("Aportaciones")
+            Dim subTotalAportaciones As Integer = Integer.Parse("1500") ' consulta a BD para aportaciones
+            table.AddCell(Convert.ToString(subTotalAportaciones))
+
+            table.AddCell("Afiliaciones")
+            Dim subTotalAfiliaciones As Integer = Integer.Parse("800") ' consulta a BD para afiliaciones
+            table.AddCell(Convert.ToString(subTotalAfiliaciones))
+
+
             table.AddCell(cellSubTotalOtrosIngresos)
-            For Each value In subTotalOtrosIngresos
-                table.AddCell(value)
-            Next
+            Dim subTotalOtrosIngresosInt As Integer = Integer.Parse(subTotalOtrosIngresos.Item(0)) + subTotalAportaciones + subTotalAfiliaciones
+            table.AddCell(Convert.ToString(subTotalOtrosIngresosInt))
+
+            'For Each value In subTotalOtrosIngresos
+            'table.AddCell(value)
+            'Next
 
             '///// DIV /////
             table.AddCell(divisor)
 
             table.AddCell(cellTotalNetoIngresos)
             Dim subTotalIngresosInt As Integer = Integer.Parse(subTotalIngresos.Item(0))
-            Dim subTotalOtrosIngresosInt As Integer = Integer.Parse(subTotalOtrosIngresos.Item(0))
+            'Dim subTotalOtrosIngresosInt As Integer = Integer.Parse(subTotalOtrosIngresos.Item(0)) + subTotalAportaciones + subTotalAfiliaciones
             Dim sumaTotalIngresos = subTotalIngresosInt + subTotalOtrosIngresosInt
             table.AddCell(Convert.ToString(sumaTotalIngresos))
 
