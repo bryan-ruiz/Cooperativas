@@ -58,7 +58,7 @@ Partial Class Ventana_Acceso
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(211, 22)
+        Me.Label1.Location = New System.Drawing.Point(211, 35)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(239, 22)
         Me.Label1.TabIndex = 145
@@ -71,7 +71,7 @@ Partial Class Ventana_Acceso
         Me.ButtonIngresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonIngresar.ForeColor = System.Drawing.Color.White
         Me.ButtonIngresar.Image = CType(resources.GetObject("ButtonIngresar.Image"), System.Drawing.Image)
-        Me.ButtonIngresar.Location = New System.Drawing.Point(178, 358)
+        Me.ButtonIngresar.Location = New System.Drawing.Point(178, 371)
         Me.ButtonIngresar.Name = "ButtonIngresar"
         Me.ButtonIngresar.Size = New System.Drawing.Size(292, 46)
         Me.ButtonIngresar.TabIndex = 3
@@ -81,7 +81,7 @@ Partial Class Ventana_Acceso
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.Cooperativas.My.Resources.Resources.loginImage
-        Me.PictureBox2.Location = New System.Drawing.Point(249, 76)
+        Me.PictureBox2.Location = New System.Drawing.Point(249, 89)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(142, 110)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -91,7 +91,7 @@ Partial Class Ventana_Acceso
         'TextBoxContraseña
         '
         Me.TextBoxContraseña.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxContraseña.Location = New System.Drawing.Point(178, 310)
+        Me.TextBoxContraseña.Location = New System.Drawing.Point(178, 318)
         Me.TextBoxContraseña.Name = "TextBoxContraseña"
         Me.TextBoxContraseña.Size = New System.Drawing.Size(292, 22)
         Me.TextBoxContraseña.TabIndex = 2
@@ -102,7 +102,7 @@ Partial Class Ventana_Acceso
         Me.Label26.BackColor = System.Drawing.Color.Transparent
         Me.Label26.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.White
-        Me.Label26.Location = New System.Drawing.Point(175, 287)
+        Me.Label26.Location = New System.Drawing.Point(175, 297)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(88, 16)
         Me.Label26.TabIndex = 130
@@ -111,7 +111,7 @@ Partial Class Ventana_Acceso
         'TextBoxlogin
         '
         Me.TextBoxlogin.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxlogin.Location = New System.Drawing.Point(178, 249)
+        Me.TextBoxlogin.Location = New System.Drawing.Point(178, 262)
         Me.TextBoxlogin.Name = "TextBoxlogin"
         Me.TextBoxlogin.Size = New System.Drawing.Size(293, 22)
         Me.TextBoxlogin.TabIndex = 1
@@ -122,7 +122,7 @@ Partial Class Ventana_Acceso
         Me.Label27.BackColor = System.Drawing.Color.Transparent
         Me.Label27.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.Color.White
-        Me.Label27.Location = New System.Drawing.Point(175, 226)
+        Me.Label27.Location = New System.Drawing.Point(175, 241)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(60, 16)
         Me.Label27.TabIndex = 122
