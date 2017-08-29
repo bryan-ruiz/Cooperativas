@@ -54,7 +54,14 @@ Public Class EncabezadoClase
         '-----------------------------------------------------------------------------------------
         ' LOGOS DEL DOCUMENTO
         '-----------------------------------------------------------------------------------------
-        oImagen = iTextSharp.text.Image.GetInstance("..\..\Imagen\MEP_Logo.png")
+
+        oImagen = iTextSharp.text.Image.GetInstance(My.Application.Info.DirectoryPath & "\Resources\MEP_Logo.png")
+        'C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\Resources\MEP_Logo.png
+
+        'Dim fullPath As String = io.Path.GetFullPath(My.Resources.ResourceManager.BaseName)
+        'fullPath = fullPath.Substring(0, fullPath.Length - 39) & "Resources\"
+
+
         oImagen.SetAbsolutePosition(28, 737)
         'Ajuste porcentual de la imagen
         oImagen.ScalePercent(50)

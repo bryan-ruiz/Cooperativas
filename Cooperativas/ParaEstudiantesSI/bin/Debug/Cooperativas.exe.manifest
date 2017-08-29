@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Cooperativas.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="Cooperativas.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Cooperativas" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>prlD7xWDd5T+9uECiNXhJ9g9AQc=</dsig:DigestValue>
+        <dsig:DigestValue>bV9DiC7FxvcMuXsV5980ddbPM7E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,19 +73,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>vVHa8O0Sf+064i4pVSJRJ/fJ6Z4=</dsig:DigestValue>
+        <dsig:DigestValue>eEIPmRZDweC5QedInMQ9z7rYAcU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cooperativas.exe" size="8738704">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cooperativas.exe" size="6556048">
       <assemblyIdentity name="Cooperativas" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>8gS4Ok8ZpLSRlQLgAXiCeaZYASk=</dsig:DigestValue>
+        <dsig:DigestValue>J9xBbRVFLUmfl6hUY//w87boypg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>7WqoMFP/l6xaa5Z07zVGHqFIE0o=</dsig:DigestValue>
+        <dsig:DigestValue>noOvrviOrR9K7urdNQcmUvMOPrc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Gwl1u4Ks2GveD9ZYa58KEszbZY8=</dsig:DigestValue>
+        <dsig:DigestValue>uT1j8ccbN4F4ioiijnzdVLFhZNU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>DkJL/eTxlYDYNhn4nxsEzS5+yqY=</dsig:DigestValue>
+        <dsig:DigestValue>dWz5SnnvBzKOMzBDfWZ2AZtpHEQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -240,6 +240,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>+RwsFWkABXt4oJSRVnb0VeWQv5U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Imagen\MEP_Logo.png" size="11366">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZxxJVgXegiOI9AisQkVUXQRiw2E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\MEP_Logo.png" size="11366">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZxxJVgXegiOI9AisQkVUXQRiw2E=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

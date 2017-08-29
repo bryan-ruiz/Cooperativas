@@ -536,7 +536,6 @@ C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesS
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\Interop.AdHocReportingExcelClientLib.dll
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AcroPDFLib.dll
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\AxInterop.AdHocReportingExcelClientLib.dll
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AcroPDFLib.dll
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Interop.AdHocReportingExcelClientLib.dll
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\AxInterop.AcroPDFLib.dll
@@ -556,3 +555,4 @@ C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesS
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\bin\Debug\aa\Cooperativas.resources.dll
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.Print.aa.resources
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\aa\Cooperativas.resources.dll
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\Cooperativas\ParaEstudiantesSI\obj\x86\Debug\Cooperativas.vbprojResolveAssemblyReference.cache

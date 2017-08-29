@@ -32,6 +32,7 @@ Partial Class Ventana_Principal
         Me.CoopeBDDataSet = New Cooperativas.CoopeBDDataSet()
         Me.CoopeBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.SociosButtonLimpiar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RadioButtonSociosMenorNo = New System.Windows.Forms.RadioButton()
         Me.RadioButtonSociosMenorSi = New System.Windows.Forms.RadioButton()
@@ -301,6 +302,7 @@ Partial Class Ventana_Principal
         Me.TextBox_GastosProveedor = New System.Windows.Forms.TextBox()
         Me.TextBox_GastosDescripcion = New System.Windows.Forms.TextBox()
         Me.Excedentes = New System.Windows.Forms.GroupBox()
+        Me.InformeEconomicoButtonSalir = New System.Windows.Forms.Button()
         Me.Label144 = New System.Windows.Forms.Label()
         Me.Label132 = New System.Windows.Forms.Label()
         Me.InformeDateTimePickerHasta = New System.Windows.Forms.DateTimePicker()
@@ -383,7 +385,6 @@ Partial Class Ventana_Principal
         Me.Label141 = New System.Windows.Forms.Label()
         Me.Label140 = New System.Windows.Forms.Label()
         Me.Label136 = New System.Windows.Forms.Label()
-        Me.InformeEconomicoButtonSalir = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -493,6 +494,7 @@ Partial Class Ventana_Principal
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.BackgroundImage = Global.Cooperativas.My.Resources.Resources.fondo
         Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox4.Controls.Add(Me.SociosButtonLimpiar)
         Me.GroupBox4.Controls.Add(Me.Panel1)
         Me.GroupBox4.Controls.Add(Me.Label1)
         Me.GroupBox4.Controls.Add(Me.Panel2)
@@ -547,6 +549,19 @@ Partial Class Ventana_Principal
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Información del Asociado"
         '
+        'SociosButtonLimpiar
+        '
+        Me.SociosButtonLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SociosButtonLimpiar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SociosButtonLimpiar.ForeColor = System.Drawing.Color.White
+        Me.SociosButtonLimpiar.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.SociosButtonLimpiar.Location = New System.Drawing.Point(722, 207)
+        Me.SociosButtonLimpiar.Name = "SociosButtonLimpiar"
+        Me.SociosButtonLimpiar.Size = New System.Drawing.Size(161, 40)
+        Me.SociosButtonLimpiar.TabIndex = 25
+        Me.SociosButtonLimpiar.Text = "Limpiar"
+        Me.SociosButtonLimpiar.UseVisualStyleBackColor = False
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.RadioButtonSociosMenorNo)
@@ -563,7 +578,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(119, 3)
         Me.RadioButtonSociosMenorNo.Name = "RadioButtonSociosMenorNo"
         Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(49, 27)
-        Me.RadioButtonSociosMenorNo.TabIndex = 141
+        Me.RadioButtonSociosMenorNo.TabIndex = 16
         Me.RadioButtonSociosMenorNo.TabStop = True
         Me.RadioButtonSociosMenorNo.Text = "No"
         Me.RadioButtonSociosMenorNo.UseVisualStyleBackColor = True
@@ -574,7 +589,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosMenorSi.Location = New System.Drawing.Point(12, 2)
         Me.RadioButtonSociosMenorSi.Name = "RadioButtonSociosMenorSi"
         Me.RadioButtonSociosMenorSi.Size = New System.Drawing.Size(44, 27)
-        Me.RadioButtonSociosMenorSi.TabIndex = 142
+        Me.RadioButtonSociosMenorSi.TabIndex = 15
         Me.RadioButtonSociosMenorSi.Text = "Si"
         Me.RadioButtonSociosMenorSi.UseVisualStyleBackColor = True
         '
@@ -604,7 +619,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosMasculino.Location = New System.Drawing.Point(14, 5)
         Me.RadioButtonSociosMasculino.Name = "RadioButtonSociosMasculino"
         Me.RadioButtonSociosMasculino.Size = New System.Drawing.Size(100, 27)
-        Me.RadioButtonSociosMasculino.TabIndex = 141
+        Me.RadioButtonSociosMasculino.TabIndex = 17
         Me.RadioButtonSociosMasculino.TabStop = True
         Me.RadioButtonSociosMasculino.Text = "Masculino"
         Me.RadioButtonSociosMasculino.UseVisualStyleBackColor = True
@@ -615,7 +630,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosFemenino.Location = New System.Drawing.Point(120, 5)
         Me.RadioButtonSociosFemenino.Name = "RadioButtonSociosFemenino"
         Me.RadioButtonSociosFemenino.Size = New System.Drawing.Size(94, 27)
-        Me.RadioButtonSociosFemenino.TabIndex = 142
+        Me.RadioButtonSociosFemenino.TabIndex = 18
         Me.RadioButtonSociosFemenino.Text = "Femenino"
         Me.RadioButtonSociosFemenino.UseVisualStyleBackColor = True
         '
@@ -623,7 +638,7 @@ Partial Class Ventana_Principal
         '
         Me.Panel5.Controls.Add(Me.RadioButtonSociosReporteActivo)
         Me.Panel5.Controls.Add(Me.RadioButtonSociosReporteTodos)
-        Me.Panel5.Location = New System.Drawing.Point(721, 219)
+        Me.Panel5.Location = New System.Drawing.Point(721, 251)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(161, 35)
         Me.Panel5.TabIndex = 154
@@ -675,7 +690,7 @@ Partial Class Ventana_Principal
         Me.DateTimeSociosFechaRetiro.Location = New System.Drawing.Point(365, 572)
         Me.DateTimeSociosFechaRetiro.Name = "DateTimeSociosFechaRetiro"
         Me.DateTimeSociosFechaRetiro.Size = New System.Drawing.Size(236, 22)
-        Me.DateTimeSociosFechaRetiro.TabIndex = 148
+        Me.DateTimeSociosFechaRetiro.TabIndex = 21
         '
         'LabelSociosFechaRetiro
         '
@@ -693,7 +708,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(486, 541)
         Me.RadioButtonSociosRetirado.Name = "RadioButtonSociosRetirado"
         Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(92, 27)
-        Me.RadioButtonSociosRetirado.TabIndex = 147
+        Me.RadioButtonSociosRetirado.TabIndex = 20
         Me.RadioButtonSociosRetirado.Text = "Retirado"
         Me.RadioButtonSociosRetirado.UseVisualStyleBackColor = True
         '
@@ -704,7 +719,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(380, 540)
         Me.RadioButtonSociosActivo.Name = "RadioButtonSociosActivo"
         Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(76, 27)
-        Me.RadioButtonSociosActivo.TabIndex = 146
+        Me.RadioButtonSociosActivo.TabIndex = 19
         Me.RadioButtonSociosActivo.TabStop = True
         Me.RadioButtonSociosActivo.Text = "Activo"
         Me.RadioButtonSociosActivo.UseVisualStyleBackColor = True
@@ -735,7 +750,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosNumAsociado.Location = New System.Drawing.Point(365, 66)
         Me.TextBoxSociosNumAsociado.Name = "TextBoxSociosNumAsociado"
         Me.TextBoxSociosNumAsociado.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosNumAsociado.TabIndex = 143
+        Me.TextBoxSociosNumAsociado.TabIndex = 2
         '
         'ButtonSociosReporteDeSocios
         '
@@ -743,10 +758,10 @@ Partial Class Ventana_Principal
         Me.ButtonSociosReporteDeSocios.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSociosReporteDeSocios.ForeColor = System.Drawing.Color.White
         Me.ButtonSociosReporteDeSocios.Image = CType(resources.GetObject("ButtonSociosReporteDeSocios.Image"), System.Drawing.Image)
-        Me.ButtonSociosReporteDeSocios.Location = New System.Drawing.Point(721, 260)
+        Me.ButtonSociosReporteDeSocios.Location = New System.Drawing.Point(721, 292)
         Me.ButtonSociosReporteDeSocios.Name = "ButtonSociosReporteDeSocios"
         Me.ButtonSociosReporteDeSocios.Size = New System.Drawing.Size(161, 40)
-        Me.ButtonSociosReporteDeSocios.TabIndex = 140
+        Me.ButtonSociosReporteDeSocios.TabIndex = 26
         Me.ButtonSociosReporteDeSocios.Text = "Crear Reporte"
         Me.ButtonSociosReporteDeSocios.UseVisualStyleBackColor = False
         '
@@ -767,7 +782,7 @@ Partial Class Ventana_Principal
         Me.ButtonSociosSalir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSociosSalir.ForeColor = System.Drawing.Color.White
         Me.ButtonSociosSalir.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.ButtonSociosSalir.Location = New System.Drawing.Point(721, 321)
+        Me.ButtonSociosSalir.Location = New System.Drawing.Point(721, 353)
         Me.ButtonSociosSalir.Name = "ButtonSociosSalir"
         Me.ButtonSociosSalir.Size = New System.Drawing.Size(162, 40)
         Me.ButtonSociosSalir.TabIndex = 122
@@ -780,7 +795,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosCedula.Location = New System.Drawing.Point(365, 38)
         Me.TextBoxSociosCedula.Name = "TextBoxSociosCedula"
         Me.TextBoxSociosCedula.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosCedula.TabIndex = 100
+        Me.TextBoxSociosCedula.TabIndex = 1
         '
         'Label3
         '
@@ -799,7 +814,7 @@ Partial Class Ventana_Principal
         Me.DateTimeSociosFechaIngreso.Location = New System.Drawing.Point(366, 319)
         Me.DateTimeSociosFechaIngreso.Name = "DateTimeSociosFechaIngreso"
         Me.DateTimeSociosFechaIngreso.Size = New System.Drawing.Size(236, 22)
-        Me.DateTimeSociosFechaIngreso.TabIndex = 115
+        Me.DateTimeSociosFechaIngreso.TabIndex = 11
         '
         'TextBoxSociosNombre
         '
@@ -807,7 +822,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosNombre.Location = New System.Drawing.Point(365, 94)
         Me.TextBoxSociosNombre.Name = "TextBoxSociosNombre"
         Me.TextBoxSociosNombre.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosNombre.TabIndex = 101
+        Me.TextBoxSociosNombre.TabIndex = 3
         '
         'DateTimeSociosFechaNacimiento
         '
@@ -818,7 +833,7 @@ Partial Class Ventana_Principal
         Me.DateTimeSociosFechaNacimiento.Name = "DateTimeSociosFechaNacimiento"
         Me.DateTimeSociosFechaNacimiento.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimeSociosFechaNacimiento.Size = New System.Drawing.Size(236, 22)
-        Me.DateTimeSociosFechaNacimiento.TabIndex = 106
+        Me.DateTimeSociosFechaNacimiento.TabIndex = 6
         '
         'Label4
         '
@@ -836,7 +851,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSocios1erApellido.Location = New System.Drawing.Point(365, 122)
         Me.TextBoxSocios1erApellido.Name = "TextBoxSocios1erApellido"
         Me.TextBoxSocios1erApellido.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSocios1erApellido.TabIndex = 102
+        Me.TextBoxSocios1erApellido.TabIndex = 4
         '
         'TextBoxSocios2doApellido
         '
@@ -844,7 +859,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSocios2doApellido.Location = New System.Drawing.Point(365, 150)
         Me.TextBoxSocios2doApellido.Name = "TextBoxSocios2doApellido"
         Me.TextBoxSocios2doApellido.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSocios2doApellido.TabIndex = 103
+        Me.TextBoxSocios2doApellido.TabIndex = 5
         '
         'ButtonSociosModificar
         '
@@ -855,7 +870,7 @@ Partial Class Ventana_Principal
         Me.ButtonSociosModificar.Location = New System.Drawing.Point(721, 161)
         Me.ButtonSociosModificar.Name = "ButtonSociosModificar"
         Me.ButtonSociosModificar.Size = New System.Drawing.Size(161, 40)
-        Me.ButtonSociosModificar.TabIndex = 119
+        Me.ButtonSociosModificar.TabIndex = 24
         Me.ButtonSociosModificar.Text = "Actualizar"
         Me.ButtonSociosModificar.UseVisualStyleBackColor = False
         '
@@ -878,7 +893,7 @@ Partial Class Ventana_Principal
         Me.ButtonSociosConsultar.Location = New System.Drawing.Point(721, 66)
         Me.ButtonSociosConsultar.Name = "ButtonSociosConsultar"
         Me.ButtonSociosConsultar.Size = New System.Drawing.Size(161, 40)
-        Me.ButtonSociosConsultar.TabIndex = 117
+        Me.ButtonSociosConsultar.TabIndex = 22
         Me.ButtonSociosConsultar.Text = "Consultar"
         Me.ButtonSociosConsultar.UseVisualStyleBackColor = False
         '
@@ -901,7 +916,7 @@ Partial Class Ventana_Principal
         Me.ButtonSociosInsertar.Location = New System.Drawing.Point(721, 113)
         Me.ButtonSociosInsertar.Name = "ButtonSociosInsertar"
         Me.ButtonSociosInsertar.Size = New System.Drawing.Size(161, 40)
-        Me.ButtonSociosInsertar.TabIndex = 118
+        Me.ButtonSociosInsertar.TabIndex = 23
         Me.ButtonSociosInsertar.Text = "Insertar"
         Me.ButtonSociosInsertar.UseVisualStyleBackColor = False
         '
@@ -911,7 +926,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosTelefono.Location = New System.Drawing.Point(366, 207)
         Me.TextBoxSociosTelefono.Name = "TextBoxSociosTelefono"
         Me.TextBoxSociosTelefono.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosTelefono.TabIndex = 104
+        Me.TextBoxSociosTelefono.TabIndex = 7
         '
         'TextBoxSociosOcupacionEspecialidad
         '
@@ -919,7 +934,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosOcupacionEspecialidad.Location = New System.Drawing.Point(366, 375)
         Me.TextBoxSociosOcupacionEspecialidad.Name = "TextBoxSociosOcupacionEspecialidad"
         Me.TextBoxSociosOcupacionEspecialidad.Size = New System.Drawing.Size(235, 22)
-        Me.TextBoxSociosOcupacionEspecialidad.TabIndex = 114
+        Me.TextBoxSociosOcupacionEspecialidad.TabIndex = 13
         '
         'Label14
         '
@@ -957,7 +972,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosSeccion.Location = New System.Drawing.Point(365, 347)
         Me.TextBoxSociosSeccion.Name = "TextBoxSociosSeccion"
         Me.TextBoxSociosSeccion.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosSeccion.TabIndex = 112
+        Me.TextBoxSociosSeccion.TabIndex = 12
         '
         'TextBoxSociosCuotaMatricula
         '
@@ -965,7 +980,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosCuotaMatricula.Location = New System.Drawing.Point(365, 235)
         Me.TextBoxSociosCuotaMatricula.Name = "TextBoxSociosCuotaMatricula"
         Me.TextBoxSociosCuotaMatricula.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosCuotaMatricula.TabIndex = 107
+        Me.TextBoxSociosCuotaMatricula.TabIndex = 8
         '
         'Label16
         '
@@ -993,7 +1008,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosResponsable.Location = New System.Drawing.Point(365, 263)
         Me.TextBoxSociosResponsable.Name = "TextBoxSociosResponsable"
         Me.TextBoxSociosResponsable.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosResponsable.TabIndex = 108
+        Me.TextBoxSociosResponsable.TabIndex = 9
         '
         'Label11
         '
@@ -1022,7 +1037,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosDireccion.Multiline = True
         Me.TextBoxSociosDireccion.Name = "TextBoxSociosDireccion"
         Me.TextBoxSociosDireccion.Size = New System.Drawing.Size(236, 61)
-        Me.TextBoxSociosDireccion.TabIndex = 116
+        Me.TextBoxSociosDireccion.TabIndex = 14
         '
         'Label12
         '
@@ -1050,7 +1065,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosBeneficiario.Location = New System.Drawing.Point(365, 291)
         Me.TextBoxSociosBeneficiario.Name = "TextBoxSociosBeneficiario"
         Me.TextBoxSociosBeneficiario.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosBeneficiario.TabIndex = 109
+        Me.TextBoxSociosBeneficiario.TabIndex = 10
         '
         'GroupBox1
         '
@@ -1245,7 +1260,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComiteMenorVoc2.Location = New System.Drawing.Point(383, 396)
         Me.TextBoxComiteMenorVoc2.Name = "TextBoxComiteMenorVoc2"
         Me.TextBoxComiteMenorVoc2.Size = New System.Drawing.Size(56, 22)
-        Me.TextBoxComiteMenorVoc2.TabIndex = 252
+        Me.TextBoxComiteMenorVoc2.TabIndex = 31
         '
         'TextBoxComiteMenorVoc1
         '
@@ -1253,7 +1268,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComiteMenorVoc1.Location = New System.Drawing.Point(383, 338)
         Me.TextBoxComiteMenorVoc1.Name = "TextBoxComiteMenorVoc1"
         Me.TextBoxComiteMenorVoc1.Size = New System.Drawing.Size(56, 22)
-        Me.TextBoxComiteMenorVoc1.TabIndex = 251
+        Me.TextBoxComiteMenorVoc1.TabIndex = 24
         '
         'TextBoxComiteMenorSec
         '
@@ -1261,7 +1276,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComiteMenorSec.Location = New System.Drawing.Point(385, 279)
         Me.TextBoxComiteMenorSec.Name = "TextBoxComiteMenorSec"
         Me.TextBoxComiteMenorSec.Size = New System.Drawing.Size(56, 22)
-        Me.TextBoxComiteMenorSec.TabIndex = 250
+        Me.TextBoxComiteMenorSec.TabIndex = 18
         '
         'TextBoxComiteMenorViceP
         '
@@ -1269,7 +1284,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComiteMenorViceP.Location = New System.Drawing.Point(383, 218)
         Me.TextBoxComiteMenorViceP.Name = "TextBoxComiteMenorViceP"
         Me.TextBoxComiteMenorViceP.Size = New System.Drawing.Size(56, 22)
-        Me.TextBoxComiteMenorViceP.TabIndex = 249
+        Me.TextBoxComiteMenorViceP.TabIndex = 11
         '
         'TextBoxComiteMenorPresi
         '
@@ -1277,7 +1292,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComiteMenorPresi.Location = New System.Drawing.Point(383, 159)
         Me.TextBoxComiteMenorPresi.Name = "TextBoxComiteMenorPresi"
         Me.TextBoxComiteMenorPresi.Size = New System.Drawing.Size(56, 22)
-        Me.TextBoxComiteMenorPresi.TabIndex = 248
+        Me.TextBoxComiteMenorPresi.TabIndex = 4
         '
         'ButtonBuscar_asociadoPresidente
         '
@@ -1288,7 +1303,7 @@ Partial Class Ventana_Principal
         Me.ButtonBuscar_asociadoPresidente.Location = New System.Drawing.Point(770, 152)
         Me.ButtonBuscar_asociadoPresidente.Name = "ButtonBuscar_asociadoPresidente"
         Me.ButtonBuscar_asociadoPresidente.Size = New System.Drawing.Size(42, 27)
-        Me.ButtonBuscar_asociadoPresidente.TabIndex = 241
+        Me.ButtonBuscar_asociadoPresidente.TabIndex = 8
         Me.ButtonBuscar_asociadoPresidente.UseVisualStyleBackColor = False
         '
         'ButtonBuscar_asociadoSuplente2
@@ -1336,7 +1351,7 @@ Partial Class Ventana_Principal
         Me.ButtonBuscar_asociadoVocal1.Location = New System.Drawing.Point(771, 333)
         Me.ButtonBuscar_asociadoVocal1.Name = "ButtonBuscar_asociadoVocal1"
         Me.ButtonBuscar_asociadoVocal1.Size = New System.Drawing.Size(42, 27)
-        Me.ButtonBuscar_asociadoVocal1.TabIndex = 237
+        Me.ButtonBuscar_asociadoVocal1.TabIndex = 28
         Me.ButtonBuscar_asociadoVocal1.UseVisualStyleBackColor = False
         '
         'ButtonBuscar_asociadoSecretaria
@@ -1348,7 +1363,7 @@ Partial Class Ventana_Principal
         Me.ButtonBuscar_asociadoSecretaria.Location = New System.Drawing.Point(772, 273)
         Me.ButtonBuscar_asociadoSecretaria.Name = "ButtonBuscar_asociadoSecretaria"
         Me.ButtonBuscar_asociadoSecretaria.Size = New System.Drawing.Size(42, 27)
-        Me.ButtonBuscar_asociadoSecretaria.TabIndex = 236
+        Me.ButtonBuscar_asociadoSecretaria.TabIndex = 22
         Me.ButtonBuscar_asociadoSecretaria.UseVisualStyleBackColor = False
         '
         'ButtonBuscar_asociadoVicePresidente
@@ -1360,7 +1375,7 @@ Partial Class Ventana_Principal
         Me.ButtonBuscar_asociadoVicePresidente.Location = New System.Drawing.Point(771, 212)
         Me.ButtonBuscar_asociadoVicePresidente.Name = "ButtonBuscar_asociadoVicePresidente"
         Me.ButtonBuscar_asociadoVicePresidente.Size = New System.Drawing.Size(42, 27)
-        Me.ButtonBuscar_asociadoVicePresidente.TabIndex = 235
+        Me.ButtonBuscar_asociadoVicePresidente.TabIndex = 15
         Me.ButtonBuscar_asociadoVicePresidente.UseVisualStyleBackColor = False
         '
         'Button1
@@ -1767,7 +1782,7 @@ Partial Class Ventana_Principal
         Me.DateTimePickerFechaVence_ComiteSecretaria.Location = New System.Drawing.Point(539, 276)
         Me.DateTimePickerFechaVence_ComiteSecretaria.Name = "DateTimePickerFechaVence_ComiteSecretaria"
         Me.DateTimePickerFechaVence_ComiteSecretaria.Size = New System.Drawing.Size(88, 22)
-        Me.DateTimePickerFechaVence_ComiteSecretaria.TabIndex = 183
+        Me.DateTimePickerFechaVence_ComiteSecretaria.TabIndex = 20
         '
         'TextBoxTipo_ComiteSecretaria
         '
@@ -1775,7 +1790,7 @@ Partial Class Ventana_Principal
         Me.TextBoxTipo_ComiteSecretaria.Location = New System.Drawing.Point(264, 278)
         Me.TextBoxTipo_ComiteSecretaria.Name = "TextBoxTipo_ComiteSecretaria"
         Me.TextBoxTipo_ComiteSecretaria.Size = New System.Drawing.Size(115, 22)
-        Me.TextBoxTipo_ComiteSecretaria.TabIndex = 182
+        Me.TextBoxTipo_ComiteSecretaria.TabIndex = 17
         '
         'DateTimePickerFechaRige_ComiteSecretaria
         '
@@ -1784,7 +1799,7 @@ Partial Class Ventana_Principal
         Me.DateTimePickerFechaRige_ComiteSecretaria.Location = New System.Drawing.Point(445, 276)
         Me.DateTimePickerFechaRige_ComiteSecretaria.Name = "DateTimePickerFechaRige_ComiteSecretaria"
         Me.DateTimePickerFechaRige_ComiteSecretaria.Size = New System.Drawing.Size(88, 22)
-        Me.DateTimePickerFechaRige_ComiteSecretaria.TabIndex = 181
+        Me.DateTimePickerFechaRige_ComiteSecretaria.TabIndex = 19
         '
         'TextBoxID_ComiteSecretaria
         '
@@ -1792,7 +1807,7 @@ Partial Class Ventana_Principal
         Me.TextBoxID_ComiteSecretaria.Location = New System.Drawing.Point(632, 276)
         Me.TextBoxID_ComiteSecretaria.Name = "TextBoxID_ComiteSecretaria"
         Me.TextBoxID_ComiteSecretaria.Size = New System.Drawing.Size(132, 22)
-        Me.TextBoxID_ComiteSecretaria.TabIndex = 180
+        Me.TextBoxID_ComiteSecretaria.TabIndex = 21
         '
         'TextBoxComitesSecretaria
         '
@@ -1800,7 +1815,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComitesSecretaria.Location = New System.Drawing.Point(22, 278)
         Me.TextBoxComitesSecretaria.Name = "TextBoxComitesSecretaria"
         Me.TextBoxComitesSecretaria.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxComitesSecretaria.TabIndex = 179
+        Me.TextBoxComitesSecretaria.TabIndex = 16
         '
         'DateTimePickerFechaVence_ComiteVocal2
         '
@@ -1809,7 +1824,7 @@ Partial Class Ventana_Principal
         Me.DateTimePickerFechaVence_ComiteVocal2.Location = New System.Drawing.Point(539, 394)
         Me.DateTimePickerFechaVence_ComiteVocal2.Name = "DateTimePickerFechaVence_ComiteVocal2"
         Me.DateTimePickerFechaVence_ComiteVocal2.Size = New System.Drawing.Size(88, 22)
-        Me.DateTimePickerFechaVence_ComiteVocal2.TabIndex = 171
+        Me.DateTimePickerFechaVence_ComiteVocal2.TabIndex = 34
         '
         'TextBoxTipo_ComiteVocal2
         '
@@ -1817,7 +1832,7 @@ Partial Class Ventana_Principal
         Me.TextBoxTipo_ComiteVocal2.Location = New System.Drawing.Point(264, 396)
         Me.TextBoxTipo_ComiteVocal2.Name = "TextBoxTipo_ComiteVocal2"
         Me.TextBoxTipo_ComiteVocal2.Size = New System.Drawing.Size(115, 22)
-        Me.TextBoxTipo_ComiteVocal2.TabIndex = 170
+        Me.TextBoxTipo_ComiteVocal2.TabIndex = 30
         '
         'DateTimePickerFechaRige_ComiteVocal2
         '
@@ -1826,7 +1841,7 @@ Partial Class Ventana_Principal
         Me.DateTimePickerFechaRige_ComiteVocal2.Location = New System.Drawing.Point(445, 394)
         Me.DateTimePickerFechaRige_ComiteVocal2.Name = "DateTimePickerFechaRige_ComiteVocal2"
         Me.DateTimePickerFechaRige_ComiteVocal2.Size = New System.Drawing.Size(88, 22)
-        Me.DateTimePickerFechaRige_ComiteVocal2.TabIndex = 169
+        Me.DateTimePickerFechaRige_ComiteVocal2.TabIndex = 32
         '
         'TextBoxID_ComiteVocal2
         '
@@ -1842,7 +1857,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComitesVocal2.Location = New System.Drawing.Point(22, 396)
         Me.TextBoxComitesVocal2.Name = "TextBoxComitesVocal2"
         Me.TextBoxComitesVocal2.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxComitesVocal2.TabIndex = 167
+        Me.TextBoxComitesVocal2.TabIndex = 29
         '
         'DateTimePickerFechaVence_ComiteVocal1
         '
@@ -1851,7 +1866,7 @@ Partial Class Ventana_Principal
         Me.DateTimePickerFechaVence_ComiteVocal1.Location = New System.Drawing.Point(539, 336)
         Me.DateTimePickerFechaVence_ComiteVocal1.Name = "DateTimePickerFechaVence_ComiteVocal1"
         Me.DateTimePickerFechaVence_ComiteVocal1.Size = New System.Drawing.Size(88, 22)
-        Me.DateTimePickerFechaVence_ComiteVocal1.TabIndex = 165
+        Me.DateTimePickerFechaVence_ComiteVocal1.TabIndex = 26
         '
         'TextBoxTipo_ComiteVocal1
         '
@@ -1859,7 +1874,7 @@ Partial Class Ventana_Principal
         Me.TextBoxTipo_ComiteVocal1.Location = New System.Drawing.Point(264, 338)
         Me.TextBoxTipo_ComiteVocal1.Name = "TextBoxTipo_ComiteVocal1"
         Me.TextBoxTipo_ComiteVocal1.Size = New System.Drawing.Size(115, 22)
-        Me.TextBoxTipo_ComiteVocal1.TabIndex = 164
+        Me.TextBoxTipo_ComiteVocal1.TabIndex = 23
         '
         'DateTimePickerFechaRige_ComiteVocal1
         '
@@ -1868,7 +1883,7 @@ Partial Class Ventana_Principal
         Me.DateTimePickerFechaRige_ComiteVocal1.Location = New System.Drawing.Point(445, 336)
         Me.DateTimePickerFechaRige_ComiteVocal1.Name = "DateTimePickerFechaRige_ComiteVocal1"
         Me.DateTimePickerFechaRige_ComiteVocal1.Size = New System.Drawing.Size(88, 22)
-        Me.DateTimePickerFechaRige_ComiteVocal1.TabIndex = 163
+        Me.DateTimePickerFechaRige_ComiteVocal1.TabIndex = 25
         '
         'TextBoxID_ComiteVocal1
         '
@@ -1876,7 +1891,7 @@ Partial Class Ventana_Principal
         Me.TextBoxID_ComiteVocal1.Location = New System.Drawing.Point(632, 336)
         Me.TextBoxID_ComiteVocal1.Name = "TextBoxID_ComiteVocal1"
         Me.TextBoxID_ComiteVocal1.Size = New System.Drawing.Size(132, 22)
-        Me.TextBoxID_ComiteVocal1.TabIndex = 162
+        Me.TextBoxID_ComiteVocal1.TabIndex = 27
         '
         'TextBoxComitesVocal1
         '
@@ -1884,7 +1899,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComitesVocal1.Location = New System.Drawing.Point(22, 338)
         Me.TextBoxComitesVocal1.Name = "TextBoxComitesVocal1"
         Me.TextBoxComitesVocal1.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxComitesVocal1.TabIndex = 161
+        Me.TextBoxComitesVocal1.TabIndex = 22
         '
         'DateTimePickerFechaVence_ComiteVicePresidente
         '
@@ -1893,7 +1908,7 @@ Partial Class Ventana_Principal
         Me.DateTimePickerFechaVence_ComiteVicePresidente.Location = New System.Drawing.Point(539, 215)
         Me.DateTimePickerFechaVence_ComiteVicePresidente.Name = "DateTimePickerFechaVence_ComiteVicePresidente"
         Me.DateTimePickerFechaVence_ComiteVicePresidente.Size = New System.Drawing.Size(88, 22)
-        Me.DateTimePickerFechaVence_ComiteVicePresidente.TabIndex = 159
+        Me.DateTimePickerFechaVence_ComiteVicePresidente.TabIndex = 13
         '
         'TextBoxTipo_ComiteVicePresidente
         '
@@ -1901,7 +1916,7 @@ Partial Class Ventana_Principal
         Me.TextBoxTipo_ComiteVicePresidente.Location = New System.Drawing.Point(264, 217)
         Me.TextBoxTipo_ComiteVicePresidente.Name = "TextBoxTipo_ComiteVicePresidente"
         Me.TextBoxTipo_ComiteVicePresidente.Size = New System.Drawing.Size(115, 22)
-        Me.TextBoxTipo_ComiteVicePresidente.TabIndex = 158
+        Me.TextBoxTipo_ComiteVicePresidente.TabIndex = 10
         '
         'DateTimePickerFechaRige_ComiteVicePresidente
         '
@@ -1910,7 +1925,7 @@ Partial Class Ventana_Principal
         Me.DateTimePickerFechaRige_ComiteVicePresidente.Location = New System.Drawing.Point(445, 215)
         Me.DateTimePickerFechaRige_ComiteVicePresidente.Name = "DateTimePickerFechaRige_ComiteVicePresidente"
         Me.DateTimePickerFechaRige_ComiteVicePresidente.Size = New System.Drawing.Size(88, 22)
-        Me.DateTimePickerFechaRige_ComiteVicePresidente.TabIndex = 157
+        Me.DateTimePickerFechaRige_ComiteVicePresidente.TabIndex = 12
         '
         'TextBoxID_ComiteVicePresidente
         '
@@ -1918,7 +1933,7 @@ Partial Class Ventana_Principal
         Me.TextBoxID_ComiteVicePresidente.Location = New System.Drawing.Point(632, 215)
         Me.TextBoxID_ComiteVicePresidente.Name = "TextBoxID_ComiteVicePresidente"
         Me.TextBoxID_ComiteVicePresidente.Size = New System.Drawing.Size(132, 22)
-        Me.TextBoxID_ComiteVicePresidente.TabIndex = 156
+        Me.TextBoxID_ComiteVicePresidente.TabIndex = 14
         '
         'TextBoxComitesVicepresidente
         '
@@ -1926,7 +1941,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComitesVicepresidente.Location = New System.Drawing.Point(22, 217)
         Me.TextBoxComitesVicepresidente.Name = "TextBoxComitesVicepresidente"
         Me.TextBoxComitesVicepresidente.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxComitesVicepresidente.TabIndex = 155
+        Me.TextBoxComitesVicepresidente.TabIndex = 9
         '
         'Label55
         '
@@ -1965,7 +1980,7 @@ Partial Class Ventana_Principal
         Me.DateTimePickerFechaVence_ComitePresidente.Location = New System.Drawing.Point(539, 157)
         Me.DateTimePickerFechaVence_ComitePresidente.Name = "DateTimePickerFechaVence_ComitePresidente"
         Me.DateTimePickerFechaVence_ComitePresidente.Size = New System.Drawing.Size(88, 22)
-        Me.DateTimePickerFechaVence_ComitePresidente.TabIndex = 149
+        Me.DateTimePickerFechaVence_ComitePresidente.TabIndex = 6
         '
         'TextBoxTipo_comitePresidente
         '
@@ -1973,7 +1988,7 @@ Partial Class Ventana_Principal
         Me.TextBoxTipo_comitePresidente.Location = New System.Drawing.Point(264, 159)
         Me.TextBoxTipo_comitePresidente.Name = "TextBoxTipo_comitePresidente"
         Me.TextBoxTipo_comitePresidente.Size = New System.Drawing.Size(115, 22)
-        Me.TextBoxTipo_comitePresidente.TabIndex = 148
+        Me.TextBoxTipo_comitePresidente.TabIndex = 3
         '
         'Label19
         '
@@ -2015,7 +2030,7 @@ Partial Class Ventana_Principal
         Me.ComboBoxComitesNombre.Location = New System.Drawing.Point(423, 46)
         Me.ComboBoxComitesNombre.Name = "ComboBoxComitesNombre"
         Me.ComboBoxComitesNombre.Size = New System.Drawing.Size(304, 23)
-        Me.ComboBoxComitesNombre.TabIndex = 8
+        Me.ComboBoxComitesNombre.TabIndex = 1
         Me.ComboBoxComitesNombre.Text = "Consejo de administración"
         '
         'ButtonModificar_InformacionAccidente
@@ -2059,7 +2074,7 @@ Partial Class Ventana_Principal
         Me.TextBoxID_ComitePresidente.Location = New System.Drawing.Point(632, 157)
         Me.TextBoxID_ComitePresidente.Name = "TextBoxID_ComitePresidente"
         Me.TextBoxID_ComitePresidente.Size = New System.Drawing.Size(132, 22)
-        Me.TextBoxID_ComitePresidente.TabIndex = 4
+        Me.TextBoxID_ComitePresidente.TabIndex = 7
         '
         'Label27
         '
@@ -2077,7 +2092,7 @@ Partial Class Ventana_Principal
         Me.TextBoxComitesPresidente.Location = New System.Drawing.Point(22, 159)
         Me.TextBoxComitesPresidente.Name = "TextBoxComitesPresidente"
         Me.TextBoxComitesPresidente.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxComitesPresidente.TabIndex = 1
+        Me.TextBoxComitesPresidente.TabIndex = 2
         '
         'Label43
         '
@@ -3009,7 +3024,7 @@ Partial Class Ventana_Principal
         Me.Button_IngresosInsertar.Location = New System.Drawing.Point(231, 388)
         Me.Button_IngresosInsertar.Name = "Button_IngresosInsertar"
         Me.Button_IngresosInsertar.Size = New System.Drawing.Size(254, 44)
-        Me.Button_IngresosInsertar.TabIndex = 17
+        Me.Button_IngresosInsertar.TabIndex = 9
         Me.Button_IngresosInsertar.Text = "Agregar Ingreso"
         Me.Button_IngresosInsertar.UseVisualStyleBackColor = True
         '
@@ -3020,7 +3035,7 @@ Partial Class Ventana_Principal
         Me.Button_IngresosCalcularTotal.Location = New System.Drawing.Point(231, 273)
         Me.Button_IngresosCalcularTotal.Name = "Button_IngresosCalcularTotal"
         Me.Button_IngresosCalcularTotal.Size = New System.Drawing.Size(254, 44)
-        Me.Button_IngresosCalcularTotal.TabIndex = 16
+        Me.Button_IngresosCalcularTotal.TabIndex = 6
         Me.Button_IngresosCalcularTotal.Text = "Calcular Total"
         Me.Button_IngresosCalcularTotal.UseVisualStyleBackColor = True
         '
@@ -3032,7 +3047,7 @@ Partial Class Ventana_Principal
         Me.ComboBox_IngresosCodigCuenta.Location = New System.Drawing.Point(231, 355)
         Me.ComboBox_IngresosCodigCuenta.Name = "ComboBox_IngresosCodigCuenta"
         Me.ComboBox_IngresosCodigCuenta.Size = New System.Drawing.Size(254, 27)
-        Me.ComboBox_IngresosCodigCuenta.TabIndex = 15
+        Me.ComboBox_IngresosCodigCuenta.TabIndex = 8
         '
         'Label96
         '
@@ -3048,7 +3063,7 @@ Partial Class Ventana_Principal
         Me.TextBox_IngresosTotal.Location = New System.Drawing.Point(231, 323)
         Me.TextBox_IngresosTotal.Name = "TextBox_IngresosTotal"
         Me.TextBox_IngresosTotal.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_IngresosTotal.TabIndex = 13
+        Me.TextBox_IngresosTotal.TabIndex = 7
         '
         'Label95
         '
@@ -3064,14 +3079,14 @@ Partial Class Ventana_Principal
         Me.TextBox_IngresosPrecioUnitario.Location = New System.Drawing.Point(231, 241)
         Me.TextBox_IngresosPrecioUnitario.Name = "TextBox_IngresosPrecioUnitario"
         Me.TextBox_IngresosPrecioUnitario.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_IngresosPrecioUnitario.TabIndex = 11
+        Me.TextBox_IngresosPrecioUnitario.TabIndex = 5
         '
         'TextBox_IngresosCantidad
         '
         Me.TextBox_IngresosCantidad.Location = New System.Drawing.Point(231, 209)
         Me.TextBox_IngresosCantidad.Name = "TextBox_IngresosCantidad"
         Me.TextBox_IngresosCantidad.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_IngresosCantidad.TabIndex = 10
+        Me.TextBox_IngresosCantidad.TabIndex = 4
         '
         'TextBox_IngresosDescripcion
         '
@@ -3079,21 +3094,21 @@ Partial Class Ventana_Principal
         Me.TextBox_IngresosDescripcion.Multiline = True
         Me.TextBox_IngresosDescripcion.Name = "TextBox_IngresosDescripcion"
         Me.TextBox_IngresosDescripcion.Size = New System.Drawing.Size(254, 46)
-        Me.TextBox_IngresosDescripcion.TabIndex = 9
+        Me.TextBox_IngresosDescripcion.TabIndex = 3
         '
         'TextBox_IngresosCliente
         '
         Me.TextBox_IngresosCliente.Location = New System.Drawing.Point(231, 125)
         Me.TextBox_IngresosCliente.Name = "TextBox_IngresosCliente"
         Me.TextBox_IngresosCliente.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_IngresosCliente.TabIndex = 8
+        Me.TextBox_IngresosCliente.TabIndex = 2
         '
         'TextBox_IngresosFacturaRecibos
         '
         Me.TextBox_IngresosFacturaRecibos.Location = New System.Drawing.Point(231, 93)
         Me.TextBox_IngresosFacturaRecibos.Name = "TextBox_IngresosFacturaRecibos"
         Me.TextBox_IngresosFacturaRecibos.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_IngresosFacturaRecibos.TabIndex = 7
+        Me.TextBox_IngresosFacturaRecibos.TabIndex = 1
         '
         'Label94
         '
@@ -3263,7 +3278,7 @@ Partial Class Ventana_Principal
         Me.DateTimePicker_GastosFecha.Location = New System.Drawing.Point(231, 61)
         Me.DateTimePicker_GastosFecha.Name = "DateTimePicker_GastosFecha"
         Me.DateTimePicker_GastosFecha.Size = New System.Drawing.Size(254, 26)
-        Me.DateTimePicker_GastosFecha.TabIndex = 18
+        Me.DateTimePicker_GastosFecha.TabIndex = 1
         '
         'Button_GastosAgregar
         '
@@ -3273,7 +3288,7 @@ Partial Class Ventana_Principal
         Me.Button_GastosAgregar.Location = New System.Drawing.Point(230, 388)
         Me.Button_GastosAgregar.Name = "Button_GastosAgregar"
         Me.Button_GastosAgregar.Size = New System.Drawing.Size(254, 44)
-        Me.Button_GastosAgregar.TabIndex = 35
+        Me.Button_GastosAgregar.TabIndex = 10
         Me.Button_GastosAgregar.Text = "Agregar Gasto"
         Me.Button_GastosAgregar.UseVisualStyleBackColor = True
         '
@@ -3295,7 +3310,7 @@ Partial Class Ventana_Principal
         Me.Button_GastosCalcular.Location = New System.Drawing.Point(230, 273)
         Me.Button_GastosCalcular.Name = "Button_GastosCalcular"
         Me.Button_GastosCalcular.Size = New System.Drawing.Size(254, 44)
-        Me.Button_GastosCalcular.TabIndex = 34
+        Me.Button_GastosCalcular.TabIndex = 7
         Me.Button_GastosCalcular.Text = "Calcular Total"
         Me.Button_GastosCalcular.UseVisualStyleBackColor = True
         '
@@ -3316,7 +3331,7 @@ Partial Class Ventana_Principal
         Me.ComboBox_GastosCodCuenta.Location = New System.Drawing.Point(230, 355)
         Me.ComboBox_GastosCodCuenta.Name = "ComboBox_GastosCodCuenta"
         Me.ComboBox_GastosCodCuenta.Size = New System.Drawing.Size(254, 27)
-        Me.ComboBox_GastosCodCuenta.TabIndex = 33
+        Me.ComboBox_GastosCodCuenta.TabIndex = 9
         '
         'Label105
         '
@@ -3353,7 +3368,7 @@ Partial Class Ventana_Principal
         Me.TextBox_GastosTotal.Location = New System.Drawing.Point(230, 323)
         Me.TextBox_GastosTotal.Name = "TextBox_GastosTotal"
         Me.TextBox_GastosTotal.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_GastosTotal.TabIndex = 31
+        Me.TextBox_GastosTotal.TabIndex = 8
         '
         'Label103
         '
@@ -3390,28 +3405,28 @@ Partial Class Ventana_Principal
         Me.TextBox_GastosPrecioUnitario.Location = New System.Drawing.Point(230, 241)
         Me.TextBox_GastosPrecioUnitario.Name = "TextBox_GastosPrecioUnitario"
         Me.TextBox_GastosPrecioUnitario.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_GastosPrecioUnitario.TabIndex = 29
+        Me.TextBox_GastosPrecioUnitario.TabIndex = 6
         '
         'TextBox_GastosFacturaRecibo
         '
         Me.TextBox_GastosFacturaRecibo.Location = New System.Drawing.Point(230, 93)
         Me.TextBox_GastosFacturaRecibo.Name = "TextBox_GastosFacturaRecibo"
         Me.TextBox_GastosFacturaRecibo.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_GastosFacturaRecibo.TabIndex = 25
+        Me.TextBox_GastosFacturaRecibo.TabIndex = 2
         '
         'TextBox_GastosCantidad
         '
         Me.TextBox_GastosCantidad.Location = New System.Drawing.Point(230, 209)
         Me.TextBox_GastosCantidad.Name = "TextBox_GastosCantidad"
         Me.TextBox_GastosCantidad.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_GastosCantidad.TabIndex = 28
+        Me.TextBox_GastosCantidad.TabIndex = 5
         '
         'TextBox_GastosProveedor
         '
         Me.TextBox_GastosProveedor.Location = New System.Drawing.Point(230, 125)
         Me.TextBox_GastosProveedor.Name = "TextBox_GastosProveedor"
         Me.TextBox_GastosProveedor.Size = New System.Drawing.Size(254, 26)
-        Me.TextBox_GastosProveedor.TabIndex = 26
+        Me.TextBox_GastosProveedor.TabIndex = 3
         '
         'TextBox_GastosDescripcion
         '
@@ -3419,7 +3434,7 @@ Partial Class Ventana_Principal
         Me.TextBox_GastosDescripcion.Multiline = True
         Me.TextBox_GastosDescripcion.Name = "TextBox_GastosDescripcion"
         Me.TextBox_GastosDescripcion.Size = New System.Drawing.Size(254, 46)
-        Me.TextBox_GastosDescripcion.TabIndex = 27
+        Me.TextBox_GastosDescripcion.TabIndex = 4
         '
         'Excedentes
         '
@@ -3439,6 +3454,20 @@ Partial Class Ventana_Principal
         Me.Excedentes.TabIndex = 0
         Me.Excedentes.TabStop = False
         Me.Excedentes.Text = "Informe Económico"
+        '
+        'InformeEconomicoButtonSalir
+        '
+        Me.InformeEconomicoButtonSalir.BackColor = System.Drawing.Color.RoyalBlue
+        Me.InformeEconomicoButtonSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.InformeEconomicoButtonSalir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InformeEconomicoButtonSalir.ForeColor = System.Drawing.Color.White
+        Me.InformeEconomicoButtonSalir.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.InformeEconomicoButtonSalir.Location = New System.Drawing.Point(416, 300)
+        Me.InformeEconomicoButtonSalir.Name = "InformeEconomicoButtonSalir"
+        Me.InformeEconomicoButtonSalir.Size = New System.Drawing.Size(162, 40)
+        Me.InformeEconomicoButtonSalir.TabIndex = 223
+        Me.InformeEconomicoButtonSalir.Text = "Salir"
+        Me.InformeEconomicoButtonSalir.UseVisualStyleBackColor = False
         '
         'Label144
         '
@@ -4311,20 +4340,6 @@ Partial Class Ventana_Principal
         Me.Label136.TabIndex = 176
         Me.Label136.Text = "Acerca de ""Gestión de Cooperativas"""
         '
-        'InformeEconomicoButtonSalir
-        '
-        Me.InformeEconomicoButtonSalir.BackColor = System.Drawing.Color.RoyalBlue
-        Me.InformeEconomicoButtonSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.InformeEconomicoButtonSalir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InformeEconomicoButtonSalir.ForeColor = System.Drawing.Color.White
-        Me.InformeEconomicoButtonSalir.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.InformeEconomicoButtonSalir.Location = New System.Drawing.Point(416, 300)
-        Me.InformeEconomicoButtonSalir.Name = "InformeEconomicoButtonSalir"
-        Me.InformeEconomicoButtonSalir.Size = New System.Drawing.Size(162, 40)
-        Me.InformeEconomicoButtonSalir.TabIndex = 223
-        Me.InformeEconomicoButtonSalir.Text = "Salir"
-        Me.InformeEconomicoButtonSalir.UseVisualStyleBackColor = False
-        '
         'Ventana_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4739,4 +4754,5 @@ Partial Class Ventana_Principal
     Friend WithEvents Label141 As Label
     Friend WithEvents Label144 As Label
     Friend WithEvents InformeEconomicoButtonSalir As Button
+    Friend WithEvents SociosButtonLimpiar As Button
 End Class
