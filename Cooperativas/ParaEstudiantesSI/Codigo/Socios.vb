@@ -16,13 +16,13 @@ Public Class Socios
         Dim numAsociado As String = Ventana_Principal.TextBoxSociosNumAsociado.Text
 
         If (cedula <> "" And numAsociado <> "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado)
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             limpiar()
             Return
         End If
 
         If (Ventana_Principal.TextBoxSociosCedula.Text = "" And Ventana_Principal.TextBoxSociosNumAsociado.Text = "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado)
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             limpiar()
         Else
             Try
@@ -299,7 +299,7 @@ Public Class Socios
             End While
 
             pdfDoc.Close()
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
             MessageBox.Show("Error de: " + ex.ToString)
         End Try

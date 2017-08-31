@@ -250,6 +250,7 @@
     <Content Include="Imagen\coopePrueba.jpg" />
     <Content Include="Imagen\fondo.jpg" />
     <Content Include="Imagen\MEP_Logo.png" />
+    <None Include="Resources\exit.png" />
     <Content Include="Resources\MEP_Logo.png" />
     <None Include="Imagen\loginImage.jpg" />
     <None Include="Imagen\save1.png" />

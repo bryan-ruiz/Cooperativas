@@ -269,13 +269,12 @@ Public Class Comites
         End While
     End Sub
 
-    Public Sub consultar()
+    Public Sub consultar(ByVal nombreComite As String)
         Dim valores As List(Of ComiteClase)
-        Dim id As String = Ventana_Principal.ComboBoxComitesNombre.Text
 
         Try
             BD.ConectarBD()
-            valores = BD.obtenerDatosdeUnComite(id)
+            valores = BD.obtenerDatosdeUnComite(nombreComite)
 
             ''Dim valores As List(Of String) = BD.consultarSocioPorCedula(cedula)            
             If valores.Count <> 0 Then

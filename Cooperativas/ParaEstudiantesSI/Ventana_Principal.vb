@@ -78,11 +78,6 @@ Public Class Ventana_Principal
         Print.Show()
     End Sub
 
-    Private Sub ButtonSociosSalir_Click_1(sender As Object, e As EventArgs) Handles ButtonSociosSalir.Click
-        Me.Close()
-        Ventana_Acceso.Close()
-    End Sub
-
     Private Sub RadioButtonSociosActivo_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButtonSociosActivo.CheckedChanged
         mostrarOcultarCamposRetiro(False)
     End Sub
@@ -124,11 +119,6 @@ Public Class Ventana_Principal
         comites.buscar("suplente2")
     End Sub
 
-    Private Sub ButtonConsultar_InformacionAccidente_Click(sender As Object, e As EventArgs) Handles ButtonConsultar_InformacionAccidente.Click
-        comites.limpiar()
-        comites.consultar()
-    End Sub
-
     Private Sub ButtonModificar_InformacionAccidente_Click(sender As Object, e As EventArgs) Handles ButtonModificar_InformacionAccidente.Click
         comites.actualizarComiteF()
     End Sub
@@ -136,16 +126,6 @@ Public Class Ventana_Principal
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         comites.generarReporteDeComites()
         Print.Show()
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.Close()
-        Ventana_Acceso.Close()
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles ButtonUsuariosSalir.Click
-        Me.Close()
-        Ventana_Acceso.Close()
     End Sub
 
 
@@ -192,11 +172,6 @@ Public Class Ventana_Principal
 
     Private Sub CertificadosButtonCerrarPeriodo_Click(sender As Object, e As EventArgs) Handles CertificadosButtonCerrarPeriodo.Click
         certificados.cerrarCertificado()
-    End Sub
-
-    Private Sub CertificadosButtonSalir_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSalir.Click
-        Me.Close()
-        Ventana_Acceso.Close()
     End Sub
 
 
@@ -250,6 +225,17 @@ Public Class Ventana_Principal
     Private Sub cargar(sender As Object, e As EventArgs) Handles MyBase.Load
         ingreso.obtenerDatosSeleccionarCuenta()
         gasto.obtenerDatosSeleccionarCuenta()
+    End Sub
+
+    '// Evento para salir del sistema, cierra las 2 ventanas abiertas
+    Private Sub salirAPP(sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.Closing
+        Dim result As DialogResult = MessageBox.Show("¿Desea salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If result = Windows.Forms.DialogResult.No Then
+            e.Cancel = True
+        Else
+            Ventana_Acceso.Close()
+            Me.Close()
+        End If
     End Sub
 
     Private Sub Button_IngresosCalcularTotal_Click(sender As Object, e As EventArgs) Handles Button_IngresosCalcularTotal.Click
@@ -324,9 +310,9 @@ Public Class Ventana_Principal
         Print.Show()
     End Sub
 
-    Private Sub InformeEconomicoButtonSalir_Click(sender As Object, e As EventArgs) Handles InformeEconomicoButtonSalir.Click
-        Me.Close()
-        Ventana_Acceso.Close()
+    Private Sub ComboBoxComitesNombre_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxComitesNombre.SelectedIndexChanged
+        comites.limpiar()
+        comites.consultar(ComboBoxComitesNombre.Text)
     End Sub
 
 End Class
