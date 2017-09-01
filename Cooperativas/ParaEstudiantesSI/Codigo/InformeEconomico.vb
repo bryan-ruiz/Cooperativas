@@ -10,11 +10,17 @@ Public Class InformeEconomico
 
     'Valida los permisos y genera un pdf con el Informe en un rango de fechas
     Public Sub generarInformeEconomico()
+
         If Singleton.rol = "Colaborador" Then
             MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
         Else
-            generarInformeTabla()
+            Try
+                generarInformeTabla()
+            Catch ex As Exception
+                MessageBox.Show("Error de: " + ex.ToString)
+            End Try
         End If
+
     End Sub
 
     'Función que tiene la lógica para generar los datos requeridos para el informe económico
