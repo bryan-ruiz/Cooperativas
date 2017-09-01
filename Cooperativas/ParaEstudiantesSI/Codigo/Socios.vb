@@ -36,8 +36,6 @@ Public Class Socios
                     valores = BD.consultarSocioPorNumAsociado(numAsociado)
                 End If
 
-                ''Dim valores As List(Of String) = BD.consultarSocioPorCedula(cedula)
-
                 If valores.Count <> 0 Then
                     Ventana_Principal.TextBoxSociosCedula.Text = valores(0)
                     Ventana_Principal.TextBoxSociosNumAsociado.Text = valores(1)
@@ -53,6 +51,7 @@ Public Class Socios
                     Ventana_Principal.TextBoxSociosSeccion.Text = valores.Item(11)
                     Ventana_Principal.TextBoxSociosOcupacionEspecialidad.Text = valores.Item(12)
                     Ventana_Principal.TextBoxSociosDireccion.Text = valores.Item(13)
+
                     'Para Genero
                     If valores.Item(14).Equals("Masculino") Then
                         Ventana_Principal.RadioButtonSociosMasculino.Checked = True
@@ -86,12 +85,12 @@ Public Class Socios
                     MessageBox.Show(variablesGlobales.noExistenDatos)
                     limpiar()
                 End If
-                'Muy importante cerrar conexion despues de cada consulta'
-                'Cierro conexion'
+
                 BD.CerrarConexion()
+
             Catch ex As Exception
-                MessageBox.Show("Error de: " + ex.ToString)
-                'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+
             End Try
         End If
     End Sub
@@ -117,6 +116,7 @@ Public Class Socios
         Dim fechaRetiro As Date = Ventana_Principal.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
         Dim notasRetiro As String = Ventana_Principal.TextBoxSociosNotasRetiro.Text
         Dim menor As String = ""
+
         'Para el genero
         If (Ventana_Principal.RadioButtonSociosMasculino.Checked = True) Then
             genero = Ventana_Principal.RadioButtonSociosMasculino.Text
@@ -138,7 +138,7 @@ Public Class Socios
         End If
 
         If (cedula = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
-            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
@@ -148,10 +148,10 @@ Public Class Socios
                 Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
 
                 If (insertado = 1 And certificadoXSocio = 1) Then
-                    MessageBox.Show(variablesGlobales.datosIngresadosConExito, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                    MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                     limpiar()
                 Else
-                    MessageBox.Show(variablesGlobales.errorIngresandoDatos, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                    MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     limpiar()
                 End If
                 'Muy importante cerrar conexion despues de cada consulta'
@@ -204,22 +204,22 @@ Public Class Socios
         End If
 
         If (cedula = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
-            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
                 Dim modificado = BD.actualizarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad,
                                                     direccion, genero, estado, fechaRetiro, notasRetiro, menor)
                 If modificado = 1 Then
-                    MessageBox.Show(variablesGlobales.datosActualizadosConExito)
+                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                     limpiar()
                 Else
-                    MessageBox.Show(variablesGlobales.errorActualizandoDatos)
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     limpiar()
                 End If
                 BD.CerrarConexion()
             Catch ex As Exception
-                MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString())
             End Try
         End If
     End Sub
@@ -255,14 +255,12 @@ Public Class Socios
             valores = BD.obtenerDatosReporteDeSocios(tipoReporte)
             BD.CerrarConexion()
 
-            'Exporting to PDF
-            Dim folderPath As String = "C:\Reportes\"
-            If Not Directory.Exists(folderPath) Then
-                Directory.CreateDirectory(folderPath)
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
             End If
 
             Dim pdfDoc As New Document()
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(folderPath & "reporteSocios.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteSocios.pdf", FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -299,9 +297,11 @@ Public Class Socios
             End While
 
             pdfDoc.Close()
+
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 

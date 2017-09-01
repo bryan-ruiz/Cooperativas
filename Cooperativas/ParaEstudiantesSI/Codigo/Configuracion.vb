@@ -4,15 +4,17 @@ Imports System.IO
 
 Public Class Configuracion
     Dim BD As ConexionBD = New ConexionBD
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     Public Sub insertarCuenta()
+
         Dim valores As Integer
         Dim id As String = Ventana_Principal.TextBox_ConfiguracionCuentaDescripcion.Text
         Dim tipo As String
         Dim proyecto_Productivo As String
 
         If (id = "") Then
-            MessageBox.Show("Debe ingresar el codigo y descripción de la cuenta")
+            MessageBox.Show(variablesGlobales.mensajeDebeIngresarCodigoODescriptionDeCuenta, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         End If
 
         If (Ventana_Principal.ConfiguracionRadioButtonIngresos.Checked = True) Then
@@ -31,38 +33,40 @@ Public Class Configuracion
             BD.ConectarBD()
             valores = BD.insertarCuenta(id, tipo, proyecto_Productivo)
             If valores <> 0 Then
-                MessageBox.Show("Se ha realizado exitosamente")
+                MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             Else
-                MessageBox.Show("Error al insertar cuenta")
+                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             End If
 
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
-            'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
     Public Sub eliminarCuenta()
+
         Dim valores As Integer
         Dim id As String = Ventana_Principal.TextBox_ConfiguracionCuentaDescripcion.Text
+
         If (id = "") Then
-            MessageBox.Show("Debe ingresar el codigo y descripción de la cuenta")
+            MessageBox.Show(variablesGlobales.mensajeDebeIngresarCodigoODescriptionDeCuenta, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         End If
 
         Try
             BD.ConectarBD()
             valores = BD.eliminarCuenta(id)
+
             If valores <> 0 Then
-                MessageBox.Show("Se ha realizado exitosamente")
+                MessageBox.Show(variablesGlobales.datosEliminadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             Else
-                MessageBox.Show("Error: no se encontró la cuenta")
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             End If
 
             BD.CerrarConexion()
+
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
-            'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
@@ -75,12 +79,12 @@ Public Class Configuracion
             If valores.Count <> 0 Then
                 llenarDatos(valores)
             Else
-                MessageBox.Show("El Periodo a consultar no existe")
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 limpiar()
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
@@ -140,20 +144,20 @@ Public Class Configuracion
         Dim patrimonial As String = Ventana_Principal.ConfiguracionTextBoxPatrimonial.Text
 
         If (periodo = "" Or cooperativa = "" Or cedulaJuridica = "" Or legal = "" Or educacion = "" Or bienestarSocial = "" Or institucional = "" Or patrimonial = "") Then
-            MessageBox.Show("No deben haber campos vacíos!")
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
                 Dim modificado = BD.actualizarConfiguracion(periodo, cooperativa, cedulaJuridica, telefono, fecha1, fecha2, fecha3, fecha4, fecha5,
                                                             fecha6, fecha7, fecha8, fecha9, fecha10, legal, educacion, bienestarSocial, institucional, patrimonial)
                 If modificado = 1 Then
-                    MessageBox.Show("Configuración actualizada con éxito!")
+                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                 Else
-                    MessageBox.Show("Error al actualizar la información de la Configuración")
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                 End If
                 BD.CerrarConexion()
             Catch ex As Exception
-                MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             End Try
         End If
     End Sub

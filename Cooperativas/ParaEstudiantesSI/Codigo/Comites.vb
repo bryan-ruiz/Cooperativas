@@ -6,6 +6,7 @@ Public Class Comites
 
     Dim BD As ConexionBD = New ConexionBD
     Dim encabezado As EncabezadoClase = New EncabezadoClase
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     Public Sub escribirDatos(ByVal valores As List(Of ComiteClase), ByVal pdfDoc As iTextSharp.text.Document, ByVal writer As iTextSharp.text.pdf.PdfWriter)
 
@@ -41,14 +42,12 @@ Public Class Comites
 
     Public Sub generarReporteDeComites()
         Try
-            'Exporting to PDF
-            Dim folderPath As String = "C:\Reportes\"
-            If Not Directory.Exists(folderPath) Then
-                Directory.CreateDirectory(folderPath)
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
             End If
 
             Dim pdfDoc As New Document()
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(folderPath & "reporteComites.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteComites.pdf", FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -77,13 +76,16 @@ Public Class Comites
             BD.CerrarConexion()
 
             pdfDoc.Close()
-            MessageBox.Show("Reporte generado con éxito en C:/Reportes/")
+
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
     Public Sub limpiar()
+
         Ventana_Principal.TextBoxComitesPresidente.Text = ""
         Ventana_Principal.TextBoxTipo_comitePresidente.Text = ""
         Ventana_Principal.TextBoxComiteMenorPresi.Text = ""
@@ -198,9 +200,9 @@ Public Class Comites
             BD.actualizarComite(nombreCompleto, ocupacion, menor, fechaRige, fechaVence, cedula, tipoConsejo, "suplente2")
 
             BD.CerrarConexion()
-            MessageBox.Show("Se ha realizado la actualización de los datos")
+            MessageBox.Show(variablesGlobales.datosActualizadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
 
     End Sub
@@ -276,16 +278,14 @@ Public Class Comites
             BD.ConectarBD()
             valores = BD.obtenerDatosdeUnComite(nombreComite)
 
-            ''Dim valores As List(Of String) = BD.consultarSocioPorCedula(cedula)            
             If valores.Count <> 0 Then
                 llenarDatos(valores)
             End If
-            'Muy importante cerrar conexion despues de cada consulta'
-            'Cierro conexion'
+
             BD.CerrarConexion()
+
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
-            'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
 
     End Sub
@@ -311,7 +311,7 @@ Public Class Comites
         End If
 
         If (cedula = "") Then
-            MessageBox.Show("Debe ingresar la cédula o el número de asociado para consultar")
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
@@ -345,14 +345,13 @@ Public Class Comites
                     Ventana_Principal.TextBoxTipo_ComiteSuplente2.Text = valores.Item(12)
                     Ventana_Principal.TextBoxComiteMenorSupl2.Text = valores.Item(18)
                 Else
-                    MessageBox.Show("El Socio no se encuentra registrado")
+                    MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 End If
-                'Muy importante cerrar conexion despues de cada consulta'
-                'Cierro conexion'
+
                 BD.CerrarConexion()
+
             Catch ex As Exception
-                MessageBox.Show("Error de: " + ex.ToString)
-                'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             End Try
         End If
     End Sub

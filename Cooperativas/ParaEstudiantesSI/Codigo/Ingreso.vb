@@ -3,26 +3,29 @@ Imports iTextSharp.text.pdf
 Imports System.IO
 
 Public Class Ingreso
+
     Dim BD As ConexionBD = New ConexionBD
     Dim estado As Boolean = True
     Dim encabezado As EncabezadoClase = New EncabezadoClase
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+
     Public Sub generarReporteIngresos()
+
         Dim fechaInicial As String = Ventana_Principal.DateTimePicker_IngresosFechaInicio.Text
         Dim fechaFinal As String = Ventana_Principal.DateTimePicker_IngresosFechaFinal.Text
+
         Try
             Dim valores As List(Of IngresoClase)
             BD.ConectarBD()
             valores = BD.obtenerIngresos(fechaInicial, fechaFinal)
             BD.CerrarConexion()
 
-            'Exporting to PDF
-            Dim folderPath As String = "C:\Reportes\"
-            If Not Directory.Exists(folderPath) Then
-                Directory.CreateDirectory(folderPath)
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
             End If
 
             Dim pdfDoc As New Document()
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(folderPath & "reporteIngresos.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteIngresos.pdf", FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -47,8 +50,11 @@ Public Class Ingreso
                 pdfDoc.Add(New Paragraph("Recibo/Factura:   " + valores(contador).facturaRecibo))
                 contador = contador + 1
             End While
+
             pdfDoc.Close()
-            MessageBox.Show("Reporte generado con éxito en C:/Reportes/")
+
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
         Catch ex As Exception
             MessageBox.Show("Error de: " + ex.ToString)
         End Try
@@ -58,9 +64,11 @@ Public Class Ingreso
         Try
             Dim cantidad As Integer = Integer.Parse(Ventana_Principal.TextBox_IngresosCantidad.Text)
             Dim precioUnitario As Integer = Integer.Parse(Ventana_Principal.TextBox_IngresosPrecioUnitario.Text)
+
             Ventana_Principal.TextBox_IngresosTotal.Text = cantidad * precioUnitario
+
         Catch ex As Exception
-            MessageBox.Show("Error datos no numéricos en espacios requeridos")
+            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
     End Sub
 
@@ -94,7 +102,7 @@ Public Class Ingreso
             BD.CerrarConexion()
         Catch ex As Exception
             estado = False
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
@@ -107,7 +115,9 @@ Public Class Ingreso
         Ventana_Principal.TextBox_IngresosTotal.Text = ""
     End Sub
 
+    'Inserta un ingreso asociado a una cuenta en la BD
     Public Sub insertarIngreso()
+
         Dim valores As Integer
         Dim fecha As String = Ventana_Principal.DateTimePicker_IngresosFecha.Text
         Dim factura As String = Ventana_Principal.TextBox_IngresosFacturaRecibos.Text
@@ -120,32 +130,34 @@ Public Class Ingreso
 
         If (factura = "" Or cliente = "" Or descripcion = "" Or cantidad = "" Or
             precioUnitario = "" Or total = "" Or codCuenta = "" Or estado = False) Then
-            MessageBox.Show("Error: Espacios en blanco o datos faltantes")
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
         End If
+
         Try
             Integer.Parse(Ventana_Principal.TextBox_IngresosCantidad.Text)
             Integer.Parse(Ventana_Principal.TextBox_IngresosPrecioUnitario.Text)
             Integer.Parse(Ventana_Principal.TextBox_IngresosTotal.Text)
         Catch ex As Exception
-            MessageBox.Show("Error datos no numéricos en espacios requeridos")
+            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End Try
+
         Try
             BD.ConectarBD()
             valores = BD.insertarIngresos(fecha, cliente, descripcion, cantidad,
                                           precioUnitario, total, codCuenta, factura)
             If valores <> 0 Then
                 limpiar()
-                MessageBox.Show("Se ha realizado exitosamente")
+                MessageBox.Show(variablesGlobales.datosIngresadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             Else
-                MessageBox.Show("Error al insertar cuenta")
+                MessageBox.Show(variablesGlobales.errorIngresandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             End If
 
             BD.CerrarConexion()
+
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
-            'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 End Class

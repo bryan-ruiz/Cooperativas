@@ -21,23 +21,23 @@ Public Class Usuarios
         End If
 
         If (usuario = "" Or contrasena = "") Then
-            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
                 Dim insertado As Integer = BD.insertarUsuario(rol, usuario, contrasena, permisos)
 
                 If insertado = 1 Then
-                    MessageBox.Show(variablesGlobales.datosIngresadosConExito)
+                    MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                     limpiar()
                 Else
-                    MessageBox.Show(variablesGlobales.errorIngresandoDatos)
+                    MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     limpiar()
                 End If
                 'Muy importante cerrar conexion despues de cada consulta'
                 BD.CerrarConexion()
             Catch ex As Exception
-                MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString())
             End Try
         End If
     End Sub
@@ -48,7 +48,7 @@ Public Class Usuarios
         Dim contrasena As String = Ventana_Acceso.TextBoxContraseña.Text
         Dim singleton As Singleton = Singleton.Instance()
         If (usuario = "" Or contrasena = "") Then
-            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
@@ -57,14 +57,14 @@ Public Class Usuarios
                 If insertado.Count = 0 Then
                     limpiar()
                 Else
-                    'MessageBox.Show(insertado(0) + " " + insertado(1) + " " + insertado(2))
                     singleton.llenarConInformacion(insertado(0), insertado(2), insertado(1), insertado(3))
                     limpiar()
                 End If
-                'Muy importante cerrar conexion despues de cada consulta'
+
                 BD.CerrarConexion()
+
             Catch ex As Exception
-                MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString())
             End Try
         End If
     End Sub
@@ -76,10 +76,11 @@ Public Class Usuarios
             BD.ConectarBD()
             permisoNuevo = Convert.ToInt32(Singleton.permisos) - 1
             BD.loginNuevo(Convert.ToString(permisoNuevo), Singleton.usuario)
-            'Muy importante cerrar conexion despues de cada consulta'
+
             BD.CerrarConexion()
+
         Catch ex As Exception
-            MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString())
         End Try
     End Sub
 
@@ -95,16 +96,17 @@ Public Class Usuarios
                 Dim insertado As Integer = BD.eliminarUsuario(usuario)
 
                 If insertado = 1 Then
-                    MessageBox.Show(variablesGlobales.datosEliminadosConExito)
+                    MessageBox.Show(variablesGlobales.datosEliminadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                     limpiar()
                 Else
-                    MessageBox.Show(variablesGlobales.errorEliminandoDatos)
+                    MessageBox.Show(variablesGlobales.errorEliminandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     limpiar()
                 End If
-                'Muy importante cerrar conexion despues de cada consulta'
+
                 BD.CerrarConexion()
+
             Catch ex As Exception
-                MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString())
             End Try
         End If
     End Sub

@@ -58,7 +58,7 @@ Partial Class Ventana_Acceso
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(211, 35)
+        Me.Label1.Location = New System.Drawing.Point(211, 47)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(239, 22)
         Me.Label1.TabIndex = 145
@@ -71,7 +71,7 @@ Partial Class Ventana_Acceso
         Me.ButtonIngresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonIngresar.ForeColor = System.Drawing.Color.White
         Me.ButtonIngresar.Image = CType(resources.GetObject("ButtonIngresar.Image"), System.Drawing.Image)
-        Me.ButtonIngresar.Location = New System.Drawing.Point(178, 371)
+        Me.ButtonIngresar.Location = New System.Drawing.Point(178, 357)
         Me.ButtonIngresar.Name = "ButtonIngresar"
         Me.ButtonIngresar.Size = New System.Drawing.Size(292, 46)
         Me.ButtonIngresar.TabIndex = 3

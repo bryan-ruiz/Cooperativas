@@ -1,11 +1,14 @@
-﻿Public Class Ventana_Acceso
+﻿
 
-    Private Sub Label26_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label26.Click
+Public Class Ventana_Acceso
 
-    End Sub
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+
     Private Sub ButtonInsertar_InformacionAccidente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonIngresar.Click
+
         If (TextBoxlogin.Text = "" Or TextBoxContraseña.Text = "") Then
-            MsgBox("Debe llenar todos los campos para Ingresar")
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+
             TextBoxlogin.Text = ""
             TextBoxContraseña.Text = ""
         Else
@@ -13,8 +16,9 @@
             usuario.buscar()
             If (TextBoxlogin.Text = Singleton.usuario) Then
                 If (TextBoxContraseña.Text = Singleton.contrasena) Then
+
                     If Singleton.permisos = "0" Then
-                        MsgBox("Su licencia ha caducado. Contacte al Administrador del Sistema.")
+                        MessageBox.Show(variablesGlobales.licenciaCaducada, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                     Else
                         usuario.login()
                         Me.Hide()
@@ -22,12 +26,12 @@
                         Ventana_Principal.Refresh()
                     End If
                 Else
-                    MsgBox("El nombre de usuario o contraseña es incorrecto")
+                    MessageBox.Show(variablesGlobales.nombreUsuarioOContrasenaIncorrecto, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                     TextBoxlogin.Text = ""
                     TextBoxContraseña.Text = ""
                 End If
             Else
-                MsgBox("El nombre de usuario o contraseña es incorrecto")
+                MessageBox.Show(variablesGlobales.nombreUsuarioOContrasenaIncorrecto, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 TextBoxlogin.Text = ""
                 TextBoxContraseña.Text = ""
             End If

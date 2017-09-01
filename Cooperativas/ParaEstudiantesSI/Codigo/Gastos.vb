@@ -6,6 +6,7 @@ Public Class Gastos
     Dim BD As ConexionBD = New ConexionBD
     Dim estado As Boolean = True
     Dim encabezado As EncabezadoClase = New EncabezadoClase
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     'Calcula cantidad * precioUnitario
     Public Sub calcular()
@@ -14,7 +15,7 @@ Public Class Gastos
             Dim precioUnitario As Integer = Integer.Parse(Ventana_Principal.TextBox_GastosPrecioUnitario.Text)
             Ventana_Principal.TextBox_GastosTotal.Text = cantidad * precioUnitario
         Catch ex As Exception
-            MessageBox.Show("Error datos no numéricos en espacios requeridos")
+            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
     End Sub
 
@@ -47,7 +48,7 @@ Public Class Gastos
             BD.CerrarConexion()
         Catch ex As Exception
             estado = False
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
@@ -72,13 +73,13 @@ Public Class Gastos
         Dim codCuenta As String = Ventana_Principal.ComboBox_GastosCodCuenta.Text
 
         If (factura = "" Or cliente = "" Or descripcion = "" Or total = "" Or codCuenta = "" Or estado = False) Then
-            MessageBox.Show("No deben haber campos requeridos en blanco!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
         End If
         Try
             Integer.Parse(total)
         Catch ex As Exception
-            MessageBox.Show("Error datos no numéricos en espacios requeridos!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End Try
         Try
@@ -87,15 +88,14 @@ Public Class Gastos
                                           precioUnitario, total, codCuenta, factura)
             If valores <> 0 Then
                 limpiar()
-                MessageBox.Show("Se ha realizado exitosamente")
+                MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             Else
-                MessageBox.Show("Error al insertar cuenta")
+                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             End If
 
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
-            'MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
@@ -108,14 +108,12 @@ Public Class Gastos
             valores = BD.obtenerGastos(fechaInicial, fechaFinal)
             BD.CerrarConexion()
 
-            'Exporting to PDF
-            Dim folderPath As String = "C:\Reportes\"
-            If Not Directory.Exists(folderPath) Then
-                Directory.CreateDirectory(folderPath)
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
             End If
 
             Dim pdfDoc As New Document()
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(folderPath & "reporteGastos.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteGastos.pdf", FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -141,9 +139,9 @@ Public Class Gastos
                 contador = contador + 1
             End While
             pdfDoc.Close()
-            MessageBox.Show("Reporte generado con éxito en C:/Reportes/")
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 End Class

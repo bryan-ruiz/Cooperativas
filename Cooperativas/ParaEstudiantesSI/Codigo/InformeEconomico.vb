@@ -12,12 +12,12 @@ Public Class InformeEconomico
     Public Sub generarInformeEconomico()
 
         If Singleton.rol = "Colaborador" Then
-            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 generarInformeTabla()
             Catch ex As Exception
-                MessageBox.Show("Error de: " + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             End Try
         End If
 
@@ -25,6 +25,7 @@ Public Class InformeEconomico
 
     'Función que tiene la lógica para generar los datos requeridos para el informe económico
     Public Sub generarInformeTabla()
+
         Dim fechaDesde As Date = Ventana_Principal.InformeDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
         Dim fechaHasta As Date = Ventana_Principal.InformeDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
         'INGRESOS
@@ -39,13 +40,10 @@ Public Class InformeEconomico
         'OTROS GASTOS
         Dim totalOtrosGastos As List(Of String) = gastosTotales("Gasto", "No", fechaDesde, fechaHasta)
         Dim subTotalOtrosGastos As List(Of String) = obtenerSubTotalGastos("Gasto", "No", fechaDesde, fechaHasta)
-
         'Valores de Reservas
         Dim valoresReserva As List(Of ConfiguracionClase) = consultarValoresConfiguracion()
-
         'Afiliaciones
         Dim totalAfiliaciones As List(Of String) = obtenerTotalAfiliaciones(fechaDesde, fechaHasta)
-
         'Aportaciones o Certificados - Acum
         Dim totalAportacionesAcum As List(Of String) = obtenerAportacionesAcumuladoAnterior()
         'Aportaciones o Certificados - Total
@@ -310,10 +308,10 @@ Public Class InformeEconomico
             pdfDoc.Add(table)
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
@@ -325,16 +323,14 @@ Public Class InformeEconomico
             BD.ConectarBD()
             valores = BD.obtenerInformeIngresosTotales(ingresoOGasto, esProyProductivo, "#" + fechaDesde + "#", "#" + fechaHasta + "#")
             If valores.Count <> 0 Then
-                'llenarDatos(valores)
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos)
-                'limpiar()
+                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             Return ""
         End Try
     End Function
@@ -346,17 +342,16 @@ Public Class InformeEconomico
         Try
             BD.ConectarBD()
             valores = BD.obtenerInformeGastosTotales(ingresoOGasto, esProyProductivo, "#" + fechaDesde + "#", "#" + fechaHasta + "#")
+
             If valores.Count <> 0 Then
-                'llenarDatos(valores)
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos)
-                'limpiar()
+                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             Return ""
         End Try
     End Function
@@ -369,16 +364,14 @@ Public Class InformeEconomico
             BD.ConectarBD()
             valores = BD.obtenerSubTotalIngresos(ingresoOGasto, proyectoProd, "#" + fechaDesde + "#", "#" + fechaHasta + "#")
             If valores.Count <> 0 Then
-                'llenarDatos(valores)
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos)
-                'limpiar()
+                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             Return ""
         End Try
     End Function
@@ -391,16 +384,14 @@ Public Class InformeEconomico
             BD.ConectarBD()
             valores = BD.obtenerSubTotalGastos(ingresoOGasto, proyectoProd, "#" + fechaDesde + "#", "#" + fechaHasta + "#")
             If valores.Count <> 0 Then
-                'llenarDatos(valores)
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos)
-                'limpiar()
+                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             Return ""
         End Try
     End Function
@@ -414,12 +405,12 @@ Public Class InformeEconomico
             If valores.Count <> 0 Then
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos)
+                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             Return ""
         End Try
     End Function
@@ -431,16 +422,14 @@ Public Class InformeEconomico
             BD.ConectarBD()
             valores = BD.obtenerTotalAfiliaciones("#" + fechaDesde + "#", "#" + fechaHasta + "#")
             If valores.Count <> 0 Then
-                'llenarDatos(valores)
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos)
-                'limpiar()
+                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             Return ""
         End Try
     End Function
@@ -451,16 +440,14 @@ Public Class InformeEconomico
             BD.ConectarBD()
             valores = BD.obtenerAportacionesAcumuladoAnterior()
             If valores.Count <> 0 Then
-                'llenarDatos(valores)
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos)
-                'limpiar()
+                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             Return ""
         End Try
     End Function
@@ -472,16 +459,14 @@ Public Class InformeEconomico
             BD.ConectarBD()
             valores = BD.obtenerAportacionesTotal()
             If valores.Count <> 0 Then
-                'llenarDatos(valores)
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos)
-                'limpiar()
+                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             Return ""
         End Try
     End Function

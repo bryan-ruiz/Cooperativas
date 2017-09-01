@@ -167,11 +167,15 @@ Public Class Ventana_Principal
     End Sub
 
     Private Sub CertificadosButtonComprobante_Click(sender As Object, e As EventArgs) Handles CertificadosButtonComprobante.Click
-
+        certificados.comprobante()
     End Sub
 
     Private Sub CertificadosButtonCerrarPeriodo_Click(sender As Object, e As EventArgs) Handles CertificadosButtonCerrarPeriodo.Click
         certificados.cerrarCertificado()
+    End Sub
+
+    Private Sub CertificadosButtonLimpiar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonLimpiar.Click
+        certificados.limpiar()
     End Sub
 
 

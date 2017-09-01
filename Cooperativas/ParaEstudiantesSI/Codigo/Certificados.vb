@@ -15,7 +15,7 @@ Public Class Certificados
         Dim cedulaOnumAsociado As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
 
         If (cedulaOnumAsociado = "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado)
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
@@ -41,28 +41,33 @@ Public Class Certificados
                     consultarFechasLimite()
 
                 Else
-                    MessageBox.Show(variablesGlobales.noExistenDatos)
+                    MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                     Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text = ""
                 End If
-                'Cierro conexion'
+
                 BD.CerrarConexion()
+
             Catch ex As Exception
-                MessageBox.Show("Error de: " + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
             End Try
         End If
     End Sub
 
     'Cierra el periodo para Certificados
     Public Sub cerrarCertificado()
+
         Dim monto As String = "0"
         Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+
         Try
             BD.ConectarBD()
             Dim hecho As Integer = BD.sumarTractosEnCertificados(cedula)
+
             If hecho = 0 Then
                 BD.cerrarCertificado(cedula, hecho, monto)
             Else
-                MessageBox.Show(variablesGlobales.datosActualizadosConExito)
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
                 Ventana_Principal.CertificadosTextboxTracto1.Text = "0"
                 Ventana_Principal.CertificadosTextboxTracto2.Text = "0"
                 Ventana_Principal.CertificadosTextboxTracto3.Text = "0"
@@ -75,34 +80,38 @@ Public Class Certificados
                 Ventana_Principal.CertificadosTextboxTracto10.Text = "0"
                 Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = "0"
                 Ventana_Principal.CertificadosTextboxAcumAnterior.Text = hecho
+
                 BD.cerrarCertificado(cedula, hecho, monto)
+
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
     'sumar tractos
     Public Sub sumarTractosEnCertificados()
         Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+
         Try
             BD.ConectarBD()
             Dim hecho As Integer = BD.sumarTractosEnCertificados(cedula)
+
             If hecho = 0 Then
-                'MessageBox.Show("Ha ocurrido un error.")
                 Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = hecho
             Else
                 Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = hecho
                 hecho = BD.totalEnCertificado(cedula, CStr(hecho))
                 If hecho = 0 Then
-                    MessageBox.Show(variablesGlobales.errorActualizandoDatos)
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                 End If
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
+
     End Sub
 
     'Update tracto with value "numeroTracto"
@@ -136,13 +145,13 @@ Public Class Certificados
             BD.ConectarBD()
             Dim hecho As Integer = BD.actualizarTracto(numeroTracto, cedula, monto)
             If hecho = 0 Then
-                MessageBox.Show(variablesGlobales.errorActualizandoDatos)
+                MessageBox.Show(variablesGlobales.errorActualizandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Else
-                MessageBox.Show(variablesGlobales.datosActualizadosConExito)
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
@@ -155,11 +164,11 @@ Public Class Certificados
             If fechas.Count <> 0 Then
                 llenarDatosFechaLimite(fechas)
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos)
+                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
 
@@ -200,14 +209,102 @@ Public Class Certificados
     'Valida la fecha del tracto y llama a actualizar tracto
     Public Sub validarTracto(ByVal numTracto As String, ByVal fecha As DateTime)
         If validarFecha(fecha) Then
-            MessageBox.Show(variablesGlobales.errorFechaLimiteMenorActual)
+            MessageBox.Show(variablesGlobales.errorFechaLimiteMenorActual, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         Else
             editarTracto(numTracto)
             sumarTractosEnCertificados()
         End If
     End Sub
 
+    Public Sub limpiar()
+        Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text = ""
+        Ventana_Principal.CertificadosTextboxNombre.Text = ""
+        Ventana_Principal.CertificadosTextboxPrimerApellido.Text = ""
+        Ventana_Principal.CertificadosTextboxSegundoApellido.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto1.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto2.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto3.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto4.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto5.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto6.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto7.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto8.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto9.Text = ""
+        Ventana_Principal.CertificadosTextboxTracto10.Text = ""
+        Ventana_Principal.CertificadosTextboxAcumAnterior.Text = ""
+        Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = ""
+    End Sub
 
+    'Genera un reporte con los datos de aportaciones actuales de un socio
+    Public Sub comprobante()
+        Dim cedulaOnumAsociado As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+        Dim nombre As String = Ventana_Principal.CertificadosTextboxNombre.Text
+        Dim primerApellido As String = Ventana_Principal.CertificadosTextboxPrimerApellido.Text
+        Dim segundoApellido As String = Ventana_Principal.CertificadosTextboxSegundoApellido.Text
+        Dim tracto1 As String = Ventana_Principal.CertificadosTextboxTracto1.Text
+        Dim tracto2 As String = Ventana_Principal.CertificadosTextboxTracto2.Text
+        Dim tracto3 As String = Ventana_Principal.CertificadosTextboxTracto3.Text
+        Dim tracto4 As String = Ventana_Principal.CertificadosTextboxTracto4.Text
+        Dim tracto5 As String = Ventana_Principal.CertificadosTextboxTracto5.Text
+        Dim tracto6 As String = Ventana_Principal.CertificadosTextboxTracto6.Text
+        Dim tracto7 As String = Ventana_Principal.CertificadosTextboxTracto7.Text
+        Dim tracto8 As String = Ventana_Principal.CertificadosTextboxTracto8.Text
+        Dim tracto9 As String = Ventana_Principal.CertificadosTextboxTracto9.Text
+        Dim tracto10 As String = Ventana_Principal.CertificadosTextboxTracto10.Text
+        Dim acum As String = Ventana_Principal.CertificadosTextboxAcumAnterior.Text
+        Dim total As String = Ventana_Principal.CertificadosTextboxTotalPeriodo.Text
+
+
+        If (cedulaOnumAsociado = "" Or nombre = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Else
+            Try
+                If Not Directory.Exists(variablesGlobales.folderPath) Then
+                    Directory.CreateDirectory(variablesGlobales.folderPath)
+                End If
+
+                Dim pdfDoc As New Document()
+                Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "comprobanteCertificados.pdf", FileMode.Create))
+
+                pdfDoc.Open()
+
+                encabezado.consultarDatos()
+                encabezado.encabezado(pdfWrite, pdfDoc)
+                Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL)
+
+                pdfDoc.Add(New Paragraph("                                                                 Comprobante de Aportaciones ", FontStype))
+                pdfDoc.Add(New Paragraph(""))
+                pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(New Paragraph(" "))
+
+                pdfDoc.Add(New Paragraph("Cédula o Num de Asociado:   " + cedulaOnumAsociado, FontStype))
+                pdfDoc.Add(New Paragraph("Nombre completo:  " + nombre + " " + primerApellido + " " + segundoApellido, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #1:  " + tracto1, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #2:  " + tracto2, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #3:  " + tracto3, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #4:  " + tracto4, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #5:  " + tracto5, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #6:  " + tracto6, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #7:  " + tracto7, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #8:  " + tracto8, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #9:  " + tracto9, FontStype))
+                pdfDoc.Add(New Paragraph("Tracto #10:  " + tracto10, FontStype))
+                pdfDoc.Add(New Paragraph("Total del Periodo:  " + total, FontStype))
+                pdfDoc.Add(New Paragraph("Acumulado Anterior:  " + acum, FontStype))
+
+                pdfDoc.Close()
+
+                MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                Print.Show()
+
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            End Try
+        End If
+
+    End Sub
 
 
 End Class

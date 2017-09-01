@@ -379,6 +379,7 @@ Partial Class Ventana_Principal
         Me.Label136 = New System.Windows.Forms.Label()
         Me.CoopeBDDataSet = New Cooperativas.CoopeBDDataSet()
         Me.CoopeBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CertificadosButtonLimpiar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -2038,6 +2039,7 @@ Partial Class Ventana_Principal
         Me.GroupBox3.BackColor = System.Drawing.Color.White
         Me.GroupBox3.BackgroundImage = Global.Cooperativas.My.Resources.Resources.fondo
         Me.GroupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox3.Controls.Add(Me.CertificadosButtonLimpiar)
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto10)
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto9)
         Me.GroupBox3.Controls.Add(Me.CertificadosButtonSaveTracto8)
@@ -2249,9 +2251,9 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonCerrarPeriodo.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonCerrarPeriodo.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonCerrarPeriodo.Image = CType(resources.GetObject("CertificadosButtonCerrarPeriodo.Image"), System.Drawing.Image)
-        Me.CertificadosButtonCerrarPeriodo.Location = New System.Drawing.Point(777, 174)
+        Me.CertificadosButtonCerrarPeriodo.Location = New System.Drawing.Point(777, 222)
         Me.CertificadosButtonCerrarPeriodo.Name = "CertificadosButtonCerrarPeriodo"
-        Me.CertificadosButtonCerrarPeriodo.Size = New System.Drawing.Size(152, 40)
+        Me.CertificadosButtonCerrarPeriodo.Size = New System.Drawing.Size(176, 43)
         Me.CertificadosButtonCerrarPeriodo.TabIndex = 216
         Me.CertificadosButtonCerrarPeriodo.Text = "Cerrar Periodo"
         Me.CertificadosButtonCerrarPeriodo.UseVisualStyleBackColor = False
@@ -2274,7 +2276,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxCedulaNumAsociado.Location = New System.Drawing.Point(456, 39)
         Me.CertificadosTextboxCedulaNumAsociado.Name = "CertificadosTextboxCedulaNumAsociado"
         Me.CertificadosTextboxCedulaNumAsociado.Size = New System.Drawing.Size(236, 22)
-        Me.CertificadosTextboxCedulaNumAsociado.TabIndex = 214
+        Me.CertificadosTextboxCedulaNumAsociado.TabIndex = 1
         '
         'CertificadosDateTimePickerFecha10
         '
@@ -2539,7 +2541,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto10.Location = New System.Drawing.Point(190, 575)
         Me.CertificadosTextboxTracto10.Name = "CertificadosTextboxTracto10"
         Me.CertificadosTextboxTracto10.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto10.TabIndex = 189
+        Me.CertificadosTextboxTracto10.TabIndex = 14
         '
         'Label86
         '
@@ -2559,7 +2561,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto9.Location = New System.Drawing.Point(190, 534)
         Me.CertificadosTextboxTracto9.Name = "CertificadosTextboxTracto9"
         Me.CertificadosTextboxTracto9.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto9.TabIndex = 185
+        Me.CertificadosTextboxTracto9.TabIndex = 13
         '
         'Label84
         '
@@ -2579,7 +2581,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto8.Location = New System.Drawing.Point(190, 492)
         Me.CertificadosTextboxTracto8.Name = "CertificadosTextboxTracto8"
         Me.CertificadosTextboxTracto8.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto8.TabIndex = 181
+        Me.CertificadosTextboxTracto8.TabIndex = 12
         '
         'Label51
         '
@@ -2599,7 +2601,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto7.Location = New System.Drawing.Point(190, 452)
         Me.CertificadosTextboxTracto7.Name = "CertificadosTextboxTracto7"
         Me.CertificadosTextboxTracto7.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto7.TabIndex = 177
+        Me.CertificadosTextboxTracto7.TabIndex = 11
         '
         'Label49
         '
@@ -2619,7 +2621,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto6.Location = New System.Drawing.Point(190, 409)
         Me.CertificadosTextboxTracto6.Name = "CertificadosTextboxTracto6"
         Me.CertificadosTextboxTracto6.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto6.TabIndex = 173
+        Me.CertificadosTextboxTracto6.TabIndex = 10
         '
         'Label47
         '
@@ -2639,7 +2641,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto5.Location = New System.Drawing.Point(190, 367)
         Me.CertificadosTextboxTracto5.Name = "CertificadosTextboxTracto5"
         Me.CertificadosTextboxTracto5.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto5.TabIndex = 169
+        Me.CertificadosTextboxTracto5.TabIndex = 9
         '
         'Label45
         '
@@ -2659,7 +2661,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto4.Location = New System.Drawing.Point(190, 326)
         Me.CertificadosTextboxTracto4.Name = "CertificadosTextboxTracto4"
         Me.CertificadosTextboxTracto4.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto4.TabIndex = 165
+        Me.CertificadosTextboxTracto4.TabIndex = 8
         '
         'Label42
         '
@@ -2679,7 +2681,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto3.Location = New System.Drawing.Point(190, 286)
         Me.CertificadosTextboxTracto3.Name = "CertificadosTextboxTracto3"
         Me.CertificadosTextboxTracto3.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto3.TabIndex = 161
+        Me.CertificadosTextboxTracto3.TabIndex = 7
         '
         'Label34
         '
@@ -2699,7 +2701,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto2.Location = New System.Drawing.Point(190, 247)
         Me.CertificadosTextboxTracto2.Name = "CertificadosTextboxTracto2"
         Me.CertificadosTextboxTracto2.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto2.TabIndex = 157
+        Me.CertificadosTextboxTracto2.TabIndex = 6
         '
         'Label29
         '
@@ -2719,7 +2721,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxTracto1.Location = New System.Drawing.Point(190, 209)
         Me.CertificadosTextboxTracto1.Name = "CertificadosTextboxTracto1"
         Me.CertificadosTextboxTracto1.Size = New System.Drawing.Size(154, 22)
-        Me.CertificadosTextboxTracto1.TabIndex = 153
+        Me.CertificadosTextboxTracto1.TabIndex = 5
         '
         'Label28
         '
@@ -2740,9 +2742,9 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonConsultar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonConsultar.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonConsultar.Image = CType(resources.GetObject("CertificadosButtonConsultar.Image"), System.Drawing.Image)
-        Me.CertificadosButtonConsultar.Location = New System.Drawing.Point(777, 61)
+        Me.CertificadosButtonConsultar.Location = New System.Drawing.Point(777, 67)
         Me.CertificadosButtonConsultar.Name = "CertificadosButtonConsultar"
-        Me.CertificadosButtonConsultar.Size = New System.Drawing.Size(152, 40)
+        Me.CertificadosButtonConsultar.Size = New System.Drawing.Size(176, 43)
         Me.CertificadosButtonConsultar.TabIndex = 141
         Me.CertificadosButtonConsultar.Text = "Consultar"
         Me.CertificadosButtonConsultar.UseVisualStyleBackColor = False
@@ -2765,7 +2767,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxNombre.Location = New System.Drawing.Point(456, 67)
         Me.CertificadosTextboxNombre.Name = "CertificadosTextboxNombre"
         Me.CertificadosTextboxNombre.Size = New System.Drawing.Size(236, 22)
-        Me.CertificadosTextboxNombre.TabIndex = 101
+        Me.CertificadosTextboxNombre.TabIndex = 2
         '
         'Label38
         '
@@ -2785,7 +2787,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxPrimerApellido.Location = New System.Drawing.Point(456, 95)
         Me.CertificadosTextboxPrimerApellido.Name = "CertificadosTextboxPrimerApellido"
         Me.CertificadosTextboxPrimerApellido.Size = New System.Drawing.Size(236, 22)
-        Me.CertificadosTextboxPrimerApellido.TabIndex = 102
+        Me.CertificadosTextboxPrimerApellido.TabIndex = 3
         '
         'CertificadosTextboxSegundoApellido
         '
@@ -2793,7 +2795,7 @@ Partial Class Ventana_Principal
         Me.CertificadosTextboxSegundoApellido.Location = New System.Drawing.Point(457, 123)
         Me.CertificadosTextboxSegundoApellido.Name = "CertificadosTextboxSegundoApellido"
         Me.CertificadosTextboxSegundoApellido.Size = New System.Drawing.Size(236, 22)
-        Me.CertificadosTextboxSegundoApellido.TabIndex = 103
+        Me.CertificadosTextboxSegundoApellido.TabIndex = 4
         '
         'Label39
         '
@@ -2813,9 +2815,9 @@ Partial Class Ventana_Principal
         Me.CertificadosButtonComprobante.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonComprobante.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonComprobante.Image = CType(resources.GetObject("CertificadosButtonComprobante.Image"), System.Drawing.Image)
-        Me.CertificadosButtonComprobante.Location = New System.Drawing.Point(777, 117)
+        Me.CertificadosButtonComprobante.Location = New System.Drawing.Point(777, 119)
         Me.CertificadosButtonComprobante.Name = "CertificadosButtonComprobante"
-        Me.CertificadosButtonComprobante.Size = New System.Drawing.Size(152, 40)
+        Me.CertificadosButtonComprobante.Size = New System.Drawing.Size(176, 43)
         Me.CertificadosButtonComprobante.TabIndex = 117
         Me.CertificadosButtonComprobante.Text = "Comprobante"
         Me.CertificadosButtonComprobante.UseVisualStyleBackColor = False
@@ -4254,6 +4256,19 @@ Partial Class Ventana_Principal
         Me.CoopeBDDataSetBindingSource.DataSource = Me.CoopeBDDataSet
         Me.CoopeBDDataSetBindingSource.Position = 0
         '
+        'CertificadosButtonLimpiar
+        '
+        Me.CertificadosButtonLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonLimpiar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonLimpiar.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonLimpiar.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.CertificadosButtonLimpiar.Location = New System.Drawing.Point(777, 170)
+        Me.CertificadosButtonLimpiar.Name = "CertificadosButtonLimpiar"
+        Me.CertificadosButtonLimpiar.Size = New System.Drawing.Size(176, 43)
+        Me.CertificadosButtonLimpiar.TabIndex = 252
+        Me.CertificadosButtonLimpiar.Text = "Limpiar"
+        Me.CertificadosButtonLimpiar.UseVisualStyleBackColor = False
+        '
         'Ventana_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4661,4 +4676,5 @@ Partial Class Ventana_Principal
     Friend WithEvents Label141 As Label
     Friend WithEvents Label144 As Label
     Friend WithEvents SociosButtonLimpiar As Button
+    Friend WithEvents CertificadosButtonLimpiar As Button
 End Class
