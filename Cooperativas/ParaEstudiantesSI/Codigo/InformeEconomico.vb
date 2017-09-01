@@ -37,6 +37,13 @@ Public Class InformeEconomico
         'Valores de Reservas
         Dim valoresReserva As List(Of ConfiguracionClase) = consultarValoresConfiguracion()
 
+        'Afiliaciones
+        Dim totalAfiliaciones As List(Of String) = obtenerTotalAfiliaciones(fechaDesde, fechaHasta)
+
+        'Aportaciones o Certificados - Acum
+        Dim totalAportacionesAcum As List(Of String) = obtenerAportacionesAcumuladoAnterior()
+        'Aportaciones o Certificados - Total
+        Dim totalAportacionesTotal As List(Of String) = obtenerAportacionesTotal()
 
         Try
             If Not Directory.Exists(variablesGlobales.folderPath) Then
@@ -169,11 +176,11 @@ Public Class InformeEconomico
             Next
 
             table.AddCell("Aportaciones")
-            Dim subTotalAportaciones As Integer = Integer.Parse("1500") ' consulta a BD para aportaciones
+            Dim subTotalAportaciones As Integer = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
             table.AddCell(Convert.ToString(subTotalAportaciones))
 
             table.AddCell("Afiliaciones")
-            Dim subTotalAfiliaciones As Integer = Integer.Parse("800") ' consulta a BD para afiliaciones
+            Dim subTotalAfiliaciones As Integer = Integer.Parse(totalAfiliaciones.Item(0))
             table.AddCell(Convert.ToString(subTotalAfiliaciones))
 
 
@@ -181,9 +188,6 @@ Public Class InformeEconomico
             Dim subTotalOtrosIngresosInt As Integer = Integer.Parse(subTotalOtrosIngresos.Item(0)) + subTotalAportaciones + subTotalAfiliaciones
             table.AddCell(Convert.ToString(subTotalOtrosIngresosInt))
 
-            'For Each value In subTotalOtrosIngresos
-            'table.AddCell(value)
-            'Next
 
             '///// DIV /////
             table.AddCell(divisor)
@@ -405,6 +409,68 @@ Public Class InformeEconomico
                 Return valores
             Else
                 MessageBox.Show(variablesGlobales.noExistenDatos)
+                Return ""
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+            Return ""
+        End Try
+    End Function
+
+    'total afiliaciones o matricula
+    Public Function obtenerTotalAfiliaciones(ByVal fechaDesde As Date, ByVal fechaHasta As Date)
+        Dim valores As List(Of String)
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerTotalAfiliaciones("#" + fechaDesde + "#", "#" + fechaHasta + "#")
+            If valores.Count <> 0 Then
+                'llenarDatos(valores)
+                Return valores
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos)
+                'limpiar()
+                Return ""
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+            Return ""
+        End Try
+    End Function
+
+    Public Function obtenerAportacionesAcumuladoAnterior()
+        Dim valores As List(Of String)
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerAportacionesAcumuladoAnterior()
+            If valores.Count <> 0 Then
+                'llenarDatos(valores)
+                Return valores
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos)
+                'limpiar()
+                Return ""
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+            Return ""
+        End Try
+    End Function
+
+    'Total certificados o aportaciones
+    Public Function obtenerAportacionesTotal()
+        Dim valores As List(Of String)
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerAportacionesTotal()
+            If valores.Count <> 0 Then
+                'llenarDatos(valores)
+                Return valores
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos)
+                'limpiar()
                 Return ""
             End If
             BD.CerrarConexion()

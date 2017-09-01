@@ -963,4 +963,96 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerTotalAfiliaciones(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = "SELECT Sum(SOCIOS.cuotaMatricula) As suma 
+                    FROM SOCIOS
+                    WHERE SOCIOS.fechaIngreso BETWEEN #" & fechaDesde & "# And #" & fechaHasta & "# "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function obtenerAportacionesAcumuladoAnterior() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(CERTIFICADOS.acumuladoAnterior) As acum 
+                    FROM CERTIFICADOS "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+
+    Function obtenerAportacionesTotal() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(CERTIFICADOS.total) As total 
+                                FROM CERTIFICADOS "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
 End Class
