@@ -47,6 +47,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\..\Downloads\itextsharp-all-5.5.10\itextsharp.xfaworker-dll-5.5.10\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\..\..\Downloads\itextsharp-all-5.5.10\itextsharp-dll-pdfa\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\..\..\..\Downloads\itextsharp-all-5.5.10\itextsharp-dll-xtra\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -73,6 +82,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ComiteClase.vb" />
+    <Compile Include="Clases\ConfiguracionClase.vb" />
+    <Compile Include="Clases\CuentaClase.vb" />
+    <Compile Include="Clases\EncabezadoClase.vb" />
+    <Compile Include="Clases\GastoClase.vb" />
+    <Compile Include="Clases\IngresoClase.vb" />
+    <Compile Include="Clases\Singleton.vb" />
+    <Compile Include="Clases\SocioClase.vb" />
+    <Compile Include="Codigo\Certificados.vb" />
+    <Compile Include="Codigo\Comites.vb" />
+    <Compile Include="Codigo\ConexionBD.vb" />
+    <Compile Include="Codigo\Configuracion.vb" />
+    <Compile Include="Codigo\Gastos.vb" />
+    <Compile Include="Codigo\InformeEconomico.vb" />
+    <Compile Include="Codigo\Ingreso.vb" />
+    <Compile Include="Codigo\MensajesGlobales.vb" />
+    <Compile Include="Codigo\Socios.vb" />
+    <Compile Include="Codigo\Usuarios.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +282,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
