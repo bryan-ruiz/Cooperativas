@@ -1,6 +1,6 @@
-﻿Public Class Form1
+﻿Public Class Principal
     Private Sub GestionUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionUsuariosToolStripMenuItem.Click
-        Form2.Show()
+        Asociados.Show()
     End Sub
 
     Private Sub ComitésToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComitésToolStripMenuItem.Click

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form2
+Partial Class Asociados
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,40 +22,28 @@ Partial Class Form2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Asociados))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBoxSociosConsultarAsociado = New System.Windows.Forms.TextBox()
+        Me.ButtonAsociadosBuscar = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -75,18 +63,36 @@ Partial Class Form2
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroDeAsociadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.RegistroDeAsociadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextBoxSociosCedula = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.TextBoxSociosCedula2 = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosCedula3 = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosNumAsociado = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosTelefono2 = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosNombre = New System.Windows.Forms.TextBox()
+        Me.DateTimeSociosFechaNacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.TextBoxSocios1erApellido = New System.Windows.Forms.TextBox()
+        Me.TextBoxSocios2doApellido = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosTelefono = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.DateTimeSociosFechaIngreso = New System.Windows.Forms.DateTimePicker()
+        Me.TextBoxSociosOcupacionEspecialidad = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosSeccion = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosCuotaMatricula = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosResponsable = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosDireccion = New System.Windows.Forms.TextBox()
+        Me.TextBoxSociosBeneficiario = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -103,29 +109,29 @@ Partial Class Form2
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Consultar Asociado"
         '
-        'TextBox1
+        'TextBoxSociosConsultarAsociado
         '
-        Me.TextBox1.Location = New System.Drawing.Point(10, 52)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(177, 22)
-        Me.TextBox1.TabIndex = 1
+        Me.TextBoxSociosConsultarAsociado.Location = New System.Drawing.Point(10, 52)
+        Me.TextBoxSociosConsultarAsociado.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.TextBoxSociosConsultarAsociado.Name = "TextBoxSociosConsultarAsociado"
+        Me.TextBoxSociosConsultarAsociado.Size = New System.Drawing.Size(177, 22)
+        Me.TextBoxSociosConsultarAsociado.TabIndex = 1
         '
-        'Button1
+        'ButtonAsociadosBuscar
         '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(47, 83)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(88, 27)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ButtonAsociadosBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ButtonAsociadosBuscar.Location = New System.Drawing.Point(47, 83)
+        Me.ButtonAsociadosBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonAsociadosBuscar.Name = "ButtonAsociadosBuscar"
+        Me.ButtonAsociadosBuscar.Size = New System.Drawing.Size(88, 27)
+        Me.ButtonAsociadosBuscar.TabIndex = 2
+        Me.ButtonAsociadosBuscar.Text = "Buscar"
+        Me.ButtonAsociadosBuscar.UseVisualStyleBackColor = True
         '
         'Button2
         '
         Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Location = New System.Drawing.Point(47, 168)
+        Me.Button2.Location = New System.Drawing.Point(47, 163)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(88, 27)
@@ -138,83 +144,51 @@ Partial Class Form2
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Baskerville Old Face", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(23, 145)
+        Me.Label2.Location = New System.Drawing.Point(23, 140)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(124, 18)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Ingresar Asociado"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(452, 105)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox2.TabIndex = 7
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label3.Location = New System.Drawing.Point(282, 107)
+        Me.Label3.Location = New System.Drawing.Point(315, 107)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(154, 16)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Numero de Asociado"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(452, 137)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox3.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label4.Location = New System.Drawing.Point(282, 139)
+        Me.Label4.Location = New System.Drawing.Point(315, 139)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 16)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Nombre"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(452, 169)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox4.TabIndex = 9
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label5.Location = New System.Drawing.Point(282, 174)
+        Me.Label5.Location = New System.Drawing.Point(315, 174)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(115, 16)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Primer Apellido"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(452, 201)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox5.TabIndex = 10
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label6.Location = New System.Drawing.Point(282, 206)
+        Me.Label6.Location = New System.Drawing.Point(315, 206)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(132, 16)
         Me.Label6.TabIndex = 11
@@ -225,26 +199,18 @@ Partial Class Form2
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label7.Location = New System.Drawing.Point(282, 239)
+        Me.Label7.Location = New System.Drawing.Point(315, 238)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(155, 16)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Fecha de Nacimiento"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(452, 270)
-        Me.TextBox7.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox7.TabIndex = 12
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label8.Location = New System.Drawing.Point(282, 274)
+        Me.Label8.Location = New System.Drawing.Point(315, 271)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(70, 16)
         Me.Label8.TabIndex = 15
@@ -255,45 +221,29 @@ Partial Class Form2
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label9.Location = New System.Drawing.Point(282, 309)
+        Me.Label9.Location = New System.Drawing.Point(315, 304)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(115, 16)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Cuota Matricula"
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(452, 339)
-        Me.TextBox9.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox9.TabIndex = 14
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label10.Location = New System.Drawing.Point(282, 342)
+        Me.Label10.Location = New System.Drawing.Point(315, 337)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(101, 16)
         Me.Label10.TabIndex = 19
         Me.Label10.Text = "Responsable"
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Location = New System.Drawing.Point(452, 375)
-        Me.TextBox10.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox10.TabIndex = 15
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label11.Location = New System.Drawing.Point(282, 378)
+        Me.Label11.Location = New System.Drawing.Point(315, 369)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(91, 16)
         Me.Label11.TabIndex = 21
@@ -304,26 +254,18 @@ Partial Class Form2
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label12.Location = New System.Drawing.Point(282, 414)
+        Me.Label12.Location = New System.Drawing.Point(315, 399)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(129, 16)
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "Fecha de Ingreso"
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Location = New System.Drawing.Point(452, 448)
-        Me.TextBox12.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox12.TabIndex = 17
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label13.Location = New System.Drawing.Point(282, 451)
+        Me.Label13.Location = New System.Drawing.Point(315, 428)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(64, 16)
         Me.Label13.TabIndex = 25
@@ -334,31 +276,19 @@ Partial Class Form2
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label14.Location = New System.Drawing.Point(282, 488)
+        Me.Label14.Location = New System.Drawing.Point(315, 460)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(132, 16)
         Me.Label14.TabIndex = 27
         Me.Label14.Text = "Tipo de Asociado"
         '
-        'Button3
-        '
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button3.Location = New System.Drawing.Point(1042, 467)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(114, 35)
-        Me.Button3.TabIndex = 31
-        Me.Button3.Text = "Guardar"
-        Me.Button3.UseVisualStyleBackColor = True
-        Me.Button3.Visible = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(27, 378)
+        Me.PictureBox1.Location = New System.Drawing.Point(35, 402)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(219, 187)
+        Me.PictureBox1.Size = New System.Drawing.Size(195, 170)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 32
         Me.PictureBox1.TabStop = False
@@ -379,60 +309,30 @@ Partial Class Form2
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Baskerville Old Face", 14.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label18.Location = New System.Drawing.Point(428, 45)
+        Me.Label18.Location = New System.Drawing.Point(480, 37)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(286, 22)
+        Me.Label18.Size = New System.Drawing.Size(277, 22)
         Me.Label18.TabIndex = 34
-        Me.Label18.Text = "Información Genereal del Asociado"
-        '
-        'TextBox14
-        '
-        Me.TextBox14.Location = New System.Drawing.Point(452, 72)
-        Me.TextBox14.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox14.TabIndex = 6
-        Me.TextBox14.Visible = False
+        Me.Label18.Text = "Información General del Asociado"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label19.Location = New System.Drawing.Point(282, 79)
+        Me.Label19.Location = New System.Drawing.Point(315, 79)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(137, 16)
         Me.Label19.TabIndex = 36
         Me.Label19.Text = "Numero de Cedula"
         Me.Label19.Visible = False
         '
-        'Button4
-        '
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button4.Location = New System.Drawing.Point(1042, 464)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(114, 40)
-        Me.Button4.TabIndex = 34
-        Me.Button4.Text = "Actualizar "
-        Me.Button4.UseVisualStyleBackColor = True
-        Me.Button4.Visible = False
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Location = New System.Drawing.Point(452, 519)
-        Me.TextBox15.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.TextBox15.Multiline = True
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(409, 58)
-        Me.TextBox15.TabIndex = 19
-        '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label20.Location = New System.Drawing.Point(282, 522)
+        Me.Label20.Location = New System.Drawing.Point(315, 494)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(125, 16)
         Me.Label20.TabIndex = 38
@@ -613,10 +513,16 @@ Partial Class Form2
         Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 19)
         Me.InformaciónToolStripMenuItem.Text = "Información"
         '
+        'RegistroDeAsociadosToolStripMenuItem
+        '
+        Me.RegistroDeAsociadosToolStripMenuItem.Name = "RegistroDeAsociadosToolStripMenuItem"
+        Me.RegistroDeAsociadosToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.RegistroDeAsociadosToolStripMenuItem.Text = "Registro de Asociados"
+        '
         'Button5
         '
         Me.Button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button5.Location = New System.Drawing.Point(47, 257)
+        Me.Button5.Location = New System.Drawing.Point(47, 293)
         Me.Button5.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(88, 27)
@@ -629,7 +535,7 @@ Partial Class Form2
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Baskerville Old Face", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label24.Location = New System.Drawing.Point(20, 234)
+        Me.Label24.Location = New System.Drawing.Point(20, 270)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(167, 18)
         Me.Label24.TabIndex = 51
@@ -637,9 +543,11 @@ Partial Class Form2
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Controls.Add(Me.Button6)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.TextBoxSociosConsultarAsociado)
+        Me.GroupBox1.Controls.Add(Me.ButtonAsociadosBuscar)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button5)
@@ -649,27 +557,31 @@ Partial Class Form2
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(201, 313)
+        Me.GroupBox1.Size = New System.Drawing.Size(201, 340)
         Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
         '
-        'ComboBox1
+        'Label15
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(452, 305)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(409, 24)
-        Me.ComboBox1.TabIndex = 13
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Baskerville Old Face", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label15.Location = New System.Drawing.Point(23, 206)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(135, 18)
+        Me.Label15.TabIndex = 52
+        Me.Label15.Text = "Actualizar Asociado"
         '
-        'ComboBox2
+        'Button6
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(452, 483)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(409, 24)
-        Me.ComboBox2.TabIndex = 18
+        Me.Button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button6.Location = New System.Drawing.Point(47, 229)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(88, 27)
+        Me.Button6.TabIndex = 53
+        Me.Button6.Text = "Actualizar"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Label26
         '
@@ -702,22 +614,6 @@ Partial Class Form2
         Me.DateTimePicker1.Size = New System.Drawing.Size(346, 22)
         Me.DateTimePicker1.TabIndex = 32
         '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(452, 414)
-        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(4)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(409, 22)
-        Me.DateTimePicker2.TabIndex = 16
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(452, 237)
-        Me.DateTimePicker3.Margin = New System.Windows.Forms.Padding(4)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(409, 22)
-        Me.DateTimePicker3.TabIndex = 11
-        '
         'TextBox6
         '
         Me.TextBox6.Enabled = False
@@ -728,71 +624,247 @@ Partial Class Form2
         Me.TextBox6.Size = New System.Drawing.Size(346, 99)
         Me.TextBox6.TabIndex = 33
         '
-        'RegistroDeAsociadosToolStripMenuItem
+        'TextBoxSociosCedula
         '
-        Me.RegistroDeAsociadosToolStripMenuItem.Name = "RegistroDeAsociadosToolStripMenuItem"
-        Me.RegistroDeAsociadosToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.RegistroDeAsociadosToolStripMenuItem.Text = "Registro de Asociados"
+        Me.TextBoxSociosCedula.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosCedula.Location = New System.Drawing.Point(485, 75)
+        Me.TextBoxSociosCedula.Name = "TextBoxSociosCedula"
+        Me.TextBoxSociosCedula.Size = New System.Drawing.Size(65, 22)
+        Me.TextBoxSociosCedula.TabIndex = 57
         '
-        'Form2
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label16.Location = New System.Drawing.Point(561, 78)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(13, 16)
+        Me.Label16.TabIndex = 58
+        Me.Label16.Text = "-"
+        Me.Label16.Visible = False
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label25.Location = New System.Drawing.Point(687, 78)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(13, 16)
+        Me.Label25.TabIndex = 59
+        Me.Label25.Text = "-"
+        Me.Label25.Visible = False
+        '
+        'TextBoxSociosCedula2
+        '
+        Me.TextBoxSociosCedula2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosCedula2.Location = New System.Drawing.Point(588, 76)
+        Me.TextBoxSociosCedula2.Name = "TextBoxSociosCedula2"
+        Me.TextBoxSociosCedula2.Size = New System.Drawing.Size(85, 22)
+        Me.TextBoxSociosCedula2.TabIndex = 60
+        '
+        'TextBoxSociosCedula3
+        '
+        Me.TextBoxSociosCedula3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosCedula3.Location = New System.Drawing.Point(716, 75)
+        Me.TextBoxSociosCedula3.Name = "TextBoxSociosCedula3"
+        Me.TextBoxSociosCedula3.Size = New System.Drawing.Size(89, 22)
+        Me.TextBoxSociosCedula3.TabIndex = 61
+        '
+        'TextBoxSociosNumAsociado
+        '
+        Me.TextBoxSociosNumAsociado.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosNumAsociado.Location = New System.Drawing.Point(484, 107)
+        Me.TextBoxSociosNumAsociado.Name = "TextBoxSociosNumAsociado"
+        Me.TextBoxSociosNumAsociado.Size = New System.Drawing.Size(321, 22)
+        Me.TextBoxSociosNumAsociado.TabIndex = 62
+        '
+        'TextBoxSociosTelefono2
+        '
+        Me.TextBoxSociosTelefono2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosTelefono2.Location = New System.Drawing.Point(663, 264)
+        Me.TextBoxSociosTelefono2.Name = "TextBoxSociosTelefono2"
+        Me.TextBoxSociosTelefono2.Size = New System.Drawing.Size(142, 22)
+        Me.TextBoxSociosTelefono2.TabIndex = 168
+        '
+        'TextBoxSociosNombre
+        '
+        Me.TextBoxSociosNombre.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosNombre.Location = New System.Drawing.Point(484, 138)
+        Me.TextBoxSociosNombre.Name = "TextBoxSociosNombre"
+        Me.TextBoxSociosNombre.Size = New System.Drawing.Size(321, 22)
+        Me.TextBoxSociosNombre.TabIndex = 163
+        '
+        'DateTimeSociosFechaNacimiento
+        '
+        Me.DateTimeSociosFechaNacimiento.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimeSociosFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimeSociosFechaNacimiento.Location = New System.Drawing.Point(485, 231)
+        Me.DateTimeSociosFechaNacimiento.MaxDate = New Date(9998, 12, 4, 0, 0, 0, 0)
+        Me.DateTimeSociosFechaNacimiento.Name = "DateTimeSociosFechaNacimiento"
+        Me.DateTimeSociosFechaNacimiento.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.DateTimeSociosFechaNacimiento.Size = New System.Drawing.Size(321, 22)
+        Me.DateTimeSociosFechaNacimiento.TabIndex = 166
+        '
+        'TextBoxSocios1erApellido
+        '
+        Me.TextBoxSocios1erApellido.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSocios1erApellido.Location = New System.Drawing.Point(484, 168)
+        Me.TextBoxSocios1erApellido.Name = "TextBoxSocios1erApellido"
+        Me.TextBoxSocios1erApellido.Size = New System.Drawing.Size(321, 22)
+        Me.TextBoxSocios1erApellido.TabIndex = 164
+        '
+        'TextBoxSocios2doApellido
+        '
+        Me.TextBoxSocios2doApellido.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSocios2doApellido.Location = New System.Drawing.Point(484, 199)
+        Me.TextBoxSocios2doApellido.Name = "TextBoxSocios2doApellido"
+        Me.TextBoxSocios2doApellido.Size = New System.Drawing.Size(321, 22)
+        Me.TextBoxSocios2doApellido.TabIndex = 165
+        '
+        'TextBoxSociosTelefono
+        '
+        Me.TextBoxSociosTelefono.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosTelefono.Location = New System.Drawing.Point(485, 264)
+        Me.TextBoxSociosTelefono.Name = "TextBoxSociosTelefono"
+        Me.TextBoxSociosTelefono.Size = New System.Drawing.Size(149, 22)
+        Me.TextBoxSociosTelefono.TabIndex = 167
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label28.Location = New System.Drawing.Point(642, 267)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(13, 16)
+        Me.Label28.TabIndex = 169
+        Me.Label28.Text = "-"
+        Me.Label28.Visible = False
+        '
+        'DateTimeSociosFechaIngreso
+        '
+        Me.DateTimeSociosFechaIngreso.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimeSociosFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimeSociosFechaIngreso.Location = New System.Drawing.Point(485, 391)
+        Me.DateTimeSociosFechaIngreso.Name = "DateTimeSociosFechaIngreso"
+        Me.DateTimeSociosFechaIngreso.Size = New System.Drawing.Size(320, 22)
+        Me.DateTimeSociosFechaIngreso.TabIndex = 173
+        '
+        'TextBoxSociosOcupacionEspecialidad
+        '
+        Me.TextBoxSociosOcupacionEspecialidad.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosOcupacionEspecialidad.Location = New System.Drawing.Point(485, 453)
+        Me.TextBoxSociosOcupacionEspecialidad.Name = "TextBoxSociosOcupacionEspecialidad"
+        Me.TextBoxSociosOcupacionEspecialidad.Size = New System.Drawing.Size(319, 22)
+        Me.TextBoxSociosOcupacionEspecialidad.TabIndex = 175
+        '
+        'TextBoxSociosSeccion
+        '
+        Me.TextBoxSociosSeccion.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosSeccion.Location = New System.Drawing.Point(484, 422)
+        Me.TextBoxSociosSeccion.Name = "TextBoxSociosSeccion"
+        Me.TextBoxSociosSeccion.Size = New System.Drawing.Size(320, 22)
+        Me.TextBoxSociosSeccion.TabIndex = 174
+        '
+        'TextBoxSociosCuotaMatricula
+        '
+        Me.TextBoxSociosCuotaMatricula.Enabled = False
+        Me.TextBoxSociosCuotaMatricula.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosCuotaMatricula.Location = New System.Drawing.Point(484, 296)
+        Me.TextBoxSociosCuotaMatricula.Name = "TextBoxSociosCuotaMatricula"
+        Me.TextBoxSociosCuotaMatricula.Size = New System.Drawing.Size(320, 22)
+        Me.TextBoxSociosCuotaMatricula.TabIndex = 170
+        '
+        'TextBoxSociosResponsable
+        '
+        Me.TextBoxSociosResponsable.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosResponsable.Location = New System.Drawing.Point(484, 328)
+        Me.TextBoxSociosResponsable.Name = "TextBoxSociosResponsable"
+        Me.TextBoxSociosResponsable.Size = New System.Drawing.Size(320, 22)
+        Me.TextBoxSociosResponsable.TabIndex = 171
+        '
+        'TextBoxSociosDireccion
+        '
+        Me.TextBoxSociosDireccion.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosDireccion.Location = New System.Drawing.Point(485, 484)
+        Me.TextBoxSociosDireccion.Multiline = True
+        Me.TextBoxSociosDireccion.Name = "TextBoxSociosDireccion"
+        Me.TextBoxSociosDireccion.Size = New System.Drawing.Size(320, 61)
+        Me.TextBoxSociosDireccion.TabIndex = 176
+        '
+        'TextBoxSociosBeneficiario
+        '
+        Me.TextBoxSociosBeneficiario.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosBeneficiario.Location = New System.Drawing.Point(484, 360)
+        Me.TextBoxSociosBeneficiario.Name = "TextBoxSociosBeneficiario"
+        Me.TextBoxSociosBeneficiario.Size = New System.Drawing.Size(320, 22)
+        Me.TextBoxSociosBeneficiario.TabIndex = 172
+        '
+        'Asociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1279, 591)
+        Me.Controls.Add(Me.DateTimeSociosFechaIngreso)
+        Me.Controls.Add(Me.TextBoxSociosOcupacionEspecialidad)
+        Me.Controls.Add(Me.TextBoxSociosSeccion)
+        Me.Controls.Add(Me.TextBoxSociosCuotaMatricula)
+        Me.Controls.Add(Me.TextBoxSociosResponsable)
+        Me.Controls.Add(Me.TextBoxSociosDireccion)
+        Me.Controls.Add(Me.TextBoxSociosBeneficiario)
+        Me.Controls.Add(Me.Label28)
+        Me.Controls.Add(Me.TextBoxSociosTelefono2)
+        Me.Controls.Add(Me.TextBoxSociosNombre)
+        Me.Controls.Add(Me.DateTimeSociosFechaNacimiento)
+        Me.Controls.Add(Me.TextBoxSocios1erApellido)
+        Me.Controls.Add(Me.TextBoxSocios2doApellido)
+        Me.Controls.Add(Me.TextBoxSociosTelefono)
+        Me.Controls.Add(Me.TextBoxSociosNumAsociado)
+        Me.Controls.Add(Me.TextBoxSociosCedula3)
+        Me.Controls.Add(Me.TextBoxSociosCedula2)
+        Me.Controls.Add(Me.Label25)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.TextBoxSociosCedula)
         Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.DateTimePicker3)
-        Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label26)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.RadioButton6)
         Me.Controls.Add(Me.RadioButton1)
-        Me.Controls.Add(Me.TextBox15)
         Me.Controls.Add(Me.RadioButton5)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.RadioButton4)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.RadioButton3)
-        Me.Controls.Add(Me.TextBox14)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.TextBox12)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.TextBox10)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.TextBox9)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Name = "Form2"
+        Me.Name = "Asociados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestion de Asociados"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -806,38 +878,26 @@ Partial Class Form2
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents TextBoxSociosConsultarAsociado As TextBox
+    Friend WithEvents ButtonAsociadosBuscar As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox5 As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox7 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox9 As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox10 As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents TextBox12 As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents Button3 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents TextBox14 As TextBox
     Friend WithEvents Label19 As Label
-    Friend WithEvents Button4 As Button
-    Friend WithEvents TextBox15 As TextBox
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label22 As Label
@@ -854,13 +914,9 @@ Partial Class Form2
     Friend WithEvents Button5 As Button
     Friend WithEvents Label24 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents DateTimePicker2 As DateTimePicker
-    Friend WithEvents DateTimePicker3 As DateTimePicker
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents ImprimirReciboActualToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
@@ -869,4 +925,26 @@ Partial Class Form2
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents InformaciónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistroDeAsociadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Button6 As Button
+    Friend WithEvents TextBoxSociosCedula As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents TextBoxSociosCedula2 As TextBox
+    Friend WithEvents TextBoxSociosCedula3 As TextBox
+    Friend WithEvents TextBoxSociosNumAsociado As TextBox
+    Friend WithEvents TextBoxSociosTelefono2 As TextBox
+    Friend WithEvents TextBoxSociosNombre As TextBox
+    Friend WithEvents DateTimeSociosFechaNacimiento As DateTimePicker
+    Friend WithEvents TextBoxSocios1erApellido As TextBox
+    Friend WithEvents TextBoxSocios2doApellido As TextBox
+    Friend WithEvents TextBoxSociosTelefono As TextBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents DateTimeSociosFechaIngreso As DateTimePicker
+    Friend WithEvents TextBoxSociosOcupacionEspecialidad As TextBox
+    Friend WithEvents TextBoxSociosSeccion As TextBox
+    Friend WithEvents TextBoxSociosCuotaMatricula As TextBox
+    Friend WithEvents TextBoxSociosResponsable As TextBox
+    Friend WithEvents TextBoxSociosDireccion As TextBox
+    Friend WithEvents TextBoxSociosBeneficiario As TextBox
 End Class

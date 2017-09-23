@@ -4,7 +4,7 @@
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
-        Form1.Show()
+        Principal.Show()
     End Sub
 
     Private Sub CuerposDirectivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuerposDirectivosToolStripMenuItem.Click
