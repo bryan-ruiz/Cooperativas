@@ -39,7 +39,10 @@ Public Class Ventana_Acceso
 
     End Sub
 
-    Private Sub TextBoxContraseña_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxContraseña.TextChanged
+    Private Sub TextBoxContraseña_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles TextBoxContraseña.KeyPress
         TextBoxContraseña.PasswordChar = "*"
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Call ButtonInsertar_InformacionAccidente_Click(sender, e)
+        End If
     End Sub
 End Class

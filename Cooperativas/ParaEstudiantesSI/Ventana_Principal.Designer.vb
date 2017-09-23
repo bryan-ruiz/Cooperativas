@@ -27,6 +27,12 @@ Partial Class Ventana_Principal
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TextBoxSociosTelefono2 = New System.Windows.Forms.TextBox()
+        Me.Label147 = New System.Windows.Forms.Label()
+        Me.TextBoxSociosCedula3 = New System.Windows.Forms.TextBox()
+        Me.Label146 = New System.Windows.Forms.Label()
+        Me.TextBoxSociosCedula2 = New System.Windows.Forms.TextBox()
+        Me.Label145 = New System.Windows.Forms.Label()
         Me.SociosButtonLimpiar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RadioButtonSociosMenorNo = New System.Windows.Forms.RadioButton()
@@ -177,6 +183,7 @@ Partial Class Ventana_Principal
         Me.Label43 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.CertificadosButtonLimpiar = New System.Windows.Forms.Button()
         Me.CertificadosButtonSaveTracto10 = New System.Windows.Forms.Button()
         Me.CertificadosButtonSaveTracto9 = New System.Windows.Forms.Button()
         Me.CertificadosButtonSaveTracto8 = New System.Windows.Forms.Button()
@@ -379,7 +386,6 @@ Partial Class Ventana_Principal
         Me.Label136 = New System.Windows.Forms.Label()
         Me.CoopeBDDataSet = New Cooperativas.CoopeBDDataSet()
         Me.CoopeBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CertificadosButtonLimpiar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -443,6 +449,12 @@ Partial Class Ventana_Principal
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.BackgroundImage = Global.Cooperativas.My.Resources.Resources.fondo
         Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox4.Controls.Add(Me.TextBoxSociosTelefono2)
+        Me.GroupBox4.Controls.Add(Me.Label147)
+        Me.GroupBox4.Controls.Add(Me.TextBoxSociosCedula3)
+        Me.GroupBox4.Controls.Add(Me.Label146)
+        Me.GroupBox4.Controls.Add(Me.TextBoxSociosCedula2)
+        Me.GroupBox4.Controls.Add(Me.Label145)
         Me.GroupBox4.Controls.Add(Me.SociosButtonLimpiar)
         Me.GroupBox4.Controls.Add(Me.Panel1)
         Me.GroupBox4.Controls.Add(Me.Label1)
@@ -497,6 +509,60 @@ Partial Class Ventana_Principal
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Información del Asociado"
         '
+        'TextBoxSociosTelefono2
+        '
+        Me.TextBoxSociosTelefono2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosTelefono2.Location = New System.Drawing.Point(497, 228)
+        Me.TextBoxSociosTelefono2.Name = "TextBoxSociosTelefono2"
+        Me.TextBoxSociosTelefono2.Size = New System.Drawing.Size(104, 22)
+        Me.TextBoxSociosTelefono2.TabIndex = 10
+        '
+        'Label147
+        '
+        Me.Label147.AutoSize = True
+        Me.Label147.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label147.Location = New System.Drawing.Point(479, 230)
+        Me.Label147.Name = "Label147"
+        Me.Label147.Size = New System.Drawing.Size(12, 16)
+        Me.Label147.TabIndex = 162
+        Me.Label147.Text = "-"
+        '
+        'TextBoxSociosCedula3
+        '
+        Me.TextBoxSociosCedula3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosCedula3.Location = New System.Drawing.Point(528, 59)
+        Me.TextBoxSociosCedula3.Name = "TextBoxSociosCedula3"
+        Me.TextBoxSociosCedula3.Size = New System.Drawing.Size(73, 22)
+        Me.TextBoxSociosCedula3.TabIndex = 3
+        '
+        'Label146
+        '
+        Me.Label146.AutoSize = True
+        Me.Label146.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label146.Location = New System.Drawing.Point(512, 60)
+        Me.Label146.Name = "Label146"
+        Me.Label146.Size = New System.Drawing.Size(12, 16)
+        Me.Label146.TabIndex = 161
+        Me.Label146.Text = "-"
+        '
+        'TextBoxSociosCedula2
+        '
+        Me.TextBoxSociosCedula2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosCedula2.Location = New System.Drawing.Point(433, 59)
+        Me.TextBoxSociosCedula2.Name = "TextBoxSociosCedula2"
+        Me.TextBoxSociosCedula2.Size = New System.Drawing.Size(73, 22)
+        Me.TextBoxSociosCedula2.TabIndex = 2
+        '
+        'Label145
+        '
+        Me.Label145.AutoSize = True
+        Me.Label145.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label145.Location = New System.Drawing.Point(417, 59)
+        Me.Label145.Name = "Label145"
+        Me.Label145.Size = New System.Drawing.Size(12, 16)
+        Me.Label145.TabIndex = 158
+        Me.Label145.Text = "-"
+        '
         'SociosButtonLimpiar
         '
         Me.SociosButtonLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
@@ -526,7 +592,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(119, 3)
         Me.RadioButtonSociosMenorNo.Name = "RadioButtonSociosMenorNo"
         Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(49, 27)
-        Me.RadioButtonSociosMenorNo.TabIndex = 16
+        Me.RadioButtonSociosMenorNo.TabIndex = 19
         Me.RadioButtonSociosMenorNo.TabStop = True
         Me.RadioButtonSociosMenorNo.Text = "No"
         Me.RadioButtonSociosMenorNo.UseVisualStyleBackColor = True
@@ -537,7 +603,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosMenorSi.Location = New System.Drawing.Point(12, 2)
         Me.RadioButtonSociosMenorSi.Name = "RadioButtonSociosMenorSi"
         Me.RadioButtonSociosMenorSi.Size = New System.Drawing.Size(44, 27)
-        Me.RadioButtonSociosMenorSi.TabIndex = 15
+        Me.RadioButtonSociosMenorSi.TabIndex = 18
         Me.RadioButtonSociosMenorSi.Text = "Si"
         Me.RadioButtonSociosMenorSi.UseVisualStyleBackColor = True
         '
@@ -567,7 +633,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosMasculino.Location = New System.Drawing.Point(14, 5)
         Me.RadioButtonSociosMasculino.Name = "RadioButtonSociosMasculino"
         Me.RadioButtonSociosMasculino.Size = New System.Drawing.Size(100, 27)
-        Me.RadioButtonSociosMasculino.TabIndex = 17
+        Me.RadioButtonSociosMasculino.TabIndex = 20
         Me.RadioButtonSociosMasculino.TabStop = True
         Me.RadioButtonSociosMasculino.Text = "Masculino"
         Me.RadioButtonSociosMasculino.UseVisualStyleBackColor = True
@@ -578,7 +644,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosFemenino.Location = New System.Drawing.Point(120, 5)
         Me.RadioButtonSociosFemenino.Name = "RadioButtonSociosFemenino"
         Me.RadioButtonSociosFemenino.Size = New System.Drawing.Size(94, 27)
-        Me.RadioButtonSociosFemenino.TabIndex = 18
+        Me.RadioButtonSociosFemenino.TabIndex = 21
         Me.RadioButtonSociosFemenino.Text = "Femenino"
         Me.RadioButtonSociosFemenino.UseVisualStyleBackColor = True
         '
@@ -619,7 +685,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosNotasRetiro.Location = New System.Drawing.Point(365, 621)
         Me.TextBoxSociosNotasRetiro.Name = "TextBoxSociosNotasRetiro"
         Me.TextBoxSociosNotasRetiro.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosNotasRetiro.TabIndex = 150
+        Me.TextBoxSociosNotasRetiro.TabIndex = 25
         '
         'LabelSociosNotasRetiro
         '
@@ -638,7 +704,7 @@ Partial Class Ventana_Principal
         Me.DateTimeSociosFechaRetiro.Location = New System.Drawing.Point(365, 593)
         Me.DateTimeSociosFechaRetiro.Name = "DateTimeSociosFechaRetiro"
         Me.DateTimeSociosFechaRetiro.Size = New System.Drawing.Size(236, 22)
-        Me.DateTimeSociosFechaRetiro.TabIndex = 21
+        Me.DateTimeSociosFechaRetiro.TabIndex = 24
         '
         'LabelSociosFechaRetiro
         '
@@ -656,7 +722,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(486, 562)
         Me.RadioButtonSociosRetirado.Name = "RadioButtonSociosRetirado"
         Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(92, 27)
-        Me.RadioButtonSociosRetirado.TabIndex = 20
+        Me.RadioButtonSociosRetirado.TabIndex = 23
         Me.RadioButtonSociosRetirado.Text = "Retirado"
         Me.RadioButtonSociosRetirado.UseVisualStyleBackColor = True
         '
@@ -667,7 +733,7 @@ Partial Class Ventana_Principal
         Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(380, 561)
         Me.RadioButtonSociosActivo.Name = "RadioButtonSociosActivo"
         Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(76, 27)
-        Me.RadioButtonSociosActivo.TabIndex = 19
+        Me.RadioButtonSociosActivo.TabIndex = 22
         Me.RadioButtonSociosActivo.TabStop = True
         Me.RadioButtonSociosActivo.Text = "Activo"
         Me.RadioButtonSociosActivo.UseVisualStyleBackColor = True
@@ -698,7 +764,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosNumAsociado.Location = New System.Drawing.Point(365, 87)
         Me.TextBoxSociosNumAsociado.Name = "TextBoxSociosNumAsociado"
         Me.TextBoxSociosNumAsociado.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosNumAsociado.TabIndex = 2
+        Me.TextBoxSociosNumAsociado.TabIndex = 4
         '
         'ButtonSociosReporteDeSocios
         '
@@ -728,7 +794,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosCedula.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSociosCedula.Location = New System.Drawing.Point(365, 59)
         Me.TextBoxSociosCedula.Name = "TextBoxSociosCedula"
-        Me.TextBoxSociosCedula.Size = New System.Drawing.Size(236, 22)
+        Me.TextBoxSociosCedula.Size = New System.Drawing.Size(46, 22)
         Me.TextBoxSociosCedula.TabIndex = 1
         '
         'Label3
@@ -748,7 +814,7 @@ Partial Class Ventana_Principal
         Me.DateTimeSociosFechaIngreso.Location = New System.Drawing.Point(366, 340)
         Me.DateTimeSociosFechaIngreso.Name = "DateTimeSociosFechaIngreso"
         Me.DateTimeSociosFechaIngreso.Size = New System.Drawing.Size(236, 22)
-        Me.DateTimeSociosFechaIngreso.TabIndex = 11
+        Me.DateTimeSociosFechaIngreso.TabIndex = 14
         '
         'TextBoxSociosNombre
         '
@@ -756,7 +822,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosNombre.Location = New System.Drawing.Point(365, 115)
         Me.TextBoxSociosNombre.Name = "TextBoxSociosNombre"
         Me.TextBoxSociosNombre.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosNombre.TabIndex = 3
+        Me.TextBoxSociosNombre.TabIndex = 5
         '
         'DateTimeSociosFechaNacimiento
         '
@@ -767,7 +833,7 @@ Partial Class Ventana_Principal
         Me.DateTimeSociosFechaNacimiento.Name = "DateTimeSociosFechaNacimiento"
         Me.DateTimeSociosFechaNacimiento.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DateTimeSociosFechaNacimiento.Size = New System.Drawing.Size(236, 22)
-        Me.DateTimeSociosFechaNacimiento.TabIndex = 6
+        Me.DateTimeSociosFechaNacimiento.TabIndex = 8
         '
         'Label4
         '
@@ -785,7 +851,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSocios1erApellido.Location = New System.Drawing.Point(365, 143)
         Me.TextBoxSocios1erApellido.Name = "TextBoxSocios1erApellido"
         Me.TextBoxSocios1erApellido.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSocios1erApellido.TabIndex = 4
+        Me.TextBoxSocios1erApellido.TabIndex = 6
         '
         'TextBoxSocios2doApellido
         '
@@ -793,7 +859,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSocios2doApellido.Location = New System.Drawing.Point(365, 171)
         Me.TextBoxSocios2doApellido.Name = "TextBoxSocios2doApellido"
         Me.TextBoxSocios2doApellido.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSocios2doApellido.TabIndex = 5
+        Me.TextBoxSocios2doApellido.TabIndex = 7
         '
         'ButtonSociosModificar
         '
@@ -859,8 +925,8 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosTelefono.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSociosTelefono.Location = New System.Drawing.Point(366, 228)
         Me.TextBoxSociosTelefono.Name = "TextBoxSociosTelefono"
-        Me.TextBoxSociosTelefono.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosTelefono.TabIndex = 7
+        Me.TextBoxSociosTelefono.Size = New System.Drawing.Size(105, 22)
+        Me.TextBoxSociosTelefono.TabIndex = 9
         '
         'TextBoxSociosOcupacionEspecialidad
         '
@@ -868,17 +934,17 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosOcupacionEspecialidad.Location = New System.Drawing.Point(366, 396)
         Me.TextBoxSociosOcupacionEspecialidad.Name = "TextBoxSociosOcupacionEspecialidad"
         Me.TextBoxSociosOcupacionEspecialidad.Size = New System.Drawing.Size(235, 22)
-        Me.TextBoxSociosOcupacionEspecialidad.TabIndex = 13
+        Me.TextBoxSociosOcupacionEspecialidad.TabIndex = 16
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(195, 399)
+        Me.Label14.Location = New System.Drawing.Point(256, 399)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(165, 16)
+        Me.Label14.Size = New System.Drawing.Size(102, 16)
         Me.Label14.TabIndex = 139
-        Me.Label14.Text = "Ocupación/Especialidad:"
+        Me.Label14.Text = "Tipo Asociado:"
         '
         'Label8
         '
@@ -906,15 +972,16 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosSeccion.Location = New System.Drawing.Point(365, 368)
         Me.TextBoxSociosSeccion.Name = "TextBoxSociosSeccion"
         Me.TextBoxSociosSeccion.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosSeccion.TabIndex = 12
+        Me.TextBoxSociosSeccion.TabIndex = 15
         '
         'TextBoxSociosCuotaMatricula
         '
+        Me.TextBoxSociosCuotaMatricula.Enabled = False
         Me.TextBoxSociosCuotaMatricula.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSociosCuotaMatricula.Location = New System.Drawing.Point(365, 256)
         Me.TextBoxSociosCuotaMatricula.Name = "TextBoxSociosCuotaMatricula"
         Me.TextBoxSociosCuotaMatricula.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosCuotaMatricula.TabIndex = 8
+        Me.TextBoxSociosCuotaMatricula.TabIndex = 11
         '
         'Label16
         '
@@ -942,7 +1009,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosResponsable.Location = New System.Drawing.Point(365, 284)
         Me.TextBoxSociosResponsable.Name = "TextBoxSociosResponsable"
         Me.TextBoxSociosResponsable.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosResponsable.TabIndex = 9
+        Me.TextBoxSociosResponsable.TabIndex = 12
         '
         'Label11
         '
@@ -971,7 +1038,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosDireccion.Multiline = True
         Me.TextBoxSociosDireccion.Name = "TextBoxSociosDireccion"
         Me.TextBoxSociosDireccion.Size = New System.Drawing.Size(236, 61)
-        Me.TextBoxSociosDireccion.TabIndex = 14
+        Me.TextBoxSociosDireccion.TabIndex = 17
         '
         'Label12
         '
@@ -999,7 +1066,7 @@ Partial Class Ventana_Principal
         Me.TextBoxSociosBeneficiario.Location = New System.Drawing.Point(365, 312)
         Me.TextBoxSociosBeneficiario.Name = "TextBoxSociosBeneficiario"
         Me.TextBoxSociosBeneficiario.Size = New System.Drawing.Size(236, 22)
-        Me.TextBoxSociosBeneficiario.TabIndex = 10
+        Me.TextBoxSociosBeneficiario.TabIndex = 13
         '
         'TabPage2
         '
@@ -2114,6 +2181,19 @@ Partial Class Ventana_Principal
         Me.GroupBox3.TabIndex = 142
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Certificados"
+        '
+        'CertificadosButtonLimpiar
+        '
+        Me.CertificadosButtonLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonLimpiar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonLimpiar.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonLimpiar.Image = Global.Cooperativas.My.Resources.Resources.btn2
+        Me.CertificadosButtonLimpiar.Location = New System.Drawing.Point(777, 170)
+        Me.CertificadosButtonLimpiar.Name = "CertificadosButtonLimpiar"
+        Me.CertificadosButtonLimpiar.Size = New System.Drawing.Size(176, 43)
+        Me.CertificadosButtonLimpiar.TabIndex = 252
+        Me.CertificadosButtonLimpiar.Text = "Limpiar"
+        Me.CertificadosButtonLimpiar.UseVisualStyleBackColor = False
         '
         'CertificadosButtonSaveTracto10
         '
@@ -4256,19 +4336,6 @@ Partial Class Ventana_Principal
         Me.CoopeBDDataSetBindingSource.DataSource = Me.CoopeBDDataSet
         Me.CoopeBDDataSetBindingSource.Position = 0
         '
-        'CertificadosButtonLimpiar
-        '
-        Me.CertificadosButtonLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonLimpiar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonLimpiar.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonLimpiar.Image = Global.Cooperativas.My.Resources.Resources.btn2
-        Me.CertificadosButtonLimpiar.Location = New System.Drawing.Point(777, 170)
-        Me.CertificadosButtonLimpiar.Name = "CertificadosButtonLimpiar"
-        Me.CertificadosButtonLimpiar.Size = New System.Drawing.Size(176, 43)
-        Me.CertificadosButtonLimpiar.TabIndex = 252
-        Me.CertificadosButtonLimpiar.Text = "Limpiar"
-        Me.CertificadosButtonLimpiar.UseVisualStyleBackColor = False
-        '
         'Ventana_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4677,4 +4744,10 @@ Partial Class Ventana_Principal
     Friend WithEvents Label144 As Label
     Friend WithEvents SociosButtonLimpiar As Button
     Friend WithEvents CertificadosButtonLimpiar As Button
+    Friend WithEvents Label146 As Label
+    Friend WithEvents TextBoxSociosCedula2 As TextBox
+    Friend WithEvents Label145 As Label
+    Friend WithEvents TextBoxSociosCedula3 As TextBox
+    Friend WithEvents TextBoxSociosTelefono2 As TextBox
+    Friend WithEvents Label147 As Label
 End Class

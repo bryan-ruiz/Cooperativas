@@ -13,97 +13,122 @@ Public Class Socios
 
         Dim valores As List(Of String)
         Dim cedula As String = Ventana_Principal.TextBoxSociosCedula.Text
+        Dim cedula2 As String = Ventana_Principal.TextBoxSociosCedula2.Text
+        Dim cedula3 As String = Ventana_Principal.TextBoxSociosCedula3.Text
         Dim numAsociado As String = Ventana_Principal.TextBoxSociosNumAsociado.Text
+        Dim cedulaTotal As String = cedula + "-" + cedula2 + "-" + cedula3
 
-        If (cedula <> "" And numAsociado <> "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-            limpiar()
-            Return
-        End If
-
-        If (Ventana_Principal.TextBoxSociosCedula.Text = "" And Ventana_Principal.TextBoxSociosNumAsociado.Text = "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        If (cedula2.Length < 4 Or cedula3.Length < 4) Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaFormato, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             limpiar()
         Else
-            Try
-                BD.ConectarBD()
+            If (cedula = "" Or cedula2 = "" Or cedula3 = "" And numAsociado = "") Then
+                MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                limpiar()
+            Else
+                Try
+                    BD.ConectarBD()
 
-                If (numAsociado = "" And cedula <> "") Then
-                    valores = BD.consultarSocioPorCedula(cedula)
-                End If
-
-                If (cedula = "" And numAsociado <> "") Then
-                    valores = BD.consultarSocioPorNumAsociado(numAsociado)
-                End If
-
-                If valores.Count <> 0 Then
-                    Ventana_Principal.TextBoxSociosCedula.Text = valores(0)
-                    Ventana_Principal.TextBoxSociosNumAsociado.Text = valores(1)
-                    Ventana_Principal.TextBoxSociosNombre.Text = valores.Item(2)
-                    Ventana_Principal.TextBoxSocios1erApellido.Text = valores.Item(3)
-                    Ventana_Principal.TextBoxSocios2doApellido.Text = valores.Item(4)
-                    Ventana_Principal.DateTimeSociosFechaNacimiento.Value = Date.Parse(valores.Item(5))
-                    Ventana_Principal.TextBoxSociosTelefono.Text = valores.Item(6)
-                    Ventana_Principal.TextBoxSociosCuotaMatricula.Text = valores.Item(7)
-                    Ventana_Principal.TextBoxSociosResponsable.Text = valores.Item(8)
-                    Ventana_Principal.TextBoxSociosBeneficiario.Text = valores.Item(9)
-                    Ventana_Principal.DateTimeSociosFechaIngreso.Value = Date.Parse(valores.Item(10))
-                    Ventana_Principal.TextBoxSociosSeccion.Text = valores.Item(11)
-                    Ventana_Principal.TextBoxSociosOcupacionEspecialidad.Text = valores.Item(12)
-                    Ventana_Principal.TextBoxSociosDireccion.Text = valores.Item(13)
-
-                    'Para Genero
-                    If valores.Item(14).Equals("Masculino") Then
-                        Ventana_Principal.RadioButtonSociosMasculino.Checked = True
-                        Ventana_Principal.RadioButtonSociosFemenino.Checked = False
+                    If (numAsociado = "" And cedula <> "" And cedula2 <> "" And cedula3 <> "") Then
+                        valores = BD.consultarSocioPorCedula(cedulaTotal)
                     End If
-                    If valores.Item(14).Equals("Femenino") Then
-                        Ventana_Principal.RadioButtonSociosFemenino.Checked = True
-                        Ventana_Principal.RadioButtonSociosMasculino.Checked = False
-                    End If
-                    'Para Estado
-                    If valores.Item(15).Equals("Activo") Then
-                        Ventana_Principal.RadioButtonSociosActivo.Checked = True
-                        Ventana_Principal.RadioButtonSociosRetirado.Checked = False
-                    End If
-                    If valores.Item(15).Equals("Retirado") Then
-                        Ventana_Principal.RadioButtonSociosActivo.Checked = False
-                        Ventana_Principal.RadioButtonSociosRetirado.Checked = True
-                    End If
-                    If valores.Item(18).Equals("No") Then
-                        Ventana_Principal.RadioButtonSociosMenorNo.Checked = True
-                        Ventana_Principal.RadioButtonSociosMenorSi.Checked = False
-                    End If
-                    If valores.Item(18).Equals("Si") Then
-                        Ventana_Principal.RadioButtonSociosMenorSi.Checked = True
-                        Ventana_Principal.RadioButtonSociosMenorNo.Checked = False
-                    End If
-                    Ventana_Principal.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
-                    Ventana_Principal.TextBoxSociosNotasRetiro.Text = valores.Item(17)
 
-                Else
-                    MessageBox.Show(variablesGlobales.noExistenDatos)
-                    limpiar()
-                End If
+                    If (numAsociado <> "" And cedula <> "" And cedula2 <> "" And cedula3 <> "") Then
+                        valores = BD.consultarSocioPorCedula(numAsociado)
+                    End If
 
-                BD.CerrarConexion()
+                    If (cedula = "" And cedula2 = "" And cedula3 = "" And numAsociado <> "") Then
+                        valores = BD.consultarSocioPorNumAsociado(numAsociado)
+                    End If
 
-            Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                    If valores.Count <> 0 Then
 
-            End Try
+                        Dim myCedula As String = valores(0)
+                        Dim parts As String() = myCedula.Split(New Char() {"-"c})
+                        'Dim part As String
+
+                        'For Each part In parts
+                        'MessageBox.Show("partes de cedula son :" + part(0))
+                        'Next
+
+                        Ventana_Principal.TextBoxSociosCedula.Text = parts(0)
+                        Ventana_Principal.TextBoxSociosCedula2.Text = parts(1)
+                        Ventana_Principal.TextBoxSociosCedula3.Text = parts(2)
+                        Ventana_Principal.TextBoxSociosNumAsociado.Text = valores(1)
+                        Ventana_Principal.TextBoxSociosNombre.Text = valores.Item(2)
+                        Ventana_Principal.TextBoxSocios1erApellido.Text = valores.Item(3)
+                        Ventana_Principal.TextBoxSocios2doApellido.Text = valores.Item(4)
+                        Ventana_Principal.DateTimeSociosFechaNacimiento.Value = Date.Parse(valores.Item(5))
+
+                        Dim tel As String = valores(6)
+                        Dim telefonos As String() = tel.Split(New Char() {"-"c})
+                        Ventana_Principal.TextBoxSociosTelefono.Text = telefonos(0)
+                        Ventana_Principal.TextBoxSociosTelefono2.Text = telefonos(1)
+
+                        Ventana_Principal.TextBoxSociosCuotaMatricula.Text = valores.Item(7)
+                        Ventana_Principal.TextBoxSociosResponsable.Text = valores.Item(8)
+                        Ventana_Principal.TextBoxSociosBeneficiario.Text = valores.Item(9)
+                        Ventana_Principal.DateTimeSociosFechaIngreso.Value = Date.Parse(valores.Item(10))
+                        Ventana_Principal.TextBoxSociosSeccion.Text = valores.Item(11)
+                        Ventana_Principal.TextBoxSociosOcupacionEspecialidad.Text = valores.Item(12)
+                        Ventana_Principal.TextBoxSociosDireccion.Text = valores.Item(13)
+
+                        'Para Genero
+                        If valores.Item(14).Equals("Masculino") Then
+                            Ventana_Principal.RadioButtonSociosMasculino.Checked = True
+                            Ventana_Principal.RadioButtonSociosFemenino.Checked = False
+                        End If
+                        If valores.Item(14).Equals("Femenino") Then
+                            Ventana_Principal.RadioButtonSociosFemenino.Checked = True
+                            Ventana_Principal.RadioButtonSociosMasculino.Checked = False
+                        End If
+                        'Para Estado
+                        If valores.Item(15).Equals("Activo") Then
+                            Ventana_Principal.RadioButtonSociosActivo.Checked = True
+                            Ventana_Principal.RadioButtonSociosRetirado.Checked = False
+                        End If
+                        If valores.Item(15).Equals("Retirado") Then
+                            Ventana_Principal.RadioButtonSociosActivo.Checked = False
+                            Ventana_Principal.RadioButtonSociosRetirado.Checked = True
+                        End If
+                        If valores.Item(18).Equals("No") Then
+                            Ventana_Principal.RadioButtonSociosMenorNo.Checked = True
+                            Ventana_Principal.RadioButtonSociosMenorSi.Checked = False
+                        End If
+                        If valores.Item(18).Equals("Si") Then
+                            Ventana_Principal.RadioButtonSociosMenorSi.Checked = True
+                            Ventana_Principal.RadioButtonSociosMenorNo.Checked = False
+                        End If
+                        Ventana_Principal.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
+                        Ventana_Principal.TextBoxSociosNotasRetiro.Text = valores.Item(17)
+
+                    Else
+                        MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                        limpiar()
+                    End If
+
+                    BD.CerrarConexion()
+
+                Catch ex As Exception
+                    MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+
+                End Try
+            End If
         End If
     End Sub
 
     'Insertar Socio
     Public Sub insertar()
         Dim cedula As String = Ventana_Principal.TextBoxSociosCedula.Text
+        Dim cedula2 As String = Ventana_Principal.TextBoxSociosCedula2.Text
+        Dim cedula3 As String = Ventana_Principal.TextBoxSociosCedula3.Text
         Dim numAsociado As String = Ventana_Principal.TextBoxSociosNumAsociado.Text
         Dim nombre As String = Ventana_Principal.TextBoxSociosNombre.Text
         Dim apellidoUno As String = Ventana_Principal.TextBoxSocios1erApellido.Text
         Dim apellidoDos As String = Ventana_Principal.TextBoxSocios2doApellido.Text
         Dim fechaNacimiento As Date = Ventana_Principal.DateTimeSociosFechaNacimiento.Value.ToString("dd/MM/yyyy")
         Dim telefono As String = Ventana_Principal.TextBoxSociosTelefono.Text
+        Dim telefono2 As String = Ventana_Principal.TextBoxSociosTelefono2.Text
         Dim cuota As String = Ventana_Principal.TextBoxSociosCuotaMatricula.Text
         Dim responsable As String = Ventana_Principal.TextBoxSociosResponsable.Text
         Dim beneficiario As String = Ventana_Principal.TextBoxSociosBeneficiario.Text
@@ -137,28 +162,34 @@ Public Class Socios
             estado = Ventana_Principal.RadioButtonSociosRetirado.Text
         End If
 
-        If (cedula = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
-            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        If (cedula2.Length < 4 Or cedula3.Length < 4) Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaFormato, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar()
         Else
-            Try
-                BD.ConectarBD()
-                Dim insertado As Integer = BD.insertarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario,
-                                                            fechaIngreso, seccion, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
+            If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
+                MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Else
+                Try
+                    BD.ConectarBD()
+                    Dim insertado As Integer = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono + telefono2, cuota, responsable, beneficiario,
+                                                                fechaIngreso, seccion, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
 
-                Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
+                    Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
 
-                If (insertado = 1 And certificadoXSocio = 1) Then
-                    MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-                    limpiar()
-                Else
+                    If (insertado = 1 And certificadoXSocio = 1) Then
+                        MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                        limpiar()
+                    Else
+                        MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                        limpiar()
+                    End If
+                    'Muy importante cerrar conexion despues de cada consulta'
+                    BD.CerrarConexion()
+                Catch ex As Exception
                     MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     limpiar()
-                End If
-                'Muy importante cerrar conexion despues de cada consulta'
-                BD.CerrarConexion()
-            Catch ex As Exception
-                MessageBox.Show("ocurrio el siguiente error:" + ex.ToString())
-            End Try
+                End Try
+            End If
         End If
     End Sub
 
@@ -227,11 +258,14 @@ Public Class Socios
     'Limpia los campos de Socios'
     Public Sub limpiar()
         Ventana_Principal.TextBoxSociosCedula.Text = ""
+        Ventana_Principal.TextBoxSociosCedula2.Text = ""
+        Ventana_Principal.TextBoxSociosCedula3.Text = ""
         Ventana_Principal.TextBoxSociosNumAsociado.Text = ""
         Ventana_Principal.TextBoxSociosNombre.Text = ""
         Ventana_Principal.TextBoxSocios1erApellido.Text = ""
         Ventana_Principal.TextBoxSocios2doApellido.Text = ""
         Ventana_Principal.TextBoxSociosTelefono.Text = ""
+        Ventana_Principal.TextBoxSociosTelefono2.Text = ""
         Ventana_Principal.TextBoxSociosCuotaMatricula.Text = ""
         Ventana_Principal.TextBoxSociosResponsable.Text = ""
         Ventana_Principal.TextBoxSociosBeneficiario.Text = ""

@@ -4,7 +4,8 @@ Public Class MensajesGlobales
 
     Public folderPath As String = "C:\Reportes\"
     Public mensajeCedulaONumAsociado As String = "Debe ingresar la cédula o el número de asociado a consultar"
-    Public mensajeDebeIngresarCodigoODescriptionDeCuenta = "Debe ingresar el codigo y/o descripción de la cuenta"
+    Public mensajeDebeIngresarCodigoODescriptionDeCuenta As String = "Debe ingresar el codigo y/o descripción de la cuenta"
+    Public mensajeCedulaFormato As String = "La cédula debe llevar el formato X-XXXX-XXXX"
 
     Public noExistenDatos As String = "No se encontraron datos en el sistema"
     Public noDebenHaberCamposVacios As String = "No deben haber campos vacíos!"
