@@ -319,7 +319,7 @@ Public Class Ventana_Principal
         comites.consultar(ComboBoxComitesNombre.Text)
     End Sub
 
-    Private Sub TextBoxSociosCedula_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula.KeyPress
+    Private Sub TextBoxSociosCedula_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula.KeyPress, TextBoxSociosCedula.TextChanged
         Me.TextBoxSociosCedula.MaxLength = 1
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then

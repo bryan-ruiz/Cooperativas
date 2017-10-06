@@ -12,10 +12,10 @@ Public Class Socios
     Public Sub consultar()
 
         Dim valores As List(Of String)
-        Dim cedula As String = Ventana_Principal.TextBoxSociosCedula.Text
-        Dim cedula2 As String = Ventana_Principal.TextBoxSociosCedula2.Text
-        Dim cedula3 As String = Ventana_Principal.TextBoxSociosCedula3.Text
-        Dim numAsociado As String = Ventana_Principal.TextBoxSociosNumAsociado.Text
+        Dim cedula As String = Asociados.TextBoxSociosCedula.Text
+        Dim cedula2 As String = Asociados.TextBoxSociosCedula2.Text
+        Dim cedula3 As String = Asociados.TextBoxSociosCedula3.Text
+        Dim numAsociado As String = Asociados.TextBoxSociosNumAsociado.Text
         Dim cedulaTotal As String = cedula + "-" + cedula2 + "-" + cedula3
 
         If (cedula2.Length < 4 Or cedula3.Length < 4) Then
@@ -51,56 +51,56 @@ Public Class Socios
                         'MessageBox.Show("partes de cedula son :" + part(0))
                         'Next
 
-                        Ventana_Principal.TextBoxSociosCedula.Text = parts(0)
-                        Ventana_Principal.TextBoxSociosCedula2.Text = parts(1)
-                        Ventana_Principal.TextBoxSociosCedula3.Text = parts(2)
-                        Ventana_Principal.TextBoxSociosNumAsociado.Text = valores(1)
-                        Ventana_Principal.TextBoxSociosNombre.Text = valores.Item(2)
-                        Ventana_Principal.TextBoxSocios1erApellido.Text = valores.Item(3)
-                        Ventana_Principal.TextBoxSocios2doApellido.Text = valores.Item(4)
-                        Ventana_Principal.DateTimeSociosFechaNacimiento.Value = Date.Parse(valores.Item(5))
+                        Asociados.TextBoxSociosCedula.Text = parts(0)
+                        Asociados.TextBoxSociosCedula2.Text = parts(1)
+                        Asociados.TextBoxSociosCedula3.Text = parts(2)
+                        Asociados.TextBoxSociosNumAsociado.Text = valores(1)
+                        Asociados.TextBoxSociosNombre.Text = valores.Item(2)
+                        Asociados.TextBoxSocios1erApellido.Text = valores.Item(3)
+                        Asociados.TextBoxSocios2doApellido.Text = valores.Item(4)
+                        Asociados.DateTimeSociosFechaNacimiento.Value = Date.Parse(valores.Item(5))
 
                         Dim tel As String = valores(6)
                         Dim telefonos As String() = tel.Split(New Char() {"-"c})
-                        Ventana_Principal.TextBoxSociosTelefono.Text = telefonos(0)
-                        Ventana_Principal.TextBoxSociosTelefono2.Text = telefonos(1)
+                        Asociados.TextBoxSociosTelefono.Text = telefonos(0)
+                        Asociados.TextBoxSociosTelefono2.Text = telefonos(1)
 
-                        Ventana_Principal.TextBoxSociosCuotaMatricula.Text = valores.Item(7)
-                        Ventana_Principal.TextBoxSociosResponsable.Text = valores.Item(8)
-                        Ventana_Principal.TextBoxSociosBeneficiario.Text = valores.Item(9)
-                        Ventana_Principal.DateTimeSociosFechaIngreso.Value = Date.Parse(valores.Item(10))
-                        Ventana_Principal.TextBoxSociosSeccion.Text = valores.Item(11)
-                        Ventana_Principal.TextBoxSociosOcupacionEspecialidad.Text = valores.Item(12)
-                        Ventana_Principal.TextBoxSociosDireccion.Text = valores.Item(13)
+                        Asociados.TextBoxSociosCuotaMatricula.Text = valores.Item(7)
+                        Asociados.TextBoxSociosResponsable.Text = valores.Item(8)
+                        Asociados.TextBoxSociosBeneficiario.Text = valores.Item(9)
+                        Asociados.DateTimeSociosFechaIngreso.Value = Date.Parse(valores.Item(10))
+                        Asociados.TextBoxSociosSeccion.Text = valores.Item(11)
+                        Asociados.TextBoxSociosOcupacionEspecialidad.Text = valores.Item(12)
+                        Asociados.TextBoxSociosDireccion.Text = valores.Item(13)
 
                         'Para Genero
                         If valores.Item(14).Equals("Masculino") Then
-                            Ventana_Principal.RadioButtonSociosMasculino.Checked = True
-                            Ventana_Principal.RadioButtonSociosFemenino.Checked = False
+                            Asociados.RadioButtonSociosMasculino.Checked = True
+                            Asociados.RadioButtonSociosFemenino.Checked = False
                         End If
                         If valores.Item(14).Equals("Femenino") Then
-                            Ventana_Principal.RadioButtonSociosFemenino.Checked = True
-                            Ventana_Principal.RadioButtonSociosMasculino.Checked = False
+                            Asociados.RadioButtonSociosFemenino.Checked = True
+                            Asociados.RadioButtonSociosMasculino.Checked = False
                         End If
                         'Para Estado
                         If valores.Item(15).Equals("Activo") Then
-                            Ventana_Principal.RadioButtonSociosActivo.Checked = True
-                            Ventana_Principal.RadioButtonSociosRetirado.Checked = False
+                            Asociados.RadioButtonSociosActivo.Checked = True
+                            Asociados.RadioButtonSociosRetirado.Checked = False
                         End If
                         If valores.Item(15).Equals("Retirado") Then
-                            Ventana_Principal.RadioButtonSociosActivo.Checked = False
-                            Ventana_Principal.RadioButtonSociosRetirado.Checked = True
+                            Asociados.RadioButtonSociosActivo.Checked = False
+                            Asociados.RadioButtonSociosRetirado.Checked = True
                         End If
                         If valores.Item(18).Equals("No") Then
-                            Ventana_Principal.RadioButtonSociosMenorNo.Checked = True
-                            Ventana_Principal.RadioButtonSociosMenorSi.Checked = False
+                            Asociados.RadioButtonSociosMenorNo.Checked = True
+                            Asociados.RadioButtonSociosMenorSi.Checked = False
                         End If
                         If valores.Item(18).Equals("Si") Then
-                            Ventana_Principal.RadioButtonSociosMenorSi.Checked = True
-                            Ventana_Principal.RadioButtonSociosMenorNo.Checked = False
+                            Asociados.RadioButtonSociosMenorSi.Checked = True
+                            Asociados.RadioButtonSociosMenorNo.Checked = False
                         End If
-                        Ventana_Principal.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
-                        Ventana_Principal.TextBoxSociosNotasRetiro.Text = valores.Item(17)
+                        Asociados.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
+                        Asociados.TextBoxSociosNotasRetiro.Text = valores.Item(17)
 
                     Else
                         MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
@@ -119,47 +119,47 @@ Public Class Socios
 
     'Insertar Socio
     Public Sub insertar()
-        Dim cedula As String = Ventana_Principal.TextBoxSociosCedula.Text
-        Dim cedula2 As String = Ventana_Principal.TextBoxSociosCedula2.Text
-        Dim cedula3 As String = Ventana_Principal.TextBoxSociosCedula3.Text
-        Dim numAsociado As String = Ventana_Principal.TextBoxSociosNumAsociado.Text
-        Dim nombre As String = Ventana_Principal.TextBoxSociosNombre.Text
-        Dim apellidoUno As String = Ventana_Principal.TextBoxSocios1erApellido.Text
-        Dim apellidoDos As String = Ventana_Principal.TextBoxSocios2doApellido.Text
-        Dim fechaNacimiento As Date = Ventana_Principal.DateTimeSociosFechaNacimiento.Value.ToString("dd/MM/yyyy")
-        Dim telefono As String = Ventana_Principal.TextBoxSociosTelefono.Text
-        Dim telefono2 As String = Ventana_Principal.TextBoxSociosTelefono2.Text
-        Dim cuota As String = Ventana_Principal.TextBoxSociosCuotaMatricula.Text
-        Dim responsable As String = Ventana_Principal.TextBoxSociosResponsable.Text
-        Dim beneficiario As String = Ventana_Principal.TextBoxSociosBeneficiario.Text
-        Dim fechaIngreso As Date = Ventana_Principal.DateTimeSociosFechaIngreso.Value.ToString("dd/MM/yyyy")
-        Dim seccion As String = Ventana_Principal.TextBoxSociosSeccion.Text
-        Dim especialidad As String = Ventana_Principal.TextBoxSociosOcupacionEspecialidad.Text
-        Dim direccion As String = Ventana_Principal.TextBoxSociosDireccion.Text
+        Dim cedula As String = Asociados.TextBoxSociosCedula.Text
+        Dim cedula2 As String = Asociados.TextBoxSociosCedula2.Text
+        Dim cedula3 As String = Asociados.TextBoxSociosCedula3.Text
+        Dim numAsociado As String = Asociados.TextBoxSociosNumAsociado.Text
+        Dim nombre As String = Asociados.TextBoxSociosNombre.Text
+        Dim apellidoUno As String = Asociados.TextBoxSocios1erApellido.Text
+        Dim apellidoDos As String = Asociados.TextBoxSocios2doApellido.Text
+        Dim fechaNacimiento As Date = Asociados.DateTimeSociosFechaNacimiento.Value.ToString("dd/MM/yyyy")
+        Dim telefono As String = Asociados.TextBoxSociosTelefono.Text
+        Dim telefono2 As String = Asociados.TextBoxSociosTelefono2.Text
+        Dim cuota As String = Asociados.TextBoxSociosCuotaMatricula.Text
+        Dim responsable As String = Asociados.TextBoxSociosResponsable.Text
+        Dim beneficiario As String = Asociados.TextBoxSociosBeneficiario.Text
+        Dim fechaIngreso As Date = Asociados.DateTimeSociosFechaIngreso.Value.ToString("dd/MM/yyyy")
+        Dim seccion As String = Asociados.TextBoxSociosSeccion.Text
+        Dim especialidad As String = Asociados.TextBoxSociosOcupacionEspecialidad.Text
+        Dim direccion As String = Asociados.TextBoxSociosDireccion.Text
         Dim genero As String = ""
         Dim estado As String = ""
-        Dim fechaRetiro As Date = Ventana_Principal.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
-        Dim notasRetiro As String = Ventana_Principal.TextBoxSociosNotasRetiro.Text
+        Dim fechaRetiro As Date = Asociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
+        Dim notasRetiro As String = Asociados.TextBoxSociosNotasRetiro.Text
         Dim menor As String = ""
 
         'Para el genero
-        If (Ventana_Principal.RadioButtonSociosMasculino.Checked = True) Then
-            genero = Ventana_Principal.RadioButtonSociosMasculino.Text
+        If (Asociados.RadioButtonSociosMasculino.Checked = True) Then
+            genero = Asociados.RadioButtonSociosMasculino.Text
         Else
-            genero = Ventana_Principal.RadioButtonSociosFemenino.Text
+            genero = Asociados.RadioButtonSociosFemenino.Text
         End If
 
         'Para ver si es menor
-        If (Ventana_Principal.RadioButtonSociosMenorNo.Checked = True) Then
-            menor = Ventana_Principal.RadioButtonSociosMenorNo.Text
+        If (Asociados.RadioButtonSociosMenorNo.Checked = True) Then
+            menor = Asociados.RadioButtonSociosMenorNo.Text
         Else
-            menor = Ventana_Principal.RadioButtonSociosMenorSi.Text
+            menor = Asociados.RadioButtonSociosMenorSi.Text
         End If
         'Para el estado
-        If (Ventana_Principal.RadioButtonSociosActivo.Checked = True) Then
-            estado = Ventana_Principal.RadioButtonSociosActivo.Text
+        If (Asociados.RadioButtonSociosActivo.Checked = True) Then
+            estado = Asociados.RadioButtonSociosActivo.Text
         Else
-            estado = Ventana_Principal.RadioButtonSociosRetirado.Text
+            estado = Asociados.RadioButtonSociosRetirado.Text
         End If
 
         If (cedula2.Length < 4 Or cedula3.Length < 4) Then
@@ -195,43 +195,43 @@ Public Class Socios
 
     'Actualizar Info de Socios'
     Public Sub actualizar()
-        Dim cedula As String = Ventana_Principal.TextBoxSociosCedula.Text
-        Dim numAsociado As String = Ventana_Principal.TextBoxSociosNumAsociado.Text
-        Dim nombre As String = Ventana_Principal.TextBoxSociosNombre.Text
-        Dim apellidoUno As String = Ventana_Principal.TextBoxSocios1erApellido.Text
-        Dim apellidoDos As String = Ventana_Principal.TextBoxSocios2doApellido.Text
-        Dim fechaNacimiento As Date = Ventana_Principal.DateTimeSociosFechaNacimiento.Value.ToString("dd/MM/yyyy")
-        Dim telefono As String = Ventana_Principal.TextBoxSociosTelefono.Text
-        Dim cuota As String = Ventana_Principal.TextBoxSociosCuotaMatricula.Text
-        Dim responsable As String = Ventana_Principal.TextBoxSociosResponsable.Text
-        Dim beneficiario As String = Ventana_Principal.TextBoxSociosBeneficiario.Text
-        Dim fechaIngreso As Date = Ventana_Principal.DateTimeSociosFechaIngreso.Value.ToString("dd/MM/yyyy")
-        Dim seccion As String = Ventana_Principal.TextBoxSociosSeccion.Text
-        Dim especialidad As String = Ventana_Principal.TextBoxSociosOcupacionEspecialidad.Text
-        Dim direccion As String = Ventana_Principal.TextBoxSociosDireccion.Text
+        Dim cedula As String = Asociados.TextBoxSociosCedula.Text
+        Dim numAsociado As String = Asociados.TextBoxSociosNumAsociado.Text
+        Dim nombre As String = Asociados.TextBoxSociosNombre.Text
+        Dim apellidoUno As String = Asociados.TextBoxSocios1erApellido.Text
+        Dim apellidoDos As String = Asociados.TextBoxSocios2doApellido.Text
+        Dim fechaNacimiento As Date = Asociados.DateTimeSociosFechaNacimiento.Value.ToString("dd/MM/yyyy")
+        Dim telefono As String = Asociados.TextBoxSociosTelefono.Text
+        Dim cuota As String = Asociados.TextBoxSociosCuotaMatricula.Text
+        Dim responsable As String = Asociados.TextBoxSociosResponsable.Text
+        Dim beneficiario As String = Asociados.TextBoxSociosBeneficiario.Text
+        Dim fechaIngreso As Date = Asociados.DateTimeSociosFechaIngreso.Value.ToString("dd/MM/yyyy")
+        Dim seccion As String = Asociados.TextBoxSociosSeccion.Text
+        Dim especialidad As String = Asociados.TextBoxSociosOcupacionEspecialidad.Text
+        Dim direccion As String = Asociados.TextBoxSociosDireccion.Text
         Dim genero As String = ""
         Dim estado As String = ""
         Dim menor As String = ""
-        Dim fechaRetiro As Date = Ventana_Principal.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
-        Dim notasRetiro As String = Ventana_Principal.TextBoxSociosNotasRetiro.Text
+        Dim fechaRetiro As Date = Asociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
+        Dim notasRetiro As String = Asociados.TextBoxSociosNotasRetiro.Text
 
         'Para el genero
-        If (Ventana_Principal.RadioButtonSociosMasculino.Checked = True) Then
-            genero = Ventana_Principal.RadioButtonSociosMasculino.Text
+        If (Asociados.RadioButtonSociosMasculino.Checked = True) Then
+            genero = Asociados.RadioButtonSociosMasculino.Text
         Else
-            genero = Ventana_Principal.RadioButtonSociosFemenino.Text
+            genero = Asociados.RadioButtonSociosFemenino.Text
         End If
         'Para ver si es menor
-        If (Ventana_Principal.RadioButtonSociosMenorNo.Checked = True) Then
-            menor = Ventana_Principal.RadioButtonSociosMenorNo.Text
+        If (Asociados.RadioButtonSociosMenorNo.Checked = True) Then
+            menor = Asociados.RadioButtonSociosMenorNo.Text
         Else
-            menor = Ventana_Principal.RadioButtonSociosMenorSi.Text
+            menor = Asociados.RadioButtonSociosMenorSi.Text
         End If
         'Para el estado
-        If (Ventana_Principal.RadioButtonSociosActivo.Checked = True) Then
-            estado = Ventana_Principal.RadioButtonSociosActivo.Text
+        If (Asociados.RadioButtonSociosActivo.Checked = True) Then
+            estado = Asociados.RadioButtonSociosActivo.Text
         Else
-            estado = Ventana_Principal.RadioButtonSociosRetirado.Text
+            estado = Asociados.RadioButtonSociosRetirado.Text
         End If
 
         If (cedula = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
@@ -257,32 +257,31 @@ Public Class Socios
 
     'Limpia los campos de Socios'
     Public Sub limpiar()
-        Ventana_Principal.TextBoxSociosCedula.Text = ""
-        Ventana_Principal.TextBoxSociosCedula2.Text = ""
-        Ventana_Principal.TextBoxSociosCedula3.Text = ""
-        Ventana_Principal.TextBoxSociosNumAsociado.Text = ""
-        Ventana_Principal.TextBoxSociosNombre.Text = ""
-        Ventana_Principal.TextBoxSocios1erApellido.Text = ""
-        Ventana_Principal.TextBoxSocios2doApellido.Text = ""
-        Ventana_Principal.TextBoxSociosTelefono.Text = ""
-        Ventana_Principal.TextBoxSociosTelefono2.Text = ""
-        Ventana_Principal.TextBoxSociosCuotaMatricula.Text = ""
-        Ventana_Principal.TextBoxSociosResponsable.Text = ""
-        Ventana_Principal.TextBoxSociosBeneficiario.Text = ""
-        Ventana_Principal.TextBoxSociosSeccion.Text = ""
-        Ventana_Principal.TextBoxSociosOcupacionEspecialidad.Text = ""
-        Ventana_Principal.TextBoxSociosDireccion.Text = ""
-        Ventana_Principal.TextBoxSociosNotasRetiro.Text = ""
+        Asociados.TextBoxSociosCedula.Text = ""
+        Asociados.TextBoxSociosCedula2.Text = ""
+        Asociados.TextBoxSociosCedula3.Text = ""
+        Asociados.TextBoxSociosNumAsociado.Text = ""
+        Asociados.TextBoxSociosNombre.Text = ""
+        Asociados.TextBoxSocios1erApellido.Text = ""
+        Asociados.TextBoxSocios2doApellido.Text = ""
+        Asociados.TextBoxSociosTelefono.Text = ""
+        Asociados.TextBoxSociosTelefono2.Text = ""
+        Asociados.TextBoxSociosCuotaMatricula.Text = ""
+        Asociados.TextBoxSociosResponsable.Text = ""
+        Asociados.TextBoxSociosBeneficiario.Text = ""
+        Asociados.TextBoxSociosSeccion.Text = ""
+        Asociados.TextBoxSociosOcupacionEspecialidad.Text = ""
+        Asociados.TextBoxSociosDireccion.Text = ""
+        Asociados.TextBoxSociosNotasRetiro.Text = ""
+    End Sub
+
+    'Recibe Activos o Todos, como parámetro para el tipo de reporte de asociados
+    Public Sub generarReporte(ByVal tipoReport As String)
+        generarReporteDeSocios(tipoReport)
     End Sub
 
     'Genera un reporte de los Socios en PDF'
-    Public Sub generarReporteDeSocios()
-        Dim tipoReporte As String = ""
-        If (Ventana_Principal.RadioButtonSociosReporteTodos.Checked = True) Then
-            tipoReporte = Ventana_Principal.RadioButtonSociosReporteTodos.Text
-        Else
-            tipoReporte = "Activos"
-        End If
+    Private Sub generarReporteDeSocios(ByVal tipoReporte As String)
         Try
             Dim valores As List(Of SocioClase)
             BD.ConectarBD()
