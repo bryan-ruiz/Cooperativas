@@ -119,10 +119,10 @@
     <Compile Include="F_adminusuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_codcuentas.Designer.vb">
-      <DependentUpon>F_codcuentas.vb</DependentUpon>
+    <Compile Include="VConfiguracionCodigoCuenta.Designer.vb">
+      <DependentUpon>VConfiguracionCodigoCuenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_codcuentas.vb">
+    <Compile Include="VConfiguracionCodigoCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Asociados.Designer.vb">
@@ -131,58 +131,58 @@
     <Compile Include="Asociados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <Compile Include="VComites.Designer.vb">
+      <DependentUpon>VComites.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form3.vb">
+    <Compile Include="VComites.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.vb">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <Compile Include="VCertificados.Designer.vb">
+      <DependentUpon>VCertificados.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form4.vb">
+    <Compile Include="VCertificados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.vb">
-      <DependentUpon>Form5.vb</DependentUpon>
+    <Compile Include="VIngresos.Designer.vb">
+      <DependentUpon>VIngresos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form5.vb">
+    <Compile Include="VIngresos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.vb">
-      <DependentUpon>Form6.vb</DependentUpon>
+    <Compile Include="VIngresosReporte.Designer.vb">
+      <DependentUpon>VIngresosReporte.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form6.vb">
+    <Compile Include="VIngresosReporte.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form7.Designer.vb">
-      <DependentUpon>Form7.vb</DependentUpon>
+    <Compile Include="VGastos.Designer.vb">
+      <DependentUpon>VGastos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form7.vb">
+    <Compile Include="VGastos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form8.Designer.vb">
-      <DependentUpon>Form8.vb</DependentUpon>
+    <Compile Include="VGastosReporte.Designer.vb">
+      <DependentUpon>VGastosReporte.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form8.vb">
+    <Compile Include="VGastosReporte.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form9.Designer.vb">
-      <DependentUpon>Form9.vb</DependentUpon>
+    <Compile Include="VInformeEconomico.Designer.vb">
+      <DependentUpon>VInformeEconomico.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form9.vb">
+    <Compile Include="VInformeEconomico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_fechalimitecertic.Designer.vb">
-      <DependentUpon>F_fechalimitecertic.vb</DependentUpon>
+    <Compile Include="VConfiguracionFechasLimite.Designer.vb">
+      <DependentUpon>VConfiguracionFechasLimite.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_fechalimitecertic.vb">
+    <Compile Include="VConfiguracionFechasLimite.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_infocoopes.Designer.vb">
-      <DependentUpon>F_infocoopes.vb</DependentUpon>
+    <Compile Include="VConfiguracionInformacionCooperativa.Designer.vb">
+      <DependentUpon>VConfiguracionInformacionCooperativa.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_infocoopes.vb">
+    <Compile Include="VConfiguracionInformacionCooperativa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_infocuerpodirectivos.Designer.vb">
@@ -197,10 +197,10 @@
     <Compile Include="F_infogestionusuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_porcereservas.Designer.vb">
-      <DependentUpon>F_porcereservas.vb</DependentUpon>
+    <Compile Include="VConfiguracionPorcentajeReservas.Designer.vb">
+      <DependentUpon>VConfiguracionPorcentajeReservas.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_porcereservas.vb">
+    <Compile Include="VConfiguracionPorcentajeReservas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -230,38 +230,38 @@
     <EmbeddedResource Include="Asociados.resx">
       <DependentUpon>Asociados.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <EmbeddedResource Include="VComites.resx">
+      <DependentUpon>VComites.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <EmbeddedResource Include="VCertificados.resx">
+      <DependentUpon>VCertificados.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.vb</DependentUpon>
+    <EmbeddedResource Include="VIngresos.resx">
+      <DependentUpon>VIngresos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.vb</DependentUpon>
+    <EmbeddedResource Include="VIngresosReporte.resx">
+      <DependentUpon>VIngresosReporte.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
-      <DependentUpon>Form7.vb</DependentUpon>
+    <EmbeddedResource Include="VGastos.resx">
+      <DependentUpon>VGastos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form8.resx">
-      <DependentUpon>Form8.vb</DependentUpon>
+    <EmbeddedResource Include="VGastosReporte.resx">
+      <DependentUpon>VGastosReporte.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form9.resx">
-      <DependentUpon>Form9.vb</DependentUpon>
+    <EmbeddedResource Include="VInformeEconomico.resx">
+      <DependentUpon>VInformeEconomico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_adminusuarios.resx">
       <DependentUpon>F_adminusuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_codcuentas.resx">
-      <DependentUpon>F_codcuentas.vb</DependentUpon>
+    <EmbeddedResource Include="VConfiguracionCodigoCuenta.resx">
+      <DependentUpon>VConfiguracionCodigoCuenta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_fechalimitecertic.resx">
-      <DependentUpon>F_fechalimitecertic.vb</DependentUpon>
+    <EmbeddedResource Include="VConfiguracionFechasLimite.resx">
+      <DependentUpon>VConfiguracionFechasLimite.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_infocoopes.resx">
-      <DependentUpon>F_infocoopes.vb</DependentUpon>
+    <EmbeddedResource Include="VConfiguracionInformacionCooperativa.resx">
+      <DependentUpon>VConfiguracionInformacionCooperativa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_infocuerpodirectivos.resx">
       <DependentUpon>F_infocuerpodirectivos.vb</DependentUpon>
@@ -269,8 +269,8 @@
     <EmbeddedResource Include="F_infogestionusuarios.resx">
       <DependentUpon>F_infogestionusuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_porcereservas.resx">
-      <DependentUpon>F_porcereservas.vb</DependentUpon>
+    <EmbeddedResource Include="VConfiguracionPorcentajeReservas.resx">
+      <DependentUpon>VConfiguracionPorcentajeReservas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -309,6 +309,12 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

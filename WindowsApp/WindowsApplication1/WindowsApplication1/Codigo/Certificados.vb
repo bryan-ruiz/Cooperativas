@@ -12,7 +12,7 @@ Public Class Certificados
     Public Sub consultar()
 
         Dim valores As List(Of String)
-        Dim cedulaOnumAsociado As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+        Dim cedulaOnumAsociado As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
 
         If (cedulaOnumAsociado = "") Then
             MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -22,27 +22,27 @@ Public Class Certificados
                 valores = BD.consultarCertificadoXSocio(cedulaOnumAsociado)
 
                 If valores.Count <> 0 Then
-                    Ventana_Principal.CertificadosTextboxNombre.Text = valores(0)
-                    Ventana_Principal.CertificadosTextboxPrimerApellido.Text = valores(1)
-                    Ventana_Principal.CertificadosTextboxSegundoApellido.Text = valores(2)
-                    Ventana_Principal.CertificadosTextboxTracto1.Text = valores(6)
-                    Ventana_Principal.CertificadosTextboxTracto2.Text = valores(7)
-                    Ventana_Principal.CertificadosTextboxTracto3.Text = valores(8)
-                    Ventana_Principal.CertificadosTextboxTracto4.Text = valores(9)
-                    Ventana_Principal.CertificadosTextboxTracto5.Text = valores(10)
-                    Ventana_Principal.CertificadosTextboxTracto6.Text = valores(11)
-                    Ventana_Principal.CertificadosTextboxTracto7.Text = valores(12)
-                    Ventana_Principal.CertificadosTextboxTracto8.Text = valores(13)
-                    Ventana_Principal.CertificadosTextboxTracto9.Text = valores(14)
-                    Ventana_Principal.CertificadosTextboxTracto10.Text = valores(15)
-                    Ventana_Principal.CertificadosTextboxAcumAnterior.Text = valores(16)
-                    Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = valores(17)
+                    VCertificados.CertificadosTextboxNombre.Text = valores(0) + " " + valores(1) + " " + valores(2)
+                    VCertificados.CertificadosTextboxCed.Text = valores(4)
+                    VCertificados.CertificadosTextboxNumAsociado.Text = valores(5)
+                    VCertificados.CertificadosTextboxTracto1.Text = valores(6)
+                    VCertificados.CertificadosTextboxTracto2.Text = valores(7)
+                    VCertificados.CertificadosTextboxTracto3.Text = valores(8)
+                    VCertificados.CertificadosTextboxTracto4.Text = valores(9)
+                    VCertificados.CertificadosTextboxTracto5.Text = valores(10)
+                    VCertificados.CertificadosTextboxTracto6.Text = valores(11)
+                    VCertificados.CertificadosTextboxTracto7.Text = valores(12)
+                    VCertificados.CertificadosTextboxTracto8.Text = valores(13)
+                    VCertificados.CertificadosTextboxTracto9.Text = valores(14)
+                    VCertificados.CertificadosTextboxTracto10.Text = valores(15)
+                    VCertificados.CertificadosTextboxAcumAnterior.Text = valores(16)
+                    VCertificados.CertificadosTextboxTotalPeriodo.Text = valores(17)
 
                     consultarFechasLimite()
 
                 Else
                     MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                    Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text = ""
+                    VCertificados.CertificadosTextboxCedulaNumAsociado.Text = ""
                 End If
 
                 BD.CerrarConexion()
@@ -57,7 +57,7 @@ Public Class Certificados
     Public Sub cerrarCertificado()
 
         Dim monto As String = "0"
-        Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+        Dim cedula As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
 
         Try
             BD.ConectarBD()
@@ -68,18 +68,18 @@ Public Class Certificados
             Else
                 MessageBox.Show(variablesGlobales.datosActualizadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
-                Ventana_Principal.CertificadosTextboxTracto1.Text = "0"
-                Ventana_Principal.CertificadosTextboxTracto2.Text = "0"
-                Ventana_Principal.CertificadosTextboxTracto3.Text = "0"
-                Ventana_Principal.CertificadosTextboxTracto4.Text = "0"
-                Ventana_Principal.CertificadosTextboxTracto5.Text = "0"
-                Ventana_Principal.CertificadosTextboxTracto6.Text = "0"
-                Ventana_Principal.CertificadosTextboxTracto7.Text = "0"
-                Ventana_Principal.CertificadosTextboxTracto8.Text = "0"
-                Ventana_Principal.CertificadosTextboxTracto9.Text = "0"
-                Ventana_Principal.CertificadosTextboxTracto10.Text = "0"
-                Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = "0"
-                Ventana_Principal.CertificadosTextboxAcumAnterior.Text = hecho
+                VCertificados.CertificadosTextboxTracto1.Text = "0"
+                VCertificados.CertificadosTextboxTracto2.Text = "0"
+                VCertificados.CertificadosTextboxTracto3.Text = "0"
+                VCertificados.CertificadosTextboxTracto4.Text = "0"
+                VCertificados.CertificadosTextboxTracto5.Text = "0"
+                VCertificados.CertificadosTextboxTracto6.Text = "0"
+                VCertificados.CertificadosTextboxTracto7.Text = "0"
+                VCertificados.CertificadosTextboxTracto8.Text = "0"
+                VCertificados.CertificadosTextboxTracto9.Text = "0"
+                VCertificados.CertificadosTextboxTracto10.Text = "0"
+                VCertificados.CertificadosTextboxTotalPeriodo.Text = "0"
+                VCertificados.CertificadosTextboxAcumAnterior.Text = hecho
 
                 BD.cerrarCertificado(cedula, hecho, monto)
 
@@ -92,16 +92,16 @@ Public Class Certificados
 
     'sumar tractos
     Public Sub sumarTractosEnCertificados()
-        Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+        Dim cedula As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
 
         Try
             BD.ConectarBD()
             Dim hecho As Integer = BD.sumarTractosEnCertificados(cedula)
 
             If hecho = 0 Then
-                Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = hecho
+                VCertificados.CertificadosTextboxTotalPeriodo.Text = hecho
             Else
-                Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = hecho
+                VCertificados.CertificadosTextboxTotalPeriodo.Text = hecho
                 hecho = BD.totalEnCertificado(cedula, CStr(hecho))
                 If hecho = 0 Then
                     MessageBox.Show(variablesGlobales.errorActualizandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
@@ -117,28 +117,28 @@ Public Class Certificados
     'Update tracto with value "numeroTracto"
     Public Sub editarTracto(ByVal numeroTracto As String)
         Dim monto As String = ""
-        Dim cedula As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
+        Dim cedula As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
 
         If numeroTracto = "1" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto1.Text
+            monto = VCertificados.CertificadosTextboxTracto1.Text
         ElseIf numeroTracto = "2" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto2.Text
+            monto = VCertificados.CertificadosTextboxTracto2.Text
         ElseIf numeroTracto = "3" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto3.Text
+            monto = VCertificados.CertificadosTextboxTracto3.Text
         ElseIf numeroTracto = "4" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto4.Text
+            monto = VCertificados.CertificadosTextboxTracto4.Text
         ElseIf numeroTracto = "5" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto5.Text
+            monto = VCertificados.CertificadosTextboxTracto5.Text
         ElseIf numeroTracto = "6" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto6.Text
+            monto = VCertificados.CertificadosTextboxTracto6.Text
         ElseIf numeroTracto = "7" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto7.Text
+            monto = VCertificados.CertificadosTextboxTracto7.Text
         ElseIf numeroTracto = "8" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto8.Text
+            monto = VCertificados.CertificadosTextboxTracto8.Text
         ElseIf numeroTracto = "9" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto9.Text
+            monto = VCertificados.CertificadosTextboxTracto9.Text
         ElseIf numeroTracto = "10" Then
-            monto = Ventana_Principal.CertificadosTextboxTracto10.Text
+            monto = VCertificados.CertificadosTextboxTracto10.Text
         End If
 
         Try
@@ -176,16 +176,16 @@ Public Class Certificados
     Public Sub llenarDatosFechaLimite(ByVal valores As List(Of ConfiguracionClase))
         Dim conta As Integer = 0
         While conta < valores.Count
-            Ventana_Principal.CertificadosDateTimePickerFecha1.Value = Date.Parse(valores(conta).fechaLimite1)
-            Ventana_Principal.CertificadosDateTimePickerFecha2.Value = Date.Parse(valores(conta).fechaLimite2)
-            Ventana_Principal.CertificadosDateTimePickerFecha3.Value = Date.Parse(valores(conta).fechaLimite3)
-            Ventana_Principal.CertificadosDateTimePickerFecha4.Value = Date.Parse(valores(conta).fechaLimite4)
-            Ventana_Principal.CertificadosDateTimePickerFecha5.Value = Date.Parse(valores(conta).fechaLimite5)
-            Ventana_Principal.CertificadosDateTimePickerFecha6.Value = Date.Parse(valores(conta).fechaLimite6)
-            Ventana_Principal.CertificadosDateTimePickerFecha7.Value = Date.Parse(valores(conta).fechaLimite7)
-            Ventana_Principal.CertificadosDateTimePickerFecha8.Value = Date.Parse(valores(conta).fechaLimite8)
-            Ventana_Principal.CertificadosDateTimePickerFecha9.Value = Date.Parse(valores(conta).fechaLimite9)
-            Ventana_Principal.CertificadosDateTimePickerFecha10.Value = Date.Parse(valores(conta).fechaLimite10)
+            VCertificados.CertificadosDateTimePickerFecha1.Value = Date.Parse(valores(conta).fechaLimite1)
+            VCertificados.CertificadosDateTimePickerFecha2.Value = Date.Parse(valores(conta).fechaLimite2)
+            VCertificados.CertificadosDateTimePickerFecha3.Value = Date.Parse(valores(conta).fechaLimite3)
+            VCertificados.CertificadosDateTimePickerFecha4.Value = Date.Parse(valores(conta).fechaLimite4)
+            VCertificados.CertificadosDateTimePickerFecha5.Value = Date.Parse(valores(conta).fechaLimite5)
+            VCertificados.CertificadosDateTimePickerFecha6.Value = Date.Parse(valores(conta).fechaLimite6)
+            VCertificados.CertificadosDateTimePickerFecha7.Value = Date.Parse(valores(conta).fechaLimite7)
+            VCertificados.CertificadosDateTimePickerFecha8.Value = Date.Parse(valores(conta).fechaLimite8)
+            VCertificados.CertificadosDateTimePickerFecha9.Value = Date.Parse(valores(conta).fechaLimite9)
+            VCertificados.CertificadosDateTimePickerFecha10.Value = Date.Parse(valores(conta).fechaLimite10)
             conta = conta + 1
         End While
     End Sub
@@ -217,42 +217,40 @@ Public Class Certificados
     End Sub
 
     Public Sub limpiar()
-        Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text = ""
-        Ventana_Principal.CertificadosTextboxNombre.Text = ""
-        Ventana_Principal.CertificadosTextboxPrimerApellido.Text = ""
-        Ventana_Principal.CertificadosTextboxSegundoApellido.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto1.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto2.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto3.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto4.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto5.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto6.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto7.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto8.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto9.Text = ""
-        Ventana_Principal.CertificadosTextboxTracto10.Text = ""
-        Ventana_Principal.CertificadosTextboxAcumAnterior.Text = ""
-        Ventana_Principal.CertificadosTextboxTotalPeriodo.Text = ""
+        VCertificados.CertificadosTextboxCedulaNumAsociado.Text = ""
+        VCertificados.CertificadosTextboxNombre.Text = ""
+
+        VCertificados.CertificadosTextboxTracto1.Text = ""
+        VCertificados.CertificadosTextboxTracto2.Text = ""
+        VCertificados.CertificadosTextboxTracto3.Text = ""
+        VCertificados.CertificadosTextboxTracto4.Text = ""
+        VCertificados.CertificadosTextboxTracto5.Text = ""
+        VCertificados.CertificadosTextboxTracto6.Text = ""
+        VCertificados.CertificadosTextboxTracto7.Text = ""
+        VCertificados.CertificadosTextboxTracto8.Text = ""
+        VCertificados.CertificadosTextboxTracto9.Text = ""
+        VCertificados.CertificadosTextboxTracto10.Text = ""
+        VCertificados.CertificadosTextboxAcumAnterior.Text = ""
+        VCertificados.CertificadosTextboxTotalPeriodo.Text = ""
     End Sub
 
     'Genera un reporte con los datos de aportaciones actuales de un socio
     Public Sub comprobante()
-        Dim cedulaOnumAsociado As String = Ventana_Principal.CertificadosTextboxCedulaNumAsociado.Text
-        Dim nombre As String = Ventana_Principal.CertificadosTextboxNombre.Text
-        Dim primerApellido As String = Ventana_Principal.CertificadosTextboxPrimerApellido.Text
-        Dim segundoApellido As String = Ventana_Principal.CertificadosTextboxSegundoApellido.Text
-        Dim tracto1 As String = Ventana_Principal.CertificadosTextboxTracto1.Text
-        Dim tracto2 As String = Ventana_Principal.CertificadosTextboxTracto2.Text
-        Dim tracto3 As String = Ventana_Principal.CertificadosTextboxTracto3.Text
-        Dim tracto4 As String = Ventana_Principal.CertificadosTextboxTracto4.Text
-        Dim tracto5 As String = Ventana_Principal.CertificadosTextboxTracto5.Text
-        Dim tracto6 As String = Ventana_Principal.CertificadosTextboxTracto6.Text
-        Dim tracto7 As String = Ventana_Principal.CertificadosTextboxTracto7.Text
-        Dim tracto8 As String = Ventana_Principal.CertificadosTextboxTracto8.Text
-        Dim tracto9 As String = Ventana_Principal.CertificadosTextboxTracto9.Text
-        Dim tracto10 As String = Ventana_Principal.CertificadosTextboxTracto10.Text
-        Dim acum As String = Ventana_Principal.CertificadosTextboxAcumAnterior.Text
-        Dim total As String = Ventana_Principal.CertificadosTextboxTotalPeriodo.Text
+        Dim cedulaOnumAsociado As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
+        Dim nombre As String = VCertificados.CertificadosTextboxNombre.Text
+
+        Dim tracto1 As String = VCertificados.CertificadosTextboxTracto1.Text
+        Dim tracto2 As String = VCertificados.CertificadosTextboxTracto2.Text
+        Dim tracto3 As String = VCertificados.CertificadosTextboxTracto3.Text
+        Dim tracto4 As String = VCertificados.CertificadosTextboxTracto4.Text
+        Dim tracto5 As String = VCertificados.CertificadosTextboxTracto5.Text
+        Dim tracto6 As String = VCertificados.CertificadosTextboxTracto6.Text
+        Dim tracto7 As String = VCertificados.CertificadosTextboxTracto7.Text
+        Dim tracto8 As String = VCertificados.CertificadosTextboxTracto8.Text
+        Dim tracto9 As String = VCertificados.CertificadosTextboxTracto9.Text
+        Dim tracto10 As String = VCertificados.CertificadosTextboxTracto10.Text
+        Dim acum As String = VCertificados.CertificadosTextboxAcumAnterior.Text
+        Dim total As String = VCertificados.CertificadosTextboxTotalPeriodo.Text
 
 
         If (cedulaOnumAsociado = "" Or nombre = "") Then
@@ -279,7 +277,7 @@ Public Class Certificados
                 pdfDoc.Add(New Paragraph(" "))
 
                 pdfDoc.Add(New Paragraph("Cédula o Num de Asociado:   " + cedulaOnumAsociado, FontStype))
-                pdfDoc.Add(New Paragraph("Nombre completo:  " + nombre + " " + primerApellido + " " + segundoApellido, FontStype))
+                pdfDoc.Add(New Paragraph("Nombre completo:  " + nombre, FontStype))
                 pdfDoc.Add(New Paragraph("Tracto #1:  " + tracto1, FontStype))
                 pdfDoc.Add(New Paragraph("Tracto #2:  " + tracto2, FontStype))
                 pdfDoc.Add(New Paragraph("Tracto #3:  " + tracto3, FontStype))

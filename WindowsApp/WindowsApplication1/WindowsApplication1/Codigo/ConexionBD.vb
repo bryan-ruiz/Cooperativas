@@ -474,6 +474,72 @@ Public Class ConexionBD
         Return res
     End Function
 
+    'Actualiza la info de Configuracion
+    Function actualizarConfiguracionInformacionCooperativa(ByVal periodo As String, ByVal cooperativa As String, ByVal cedulaJuridica As String, ByVal telefono As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar
+            SQL = "UPDATE [CONFIGURACION] SET periodo = '" & periodo & "', " & "cooperativa = '" & cooperativa & "', " & "cedulaJuridica = '" & cedulaJuridica & "', " & "telefono = '" & telefono & "' "
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+
+        Return res
+    End Function
+
+
+    'Actualiza la info de Configuracion porcentaje de reservas
+    Function actualizarConfiguracionPorcentajeReservas(ByVal legal As String, ByVal educacion As String, ByVal bienestarSocial As String, ByVal institucional As String, ByVal patrimonial As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar
+            SQL = "UPDATE [CONFIGURACION] SET legal = '" & legal & "',  " & "educacion = '" & educacion & "',  " & "bienestarSocial = '" & bienestarSocial & "', " & "Institucional = '" & institucional & "', " & "Patrimonial = '" & patrimonial & "' "
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+
+        Return res
+    End Function
+
+    'Actualiza la info de Configuracion
+    Function actualizarConfiguracionFechasLimite(ByVal fecha1 As Date, ByVal fecha2 As Date, ByVal fecha3 As Date, ByVal fech4 As Date, ByVal fecha5 As Date,
+                                     ByVal fecha6 As Date, ByVal fecha7 As Date, ByVal fecha8 As Date, ByVal fecha9 As Date, ByVal fecha10 As Date) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar
+            SQL = "UPDATE [CONFIGURACION] SET fechaLimite1 = '" & fecha1 & "', " & "fechaLimite2 = '" & fecha2 & "', " & "fechaLimite3 = '" & fecha3 & "', " & "fechaLimite4 = '" & fech4 & "',
+" & "fechaLimite5 = '" & fecha5 & "',   " & "fechaLimite6 = '" & fecha6 & "',  " & "fechaLimite7 = '" & fecha7 & "', " & "fechaLimite8 = '" & fecha8 & "',  " & "fechaLimite9 = '" & fecha9 & "',
+" & "fechaLimite10 = '" & fecha10 & "' "
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+
+        Return res
+    End Function
+
+
+
     ''/////////////////////////////////////////////////////////////////////
     '''                 CUENTAS
 

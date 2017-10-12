@@ -26,8 +26,8 @@ Public Class InformeEconomico
     'Función que tiene la lógica para generar los datos requeridos para el informe económico
     Public Sub generarInformeTabla()
 
-        Dim fechaDesde As Date = Ventana_Principal.InformeDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
-        Dim fechaHasta As Date = Ventana_Principal.InformeDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
+        Dim fechaDesde As Date = VInformeEconomico.InformeDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
+        Dim fechaHasta As Date = VInformeEconomico.InformeDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
         'INGRESOS
         Dim totalIngresos As List(Of String) = ingresosTotales("Ingreso", "Si", fechaDesde, fechaHasta)
         Dim subTotalIngresos As List(Of String) = obtenerSubTotalIngresos("Ingreso", "Si", fechaDesde, fechaHasta)

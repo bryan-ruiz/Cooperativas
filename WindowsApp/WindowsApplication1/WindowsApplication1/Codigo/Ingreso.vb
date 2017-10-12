@@ -11,8 +11,8 @@ Public Class Ingreso
 
     Public Sub generarReporteIngresos()
 
-        Dim fechaInicial As String = Ventana_Principal.DateTimePicker_IngresosFechaInicio.Text
-        Dim fechaFinal As String = Ventana_Principal.DateTimePicker_IngresosFechaFinal.Text
+        Dim fechaInicial As String = VIngresosReporte.DateTimePicker_IngresosFechaInicio.Text
+        Dim fechaFinal As String = VIngresosReporte.DateTimePicker_IngresosFechaFinal.Text
 
         Try
             Dim valores As List(Of IngresoClase)
@@ -62,10 +62,10 @@ Public Class Ingreso
 
     Public Sub calcular()
         Try
-            Dim cantidad As Integer = Integer.Parse(Ventana_Principal.TextBox_IngresosCantidad.Text)
-            Dim precioUnitario As Integer = Integer.Parse(Ventana_Principal.TextBox_IngresosPrecioUnitario.Text)
+            Dim cantidad As Integer = Integer.Parse(VIngresos.TextBox_IngresosCantidad.Text)
+            Dim precioUnitario As Integer = Integer.Parse(VIngresos.TextBox_IngresosPrecioUnitario.Text)
 
-            Ventana_Principal.TextBox_IngresosTotal.Text = cantidad * precioUnitario
+            VIngresos.TextBox_IngresosTotal.Text = cantidad * precioUnitario
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
@@ -74,29 +74,29 @@ Public Class Ingreso
 
     Public Sub obtenerDatosSeleccionarCuenta()
         Dim valores As List(Of CuentaClase)
-        Dim codCuenta As String = Ventana_Principal.ComboBox_IngresosCodigCuenta.Text
+        Dim codCuenta As String = VIngresos.ComboBox_IngresosCodigCuenta.Text
         Try
             BD.ConectarBD()
             valores = BD.consultarCuentas()
             If valores.Count <> 0 Then
                 estado = True
-                Ventana_Principal.ComboBox_IngresosCodigCuenta.Items.Clear()
+                VIngresos.ComboBox_IngresosCodigCuenta.Items.Clear()
                 Dim contador As Integer = 0
                 Dim conta As Integer = 0
                 While valores.Count > contador
                     If valores(contador).tipo = "Ingreso" Then
-                        Ventana_Principal.ComboBox_IngresosCodigCuenta.Items.Add(valores(contador).codDescripcion)
+                        VIngresos.ComboBox_IngresosCodigCuenta.Items.Add(valores(contador).codDescripcion)
                         conta += 1
                     End If
                     contador = contador + 1
                 End While
                 If conta = 0 Then
                     estado = False
-                    Ventana_Principal.ComboBox_IngresosCodigCuenta.Items.Add("No se poseen cuentas")
+                    VIngresos.ComboBox_IngresosCodigCuenta.Items.Add("No se poseen cuentas")
                 End If
             Else
                 estado = False
-                Ventana_Principal.ComboBox_IngresosCodigCuenta.Items.Add("No se poseen cuentas")
+                VIngresos.ComboBox_IngresosCodigCuenta.Items.Add("No se poseen cuentas")
             End If
 
             BD.CerrarConexion()
@@ -107,26 +107,27 @@ Public Class Ingreso
     End Sub
 
     Public Sub limpiar()
-        Ventana_Principal.TextBox_IngresosFacturaRecibos.Text = ""
-        Ventana_Principal.TextBox_IngresosCliente.Text = ""
-        Ventana_Principal.TextBox_IngresosDescripcion.Text = ""
-        Ventana_Principal.TextBox_IngresosCantidad.Text = ""
-        Ventana_Principal.TextBox_IngresosPrecioUnitario.Text = ""
-        Ventana_Principal.TextBox_IngresosTotal.Text = ""
+        VIngresos.TextBox_IngresosFacturaRecibos.Text = ""
+        VIngresos.TextBox_IngresosCliente.Text = ""
+        VIngresos.TextBox_IngresosDescripcion.Text = ""
+        VIngresos.TextBox_IngresosCantidad.Text = ""
+        VIngresos.TextBox_IngresosPrecioUnitario.Text = ""
+        VIngresos.TextBox_IngresosTotal.Text = ""
     End Sub
 
     'Inserta un ingreso asociado a una cuenta en la BD
     Public Sub insertarIngreso()
 
         Dim valores As Integer
-        Dim fecha As String = Ventana_Principal.DateTimePicker_IngresosFecha.Text
-        Dim factura As String = Ventana_Principal.TextBox_IngresosFacturaRecibos.Text
-        Dim cliente As String = Ventana_Principal.TextBox_IngresosCliente.Text
-        Dim descripcion As String = Ventana_Principal.TextBox_IngresosDescripcion.Text
-        Dim cantidad As String = Ventana_Principal.TextBox_IngresosCantidad.Text
-        Dim precioUnitario As String = Ventana_Principal.TextBox_IngresosPrecioUnitario.Text
-        Dim total As String = Ventana_Principal.TextBox_IngresosTotal.Text
-        Dim codCuenta As String = Ventana_Principal.ComboBox_IngresosCodigCuenta.Text
+
+        Dim fecha As String = VIngresos.DateTimePicker_IngresosFecha.Text
+        Dim factura As String = VIngresos.TextBox_IngresosFacturaRecibos.Text
+        Dim cliente As String = VIngresos.TextBox_IngresosCliente.Text
+        Dim descripcion As String = VIngresos.TextBox_IngresosDescripcion.Text
+        Dim cantidad As String = VIngresos.TextBox_IngresosCantidad.Text
+        Dim precioUnitario As String = VIngresos.TextBox_IngresosPrecioUnitario.Text
+        Dim total As String = VIngresos.TextBox_IngresosTotal.Text
+        Dim codCuenta As String = VIngresos.ComboBox_IngresosCodigCuenta.Text
 
         If (factura = "" Or cliente = "" Or descripcion = "" Or cantidad = "" Or
             precioUnitario = "" Or total = "" Or codCuenta = "" Or estado = False) Then
@@ -135,9 +136,9 @@ Public Class Ingreso
         End If
 
         Try
-            Integer.Parse(Ventana_Principal.TextBox_IngresosCantidad.Text)
-            Integer.Parse(Ventana_Principal.TextBox_IngresosPrecioUnitario.Text)
-            Integer.Parse(Ventana_Principal.TextBox_IngresosTotal.Text)
+            Integer.Parse(VIngresos.TextBox_IngresosCantidad.Text)
+            Integer.Parse(VIngresos.TextBox_IngresosPrecioUnitario.Text)
+            Integer.Parse(VIngresos.TextBox_IngresosTotal.Text)
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
@@ -145,8 +146,7 @@ Public Class Ingreso
 
         Try
             BD.ConectarBD()
-            valores = BD.insertarIngresos(fecha, cliente, descripcion, cantidad,
-                                          precioUnitario, total, codCuenta, factura)
+            valores = BD.insertarIngresos(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
             If valores <> 0 Then
                 limpiar()
                 MessageBox.Show(variablesGlobales.datosIngresadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)

@@ -2,7 +2,7 @@
 
     Dim BD As ConexionBD = New ConexionBD
     Dim socios As Socios = New Socios
-    Dim comites As Comites = New Comites
+    Dim comites As VComites = New VComites
     Dim usuarios As Usuarios = New Usuarios
     Dim ingreso As Ingreso = New Ingreso
     Dim gasto As Gastos = New Gastos

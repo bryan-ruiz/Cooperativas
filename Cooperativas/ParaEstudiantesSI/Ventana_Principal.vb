@@ -92,11 +92,11 @@ Public Class Ventana_Principal
     '//////////////////////////
 
     Private Sub ButtonBuscar_asociadoPresidente_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoPresidente.Click
-        Comites.buscar("presidente")
+        comites.buscar("presidente")
     End Sub
 
     Private Sub ButtonBuscar_asociadoVicePresidente_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoVicePresidente.Click
-        Comites.buscar("vicePresidente")
+        comites.buscar("vicePresidente")
     End Sub
 
     Private Sub ButtonBuscar_asociadoSecretaria_Click(sender As Object, e As EventArgs) Handles ButtonBuscar_asociadoSecretaria.Click

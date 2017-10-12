@@ -86,53 +86,53 @@ Public Class Comites
 
     Public Sub limpiar()
 
-        Ventana_Principal.TextBoxComitesPresidente.Text = ""
-        Ventana_Principal.TextBoxTipo_comitePresidente.Text = ""
-        Ventana_Principal.TextBoxComiteMenorPresi.Text = ""
-        Ventana_Principal.DateTimePickerFechaRige_ComitePresidente.Text = ""
-        Ventana_Principal.DateTimePickerFechaVence_ComitePresidente.Text = ""
-        Ventana_Principal.TextBoxID_ComitePresidente.Text = ""
-        Ventana_Principal.TextBoxComitesVicepresidente.Text = ""
-        Ventana_Principal.TextBoxTipo_ComiteVicePresidente.Text = ""
-        Ventana_Principal.TextBoxComiteMenorViceP.Text = ""
-        Ventana_Principal.DateTimePickerFechaRige_ComiteVicePresidente.Text = ""
-        Ventana_Principal.DateTimePickerFechaVence_ComiteVicePresidente.Text = ""
-        Ventana_Principal.TextBoxID_ComiteVicePresidente.Text = ""
-        Ventana_Principal.TextBoxComitesSecretaria.Text = ""
-        Ventana_Principal.TextBoxTipo_ComiteSecretaria.Text = ""
-        Ventana_Principal.TextBoxComiteMenorSec.Text = ""
-        Ventana_Principal.DateTimePickerFechaRige_ComiteSecretaria.Text = ""
-        Ventana_Principal.DateTimePickerFechaVence_ComiteSecretaria.Text = ""
-        Ventana_Principal.TextBoxID_ComiteSecretaria.Text = ""
-        Ventana_Principal.TextBoxComitesVocal1.Text = ""
-        Ventana_Principal.TextBoxTipo_ComiteVocal1.Text = ""
-        Ventana_Principal.TextBoxComiteMenorVoc1.Text = ""
-        Ventana_Principal.DateTimePickerFechaRige_ComiteVocal1.Text = ""
-        Ventana_Principal.DateTimePickerFechaVence_ComiteVocal1.Text = ""
-        Ventana_Principal.TextBoxID_ComiteVocal1.Text = ""
-        Ventana_Principal.TextBoxComitesVocal2.Text = ""
-        Ventana_Principal.TextBoxTipo_ComiteVocal2.Text = ""
-        Ventana_Principal.TextBoxComiteMenorVoc2.Text = ""
-        Ventana_Principal.DateTimePickerFechaRige_ComiteVocal2.Text = ""
-        Ventana_Principal.DateTimePickerFechaVence_ComiteVocal2.Text = ""
-        Ventana_Principal.TextBoxID_ComiteVocal2.Text = ""
-        Ventana_Principal.TextBoxComitesSuplente1.Text = ""
-        Ventana_Principal.TextBoxTipo_ComiteSuplente1.Text = ""
-        Ventana_Principal.TextBoxComiteMenorSupl1.Text = ""
-        Ventana_Principal.DateTimePickerFechaRige_ComiteSuplente1.Text = ""
-        Ventana_Principal.DateTimePickerFechaVence_ComiteSuplente1.Text = ""
-        Ventana_Principal.TextBoxID_ComiteSuplente1.Text = ""
-        Ventana_Principal.TextBoxComitesSuplente2.Text = ""
-        Ventana_Principal.TextBoxTipo_ComiteSuplente2.Text = ""
-        Ventana_Principal.TextBoxComiteMenorSupl2.Text = ""
-        Ventana_Principal.DateTimePickerFechaRige_ComiteSuplente2.Text = ""
-        Ventana_Principal.DateTimePickerFechaVence_ComiteSuplente2.Text = ""
-        Ventana_Principal.TextBoxID_ComiteSuplente2.Text = ""
+        VComites.TextBoxComitesPresidente.Text = ""
+        VComites.TextBoxTipo_comitePresidente.Text = ""
+        VComites.TextBoxComiteMenorPresi.Text = ""
+        VComites.DateTimePickerFechaRige_ComitePresidente.Text = ""
+        VComites.DateTimePickerFechaVence_ComitePresidente.Text = ""
+        VComites.TextBoxID_ComitePresidente.Text = ""
+        VComites.TextBoxComitesVicepresidente.Text = ""
+        VComites.TextBoxTipo_ComiteVicePresidente.Text = ""
+        VComites.TextBoxComiteMenorViceP.Text = ""
+        VComites.DateTimePickerFechaRige_ComiteVicePresidente.Text = ""
+        VComites.DateTimePickerFechaVence_ComiteVicePresidente.Text = ""
+        VComites.TextBoxID_ComiteVicePresidente.Text = ""
+        VComites.TextBoxComitesSecretaria.Text = ""
+        VComites.TextBoxTipo_ComiteSecretaria.Text = ""
+        VComites.TextBoxComiteMenorSec.Text = ""
+        VComites.DateTimePickerFechaRige_ComiteSecretaria.Text = ""
+        VComites.DateTimePickerFechaVence_ComiteSecretaria.Text = ""
+        VComites.TextBoxID_ComiteSecretaria.Text = ""
+        VComites.TextBoxComitesVocal1.Text = ""
+        VComites.TextBoxTipo_ComiteVocal1.Text = ""
+        VComites.TextBoxComiteMenorVoc1.Text = ""
+        VComites.DateTimePickerFechaRige_ComiteVocal1.Text = ""
+        VComites.DateTimePickerFechaVence_ComiteVocal1.Text = ""
+        VComites.TextBoxID_ComiteVocal1.Text = ""
+        VComites.TextBoxComitesVocal2.Text = ""
+        VComites.TextBoxTipo_ComiteVocal2.Text = ""
+        VComites.TextBoxComiteMenorVoc2.Text = ""
+        VComites.DateTimePickerFechaRige_ComiteVocal2.Text = ""
+        VComites.DateTimePickerFechaVence_ComiteVocal2.Text = ""
+        VComites.TextBoxID_ComiteVocal2.Text = ""
+        VComites.TextBoxComitesSuplente1.Text = ""
+        VComites.TextBoxTipo_ComiteSuplente1.Text = ""
+        VComites.TextBoxComiteMenorSupl1.Text = ""
+        VComites.DateTimePickerFechaRige_ComiteSuplente1.Text = ""
+        VComites.DateTimePickerFechaVence_ComiteSuplente1.Text = ""
+        VComites.TextBoxID_ComiteSuplente1.Text = ""
+        VComites.TextBoxComitesSuplente2.Text = ""
+        VComites.TextBoxTipo_ComiteSuplente2.Text = ""
+        VComites.TextBoxComiteMenorSupl2.Text = ""
+        VComites.DateTimePickerFechaRige_ComiteSuplente2.Text = ""
+        VComites.DateTimePickerFechaVence_ComiteSuplente2.Text = ""
+        VComites.TextBoxID_ComiteSuplente2.Text = ""
     End Sub
 
 
     Public Sub actualizarComiteF()
-        Dim tipoConsejo As String = Ventana_Principal.ComboBoxComitesNombre.Text
+        Dim tipoConsejo As String = VComites.ComboBoxComitesNombre.Text
         Dim nombreCompleto As String
         Dim ocupacion As String
         Dim menor As String
@@ -140,7 +140,7 @@ Public Class Comites
         Dim fechaVence As String
         Dim cedula As String
 
-        If Ventana_Principal.ComboBoxComitesNombre.Text.Contains("Selecione") Then
+        If VComites.ComboBoxComitesNombre.Text.Contains("Selecione") Then
             MessageBox.Show("Debe seleccionar un nombre de comité", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
 
@@ -148,60 +148,60 @@ Public Class Comites
             Try
                 BD.ConectarBD()
 
-                nombreCompleto = Ventana_Principal.TextBoxComitesPresidente.Text
-                ocupacion = Ventana_Principal.TextBoxTipo_comitePresidente.Text
-                menor = Ventana_Principal.TextBoxComiteMenorPresi.Text
-                fechaRige = Ventana_Principal.DateTimePickerFechaRige_ComitePresidente.Text
-                fechaVence = Ventana_Principal.DateTimePickerFechaVence_ComitePresidente.Text
-                cedula = Ventana_Principal.TextBoxID_ComitePresidente.Text
+                nombreCompleto = VComites.TextBoxComitesPresidente.Text
+                ocupacion = VComites.TextBoxTipo_comitePresidente.Text
+                menor = VComites.TextBoxComiteMenorPresi.Text
+                fechaRige = VComites.DateTimePickerFechaRige_ComitePresidente.Text
+                fechaVence = VComites.DateTimePickerFechaVence_ComitePresidente.Text
+                cedula = VComites.TextBoxID_ComitePresidente.Text
                 BD.actualizarComite(nombreCompleto, ocupacion, menor, fechaRige, fechaVence, cedula, tipoConsejo, "presidente")
 
-                nombreCompleto = Ventana_Principal.TextBoxComitesVicepresidente.Text
-                ocupacion = Ventana_Principal.TextBoxTipo_ComiteVicePresidente.Text
-                menor = Ventana_Principal.TextBoxComiteMenorViceP.Text
-                fechaRige = Ventana_Principal.DateTimePickerFechaRige_ComiteVicePresidente.Text
-                fechaVence = Ventana_Principal.DateTimePickerFechaVence_ComiteVicePresidente.Text
-                cedula = Ventana_Principal.TextBoxID_ComiteVicePresidente.Text
+                nombreCompleto = VComites.TextBoxComitesVicepresidente.Text
+                ocupacion = VComites.TextBoxTipo_ComiteVicePresidente.Text
+                menor = VComites.TextBoxComiteMenorViceP.Text
+                fechaRige = VComites.DateTimePickerFechaRige_ComiteVicePresidente.Text
+                fechaVence = VComites.DateTimePickerFechaVence_ComiteVicePresidente.Text
+                cedula = VComites.TextBoxID_ComiteVicePresidente.Text
                 BD.actualizarComite(nombreCompleto, ocupacion, menor, fechaRige, fechaVence, cedula, tipoConsejo, "vicePresidente")
 
-                nombreCompleto = Ventana_Principal.TextBoxComitesSecretaria.Text
-                ocupacion = Ventana_Principal.TextBoxTipo_ComiteSecretaria.Text
-                menor = Ventana_Principal.TextBoxComiteMenorSec.Text
-                fechaRige = Ventana_Principal.DateTimePickerFechaRige_ComiteSecretaria.Text
-                fechaVence = Ventana_Principal.DateTimePickerFechaVence_ComiteSecretaria.Text
-                cedula = Ventana_Principal.TextBoxID_ComiteSecretaria.Text
+                nombreCompleto = VComites.TextBoxComitesSecretaria.Text
+                ocupacion = VComites.TextBoxTipo_ComiteSecretaria.Text
+                menor = VComites.TextBoxComiteMenorSec.Text
+                fechaRige = VComites.DateTimePickerFechaRige_ComiteSecretaria.Text
+                fechaVence = VComites.DateTimePickerFechaVence_ComiteSecretaria.Text
+                cedula = VComites.TextBoxID_ComiteSecretaria.Text
                 BD.actualizarComite(nombreCompleto, ocupacion, menor, fechaRige, fechaVence, cedula, tipoConsejo, "secretaria")
 
-                nombreCompleto = Ventana_Principal.TextBoxComitesVocal1.Text
-                ocupacion = Ventana_Principal.TextBoxTipo_ComiteVocal1.Text
-                menor = Ventana_Principal.TextBoxComiteMenorVoc1.Text
-                fechaRige = Ventana_Principal.DateTimePickerFechaRige_ComiteVocal1.Text
-                fechaVence = Ventana_Principal.DateTimePickerFechaVence_ComiteVocal1.Text
-                cedula = Ventana_Principal.TextBoxID_ComiteVocal1.Text
+                nombreCompleto = VComites.TextBoxComitesVocal1.Text
+                ocupacion = VComites.TextBoxTipo_ComiteVocal1.Text
+                menor = VComites.TextBoxComiteMenorVoc1.Text
+                fechaRige = VComites.DateTimePickerFechaRige_ComiteVocal1.Text
+                fechaVence = VComites.DateTimePickerFechaVence_ComiteVocal1.Text
+                cedula = VComites.TextBoxID_ComiteVocal1.Text
                 BD.actualizarComite(nombreCompleto, ocupacion, menor, fechaRige, fechaVence, cedula, tipoConsejo, "vocal1")
 
-                nombreCompleto = Ventana_Principal.TextBoxComitesVocal2.Text
-                ocupacion = Ventana_Principal.TextBoxTipo_ComiteVocal2.Text
-                menor = Ventana_Principal.TextBoxComiteMenorVoc2.Text
-                fechaRige = Ventana_Principal.DateTimePickerFechaRige_ComiteVocal2.Text
-                fechaVence = Ventana_Principal.DateTimePickerFechaVence_ComiteVocal2.Text
-                cedula = Ventana_Principal.TextBoxID_ComiteVocal2.Text
+                nombreCompleto = VComites.TextBoxComitesVocal2.Text
+                ocupacion = VComites.TextBoxTipo_ComiteVocal2.Text
+                menor = VComites.TextBoxComiteMenorVoc2.Text
+                fechaRige = VComites.DateTimePickerFechaRige_ComiteVocal2.Text
+                fechaVence = VComites.DateTimePickerFechaVence_ComiteVocal2.Text
+                cedula = VComites.TextBoxID_ComiteVocal2.Text
                 BD.actualizarComite(nombreCompleto, ocupacion, menor, fechaRige, fechaVence, cedula, tipoConsejo, "vocal2")
 
-                nombreCompleto = Ventana_Principal.TextBoxComitesSuplente1.Text
-                ocupacion = Ventana_Principal.TextBoxTipo_ComiteSuplente1.Text
-                menor = Ventana_Principal.TextBoxComiteMenorSupl1.Text
-                fechaRige = Ventana_Principal.DateTimePickerFechaRige_ComiteSuplente1.Text
-                fechaVence = Ventana_Principal.DateTimePickerFechaVence_ComiteSuplente1.Text
-                cedula = Ventana_Principal.TextBoxID_ComiteSuplente1.Text
+                nombreCompleto = VComites.TextBoxComitesSuplente1.Text
+                ocupacion = VComites.TextBoxTipo_ComiteSuplente1.Text
+                menor = VComites.TextBoxComiteMenorSupl1.Text
+                fechaRige = VComites.DateTimePickerFechaRige_ComiteSuplente1.Text
+                fechaVence = VComites.DateTimePickerFechaVence_ComiteSuplente1.Text
+                cedula = VComites.TextBoxID_ComiteSuplente1.Text
                 BD.actualizarComite(nombreCompleto, ocupacion, menor, fechaRige, fechaVence, cedula, tipoConsejo, "suplente1")
 
-                nombreCompleto = Ventana_Principal.TextBoxComitesSuplente2.Text
-                ocupacion = Ventana_Principal.TextBoxTipo_ComiteSuplente2.Text
-                menor = Ventana_Principal.TextBoxComiteMenorSupl2.Text
-                fechaRige = Ventana_Principal.DateTimePickerFechaRige_ComiteSuplente2.Text
-                fechaVence = Ventana_Principal.DateTimePickerFechaVence_ComiteSuplente2.Text
-                cedula = Ventana_Principal.TextBoxID_ComiteSuplente2.Text
+                nombreCompleto = VComites.TextBoxComitesSuplente2.Text
+                ocupacion = VComites.TextBoxTipo_ComiteSuplente2.Text
+                menor = VComites.TextBoxComiteMenorSupl2.Text
+                fechaRige = VComites.DateTimePickerFechaRige_ComiteSuplente2.Text
+                fechaVence = VComites.DateTimePickerFechaVence_ComiteSuplente2.Text
+                cedula = VComites.TextBoxID_ComiteSuplente2.Text
                 BD.actualizarComite(nombreCompleto, ocupacion, menor, fechaRige, fechaVence, cedula, tipoConsejo, "suplente2")
 
                 BD.CerrarConexion()
@@ -219,60 +219,60 @@ Public Class Comites
         Dim conta As Integer = 0
         While conta < valores.Count
             If valores(conta).tipo = "presidente" Then
-                Ventana_Principal.TextBoxComitesPresidente.Text = valores(conta).nombreCompleto
-                Ventana_Principal.TextBoxTipo_comitePresidente.Text = valores(conta).ocupacion
-                Ventana_Principal.TextBoxComiteMenorPresi.Text = valores(conta).menor
-                Ventana_Principal.DateTimePickerFechaRige_ComitePresidente.Text = valores(conta).fechaRige
-                Ventana_Principal.DateTimePickerFechaVence_ComitePresidente.Text = valores(conta).fechaVence
-                Ventana_Principal.TextBoxID_ComitePresidente.Text = valores(conta).cedual
+                VComites.TextBoxComitesPresidente.Text = valores(conta).nombreCompleto
+                VComites.TextBoxTipo_comitePresidente.Text = valores(conta).ocupacion
+                VComites.TextBoxComiteMenorPresi.Text = valores(conta).menor
+                VComites.DateTimePickerFechaRige_ComitePresidente.Text = valores(conta).fechaRige
+                VComites.DateTimePickerFechaVence_ComitePresidente.Text = valores(conta).fechaVence
+                VComites.TextBoxID_ComitePresidente.Text = valores(conta).cedual
 
             ElseIf valores(conta).tipo = "vicePresidente" Then
-                Ventana_Principal.TextBoxComitesVicepresidente.Text = valores(conta).nombreCompleto
-                Ventana_Principal.TextBoxTipo_ComiteVicePresidente.Text = valores(conta).ocupacion
-                Ventana_Principal.TextBoxComiteMenorViceP.Text = valores(conta).menor
-                Ventana_Principal.DateTimePickerFechaRige_ComiteVicePresidente.Text = valores(conta).fechaRige
-                Ventana_Principal.DateTimePickerFechaVence_ComiteVicePresidente.Text = valores(conta).fechaVence
-                Ventana_Principal.TextBoxID_ComiteVicePresidente.Text = valores(conta).cedual
+                VComites.TextBoxComitesVicepresidente.Text = valores(conta).nombreCompleto
+                VComites.TextBoxTipo_ComiteVicePresidente.Text = valores(conta).ocupacion
+                VComites.TextBoxComiteMenorViceP.Text = valores(conta).menor
+                VComites.DateTimePickerFechaRige_ComiteVicePresidente.Text = valores(conta).fechaRige
+                VComites.DateTimePickerFechaVence_ComiteVicePresidente.Text = valores(conta).fechaVence
+                VComites.TextBoxID_ComiteVicePresidente.Text = valores(conta).cedual
 
             ElseIf valores(conta).tipo = "secretaria" Then
-                Ventana_Principal.TextBoxComitesSecretaria.Text = valores(conta).nombreCompleto
-                Ventana_Principal.TextBoxTipo_ComiteSecretaria.Text = valores(conta).ocupacion
-                Ventana_Principal.TextBoxComiteMenorSec.Text = valores(conta).menor
-                Ventana_Principal.DateTimePickerFechaRige_ComiteSecretaria.Text = valores(conta).fechaRige
-                Ventana_Principal.DateTimePickerFechaVence_ComiteSecretaria.Text = valores(conta).fechaVence
-                Ventana_Principal.TextBoxID_ComiteSecretaria.Text = valores(conta).cedual
+                VComites.TextBoxComitesSecretaria.Text = valores(conta).nombreCompleto
+                VComites.TextBoxTipo_ComiteSecretaria.Text = valores(conta).ocupacion
+                VComites.TextBoxComiteMenorSec.Text = valores(conta).menor
+                VComites.DateTimePickerFechaRige_ComiteSecretaria.Text = valores(conta).fechaRige
+                VComites.DateTimePickerFechaVence_ComiteSecretaria.Text = valores(conta).fechaVence
+                VComites.TextBoxID_ComiteSecretaria.Text = valores(conta).cedual
 
             ElseIf valores(conta).tipo = "vocal1" Then
-                Ventana_Principal.TextBoxComitesVocal1.Text = valores(conta).nombreCompleto
-                Ventana_Principal.TextBoxTipo_ComiteVocal1.Text = valores(conta).ocupacion
-                Ventana_Principal.TextBoxComiteMenorVoc1.Text = valores(conta).menor
-                Ventana_Principal.DateTimePickerFechaRige_ComiteVocal1.Text = valores(conta).fechaRige
-                Ventana_Principal.DateTimePickerFechaVence_ComiteVocal1.Text = valores(conta).fechaVence
-                Ventana_Principal.TextBoxID_ComiteVocal1.Text = valores(conta).cedual
+                VComites.TextBoxComitesVocal1.Text = valores(conta).nombreCompleto
+                VComites.TextBoxTipo_ComiteVocal1.Text = valores(conta).ocupacion
+                VComites.TextBoxComiteMenorVoc1.Text = valores(conta).menor
+                VComites.DateTimePickerFechaRige_ComiteVocal1.Text = valores(conta).fechaRige
+                VComites.DateTimePickerFechaVence_ComiteVocal1.Text = valores(conta).fechaVence
+                VComites.TextBoxID_ComiteVocal1.Text = valores(conta).cedual
 
             ElseIf valores(conta).tipo = "vocal2" Then
-                Ventana_Principal.TextBoxComitesVocal2.Text = valores(conta).nombreCompleto
-                Ventana_Principal.TextBoxTipo_ComiteVocal2.Text = valores(conta).ocupacion
-                Ventana_Principal.TextBoxComiteMenorVoc2.Text = valores(conta).menor
-                Ventana_Principal.DateTimePickerFechaRige_ComiteVocal2.Text = valores(conta).fechaRige
-                Ventana_Principal.DateTimePickerFechaVence_ComiteVocal2.Text = valores(conta).fechaVence
-                Ventana_Principal.TextBoxID_ComiteVocal2.Text = valores(conta).cedual
+                VComites.TextBoxComitesVocal2.Text = valores(conta).nombreCompleto
+                VComites.TextBoxTipo_ComiteVocal2.Text = valores(conta).ocupacion
+                VComites.TextBoxComiteMenorVoc2.Text = valores(conta).menor
+                VComites.DateTimePickerFechaRige_ComiteVocal2.Text = valores(conta).fechaRige
+                VComites.DateTimePickerFechaVence_ComiteVocal2.Text = valores(conta).fechaVence
+                VComites.TextBoxID_ComiteVocal2.Text = valores(conta).cedual
 
             ElseIf valores(conta).tipo = "suplente1" Then
-                Ventana_Principal.TextBoxComitesSuplente1.Text = valores(conta).nombreCompleto
-                Ventana_Principal.TextBoxTipo_ComiteSuplente1.Text = valores(conta).ocupacion
-                Ventana_Principal.TextBoxComiteMenorSupl1.Text = valores(conta).menor
-                Ventana_Principal.DateTimePickerFechaRige_ComiteSuplente1.Text = valores(conta).fechaRige
-                Ventana_Principal.DateTimePickerFechaVence_ComiteSuplente1.Text = valores(conta).fechaVence
-                Ventana_Principal.TextBoxID_ComiteSuplente1.Text = valores(conta).cedual
+                VComites.TextBoxComitesSuplente1.Text = valores(conta).nombreCompleto
+                VComites.TextBoxTipo_ComiteSuplente1.Text = valores(conta).ocupacion
+                VComites.TextBoxComiteMenorSupl1.Text = valores(conta).menor
+                VComites.DateTimePickerFechaRige_ComiteSuplente1.Text = valores(conta).fechaRige
+                VComites.DateTimePickerFechaVence_ComiteSuplente1.Text = valores(conta).fechaVence
+                VComites.TextBoxID_ComiteSuplente1.Text = valores(conta).cedual
 
             ElseIf valores(conta).tipo = "suplente2" Then
-                Ventana_Principal.TextBoxComitesSuplente2.Text = valores(conta).nombreCompleto
-                Ventana_Principal.TextBoxTipo_ComiteSuplente2.Text = valores(conta).ocupacion
-                Ventana_Principal.TextBoxComiteMenorSupl2.Text = valores(conta).menor
-                Ventana_Principal.DateTimePickerFechaRige_ComiteSuplente2.Text = valores(conta).fechaRige
-                Ventana_Principal.DateTimePickerFechaVence_ComiteSuplente2.Text = valores(conta).fechaVence
-                Ventana_Principal.TextBoxID_ComiteSuplente2.Text = valores(conta).cedual
+                VComites.TextBoxComitesSuplente2.Text = valores(conta).nombreCompleto
+                VComites.TextBoxTipo_ComiteSuplente2.Text = valores(conta).ocupacion
+                VComites.TextBoxComiteMenorSupl2.Text = valores(conta).menor
+                VComites.DateTimePickerFechaRige_ComiteSuplente2.Text = valores(conta).fechaRige
+                VComites.DateTimePickerFechaVence_ComiteSuplente2.Text = valores(conta).fechaVence
+                VComites.TextBoxID_ComiteSuplente2.Text = valores(conta).cedual
             End If
             conta = conta + 1
         End While
@@ -302,19 +302,19 @@ Public Class Comites
         Dim cedula As String = ""
 
         If tipo = "presidente" Then
-            cedula = Ventana_Principal.TextBoxID_ComitePresidente.Text
+            cedula = VComites.TextBoxID_ComitePresidente.Text
         ElseIf tipo = "vicePresidente" Then
-            cedula = Ventana_Principal.TextBoxID_ComiteVicePresidente.Text
+            cedula = VComites.TextBoxID_ComiteVicePresidente.Text
         ElseIf tipo = "secretaria" Then
-            cedula = Ventana_Principal.TextBoxID_ComiteSecretaria.Text
+            cedula = VComites.TextBoxID_ComiteSecretaria.Text
         ElseIf tipo = "vocal1" Then
-            cedula = Ventana_Principal.TextBoxID_ComiteVocal1.Text
+            cedula = VComites.TextBoxID_ComiteVocal1.Text
         ElseIf tipo = "vocal2" Then
-            cedula = Ventana_Principal.TextBoxID_ComiteVocal2.Text
+            cedula = VComites.TextBoxID_ComiteVocal2.Text
         ElseIf tipo = "suplente1" Then
-            cedula = Ventana_Principal.TextBoxID_ComiteSuplente1.Text
+            cedula = VComites.TextBoxID_ComiteSuplente1.Text
         ElseIf tipo = "suplente2" Then
-            cedula = Ventana_Principal.TextBoxID_ComiteSuplente2.Text
+            cedula = VComites.TextBoxID_ComiteSuplente2.Text
         End If
 
         If (cedula = "") Then
@@ -324,33 +324,33 @@ Public Class Comites
                 BD.ConectarBD()
                 valores = BD.buscarSocio(cedula)
                 If valores.Count <> 0 And tipo = "presidente" Then
-                    Ventana_Principal.TextBoxComitesPresidente.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
-                    Ventana_Principal.TextBoxTipo_comitePresidente.Text = valores.Item(12)
-                    Ventana_Principal.TextBoxComiteMenorPresi.Text = valores.Item(18)
+                    VComites.TextBoxComitesPresidente.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
+                    VComites.TextBoxTipo_comitePresidente.Text = valores.Item(12)
+                    VComites.TextBoxComiteMenorPresi.Text = valores.Item(18)
                 ElseIf valores.Count <> 0 And tipo = "vicePresidente" Then
-                    Ventana_Principal.TextBoxComitesVicepresidente.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
-                    Ventana_Principal.TextBoxTipo_ComiteVicePresidente.Text = valores.Item(12)
-                    Ventana_Principal.TextBoxComiteMenorViceP.Text = valores.Item(18)
+                    VComites.TextBoxComitesVicepresidente.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
+                    VComites.TextBoxTipo_ComiteVicePresidente.Text = valores.Item(12)
+                    VComites.TextBoxComiteMenorViceP.Text = valores.Item(18)
                 ElseIf valores.Count <> 0 And tipo = "secretaria" Then
-                    Ventana_Principal.TextBoxComitesSecretaria.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
-                    Ventana_Principal.TextBoxTipo_ComiteSecretaria.Text = valores.Item(12)
-                    Ventana_Principal.TextBoxComiteMenorSec.Text = valores.Item(18)
+                    VComites.TextBoxComitesSecretaria.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
+                    VComites.TextBoxTipo_ComiteSecretaria.Text = valores.Item(12)
+                    VComites.TextBoxComiteMenorSec.Text = valores.Item(18)
                 ElseIf valores.Count <> 0 And tipo = "vocal1" Then
-                    Ventana_Principal.TextBoxComitesVocal1.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
-                    Ventana_Principal.TextBoxTipo_ComiteVocal1.Text = valores.Item(12)
-                    Ventana_Principal.TextBoxComiteMenorVoc1.Text = valores.Item(18)
+                    VComites.TextBoxComitesVocal1.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
+                    VComites.TextBoxTipo_ComiteVocal1.Text = valores.Item(12)
+                    VComites.TextBoxComiteMenorVoc1.Text = valores.Item(18)
                 ElseIf valores.Count <> 0 And tipo = "vocal2" Then
-                    Ventana_Principal.TextBoxComitesVocal2.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
-                    Ventana_Principal.TextBoxTipo_ComiteVocal2.Text = valores.Item(12)
-                    Ventana_Principal.TextBoxComiteMenorVoc2.Text = valores.Item(18)
+                    VComites.TextBoxComitesVocal2.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
+                    VComites.TextBoxTipo_ComiteVocal2.Text = valores.Item(12)
+                    VComites.TextBoxComiteMenorVoc2.Text = valores.Item(18)
                 ElseIf valores.Count <> 0 And tipo = "suplente1" Then
-                    Ventana_Principal.TextBoxComitesSuplente1.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
-                    Ventana_Principal.TextBoxTipo_ComiteSuplente1.Text = valores.Item(12)
-                    Ventana_Principal.TextBoxComiteMenorSupl1.Text = valores.Item(18)
+                    VComites.TextBoxComitesSuplente1.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
+                    VComites.TextBoxTipo_ComiteSuplente1.Text = valores.Item(12)
+                    VComites.TextBoxComiteMenorSupl1.Text = valores.Item(18)
                 ElseIf valores.Count <> 0 And tipo = "suplente2" Then
-                    Ventana_Principal.TextBoxComitesSuplente2.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
-                    Ventana_Principal.TextBoxTipo_ComiteSuplente2.Text = valores.Item(12)
-                    Ventana_Principal.TextBoxComiteMenorSupl2.Text = valores.Item(18)
+                    VComites.TextBoxComitesSuplente2.Text = valores.Item(2) + " " + valores.Item(3) + " " + valores.Item(4)
+                    VComites.TextBoxTipo_ComiteSuplente2.Text = valores.Item(12)
+                    VComites.TextBoxComiteMenorSupl2.Text = valores.Item(18)
                 Else
                     MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 End If
