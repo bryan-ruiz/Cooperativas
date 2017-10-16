@@ -1,0 +1,381 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ReportsApplication1
+</name>
+</assembly>
+<members>
+<member name="T:ReportsApplication1.My.Resources.Resources">
+<summary>
+  Clase de recursos con establecimiento inflexible de tipos, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:ReportsApplication1.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché usada por esta clase.
+</summary>
+</member>
+<member name="P:ReportsApplication1.My.Resources.Resources.Culture">
+<summary>
+  Invalida la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos con esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.CONFIGURACIONDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.CONSEJOSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.CUENTASDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.INGRESOSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SOCIOSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.TIPO_CONSEJODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SP_CONSEJOS_X_TIPODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SP_SOCIOS_INFODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SP_SOCIOS_INFO_mostrarDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.CONFIGURACIONRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.CONSEJOSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.CUENTASRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.INGRESOSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SOCIOSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.TIPO_CONSEJORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SP_CONSEJOS_X_TIPORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SP_SOCIOS_INFORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SP_SOCIOS_INFO_mostrarRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.CONFIGURACIONRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.CONSEJOSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.CUENTASRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.INGRESOSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SOCIOSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.TIPO_CONSEJORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SP_CONSEJOS_X_TIPORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SP_SOCIOS_INFORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSet.SP_SOCIOS_INFO_mostrarRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.CONFIGURACIONTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.CONSEJOSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.CUENTASTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.INGRESOSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.SOCIOSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.TIPO_CONSEJOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.SP_CONSEJOS_X_TIPOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.SP_SOCIOS_INFOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.SP_SOCIOS_INFO_mostrarTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ReportsApplication1.CoopeBDDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(ReportsApplication1.CoopeBDDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ReportsApplication1.CoopeBDDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(ReportsApplication1.CoopeBDDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ReportsApplication1.CoopeBDDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(ReportsApplication1.CoopeBDDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ReportsApplication1.CoopeBDDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ReportsApplication1.CoopeBDDataSetTableAdapters.TableAdapterManager.UpdateAll(ReportsApplication1.CoopeBDDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ReportsApplication1.CoopeBDDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:ReportsApplication1.datosDeSocio">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.datosDeSocio.SOCIOSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.datosDeSocio.SOCIOSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.datosDeSocio.SOCIOSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.datosDeSocioTableAdapters.SOCIOSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.datosDeSocioTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ReportsApplication1.datosDeSocioTableAdapters.TableAdapterManager.UpdateUpdatedRows(ReportsApplication1.datosDeSocio,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ReportsApplication1.datosDeSocioTableAdapters.TableAdapterManager.UpdateInsertedRows(ReportsApplication1.datosDeSocio,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ReportsApplication1.datosDeSocioTableAdapters.TableAdapterManager.UpdateDeletedRows(ReportsApplication1.datosDeSocio,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ReportsApplication1.datosDeSocioTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ReportsApplication1.datosDeSocioTableAdapters.TableAdapterManager.UpdateAll(ReportsApplication1.datosDeSocio)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ReportsApplication1.datosDeSocioTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ReportsApplication1.datosDeSocioTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:ReportsApplication1.socios">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.socios.DataTable1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.socios.DataTable1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ReportsApplication1.socios.DataTable1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ReportsApplication1.sociosTableAdapters.DataTable1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ReportsApplication1.sociosTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ReportsApplication1.sociosTableAdapters.TableAdapterManager.UpdateUpdatedRows(ReportsApplication1.socios,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ReportsApplication1.sociosTableAdapters.TableAdapterManager.UpdateInsertedRows(ReportsApplication1.socios,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ReportsApplication1.sociosTableAdapters.TableAdapterManager.UpdateDeletedRows(ReportsApplication1.socios,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ReportsApplication1.sociosTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ReportsApplication1.sociosTableAdapters.TableAdapterManager.UpdateAll(ReportsApplication1.socios)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ReportsApplication1.sociosTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ReportsApplication1.sociosTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>
