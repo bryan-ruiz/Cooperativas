@@ -113,10 +113,10 @@
       <DependentUpon>Principal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_adminusuarios.Designer.vb">
-      <DependentUpon>F_adminusuarios.vb</DependentUpon>
+    <Compile Include="VGestionAsociados.Designer.vb">
+      <DependentUpon>VGestionAsociados.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_adminusuarios.vb">
+    <Compile Include="VGestionAsociados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VConfiguracionCodigoCuenta.Designer.vb">
@@ -125,10 +125,10 @@
     <Compile Include="VConfiguracionCodigoCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Asociados.Designer.vb">
-      <DependentUpon>Asociados.vb</DependentUpon>
+    <Compile Include="VAsociados.Designer.vb">
+      <DependentUpon>VAsociados.vb</DependentUpon>
     </Compile>
-    <Compile Include="Asociados.vb">
+    <Compile Include="VAsociados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VComites.Designer.vb">
@@ -141,6 +141,12 @@
       <DependentUpon>VCertificados.vb</DependentUpon>
     </Compile>
     <Compile Include="VCertificados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VSignIn.Designer.vb">
+      <DependentUpon>VSignIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VSignIn.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIngresos.Designer.vb">
@@ -185,16 +191,16 @@
     <Compile Include="VConfiguracionInformacionCooperativa.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_infocuerpodirectivos.Designer.vb">
-      <DependentUpon>F_infocuerpodirectivos.vb</DependentUpon>
+    <Compile Include="VInformacionCuerposDirectivos.Designer.vb">
+      <DependentUpon>VInformacionCuerposDirectivos.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_infocuerpodirectivos.vb">
+    <Compile Include="VInformacionCuerposDirectivos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_infogestionusuarios.Designer.vb">
-      <DependentUpon>F_infogestionusuarios.vb</DependentUpon>
+    <Compile Include="VInformacionAnexoAsociados.Designer.vb">
+      <DependentUpon>VInformacionAnexoAsociados.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_infogestionusuarios.vb">
+    <Compile Include="VInformacionAnexoAsociados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VConfiguracionPorcentajeReservas.Designer.vb">
@@ -227,14 +233,17 @@
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Asociados.resx">
-      <DependentUpon>Asociados.vb</DependentUpon>
+    <EmbeddedResource Include="VAsociados.resx">
+      <DependentUpon>VAsociados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VComites.resx">
       <DependentUpon>VComites.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VCertificados.resx">
       <DependentUpon>VCertificados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VSignIn.resx">
+      <DependentUpon>VSignIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIngresos.resx">
       <DependentUpon>VIngresos.vb</DependentUpon>
@@ -251,8 +260,8 @@
     <EmbeddedResource Include="VInformeEconomico.resx">
       <DependentUpon>VInformeEconomico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_adminusuarios.resx">
-      <DependentUpon>F_adminusuarios.vb</DependentUpon>
+    <EmbeddedResource Include="VGestionAsociados.resx">
+      <DependentUpon>VGestionAsociados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VConfiguracionCodigoCuenta.resx">
       <DependentUpon>VConfiguracionCodigoCuenta.vb</DependentUpon>
@@ -263,11 +272,11 @@
     <EmbeddedResource Include="VConfiguracionInformacionCooperativa.resx">
       <DependentUpon>VConfiguracionInformacionCooperativa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_infocuerpodirectivos.resx">
-      <DependentUpon>F_infocuerpodirectivos.vb</DependentUpon>
+    <EmbeddedResource Include="VInformacionCuerposDirectivos.resx">
+      <DependentUpon>VInformacionCuerposDirectivos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_infogestionusuarios.resx">
-      <DependentUpon>F_infogestionusuarios.vb</DependentUpon>
+    <EmbeddedResource Include="VInformacionAnexoAsociados.resx">
+      <DependentUpon>VInformacionAnexoAsociados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VConfiguracionPorcentajeReservas.resx">
       <DependentUpon>VConfiguracionPorcentajeReservas.vb</DependentUpon>

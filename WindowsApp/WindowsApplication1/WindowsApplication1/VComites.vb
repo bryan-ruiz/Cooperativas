@@ -11,7 +11,7 @@
     End Sub
 
     Private Sub CuerposDirectivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuerposDirectivosToolStripMenuItem.Click
-        F_infocuerpodirectivos.Show()
+        VInformacionCuerposDirectivos.Show()
     End Sub
 
     Private Sub ToolStripMenuReporteComites_Click(sender As Object, e As EventArgs) Handles ToolStripMenuReporteComites.Click

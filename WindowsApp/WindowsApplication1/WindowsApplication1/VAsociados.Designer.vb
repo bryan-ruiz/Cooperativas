@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Asociados
+Partial Class VAsociados
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class Asociados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Asociados))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VAsociados))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxSociosConsultarAsociado = New System.Windows.Forms.TextBox()
         Me.ButtonAsociadosBuscar = New System.Windows.Forms.Button()
@@ -157,7 +157,7 @@ Partial Class Asociados
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label3.Location = New System.Drawing.Point(315, 107)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(154, 16)
+        Me.Label3.Size = New System.Drawing.Size(158, 16)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Numero de Asociado"
         '
@@ -168,7 +168,7 @@ Partial Class Asociados
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label4.Location = New System.Drawing.Point(315, 139)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(63, 16)
+        Me.Label4.Size = New System.Drawing.Size(64, 16)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Nombre"
         '
@@ -179,7 +179,7 @@ Partial Class Asociados
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label5.Location = New System.Drawing.Point(315, 174)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(115, 16)
+        Me.Label5.Size = New System.Drawing.Size(118, 16)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Primer Apellido"
         '
@@ -190,7 +190,7 @@ Partial Class Asociados
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label6.Location = New System.Drawing.Point(315, 206)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(132, 16)
+        Me.Label6.Size = New System.Drawing.Size(135, 16)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Segundo Apellido"
         '
@@ -201,7 +201,7 @@ Partial Class Asociados
         Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label7.Location = New System.Drawing.Point(315, 238)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(155, 16)
+        Me.Label7.Size = New System.Drawing.Size(159, 16)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Fecha de Nacimiento"
         '
@@ -223,7 +223,7 @@ Partial Class Asociados
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label9.Location = New System.Drawing.Point(315, 304)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(115, 16)
+        Me.Label9.Size = New System.Drawing.Size(119, 16)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Cuota Matricula"
         '
@@ -234,7 +234,7 @@ Partial Class Asociados
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label10.Location = New System.Drawing.Point(315, 337)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(101, 16)
+        Me.Label10.Size = New System.Drawing.Size(102, 16)
         Me.Label10.TabIndex = 19
         Me.Label10.Text = "Responsable"
         '
@@ -245,7 +245,7 @@ Partial Class Asociados
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label11.Location = New System.Drawing.Point(315, 369)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(91, 16)
+        Me.Label11.Size = New System.Drawing.Size(92, 16)
         Me.Label11.TabIndex = 21
         Me.Label11.Text = "Beneficiario"
         '
@@ -256,7 +256,7 @@ Partial Class Asociados
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label12.Location = New System.Drawing.Point(315, 399)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(129, 16)
+        Me.Label12.Size = New System.Drawing.Size(133, 16)
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "Fecha de Ingreso"
         '
@@ -267,7 +267,7 @@ Partial Class Asociados
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label13.Location = New System.Drawing.Point(315, 428)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(64, 16)
+        Me.Label13.Size = New System.Drawing.Size(65, 16)
         Me.Label13.TabIndex = 25
         Me.Label13.Text = "Sección"
         '
@@ -278,7 +278,7 @@ Partial Class Asociados
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label14.Location = New System.Drawing.Point(315, 460)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(132, 16)
+        Me.Label14.Size = New System.Drawing.Size(135, 16)
         Me.Label14.TabIndex = 27
         Me.Label14.Text = "Tipo de Asociado"
         '
@@ -322,10 +322,9 @@ Partial Class Asociados
         Me.Label19.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label19.Location = New System.Drawing.Point(315, 79)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(137, 16)
+        Me.Label19.Size = New System.Drawing.Size(142, 16)
         Me.Label19.TabIndex = 36
         Me.Label19.Text = "Numero de Cedula"
-        Me.Label19.Visible = False
         '
         'Label20
         '
@@ -334,7 +333,7 @@ Partial Class Asociados
         Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label20.Location = New System.Drawing.Point(315, 494)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(125, 16)
+        Me.Label20.Size = New System.Drawing.Size(128, 16)
         Me.Label20.TabIndex = 38
         Me.Label20.Text = "Direccion Exacta"
         '
@@ -345,7 +344,7 @@ Partial Class Asociados
         Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label21.Location = New System.Drawing.Point(910, 106)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(51, 16)
+        Me.Label21.Size = New System.Drawing.Size(52, 16)
         Me.Label21.TabIndex = 40
         Me.Label21.Text = "Menor"
         '
@@ -356,7 +355,7 @@ Partial Class Asociados
         Me.Label22.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label22.Location = New System.Drawing.Point(910, 134)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(59, 16)
+        Me.Label22.Size = New System.Drawing.Size(60, 16)
         Me.Label22.TabIndex = 41
         Me.Label22.Text = "Genero"
         '
@@ -367,7 +366,7 @@ Partial Class Asociados
         Me.Label23.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label23.Location = New System.Drawing.Point(910, 164)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(57, 16)
+        Me.Label23.Size = New System.Drawing.Size(58, 16)
         Me.Label23.TabIndex = 42
         Me.Label23.Text = "Estado"
         '
@@ -380,7 +379,7 @@ Partial Class Asociados
         Me.RadioButtonSociosMenorSi.Location = New System.Drawing.Point(1030, 103)
         Me.RadioButtonSociosMenorSi.Margin = New System.Windows.Forms.Padding(4)
         Me.RadioButtonSociosMenorSi.Name = "RadioButtonSociosMenorSi"
-        Me.RadioButtonSociosMenorSi.Size = New System.Drawing.Size(40, 20)
+        Me.RadioButtonSociosMenorSi.Size = New System.Drawing.Size(41, 20)
         Me.RadioButtonSociosMenorSi.TabIndex = 19
         Me.RadioButtonSociosMenorSi.TabStop = True
         Me.RadioButtonSociosMenorSi.Text = "Si"
@@ -394,7 +393,7 @@ Partial Class Asociados
         Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(1149, 99)
         Me.RadioButtonSociosMenorNo.Margin = New System.Windows.Forms.Padding(4)
         Me.RadioButtonSociosMenorNo.Name = "RadioButtonSociosMenorNo"
-        Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(46, 20)
+        Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(47, 20)
         Me.RadioButtonSociosMenorNo.TabIndex = 20
         Me.RadioButtonSociosMenorNo.Text = "No"
         Me.RadioButtonSociosMenorNo.UseVisualStyleBackColor = True
@@ -407,7 +406,7 @@ Partial Class Asociados
         Me.RadioButtonSociosFemenino.Location = New System.Drawing.Point(1030, 135)
         Me.RadioButtonSociosFemenino.Margin = New System.Windows.Forms.Padding(4)
         Me.RadioButtonSociosFemenino.Name = "RadioButtonSociosFemenino"
-        Me.RadioButtonSociosFemenino.Size = New System.Drawing.Size(94, 20)
+        Me.RadioButtonSociosFemenino.Size = New System.Drawing.Size(95, 20)
         Me.RadioButtonSociosFemenino.TabIndex = 21
         Me.RadioButtonSociosFemenino.Text = "Femenino"
         Me.RadioButtonSociosFemenino.UseVisualStyleBackColor = True
@@ -420,7 +419,7 @@ Partial Class Asociados
         Me.RadioButtonSociosMasculino.Location = New System.Drawing.Point(1149, 131)
         Me.RadioButtonSociosMasculino.Margin = New System.Windows.Forms.Padding(4)
         Me.RadioButtonSociosMasculino.Name = "RadioButtonSociosMasculino"
-        Me.RadioButtonSociosMasculino.Size = New System.Drawing.Size(96, 20)
+        Me.RadioButtonSociosMasculino.Size = New System.Drawing.Size(97, 20)
         Me.RadioButtonSociosMasculino.TabIndex = 22
         Me.RadioButtonSociosMasculino.Text = "Masculino"
         Me.RadioButtonSociosMasculino.UseVisualStyleBackColor = True
@@ -433,7 +432,7 @@ Partial Class Asociados
         Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(1030, 163)
         Me.RadioButtonSociosActivo.Margin = New System.Windows.Forms.Padding(4)
         Me.RadioButtonSociosActivo.Name = "RadioButtonSociosActivo"
-        Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(69, 20)
+        Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(70, 20)
         Me.RadioButtonSociosActivo.TabIndex = 23
         Me.RadioButtonSociosActivo.Text = "Activo"
         Me.RadioButtonSociosActivo.UseVisualStyleBackColor = True
@@ -446,7 +445,7 @@ Partial Class Asociados
         Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(1149, 164)
         Me.RadioButtonSociosRetirado.Margin = New System.Windows.Forms.Padding(4)
         Me.RadioButtonSociosRetirado.Name = "RadioButtonSociosRetirado"
-        Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(86, 20)
+        Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(87, 20)
         Me.RadioButtonSociosRetirado.TabIndex = 24
         Me.RadioButtonSociosRetirado.Text = "Retirado"
         Me.RadioButtonSociosRetirado.UseVisualStyleBackColor = True
@@ -590,7 +589,7 @@ Partial Class Asociados
         Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label26.Location = New System.Drawing.Point(910, 204)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(123, 16)
+        Me.Label26.Size = New System.Drawing.Size(127, 16)
         Me.Label26.TabIndex = 55
         Me.Label26.Text = "Fecha del Retiro"
         '
@@ -601,7 +600,7 @@ Partial Class Asociados
         Me.Label27.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label27.Location = New System.Drawing.Point(910, 270)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(121, 16)
+        Me.Label27.Size = New System.Drawing.Size(125, 16)
         Me.Label27.TabIndex = 56
         Me.Label27.Text = "Notas del Retiro"
         '
@@ -639,7 +638,7 @@ Partial Class Asociados
         Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label16.Location = New System.Drawing.Point(561, 78)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(13, 16)
+        Me.Label16.Size = New System.Drawing.Size(14, 16)
         Me.Label16.TabIndex = 58
         Me.Label16.Text = "-"
         Me.Label16.Visible = False
@@ -651,7 +650,7 @@ Partial Class Asociados
         Me.Label25.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label25.Location = New System.Drawing.Point(687, 78)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(13, 16)
+        Me.Label25.Size = New System.Drawing.Size(14, 16)
         Me.Label25.TabIndex = 59
         Me.Label25.Text = "-"
         Me.Label25.Visible = False
@@ -738,7 +737,7 @@ Partial Class Asociados
         Me.Label28.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label28.Location = New System.Drawing.Point(642, 267)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(13, 16)
+        Me.Label28.Size = New System.Drawing.Size(14, 16)
         Me.Label28.TabIndex = 169
         Me.Label28.Text = "-"
         Me.Label28.Visible = False
@@ -802,7 +801,7 @@ Partial Class Asociados
         Me.TextBoxSociosBeneficiario.Size = New System.Drawing.Size(320, 22)
         Me.TextBoxSociosBeneficiario.TabIndex = 14
         '
-        'Asociados
+        'VAsociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -864,7 +863,7 @@ Partial Class Asociados
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Name = "Asociados"
+        Me.Name = "VAsociados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestion de Asociados"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

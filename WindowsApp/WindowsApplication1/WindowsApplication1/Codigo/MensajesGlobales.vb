@@ -3,6 +3,7 @@
 Public Class MensajesGlobales
 
     Public folderPath As String = "C:\Reportes\"
+    Public licenciaPermisos = "50"
     Public mensajeCedulaONumAsociado As String = "Debe ingresar la cédula o el número de asociado a consultar"
     Public mensajeDebeIngresarCodigoODescriptionDeCuenta As String = "Debe ingresar el codigo y/o descripción de la cuenta"
     Public mensajeCedulaFormato As String = "La cédula debe llevar el formato X-XXXX-XXXX"
@@ -25,5 +26,6 @@ Public Class MensajesGlobales
 
     Public licenciaCaducada As String = "Su licencia ha caducado, contacte al Administrador del Sistema"
     Public nombreUsuarioOContrasenaIncorrecto As String = "El nombre de usuario o contraseña es incorrecto"
+
 
 End Class

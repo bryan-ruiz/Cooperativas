@@ -1,6 +1,6 @@
 ﻿Public Class Principal
     Private Sub GestionUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionUsuariosToolStripMenuItem.Click
-        Asociados.Show()
+        VAsociados.Show()
     End Sub
 
     Private Sub ComitésToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComitésToolStripMenuItem.Click
@@ -36,7 +36,7 @@
     End Sub
 
     Private Sub GestiónDeUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeUsuariosToolStripMenuItem.Click
-        F_adminusuarios.Show()
+        VGestionAsociados.Show()
     End Sub
 
 

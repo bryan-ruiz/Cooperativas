@@ -3654,7 +3654,7 @@ Partial Class Ventana_Principal
         'TextBoxUsuariosUsuario
         '
         Me.TextBoxUsuariosUsuario.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsuariosUsuario.Location = New System.Drawing.Point(384, 139)
+        Me.TextBoxUsuariosUsuario.Location = New System.Drawing.Point(385, 139)
         Me.TextBoxUsuariosUsuario.Name = "TextBoxUsuariosUsuario"
         Me.TextBoxUsuariosUsuario.Size = New System.Drawing.Size(236, 22)
         Me.TextBoxUsuariosUsuario.TabIndex = 1

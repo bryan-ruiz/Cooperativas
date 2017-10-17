@@ -11,9 +11,9 @@ Public Class Gastos
     'Calcula cantidad * precioUnitario
     Public Sub calcular()
         Try
-            Dim cantidad As Integer = Integer.Parse(Ventana_Principal.TextBox_GastosCantidad.Text)
-            Dim precioUnitario As Integer = Integer.Parse(Ventana_Principal.TextBox_GastosPrecioUnitario.Text)
-            Ventana_Principal.TextBox_GastosTotal.Text = cantidad * precioUnitario
+            Dim cantidad As Integer = Integer.Parse(VGastos.TextBox_GastosCantidad.Text)
+            Dim precioUnitario As Integer = Integer.Parse(VGastos.TextBox_GastosPrecioUnitario.Text)
+            VGastos.TextBox_GastosTotal.Text = cantidad * precioUnitario
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
@@ -26,23 +26,23 @@ Public Class Gastos
             valores = BD.consultarCuentas()
             If valores.Count <> 0 Then
                 estado = True
-                Ventana_Principal.ComboBox_GastosCodCuenta.Items.Clear()
+                VGastos.ComboBox_GastosCodCuenta.Items.Clear()
                 Dim contador As Integer = 0
                 Dim conta As Integer = 0
                 While valores.Count > contador
                     If valores(contador).tipo = "Gasto" Then
-                        Ventana_Principal.ComboBox_GastosCodCuenta.Items.Add(valores(contador).codDescripcion)
+                        VGastos.ComboBox_GastosCodCuenta.Items.Add(valores(contador).codDescripcion)
                         conta += 1
                     End If
                     contador = contador + 1
                 End While
                 If conta = 0 Then
                     estado = False
-                    Ventana_Principal.ComboBox_GastosCodCuenta.Items.Add("No se poseen cuentas")
+                    VGastos.ComboBox_GastosCodCuenta.Items.Add("No se poseen cuentas")
                 End If
             Else
                 estado = False
-                Ventana_Principal.ComboBox_GastosCodCuenta.Items.Add("No se poseen cuentas")
+                VGastos.ComboBox_GastosCodCuenta.Items.Add("No se poseen cuentas")
             End If
 
             BD.CerrarConexion()
@@ -53,24 +53,24 @@ Public Class Gastos
     End Sub
 
     Public Sub limpiar()
-        Ventana_Principal.TextBox_GastosFacturaRecibo.Text = ""
-        Ventana_Principal.TextBox_GastosProveedor.Text = ""
-        Ventana_Principal.TextBox_GastosDescripcion.Text = ""
-        Ventana_Principal.TextBox_GastosCantidad.Text = ""
-        Ventana_Principal.TextBox_GastosPrecioUnitario.Text = ""
-        Ventana_Principal.TextBox_GastosTotal.Text = ""
+        VGastos.TextBox_GastosFacturaRecibo.Text = ""
+        VGastos.TextBox_GastosProveedor.Text = ""
+        VGastos.TextBox_GastosDescripcion.Text = ""
+        VGastos.TextBox_GastosCantidad.Text = ""
+        VGastos.TextBox_GastosPrecioUnitario.Text = ""
+        VGastos.TextBox_GastosTotal.Text = ""
     End Sub
 
     Public Sub insertarGasto()
         Dim valores As Integer
-        Dim fecha As String = Ventana_Principal.DateTimePicker_GastosFecha.Text
-        Dim factura As String = Ventana_Principal.TextBox_GastosFacturaRecibo.Text
-        Dim cliente As String = Ventana_Principal.TextBox_GastosProveedor.Text
-        Dim descripcion As String = Ventana_Principal.TextBox_GastosDescripcion.Text
-        Dim cantidad As String = Ventana_Principal.TextBox_GastosCantidad.Text
-        Dim precioUnitario As String = Ventana_Principal.TextBox_GastosPrecioUnitario.Text
-        Dim total As String = Ventana_Principal.TextBox_GastosTotal.Text
-        Dim codCuenta As String = Ventana_Principal.ComboBox_GastosCodCuenta.Text
+        Dim fecha As String = VGastos.DateTimePicker_GastosFecha.Text
+        Dim factura As String = VGastos.TextBox_GastosFacturaRecibo.Text
+        Dim cliente As String = VGastos.TextBox_GastosProveedor.Text
+        Dim descripcion As String = VGastos.TextBox_GastosDescripcion.Text
+        Dim cantidad As String = VGastos.TextBox_GastosCantidad.Text
+        Dim precioUnitario As String = VGastos.TextBox_GastosPrecioUnitario.Text
+        Dim total As String = VGastos.TextBox_GastosTotal.Text
+        Dim codCuenta As String = VGastos.ComboBox_GastosCodCuenta.Text
 
         If (factura = "" Or cliente = "" Or descripcion = "" Or total = "" Or codCuenta = "" Or estado = False) Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -100,8 +100,8 @@ Public Class Gastos
     End Sub
 
     Public Sub generarReporteGastos()
-        Dim fechaInicial As String = Ventana_Principal.DateTimePicker_GastosFechaI.Text
-        Dim fechaFinal As String = Ventana_Principal.DateTimePicker_GastosFechaF.Text
+        Dim fechaInicial As String = VGastosReporte.DateTimePicker_GastosFechaI.Text
+        Dim fechaFinal As String = VGastosReporte.DateTimePicker_GastosFechaF.Text
         Try
             Dim valores As List(Of GastoClase)
             BD.ConectarBD()

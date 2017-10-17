@@ -1,4 +1,4 @@
-﻿Public Class Asociados
+﻿Public Class VAsociados
 
     Dim BD As ConexionBD = New ConexionBD
     Dim socios As Socios = New Socios
@@ -15,7 +15,7 @@
         'Me.WindowState = FormWindowState.Maximized, Para maximizar la pantalla'
     End Sub
 
-    Private Sub TextBoxSociosCedula_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula.KeyPress, TextBoxSociosCedula.TextChanged
+    Private Sub TextBoxSociosCedula_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula.KeyPress
         Me.TextBoxSociosCedula.MaxLength = 1
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
@@ -24,7 +24,7 @@
         End If
     End Sub
 
-    Private Sub TextBoxSociosCedula2_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula2.KeyPress, TextBoxSociosCedula2.TextChanged
+    Private Sub TextBoxSociosCedula2_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula2.KeyPress
         Me.TextBoxSociosCedula2.MaxLength = 1
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
@@ -33,7 +33,7 @@
         End If
     End Sub
 
-    Private Sub TextBoxSociosCedula3_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula3.KeyPress, TextBoxSociosCedula3.TextChanged
+    Private Sub TextBoxSociosCedula3_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula3.KeyPress
         Me.TextBoxSociosCedula3.MaxLength = 1
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
@@ -84,7 +84,7 @@
     End Sub
 
     Private Sub RegistroDeAsociadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroDeAsociadosToolStripMenuItem.Click
-        F_infogestionusuarios.Show()
+        VInformacionAnexoAsociados.Show()
     End Sub
 
     Private Sub ToolStripMenuAsociadosReporteActivos_Click(sender As Object, e As EventArgs) Handles ToolStripMenuAsociadosReporteActivos.Click

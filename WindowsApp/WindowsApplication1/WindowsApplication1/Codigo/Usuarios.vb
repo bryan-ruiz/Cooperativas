@@ -10,11 +10,11 @@ Public Class Usuarios
     'Insertar Usuario
     Public Sub insertar()
         Dim rol As String = ""
-        Dim usuario As String = Ventana_Principal.TextBoxUsuariosUsuario.Text
-        Dim contrasena As String = Ventana_Principal.TextBoxUsuariosContrasena.Text
-        Dim permisos As String = "5"
+        Dim usuario As String = VGestionAsociados.TextBoxUsuariosUsuario.Text
+        Dim contrasena As String = VGestionAsociados.TextBoxUsuariosContrasena.Text
+        Dim permisos As String = variablesGlobales.licenciaPermisos
         'Para el rol
-        If (Ventana_Principal.RadioButtonUsuariosAdmin.Checked = True) Then
+        If (VGestionAsociados.RadioButtonUsuariosAdmin.Checked = True) Then
             rol = "Admin"
         Else
             rol = "Colaborador"
@@ -44,8 +44,8 @@ Public Class Usuarios
 
     'Buscar Usuario
     Public Sub buscar()
-        Dim usuario As String = Ventana_Acceso.TextBoxlogin.Text
-        Dim contrasena As String = Ventana_Acceso.TextBoxContraseña.Text
+        Dim usuario As String = VSignIn.TextBoxlogin.Text
+        Dim contrasena As String = VSignIn.TextBoxContraseña.Text
         Dim singleton As Singleton = Singleton.Instance()
         If (usuario = "" Or contrasena = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -86,7 +86,7 @@ Public Class Usuarios
 
     'Eliminar Usuario
     Public Sub eliminar()
-        Dim usuario As String = Ventana_Principal.TextBoxUsuariosUsuario.Text
+        Dim usuario As String = VGestionAsociados.TextBoxUsuariosUsuario.Text
 
         If (usuario = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios)
@@ -112,8 +112,8 @@ Public Class Usuarios
     End Sub
 
     Public Sub limpiar()
-        Ventana_Principal.TextBoxUsuariosUsuario.Text = ""
-        Ventana_Principal.TextBoxUsuariosContrasena.Text = ""
+        VGestionAsociados.TextBoxUsuariosUsuario.Text = ""
+        VGestionAsociados.TextBoxUsuariosContrasena.Text = ""
     End Sub
 
 End Class
