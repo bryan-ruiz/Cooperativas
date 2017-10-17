@@ -13,6 +13,7 @@
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.WindowState = FormWindowState.Maximized, Para maximizar la pantalla'
+        Me.TextBoxSociosConsultarAsociado.Select()
     End Sub
 
     Private Sub TextBoxSociosCedula_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula.KeyPress
@@ -44,7 +45,7 @@
 
     'CONSULTAR
     Private Sub ButtonAsociadosBuscar_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscar.Click
-        socios.consultar()
+        socios.consultarAsociado()
     End Sub
 
     Private Sub ButtonAsociadosAgregar_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosAgregar.Click
@@ -59,15 +60,6 @@
         socios.limpiar()
     End Sub
 
-
-
-    Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonSociosRetirado.CheckedChanged
-        If RadioButtonSociosRetirado.Checked = True Then
-            TextBoxSociosNotasRetiro.Enabled = True
-            DateTimeSociosFechaRetiro.Enabled = True
-        End If
-    End Sub
-
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
         Me.Close()
     End Sub
@@ -76,12 +68,7 @@
         Principal.Show()
     End Sub
 
-    Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonSociosActivo.CheckedChanged
-        If RadioButtonSociosActivo.Checked = True Then
-            TextBoxSociosNotasRetiro.Enabled = False
-            DateTimeSociosFechaRetiro.Enabled = False
-        End If
-    End Sub
+
 
     Private Sub RegistroDeAsociadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroDeAsociadosToolStripMenuItem.Click
         VInformacionAnexoAsociados.Show()
@@ -97,4 +84,25 @@
         Print.Show()
     End Sub
 
+    Private Sub RadioButtonSociosRetirado_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonSociosRetirado.CheckedChanged
+        If RadioButtonSociosRetirado.Checked = True Then
+            TextBoxSociosNotasRetiro.Enabled = True
+            DateTimeSociosFechaRetiro.Enabled = True
+            TextBoxSociosNotasRetiro.Visible = True
+            DateTimeSociosFechaRetiro.Visible = True
+            LabelNotasRetiro.Visible = True
+            LabelFechaRetiro.Visible = True
+        End If
+    End Sub
+
+    Private Sub RadioButtonSociosActivo_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonSociosActivo.CheckedChanged
+        If RadioButtonSociosActivo.Checked = True Then
+            TextBoxSociosNotasRetiro.Enabled = False
+            DateTimeSociosFechaRetiro.Enabled = False
+            TextBoxSociosNotasRetiro.Visible = False
+            DateTimeSociosFechaRetiro.Visible = False
+            LabelNotasRetiro.Visible = False
+            LabelFechaRetiro.Visible = False
+        End If
+    End Sub
 End Class

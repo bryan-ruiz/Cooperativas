@@ -45,15 +45,6 @@ Partial Class VAsociados
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.RadioButtonSociosMenorSi = New System.Windows.Forms.RadioButton()
-        Me.RadioButtonSociosMenorNo = New System.Windows.Forms.RadioButton()
-        Me.RadioButtonSociosFemenino = New System.Windows.Forms.RadioButton()
-        Me.RadioButtonSociosMasculino = New System.Windows.Forms.RadioButton()
-        Me.RadioButtonSociosActivo = New System.Windows.Forms.RadioButton()
-        Me.RadioButtonSociosRetirado = New System.Windows.Forms.RadioButton()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -69,8 +60,8 @@ Partial Class VAsociados
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.ButtonSociosModificar = New System.Windows.Forms.Button()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
+        Me.LabelFechaRetiro = New System.Windows.Forms.Label()
+        Me.LabelNotasRetiro = New System.Windows.Forms.Label()
         Me.DateTimeSociosFechaRetiro = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxSociosNotasRetiro = New System.Windows.Forms.TextBox()
         Me.TextBoxSociosCedula = New System.Windows.Forms.TextBox()
@@ -93,9 +84,22 @@ Partial Class VAsociados
         Me.TextBoxSociosResponsable = New System.Windows.Forms.TextBox()
         Me.TextBoxSociosDireccion = New System.Windows.Forms.TextBox()
         Me.TextBoxSociosBeneficiario = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.RadioButtonSociosMenorNo = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonSociosMenorSi = New System.Windows.Forms.RadioButton()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.RadioButtonSociosMasculino = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonSociosFemenino = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonSociosRetirado = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonSociosActivo = New System.Windows.Forms.RadioButton()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -337,119 +341,6 @@ Partial Class VAsociados
         Me.Label20.TabIndex = 38
         Me.Label20.Text = "Direccion Exacta"
         '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label21.Location = New System.Drawing.Point(910, 106)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(52, 16)
-        Me.Label21.TabIndex = 40
-        Me.Label21.Text = "Menor"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label22.Location = New System.Drawing.Point(910, 134)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(60, 16)
-        Me.Label22.TabIndex = 41
-        Me.Label22.Text = "Genero"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label23.Location = New System.Drawing.Point(910, 164)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(58, 16)
-        Me.Label23.TabIndex = 42
-        Me.Label23.Text = "Estado"
-        '
-        'RadioButtonSociosMenorSi
-        '
-        Me.RadioButtonSociosMenorSi.AutoSize = True
-        Me.RadioButtonSociosMenorSi.Checked = True
-        Me.RadioButtonSociosMenorSi.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonSociosMenorSi.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.RadioButtonSociosMenorSi.Location = New System.Drawing.Point(1030, 103)
-        Me.RadioButtonSociosMenorSi.Margin = New System.Windows.Forms.Padding(4)
-        Me.RadioButtonSociosMenorSi.Name = "RadioButtonSociosMenorSi"
-        Me.RadioButtonSociosMenorSi.Size = New System.Drawing.Size(41, 20)
-        Me.RadioButtonSociosMenorSi.TabIndex = 19
-        Me.RadioButtonSociosMenorSi.TabStop = True
-        Me.RadioButtonSociosMenorSi.Text = "Si"
-        Me.RadioButtonSociosMenorSi.UseVisualStyleBackColor = True
-        '
-        'RadioButtonSociosMenorNo
-        '
-        Me.RadioButtonSociosMenorNo.AutoSize = True
-        Me.RadioButtonSociosMenorNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonSociosMenorNo.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(1149, 99)
-        Me.RadioButtonSociosMenorNo.Margin = New System.Windows.Forms.Padding(4)
-        Me.RadioButtonSociosMenorNo.Name = "RadioButtonSociosMenorNo"
-        Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(47, 20)
-        Me.RadioButtonSociosMenorNo.TabIndex = 20
-        Me.RadioButtonSociosMenorNo.Text = "No"
-        Me.RadioButtonSociosMenorNo.UseVisualStyleBackColor = True
-        '
-        'RadioButtonSociosFemenino
-        '
-        Me.RadioButtonSociosFemenino.AutoSize = True
-        Me.RadioButtonSociosFemenino.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonSociosFemenino.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.RadioButtonSociosFemenino.Location = New System.Drawing.Point(1030, 135)
-        Me.RadioButtonSociosFemenino.Margin = New System.Windows.Forms.Padding(4)
-        Me.RadioButtonSociosFemenino.Name = "RadioButtonSociosFemenino"
-        Me.RadioButtonSociosFemenino.Size = New System.Drawing.Size(95, 20)
-        Me.RadioButtonSociosFemenino.TabIndex = 21
-        Me.RadioButtonSociosFemenino.Text = "Femenino"
-        Me.RadioButtonSociosFemenino.UseVisualStyleBackColor = True
-        '
-        'RadioButtonSociosMasculino
-        '
-        Me.RadioButtonSociosMasculino.AutoSize = True
-        Me.RadioButtonSociosMasculino.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonSociosMasculino.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.RadioButtonSociosMasculino.Location = New System.Drawing.Point(1149, 131)
-        Me.RadioButtonSociosMasculino.Margin = New System.Windows.Forms.Padding(4)
-        Me.RadioButtonSociosMasculino.Name = "RadioButtonSociosMasculino"
-        Me.RadioButtonSociosMasculino.Size = New System.Drawing.Size(97, 20)
-        Me.RadioButtonSociosMasculino.TabIndex = 22
-        Me.RadioButtonSociosMasculino.Text = "Masculino"
-        Me.RadioButtonSociosMasculino.UseVisualStyleBackColor = True
-        '
-        'RadioButtonSociosActivo
-        '
-        Me.RadioButtonSociosActivo.AutoSize = True
-        Me.RadioButtonSociosActivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonSociosActivo.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(1030, 163)
-        Me.RadioButtonSociosActivo.Margin = New System.Windows.Forms.Padding(4)
-        Me.RadioButtonSociosActivo.Name = "RadioButtonSociosActivo"
-        Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(70, 20)
-        Me.RadioButtonSociosActivo.TabIndex = 23
-        Me.RadioButtonSociosActivo.Text = "Activo"
-        Me.RadioButtonSociosActivo.UseVisualStyleBackColor = True
-        '
-        'RadioButtonSociosRetirado
-        '
-        Me.RadioButtonSociosRetirado.AutoSize = True
-        Me.RadioButtonSociosRetirado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonSociosRetirado.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(1149, 164)
-        Me.RadioButtonSociosRetirado.Margin = New System.Windows.Forms.Padding(4)
-        Me.RadioButtonSociosRetirado.Name = "RadioButtonSociosRetirado"
-        Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(87, 20)
-        Me.RadioButtonSociosRetirado.TabIndex = 24
-        Me.RadioButtonSociosRetirado.Text = "Retirado"
-        Me.RadioButtonSociosRetirado.UseVisualStyleBackColor = True
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.ToolStripMenuItem1, Me.InformaciónToolStripMenuItem})
@@ -582,45 +473,46 @@ Partial Class VAsociados
         Me.ButtonSociosModificar.Text = "Actualizar"
         Me.ButtonSociosModificar.UseVisualStyleBackColor = True
         '
-        'Label26
+        'LabelFechaRetiro
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label26.Location = New System.Drawing.Point(910, 204)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(127, 16)
-        Me.Label26.TabIndex = 55
-        Me.Label26.Text = "Fecha del Retiro"
+        Me.LabelFechaRetiro.AutoSize = True
+        Me.LabelFechaRetiro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelFechaRetiro.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.LabelFechaRetiro.Location = New System.Drawing.Point(885, 213)
+        Me.LabelFechaRetiro.Name = "LabelFechaRetiro"
+        Me.LabelFechaRetiro.Size = New System.Drawing.Size(127, 16)
+        Me.LabelFechaRetiro.TabIndex = 55
+        Me.LabelFechaRetiro.Text = "Fecha del Retiro"
         '
-        'Label27
+        'LabelNotasRetiro
         '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label27.Location = New System.Drawing.Point(910, 270)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(125, 16)
-        Me.Label27.TabIndex = 56
-        Me.Label27.Text = "Notas del Retiro"
+        Me.LabelNotasRetiro.AutoSize = True
+        Me.LabelNotasRetiro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelNotasRetiro.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.LabelNotasRetiro.Location = New System.Drawing.Point(885, 279)
+        Me.LabelNotasRetiro.Name = "LabelNotasRetiro"
+        Me.LabelNotasRetiro.Size = New System.Drawing.Size(125, 16)
+        Me.LabelNotasRetiro.TabIndex = 56
+        Me.LabelNotasRetiro.Text = "Notas del Retiro"
         '
         'DateTimeSociosFechaRetiro
         '
         Me.DateTimeSociosFechaRetiro.Enabled = False
-        Me.DateTimeSociosFechaRetiro.Location = New System.Drawing.Point(914, 224)
+        Me.DateTimeSociosFechaRetiro.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimeSociosFechaRetiro.Location = New System.Drawing.Point(889, 236)
         Me.DateTimeSociosFechaRetiro.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimeSociosFechaRetiro.Name = "DateTimeSociosFechaRetiro"
-        Me.DateTimeSociosFechaRetiro.Size = New System.Drawing.Size(346, 22)
+        Me.DateTimeSociosFechaRetiro.Size = New System.Drawing.Size(312, 22)
         Me.DateTimeSociosFechaRetiro.TabIndex = 25
         '
         'TextBoxSociosNotasRetiro
         '
         Me.TextBoxSociosNotasRetiro.Enabled = False
-        Me.TextBoxSociosNotasRetiro.Location = New System.Drawing.Point(914, 298)
+        Me.TextBoxSociosNotasRetiro.Location = New System.Drawing.Point(889, 307)
         Me.TextBoxSociosNotasRetiro.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.TextBoxSociosNotasRetiro.Multiline = True
         Me.TextBoxSociosNotasRetiro.Name = "TextBoxSociosNotasRetiro"
-        Me.TextBoxSociosNotasRetiro.Size = New System.Drawing.Size(346, 99)
+        Me.TextBoxSociosNotasRetiro.Size = New System.Drawing.Size(312, 99)
         Me.TextBoxSociosNotasRetiro.TabIndex = 26
         '
         'TextBoxSociosCedula
@@ -801,12 +693,133 @@ Partial Class VAsociados
         Me.TextBoxSociosBeneficiario.Size = New System.Drawing.Size(320, 22)
         Me.TextBoxSociosBeneficiario.TabIndex = 14
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.RadioButtonSociosMenorNo)
+        Me.Panel1.Controls.Add(Me.RadioButtonSociosMenorSi)
+        Me.Panel1.Location = New System.Drawing.Point(956, 97)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(243, 34)
+        Me.Panel1.TabIndex = 176
+        '
+        'RadioButtonSociosMenorNo
+        '
+        Me.RadioButtonSociosMenorNo.AutoSize = True
+        Me.RadioButtonSociosMenorNo.Checked = True
+        Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(119, 3)
+        Me.RadioButtonSociosMenorNo.Name = "RadioButtonSociosMenorNo"
+        Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(47, 20)
+        Me.RadioButtonSociosMenorNo.TabIndex = 19
+        Me.RadioButtonSociosMenorNo.TabStop = True
+        Me.RadioButtonSociosMenorNo.Text = "No"
+        Me.RadioButtonSociosMenorNo.UseVisualStyleBackColor = True
+        '
+        'RadioButtonSociosMenorSi
+        '
+        Me.RadioButtonSociosMenorSi.AutoSize = True
+        Me.RadioButtonSociosMenorSi.Location = New System.Drawing.Point(12, 2)
+        Me.RadioButtonSociosMenorSi.Name = "RadioButtonSociosMenorSi"
+        Me.RadioButtonSociosMenorSi.Size = New System.Drawing.Size(41, 20)
+        Me.RadioButtonSociosMenorSi.TabIndex = 18
+        Me.RadioButtonSociosMenorSi.Text = "Si"
+        Me.RadioButtonSociosMenorSi.UseVisualStyleBackColor = True
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(886, 105)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(52, 16)
+        Me.Label29.TabIndex = 175
+        Me.Label29.Text = "Menor:"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.RadioButtonSociosMasculino)
+        Me.Panel2.Controls.Add(Me.RadioButtonSociosFemenino)
+        Me.Panel2.Location = New System.Drawing.Point(955, 130)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(246, 34)
+        Me.Panel2.TabIndex = 174
+        '
+        'RadioButtonSociosMasculino
+        '
+        Me.RadioButtonSociosMasculino.AutoSize = True
+        Me.RadioButtonSociosMasculino.Checked = True
+        Me.RadioButtonSociosMasculino.Location = New System.Drawing.Point(14, 5)
+        Me.RadioButtonSociosMasculino.Name = "RadioButtonSociosMasculino"
+        Me.RadioButtonSociosMasculino.Size = New System.Drawing.Size(97, 20)
+        Me.RadioButtonSociosMasculino.TabIndex = 20
+        Me.RadioButtonSociosMasculino.TabStop = True
+        Me.RadioButtonSociosMasculino.Text = "Masculino"
+        Me.RadioButtonSociosMasculino.UseVisualStyleBackColor = True
+        '
+        'RadioButtonSociosFemenino
+        '
+        Me.RadioButtonSociosFemenino.AutoSize = True
+        Me.RadioButtonSociosFemenino.Location = New System.Drawing.Point(120, 5)
+        Me.RadioButtonSociosFemenino.Name = "RadioButtonSociosFemenino"
+        Me.RadioButtonSociosFemenino.Size = New System.Drawing.Size(95, 20)
+        Me.RadioButtonSociosFemenino.TabIndex = 21
+        Me.RadioButtonSociosFemenino.Text = "Femenino"
+        Me.RadioButtonSociosFemenino.UseVisualStyleBackColor = True
+        '
+        'RadioButtonSociosRetirado
+        '
+        Me.RadioButtonSociosRetirado.AutoSize = True
+        Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(1075, 170)
+        Me.RadioButtonSociosRetirado.Name = "RadioButtonSociosRetirado"
+        Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(87, 20)
+        Me.RadioButtonSociosRetirado.TabIndex = 171
+        Me.RadioButtonSociosRetirado.Text = "Retirado"
+        Me.RadioButtonSociosRetirado.UseVisualStyleBackColor = True
+        '
+        'RadioButtonSociosActivo
+        '
+        Me.RadioButtonSociosActivo.AutoSize = True
+        Me.RadioButtonSociosActivo.Checked = True
+        Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(969, 169)
+        Me.RadioButtonSociosActivo.Name = "RadioButtonSociosActivo"
+        Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(70, 20)
+        Me.RadioButtonSociosActivo.TabIndex = 170
+        Me.RadioButtonSociosActivo.TabStop = True
+        Me.RadioButtonSociosActivo.Text = "Activo"
+        Me.RadioButtonSociosActivo.UseVisualStyleBackColor = True
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(888, 171)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(54, 16)
+        Me.Label30.TabIndex = 173
+        Me.Label30.Text = "Estado:"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.Location = New System.Drawing.Point(886, 139)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(59, 16)
+        Me.Label31.TabIndex = 172
+        Me.Label31.Text = "Género:"
+        '
         'VAsociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1279, 591)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label29)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.RadioButtonSociosRetirado)
+        Me.Controls.Add(Me.RadioButtonSociosActivo)
+        Me.Controls.Add(Me.Label30)
+        Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.DateTimeSociosFechaIngreso)
         Me.Controls.Add(Me.TextBoxSociosOcupacionEspecialidad)
         Me.Controls.Add(Me.TextBoxSociosSeccion)
@@ -829,20 +842,11 @@ Partial Class VAsociados
         Me.Controls.Add(Me.TextBoxSociosCedula)
         Me.Controls.Add(Me.TextBoxSociosNotasRetiro)
         Me.Controls.Add(Me.DateTimeSociosFechaRetiro)
-        Me.Controls.Add(Me.Label27)
-        Me.Controls.Add(Me.Label26)
-        Me.Controls.Add(Me.Label23)
+        Me.Controls.Add(Me.LabelNotasRetiro)
+        Me.Controls.Add(Me.LabelFechaRetiro)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.Label22)
-        Me.Controls.Add(Me.RadioButtonSociosRetirado)
-        Me.Controls.Add(Me.RadioButtonSociosMenorSi)
-        Me.Controls.Add(Me.RadioButtonSociosActivo)
         Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.RadioButtonSociosMenorNo)
-        Me.Controls.Add(Me.RadioButtonSociosMasculino)
         Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.RadioButtonSociosFemenino)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.PictureBox1)
@@ -871,6 +875,10 @@ Partial Class VAsociados
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -898,23 +906,14 @@ Partial Class VAsociados
     Friend WithEvents Label18 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label23 As Label
-    Friend WithEvents RadioButtonSociosMenorSi As RadioButton
-    Friend WithEvents RadioButtonSociosMenorNo As RadioButton
-    Friend WithEvents RadioButtonSociosFemenino As RadioButton
-    Friend WithEvents RadioButtonSociosMasculino As RadioButton
-    Friend WithEvents RadioButtonSociosActivo As RadioButton
-    Friend WithEvents RadioButtonSociosRetirado As RadioButton
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SociosButtonLimpiar As Button
     Friend WithEvents Label24 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label26 As Label
-    Friend WithEvents Label27 As Label
+    Friend WithEvents LabelFechaRetiro As Label
+    Friend WithEvents LabelNotasRetiro As Label
     Friend WithEvents DateTimeSociosFechaRetiro As DateTimePicker
     Friend WithEvents TextBoxSociosNotasRetiro As TextBox
     Friend WithEvents ImprimirReciboActualToolStripMenuItem As ToolStripMenuItem
@@ -946,4 +945,15 @@ Partial Class VAsociados
     Friend WithEvents TextBoxSociosResponsable As TextBox
     Friend WithEvents TextBoxSociosDireccion As TextBox
     Friend WithEvents TextBoxSociosBeneficiario As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents RadioButtonSociosMenorNo As RadioButton
+    Friend WithEvents RadioButtonSociosMenorSi As RadioButton
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents RadioButtonSociosMasculino As RadioButton
+    Friend WithEvents RadioButtonSociosFemenino As RadioButton
+    Friend WithEvents RadioButtonSociosRetirado As RadioButton
+    Friend WithEvents RadioButtonSociosActivo As RadioButton
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label31 As Label
 End Class

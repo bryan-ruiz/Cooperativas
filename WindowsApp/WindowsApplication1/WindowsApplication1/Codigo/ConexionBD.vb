@@ -166,6 +166,38 @@ Public Class ConexionBD
         End Try
 
         Return MyList
+    End Function
+
+    '///////////////// CERTIFICADOS ///////////////////
+
+    'Selecciona cedula, num asociado y datos de los certificados por Asociado
+    Function consultarAsociadoCedOrNum(ByVal cedulaONumAsociado As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT SOCIOS.*
+                    FROM [SOCIOS]
+                    WHERE ((SOCIOS.cedula) = '" & cedulaONumAsociado & "' or (SOCIOS.numAsociado)= '" & cedulaONumAsociado & "') "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
 
     End Function
 
