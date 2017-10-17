@@ -499,7 +499,7 @@ Public Class Socios
                 encabezado.consultarDatos()
                 encabezado.encabezado(pdfWrite, pdfDoc)
 
-                Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL)
+                Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.WHITE)
 
 
                 Dim table As PdfPTable = New PdfPTable(5)
@@ -525,23 +525,25 @@ Public Class Socios
                 cuotaR.HorizontalAlignment = 1
 
 
-                Dim cedulaTotalR As PdfPCell = New PdfPCell(New Phrase(cedulaTotal, FontStype))
+                Dim FontStype2 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
+
+                Dim cedulaTotalR As PdfPCell = New PdfPCell(New Phrase(cedulaTotal, FontStype2))
                 cedulaTotalR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
                 cedulaTotalR.Colspan = 1
                 cedulaTotalR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
 
-                Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(numAsociado, FontStype))
+                Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(numAsociado, FontStype2))
                 numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
                 numAsociadoT.Colspan = 1
                 numAsociadoT.HorizontalAlignment = 1
 
                 Dim nombreTotal As String = nombre + " " + apellidoUno + " " + apellidoDos
-                Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype))
+                Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
                 nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
                 nombreT.Colspan = 2
                 nombreT.HorizontalAlignment = 1
 
-                Dim cuotaT As PdfPCell = New PdfPCell(New Phrase(cuota, FontStype))
+                Dim cuotaT As PdfPCell = New PdfPCell(New Phrase(cuota, FontStype2))
                 cuotaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
                 cuotaT.Colspan = 1
                 cuotaT.HorizontalAlignment = 1

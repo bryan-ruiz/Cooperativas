@@ -51,8 +51,8 @@ Partial Class VIngresos
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.ComboBox_IngresosCodigCuenta = New System.Windows.Forms.ComboBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -78,13 +78,13 @@ Partial Class VIngresos
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
         Me.SalirToolStripMenuItem.Text = "Principal"
         '
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(120, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'ComprobanteToolStripMenuItem
@@ -106,7 +106,7 @@ Partial Class VIngresos
         '
         Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
         Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CrearReporteToolStripMenuItem.Text = "Crear Reporte"
+        Me.CrearReporteToolStripMenuItem.Text = "Reporte detallado"
         '
         'InformeEconómicoToolStripMenuItem
         '
@@ -318,6 +318,16 @@ Partial Class VIngresos
         Me.GroupBox2.TabIndex = 140
         Me.GroupBox2.TabStop = False
         '
+        'ComboBox_IngresosCodigCuenta
+        '
+        Me.ComboBox_IngresosCodigCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox_IngresosCodigCuenta.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_IngresosCodigCuenta.FormattingEnabled = True
+        Me.ComboBox_IngresosCodigCuenta.Location = New System.Drawing.Point(6, 59)
+        Me.ComboBox_IngresosCodigCuenta.Name = "ComboBox_IngresosCodigCuenta"
+        Me.ComboBox_IngresosCodigCuenta.Size = New System.Drawing.Size(236, 27)
+        Me.ComboBox_IngresosCodigCuenta.TabIndex = 142
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label5)
@@ -330,16 +340,6 @@ Partial Class VIngresos
         Me.GroupBox3.Size = New System.Drawing.Size(1215, 37)
         Me.GroupBox3.TabIndex = 141
         Me.GroupBox3.TabStop = False
-        '
-        'ComboBox_IngresosCodigCuenta
-        '
-        Me.ComboBox_IngresosCodigCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox_IngresosCodigCuenta.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox_IngresosCodigCuenta.FormattingEnabled = True
-        Me.ComboBox_IngresosCodigCuenta.Location = New System.Drawing.Point(6, 59)
-        Me.ComboBox_IngresosCodigCuenta.Name = "ComboBox_IngresosCodigCuenta"
-        Me.ComboBox_IngresosCodigCuenta.Size = New System.Drawing.Size(236, 27)
-        Me.ComboBox_IngresosCodigCuenta.TabIndex = 142
         '
         'VIngresos
         '
