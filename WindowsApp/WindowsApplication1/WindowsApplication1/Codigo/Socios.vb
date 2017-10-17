@@ -105,7 +105,7 @@ Public Class Socios
 
     End Sub
 
-    'consulta un asociado
+    'consulta ' NOT BEING USED
     Public Sub consultar()
 
         Dim valores As List(Of String)
@@ -293,13 +293,19 @@ Public Class Socios
 
     'Actualizar Info de Socios'
     Public Sub actualizar()
+
         Dim cedula As String = VAsociados.TextBoxSociosCedula.Text
+        Dim cedula2 As String = VAsociados.TextBoxSociosCedula2.Text
+        Dim cedula3 As String = VAsociados.TextBoxSociosCedula3.Text
+        Dim cedulaTotal As String = cedula + "-" + cedula2 + "-" + cedula3
+        Dim telefono As String = VAsociados.TextBoxSociosTelefono.Text
+        Dim telefono2 As String = VAsociados.TextBoxSociosTelefono2.Text
+        Dim telefonoTotal As String = telefono + "-" + telefono2
         Dim numAsociado As String = VAsociados.TextBoxSociosNumAsociado.Text
         Dim nombre As String = VAsociados.TextBoxSociosNombre.Text
         Dim apellidoUno As String = VAsociados.TextBoxSocios1erApellido.Text
         Dim apellidoDos As String = VAsociados.TextBoxSocios2doApellido.Text
         Dim fechaNacimiento As Date = VAsociados.DateTimeSociosFechaNacimiento.Value.ToString("dd/MM/yyyy")
-        Dim telefono As String = VAsociados.TextBoxSociosTelefono.Text
         Dim cuota As String = VAsociados.TextBoxSociosCuotaMatricula.Text
         Dim responsable As String = VAsociados.TextBoxSociosResponsable.Text
         Dim beneficiario As String = VAsociados.TextBoxSociosBeneficiario.Text
@@ -332,12 +338,12 @@ Public Class Socios
             estado = VAsociados.RadioButtonSociosRetirado.Text
         End If
 
-        If (cedula = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
+        If (cedula = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or telefono2 = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
-                Dim modificado = BD.actualizarSocio(cedula, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad,
+                Dim modificado = BD.actualizarSocio(cedulaTotal, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefonoTotal, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad,
                                                     direccion, genero, estado, fechaRetiro, notasRetiro, menor)
                 If modificado = 1 Then
                     MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)

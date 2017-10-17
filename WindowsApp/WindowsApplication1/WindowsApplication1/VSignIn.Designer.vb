@@ -77,6 +77,7 @@ Partial Class VSignIn
         Me.TextBoxContraseña.Name = "TextBoxContraseña"
         Me.TextBoxContraseña.Size = New System.Drawing.Size(292, 22)
         Me.TextBoxContraseña.TabIndex = 132
+        Me.TextBoxContraseña.Text = "123"
         '
         'Label26
         '
@@ -97,6 +98,7 @@ Partial Class VSignIn
         Me.TextBoxlogin.Name = "TextBoxlogin"
         Me.TextBoxlogin.Size = New System.Drawing.Size(293, 22)
         Me.TextBoxlogin.TabIndex = 131
+        Me.TextBoxlogin.Text = "admin"
         '
         'Label27
         '
@@ -149,9 +151,10 @@ Partial Class VSignIn
         Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VSignIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Reporte Salidas"
+        Me.Text = "Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

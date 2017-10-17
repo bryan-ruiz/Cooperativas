@@ -161,7 +161,7 @@ Partial Class VAsociados
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label3.Location = New System.Drawing.Point(315, 107)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(158, 16)
+        Me.Label3.Size = New System.Drawing.Size(154, 16)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Numero de Asociado"
         '
@@ -172,7 +172,7 @@ Partial Class VAsociados
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label4.Location = New System.Drawing.Point(315, 139)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 16)
+        Me.Label4.Size = New System.Drawing.Size(63, 16)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Nombre"
         '
@@ -183,7 +183,7 @@ Partial Class VAsociados
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label5.Location = New System.Drawing.Point(315, 174)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(118, 16)
+        Me.Label5.Size = New System.Drawing.Size(115, 16)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Primer Apellido"
         '
@@ -194,7 +194,7 @@ Partial Class VAsociados
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label6.Location = New System.Drawing.Point(315, 206)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(135, 16)
+        Me.Label6.Size = New System.Drawing.Size(132, 16)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Segundo Apellido"
         '
@@ -205,7 +205,7 @@ Partial Class VAsociados
         Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label7.Location = New System.Drawing.Point(315, 238)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(159, 16)
+        Me.Label7.Size = New System.Drawing.Size(155, 16)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Fecha de Nacimiento"
         '
@@ -227,7 +227,7 @@ Partial Class VAsociados
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label9.Location = New System.Drawing.Point(315, 304)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(119, 16)
+        Me.Label9.Size = New System.Drawing.Size(115, 16)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Cuota Matricula"
         '
@@ -238,7 +238,7 @@ Partial Class VAsociados
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label10.Location = New System.Drawing.Point(315, 337)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(102, 16)
+        Me.Label10.Size = New System.Drawing.Size(101, 16)
         Me.Label10.TabIndex = 19
         Me.Label10.Text = "Responsable"
         '
@@ -249,7 +249,7 @@ Partial Class VAsociados
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label11.Location = New System.Drawing.Point(315, 369)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(92, 16)
+        Me.Label11.Size = New System.Drawing.Size(91, 16)
         Me.Label11.TabIndex = 21
         Me.Label11.Text = "Beneficiario"
         '
@@ -260,7 +260,7 @@ Partial Class VAsociados
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label12.Location = New System.Drawing.Point(315, 399)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(133, 16)
+        Me.Label12.Size = New System.Drawing.Size(129, 16)
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "Fecha de Ingreso"
         '
@@ -271,7 +271,7 @@ Partial Class VAsociados
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label13.Location = New System.Drawing.Point(315, 428)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(65, 16)
+        Me.Label13.Size = New System.Drawing.Size(64, 16)
         Me.Label13.TabIndex = 25
         Me.Label13.Text = "Sección"
         '
@@ -282,7 +282,7 @@ Partial Class VAsociados
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label14.Location = New System.Drawing.Point(315, 460)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(135, 16)
+        Me.Label14.Size = New System.Drawing.Size(132, 16)
         Me.Label14.TabIndex = 27
         Me.Label14.Text = "Tipo de Asociado"
         '
@@ -326,7 +326,7 @@ Partial Class VAsociados
         Me.Label19.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label19.Location = New System.Drawing.Point(315, 79)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(142, 16)
+        Me.Label19.Size = New System.Drawing.Size(137, 16)
         Me.Label19.TabIndex = 36
         Me.Label19.Text = "Numero de Cedula"
         '
@@ -337,7 +337,7 @@ Partial Class VAsociados
         Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label20.Location = New System.Drawing.Point(315, 494)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(128, 16)
+        Me.Label20.Size = New System.Drawing.Size(125, 16)
         Me.Label20.TabIndex = 38
         Me.Label20.Text = "Direccion Exacta"
         '
@@ -480,7 +480,7 @@ Partial Class VAsociados
         Me.LabelFechaRetiro.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.LabelFechaRetiro.Location = New System.Drawing.Point(885, 213)
         Me.LabelFechaRetiro.Name = "LabelFechaRetiro"
-        Me.LabelFechaRetiro.Size = New System.Drawing.Size(127, 16)
+        Me.LabelFechaRetiro.Size = New System.Drawing.Size(123, 16)
         Me.LabelFechaRetiro.TabIndex = 55
         Me.LabelFechaRetiro.Text = "Fecha del Retiro"
         '
@@ -491,7 +491,7 @@ Partial Class VAsociados
         Me.LabelNotasRetiro.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.LabelNotasRetiro.Location = New System.Drawing.Point(885, 279)
         Me.LabelNotasRetiro.Name = "LabelNotasRetiro"
-        Me.LabelNotasRetiro.Size = New System.Drawing.Size(125, 16)
+        Me.LabelNotasRetiro.Size = New System.Drawing.Size(121, 16)
         Me.LabelNotasRetiro.TabIndex = 56
         Me.LabelNotasRetiro.Text = "Notas del Retiro"
         '
@@ -530,10 +530,9 @@ Partial Class VAsociados
         Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label16.Location = New System.Drawing.Point(561, 78)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(14, 16)
+        Me.Label16.Size = New System.Drawing.Size(13, 16)
         Me.Label16.TabIndex = 58
         Me.Label16.Text = "-"
-        Me.Label16.Visible = False
         '
         'Label25
         '
@@ -542,10 +541,9 @@ Partial Class VAsociados
         Me.Label25.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label25.Location = New System.Drawing.Point(687, 78)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(14, 16)
+        Me.Label25.Size = New System.Drawing.Size(13, 16)
         Me.Label25.TabIndex = 59
         Me.Label25.Text = "-"
-        Me.Label25.Visible = False
         '
         'TextBoxSociosCedula2
         '
@@ -629,10 +627,9 @@ Partial Class VAsociados
         Me.Label28.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label28.Location = New System.Drawing.Point(642, 267)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(14, 16)
+        Me.Label28.Size = New System.Drawing.Size(13, 16)
         Me.Label28.TabIndex = 169
         Me.Label28.Text = "-"
-        Me.Label28.Visible = False
         '
         'DateTimeSociosFechaIngreso
         '
@@ -708,7 +705,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosMenorNo.Checked = True
         Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(119, 3)
         Me.RadioButtonSociosMenorNo.Name = "RadioButtonSociosMenorNo"
-        Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(47, 20)
+        Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(46, 20)
         Me.RadioButtonSociosMenorNo.TabIndex = 19
         Me.RadioButtonSociosMenorNo.TabStop = True
         Me.RadioButtonSociosMenorNo.Text = "No"
@@ -719,7 +716,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosMenorSi.AutoSize = True
         Me.RadioButtonSociosMenorSi.Location = New System.Drawing.Point(12, 2)
         Me.RadioButtonSociosMenorSi.Name = "RadioButtonSociosMenorSi"
-        Me.RadioButtonSociosMenorSi.Size = New System.Drawing.Size(41, 20)
+        Me.RadioButtonSociosMenorSi.Size = New System.Drawing.Size(40, 20)
         Me.RadioButtonSociosMenorSi.TabIndex = 18
         Me.RadioButtonSociosMenorSi.Text = "Si"
         Me.RadioButtonSociosMenorSi.UseVisualStyleBackColor = True
@@ -749,7 +746,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosMasculino.Checked = True
         Me.RadioButtonSociosMasculino.Location = New System.Drawing.Point(14, 5)
         Me.RadioButtonSociosMasculino.Name = "RadioButtonSociosMasculino"
-        Me.RadioButtonSociosMasculino.Size = New System.Drawing.Size(97, 20)
+        Me.RadioButtonSociosMasculino.Size = New System.Drawing.Size(96, 20)
         Me.RadioButtonSociosMasculino.TabIndex = 20
         Me.RadioButtonSociosMasculino.TabStop = True
         Me.RadioButtonSociosMasculino.Text = "Masculino"
@@ -760,7 +757,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosFemenino.AutoSize = True
         Me.RadioButtonSociosFemenino.Location = New System.Drawing.Point(120, 5)
         Me.RadioButtonSociosFemenino.Name = "RadioButtonSociosFemenino"
-        Me.RadioButtonSociosFemenino.Size = New System.Drawing.Size(95, 20)
+        Me.RadioButtonSociosFemenino.Size = New System.Drawing.Size(94, 20)
         Me.RadioButtonSociosFemenino.TabIndex = 21
         Me.RadioButtonSociosFemenino.Text = "Femenino"
         Me.RadioButtonSociosFemenino.UseVisualStyleBackColor = True
@@ -770,7 +767,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosRetirado.AutoSize = True
         Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(1075, 170)
         Me.RadioButtonSociosRetirado.Name = "RadioButtonSociosRetirado"
-        Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(87, 20)
+        Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(86, 20)
         Me.RadioButtonSociosRetirado.TabIndex = 171
         Me.RadioButtonSociosRetirado.Text = "Retirado"
         Me.RadioButtonSociosRetirado.UseVisualStyleBackColor = True
@@ -781,7 +778,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosActivo.Checked = True
         Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(969, 169)
         Me.RadioButtonSociosActivo.Name = "RadioButtonSociosActivo"
-        Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(70, 20)
+        Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(69, 20)
         Me.RadioButtonSociosActivo.TabIndex = 170
         Me.RadioButtonSociosActivo.TabStop = True
         Me.RadioButtonSociosActivo.Text = "Activo"

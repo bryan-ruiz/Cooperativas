@@ -16,20 +16,6 @@
         Me.TextBoxSociosConsultarAsociado.Select()
     End Sub
 
-
-    '// Evento para salir del sistema, cierra las 2 ventanas abiertas
-    Private Sub salirAPP(sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.Closing
-        Dim result As DialogResult = MessageBox.Show("¿Desea salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-        If result = System.Windows.Forms.DialogResult.No Then
-            e.Cancel = True
-        Else
-            VSignIn.Close()
-            Principal.Close()
-            Me.Close()
-        End If
-    End Sub
-
-
     Private Sub TextBoxSociosCedula_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula.KeyPress
         Me.TextBoxSociosCedula.MaxLength = 1
         If Asc(e.KeyChar) <> 8 Then
@@ -40,7 +26,7 @@
     End Sub
 
     Private Sub TextBoxSociosCedula2_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula2.KeyPress
-        Me.TextBoxSociosCedula2.MaxLength = 1
+        Me.TextBoxSociosCedula2.MaxLength = 4
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -49,7 +35,34 @@
     End Sub
 
     Private Sub TextBoxSociosCedula3_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula3.KeyPress
-        Me.TextBoxSociosCedula3.MaxLength = 1
+        Me.TextBoxSociosCedula3.MaxLength = 4
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBoxSociosNumAsociado_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosNumAsociado.KeyPress
+        Me.TextBoxSociosNumAsociado.MaxLength = 15
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBoxSociosTelefono_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosTelefono.KeyPress
+        Me.TextBoxSociosTelefono.MaxLength = 4
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBoxSociosTelefono2_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosTelefono2.KeyPress
+        Me.TextBoxSociosTelefono2.MaxLength = 4
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -81,8 +94,6 @@
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Principal.Show()
     End Sub
-
-
 
     Private Sub RegistroDeAsociadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroDeAsociadosToolStripMenuItem.Click
         VInformacionAnexoAsociados.Show()
@@ -119,4 +130,6 @@
             LabelFechaRetiro.Visible = False
         End If
     End Sub
+
+
 End Class

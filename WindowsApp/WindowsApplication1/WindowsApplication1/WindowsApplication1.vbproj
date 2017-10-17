@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>android_l_etched_icon_tgJ_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
       <HintPath>..\..\..\..\..\..\Downloads\itextsharp-all-5.5.10\itextsharp.xfaworker-dll-5.5.10\itextsharp.dll</HintPath>
@@ -324,6 +327,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="android_l_etched_icon_tgJ_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

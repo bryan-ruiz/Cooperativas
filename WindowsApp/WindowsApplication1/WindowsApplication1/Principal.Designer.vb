@@ -24,9 +24,6 @@ Partial Class Principal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComitésToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,31 +45,12 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.GestionUsuariosToolStripMenuItem, Me.ComitésToolStripMenuItem, Me.CertificadosToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.SalidasToolStripMenuItem, Me.ConfiguraciónToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionUsuariosToolStripMenuItem, Me.ComitésToolStripMenuItem, Me.CertificadosToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.SalidasToolStripMenuItem, Me.ConfiguraciónToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(796, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'MenuToolStripMenuItem
-        '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem, Me.CerrarSesionToolStripMenuItem})
-        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.MenuToolStripMenuItem.Text = "Menu"
-        '
-        'SalirToolStripMenuItem
-        '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
-        Me.SalirToolStripMenuItem.Text = "Salir"
-        '
-        'CerrarSesionToolStripMenuItem
-        '
-        Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
-        Me.CerrarSesionToolStripMenuItem.Text = "Cerrar Sesion"
         '
         'GestionUsuariosToolStripMenuItem
         '
@@ -193,6 +171,7 @@ Partial Class Principal
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -208,10 +187,7 @@ Partial Class Principal
 
     End Sub
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestionUsuariosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CerrarSesionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ComitésToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CertificadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
