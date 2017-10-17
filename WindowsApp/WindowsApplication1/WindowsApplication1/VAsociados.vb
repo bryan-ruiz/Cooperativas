@@ -16,6 +16,20 @@
         Me.TextBoxSociosConsultarAsociado.Select()
     End Sub
 
+
+    '// Evento para salir del sistema, cierra las 2 ventanas abiertas
+    Private Sub salirAPP(sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.Closing
+        Dim result As DialogResult = MessageBox.Show("¿Desea salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If result = System.Windows.Forms.DialogResult.No Then
+            e.Cancel = True
+        Else
+            VSignIn.Close()
+            Principal.Close()
+            Me.Close()
+        End If
+    End Sub
+
+
     Private Sub TextBoxSociosCedula_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCedula.KeyPress
         Me.TextBoxSociosCedula.MaxLength = 1
         If Asc(e.KeyChar) <> 8 Then

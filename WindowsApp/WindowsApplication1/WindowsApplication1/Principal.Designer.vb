@@ -183,7 +183,7 @@ Partial Class Principal
         Me.Label2.TabIndex = 35
         Me.Label2.Text = "SAC"
         '
-        'Form1
+        'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -196,7 +196,7 @@ Partial Class Principal
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "Form1"
+        Me.Name = "Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Principal"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
