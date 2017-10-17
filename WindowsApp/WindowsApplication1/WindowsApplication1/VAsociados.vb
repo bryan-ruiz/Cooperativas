@@ -70,6 +70,34 @@
         End If
     End Sub
 
+
+    Private Sub TextBoxSociosSeccion_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosSeccion.KeyPress
+        Me.TextBoxSociosSeccion.MaxLength = 2
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBoxSociosSeccion2_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosSeccion2.KeyPress
+        Me.TextBoxSociosSeccion2.MaxLength = 2
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBoxSociosCuotaMatricula_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosCuotaMatricula.KeyPress
+        Me.TextBoxSociosCuotaMatricula.MaxLength = 15
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
     'CONSULTAR
     Private Sub ButtonAsociadosBuscar_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscar.Click
         socios.consultarAsociado()
@@ -131,5 +159,8 @@
         End If
     End Sub
 
+    Private Sub ImprimirReciboActualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirReciboActualToolStripMenuItem.Click
+        socios.imprimirReciboActual()
 
+    End Sub
 End Class

@@ -57,8 +57,14 @@ Public Class Socios
                         VAsociados.TextBoxSociosResponsable.Text = valores.Item(8)
                         VAsociados.TextBoxSociosBeneficiario.Text = valores.Item(9)
                         VAsociados.DateTimeSociosFechaIngreso.Value = Date.Parse(valores.Item(10))
-                        VAsociados.TextBoxSociosSeccion.Text = valores.Item(11)
-                        VAsociados.TextBoxSociosOcupacionEspecialidad.Text = valores.Item(12)
+                    ' VAsociados.TextBoxSociosSeccion.Text = valores.Item(11)
+
+                    Dim sec As String = valores(11)
+                    Dim secciones As String() = sec.Split(New Char() {"-"c})
+                    VAsociados.TextBoxSociosSeccion.Text = secciones(0)
+                    VAsociados.TextBoxSociosSeccion2.Text = secciones(1)
+
+                    VAsociados.TextBoxSociosOcupacionEspecialidad.Text = valores.Item(12)
                         VAsociados.TextBoxSociosDireccion.Text = valores.Item(13)
 
                         'Para Genero
@@ -232,6 +238,7 @@ Public Class Socios
         Dim beneficiario As String = VAsociados.TextBoxSociosBeneficiario.Text
         Dim fechaIngreso As Date = VAsociados.DateTimeSociosFechaIngreso.Value.ToString("dd/MM/yyyy")
         Dim seccion As String = VAsociados.TextBoxSociosSeccion.Text
+        Dim seccion2 As String = VAsociados.TextBoxSociosSeccion2.Text
         Dim especialidad As String = VAsociados.TextBoxSociosOcupacionEspecialidad.Text
         Dim direccion As String = VAsociados.TextBoxSociosDireccion.Text
         Dim genero As String = ""
@@ -269,8 +276,9 @@ Public Class Socios
             Else
                 Try
                     BD.ConectarBD()
-                    Dim insertado As Integer = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefono + telefono2, cuota, responsable, beneficiario,
-                                                                fechaIngreso, seccion, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
+                    Dim insertado As Integer = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento,
+                                                                telefono + "-" + telefono2, cuota, responsable, beneficiario, fechaIngreso,
+                                                                seccion + "-" + seccion2, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
 
                     Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
 
@@ -311,6 +319,8 @@ Public Class Socios
         Dim beneficiario As String = VAsociados.TextBoxSociosBeneficiario.Text
         Dim fechaIngreso As Date = VAsociados.DateTimeSociosFechaIngreso.Value.ToString("dd/MM/yyyy")
         Dim seccion As String = VAsociados.TextBoxSociosSeccion.Text
+        Dim seccion2 As String = VAsociados.TextBoxSociosSeccion2.Text
+        Dim seccionTotal As String = seccion + "-" + seccion2
         Dim especialidad As String = VAsociados.TextBoxSociosOcupacionEspecialidad.Text
         Dim direccion As String = VAsociados.TextBoxSociosDireccion.Text
         Dim genero As String = ""
@@ -338,12 +348,12 @@ Public Class Socios
             estado = VAsociados.RadioButtonSociosRetirado.Text
         End If
 
-        If (cedula = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or telefono2 = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
+        If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or telefono2 = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or seccion2 = "" Or especialidad = "" Or direccion = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
-                Dim modificado = BD.actualizarSocio(cedulaTotal, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefonoTotal, cuota, responsable, beneficiario, fechaIngreso, seccion, especialidad,
+                Dim modificado = BD.actualizarSocio(cedulaTotal, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento, telefonoTotal, cuota, responsable, beneficiario, fechaIngreso, seccionTotal, especialidad,
                                                     direccion, genero, estado, fechaRetiro, notasRetiro, menor)
                 If modificado = 1 Then
                     MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
@@ -374,6 +384,7 @@ Public Class Socios
         VAsociados.TextBoxSociosResponsable.Text = ""
         VAsociados.TextBoxSociosBeneficiario.Text = ""
         VAsociados.TextBoxSociosSeccion.Text = ""
+        VAsociados.TextBoxSociosSeccion2.Text = ""
         VAsociados.TextBoxSociosOcupacionEspecialidad.Text = ""
         VAsociados.TextBoxSociosDireccion.Text = ""
         VAsociados.TextBoxSociosNotasRetiro.Text = ""
@@ -443,4 +454,123 @@ Public Class Socios
         End Try
     End Sub
 
+
+    'Genera un recibo de la info del socio'
+    Public Sub imprimirReciboActual()
+        Dim cedula As String = VAsociados.TextBoxSociosCedula.Text
+        Dim cedula2 As String = VAsociados.TextBoxSociosCedula2.Text
+        Dim cedula3 As String = VAsociados.TextBoxSociosCedula3.Text
+        Dim cedulaTotal As String = cedula + "-" + cedula2 + "-" + cedula3
+        Dim telefono As String = VAsociados.TextBoxSociosTelefono.Text
+        Dim telefono2 As String = VAsociados.TextBoxSociosTelefono2.Text
+        Dim telefonoTotal As String = telefono + "-" + telefono2
+        Dim numAsociado As String = VAsociados.TextBoxSociosNumAsociado.Text
+        Dim nombre As String = VAsociados.TextBoxSociosNombre.Text
+        Dim apellidoUno As String = VAsociados.TextBoxSocios1erApellido.Text
+        Dim apellidoDos As String = VAsociados.TextBoxSocios2doApellido.Text
+        Dim fechaNacimiento As Date = VAsociados.DateTimeSociosFechaNacimiento.Value.ToString("dd/MM/yyyy")
+        Dim cuota As String = VAsociados.TextBoxSociosCuotaMatricula.Text
+        Dim responsable As String = VAsociados.TextBoxSociosResponsable.Text
+        Dim beneficiario As String = VAsociados.TextBoxSociosBeneficiario.Text
+        Dim fechaIngreso As Date = VAsociados.DateTimeSociosFechaIngreso.Value.ToString("dd/MM/yyyy")
+        Dim seccion As String = VAsociados.TextBoxSociosSeccion.Text
+        Dim seccion2 As String = VAsociados.TextBoxSociosSeccion2.Text
+        Dim seccionTotal As String = seccion + "-" + seccion2
+        Dim especialidad As String = VAsociados.TextBoxSociosOcupacionEspecialidad.Text
+        Dim direccion As String = VAsociados.TextBoxSociosDireccion.Text
+        Dim genero As String = ""
+        Dim estado As String = ""
+        Dim menor As String = ""
+        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
+        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasRetiro.Text
+
+        If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or telefono2 = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or seccion2 = "" Or especialidad = "" Or direccion = "") Then
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Else
+            Try
+
+                If Not Directory.Exists(variablesGlobales.folderPath) Then
+                    Directory.CreateDirectory(variablesGlobales.folderPath)
+                End If
+
+                Dim pdfDoc As New Document()
+                Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reciboAsociado.pdf", FileMode.Create))
+                pdfDoc.Open()
+                encabezado.consultarDatos()
+                encabezado.encabezado(pdfWrite, pdfDoc)
+
+                Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL)
+
+
+                Dim table As PdfPTable = New PdfPTable(5)
+
+                Dim cedulaR As PdfPCell = New PdfPCell(New Phrase("Cédula: ", FontStype))
+                cedulaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#0489B1"))
+                cedulaR.Colspan = 1
+                cedulaR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+                Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("# Asociado: ", FontStype))
+                numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#0489B1"))
+                numAsociadoR.Colspan = 1
+                numAsociadoR.HorizontalAlignment = 1
+
+                Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre: ", FontStype))
+                nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#0489B1"))
+                nombreR.Colspan = 2
+                nombreR.HorizontalAlignment = 1
+
+                Dim cuotaR As PdfPCell = New PdfPCell(New Phrase("Cuota: ", FontStype))
+                cuotaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#0489B1"))
+                cuotaR.Colspan = 1
+                cuotaR.HorizontalAlignment = 1
+
+
+                Dim cedulaTotalR As PdfPCell = New PdfPCell(New Phrase(cedulaTotal, FontStype))
+                cedulaTotalR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
+                cedulaTotalR.Colspan = 1
+                cedulaTotalR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+                Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(numAsociado, FontStype))
+                numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
+                numAsociadoT.Colspan = 1
+                numAsociadoT.HorizontalAlignment = 1
+
+                Dim nombreTotal As String = nombre + " " + apellidoUno + " " + apellidoDos
+                Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype))
+                nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
+                nombreT.Colspan = 2
+                nombreT.HorizontalAlignment = 1
+
+                Dim cuotaT As PdfPCell = New PdfPCell(New Phrase(cuota, FontStype))
+                cuotaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
+                cuotaT.Colspan = 1
+                cuotaT.HorizontalAlignment = 1
+
+
+                table.AddCell(cedulaR)
+                table.AddCell(numAsociadoR)
+                table.AddCell(nombreR)
+                table.AddCell(cuotaR)
+
+                table.AddCell(cedulaTotalR)
+                table.AddCell(numAsociadoT)
+                table.AddCell(nombreT)
+                table.AddCell(cuotaT)
+
+                ' pdfDoc.Add(New Paragraph("Cédula:   " + cedulaTotal, FontStype))
+
+                'Agrega todos los valores consultados al documento
+                pdfDoc.Add(table)
+
+                pdfDoc.Close()
+
+                MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                Print.Show()
+
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            End Try
+        End If
+    End Sub
 End Class

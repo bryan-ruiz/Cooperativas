@@ -34,12 +34,16 @@ Public Class EncabezadoClase
         cbEncabezado = writer.DirectContent
         With cbEncabezado
             .BeginText()
-            .SetFontAndSize(FontFactory.GetFont(FontFactory.HELVETICA_BOLD, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL).BaseFont, 9)
-            .SetColorFill(iTextSharp.text.BaseColor.BLACK)
-            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "" + valores(0).cooperativa, 290, 770, 0) 'nombre de la coope
-            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Ced Jurídica: " + valores(0).cedulaJuridica, 290, 760, 0)
-            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Tel: " + valores(0).telefono, 290, 750, 0)
-            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy"), 290, 740, 0)
+            .SetFontAndSize(FontFactory.GetFont(FontFactory.TIMES_BOLD, iTextSharp.text.Font.NORMAL, iTextSharp.text.Font.NORMAL).BaseFont, 12)
+            '.SetColorFill(iTextSharp.text.BaseColor.BLACK)
+            .SetColorFill(iTextSharp.text.BaseColor.DARK_GRAY)
+            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, valores(0).cooperativa, 290, 770, 0) 'nombre de la coope
+
+            .SetFontAndSize(FontFactory.GetFont(FontFactory.TIMES_BOLD, iTextSharp.text.Font.NORMAL, iTextSharp.text.Font.NORMAL).BaseFont, 9)
+
+            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Ced Jurídica: " + valores(0).cedulaJuridica, 290, 755, 0)
+            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Tel: " + valores(0).telefono, 290, 745, 0)
+            .ShowTextAligned(PdfContentByte.ALIGN_CENTER, "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy"), 290, 735, 0)
             .EndText()
         End With
         '-----------------------------------------------------------------------------------------
@@ -73,6 +77,6 @@ Public Class EncabezadoClase
             document.Add(New Paragraph(" "))
             contador = contador + 1
         End While
-        document.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
+        'document.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
     End Sub
 End Class

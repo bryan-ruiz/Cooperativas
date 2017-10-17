@@ -95,6 +95,8 @@ Partial Class VAsociados
         Me.RadioButtonSociosActivo = New System.Windows.Forms.RadioButton()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.TextBoxSociosSeccion2 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -653,12 +655,11 @@ Partial Class VAsociados
         Me.TextBoxSociosSeccion.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSociosSeccion.Location = New System.Drawing.Point(484, 422)
         Me.TextBoxSociosSeccion.Name = "TextBoxSociosSeccion"
-        Me.TextBoxSociosSeccion.Size = New System.Drawing.Size(320, 22)
+        Me.TextBoxSociosSeccion.Size = New System.Drawing.Size(150, 22)
         Me.TextBoxSociosSeccion.TabIndex = 16
         '
         'TextBoxSociosCuotaMatricula
         '
-        Me.TextBoxSociosCuotaMatricula.Enabled = False
         Me.TextBoxSociosCuotaMatricula.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSociosCuotaMatricula.Location = New System.Drawing.Point(484, 296)
         Me.TextBoxSociosCuotaMatricula.Name = "TextBoxSociosCuotaMatricula"
@@ -804,12 +805,33 @@ Partial Class VAsociados
         Me.Label31.TabIndex = 172
         Me.Label31.Text = "Género:"
         '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label21.Location = New System.Drawing.Point(642, 425)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(13, 16)
+        Me.Label21.TabIndex = 177
+        Me.Label21.Text = "-"
+        '
+        'TextBoxSociosSeccion2
+        '
+        Me.TextBoxSociosSeccion2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSociosSeccion2.Location = New System.Drawing.Point(661, 422)
+        Me.TextBoxSociosSeccion2.Name = "TextBoxSociosSeccion2"
+        Me.TextBoxSociosSeccion2.Size = New System.Drawing.Size(142, 22)
+        Me.TextBoxSociosSeccion2.TabIndex = 178
+        '
         'VAsociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1279, 591)
+        Me.Controls.Add(Me.TextBoxSociosSeccion2)
+        Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label29)
         Me.Controls.Add(Me.Panel2)
@@ -953,4 +975,6 @@ Partial Class VAsociados
     Friend WithEvents RadioButtonSociosActivo As RadioButton
     Friend WithEvents Label30 As Label
     Friend WithEvents Label31 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents TextBoxSociosSeccion2 As TextBox
 End Class

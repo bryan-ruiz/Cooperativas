@@ -330,6 +330,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="android_l_etched_icon_tgJ_icon.ico" />
+    <Content Include="Imagen\MEP_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

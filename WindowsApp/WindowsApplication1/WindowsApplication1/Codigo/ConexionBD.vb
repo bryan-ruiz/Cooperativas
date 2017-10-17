@@ -284,7 +284,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            'MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
         End Try
 
         Return res

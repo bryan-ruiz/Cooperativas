@@ -165,7 +165,9 @@ Public Class InformeEconomico
             For Each value In totalIngresos
                 table.AddCell(value)
             Next
+
             table.AddCell(cellSubTotalIngresos)
+
             For Each value In subTotalIngresos
                 table.AddCell(value)
             Next
