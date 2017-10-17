@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="socios" targetNamespace="http://tempuri.org/socios.xsd" xmlns:mstns="http://tempuri.org/socios.xsd" xmlns="http://tempuri.org/socios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="CoopeBDConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CoopeBDConnectionString (MySettings)" PropertyReference="ApplicationSettings.ReportsApplication1.My.MySettings.GlobalReference.Default.CoopeBDConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CoopeBDConnectionString (MySettings)" DbObjectName="SOCIOS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        *
+FROM            SOCIOS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cedula" DataSetColumn="cedula" />
+              <Mapping SourceColumn="numAsociado" DataSetColumn="numAsociado" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="primerApellido" DataSetColumn="primerApellido" />
+              <Mapping SourceColumn="segundoApellido" DataSetColumn="segundoApellido" />
+              <Mapping SourceColumn="fechaNacimiento" DataSetColumn="fechaNacimiento" />
+              <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
+              <Mapping SourceColumn="cuotaMatricula" DataSetColumn="cuotaMatricula" />
+              <Mapping SourceColumn="responsable" DataSetColumn="responsable" />
+              <Mapping SourceColumn="beneficiario" DataSetColumn="beneficiario" />
+              <Mapping SourceColumn="fechaIngreso" DataSetColumn="fechaIngreso" />
+              <Mapping SourceColumn="seccion" DataSetColumn="seccion" />
+              <Mapping SourceColumn="ocupacionEspecialidad" DataSetColumn="ocupacionEspecialidad" />
+              <Mapping SourceColumn="direccion" DataSetColumn="direccion" />
+              <Mapping SourceColumn="genero" DataSetColumn="genero" />
+              <Mapping SourceColumn="estado" DataSetColumn="estado" />
+              <Mapping SourceColumn="fechaRetiro" DataSetColumn="fechaRetiro" />
+              <Mapping SourceColumn="notasRetiro" DataSetColumn="notasRetiro" />
+              <Mapping SourceColumn="menor" DataSetColumn="menor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="socios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="socios" msprop:Generator_UserDSName="socios">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cedula" msprop:Generator_ColumnVarNameInTable="columncedula" msprop:Generator_ColumnPropNameInRow="cedula" msprop:Generator_ColumnPropNameInTable="cedulaColumn" msprop:Generator_UserColumnName="cedula">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="numAsociado" msprop:Generator_ColumnVarNameInTable="columnnumAsociado" msprop:Generator_ColumnPropNameInRow="numAsociado" msprop:Generator_ColumnPropNameInTable="numAsociadoColumn" msprop:Generator_UserColumnName="numAsociado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="primerApellido" msprop:Generator_ColumnVarNameInTable="columnprimerApellido" msprop:Generator_ColumnPropNameInRow="primerApellido" msprop:Generator_ColumnPropNameInTable="primerApellidoColumn" msprop:Generator_UserColumnName="primerApellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="segundoApellido" msprop:Generator_ColumnVarNameInTable="columnsegundoApellido" msprop:Generator_ColumnPropNameInRow="segundoApellido" msprop:Generator_ColumnPropNameInTable="segundoApellidoColumn" msprop:Generator_UserColumnName="segundoApellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fechaNacimiento" msprop:Generator_ColumnVarNameInTable="columnfechaNacimiento" msprop:Generator_ColumnPropNameInRow="fechaNacimiento" msprop:Generator_ColumnPropNameInTable="fechaNacimientoColumn" msprop:Generator_UserColumnName="fechaNacimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cuotaMatricula" msprop:Generator_ColumnVarNameInTable="columncuotaMatricula" msprop:Generator_ColumnPropNameInRow="cuotaMatricula" msprop:Generator_ColumnPropNameInTable="cuotaMatriculaColumn" msprop:Generator_UserColumnName="cuotaMatricula" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="responsable" msprop:Generator_ColumnVarNameInTable="columnresponsable" msprop:Generator_ColumnPropNameInRow="responsable" msprop:Generator_ColumnPropNameInTable="responsableColumn" msprop:Generator_UserColumnName="responsable" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="beneficiario" msprop:Generator_ColumnVarNameInTable="columnbeneficiario" msprop:Generator_ColumnPropNameInRow="beneficiario" msprop:Generator_ColumnPropNameInTable="beneficiarioColumn" msprop:Generator_UserColumnName="beneficiario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fechaIngreso" msprop:Generator_ColumnVarNameInTable="columnfechaIngreso" msprop:Generator_ColumnPropNameInRow="fechaIngreso" msprop:Generator_ColumnPropNameInTable="fechaIngresoColumn" msprop:Generator_UserColumnName="fechaIngreso" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="seccion" msprop:Generator_ColumnVarNameInTable="columnseccion" msprop:Generator_ColumnPropNameInRow="seccion" msprop:Generator_ColumnPropNameInTable="seccionColumn" msprop:Generator_UserColumnName="seccion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ocupacionEspecialidad" msprop:Generator_ColumnVarNameInTable="columnocupacionEspecialidad" msprop:Generator_ColumnPropNameInRow="ocupacionEspecialidad" msprop:Generator_ColumnPropNameInTable="ocupacionEspecialidadColumn" msprop:Generator_UserColumnName="ocupacionEspecialidad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="direccion" msprop:Generator_ColumnVarNameInTable="columndireccion" msprop:Generator_ColumnPropNameInRow="direccion" msprop:Generator_ColumnPropNameInTable="direccionColumn" msprop:Generator_UserColumnName="direccion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="genero" msprop:Generator_ColumnVarNameInTable="columngenero" msprop:Generator_ColumnPropNameInRow="genero" msprop:Generator_ColumnPropNameInTable="generoColumn" msprop:Generator_UserColumnName="genero" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fechaRetiro" msprop:Generator_ColumnVarNameInTable="columnfechaRetiro" msprop:Generator_ColumnPropNameInRow="fechaRetiro" msprop:Generator_ColumnPropNameInTable="fechaRetiroColumn" msprop:Generator_UserColumnName="fechaRetiro" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="notasRetiro" msprop:Generator_ColumnVarNameInTable="columnnotasRetiro" msprop:Generator_ColumnPropNameInRow="notasRetiro" msprop:Generator_ColumnPropNameInTable="notasRetiroColumn" msprop:Generator_UserColumnName="notasRetiro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="menor" msprop:Generator_ColumnVarNameInTable="columnmenor" msprop:Generator_ColumnPropNameInRow="menor" msprop:Generator_ColumnPropNameInTable="menorColumn" msprop:Generator_UserColumnName="menor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:cedula" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
