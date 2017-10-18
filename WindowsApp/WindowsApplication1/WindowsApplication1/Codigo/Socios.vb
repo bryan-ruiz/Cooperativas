@@ -466,9 +466,8 @@ Public Class Socios
                 Directory.CreateDirectory(variablesGlobales.folderPath)
             End If
 
-            Dim pdfDoc As New Document(PageSize.A4_LANDSCAPE, 1, 1, 25, 1)
-
-
+            'Margin of the Doc
+            Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
 
             Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteSociosResumido.pdf", FileMode.Create))
             pdfDoc.Open()
