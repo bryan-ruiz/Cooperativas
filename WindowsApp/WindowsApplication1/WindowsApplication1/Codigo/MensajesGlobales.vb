@@ -27,5 +27,7 @@ Public Class MensajesGlobales
     Public licenciaCaducada As String = "Su licencia ha caducado, contacte al Administrador del Sistema"
     Public nombreUsuarioOContrasenaIncorrecto As String = "El nombre de usuario o contraseña es incorrecto"
 
+    Public colorEncabezado As String = "#0489B1" 'Header de reportes - azul
+    Public colorLineas As String = "#D8D8D8" ' color líneas del reporte - gris
 
 End Class

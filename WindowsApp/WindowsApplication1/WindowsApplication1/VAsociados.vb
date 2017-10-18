@@ -161,6 +161,10 @@
 
     Private Sub ImprimirReciboActualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirReciboActualToolStripMenuItem.Click
         socios.imprimirReciboActual()
+    End Sub
 
+    Private Sub AsociadosActivosResumidoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsociadosActivosResumidoToolStripMenuItem.Click
+        socios.generarReporteDeSociosResumido("Activos")
+        Print.Show()
     End Sub
 End Class

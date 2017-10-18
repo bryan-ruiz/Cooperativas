@@ -454,6 +454,163 @@ Public Class Socios
         End Try
     End Sub
 
+    'Genera un reporte de los Socios en PDF'
+    Public Sub generarReporteDeSociosResumido(ByVal tipoReporte As String)
+        Try
+            Dim valores As List(Of SocioClase)
+            BD.ConectarBD()
+            valores = BD.obtenerDatosReporteDeSocios(tipoReporte)
+            BD.CerrarConexion()
+
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
+            End If
+
+            Dim pdfDoc As New Document(PageSize.A4_LANDSCAPE, 1, 1, 25, 1)
+
+
+
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteSociosResumido.pdf", FileMode.Create))
+            pdfDoc.Open()
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
+
+            Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
+
+            Dim table As PdfPTable = New PdfPTable(9)
+
+            '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
+
+            Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("N° Asociado", FontStype))
+            numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            numAsociadoR.Colspan = 1
+            numAsociadoR.HorizontalAlignment = 1
+
+            Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre Completo", FontStype))
+            nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            nombreR.Colspan = 2
+            nombreR.HorizontalAlignment = 1
+
+            Dim cedulaR As PdfPCell = New PdfPCell(New Phrase("N° Identificación", FontStype))
+            cedulaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            cedulaR.Colspan = 1
+            cedulaR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+            Dim fechaIngresoR As PdfPCell = New PdfPCell(New Phrase("Fecha Ingreso", FontStype))
+            fechaIngresoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            fechaIngresoR.Colspan = 1
+            fechaIngresoR.HorizontalAlignment = 1
+
+            Dim calidadR As PdfPCell = New PdfPCell(New Phrase("Calidad", FontStype))
+            calidadR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            calidadR.Colspan = 1
+            calidadR.HorizontalAlignment = 1
+
+            Dim nivelR As PdfPCell = New PdfPCell(New Phrase("Nivel", FontStype))
+            nivelR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            nivelR.Colspan = 1
+            nivelR.HorizontalAlignment = 1
+
+            Dim cuotaAdminR As PdfPCell = New PdfPCell(New Phrase("Cuota Admisión", FontStype))
+            cuotaAdminR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            cuotaAdminR.Colspan = 1
+            cuotaAdminR.HorizontalAlignment = 1
+
+            Dim estadoR As PdfPCell = New PdfPCell(New Phrase("Estado", FontStype))
+            estadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            estadoR.Colspan = 1
+            estadoR.HorizontalAlignment = 1
+
+            Dim fechaRetiroR As PdfPCell = New PdfPCell(New Phrase("Fecha Retiro", FontStype))
+            fechaRetiroR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            fechaRetiroR.Colspan = 1
+            fechaRetiroR.HorizontalAlignment = 1
+
+            table.AddCell(numAsociadoR)
+            table.AddCell(nombreR)
+            table.AddCell(cedulaR)
+            table.AddCell(fechaIngresoR)
+            table.AddCell(calidadR)
+            table.AddCell(nivelR)
+            table.AddCell(cuotaAdminR)
+            table.AddCell(estadoR)
+
+            Dim contador As Integer = 0
+            Dim conta As Integer = 0
+            While contador < valores.Count
+                If conta = 2 Then
+                    'pdfDoc.NewPage()
+                    'encabezado.encabezado(pdfWrite, pdfDoc)
+                    conta = 0
+                End If
+                conta = conta + 1
+
+                Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
+
+                Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).numAsoc, FontStype2))
+                numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                numAsociadoT.Colspan = 1
+                numAsociadoT.HorizontalAlignment = 1
+
+                Dim nombreTotal As String = valores(contador).nombre + " " + valores(contador).primerApellido + " " + valores(contador).segundoApellido
+                Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
+                nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                nombreT.Colspan = 2
+                nombreT.HorizontalAlignment = 1
+
+                Dim cedulaTotalT As PdfPCell = New PdfPCell(New Phrase(valores(contador).cedula, FontStype2))
+                cedulaTotalT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                cedulaTotalT.Colspan = 1
+                cedulaTotalT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+                Dim fechaIngresoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).fechaIngreso, FontStype2))
+                fechaIngresoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                fechaIngresoT.Colspan = 1
+                fechaIngresoT.HorizontalAlignment = 1
+
+                Dim calidadT As PdfPCell = New PdfPCell(New Phrase(valores(contador).ocupacionEspecialidad, FontStype2))
+                calidadT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                calidadT.Colspan = 1
+                calidadT.HorizontalAlignment = 1
+
+                Dim seccionT As PdfPCell = New PdfPCell(New Phrase(valores(contador).seccion, FontStype2))
+                seccionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                seccionT.Colspan = 1
+                seccionT.HorizontalAlignment = 1
+
+                Dim cuotaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).cuotaMatricula, FontStype2))
+                cuotaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                cuotaT.Colspan = 1
+                cuotaT.HorizontalAlignment = 1
+
+                Dim estadoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).estado, FontStype2))
+                estadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                estadoT.Colspan = 1
+                estadoT.HorizontalAlignment = 1
+
+                table.AddCell(numAsociadoT)
+                table.AddCell(nombreT)
+                table.AddCell(cedulaTotalT)
+                table.AddCell(fechaIngresoT)
+                table.AddCell(calidadT)
+                table.AddCell(seccionT)
+                table.AddCell(cuotaT)
+                table.AddCell(estadoT)
+
+                contador = contador + 1
+
+            End While
+
+            pdfDoc.Add(table)
+
+            pdfDoc.Close()
+
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+        End Try
+    End Sub
 
     'Genera un recibo de la info del socio'
     Public Sub imprimirReciboActual()

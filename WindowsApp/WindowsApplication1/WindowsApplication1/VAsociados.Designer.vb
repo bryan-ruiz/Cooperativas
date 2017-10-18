@@ -97,6 +97,7 @@ Partial Class VAsociados
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.TextBoxSociosSeccion2 = New System.Windows.Forms.TextBox()
+        Me.AsociadosActivosResumidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -381,7 +382,7 @@ Partial Class VAsociados
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuAsociadosReporteActivos, Me.ToolStripMenuAsociadosReporteTodos})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuAsociadosReporteActivos, Me.AsociadosActivosResumidoToolStripMenuItem, Me.ToolStripMenuAsociadosReporteTodos})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(65, 19)
         Me.ToolStripMenuItem1.Text = "Reportes"
@@ -389,13 +390,13 @@ Partial Class VAsociados
         'ToolStripMenuAsociadosReporteActivos
         '
         Me.ToolStripMenuAsociadosReporteActivos.Name = "ToolStripMenuAsociadosReporteActivos"
-        Me.ToolStripMenuAsociadosReporteActivos.Size = New System.Drawing.Size(181, 22)
+        Me.ToolStripMenuAsociadosReporteActivos.Size = New System.Drawing.Size(234, 22)
         Me.ToolStripMenuAsociadosReporteActivos.Text = "Asociados Activos"
         '
         'ToolStripMenuAsociadosReporteTodos
         '
         Me.ToolStripMenuAsociadosReporteTodos.Name = "ToolStripMenuAsociadosReporteTodos"
-        Me.ToolStripMenuAsociadosReporteTodos.Size = New System.Drawing.Size(181, 22)
+        Me.ToolStripMenuAsociadosReporteTodos.Size = New System.Drawing.Size(234, 22)
         Me.ToolStripMenuAsociadosReporteTodos.Text = "Todos los Asociados"
         '
         'InformaciónToolStripMenuItem
@@ -824,6 +825,12 @@ Partial Class VAsociados
         Me.TextBoxSociosSeccion2.Size = New System.Drawing.Size(142, 22)
         Me.TextBoxSociosSeccion2.TabIndex = 178
         '
+        'AsociadosActivosResumidoToolStripMenuItem
+        '
+        Me.AsociadosActivosResumidoToolStripMenuItem.Name = "AsociadosActivosResumidoToolStripMenuItem"
+        Me.AsociadosActivosResumidoToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
+        Me.AsociadosActivosResumidoToolStripMenuItem.Text = "Asociados Activos - Resumido"
+        '
         'VAsociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -977,4 +984,5 @@ Partial Class VAsociados
     Friend WithEvents Label31 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents TextBoxSociosSeccion2 As TextBox
+    Friend WithEvents AsociadosActivosResumidoToolStripMenuItem As ToolStripMenuItem
 End Class
