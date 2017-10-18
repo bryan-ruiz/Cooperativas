@@ -537,9 +537,12 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 20 Then
+                If conta = 50 Then
+                    pdfDoc.Add(table)
                     pdfDoc.NewPage()
-                    'encabezado.encabezado(pdfWrite, pdfDoc)
+                    encabezado.encabezado(pdfWrite, pdfDoc)
+                    table.DeleteBodyRows()
+
                     conta = 0
                 End If
                 conta = conta + 1
