@@ -128,7 +128,7 @@ Partial Class Principal
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logoCoopesag2
         Me.PictureBox1.Location = New System.Drawing.Point(284, 82)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"

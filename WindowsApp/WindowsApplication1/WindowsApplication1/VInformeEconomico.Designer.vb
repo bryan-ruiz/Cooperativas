@@ -22,6 +22,7 @@ Partial Class VInformeEconomico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VInformeEconomico))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.InformeButtonGenerarInforme = New System.Windows.Forms.Button()
@@ -101,6 +102,7 @@ Partial Class VInformeEconomico
         Me.Controls.Add(Me.InformeDateTimePickerHasta)
         Me.Controls.Add(Me.InformeDateTimePickerDesde)
         Me.Controls.Add(Me.Label9)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VInformeEconomico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Informe Económico"

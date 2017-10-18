@@ -22,7 +22,9 @@ Partial Class VGastos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VGastos))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox_GastosCodCuenta = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -51,7 +53,6 @@ Partial Class VGastos
         Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformeEcónomicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ComboBox_GastosCodCuenta = New System.Windows.Forms.ComboBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -72,6 +73,15 @@ Partial Class VGastos
         Me.GroupBox2.Size = New System.Drawing.Size(1227, 116)
         Me.GroupBox2.TabIndex = 145
         Me.GroupBox2.TabStop = False
+        '
+        'ComboBox_GastosCodCuenta
+        '
+        Me.ComboBox_GastosCodCuenta.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_GastosCodCuenta.FormattingEnabled = True
+        Me.ComboBox_GastosCodCuenta.Location = New System.Drawing.Point(11, 60)
+        Me.ComboBox_GastosCodCuenta.Name = "ComboBox_GastosCodCuenta"
+        Me.ComboBox_GastosCodCuenta.Size = New System.Drawing.Size(232, 27)
+        Me.ComboBox_GastosCodCuenta.TabIndex = 142
         '
         'GroupBox3
         '
@@ -322,15 +332,6 @@ Partial Class VGastos
         Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.InformaciónToolStripMenuItem.Text = "Información"
         '
-        'ComboBox_GastosCodCuenta
-        '
-        Me.ComboBox_GastosCodCuenta.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox_GastosCodCuenta.FormattingEnabled = True
-        Me.ComboBox_GastosCodCuenta.Location = New System.Drawing.Point(11, 60)
-        Me.ComboBox_GastosCodCuenta.Name = "ComboBox_GastosCodCuenta"
-        Me.ComboBox_GastosCodCuenta.Size = New System.Drawing.Size(232, 27)
-        Me.ComboBox_GastosCodCuenta.TabIndex = 142
-        '
         'VGastos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -342,6 +343,7 @@ Partial Class VGastos
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Button_GastosAgregar)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VGastos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Salidas"

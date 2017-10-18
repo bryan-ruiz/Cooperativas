@@ -127,11 +127,13 @@ Partial Class VSignIn
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(284, 109)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logoCoopesag2
+        Me.PictureBox1.Location = New System.Drawing.Point(286, 109)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(170, 149)
+        Me.PictureBox1.Size = New System.Drawing.Size(160, 149)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 147
         Me.PictureBox1.TabStop = False
@@ -141,6 +143,7 @@ Partial Class VSignIn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(742, 601)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox1)

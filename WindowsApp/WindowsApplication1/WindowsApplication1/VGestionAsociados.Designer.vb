@@ -22,6 +22,7 @@ Partial Class VGestionAsociados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VGestionAsociados))
         Me.TextBoxUsuariosUsuario = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ButtonUsuariosEliminar = New System.Windows.Forms.Button()
@@ -152,6 +153,7 @@ Partial Class VGestionAsociados
         Me.Controls.Add(Me.ButtonUsuariosEliminar)
         Me.Controls.Add(Me.ButtonUsuariosInsertar)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VGestionAsociados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Usuarios del Sistema"

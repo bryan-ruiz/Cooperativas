@@ -54,14 +54,15 @@ Partial Class VInformacionAnexoAsociados
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
-        'F_infogestionusuarios
+        'VInformacionAnexoAsociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(873, 622)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "F_infogestionusuarios"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "VInformacionAnexoAsociados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Información Gestión de Usuarios"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

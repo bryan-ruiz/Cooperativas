@@ -59,4 +59,8 @@
     Private Sub ButtonVComitesLimpiar_Click(sender As Object, e As EventArgs) Handles ButtonVComitesLimpiar.Click
         comites.limpiar()
     End Sub
+
+    Private Sub VComites_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

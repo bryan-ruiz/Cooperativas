@@ -27,7 +27,6 @@ Partial Class VComites
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuReporteComites = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -130,7 +129,7 @@ Partial Class VComites
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1279, 24)
@@ -155,12 +154,6 @@ Partial Class VComites
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
         Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(120, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
-        '
-        'ComprobanteToolStripMenuItem
-        '
-        Me.ComprobanteToolStripMenuItem.Name = "ComprobanteToolStripMenuItem"
-        Me.ComprobanteToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
-        Me.ComprobanteToolStripMenuItem.Text = "Comprobante"
         '
         'ReporteToolStripMenuItem
         '
@@ -242,6 +235,7 @@ Partial Class VComites
         'ComboBoxComitesNombre
         '
         Me.ComboBoxComitesNombre.FormattingEnabled = True
+        Me.ComboBoxComitesNombre.Items.AddRange(New Object() {"Consejo de administración", "Vigilancia", "Asesor", "Ahorro", "Educación Bienestar Social"})
         Me.ComboBoxComitesNombre.Location = New System.Drawing.Point(10, 52)
         Me.ComboBoxComitesNombre.Name = "ComboBoxComitesNombre"
         Me.ComboBoxComitesNombre.Size = New System.Drawing.Size(180, 24)
@@ -1047,6 +1041,7 @@ Partial Class VComites
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "VComites"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -1080,7 +1075,6 @@ Partial Class VComites
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ComprobanteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label24 As Label

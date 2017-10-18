@@ -22,6 +22,7 @@ Partial Class VConfiguracionFechasLimite
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VConfiguracionFechasLimite))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ButtonConfiguracionFechasGuardar = New System.Windows.Forms.Button()
         Me.ConfiguracionDateTimePickerFecha10 = New System.Windows.Forms.DateTimePicker()
@@ -298,6 +299,7 @@ Partial Class VConfiguracionFechasLimite
         Me.ClientSize = New System.Drawing.Size(419, 581)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VConfiguracionFechasLimite"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Fechas Limites Certificados"

@@ -47,7 +47,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>android_l_etched_icon_tgJ_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\logocoopesag2_3xE_icon1.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
@@ -331,6 +331,11 @@
   <ItemGroup>
     <Content Include="android_l_etched_icon_tgJ_icon.ico" />
     <Content Include="Imagen\MEP_Logo.png" />
+    <Content Include="Resources\logoCoopesag2.png" />
+    <None Include="Resources\logocoopesag2_3xE_icon1.ico" />
+    <None Include="Resources\logoCoopesag21.png" />
+    <Content Include="Resources\logocoopesag2_3xE_icon.ico" />
+    <None Include="Resources\logoCoopesag.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

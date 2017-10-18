@@ -85,6 +85,7 @@ Partial Class Print
         Me.Controls.Add(Me.ButtonPrintAbrirPDF)
         Me.Controls.Add(Me.AxAcroPDF1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimizeBox = False
         Me.Name = "Print"
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
