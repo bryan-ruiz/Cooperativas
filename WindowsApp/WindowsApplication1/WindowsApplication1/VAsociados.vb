@@ -127,16 +127,6 @@
         VInformacionAnexoAsociados.Show()
     End Sub
 
-    Private Sub ToolStripMenuAsociadosReporteActivos_Click(sender As Object, e As EventArgs) Handles ToolStripMenuAsociadosReporteActivos.Click
-        socios.generarReporte("Activos")
-        Print.Show()
-    End Sub
-
-    Private Sub ToolStripMenuAsociadosReporteTodos_Click(sender As Object, e As EventArgs) Handles ToolStripMenuAsociadosReporteTodos.Click
-        socios.generarReporte("Todos")
-        Print.Show()
-    End Sub
-
     Private Sub RadioButtonSociosRetirado_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonSociosRetirado.CheckedChanged
         If RadioButtonSociosRetirado.Checked = True Then
             TextBoxSociosNotasRetiro.Enabled = True
@@ -167,4 +157,11 @@
         socios.generarReporteDeSociosResumido("Activos")
         Print.Show()
     End Sub
+
+    Private Sub ToolStripMenuAsociadosReporteTodos_Click(sender As Object, e As EventArgs) Handles ToolStripMenuAsociadosReporteTodos.Click
+        socios.generarReporteDeSociosResumidoTodos("Todos")
+        Print.Show()
+    End Sub
+
+
 End Class

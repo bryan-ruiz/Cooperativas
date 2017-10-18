@@ -51,7 +51,7 @@ Partial Class VAsociados
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImprimirReciboActualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuAsociadosReporteActivos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsociadosActivosResumidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuAsociadosReporteTodos = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeAsociadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -97,7 +97,6 @@ Partial Class VAsociados
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.TextBoxSociosSeccion2 = New System.Windows.Forms.TextBox()
-        Me.AsociadosActivosResumidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -382,21 +381,21 @@ Partial Class VAsociados
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuAsociadosReporteActivos, Me.AsociadosActivosResumidoToolStripMenuItem, Me.ToolStripMenuAsociadosReporteTodos})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AsociadosActivosResumidoToolStripMenuItem, Me.ToolStripMenuAsociadosReporteTodos})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(65, 19)
         Me.ToolStripMenuItem1.Text = "Reportes"
         '
-        'ToolStripMenuAsociadosReporteActivos
+        'AsociadosActivosResumidoToolStripMenuItem
         '
-        Me.ToolStripMenuAsociadosReporteActivos.Name = "ToolStripMenuAsociadosReporteActivos"
-        Me.ToolStripMenuAsociadosReporteActivos.Size = New System.Drawing.Size(234, 22)
-        Me.ToolStripMenuAsociadosReporteActivos.Text = "Asociados Activos"
+        Me.AsociadosActivosResumidoToolStripMenuItem.Name = "AsociadosActivosResumidoToolStripMenuItem"
+        Me.AsociadosActivosResumidoToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.AsociadosActivosResumidoToolStripMenuItem.Text = "Asociados Activos "
         '
         'ToolStripMenuAsociadosReporteTodos
         '
         Me.ToolStripMenuAsociadosReporteTodos.Name = "ToolStripMenuAsociadosReporteTodos"
-        Me.ToolStripMenuAsociadosReporteTodos.Size = New System.Drawing.Size(234, 22)
+        Me.ToolStripMenuAsociadosReporteTodos.Size = New System.Drawing.Size(181, 22)
         Me.ToolStripMenuAsociadosReporteTodos.Text = "Todos los Asociados"
         '
         'InformaciónToolStripMenuItem
@@ -825,12 +824,6 @@ Partial Class VAsociados
         Me.TextBoxSociosSeccion2.Size = New System.Drawing.Size(142, 22)
         Me.TextBoxSociosSeccion2.TabIndex = 178
         '
-        'AsociadosActivosResumidoToolStripMenuItem
-        '
-        Me.AsociadosActivosResumidoToolStripMenuItem.Name = "AsociadosActivosResumidoToolStripMenuItem"
-        Me.AsociadosActivosResumidoToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
-        Me.AsociadosActivosResumidoToolStripMenuItem.Text = "Asociados Activos - Resumido"
-        '
         'VAsociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -944,7 +937,6 @@ Partial Class VAsociados
     Friend WithEvents TextBoxSociosNotasRetiro As TextBox
     Friend WithEvents ImprimirReciboActualToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuAsociadosReporteActivos As ToolStripMenuItem
     Friend WithEvents ToolStripMenuAsociadosReporteTodos As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents InformaciónToolStripMenuItem As ToolStripMenuItem
