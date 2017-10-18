@@ -159,7 +159,7 @@ Partial Class VCertificados
         'CrearReporteToolStripMenuItem
         '
         Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
-        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CrearReporteToolStripMenuItem.Text = "Crear Reporte"
         '
         'CerrarPeriodoToolStripMenuItem

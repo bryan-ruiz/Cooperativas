@@ -54,4 +54,7 @@
         certificados.validarTracto("10", Me.CertificadosDateTimePickerFecha10.Value)
     End Sub
 
+    Private Sub CrearReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearReporteToolStripMenuItem.Click
+
+    End Sub
 End Class

@@ -40,6 +40,8 @@ Public Class Comites
 
     End Sub
 
+    'REPORTE COMITES
+
     Public Sub generarReporteDeComites()
         Try
             If Not Directory.Exists(variablesGlobales.folderPath) Then

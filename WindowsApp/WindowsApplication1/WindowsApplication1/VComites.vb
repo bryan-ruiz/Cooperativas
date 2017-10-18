@@ -6,7 +6,7 @@
         Me.Close()
     End Sub
 
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Principal.Show()
     End Sub
 
@@ -63,4 +63,6 @@
     Private Sub VComites_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+
 End Class

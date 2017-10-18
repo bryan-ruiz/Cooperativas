@@ -85,18 +85,18 @@ Public Class Socios
                             VAsociados.RadioButtonSociosActivo.Checked = False
                             VAsociados.RadioButtonSociosRetirado.Checked = True
                         End If
-                        If valores.Item(18).Equals("No") Then
-                            VAsociados.RadioButtonSociosMenorNo.Checked = True
-                            VAsociados.RadioButtonSociosMenorSi.Checked = False
-                        End If
-                        If valores.Item(18).Equals("Si") Then
-                            VAsociados.RadioButtonSociosMenorSi.Checked = True
-                            VAsociados.RadioButtonSociosMenorNo.Checked = False
-                        End If
-                        VAsociados.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
-                        VAsociados.TextBoxSociosNotasRetiro.Text = valores.Item(17)
+                    If (Convert.ToString(valores.Item(18))).Equals("No") Then
+                        VAsociados.RadioButtonSociosMenorNo.Checked = True
+                        VAsociados.RadioButtonSociosMenorSi.Checked = False
+                    End If
+                    If (Convert.ToString(valores.Item(18))).Equals("Si") Then
+                        VAsociados.RadioButtonSociosMenorSi.Checked = True
+                        VAsociados.RadioButtonSociosMenorNo.Checked = False
+                    End If
+                    VAsociados.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
+                    VAsociados.TextBoxSociosNotasRetiro.Text = valores.Item(17).ToString()
 
-                    Else
+                Else
                         MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                         limpiar()
                     End If
@@ -537,8 +537,8 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 2 Then
-                    'pdfDoc.NewPage()
+                If conta = 20 Then
+                    pdfDoc.NewPage()
                     'encabezado.encabezado(pdfWrite, pdfDoc)
                     conta = 0
                 End If
@@ -701,9 +701,12 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 2 Then
-                    'pdfDoc.NewPage()
-                    'encabezado.encabezado(pdfWrite, pdfDoc)
+                If conta = 50 Then
+                    pdfDoc.Add(table)
+                    pdfDoc.NewPage()
+                    encabezado.encabezado(pdfWrite, pdfDoc)
+                    table.DeleteBodyRows()
+
                     conta = 0
                 End If
                 conta = conta + 1
@@ -778,6 +781,8 @@ Public Class Socios
 
 
                 contador = contador + 1
+
+
 
             End While
 
