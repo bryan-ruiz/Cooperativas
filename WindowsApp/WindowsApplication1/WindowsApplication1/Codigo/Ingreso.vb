@@ -72,6 +72,18 @@ Public Class Ingreso
         End Try
     End Sub
 
+    Public Sub calcular2()
+        Try
+            Dim cantidad As Integer = Integer.Parse(VIngresos.TextBox_IngresosCantidad2.Text)
+            Dim precioUnitario As Integer = Integer.Parse(VIngresos.TextBox_IngresosPrecioUnitario2.Text)
+
+            VIngresos.TextBox_IngresosTotal2.Text = cantidad * precioUnitario
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+    End Sub
+
     Public Sub obtenerDatosSeleccionarCuenta()
         Dim valores As List(Of CuentaClase)
         Dim codCuenta As String = VIngresos.ComboBox_IngresosCodigCuenta.Text
@@ -106,6 +118,41 @@ Public Class Ingreso
         End Try
     End Sub
 
+    'para el 2do combobox de codigo de cuenta de ingresos
+    Public Sub obtenerDatosSeleccionarCuenta2()
+        Dim valores As List(Of CuentaClase)
+
+        Try
+            BD.ConectarBD()
+            valores = BD.consultarCuentas()
+            If valores.Count <> 0 Then
+                estado = True
+                VIngresos.ComboBox_IngresosCodigCuenta2.Items.Clear()
+                Dim contador As Integer = 0
+                Dim conta As Integer = 0
+                While valores.Count > contador
+                    If valores(contador).tipo = "Ingreso" Then
+                        VIngresos.ComboBox_IngresosCodigCuenta2.Items.Add(valores(contador).codDescripcion)
+                        conta += 1
+                    End If
+                    contador = contador + 1
+                End While
+                If conta = 0 Then
+                    estado = False
+                    VIngresos.ComboBox_IngresosCodigCuenta2.Items.Add("No se poseen cuentas")
+                End If
+            Else
+                estado = False
+                VIngresos.ComboBox_IngresosCodigCuenta2.Items.Add("No se poseen cuentas")
+            End If
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            estado = False
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+        End Try
+    End Sub
+
     Public Sub limpiar()
         VIngresos.TextBox_IngresosFacturaRecibos.Text = ""
         VIngresos.TextBox_IngresosCliente.Text = ""
@@ -128,6 +175,16 @@ Public Class Ingreso
         Dim precioUnitario As String = VIngresos.TextBox_IngresosPrecioUnitario.Text
         Dim total As String = VIngresos.TextBox_IngresosTotal.Text
         Dim codCuenta As String = VIngresos.ComboBox_IngresosCodigCuenta.Text
+
+        Dim fecha2 As String = VIngresos.DateTimePicker_IngresosFecha2.Text
+        Dim factura2 As String = VIngresos.TextBox_IngresosFacturaRecibos2.Text
+        Dim cliente2 As String = VIngresos.TextBox_IngresosCliente2.Text
+        Dim descripcion2 As String = VIngresos.TextBox_IngresosDescripcion2.Text
+        Dim cantidad2 As String = VIngresos.TextBox_IngresosCantidad2.Text
+        Dim precioUnitario2 As String = VIngresos.TextBox_IngresosPrecioUnitario2.Text
+        Dim total2 As String = VIngresos.TextBox_IngresosTotal2.Text
+        Dim codCuenta2 As String = VIngresos.ComboBox_IngresosCodigCuenta2.Text
+
 
         If (factura = "" Or cliente = "" Or descripcion = "" Or cantidad = "" Or
             precioUnitario = "" Or total = "" Or codCuenta = "" Or estado = False) Then
