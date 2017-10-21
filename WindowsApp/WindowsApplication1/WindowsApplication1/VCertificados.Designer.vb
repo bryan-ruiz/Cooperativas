@@ -25,7 +25,6 @@ Partial Class VCertificados
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VCertificados))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -126,21 +125,15 @@ Partial Class VCertificados
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem, Me.SalirToolStripMenuItem1})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem1})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
         Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.MenuToolStripMenuItem.Text = "Menu"
         '
-        'SalirToolStripMenuItem
-        '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
-        Me.SalirToolStripMenuItem.Text = "Principal"
-        '
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(120, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'ComprobanteToolStripMenuItem
@@ -335,7 +328,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto10.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto10.Image = CType(resources.GetObject("CertificadosButtonSaveTracto10.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSaveTracto10.Location = New System.Drawing.Point(465, 179)
+        Me.CertificadosButtonSaveTracto10.Location = New System.Drawing.Point(454, 179)
         Me.CertificadosButtonSaveTracto10.Name = "CertificadosButtonSaveTracto10"
         Me.CertificadosButtonSaveTracto10.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto10.TabIndex = 256
@@ -348,7 +341,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto9.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto9.Image = CType(resources.GetObject("CertificadosButtonSaveTracto9.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSaveTracto9.Location = New System.Drawing.Point(465, 138)
+        Me.CertificadosButtonSaveTracto9.Location = New System.Drawing.Point(454, 138)
         Me.CertificadosButtonSaveTracto9.Name = "CertificadosButtonSaveTracto9"
         Me.CertificadosButtonSaveTracto9.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto9.TabIndex = 255
@@ -361,7 +354,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto8.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto8.Image = CType(resources.GetObject("CertificadosButtonSaveTracto8.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSaveTracto8.Location = New System.Drawing.Point(465, 100)
+        Me.CertificadosButtonSaveTracto8.Location = New System.Drawing.Point(454, 100)
         Me.CertificadosButtonSaveTracto8.Name = "CertificadosButtonSaveTracto8"
         Me.CertificadosButtonSaveTracto8.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto8.TabIndex = 254
@@ -374,7 +367,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto7.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto7.Image = CType(resources.GetObject("CertificadosButtonSaveTracto7.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSaveTracto7.Location = New System.Drawing.Point(465, 61)
+        Me.CertificadosButtonSaveTracto7.Location = New System.Drawing.Point(454, 61)
         Me.CertificadosButtonSaveTracto7.Name = "CertificadosButtonSaveTracto7"
         Me.CertificadosButtonSaveTracto7.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto7.TabIndex = 253
@@ -387,7 +380,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto6.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto6.Image = Global.WindowsApplication1.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto6.Location = New System.Drawing.Point(464, 20)
+        Me.CertificadosButtonSaveTracto6.Location = New System.Drawing.Point(453, 20)
         Me.CertificadosButtonSaveTracto6.Name = "CertificadosButtonSaveTracto6"
         Me.CertificadosButtonSaveTracto6.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto6.TabIndex = 252
@@ -444,42 +437,47 @@ Partial Class VCertificados
         '
         'CertificadosDateTimePickerFecha10
         '
+        Me.CertificadosDateTimePickerFecha10.Enabled = False
         Me.CertificadosDateTimePickerFecha10.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha10.Location = New System.Drawing.Point(275, 182)
+        Me.CertificadosDateTimePickerFecha10.Location = New System.Drawing.Point(279, 182)
         Me.CertificadosDateTimePickerFecha10.Name = "CertificadosDateTimePickerFecha10"
-        Me.CertificadosDateTimePickerFecha10.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha10.Size = New System.Drawing.Size(151, 22)
         Me.CertificadosDateTimePickerFecha10.TabIndex = 158
         '
         'CertificadosDateTimePickerFecha9
         '
+        Me.CertificadosDateTimePickerFecha9.Enabled = False
         Me.CertificadosDateTimePickerFecha9.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha9.Location = New System.Drawing.Point(275, 140)
+        Me.CertificadosDateTimePickerFecha9.Location = New System.Drawing.Point(279, 140)
         Me.CertificadosDateTimePickerFecha9.Name = "CertificadosDateTimePickerFecha9"
-        Me.CertificadosDateTimePickerFecha9.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha9.Size = New System.Drawing.Size(151, 22)
         Me.CertificadosDateTimePickerFecha9.TabIndex = 156
         '
         'CertificadosDateTimePickerFecha8
         '
+        Me.CertificadosDateTimePickerFecha8.Enabled = False
         Me.CertificadosDateTimePickerFecha8.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha8.Location = New System.Drawing.Point(275, 104)
+        Me.CertificadosDateTimePickerFecha8.Location = New System.Drawing.Point(279, 104)
         Me.CertificadosDateTimePickerFecha8.Name = "CertificadosDateTimePickerFecha8"
-        Me.CertificadosDateTimePickerFecha8.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha8.Size = New System.Drawing.Size(151, 22)
         Me.CertificadosDateTimePickerFecha8.TabIndex = 154
         '
         'CertificadosDateTimePickerFecha7
         '
+        Me.CertificadosDateTimePickerFecha7.Enabled = False
         Me.CertificadosDateTimePickerFecha7.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha7.Location = New System.Drawing.Point(274, 65)
+        Me.CertificadosDateTimePickerFecha7.Location = New System.Drawing.Point(278, 65)
         Me.CertificadosDateTimePickerFecha7.Name = "CertificadosDateTimePickerFecha7"
-        Me.CertificadosDateTimePickerFecha7.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha7.Size = New System.Drawing.Size(151, 22)
         Me.CertificadosDateTimePickerFecha7.TabIndex = 152
         '
         'CertificadosDateTimePickerFecha6
         '
+        Me.CertificadosDateTimePickerFecha6.Enabled = False
         Me.CertificadosDateTimePickerFecha6.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha6.Location = New System.Drawing.Point(274, 23)
+        Me.CertificadosDateTimePickerFecha6.Location = New System.Drawing.Point(278, 23)
         Me.CertificadosDateTimePickerFecha6.Name = "CertificadosDateTimePickerFecha6"
-        Me.CertificadosDateTimePickerFecha6.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha6.Size = New System.Drawing.Size(151, 22)
         Me.CertificadosDateTimePickerFecha6.TabIndex = 150
         '
         'Label23
@@ -636,7 +634,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto5.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.save1
         Me.CertificadosButtonSaveTracto5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto5.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto5.Location = New System.Drawing.Point(464, 180)
+        Me.CertificadosButtonSaveTracto5.Location = New System.Drawing.Point(456, 180)
         Me.CertificadosButtonSaveTracto5.Name = "CertificadosButtonSaveTracto5"
         Me.CertificadosButtonSaveTracto5.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto5.TabIndex = 251
@@ -649,7 +647,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto4.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto4.Image = Global.WindowsApplication1.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto4.Location = New System.Drawing.Point(464, 139)
+        Me.CertificadosButtonSaveTracto4.Location = New System.Drawing.Point(456, 139)
         Me.CertificadosButtonSaveTracto4.Name = "CertificadosButtonSaveTracto4"
         Me.CertificadosButtonSaveTracto4.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto4.TabIndex = 250
@@ -662,7 +660,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto3.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.save1
         Me.CertificadosButtonSaveTracto3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto3.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto3.Location = New System.Drawing.Point(464, 102)
+        Me.CertificadosButtonSaveTracto3.Location = New System.Drawing.Point(456, 102)
         Me.CertificadosButtonSaveTracto3.Name = "CertificadosButtonSaveTracto3"
         Me.CertificadosButtonSaveTracto3.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto3.TabIndex = 249
@@ -676,7 +674,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.CertificadosButtonSaveTracto2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto2.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto2.Location = New System.Drawing.Point(464, 61)
+        Me.CertificadosButtonSaveTracto2.Location = New System.Drawing.Point(456, 61)
         Me.CertificadosButtonSaveTracto2.Name = "CertificadosButtonSaveTracto2"
         Me.CertificadosButtonSaveTracto2.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto2.TabIndex = 248
@@ -690,7 +688,7 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonSaveTracto1.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonSaveTracto1.Image = Global.WindowsApplication1.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto1.Location = New System.Drawing.Point(464, 21)
+        Me.CertificadosButtonSaveTracto1.Location = New System.Drawing.Point(456, 21)
         Me.CertificadosButtonSaveTracto1.Name = "CertificadosButtonSaveTracto1"
         Me.CertificadosButtonSaveTracto1.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto1.TabIndex = 247
@@ -747,42 +745,47 @@ Partial Class VCertificados
         '
         'CertificadosDateTimePickerFecha5
         '
+        Me.CertificadosDateTimePickerFecha5.Enabled = False
         Me.CertificadosDateTimePickerFecha5.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha5.Location = New System.Drawing.Point(275, 182)
+        Me.CertificadosDateTimePickerFecha5.Location = New System.Drawing.Point(278, 182)
         Me.CertificadosDateTimePickerFecha5.Name = "CertificadosDateTimePickerFecha5"
-        Me.CertificadosDateTimePickerFecha5.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha5.Size = New System.Drawing.Size(158, 22)
         Me.CertificadosDateTimePickerFecha5.TabIndex = 158
         '
         'CertificadosDateTimePickerFecha4
         '
+        Me.CertificadosDateTimePickerFecha4.Enabled = False
         Me.CertificadosDateTimePickerFecha4.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha4.Location = New System.Drawing.Point(275, 140)
+        Me.CertificadosDateTimePickerFecha4.Location = New System.Drawing.Point(278, 140)
         Me.CertificadosDateTimePickerFecha4.Name = "CertificadosDateTimePickerFecha4"
-        Me.CertificadosDateTimePickerFecha4.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha4.Size = New System.Drawing.Size(158, 22)
         Me.CertificadosDateTimePickerFecha4.TabIndex = 156
         '
         'CertificadosDateTimePickerFecha3
         '
+        Me.CertificadosDateTimePickerFecha3.Enabled = False
         Me.CertificadosDateTimePickerFecha3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha3.Location = New System.Drawing.Point(275, 104)
+        Me.CertificadosDateTimePickerFecha3.Location = New System.Drawing.Point(278, 104)
         Me.CertificadosDateTimePickerFecha3.Name = "CertificadosDateTimePickerFecha3"
-        Me.CertificadosDateTimePickerFecha3.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha3.Size = New System.Drawing.Size(158, 22)
         Me.CertificadosDateTimePickerFecha3.TabIndex = 154
         '
         'CertificadosDateTimePickerFecha2
         '
+        Me.CertificadosDateTimePickerFecha2.Enabled = False
         Me.CertificadosDateTimePickerFecha2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha2.Location = New System.Drawing.Point(274, 65)
+        Me.CertificadosDateTimePickerFecha2.Location = New System.Drawing.Point(277, 65)
         Me.CertificadosDateTimePickerFecha2.Name = "CertificadosDateTimePickerFecha2"
-        Me.CertificadosDateTimePickerFecha2.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha2.Size = New System.Drawing.Size(158, 22)
         Me.CertificadosDateTimePickerFecha2.TabIndex = 152
         '
         'CertificadosDateTimePickerFecha1
         '
+        Me.CertificadosDateTimePickerFecha1.Enabled = False
         Me.CertificadosDateTimePickerFecha1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.CertificadosDateTimePickerFecha1.Location = New System.Drawing.Point(274, 23)
+        Me.CertificadosDateTimePickerFecha1.Location = New System.Drawing.Point(277, 23)
         Me.CertificadosDateTimePickerFecha1.Name = "CertificadosDateTimePickerFecha1"
-        Me.CertificadosDateTimePickerFecha1.Size = New System.Drawing.Size(186, 22)
+        Me.CertificadosDateTimePickerFecha1.Size = New System.Drawing.Size(158, 22)
         Me.CertificadosDateTimePickerFecha1.TabIndex = 150
         '
         'Label19
@@ -1056,7 +1059,6 @@ Partial Class VCertificados
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ComprobanteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem

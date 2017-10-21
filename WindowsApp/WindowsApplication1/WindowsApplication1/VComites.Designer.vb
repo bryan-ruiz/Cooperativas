@@ -145,7 +145,7 @@ Partial Class VComites
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'ReporteToolStripMenuItem
@@ -269,6 +269,7 @@ Partial Class VComites
         '
         'TextBoxComitesPresidente
         '
+        Me.TextBoxComitesPresidente.Enabled = False
         Me.TextBoxComitesPresidente.Location = New System.Drawing.Point(10, 33)
         Me.TextBoxComitesPresidente.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComitesPresidente.Name = "TextBoxComitesPresidente"
@@ -289,6 +290,7 @@ Partial Class VComites
         '
         'TextBoxComitesVicepresidente
         '
+        Me.TextBoxComitesVicepresidente.Enabled = False
         Me.TextBoxComitesVicepresidente.Location = New System.Drawing.Point(11, 74)
         Me.TextBoxComitesVicepresidente.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComitesVicepresidente.Name = "TextBoxComitesVicepresidente"
@@ -309,6 +311,7 @@ Partial Class VComites
         '
         'TextBoxComitesSecretaria
         '
+        Me.TextBoxComitesSecretaria.Enabled = False
         Me.TextBoxComitesSecretaria.Location = New System.Drawing.Point(10, 114)
         Me.TextBoxComitesSecretaria.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComitesSecretaria.Name = "TextBoxComitesSecretaria"
@@ -329,6 +332,7 @@ Partial Class VComites
         '
         'TextBoxComitesVocal1
         '
+        Me.TextBoxComitesVocal1.Enabled = False
         Me.TextBoxComitesVocal1.Location = New System.Drawing.Point(11, 158)
         Me.TextBoxComitesVocal1.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComitesVocal1.Name = "TextBoxComitesVocal1"
@@ -432,6 +436,7 @@ Partial Class VComites
         '
         'TextBoxComiteMenorPresi
         '
+        Me.TextBoxComiteMenorPresi.Enabled = False
         Me.TextBoxComiteMenorPresi.Location = New System.Drawing.Point(6, 35)
         Me.TextBoxComiteMenorPresi.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComiteMenorPresi.Name = "TextBoxComiteMenorPresi"
@@ -440,6 +445,7 @@ Partial Class VComites
         '
         'TextBoxComiteMenorViceP
         '
+        Me.TextBoxComiteMenorViceP.Enabled = False
         Me.TextBoxComiteMenorViceP.Location = New System.Drawing.Point(7, 76)
         Me.TextBoxComiteMenorViceP.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComiteMenorViceP.Name = "TextBoxComiteMenorViceP"
@@ -448,6 +454,7 @@ Partial Class VComites
         '
         'TextBoxComiteMenorSec
         '
+        Me.TextBoxComiteMenorSec.Enabled = False
         Me.TextBoxComiteMenorSec.Location = New System.Drawing.Point(6, 117)
         Me.TextBoxComiteMenorSec.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComiteMenorSec.Name = "TextBoxComiteMenorSec"
@@ -456,6 +463,7 @@ Partial Class VComites
         '
         'TextBoxComiteMenorVoc1
         '
+        Me.TextBoxComiteMenorVoc1.Enabled = False
         Me.TextBoxComiteMenorVoc1.Location = New System.Drawing.Point(7, 161)
         Me.TextBoxComiteMenorVoc1.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComiteMenorVoc1.Name = "TextBoxComiteMenorVoc1"
@@ -464,6 +472,7 @@ Partial Class VComites
         '
         'TextBoxComiteMenorVoc2
         '
+        Me.TextBoxComiteMenorVoc2.Enabled = False
         Me.TextBoxComiteMenorVoc2.Location = New System.Drawing.Point(6, 207)
         Me.TextBoxComiteMenorVoc2.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComiteMenorVoc2.Name = "TextBoxComiteMenorVoc2"
@@ -472,6 +481,7 @@ Partial Class VComites
         '
         'TextBoxComiteMenorSupl1
         '
+        Me.TextBoxComiteMenorSupl1.Enabled = False
         Me.TextBoxComiteMenorSupl1.Location = New System.Drawing.Point(5, 252)
         Me.TextBoxComiteMenorSupl1.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComiteMenorSupl1.Name = "TextBoxComiteMenorSupl1"
@@ -480,6 +490,7 @@ Partial Class VComites
         '
         'TextBoxComiteMenorSupl2
         '
+        Me.TextBoxComiteMenorSupl2.Enabled = False
         Me.TextBoxComiteMenorSupl2.Location = New System.Drawing.Point(6, 296)
         Me.TextBoxComiteMenorSupl2.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComiteMenorSupl2.Name = "TextBoxComiteMenorSupl2"
@@ -503,6 +514,7 @@ Partial Class VComites
         '
         'TextBoxTipo_comitePresidente
         '
+        Me.TextBoxTipo_comitePresidente.Enabled = False
         Me.TextBoxTipo_comitePresidente.Location = New System.Drawing.Point(5, 36)
         Me.TextBoxTipo_comitePresidente.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxTipo_comitePresidente.Name = "TextBoxTipo_comitePresidente"
@@ -511,6 +523,7 @@ Partial Class VComites
         '
         'TextBoxTipo_ComiteVicePresidente
         '
+        Me.TextBoxTipo_ComiteVicePresidente.Enabled = False
         Me.TextBoxTipo_ComiteVicePresidente.Location = New System.Drawing.Point(6, 77)
         Me.TextBoxTipo_ComiteVicePresidente.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxTipo_ComiteVicePresidente.Name = "TextBoxTipo_ComiteVicePresidente"
@@ -519,6 +532,7 @@ Partial Class VComites
         '
         'TextBoxTipo_ComiteSecretaria
         '
+        Me.TextBoxTipo_ComiteSecretaria.Enabled = False
         Me.TextBoxTipo_ComiteSecretaria.Location = New System.Drawing.Point(5, 117)
         Me.TextBoxTipo_ComiteSecretaria.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxTipo_ComiteSecretaria.Name = "TextBoxTipo_ComiteSecretaria"
@@ -527,6 +541,7 @@ Partial Class VComites
         '
         'TextBoxTipo_ComiteVocal1
         '
+        Me.TextBoxTipo_ComiteVocal1.Enabled = False
         Me.TextBoxTipo_ComiteVocal1.Location = New System.Drawing.Point(6, 161)
         Me.TextBoxTipo_ComiteVocal1.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxTipo_ComiteVocal1.Name = "TextBoxTipo_ComiteVocal1"
@@ -535,6 +550,7 @@ Partial Class VComites
         '
         'TextBoxTipo_ComiteVocal2
         '
+        Me.TextBoxTipo_ComiteVocal2.Enabled = False
         Me.TextBoxTipo_ComiteVocal2.Location = New System.Drawing.Point(5, 207)
         Me.TextBoxTipo_ComiteVocal2.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxTipo_ComiteVocal2.Name = "TextBoxTipo_ComiteVocal2"
@@ -543,6 +559,7 @@ Partial Class VComites
         '
         'TextBoxTipo_ComiteSuplente1
         '
+        Me.TextBoxTipo_ComiteSuplente1.Enabled = False
         Me.TextBoxTipo_ComiteSuplente1.Location = New System.Drawing.Point(4, 251)
         Me.TextBoxTipo_ComiteSuplente1.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxTipo_ComiteSuplente1.Name = "TextBoxTipo_ComiteSuplente1"
@@ -551,6 +568,7 @@ Partial Class VComites
         '
         'TextBoxTipo_ComiteSuplente2
         '
+        Me.TextBoxTipo_ComiteSuplente2.Enabled = False
         Me.TextBoxTipo_ComiteSuplente2.Location = New System.Drawing.Point(5, 295)
         Me.TextBoxTipo_ComiteSuplente2.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxTipo_ComiteSuplente2.Name = "TextBoxTipo_ComiteSuplente2"
@@ -990,6 +1008,7 @@ Partial Class VComites
         '
         'TextBoxComitesVocal2
         '
+        Me.TextBoxComitesVocal2.Enabled = False
         Me.TextBoxComitesVocal2.Location = New System.Drawing.Point(11, 203)
         Me.TextBoxComitesVocal2.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComitesVocal2.Name = "TextBoxComitesVocal2"
@@ -998,6 +1017,7 @@ Partial Class VComites
         '
         'TextBoxComitesSuplente1
         '
+        Me.TextBoxComitesSuplente1.Enabled = False
         Me.TextBoxComitesSuplente1.Location = New System.Drawing.Point(9, 247)
         Me.TextBoxComitesSuplente1.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComitesSuplente1.Name = "TextBoxComitesSuplente1"
@@ -1006,6 +1026,7 @@ Partial Class VComites
         '
         'TextBoxComitesSuplente2
         '
+        Me.TextBoxComitesSuplente2.Enabled = False
         Me.TextBoxComitesSuplente2.Location = New System.Drawing.Point(10, 291)
         Me.TextBoxComitesSuplente2.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxComitesSuplente2.Name = "TextBoxComitesSuplente2"

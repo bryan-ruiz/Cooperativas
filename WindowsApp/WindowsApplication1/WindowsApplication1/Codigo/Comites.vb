@@ -40,6 +40,159 @@ Public Class Comites
 
     End Sub
 
+    Public Sub escribirDatosNuevo(ByVal valores As List(Of ComiteClase), ByVal pdfDoc As iTextSharp.text.Document, ByVal writer As iTextSharp.text.pdf.PdfWriter)
+
+        If valores.Count = 0 Then
+            pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
+            pdfDoc.Add(New Paragraph("************ No se poseen datos del comité ******************"))
+            Return
+        End If
+
+        Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
+
+        Dim table As PdfPTable = New PdfPTable(9)
+
+        '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
+
+        Dim cargoR As PdfPCell = New PdfPCell(New Phrase("Cargo", FontStype))
+        cargoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+        cargoR.Colspan = 1
+        cargoR.HorizontalAlignment = 1
+
+        Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre y apellidos completos", FontStype))
+        nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+        nombreR.Colspan = 2
+        nombreR.HorizontalAlignment = 1
+
+        Dim cedulaR As PdfPCell = New PdfPCell(New Phrase("N° Identificación", FontStype))
+        cedulaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+        cedulaR.Colspan = 1
+        cedulaR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+        Dim tipoAsociadoR As PdfPCell = New PdfPCell(New Phrase("Tipo Asociado", FontStype))
+        tipoAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+        tipoAsociadoR.Colspan = 1
+        tipoAsociadoR.HorizontalAlignment = 1
+
+        Dim menorR As PdfPCell = New PdfPCell(New Phrase("Menor", FontStype))
+        menorR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+        menorR.Colspan = 1
+        menorR.HorizontalAlignment = 1
+
+        Dim mayorR As PdfPCell = New PdfPCell(New Phrase("Mayor", FontStype))
+        mayorR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+        mayorR.Colspan = 1
+        mayorR.HorizontalAlignment = 1
+
+        Dim fechaRigeR As PdfPCell = New PdfPCell(New Phrase("Rige: día/mes/año", FontStype))
+        fechaRigeR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+        fechaRigeR.Colspan = 1
+        fechaRigeR.HorizontalAlignment = 1
+
+        Dim fechaVenceR As PdfPCell = New PdfPCell(New Phrase("Vence: día/mes/año", FontStype))
+        fechaVenceR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+        fechaVenceR.Colspan = 1
+        fechaVenceR.HorizontalAlignment = 1
+
+        table.AddCell(cargoR)
+        table.AddCell(nombreR)
+        table.AddCell(cedulaR)
+        table.AddCell(tipoAsociadoR)
+        table.AddCell(menorR)
+        table.AddCell(mayorR)
+        table.AddCell(fechaRigeR)
+        table.AddCell(fechaVenceR)
+
+        Dim contador As Integer = 0
+        Dim conta As Integer = 0
+
+        While contador < valores.Count
+            If conta = 60 Then
+                pdfDoc.Add(table)
+                pdfDoc.NewPage()
+                encabezado.encabezado(writer, pdfDoc)
+                table.DeleteBodyRows()
+
+                conta = 0
+            End If
+
+            Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
+
+            Dim cargoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).tipo, FontStype2))
+            cargoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            cargoT.Colspan = 1
+            cargoT.HorizontalAlignment = 1
+
+            Dim nombreTotal As String = valores(contador).nombreCompleto
+
+            Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
+            nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            nombreT.Colspan = 2
+            nombreT.HorizontalAlignment = 1
+
+            Dim cedulaTotalT As PdfPCell = New PdfPCell(New Phrase(valores(contador).cedual, FontStype2))
+            cedulaTotalT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            cedulaTotalT.Colspan = 1
+            cedulaTotalT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+            Dim tipoAsociadoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).ocupacion, FontStype2))
+            tipoAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            tipoAsociadoT.Colspan = 1
+            tipoAsociadoT.HorizontalAlignment = 1
+
+            Dim menorT As PdfPCell = New PdfPCell(New Phrase("X", FontStype2))
+            menorT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            menorT.Colspan = 1
+            menorT.HorizontalAlignment = 1
+
+            Dim mayorT As PdfPCell = New PdfPCell(New Phrase("X", FontStype2))
+            mayorT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            mayorT.Colspan = 1
+            mayorT.HorizontalAlignment = 1
+
+            Dim fechaRigeT As PdfPCell = New PdfPCell(New Phrase(valores(contador).fechaRige, FontStype2))
+            fechaRigeT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            fechaRigeT.Colspan = 1
+            fechaRigeT.HorizontalAlignment = 1
+
+            Dim fechaVenceT As PdfPCell = New PdfPCell(New Phrase(valores(contador).fechaVence, FontStype2))
+            fechaVenceT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            fechaVenceT.Colspan = 1
+            fechaVenceT.HorizontalAlignment = 1
+
+            'Para el caso nulo en mayor o menor
+            Dim nuloT As PdfPCell = New PdfPCell(New Phrase("", FontStype2))
+            nuloT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            nuloT.Colspan = 1
+            nuloT.HorizontalAlignment = 1
+
+            table.AddCell(cargoT)
+            table.AddCell(nombreT)
+            table.AddCell(cedulaTotalT)
+            table.AddCell(tipoAsociadoT)
+            'case menor
+            If (valores(contador).menor.Equals("Si")) Then
+                table.AddCell(menorT)
+            Else
+                table.AddCell(nuloT)
+            End If
+            'case mayor
+            If (valores(contador).menor.Equals("No")) Then
+                table.AddCell(mayorT)
+            Else
+                table.AddCell(nuloT)
+            End If
+            table.AddCell(fechaRigeT)
+            table.AddCell(fechaVenceT)
+
+            contador = contador + 1
+
+        End While
+
+        pdfDoc.Add(table)
+
+    End Sub
+
     'REPORTE COMITES
 
     Public Sub generarReporteDeComites()
@@ -75,6 +228,71 @@ Public Class Comites
             pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
             pdfDoc.Add(New Paragraph("                                    COMITÉ DE EDUCACIÓN Y BIENESTAR SOCIAL "))
             escribirDatos(valores, pdfDoc, pdfWrite)
+            BD.CerrarConexion()
+
+            pdfDoc.Close()
+
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+        End Try
+    End Sub
+
+
+    Public Sub generarReporteDeComitesNuevo()
+        Try
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
+            End If
+
+            'Margin of the Doc
+            Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteCuerposDirectivos.pdf", FileMode.Create))
+            pdfDoc.Open()
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
+            Dim valores As List(Of ComiteClase)
+
+            BD.ConectarBD()
+
+            Dim FontComiteTitle = FontFactory.GetFont("Arial", 9, Font.NORMAL)
+
+            valores = BD.obtenerDatosdeUnComite("Consejo de administración")
+            pdfDoc.Add(New Paragraph("     CONSEJO DE ADMINISTRACIÓN", FontComiteTitle))
+            pdfDoc.Add(New Paragraph(" "))
+            escribirDatosNuevo(valores, pdfDoc, pdfWrite)
+
+            valores = BD.obtenerDatosdeUnComite("Vigilancia")
+            'pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph("     COMITÉ DE VIGILANCIA ", FontComiteTitle))
+            pdfDoc.Add(New Paragraph(" "))
+            escribirDatosNuevo(valores, pdfDoc, pdfWrite)
+
+            valores = BD.obtenerDatosdeUnComite("Asesor")
+            'pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph("     COMITÉ DE ASESOR ", FontComiteTitle))
+            pdfDoc.Add(New Paragraph(" "))
+            escribirDatosNuevo(valores, pdfDoc, pdfWrite)
+
+            valores = BD.obtenerDatosdeUnComite("Ahorro")
+            'pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph("     COMITÉ DE AHORRO ", FontComiteTitle))
+            pdfDoc.Add(New Paragraph(" "))
+            escribirDatosNuevo(valores, pdfDoc, pdfWrite)
+
+            valores = BD.obtenerDatosdeUnComite("Educación Bienestar Social")
+            'pdfDoc.Add(New Paragraph("----------------------------------------------------------------------------------------------------------------------------------"))
+            'NEW PAGE
+            pdfDoc.NewPage()
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph("     COMITÉ DE EDUCACIÓN Y BIENESTAR SOCIAL ", FontComiteTitle))
+            pdfDoc.Add(New Paragraph(" "))
+            escribirDatosNuevo(valores, pdfDoc, pdfWrite)
+
             BD.CerrarConexion()
 
             pdfDoc.Close()

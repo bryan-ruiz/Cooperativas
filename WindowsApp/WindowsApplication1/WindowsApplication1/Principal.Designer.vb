@@ -55,8 +55,8 @@ Partial Class Principal
         'GestionUsuariosToolStripMenuItem
         '
         Me.GestionUsuariosToolStripMenuItem.Name = "GestionUsuariosToolStripMenuItem"
-        Me.GestionUsuariosToolStripMenuItem.Size = New System.Drawing.Size(107, 20)
-        Me.GestionUsuariosToolStripMenuItem.Text = "Gestion Usuarios"
+        Me.GestionUsuariosToolStripMenuItem.Size = New System.Drawing.Size(116, 20)
+        Me.GestionUsuariosToolStripMenuItem.Text = "Gestión Asociados"
         '
         'ComitésToolStripMenuItem
         '
@@ -177,7 +177,7 @@ Partial Class Principal
         Me.MinimizeBox = False
         Me.Name = "Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Principal"
+        Me.Text = "SAC"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

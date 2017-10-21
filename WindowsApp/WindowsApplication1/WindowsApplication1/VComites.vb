@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub ToolStripMenuReporteComites_Click(sender As Object, e As EventArgs) Handles ToolStripMenuReporteComites.Click
-        comites.generarReporteDeComites()
+        comites.generarReporteDeComitesNuevo()
         Print.Show()
     End Sub
 
