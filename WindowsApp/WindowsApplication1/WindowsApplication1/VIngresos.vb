@@ -6,6 +6,7 @@
     Private Sub VIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ingreso.obtenerDatosSeleccionarCuenta()
         ingreso.obtenerDatosSeleccionarCuenta2()
+        ingreso.obtenerDatosSeleccionarCuenta3()
     End Sub
 
     Private Sub CrearReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearReporteToolStripMenuItem.Click

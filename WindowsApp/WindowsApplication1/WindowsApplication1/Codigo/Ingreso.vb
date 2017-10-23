@@ -1,6 +1,7 @@
 ﻿Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
+Imports System.Globalization
 
 Public Class Ingreso
 
@@ -91,10 +92,10 @@ Public Class Ingreso
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
 
-            Dim table As PdfPTable = New PdfPTable(10)
+            Dim table As PdfPTable = New PdfPTable(11)
 
             'ESTABLECE TAMAÑO DE ANCHO DE COLUMNAS
-            Dim intTblWidth() As Integer = {7, 12, 12, 10, 9, 8, 7, 7, 7, 8}
+            Dim intTblWidth() As Integer = {9, 8, 7, 9, 9, 10, 12, 7, 7, 8, 10}
             table.SetWidths(intTblWidth)
 
             '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
@@ -111,7 +112,7 @@ Public Class Ingreso
 
             Dim codigoctaR As PdfPCell = New PdfPCell(New Phrase("Código de cuenta", FontStype))
             codigoctaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
-            codigoctaR.Colspan = 1
+            codigoctaR.Colspan = 2
             codigoctaR.HorizontalAlignment = 1
 
             Dim clienteR As PdfPCell = New PdfPCell(New Phrase("Cliente", FontStype))
@@ -175,7 +176,7 @@ Public Class Ingreso
 
                 Dim codigoctaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).codCuenta, FontStype2))
                 codigoctaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                codigoctaT.Colspan = 1
+                codigoctaT.Colspan = 2
                 codigoctaT.HorizontalAlignment = 1
 
                 Dim clienteT As PdfPCell = New PdfPCell(New Phrase(valores(contador).cliente, FontStype2))
@@ -198,7 +199,9 @@ Public Class Ingreso
                 precioUnitarioT.Colspan = 1
                 precioUnitarioT.HorizontalAlignment = 1
 
-                Dim totalT As PdfPCell = New PdfPCell(New Phrase(valores(contador).total, FontStype2))
+                Dim subTotalInt As Integer = Convert.ToInt32(valores(contador).total)
+
+                Dim totalT As PdfPCell = New PdfPCell(New Phrase(subTotalInt.ToString("N"), FontStype2))
                 totalT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 totalT.Colspan = 1
                 totalT.HorizontalAlignment = 1
@@ -219,7 +222,7 @@ Public Class Ingreso
 
 
 
-            Dim table2 As PdfPTable = New PdfPTable(10)
+            Dim table2 As PdfPTable = New PdfPTable(11)
 
             'PARA TOTAL GENERAL
             Dim totalGeneralR As PdfPCell = New PdfPCell(New Phrase("Total General", FontStype))
@@ -227,10 +230,14 @@ Public Class Ingreso
             totalGeneralR.Colspan = 9
             totalGeneralR.HorizontalAlignment = 1
 
-            Dim FontStype4 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
-            Dim totalGeneralT As PdfPCell = New PdfPCell(New Phrase(Convert.ToString(totalEntradas), FontStype4))
+            Dim FontStype4 = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.BLACK)
+
+            'FOR MULTICURRENCY
+            Dim stringTotal As String = totalEntradas.ToString("N")
+
+            Dim totalGeneralT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal, FontStype4))
             totalGeneralT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-            totalGeneralT.Colspan = 1
+            totalGeneralT.Colspan = 2
             totalGeneralT.HorizontalAlignment = 1
 
             table2.AddCell(totalGeneralR)
@@ -357,6 +364,42 @@ Public Class Ingreso
             MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
         End Try
     End Sub
+
+    'para el 2do combobox de codigo de cuenta de ingresos
+    Public Sub obtenerDatosSeleccionarCuenta3()
+        Dim valores As List(Of CuentaClase)
+
+        Try
+            BD.ConectarBD()
+            valores = BD.consultarCuentas()
+            If valores.Count <> 0 Then
+                estado = True
+                VIngresos.ComboBox_IngresosCodigCuenta3.Items.Clear()
+                Dim contador As Integer = 0
+                Dim conta As Integer = 0
+                While valores.Count > contador
+                    If valores(contador).tipo = "Ingreso" Then
+                        VIngresos.ComboBox_IngresosCodigCuenta3.Items.Add(valores(contador).codDescripcion)
+                        conta += 1
+                    End If
+                    contador = contador + 1
+                End While
+                If conta = 0 Then
+                    estado = False
+                    VIngresos.ComboBox_IngresosCodigCuenta3.Items.Add("No se poseen cuentas")
+                End If
+            Else
+                estado = False
+                VIngresos.ComboBox_IngresosCodigCuenta3.Items.Add("No se poseen cuentas")
+            End If
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            estado = False
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+        End Try
+    End Sub
+
 
     Public Sub limpiar()
         VIngresos.TextBox_IngresosFacturaRecibos.Text = ""
