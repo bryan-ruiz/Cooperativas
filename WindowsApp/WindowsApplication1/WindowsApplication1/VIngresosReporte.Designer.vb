@@ -33,9 +33,9 @@ Partial Class VIngresosReporte
         '
         'Button_IngresosReporteIngresos
         '
-        Me.Button_IngresosReporteIngresos.Location = New System.Drawing.Point(157, 176)
+        Me.Button_IngresosReporteIngresos.Location = New System.Drawing.Point(162, 185)
         Me.Button_IngresosReporteIngresos.Name = "Button_IngresosReporteIngresos"
-        Me.Button_IngresosReporteIngresos.Size = New System.Drawing.Size(75, 23)
+        Me.Button_IngresosReporteIngresos.Size = New System.Drawing.Size(92, 28)
         Me.Button_IngresosReporteIngresos.TabIndex = 32
         Me.Button_IngresosReporteIngresos.Text = "Generar"
         Me.Button_IngresosReporteIngresos.UseVisualStyleBackColor = True
@@ -43,9 +43,9 @@ Partial Class VIngresosReporte
         'DateTimePicker_IngresosFechaFinal
         '
         Me.DateTimePicker_IngresosFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker_IngresosFechaFinal.Location = New System.Drawing.Point(157, 128)
+        Me.DateTimePicker_IngresosFechaFinal.Location = New System.Drawing.Point(124, 125)
         Me.DateTimePicker_IngresosFechaFinal.Name = "DateTimePicker_IngresosFechaFinal"
-        Me.DateTimePicker_IngresosFechaFinal.Size = New System.Drawing.Size(252, 20)
+        Me.DateTimePicker_IngresosFechaFinal.Size = New System.Drawing.Size(214, 20)
         Me.DateTimePicker_IngresosFechaFinal.TabIndex = 31
         '
         'Label11
@@ -53,7 +53,7 @@ Partial Class VIngresosReporte
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label11.Location = New System.Drawing.Point(37, 128)
+        Me.Label11.Location = New System.Drawing.Point(52, 128)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(44, 16)
         Me.Label11.TabIndex = 30
@@ -64,7 +64,7 @@ Partial Class VIngresosReporte
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label10.Location = New System.Drawing.Point(37, 98)
+        Me.Label10.Location = New System.Drawing.Point(52, 98)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(49, 16)
         Me.Label10.TabIndex = 29
@@ -73,9 +73,9 @@ Partial Class VIngresosReporte
         'DateTimePicker_IngresosFechaInicio
         '
         Me.DateTimePicker_IngresosFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker_IngresosFechaInicio.Location = New System.Drawing.Point(157, 97)
+        Me.DateTimePicker_IngresosFechaInicio.Location = New System.Drawing.Point(124, 94)
         Me.DateTimePicker_IngresosFechaInicio.Name = "DateTimePicker_IngresosFechaInicio"
-        Me.DateTimePicker_IngresosFechaInicio.Size = New System.Drawing.Size(252, 20)
+        Me.DateTimePicker_IngresosFechaInicio.Size = New System.Drawing.Size(214, 20)
         Me.DateTimePicker_IngresosFechaInicio.TabIndex = 28
         '
         'Label1
@@ -85,16 +85,16 @@ Partial Class VIngresosReporte
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label1.Location = New System.Drawing.Point(106, 42)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(210, 18)
+        Me.Label1.Size = New System.Drawing.Size(217, 18)
         Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Genera Reporte de Entradas"
+        Me.Label1.Text = "Generar Reporte de Entradas"
         '
         'VIngresosReporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(429, 246)
+        Me.ClientSize = New System.Drawing.Size(426, 278)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button_IngresosReporteIngresos)
         Me.Controls.Add(Me.DateTimePicker_IngresosFechaFinal)

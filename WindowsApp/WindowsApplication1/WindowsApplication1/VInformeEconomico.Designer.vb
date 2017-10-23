@@ -36,7 +36,7 @@ Partial Class VInformeEconomico
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(56, 136)
+        Me.Label1.Location = New System.Drawing.Point(95, 131)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 16)
         Me.Label1.TabIndex = 46
@@ -47,7 +47,7 @@ Partial Class VInformeEconomico
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label2.Location = New System.Drawing.Point(56, 106)
+        Me.Label2.Location = New System.Drawing.Point(95, 101)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 16)
         Me.Label2.TabIndex = 45
@@ -55,9 +55,9 @@ Partial Class VInformeEconomico
         '
         'InformeButtonGenerarInforme
         '
-        Me.InformeButtonGenerarInforme.Location = New System.Drawing.Point(120, 183)
+        Me.InformeButtonGenerarInforme.Location = New System.Drawing.Point(190, 201)
         Me.InformeButtonGenerarInforme.Name = "InformeButtonGenerarInforme"
-        Me.InformeButtonGenerarInforme.Size = New System.Drawing.Size(75, 23)
+        Me.InformeButtonGenerarInforme.Size = New System.Drawing.Size(84, 30)
         Me.InformeButtonGenerarInforme.TabIndex = 44
         Me.InformeButtonGenerarInforme.Text = "Generar"
         Me.InformeButtonGenerarInforme.UseVisualStyleBackColor = True
@@ -65,37 +65,37 @@ Partial Class VInformeEconomico
         'InformeDateTimePickerHasta
         '
         Me.InformeDateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.InformeDateTimePickerHasta.Location = New System.Drawing.Point(120, 137)
+        Me.InformeDateTimePickerHasta.Location = New System.Drawing.Point(159, 132)
         Me.InformeDateTimePickerHasta.Name = "InformeDateTimePickerHasta"
-        Me.InformeDateTimePickerHasta.Size = New System.Drawing.Size(252, 20)
+        Me.InformeDateTimePickerHasta.Size = New System.Drawing.Size(196, 20)
         Me.InformeDateTimePickerHasta.TabIndex = 43
         '
         'InformeDateTimePickerDesde
         '
         Me.InformeDateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.InformeDateTimePickerDesde.Location = New System.Drawing.Point(120, 106)
+        Me.InformeDateTimePickerDesde.Location = New System.Drawing.Point(159, 101)
         Me.InformeDateTimePickerDesde.Name = "InformeDateTimePickerDesde"
-        Me.InformeDateTimePickerDesde.Size = New System.Drawing.Size(252, 20)
+        Me.InformeDateTimePickerDesde.Size = New System.Drawing.Size(196, 20)
         Me.InformeDateTimePickerDesde.TabIndex = 42
         '
         'Label9
         '
         Me.Label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Georgia", 12.0!)
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label9.Location = New System.Drawing.Point(69, 57)
+        Me.Label9.Location = New System.Drawing.Point(95, 46)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(282, 23)
+        Me.Label9.Size = New System.Drawing.Size(269, 18)
         Me.Label9.TabIndex = 41
-        Me.Label9.Text = "Genera Reporte Informe Económico"
+        Me.Label9.Text = "Generar Reporte Informe Económico"
         '
         'VInformeEconomico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(429, 246)
+        Me.ClientSize = New System.Drawing.Size(457, 298)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.InformeButtonGenerarInforme)

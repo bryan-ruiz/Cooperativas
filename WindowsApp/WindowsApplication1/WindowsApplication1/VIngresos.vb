@@ -16,16 +16,30 @@
         VInformeEconomico.Show()
     End Sub
 
+    'INSERTAR INGRESOS
     Private Sub Button_IngresosInsertar_Click(sender As Object, e As EventArgs) Handles Button_IngresosInsertar.Click
         ingreso.insertarIngreso()
     End Sub
 
+    Private Sub Button_IngresosInsertar2_Click(sender As Object, e As EventArgs) Handles Button_IngresosInsertar2.Click
+        ingreso.insertarIngreso2()
+    End Sub
+
+    Private Sub Button_IngresosInsertar3_Click(sender As Object, e As EventArgs) Handles Button_IngresosInsertar3.Click
+        ingreso.insertarIngreso3()
+    End Sub
+
+    'BUTTON CALCULAR
     Private Sub Button_IngresosCalcularTotal_Click(sender As Object, e As EventArgs) Handles Button_IngresosCalcularTotal.Click
         ingreso.calcular()
     End Sub
 
     Private Sub Button_IngresosCalcularTotal2_Click(sender As Object, e As EventArgs) Handles Button_IngresosCalcularTotal2.Click
         ingreso.calcular2()
+    End Sub
+
+    Private Sub Button_IngresosCalcularTotal3_Click(sender As Object, e As EventArgs) Handles Button_IngresosCalcularTotal3.Click
+        ingreso.calcular3()
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
@@ -36,6 +50,7 @@
         Me.Hide()
     End Sub
 
+    'CANTIDAD
     Private Sub TextBox_IngresosCantidad_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_IngresosCantidad.KeyPress
         Me.TextBox_IngresosCantidad.MaxLength = 12
         If Asc(e.KeyChar) <> 8 Then
@@ -54,6 +69,16 @@
         End If
     End Sub
 
+    Private Sub TextBox_IngresosCantidad3_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_IngresosCantidad3.KeyPress
+        Me.TextBox_IngresosCantidad3.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    'PRECIO UNITARIO
     Private Sub TextBox_IngresosPrecioUnitario_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_IngresosPrecioUnitario.KeyPress
         Me.TextBox_IngresosPrecioUnitario.MaxLength = 12
         If Asc(e.KeyChar) <> 8 Then
@@ -72,6 +97,16 @@
         End If
     End Sub
 
+    Private Sub TextBox_IngresosPrecioUnitario3_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_IngresosPrecioUnitario3.KeyPress
+        Me.TextBox_IngresosPrecioUnitario3.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    'TOTAL
     Private Sub TextBox_IngresosTotal_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_IngresosTotal.KeyPress
         Me.TextBox_IngresosTotal.MaxLength = 12
         If Asc(e.KeyChar) <> 8 Then
@@ -89,5 +124,15 @@
             End If
         End If
     End Sub
+
+    Private Sub TextBox_IngresosTotal3_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_IngresosTotal3.KeyPress
+        Me.TextBox_IngresosTotal3.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
 
 End Class

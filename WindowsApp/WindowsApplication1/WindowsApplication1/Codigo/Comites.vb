@@ -252,6 +252,7 @@ Public Class Comites
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
+
             Dim valores As List(Of ComiteClase)
 
             BD.ConectarBD()

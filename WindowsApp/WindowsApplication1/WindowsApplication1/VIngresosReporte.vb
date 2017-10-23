@@ -3,7 +3,7 @@
     Dim ingreso As Ingreso = New Ingreso
 
     Private Sub Button_IngresosReporteIngresos_Click(sender As Object, e As EventArgs) Handles Button_IngresosReporteIngresos.Click
-        ingreso.generarReporteIngresos()
+        ingreso.generarReporteIngresosNuevo()
         Print.Show()
     End Sub
 
