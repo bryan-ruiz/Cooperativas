@@ -1,4 +1,5 @@
 ﻿Public Class GastoClase
+
     Public fecha As DateTime
     Public facturaRecibo As String
     Public proveedor As String
@@ -8,7 +9,7 @@
     Public total As String
     Public codCuenta As String
 
-    Public Sub ingresoClaseCostructor(ByVal fechap As DateTime,
+    Public Sub gastoClaseCostructor(ByVal fechap As DateTime,
                                      ByVal proveedorP As String,
                                      ByVal descripcripcionp As String,
                                      ByVal cantidadp As String,
@@ -25,4 +26,5 @@
         total = totalp
         codCuenta = codCuentap
     End Sub
+
 End Class

@@ -238,6 +238,7 @@ Partial Class VIngresos
         '
         'TextBox_IngresosTotal
         '
+        Me.TextBox_IngresosTotal.Enabled = False
         Me.TextBox_IngresosTotal.Location = New System.Drawing.Point(1170, 67)
         Me.TextBox_IngresosTotal.Name = "TextBox_IngresosTotal"
         Me.TextBox_IngresosTotal.Size = New System.Drawing.Size(100, 20)
@@ -379,6 +380,7 @@ Partial Class VIngresos
         '
         'TextBox_IngresosTotal3
         '
+        Me.TextBox_IngresosTotal3.Enabled = False
         Me.TextBox_IngresosTotal3.Location = New System.Drawing.Point(1171, 153)
         Me.TextBox_IngresosTotal3.Name = "TextBox_IngresosTotal3"
         Me.TextBox_IngresosTotal3.Size = New System.Drawing.Size(100, 20)
@@ -458,6 +460,7 @@ Partial Class VIngresos
         '
         'TextBox_IngresosTotal2
         '
+        Me.TextBox_IngresosTotal2.Enabled = False
         Me.TextBox_IngresosTotal2.Location = New System.Drawing.Point(1171, 110)
         Me.TextBox_IngresosTotal2.Name = "TextBox_IngresosTotal2"
         Me.TextBox_IngresosTotal2.Size = New System.Drawing.Size(100, 20)

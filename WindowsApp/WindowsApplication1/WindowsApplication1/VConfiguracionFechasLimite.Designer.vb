@@ -52,7 +52,6 @@ Partial Class VConfiguracionFechasLimite
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.ButtonConfiguracionFechasGuardar)
         Me.GroupBox1.Controls.Add(Me.ConfiguracionDateTimePickerFecha10)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.ConfiguracionDateTimePickerFecha9)
@@ -76,13 +75,13 @@ Partial Class VConfiguracionFechasLimite
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(41, 55)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(337, 497)
+        Me.GroupBox1.Size = New System.Drawing.Size(337, 479)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         '
         'ButtonConfiguracionFechasGuardar
         '
-        Me.ButtonConfiguracionFechasGuardar.Location = New System.Drawing.Point(125, 468)
+        Me.ButtonConfiguracionFechasGuardar.Location = New System.Drawing.Point(171, 572)
         Me.ButtonConfiguracionFechasGuardar.Name = "ButtonConfiguracionFechasGuardar"
         Me.ButtonConfiguracionFechasGuardar.Size = New System.Drawing.Size(89, 23)
         Me.ButtonConfiguracionFechasGuardar.TabIndex = 21
@@ -296,7 +295,8 @@ Partial Class VConfiguracionFechasLimite
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(419, 581)
+        Me.ClientSize = New System.Drawing.Size(419, 622)
+        Me.Controls.Add(Me.ButtonConfiguracionFechasGuardar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

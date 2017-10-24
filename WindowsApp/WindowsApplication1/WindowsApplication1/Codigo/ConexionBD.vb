@@ -605,7 +605,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error: La cuenta ya existe en el sistema!", " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
         Return res
     End Function
@@ -681,7 +681,7 @@ Public Class ConexionBD
     Function obtenerGastos(ByVal fechaI As String, ByVal fechaF As String) As List(Of GastoClase)
         Dim MyList As New List(Of GastoClase)
         Try
-            SQL = "SELECT fecha,proveedor,descripcion,cantidad,precioUnitario,total,codCuenta,facturaRecibo FROM [GASTOS]"
+            SQL = "SELECT fecha, proveedor, descripcion, cantidad, precioUnitario, total, codigoDeCuenta, reciboFactura FROM [GASTOS]"
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -689,7 +689,7 @@ Public Class ConexionBD
                 While reader.Read()
                     Try
                         Dim nuevaCuenta As GastoClase = New GastoClase
-                        nuevaCuenta.ingresoClaseCostructor(reader.GetDateTime(0),
+                        nuevaCuenta.gastoClaseCostructor(reader.GetDateTime(0),
                                                            reader.GetString(1), reader.GetString(2),
                                                            reader.GetString(3), reader.GetString(4),
                                                            reader.GetString(5), reader.GetString(6),
@@ -722,7 +722,7 @@ Public Class ConexionBD
         Dim res As Integer = 0
         Try
             SQL = "INSERT INTO [GASTOS]" &
-           "(fecha,proveedor, descripcion,cantidad,precioUnitario,total,codCuenta,facturaRecibo)" &
+           "(fecha, proveedor, descripcion, cantidad, precioUnitario, total, codigoDeCuenta, reciboFactura)" &
             "VALUES ('" + fechap + "', '" + clientep + "', '" +
             descripcripcionp + "', " + cantidadp + ", " +
             precioUnitariop + ", " + totalp + ", '" +

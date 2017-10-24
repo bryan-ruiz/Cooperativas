@@ -35,9 +35,9 @@ Partial Class VGastosReporte
         '
         'ButtonGastosReporte
         '
-        Me.ButtonGastosReporte.Location = New System.Drawing.Point(76, 187)
+        Me.ButtonGastosReporte.Location = New System.Drawing.Point(175, 172)
         Me.ButtonGastosReporte.Name = "ButtonGastosReporte"
-        Me.ButtonGastosReporte.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonGastosReporte.Size = New System.Drawing.Size(89, 30)
         Me.ButtonGastosReporte.TabIndex = 38
         Me.ButtonGastosReporte.Text = "Generar"
         Me.ButtonGastosReporte.UseVisualStyleBackColor = True
@@ -45,9 +45,9 @@ Partial Class VGastosReporte
         'DateTimePicker_GastosFechaF
         '
         Me.DateTimePicker_GastosFechaF.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker_GastosFechaF.Location = New System.Drawing.Point(76, 139)
+        Me.DateTimePicker_GastosFechaF.Location = New System.Drawing.Point(135, 118)
         Me.DateTimePicker_GastosFechaF.Name = "DateTimePicker_GastosFechaF"
-        Me.DateTimePicker_GastosFechaF.Size = New System.Drawing.Size(252, 20)
+        Me.DateTimePicker_GastosFechaF.Size = New System.Drawing.Size(207, 20)
         Me.DateTimePicker_GastosFechaF.TabIndex = 37
         '
         'Label11
@@ -75,9 +75,9 @@ Partial Class VGastosReporte
         'DateTimePicker_GastosFechaI
         '
         Me.DateTimePicker_GastosFechaI.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker_GastosFechaI.Location = New System.Drawing.Point(76, 108)
+        Me.DateTimePicker_GastosFechaI.Location = New System.Drawing.Point(135, 87)
         Me.DateTimePicker_GastosFechaI.Name = "DateTimePicker_GastosFechaI"
-        Me.DateTimePicker_GastosFechaI.Size = New System.Drawing.Size(252, 20)
+        Me.DateTimePicker_GastosFechaI.Size = New System.Drawing.Size(207, 20)
         Me.DateTimePicker_GastosFechaI.TabIndex = 34
         '
         'Label9
@@ -85,18 +85,18 @@ Partial Class VGastosReporte
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label9.Location = New System.Drawing.Point(107, 40)
+        Me.Label9.Location = New System.Drawing.Point(122, 33)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(195, 18)
+        Me.Label9.Size = New System.Drawing.Size(202, 18)
         Me.Label9.TabIndex = 33
-        Me.Label9.Text = "Genera Reporte de Salidas"
+        Me.Label9.Text = "Generar Reporte de Salidas"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(12, 138)
+        Me.Label1.Location = New System.Drawing.Point(71, 117)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 16)
         Me.Label1.TabIndex = 40
@@ -107,7 +107,7 @@ Partial Class VGastosReporte
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label2.Location = New System.Drawing.Point(12, 108)
+        Me.Label2.Location = New System.Drawing.Point(71, 87)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 16)
         Me.Label2.TabIndex = 39

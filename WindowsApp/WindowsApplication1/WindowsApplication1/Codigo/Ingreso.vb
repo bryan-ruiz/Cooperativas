@@ -10,7 +10,7 @@ Public Class Ingreso
     Dim encabezado As EncabezadoClase = New EncabezadoClase
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
-    Public Sub generarReporteIngresos()
+    Private Sub generarReporteIngresos()
 
         Dim fechaInicial As String = VIngresosReporte.DateTimePicker_IngresosFechaInicio.Text
         Dim fechaFinal As String = VIngresosReporte.DateTimePicker_IngresosFechaFinal.Text

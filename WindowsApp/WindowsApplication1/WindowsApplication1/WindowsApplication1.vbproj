@@ -332,6 +332,7 @@
     <Content Include="android_l_etched_icon_tgJ_icon.ico" />
     <Content Include="Imagen\MEP_Logo.png" />
     <Content Include="Resources\logoCoopesag2.png" />
+    <Content Include="Resources\MEP_Logo.png" />
     <None Include="Resources\logocoopesag2_3xE_icon1.ico" />
     <None Include="Resources\logoCoopesag21.png" />
     <Content Include="Resources\logocoopesag2_3xE_icon.ico" />

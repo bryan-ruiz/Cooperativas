@@ -5,8 +5,49 @@ Imports System.IO
 Public Class Configuracion
     Dim BD As ConexionBD = New ConexionBD
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+    Dim estado As Boolean = True
 
+    Public Sub obtenerDatosSeleccionarCuentaGastosEIngresos()
+        Dim valores As List(Of CuentaClase)
+        Try
+            BD.ConectarBD()
+            valores = BD.consultarCuentas()
+            If valores.Count <> 0 Then
+                estado = True
+                VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Items.Clear()
+                VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaSalida.Items.Clear()
+                Dim contador As Integer = 0
+                Dim conta As Integer = 0
+                While valores.Count > contador
+                    If valores(contador).tipo = "Gasto" Then
+                        VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaSalida.Items.Add(valores(contador).codDescripcion)
+                        conta += 1
+                    End If
 
+                    If valores(contador).tipo = "Ingreso" Then
+                        VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Items.Add(valores(contador).codDescripcion)
+                        conta += 1
+                    End If
+
+                    contador = contador + 1
+                End While
+                If conta = 0 Then
+                    estado = False
+                    VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Items.Add("No se poseen cuentas")
+                    VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaSalida.Items.Add("No se poseen cuentas")
+                End If
+            Else
+                estado = False
+                VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Items.Add("No se poseen cuentas")
+                VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaSalida.Items.Add("No se poseen cuentas")
+            End If
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            estado = False
+            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+        End Try
+    End Sub
 
     Public Sub insertarCuenta()
 
@@ -42,7 +83,7 @@ Public Class Configuracion
 
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            'MessageBox.Show("El nombre de la Cuenta ya existe!")
         End Try
     End Sub
 

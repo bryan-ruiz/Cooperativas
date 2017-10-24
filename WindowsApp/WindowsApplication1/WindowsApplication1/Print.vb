@@ -17,5 +17,7 @@ Public Class Print
         Me.Close()
     End Sub
 
+    Private Sub AxAcroPDF1_OnError(sender As Object, e As EventArgs) Handles AxAcroPDF1.OnError
 
+    End Sub
 End Class
