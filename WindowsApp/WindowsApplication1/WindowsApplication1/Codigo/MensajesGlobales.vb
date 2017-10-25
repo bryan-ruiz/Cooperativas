@@ -17,7 +17,7 @@ Public Class MensajesGlobales
     Public datosActualizadosConExito As String = "Datos actualizados con éxito!"
     Public datosEliminadosConExito As String = "Datos eliminados con éxito!"
 
-    Public errorFechaLimiteMenorActual As String = "Error, la fecha límite es menor a la actual"
+    Public errorFechaLimiteMenorActual As String = "Error: La fecha actual es mayor a la fecha límite para agregar el tracto"
     Public errorIngresandoDatos As String = "Error al ingresar los datos en el sistema"
     Public errorActualizandoDatos As String = "Error al actualizar los datos en el sistema"
     Public errorEliminandoDatos As String = "Error al eliminar los datos en el sistema"

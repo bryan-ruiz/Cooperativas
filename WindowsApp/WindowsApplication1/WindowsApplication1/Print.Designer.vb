@@ -36,12 +36,13 @@ Partial Class Print
         '
         'AxAcroPDF1
         '
+        Me.AxAcroPDF1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AxAcroPDF1.Enabled = True
         Me.AxAcroPDF1.Location = New System.Drawing.Point(0, 0)
         Me.AxAcroPDF1.Name = "AxAcroPDF1"
         Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF1.Size = New System.Drawing.Size(1028, 719)
-        Me.AxAcroPDF1.TabIndex = 2
+        Me.AxAcroPDF1.Size = New System.Drawing.Size(1029, 721)
+        Me.AxAcroPDF1.TabIndex = 4
         '
         'ButtonPrintAbrirPDF
         '

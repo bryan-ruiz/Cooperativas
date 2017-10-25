@@ -177,7 +177,7 @@ Partial Class VGastos
         Me.GroupBox3.Controls.Add(Me.Button_GastosCalcular)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 117)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1384, 223)
+        Me.GroupBox3.Size = New System.Drawing.Size(1384, 241)
         Me.GroupBox3.TabIndex = 148
         Me.GroupBox3.TabStop = False
         '
@@ -217,10 +217,10 @@ Partial Class VGastos
         '
         'TextBox_GastosDescripcion3
         '
-        Me.TextBox_GastosDescripcion3.Location = New System.Drawing.Point(729, 153)
+        Me.TextBox_GastosDescripcion3.Location = New System.Drawing.Point(648, 153)
         Me.TextBox_GastosDescripcion3.Name = "TextBox_GastosDescripcion3"
         Me.TextBox_GastosDescripcion3.Size = New System.Drawing.Size(262, 20)
-        Me.TextBox_GastosDescripcion3.TabIndex = 26
+        Me.TextBox_GastosDescripcion3.TabIndex = 25
         '
         'DateTimePicker_GastosFecha3
         '
@@ -232,10 +232,10 @@ Partial Class VGastos
         '
         'TextBox_GastosCantidad3
         '
-        Me.TextBox_GastosCantidad3.Location = New System.Drawing.Point(649, 153)
+        Me.TextBox_GastosCantidad3.Location = New System.Drawing.Point(916, 152)
         Me.TextBox_GastosCantidad3.Name = "TextBox_GastosCantidad3"
         Me.TextBox_GastosCantidad3.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox_GastosCantidad3.TabIndex = 25
+        Me.TextBox_GastosCantidad3.TabIndex = 26
         '
         'TextBox_GastosPrecioUnitario3
         '
@@ -306,10 +306,10 @@ Partial Class VGastos
         '
         'TextBox_GastosDescripcion2
         '
-        Me.TextBox_GastosDescripcion2.Location = New System.Drawing.Point(729, 110)
+        Me.TextBox_GastosDescripcion2.Location = New System.Drawing.Point(648, 110)
         Me.TextBox_GastosDescripcion2.Name = "TextBox_GastosDescripcion2"
         Me.TextBox_GastosDescripcion2.Size = New System.Drawing.Size(262, 20)
-        Me.TextBox_GastosDescripcion2.TabIndex = 16
+        Me.TextBox_GastosDescripcion2.TabIndex = 15
         '
         'DateTimePicker_GastosFecha2
         '
@@ -321,10 +321,10 @@ Partial Class VGastos
         '
         'TextBox_GastosCantidad2
         '
-        Me.TextBox_GastosCantidad2.Location = New System.Drawing.Point(649, 110)
+        Me.TextBox_GastosCantidad2.Location = New System.Drawing.Point(916, 109)
         Me.TextBox_GastosCantidad2.Name = "TextBox_GastosCantidad2"
         Me.TextBox_GastosCantidad2.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox_GastosCantidad2.TabIndex = 15
+        Me.TextBox_GastosCantidad2.TabIndex = 16
         '
         'TextBox_GastosPrecioUnitario2
         '
@@ -429,7 +429,7 @@ Partial Class VGastos
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label7.Location = New System.Drawing.Point(645, 14)
+        Me.Label7.Location = New System.Drawing.Point(906, 16)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(62, 16)
         Me.Label7.TabIndex = 12
@@ -451,7 +451,7 @@ Partial Class VGastos
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label17.Location = New System.Drawing.Point(808, 14)
+        Me.Label17.Location = New System.Drawing.Point(725, 14)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(80, 16)
         Me.Label17.TabIndex = 10
@@ -473,7 +473,7 @@ Partial Class VGastos
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label20.Location = New System.Drawing.Point(982, 16)
+        Me.Label20.Location = New System.Drawing.Point(985, 16)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(96, 16)
         Me.Label20.TabIndex = 14
@@ -481,10 +481,10 @@ Partial Class VGastos
         '
         'TextBox_GastosDescripcion
         '
-        Me.TextBox_GastosDescripcion.Location = New System.Drawing.Point(728, 67)
+        Me.TextBox_GastosDescripcion.Location = New System.Drawing.Point(647, 67)
         Me.TextBox_GastosDescripcion.Name = "TextBox_GastosDescripcion"
         Me.TextBox_GastosDescripcion.Size = New System.Drawing.Size(262, 20)
-        Me.TextBox_GastosDescripcion.TabIndex = 6
+        Me.TextBox_GastosDescripcion.TabIndex = 5
         '
         'DateTimePicker_GastosFecha
         '
@@ -496,10 +496,10 @@ Partial Class VGastos
         '
         'TextBox_GastosCantidad
         '
-        Me.TextBox_GastosCantidad.Location = New System.Drawing.Point(648, 67)
+        Me.TextBox_GastosCantidad.Location = New System.Drawing.Point(915, 66)
         Me.TextBox_GastosCantidad.Name = "TextBox_GastosCantidad"
         Me.TextBox_GastosCantidad.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox_GastosCantidad.TabIndex = 5
+        Me.TextBox_GastosCantidad.TabIndex = 6
         '
         'TextBox_GastosPrecioUnitario
         '
@@ -530,7 +530,7 @@ Partial Class VGastos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1393, 468)
+        Me.ClientSize = New System.Drawing.Size(1393, 472)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label18)

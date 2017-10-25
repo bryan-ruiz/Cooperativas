@@ -45,15 +45,42 @@
     End Sub
 
 
-    '// Evento para salir del sistema, cierra las 2 ventanas abiertas
+    '// Evento para salir del sistema, cierra todas ventanas abiertas
     Private Sub salirAPP(sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.Closing
         Dim result As DialogResult = MessageBox.Show("¿Desea salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         If result = System.Windows.Forms.DialogResult.No Then
             e.Cancel = True
         Else
-            VSignIn.Close()
-            Me.Close()
+
+            Try
+
+                VSignIn.Close()
+                VIngresos.Close()
+                VIngresosReporte.Close()
+                VGastos.Close()
+                VGastosReporte.Close()
+                VInformeEconomico.Close()
+                VInformacionCuerposDirectivos.Close()
+                VInformacionAnexoAsociados.Close()
+                VGestionAsociados.Close()
+                VConfiguracionPorcentajeReservas.Close()
+                VConfiguracionInformacionCooperativa.Close()
+                VConfiguracionFechasLimite.Close()
+                VConfiguracionCodigoCuenta.Close()
+                VComites.Close()
+                VCertificados.Close()
+
+                Me.Close()
+
+            Catch ex As InvalidOperationException
+                'nothing
+            End Try
         End If
     End Sub
+
+
+
+
+
 
 End Class

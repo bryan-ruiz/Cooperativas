@@ -904,9 +904,11 @@ Public Class ConexionBD
     Function cerrarCertificado(ByVal cedula As String, ByVal montoTotalViejo As String, ByVal monto As String) As Integer
         Dim MyList As Integer = 0
         Try
-            SQL = "UPDATE [CERTIFICADOS] SET acumuladoAnterior = '" & montoTotalViejo & "', " & "tracto1 = '" & monto & "', " & "tracto2 = '" & monto & "', " & "tracto3 = '" & monto & "',
-" & "tracto4 = '" & monto & "', " & "tracto5 = '" & monto & "', " & "tracto6 = '" & monto & "', " & "tracto7 = '" & monto & "',
-" & "tracto8 = '" & monto & "',   " & "tracto9 = '" & monto & "',  " & "tracto10 = '" & monto & "',  " & "total = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            SQL = "UPDATE [CERTIFICADOS] SET acumuladoAnterior = '" & montoTotalViejo & "', 
+" & "tracto1 = '" & monto & "', " & "tracto2 = '" & monto & "', " & "tracto3 = '" & monto & "',
+" & "tracto4 = '" & monto & "', " & "tracto5 = '" & monto & "', " & "tracto6 = '" & monto & "', 
+" & "tracto7 = '" & monto & "', " & "tracto8 = '" & monto & "',   " & "tracto9 = '" & monto & "',  " & "tracto10 = '" & monto & "', 
+" & "total = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then

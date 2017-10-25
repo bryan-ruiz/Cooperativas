@@ -19,7 +19,7 @@
     End Sub
 
     Private Sub CertificadosButtonSaveTracto2_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto2.Click
-        certificados.validarTracto("1", Me.CertificadosDateTimePickerFecha1.Value)
+        certificados.validarTracto("2", Me.CertificadosDateTimePickerFecha2.Value)
     End Sub
 
     Private Sub CertificadosButtonSaveTracto3_Click(sender As Object, e As EventArgs) Handles CertificadosButtonSaveTracto3.Click
@@ -54,11 +54,105 @@
         certificados.validarTracto("10", Me.CertificadosDateTimePickerFecha10.Value)
     End Sub
 
-    Private Sub CrearReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearReporteToolStripMenuItem.Click
+    Private Sub CrearReporteToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
         Me.Close()
+    End Sub
+
+    Private Sub CertificadosTextboxTracto1_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto1.KeyPress
+        Me.CertificadosTextboxTracto1.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub CertificadosTextboxTracto2_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto2.KeyPress
+        Me.CertificadosTextboxTracto2.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub CertificadosTextboxTracto3_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto3.KeyPress
+        Me.CertificadosTextboxTracto3.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub CertificadosTextboxTracto4_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto4.KeyPress
+        Me.CertificadosTextboxTracto4.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub CertificadosTextboxTracto5_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto5.KeyPress
+        Me.CertificadosTextboxTracto5.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub CertificadosTextboxTracto6_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto6.KeyPress
+        Me.CertificadosTextboxTracto6.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub CertificadosTextboxTracto7_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto7.KeyPress
+        Me.CertificadosTextboxTracto7.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub CertificadosTextboxTracto8_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto8.KeyPress
+        Me.CertificadosTextboxTracto8.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub CertificadosTextboxTracto9_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto9.KeyPress
+        Me.CertificadosTextboxTracto9.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub CertificadosTextboxTracto10_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto10.KeyPress
+        Me.CertificadosTextboxTracto10.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub VCertificados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        certificados.consultarFechasLimite()
     End Sub
 End Class

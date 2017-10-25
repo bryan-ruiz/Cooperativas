@@ -167,7 +167,7 @@ Partial Class VIngresos
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label4.Location = New System.Drawing.Point(808, 14)
+        Me.Label4.Location = New System.Drawing.Point(717, 14)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(80, 16)
         Me.Label4.TabIndex = 10
@@ -175,17 +175,17 @@ Partial Class VIngresos
         '
         'TextBox_IngresosDescripcion
         '
-        Me.TextBox_IngresosDescripcion.Location = New System.Drawing.Point(728, 67)
+        Me.TextBox_IngresosDescripcion.Location = New System.Drawing.Point(647, 68)
         Me.TextBox_IngresosDescripcion.Name = "TextBox_IngresosDescripcion"
         Me.TextBox_IngresosDescripcion.Size = New System.Drawing.Size(262, 20)
-        Me.TextBox_IngresosDescripcion.TabIndex = 6
+        Me.TextBox_IngresosDescripcion.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label5.Location = New System.Drawing.Point(645, 14)
+        Me.Label5.Location = New System.Drawing.Point(906, 14)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(62, 16)
         Me.Label5.TabIndex = 12
@@ -193,17 +193,17 @@ Partial Class VIngresos
         '
         'TextBox_IngresosCantidad
         '
-        Me.TextBox_IngresosCantidad.Location = New System.Drawing.Point(648, 67)
+        Me.TextBox_IngresosCantidad.Location = New System.Drawing.Point(915, 67)
         Me.TextBox_IngresosCantidad.Name = "TextBox_IngresosCantidad"
         Me.TextBox_IngresosCantidad.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox_IngresosCantidad.TabIndex = 5
+        Me.TextBox_IngresosCantidad.TabIndex = 6
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label6.Location = New System.Drawing.Point(982, 16)
+        Me.Label6.Location = New System.Drawing.Point(986, 15)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(96, 16)
         Me.Label6.TabIndex = 14
@@ -230,7 +230,7 @@ Partial Class VIngresos
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label7.Location = New System.Drawing.Point(1199, 16)
+        Me.Label7.Location = New System.Drawing.Point(1196, 16)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 16)
         Me.Label7.TabIndex = 17
@@ -311,7 +311,7 @@ Partial Class VIngresos
         Me.GroupBox2.Controls.Add(Me.Button_IngresosCalcularTotal)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 124)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1384, 223)
+        Me.GroupBox2.Size = New System.Drawing.Size(1384, 235)
         Me.GroupBox2.TabIndex = 140
         Me.GroupBox2.TabStop = False
         '
@@ -351,10 +351,10 @@ Partial Class VIngresos
         '
         'TextBox_IngresosDescripcion3
         '
-        Me.TextBox_IngresosDescripcion3.Location = New System.Drawing.Point(729, 153)
+        Me.TextBox_IngresosDescripcion3.Location = New System.Drawing.Point(648, 154)
         Me.TextBox_IngresosDescripcion3.Name = "TextBox_IngresosDescripcion3"
         Me.TextBox_IngresosDescripcion3.Size = New System.Drawing.Size(262, 20)
-        Me.TextBox_IngresosDescripcion3.TabIndex = 26
+        Me.TextBox_IngresosDescripcion3.TabIndex = 25
         '
         'DateTimePicker_IngresosFecha3
         '
@@ -366,10 +366,10 @@ Partial Class VIngresos
         '
         'TextBox_IngresosCantidad3
         '
-        Me.TextBox_IngresosCantidad3.Location = New System.Drawing.Point(649, 153)
+        Me.TextBox_IngresosCantidad3.Location = New System.Drawing.Point(916, 153)
         Me.TextBox_IngresosCantidad3.Name = "TextBox_IngresosCantidad3"
         Me.TextBox_IngresosCantidad3.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox_IngresosCantidad3.TabIndex = 25
+        Me.TextBox_IngresosCantidad3.TabIndex = 26
         '
         'TextBox_IngresosPrecioUnitario3
         '
@@ -431,10 +431,10 @@ Partial Class VIngresos
         '
         'TextBox_IngresosDescripcion2
         '
-        Me.TextBox_IngresosDescripcion2.Location = New System.Drawing.Point(729, 110)
+        Me.TextBox_IngresosDescripcion2.Location = New System.Drawing.Point(648, 111)
         Me.TextBox_IngresosDescripcion2.Name = "TextBox_IngresosDescripcion2"
         Me.TextBox_IngresosDescripcion2.Size = New System.Drawing.Size(262, 20)
-        Me.TextBox_IngresosDescripcion2.TabIndex = 16
+        Me.TextBox_IngresosDescripcion2.TabIndex = 15
         '
         'DateTimePicker_IngresosFecha2
         '
@@ -446,10 +446,10 @@ Partial Class VIngresos
         '
         'TextBox_IngresosCantidad2
         '
-        Me.TextBox_IngresosCantidad2.Location = New System.Drawing.Point(649, 110)
+        Me.TextBox_IngresosCantidad2.Location = New System.Drawing.Point(916, 110)
         Me.TextBox_IngresosCantidad2.Name = "TextBox_IngresosCantidad2"
         Me.TextBox_IngresosCantidad2.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox_IngresosCantidad2.TabIndex = 15
+        Me.TextBox_IngresosCantidad2.TabIndex = 16
         '
         'TextBox_IngresosPrecioUnitario2
         '
@@ -539,7 +539,7 @@ Partial Class VIngresos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1408, 431)
+        Me.ClientSize = New System.Drawing.Size(1408, 462)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.MenuStrip1)

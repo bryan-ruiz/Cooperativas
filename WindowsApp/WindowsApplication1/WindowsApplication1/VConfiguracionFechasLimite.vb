@@ -2,6 +2,7 @@
 
     Dim configuracionInformacion As Configuracion = New Configuracion
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+    Dim certificados As Certificados = New Certificados
 
 
     Private Sub VConfiguracionFechasLimite_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -15,6 +16,7 @@
             MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
         Else
             configuracionInformacion.actualizarFechasLimite()
+            certificados.consultarFechasLimite()
         End If
     End Sub
 

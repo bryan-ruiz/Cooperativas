@@ -59,9 +59,17 @@ Public Class Certificados
         Dim monto As String = "0"
         Dim cedula As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
 
+        If (cedula = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
         Try
             BD.ConectarBD()
+
             Dim hecho As Integer = BD.sumarTractosEnCertificados(cedula)
+            Dim acumAnt As Integer = Convert.ToInt32(VCertificados.CertificadosTextboxAcumAnterior.Text)
+            Dim acumMasPeriodo As Integer = acumAnt + hecho
 
             If hecho = 0 Then
                 BD.cerrarCertificado(cedula, hecho, monto)
@@ -79,9 +87,9 @@ Public Class Certificados
                 VCertificados.CertificadosTextboxTracto9.Text = "0"
                 VCertificados.CertificadosTextboxTracto10.Text = "0"
                 VCertificados.CertificadosTextboxTotalPeriodo.Text = "0"
-                VCertificados.CertificadosTextboxAcumAnterior.Text = hecho
+                VCertificados.CertificadosTextboxAcumAnterior.Text = acumMasPeriodo
 
-                BD.cerrarCertificado(cedula, hecho, monto)
+                BD.cerrarCertificado(cedula, acumMasPeriodo, monto)
 
             End If
             BD.CerrarConexion()
@@ -208,6 +216,30 @@ Public Class Certificados
 
     'Valida la fecha del tracto y llama a actualizar tracto
     Public Sub validarTracto(ByVal numTracto As String, ByVal fecha As DateTime)
+        Dim tracto1 As String = VCertificados.CertificadosTextboxTracto1.Text
+        Dim tracto2 As String = VCertificados.CertificadosTextboxTracto2.Text
+        Dim tracto3 As String = VCertificados.CertificadosTextboxTracto3.Text
+        Dim tracto4 As String = VCertificados.CertificadosTextboxTracto4.Text
+        Dim tracto5 As String = VCertificados.CertificadosTextboxTracto5.Text
+        Dim tracto6 As String = VCertificados.CertificadosTextboxTracto6.Text
+        Dim tracto7 As String = VCertificados.CertificadosTextboxTracto7.Text
+        Dim tracto8 As String = VCertificados.CertificadosTextboxTracto8.Text
+        Dim tracto9 As String = VCertificados.CertificadosTextboxTracto9.Text
+        Dim tracto10 As String = VCertificados.CertificadosTextboxTracto10.Text
+
+        Dim cedula As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
+
+        If (cedula = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+
+        If (tracto1 = "" Or tracto2 = "" Or tracto3 = "" Or tracto4 = "" Or tracto5 = "" Or tracto6 = "" Or tracto7 = "" Or tracto8 = "" Or tracto9 = "" Or tracto10) Then
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
         If validarFecha(fecha) Then
             MessageBox.Show(variablesGlobales.errorFechaLimiteMenorActual, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         Else
@@ -232,6 +264,8 @@ Public Class Certificados
         VCertificados.CertificadosTextboxTracto10.Text = ""
         VCertificados.CertificadosTextboxAcumAnterior.Text = ""
         VCertificados.CertificadosTextboxTotalPeriodo.Text = ""
+        VCertificados.CertificadosTextboxNumAsociado.Text = ""
+        VCertificados.CertificadosTextboxCed.Text = ""
     End Sub
 
     'Genera un reporte con los datos de aportaciones actuales de un socio

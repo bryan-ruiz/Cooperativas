@@ -125,4 +125,6 @@
     Private Sub Button_GastosCalcular3_Click(sender As Object, e As EventArgs) Handles Button_GastosCalcular3.Click
         gasto.calcular3()
     End Sub
+
+
 End Class

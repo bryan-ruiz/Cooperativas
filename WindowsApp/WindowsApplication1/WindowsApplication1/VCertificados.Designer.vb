@@ -27,11 +27,9 @@ Partial Class VCertificados
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerrarPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CertificadosTextboxCedulaNumAsociado = New System.Windows.Forms.TextBox()
@@ -116,7 +114,7 @@ Partial Class VCertificados
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.CerrarPeriodoToolStripMenuItem, Me.InformaciónToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1279, 24)
@@ -133,7 +131,7 @@ Partial Class VCertificados
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'ComprobanteToolStripMenuItem
@@ -141,25 +139,6 @@ Partial Class VCertificados
         Me.ComprobanteToolStripMenuItem.Name = "ComprobanteToolStripMenuItem"
         Me.ComprobanteToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.ComprobanteToolStripMenuItem.Text = "Comprobante"
-        '
-        'ReporteToolStripMenuItem
-        '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem})
-        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
-        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ReporteToolStripMenuItem.Text = "Reporte"
-        '
-        'CrearReporteToolStripMenuItem
-        '
-        Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
-        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.CrearReporteToolStripMenuItem.Text = "Crear Reporte"
-        '
-        'CerrarPeriodoToolStripMenuItem
-        '
-        Me.CerrarPeriodoToolStripMenuItem.Name = "CerrarPeriodoToolStripMenuItem"
-        Me.CerrarPeriodoToolStripMenuItem.Size = New System.Drawing.Size(95, 20)
-        Me.CerrarPeriodoToolStripMenuItem.Text = "Cerrar Periodo"
         '
         'InformaciónToolStripMenuItem
         '
@@ -169,6 +148,7 @@ Partial Class VCertificados
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label25)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.CertificadosTextboxCedulaNumAsociado)
@@ -184,10 +164,22 @@ Partial Class VCertificados
         Me.GroupBox1.TabIndex = 60
         Me.GroupBox1.TabStop = False
         '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label25.Location = New System.Drawing.Point(26, 39)
+        Me.Label25.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(150, 16)
+        Me.Label25.TabIndex = 64
+        Me.Label25.Text = "o Número de Asociado:"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(32, 286)
+        Me.PictureBox1.Location = New System.Drawing.Point(35, 343)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(148, 140)
@@ -200,19 +192,19 @@ Partial Class VCertificados
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(33, 19)
+        Me.Label1.Location = New System.Drawing.Point(5, 16)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(147, 16)
+        Me.Label1.Size = New System.Drawing.Size(195, 16)
         Me.Label1.TabIndex = 53
-        Me.Label1.Text = "Cédula / num Asociado"
+        Me.Label1.Text = "Cédula (Formato X-XXXX-XXXX)"
         '
         'CertificadosTextboxCedulaNumAsociado
         '
-        Me.CertificadosTextboxCedulaNumAsociado.Location = New System.Drawing.Point(32, 47)
+        Me.CertificadosTextboxCedulaNumAsociado.Location = New System.Drawing.Point(20, 65)
         Me.CertificadosTextboxCedulaNumAsociado.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosTextboxCedulaNumAsociado.Name = "CertificadosTextboxCedulaNumAsociado"
-        Me.CertificadosTextboxCedulaNumAsociado.Size = New System.Drawing.Size(142, 22)
+        Me.CertificadosTextboxCedulaNumAsociado.Size = New System.Drawing.Size(173, 22)
         Me.CertificadosTextboxCedulaNumAsociado.TabIndex = 54
         '
         'Label24
@@ -220,7 +212,7 @@ Partial Class VCertificados
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label24.Location = New System.Drawing.Point(31, 208)
+        Me.Label24.Location = New System.Drawing.Point(31, 170)
         Me.Label24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(155, 16)
@@ -229,17 +221,17 @@ Partial Class VCertificados
         '
         'CertificadosButtonConsultar
         '
-        Me.CertificadosButtonConsultar.Location = New System.Drawing.Point(67, 79)
+        Me.CertificadosButtonConsultar.Location = New System.Drawing.Point(53, 95)
         Me.CertificadosButtonConsultar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosButtonConsultar.Name = "CertificadosButtonConsultar"
-        Me.CertificadosButtonConsultar.Size = New System.Drawing.Size(69, 26)
+        Me.CertificadosButtonConsultar.Size = New System.Drawing.Size(106, 26)
         Me.CertificadosButtonConsultar.TabIndex = 55
         Me.CertificadosButtonConsultar.Text = "Buscar"
         Me.CertificadosButtonConsultar.UseVisualStyleBackColor = True
         '
         'CertificadosButtonLimpiar
         '
-        Me.CertificadosButtonLimpiar.Location = New System.Drawing.Point(67, 228)
+        Me.CertificadosButtonLimpiar.Location = New System.Drawing.Point(67, 190)
         Me.CertificadosButtonLimpiar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosButtonLimpiar.Name = "CertificadosButtonLimpiar"
         Me.CertificadosButtonLimpiar.Size = New System.Drawing.Size(69, 27)
@@ -252,21 +244,21 @@ Partial Class VCertificados
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(54, 131)
+        Me.Label2.Location = New System.Drawing.Point(15, 240)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 16)
+        Me.Label2.Size = New System.Drawing.Size(181, 16)
         Me.Label2.TabIndex = 56
-        Me.Label2.Text = "Cerrar Periodo"
+        Me.Label2.Text = "Sumar periodo al acumulado"
         '
         'CertificadosButtonCerrarPeriodo
         '
-        Me.CertificadosButtonCerrarPeriodo.Location = New System.Drawing.Point(67, 151)
+        Me.CertificadosButtonCerrarPeriodo.Location = New System.Drawing.Point(67, 260)
         Me.CertificadosButtonCerrarPeriodo.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosButtonCerrarPeriodo.Name = "CertificadosButtonCerrarPeriodo"
         Me.CertificadosButtonCerrarPeriodo.Size = New System.Drawing.Size(69, 29)
         Me.CertificadosButtonCerrarPeriodo.TabIndex = 57
-        Me.CertificadosButtonCerrarPeriodo.Text = "Cerrar"
+        Me.CertificadosButtonCerrarPeriodo.Text = "Sumar"
         Me.CertificadosButtonCerrarPeriodo.UseVisualStyleBackColor = True
         '
         'GroupBox2
@@ -902,6 +894,7 @@ Partial Class VCertificados
         '
         'CertificadosTextboxTotalPeriodo
         '
+        Me.CertificadosTextboxTotalPeriodo.Enabled = False
         Me.CertificadosTextboxTotalPeriodo.Location = New System.Drawing.Point(834, 84)
         Me.CertificadosTextboxTotalPeriodo.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosTextboxTotalPeriodo.Name = "CertificadosTextboxTotalPeriodo"
@@ -910,6 +903,7 @@ Partial Class VCertificados
         '
         'CertificadosTextboxAcumAnterior
         '
+        Me.CertificadosTextboxAcumAnterior.Enabled = False
         Me.CertificadosTextboxAcumAnterior.Location = New System.Drawing.Point(677, 84)
         Me.CertificadosTextboxAcumAnterior.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosTextboxAcumAnterior.Multiline = True
@@ -919,6 +913,7 @@ Partial Class VCertificados
         '
         'CertificadosTextboxCed
         '
+        Me.CertificadosTextboxCed.Enabled = False
         Me.CertificadosTextboxCed.Location = New System.Drawing.Point(217, 85)
         Me.CertificadosTextboxCed.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosTextboxCed.Name = "CertificadosTextboxCed"
@@ -939,6 +934,7 @@ Partial Class VCertificados
         '
         'CertificadosTextboxNumAsociado
         '
+        Me.CertificadosTextboxNumAsociado.Enabled = False
         Me.CertificadosTextboxNumAsociado.Location = New System.Drawing.Point(58, 84)
         Me.CertificadosTextboxNumAsociado.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosTextboxNumAsociado.Name = "CertificadosTextboxNumAsociado"
@@ -975,7 +971,7 @@ Partial Class VCertificados
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label9.Location = New System.Drawing.Point(684, 8)
+        Me.Label9.Location = New System.Drawing.Point(684, 7)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(110, 30)
@@ -1020,6 +1016,7 @@ Partial Class VCertificados
         '
         'CertificadosTextboxNombre
         '
+        Me.CertificadosTextboxNombre.Enabled = False
         Me.CertificadosTextboxNombre.Location = New System.Drawing.Point(375, 84)
         Me.CertificadosTextboxNombre.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosTextboxNombre.Name = "CertificadosTextboxNombre"
@@ -1061,8 +1058,6 @@ Partial Class VCertificados
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ComprobanteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CrearReporteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label24 As Label
     Friend WithEvents CertificadosButtonLimpiar As Button
@@ -1079,7 +1074,6 @@ Partial Class VCertificados
     Friend WithEvents Label3 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents CertificadosTextboxNombre As TextBox
-    Friend WithEvents CerrarPeriodoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CertificadosTextboxTotalPeriodo As TextBox
     Friend WithEvents CertificadosTextboxAcumAnterior As TextBox
     Friend WithEvents CertificadosTextboxCed As TextBox
@@ -1139,4 +1133,5 @@ Partial Class VCertificados
     Friend WithEvents CertificadosButtonSaveTracto8 As Button
     Friend WithEvents CertificadosButtonSaveTracto7 As Button
     Friend WithEvents CertificadosButtonSaveTracto6 As Button
+    Friend WithEvents Label25 As Label
 End Class
