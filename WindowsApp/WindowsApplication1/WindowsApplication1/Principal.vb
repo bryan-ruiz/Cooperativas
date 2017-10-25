@@ -53,7 +53,6 @@
         Else
 
             Try
-
                 VSignIn.Close()
                 VIngresos.Close()
                 VIngresosReporte.Close()

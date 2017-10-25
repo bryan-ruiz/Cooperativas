@@ -234,14 +234,13 @@ Public Class Certificados
             Return
         End If
 
-
         If (tracto1 = "" Or tracto2 = "" Or tracto3 = "" Or tracto4 = "" Or tracto5 = "" Or tracto6 = "" Or tracto7 = "" Or tracto8 = "" Or tracto9 = "" Or tracto10) Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
         End If
 
         If validarFecha(fecha) Then
-            MessageBox.Show(variablesGlobales.errorFechaLimiteMenorActual, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorFechaLimiteMenorActual, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         Else
             editarTracto(numTracto)
             sumarTractosEnCertificados()
