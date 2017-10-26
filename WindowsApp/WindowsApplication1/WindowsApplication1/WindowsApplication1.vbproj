@@ -331,7 +331,13 @@
   <ItemGroup>
     <Content Include="android_l_etched_icon_tgJ_icon.ico" />
     <Content Include="Imagen\MEP_Logo.png" />
+    <None Include="Resources\Sin título-1.png" />
+    <None Include="Resources\loginOrForm3.jpg" />
+    <None Include="Resources\Green_abstract_nature_1920x1200.jpg" />
+    <None Include="Resources\login2.jpg" />
+    <None Include="Resources\btn2.png" />
     <Content Include="Resources\logoCoopesag2.png" />
+    <None Include="Resources\LogoTransparente.png" />
     <Content Include="Resources\MEP_Logo.png" />
     <None Include="Resources\logocoopesag2_3xE_icon1.ico" />
     <None Include="Resources\logoCoopesag21.png" />

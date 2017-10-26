@@ -63,68 +63,68 @@ Public Class InformeEconomico
             Dim table As PdfPTable = New PdfPTable(2)
 
             Dim cellIngresos As PdfPCell = New PdfPCell(New Phrase("Ingresos o Entradas (Proyecto Productivo)"))
-            cellIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#99FF33"))
+            cellIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoIngresos))  ' verde "#99FF33"
             cellIngresos.Colspan = 2
             cellIngresos.HorizontalAlignment = 0 '//0=Left, 1=Centre, 2=Right
 
             Dim cellSubTotalIngresos As PdfPCell = New PdfPCell(New Phrase("SubTotal Ingresos"))
-            cellSubTotalIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#99FF33"))
+            cellSubTotalIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoIngresos))
             cellSubTotalIngresos.Colspan = 1
             cellSubTotalIngresos.HorizontalAlignment = 0
 
             Dim cellOtrosIngresos As PdfPCell = New PdfPCell(New Phrase("Otros Ingresos"))
-            cellOtrosIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#99FF33"))
+            cellOtrosIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoIngresos))
             cellOtrosIngresos.Colspan = 2
             cellOtrosIngresos.HorizontalAlignment = 0
 
             Dim cellSubTotalOtrosIngresos As PdfPCell = New PdfPCell(New Phrase("SubTotal Otros Ingresos"))
-            cellSubTotalOtrosIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#99FF33"))
+            cellSubTotalOtrosIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoIngresos))
             cellSubTotalOtrosIngresos.Colspan = 1
             cellSubTotalOtrosIngresos.HorizontalAlignment = 0
 
             Dim cellTotalNetoIngresos As PdfPCell = New PdfPCell(New Phrase("TOTAL INGRESOS"))
-            cellTotalNetoIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#99FF33"))
+            cellTotalNetoIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoIngresos))
             cellTotalNetoIngresos.Colspan = 1
             cellTotalNetoIngresos.HorizontalAlignment = 0
 
             'Gastos
             Dim cellGastos As PdfPCell = New PdfPCell(New Phrase("Egresos o Salidas (Proyecto productivo)"))
-            cellGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#FFC000"))
+            cellGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoGastoss)) ' Egresos FFC000
             cellGastos.Colspan = 2
             cellGastos.HorizontalAlignment = 0
 
             Dim cellSubTotalGastos As PdfPCell = New PdfPCell(New Phrase("SubTotal Egresos"))
-            cellSubTotalGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#FFC000"))
+            cellSubTotalGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoGastoss))
             cellSubTotalGastos.Colspan = 1
             cellSubTotalGastos.HorizontalAlignment = 0
 
             Dim cellOtrosGastos As PdfPCell = New PdfPCell(New Phrase("Otros Egresos"))
-            cellOtrosGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#FFC000"))
+            cellOtrosGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoGastoss))
             cellOtrosGastos.Colspan = 2
             cellOtrosGastos.HorizontalAlignment = 0
 
             Dim cellSubTotalOtrosGastos As PdfPCell = New PdfPCell(New Phrase("SubTotal Otros Egresos"))
-            cellSubTotalOtrosGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#FFC000"))
+            cellSubTotalOtrosGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoGastoss))
             cellSubTotalOtrosGastos.Colspan = 1
             cellSubTotalOtrosGastos.HorizontalAlignment = 0
 
             Dim cellTotalNetoGastos As PdfPCell = New PdfPCell(New Phrase("TOTAL EGRESOS"))
-            cellTotalNetoGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#FFC000"))
+            cellTotalNetoGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoGastoss))
             cellTotalNetoGastos.Colspan = 1
             cellTotalNetoGastos.HorizontalAlignment = 0
 
             Dim cellTotalNetoFondosEnCaja As PdfPCell = New PdfPCell(New Phrase("FONDOS EN CAJA"))
-            cellTotalNetoFondosEnCaja.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#FFC000"))
+            cellTotalNetoFondosEnCaja.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoGastoss))
             cellTotalNetoFondosEnCaja.Colspan = 1
             cellTotalNetoFondosEnCaja.HorizontalAlignment = 0
 
             Dim cellExcedentes As PdfPCell = New PdfPCell(New Phrase("Excedentes"))
-            cellExcedentes.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#8EA9DB"))
+            cellExcedentes.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoExcedentes))
             cellExcedentes.Colspan = 2
             cellExcedentes.HorizontalAlignment = 0
 
             Dim cellExcedentesBrutos As PdfPCell = New PdfPCell(New Phrase("Excedentes Brutos(Proyecto productivo)"))
-            cellExcedentesBrutos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#8EA9DB"))
+            cellExcedentesBrutos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoExcedentes)) '"#8EA9DB" excedentes
             cellExcedentesBrutos.Colspan = 1
             cellExcedentesBrutos.HorizontalAlignment = 0
 
@@ -153,7 +153,7 @@ Public Class InformeEconomico
             cellTotalReservas.HorizontalAlignment = 0
 
             Dim cellExcedentesNetosDistribuibles As PdfPCell = New PdfPCell(New Phrase("Excedentes Netos Distribuibles"))
-            cellExcedentesNetosDistribuibles.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#8EA9DB"))
+            cellExcedentesNetosDistribuibles.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoGastoss))
             cellExcedentesNetosDistribuibles.Colspan = 1
             cellExcedentesNetosDistribuibles.HorizontalAlignment = 0
 

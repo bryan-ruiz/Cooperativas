@@ -62,8 +62,9 @@ Partial Class VSignIn
         Me.ButtonIngresar.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ButtonIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ButtonIngresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonIngresar.ForeColor = System.Drawing.Color.Black
-        Me.ButtonIngresar.Location = New System.Drawing.Point(213, 458)
+        Me.ButtonIngresar.ForeColor = System.Drawing.Color.White
+        Me.ButtonIngresar.Image = Global.WindowsApplication1.My.Resources.Resources.loginOrForm3
+        Me.ButtonIngresar.Location = New System.Drawing.Point(327, 422)
         Me.ButtonIngresar.Name = "ButtonIngresar"
         Me.ButtonIngresar.Size = New System.Drawing.Size(292, 40)
         Me.ButtonIngresar.TabIndex = 133
@@ -73,7 +74,7 @@ Partial Class VSignIn
         'TextBoxContraseña
         '
         Me.TextBoxContraseña.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxContraseña.Location = New System.Drawing.Point(213, 412)
+        Me.TextBoxContraseña.Location = New System.Drawing.Point(327, 368)
         Me.TextBoxContraseña.Name = "TextBoxContraseña"
         Me.TextBoxContraseña.Size = New System.Drawing.Size(292, 22)
         Me.TextBoxContraseña.TabIndex = 132
@@ -85,7 +86,7 @@ Partial Class VSignIn
         Me.Label26.BackColor = System.Drawing.Color.Transparent
         Me.Label26.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.White
-        Me.Label26.Location = New System.Drawing.Point(210, 391)
+        Me.Label26.Location = New System.Drawing.Point(324, 347)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(88, 16)
         Me.Label26.TabIndex = 135
@@ -94,7 +95,7 @@ Partial Class VSignIn
         'TextBoxlogin
         '
         Me.TextBoxlogin.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxlogin.Location = New System.Drawing.Point(213, 356)
+        Me.TextBoxlogin.Location = New System.Drawing.Point(327, 312)
         Me.TextBoxlogin.Name = "TextBoxlogin"
         Me.TextBoxlogin.Size = New System.Drawing.Size(293, 22)
         Me.TextBoxlogin.TabIndex = 131
@@ -106,7 +107,7 @@ Partial Class VSignIn
         Me.Label27.BackColor = System.Drawing.Color.Transparent
         Me.Label27.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.Color.White
-        Me.Label27.Location = New System.Drawing.Point(210, 335)
+        Me.Label27.Location = New System.Drawing.Point(324, 291)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(60, 16)
         Me.Label27.TabIndex = 134
@@ -116,24 +117,25 @@ Partial Class VSignIn
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Monotype Corsiva", 20.0!, System.Drawing.FontStyle.Italic)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label3.Location = New System.Drawing.Point(168, 39)
+        Me.Label3.Location = New System.Drawing.Point(212, 43)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(422, 33)
+        Me.Label3.Size = New System.Drawing.Size(496, 39)
         Me.Label3.TabIndex = 148
         Me.Label3.Text = "Sistema  de Administración Cooperativista"
         '
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logoCoopesag2
-        Me.PictureBox1.Location = New System.Drawing.Point(286, 109)
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.LogoTransparente
+        Me.PictureBox1.Location = New System.Drawing.Point(392, 127)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(160, 149)
+        Me.PictureBox1.Size = New System.Drawing.Size(144, 125)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 147
         Me.PictureBox1.TabStop = False
@@ -143,8 +145,9 @@ Partial Class VSignIn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(742, 601)
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.login2
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(742, 578)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ButtonIngresar)
@@ -154,10 +157,13 @@ Partial Class VSignIn
         Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "VSignIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "SAC"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
