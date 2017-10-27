@@ -31,8 +31,8 @@ Public Class MensajesGlobales
     Public colorLineas As String = "#D8D8D8" ' color líneas del reporte - gris
 
     Public colorInformeEconomicoIngresos As String = "#239B56"
-    Public colorInformeEconomicoGastoss As String = "##CA6F1E"
-    Public colorInformeEconomicoExcedentes As String = "##2E86C1"
+    Public colorInformeEconomicoGastoss As String = "#CB4335"   '"#CA6F1E"
+    Public colorInformeEconomicoExcedentes As String = "#2E86C1"
 
 
 End Class

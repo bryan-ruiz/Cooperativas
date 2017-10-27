@@ -173,8 +173,6 @@ Partial Class Principal
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SAC"
