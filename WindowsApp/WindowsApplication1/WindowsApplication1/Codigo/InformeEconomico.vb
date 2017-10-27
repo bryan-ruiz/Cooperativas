@@ -73,7 +73,7 @@ Public Class InformeEconomico
             cellIngresos.HorizontalAlignment = 1 '//0=Left, 1=Centre, 2=Right
 
             Dim cellSubTotalIngresos As PdfPCell = New PdfPCell(New Phrase("SubTotal Ingresos", FontStyleWhite))
-            cellSubTotalIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoIngresos))
+            cellSubTotalIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorSubTotales))
             cellSubTotalIngresos.Colspan = 1
             cellSubTotalIngresos.HorizontalAlignment = 2
 
@@ -87,7 +87,7 @@ Public Class InformeEconomico
             cellSubTotalOtrosIngresos.Colspan = 1
             cellSubTotalOtrosIngresos.HorizontalAlignment = 2
 
-            Dim cellTotalNetoIngresos As PdfPCell = New PdfPCell(New Phrase("TOTAL INGRESOS", FontStyleWhite))
+            Dim cellTotalNetoIngresos As PdfPCell = New PdfPCell(New Phrase("Total Ingresos", FontStyleWhite))
             cellTotalNetoIngresos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoIngresos))
             cellTotalNetoIngresos.Colspan = 1
             cellTotalNetoIngresos.HorizontalAlignment = 2
@@ -113,13 +113,13 @@ Public Class InformeEconomico
             cellSubTotalOtrosGastos.Colspan = 1
             cellSubTotalOtrosGastos.HorizontalAlignment = 2
 
-            Dim cellTotalNetoGastos As PdfPCell = New PdfPCell(New Phrase("TOTAL EGRESOS", FontStyleWhite))
+            Dim cellTotalNetoGastos As PdfPCell = New PdfPCell(New Phrase("Total Egresos", FontStyleWhite))
             cellTotalNetoGastos.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoGastoss))
             cellTotalNetoGastos.Colspan = 1
             cellTotalNetoGastos.HorizontalAlignment = 2
 
-            Dim cellTotalNetoFondosEnCaja As PdfPCell = New PdfPCell(New Phrase("FONDOS EN CAJA", FontStyleWhite))
-            cellTotalNetoFondosEnCaja.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoGastoss))
+            Dim cellTotalNetoFondosEnCaja As PdfPCell = New PdfPCell(New Phrase("Fondos en Caja", FontStyleWhite))
+            cellTotalNetoFondosEnCaja.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorInformeEconomicoExcedentes))
             cellTotalNetoFondosEnCaja.Colspan = 1
             cellTotalNetoFondosEnCaja.HorizontalAlignment = 2
 
@@ -166,6 +166,7 @@ Public Class InformeEconomico
             divisor.Colspan = 2
 
             'Ingresos ---------------------------------------------------
+
             table.AddCell(cellIngresos)
 
             Dim i As Integer = 1
@@ -196,6 +197,7 @@ Public Class InformeEconomico
             Next
 
             'subTotal Ingresos ------------------------------------------
+
             table.AddCell(cellSubTotalIngresos)
 
             Dim subTotalIngresosN As Integer = Convert.ToInt32(subTotalIngresos.Item(0))
@@ -215,6 +217,7 @@ Public Class InformeEconomico
             table.AddCell(divisor)
 
             'Otros Ingresos -----------------------------------------
+
             table.AddCell(cellOtrosIngresos)
 
             Dim contaOtrosIngresos As Integer = 1
@@ -249,6 +252,7 @@ Public Class InformeEconomico
             'Next
 
             'APORTACIONES -----------------------------------------
+
             Dim aportacionesT As PdfPCell = New PdfPCell(New Phrase("Aportaciones", FontStypeLineas))
             aportacionesT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas)) '"#8EA9DB" excedentes
             aportacionesT.Colspan = 1
@@ -271,6 +275,7 @@ Public Class InformeEconomico
 
 
             'AFILIACIONES -----------------------------------------
+
             Dim afiliacionesT As PdfPCell = New PdfPCell(New Phrase("Afiliaciones", FontStypeLineas))
             afiliacionesT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas)) '"#8EA9DB" excedentes
             afiliacionesT.Colspan = 1
@@ -292,10 +297,21 @@ Public Class InformeEconomico
             table.AddCell(montoAfiliacionesTT)
 
             ' OTROS INGRESOS ----------------------------------------
+
             table.AddCell(cellSubTotalOtrosIngresos)
             Dim subTotalOtrosIngresosInt As Integer = Integer.Parse(subTotalOtrosIngresos.Item(0)) + subTotalAportaciones + subTotalAfiliaciones
-            table.AddCell(Convert.ToString(subTotalOtrosIngresosInt))
+            'table.AddCell(Convert.ToString(subTotalOtrosIngresosInt))
 
+            Dim subTotalOtrosIngresosN As Integer = Convert.ToInt32(subTotalOtrosIngresosInt)
+            Dim subTotalOtrosIngresosT As String = subTotalOtrosIngresosN.ToString("N")
+            Dim subTotalOtrosIngresosTT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + subTotalOtrosIngresosT, FontStypeLineas))
+            subTotalOtrosIngresosTT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            subTotalOtrosIngresosTT.Colspan = 1
+            subTotalOtrosIngresosTT.HorizontalAlignment = 0
+
+            table.AddCell(subTotalOtrosIngresosTT)
+
+            ' TOTAL NETO INGRESOS ------------------------------------------
 
             '///// DIV /////
             table.AddCell(divisor)
@@ -304,53 +320,178 @@ Public Class InformeEconomico
             Dim subTotalIngresosInt As Integer = Integer.Parse(subTotalIngresos.Item(0))
             'Dim subTotalOtrosIngresosInt As Integer = Integer.Parse(subTotalOtrosIngresos.Item(0)) + subTotalAportaciones + subTotalAfiliaciones
             Dim sumaTotalIngresos = subTotalIngresosInt + subTotalOtrosIngresosInt
-            table.AddCell(Convert.ToString(sumaTotalIngresos))
+            'table.AddCell(Convert.ToString(sumaTotalIngresos))
+
+            Dim totalNetoIngresosN As Integer = Convert.ToInt32(sumaTotalIngresos)
+            Dim totalNetoIngresosT As String = totalNetoIngresosN.ToString("N")
+            Dim totalNetoIngresosTT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + totalNetoIngresosT, FontStypeLineas))
+            totalNetoIngresosTT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            totalNetoIngresosTT.Colspan = 1
+            totalNetoIngresosTT.HorizontalAlignment = 0
+
+            table.AddCell(totalNetoIngresosTT)
 
             '///// DIV /////
             table.AddCell(divisor)
+            table.AddCell(divisor)
 
 
-            'Gastos
+            ' GASTOS  ---------------------------------------------------------
+
             table.AddCell(cellGastos)
+            ' For Each value In totalGastos
+            'table.AddCell(value)
+            'Next
+
+            Dim contaGastos As Integer = 1
+
             For Each value In totalGastos
-                table.AddCell(value)
+
+                If (contaGastos Mod 2 = 0) Then
+                    'PARES - NUMERO DE INGRESOS
+                    Dim parN As Integer = Convert.ToInt32(value)
+                    Dim parT As String = parN.ToString("N")
+                    Dim parTT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + parT, FontStypeLineas))
+                    parTT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                    parTT.Colspan = 1
+                    parTT.HorizontalAlignment = 0
+
+                    table.AddCell(parTT)
+                Else
+                    ' IMPARES - CUENTAS DE INGRESOS
+                    Dim imparT As PdfPCell = New PdfPCell(New Phrase(value, FontStypeLineas))
+                    imparT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                    imparT.Colspan = 1
+                    imparT.HorizontalAlignment = 1
+
+                    table.AddCell(imparT)
+                End If
+
+                contaGastos = contaGastos + 1
             Next
+
+            ' SUB TOTAL GASTOS  ------------------------------------------
+
             table.AddCell(cellSubTotalGastos)
-            For Each value In subTotalGastos
-                table.AddCell(value)
-            Next
+            'For Each value In subTotalGastos
+            'table.AddCell(value)
+            'Next
+            Dim subTotalGastosN As Integer = Convert.ToInt32(subTotalGastos.Item(0))
+            Dim subTotalGastosT As String = subTotalGastosN.ToString("N")
+            Dim subTotalGastosTT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + subTotalGastosT, FontStypeLineas))
+            subTotalGastosTT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            subTotalGastosTT.Colspan = 1
+            subTotalGastosTT.HorizontalAlignment = 0
+
+            table.AddCell(subTotalGastosTT)
 
             '///// DIV /////
             table.AddCell(divisor)
 
-            'Otros Gastos
+            'Otros Gastos -----------------------------------------------------------------
             table.AddCell(cellOtrosGastos)
+
+            ' For Each value In totalOtrosGastos
+            'table.AddCell(value)
+            'Next
+
+            Dim contaOtrosGastos As Integer = 1
+
             For Each value In totalOtrosGastos
-                table.AddCell(value)
+
+                If (contaOtrosGastos Mod 2 = 0) Then
+                    'PARES - NUMERO DE INGRESOS
+                    Dim parN As Integer = Convert.ToInt32(value)
+                    Dim parT As String = parN.ToString("N")
+                    Dim parTT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + parT, FontStypeLineas))
+                    parTT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                    parTT.Colspan = 1
+                    parTT.HorizontalAlignment = 0
+
+                    table.AddCell(parTT)
+                Else
+                    ' IMPARES - CUENTAS DE INGRESOS
+                    Dim imparT As PdfPCell = New PdfPCell(New Phrase(value, FontStypeLineas))
+                    imparT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                    imparT.Colspan = 1
+                    imparT.HorizontalAlignment = 1
+
+                    table.AddCell(imparT)
+                End If
+
+                contaOtrosGastos = contaOtrosGastos + 1
             Next
+
+            ' SUB TOTAL OTROS EGRESOS ------------------------------------------------------------
+
             table.AddCell(cellSubTotalOtrosGastos)
-            For Each value In subTotalOtrosGastos
-                table.AddCell(value)
-            Next
+            'For Each value In subTotalOtrosGastos
+            'table.AddCell(value)
+            'Next
+
+            Dim subTotalOtrosGastosN As Integer = Convert.ToInt32(subTotalOtrosGastos.Item(0))
+            Dim subTotalOtrosGastosT As String = subTotalOtrosGastosN.ToString("N")
+            Dim subTotalOtrosGastosTT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + subTotalOtrosGastosT, FontStypeLineas))
+            subTotalOtrosGastosTT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            subTotalOtrosGastosTT.Colspan = 1
+            subTotalOtrosGastosTT.HorizontalAlignment = 0
+
+            table.AddCell(subTotalOtrosGastosTT)
 
             '///// DIV /////
             table.AddCell(divisor)
+
+            ' TOTAL NETO GASTOS -----------------------------------------------------------------
 
             table.AddCell(cellTotalNetoGastos)
+
             Dim subTotalGastosInt As Integer = Integer.Parse(subTotalGastos.Item(0))
             Dim subTotalOtrosGastosInt As Integer = Integer.Parse(subTotalOtrosGastos.Item(0))
             Dim sumaTotalGastos = subTotalGastosInt + subTotalOtrosGastosInt
-            table.AddCell(Convert.ToString(sumaTotalGastos))
+
+            'table.AddCell(Convert.ToString(sumaTotalGastos))
+
+            Dim totalNetoGastosT As String = sumaTotalGastos.ToString("N")
+            Dim totalNetoGastosTT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + totalNetoGastosT, FontStypeLineas))
+            totalNetoGastosTT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            totalNetoGastosTT.Colspan = 1
+            totalNetoGastosTT.HorizontalAlignment = 0
+
+            table.AddCell(totalNetoGastosTT)
 
             '///// DIV /////
             table.AddCell(divisor)
+
+            ' FONDOS EN CAJA -------------------------------------------------------------
 
             table.AddCell(cellTotalNetoFondosEnCaja)
             Dim fondosEnCaja As Integer = Integer.Parse(sumaTotalIngresos) - Integer.Parse(sumaTotalGastos)
-            table.AddCell(Convert.ToString(fondosEnCaja))
+            'table.AddCell(Convert.ToString(fondosEnCaja))
+
+            Dim fondosEnCajaT As String = fondosEnCaja.ToString("N")
+            Dim fondosEnCajaTT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + fondosEnCajaT, FontStypeLineas))
+            fondosEnCajaTT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            fondosEnCajaTT.Colspan = 1
+            fondosEnCajaTT.HorizontalAlignment = 0
+
+            table.AddCell(fondosEnCajaTT)
 
             '///// DIV /////
             table.AddCell(divisor)
+
+            ' PARA AGREGAR INGRESOS Y GASTOS EN UNA PAGINA
+
+            '/////// Encabezado //////////
+            pdfDoc.Add(New Paragraph("                                                 Informe Económico del " + fechaDesde + " al " + fechaHasta, FontEncabezadoFechas))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
+            pdfDoc.Add(table)
+            pdfDoc.NewPage()
+            encabezado.encabezado(pdfWrite, pdfDoc)
+            table.DeleteBodyRows()
+
+            ' EXCEDENTES EN LA SIGUIENTE PAGINA
 
             '// EXCEDENTES //
             table.AddCell(cellExcedentes)
@@ -399,13 +540,12 @@ Public Class InformeEconomico
             Dim sumaExcedentesNetosDistribuibles As Integer = excedentesBrutos - sumaTotalReservas
             table.AddCell(Convert.ToString(sumaExcedentesNetosDistribuibles))
 
-            '/////// Encabezado //////////
-            pdfDoc.Add(New Paragraph("                                                 Informe Económico del " + fechaDesde + " al " + fechaHasta, FontEncabezadoFechas))
-            pdfDoc.Add(New Paragraph(""))
-            pdfDoc.Add(New Paragraph(" "))
+
 
             'Agrega todos los valores consultados al documento
             pdfDoc.Add(table)
+
+            'pdfDoc.Add(table)
             pdfDoc.Close()
 
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)

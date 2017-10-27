@@ -4,7 +4,7 @@
 Public Class Print
 
     Private Sub Print_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.CenterToScreen()
     End Sub
 
     Private Sub ButtonPrintAbrirPDF_Click_1(sender As Object, e As EventArgs) Handles ButtonPrintAbrirPDF.Click
