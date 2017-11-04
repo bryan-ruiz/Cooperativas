@@ -26,7 +26,6 @@ Partial Class VIngresosComprobante
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextBox_IngresosFacturaRecibosRE = New System.Windows.Forms.TextBox()
         Me.TextBox_IngresosClienteRE = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox_IngresosDescripcionRE = New System.Windows.Forms.TextBox()
@@ -42,10 +41,11 @@ Partial Class VIngresosComprobante
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ComboBox_IngresosCodigCuentaRE = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Button_IngresosImprimirReciboRE = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox_IngresosFacturaRecibosRE = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -72,13 +72,6 @@ Partial Class VIngresosComprobante
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
         Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
-        '
-        'TextBox_IngresosFacturaRecibosRE
-        '
-        Me.TextBox_IngresosFacturaRecibosRE.Location = New System.Drawing.Point(23, 68)
-        Me.TextBox_IngresosFacturaRecibosRE.Name = "TextBox_IngresosFacturaRecibosRE"
-        Me.TextBox_IngresosFacturaRecibosRE.Size = New System.Drawing.Size(112, 20)
-        Me.TextBox_IngresosFacturaRecibosRE.TabIndex = 2
         '
         'TextBox_IngresosClienteRE
         '
@@ -236,6 +229,17 @@ Partial Class VIngresosComprobante
         Me.GroupBox3.TabIndex = 141
         Me.GroupBox3.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label1.Location = New System.Drawing.Point(1098, 14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 16)
+        Me.Label1.TabIndex = 23
+        Me.Label1.Text = "Total"
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -268,16 +272,12 @@ Partial Class VIngresosComprobante
         Me.Button_IngresosImprimirReciboRE.Text = "Imprimir Recibo"
         Me.Button_IngresosImprimirReciboRE.UseVisualStyleBackColor = True
         '
-        'Label1
+        'TextBox_IngresosFacturaRecibosRE
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(1098, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 16)
-        Me.Label1.TabIndex = 23
-        Me.Label1.Text = "Total"
+        Me.TextBox_IngresosFacturaRecibosRE.Location = New System.Drawing.Point(23, 68)
+        Me.TextBox_IngresosFacturaRecibosRE.Name = "TextBox_IngresosFacturaRecibosRE"
+        Me.TextBox_IngresosFacturaRecibosRE.Size = New System.Drawing.Size(112, 20)
+        Me.TextBox_IngresosFacturaRecibosRE.TabIndex = 2
         '
         'VIngresosComprobante
         '
@@ -307,7 +307,6 @@ Partial Class VIngresosComprobante
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents TextBox_IngresosFacturaRecibosRE As TextBox
     Friend WithEvents TextBox_IngresosClienteRE As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox_IngresosDescripcionRE As TextBox
@@ -327,4 +326,5 @@ Partial Class VIngresosComprobante
     Friend WithEvents Label10 As Label
     Friend WithEvents Button_IngresosImprimirReciboRE As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox_IngresosFacturaRecibosRE As TextBox
 End Class

@@ -35,6 +35,7 @@ Public Class MensajesGlobales
 
     Public numReciboAsociados As Integer = 1
     Public numReciboCertificados As Integer = 1
+    Public numReciboEntradas As Integer = 1
 
 
 End Class

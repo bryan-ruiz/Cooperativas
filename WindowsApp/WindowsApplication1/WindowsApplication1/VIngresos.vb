@@ -43,12 +43,13 @@
         ingreso.calcular3()
     End Sub
 
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Principal.Show()
     End Sub
 
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
-        Me.Hide()
+        Me.Close()
+
     End Sub
 
     'CANTIDAD

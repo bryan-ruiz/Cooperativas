@@ -126,5 +126,8 @@
         gasto.calcular3()
     End Sub
 
+    Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
+        Me.Close()
 
+    End Sub
 End Class

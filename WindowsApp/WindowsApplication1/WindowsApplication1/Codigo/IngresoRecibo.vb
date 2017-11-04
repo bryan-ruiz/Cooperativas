@@ -13,10 +13,10 @@ Public Class IngresoRecibo
 
     Public Sub calcularRecibo()
         Try
-            Dim cantidad As Integer = Integer.Parse(VIngresos.TextBox_IngresosCantidad.Text)
-            Dim precioUnitario As Integer = Integer.Parse(VIngresos.TextBox_IngresosPrecioUnitario.Text)
+            Dim cantidad As Integer = Integer.Parse(VIngresosComprobante.TextBox_IngresosCantidadRE.Text)
+            Dim precioUnitario As Integer = Integer.Parse(VIngresosComprobante.TextBox_IngresosPrecioUnitario.Text)
 
-            VIngresos.TextBox_IngresosTotal.Text = cantidad * precioUnitario
+            VIngresosComprobante.TextBox_IngresosTotal.Text = cantidad * precioUnitario
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
@@ -69,24 +69,14 @@ Public Class IngresoRecibo
     Public Sub generarReporteIngresosRecibo()
 
         Dim valores As Integer
-        kkk
-        Dim fecha As String = VIngresos.DateTimePicker_IngresosFecha.Text
-        Dim factura As String = VIngresos.TextBox_IngresosFacturaRecibos.Text
-        Dim cliente As String = VIngresos.TextBox_IngresosCliente.Text
-        Dim descripcion As String = VIngresos.TextBox_IngresosDescripcion.Text
-        Dim cantidad As String = VIngresos.TextBox_IngresosCantidad.Text
-        Dim precioUnitario As String = VIngresos.TextBox_IngresosPrecioUnitario.Text
-        Dim total As String = VIngresos.TextBox_IngresosTotal.Text
-        Dim codCuenta As String = VIngresos.ComboBox_IngresosCodigCuenta.Text
 
-        Dim fecha2 As String = VIngresos.DateTimePicker_IngresosFecha2.Text
-        Dim factura2 As String = VIngresos.TextBox_IngresosFacturaRecibos2.Text
-        Dim cliente2 As String = VIngresos.TextBox_IngresosCliente2.Text
-        Dim descripcion2 As String = VIngresos.TextBox_IngresosDescripcion2.Text
-        Dim cantidad2 As String = VIngresos.TextBox_IngresosCantidad2.Text
-        Dim precioUnitario2 As String = VIngresos.TextBox_IngresosPrecioUnitario2.Text
-        Dim total2 As String = VIngresos.TextBox_IngresosTotal2.Text
-        Dim codCuenta2 As String = VIngresos.ComboBox_IngresosCodigCuenta2.Text
+        Dim factura As String = VIngresosComprobante.TextBox_IngresosFacturaRecibosRE.Text
+        Dim cliente As String = VIngresosComprobante.TextBox_IngresosClienteRE.Text
+        Dim descripcion As String = VIngresosComprobante.TextBox_IngresosDescripcionRE.Text
+        Dim cantidad As String = VIngresosComprobante.TextBox_IngresosCantidadRE.Text
+        Dim precioUnitario As String = VIngresosComprobante.TextBox_IngresosPrecioUnitarioRE.Text
+        Dim total As String = VIngresosComprobante.TextBox_IngresosTotalRE.Text
+        Dim codCuenta As String = VIngresosComprobante.ComboBox_IngresosCodigCuentaRE.Text
 
         If (factura = "" Or cliente = "" Or descripcion = "" Or cantidad = "" Or precioUnitario = "" Or total = "" Or codCuenta = "" Or estado = False) Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -94,25 +84,101 @@ Public Class IngresoRecibo
         End If
 
         Try
-            Integer.Parse(VIngresos.TextBox_IngresosCantidad.Text)
-            Integer.Parse(VIngresos.TextBox_IngresosPrecioUnitario.Text)
-            Integer.Parse(VIngresos.TextBox_IngresosTotal.Text)
-        Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            Return
-        End Try
 
-        Try
-            BD.ConectarBD()
-            valores = BD.insertarIngresos(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
-            If valores <> 0 Then
-                limpiar()
-                MessageBox.Show(variablesGlobales.datosIngresadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-            Else
-                MessageBox.Show(variablesGlobales.errorIngresandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
             End If
 
-            BD.CerrarConexion()
+            Dim pdfDoc As New Document()
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reciboDeEntrada.pdf", FileMode.Create))
+            pdfDoc.Open()
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
+
+
+            '/////// Encabezado //////////
+            Dim FontStype3 = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
+            pdfDoc.Add(New Paragraph("                                                                                                        N° Recibo " + Convert.ToString(variablesGlobales.numReciboEntradas), FontStype3))
+            pdfDoc.Add(New Paragraph(" "))
+
+            Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.WHITE)
+
+            Dim table As PdfPTable = New PdfPTable(7)
+
+            Dim descripcionR As PdfPCell = New PdfPCell(New Phrase("N° Factura: ", FontStype))
+            descripcionR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            descripcionR.Colspan = 1
+            descripcionR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+            Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("# Asociado: ", FontStype))
+            numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            numAsociadoR.Colspan = 1
+            numAsociadoR.HorizontalAlignment = 1
+
+            Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre Completo: ", FontStype))
+            nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            nombreR.Colspan = 2
+            nombreR.HorizontalAlignment = 1
+
+            Dim totalR As PdfPCell = New PdfPCell(New Phrase("Total: ", FontStype))
+            totalR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            totalR.Colspan = 1
+            totalR.HorizontalAlignment = 1
+
+
+            Dim FontStype2 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
+
+            Dim descripcionT As PdfPCell = New PdfPCell(New Phrase("Recibo de matrícula", FontStype2))
+            descripcionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            descripcionT.Colspan = 1
+            descripcionT.HorizontalAlignment = 1
+            'descripcionT.FixedHeight = 50.0F
+
+            Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(numAsociado, FontStype2))
+            numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            numAsociadoT.Colspan = 1
+            numAsociadoT.HorizontalAlignment = 1
+
+            Dim nombreTotal As String = nombre + " " + apellidoUno + " " + apellidoDos
+            Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
+            nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            nombreT.Colspan = 2
+            nombreT.HorizontalAlignment = 1
+
+            Dim subTotalInt As Integer = Convert.ToInt32(cuota)
+            Dim totalT As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt.ToString("N"), FontStype2))
+            totalT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            totalT.Colspan = 1
+            totalT.HorizontalAlignment = 1
+
+            table.AddCell(descripcionR)
+            table.AddCell(numAsociadoR)
+            table.AddCell(nombreR)
+            table.AddCell(totalR)
+
+            table.AddCell(descripcionT)
+            table.AddCell(numAsociadoT)
+            table.AddCell(nombreT)
+            table.AddCell(totalT)
+
+            pdfDoc.Add(table)
+
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
+
+            pdfDoc.Add(New Paragraph("                        Firma del Asociado: _________________________________________", FontStype3))
+            pdfDoc.Add(New Paragraph(" "))
+
+
+            pdfDoc.Close()
+
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+            variablesGlobales.numReciboEntradas = variablesGlobales.numReciboEntradas + 1
+
+            Print.Show()
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
