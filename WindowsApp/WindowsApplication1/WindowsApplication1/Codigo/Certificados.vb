@@ -337,5 +337,263 @@ Public Class Certificados
 
     End Sub
 
+    ' Recibo o comprobante de certificados nuevo
+    Public Sub imprimirComprobanteCertificadosNew()
+
+        Dim cedulaOnumAsociado As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
+        Dim nombre As String = VCertificados.CertificadosTextboxNombre.Text
+        Dim numAsociado As String = VCertificados.CertificadosTextboxNumAsociado.Text
+        Dim tracto1 As String = VCertificados.CertificadosTextboxTracto1.Text
+        Dim tracto2 As String = VCertificados.CertificadosTextboxTracto2.Text
+        Dim tracto3 As String = VCertificados.CertificadosTextboxTracto3.Text
+        Dim tracto4 As String = VCertificados.CertificadosTextboxTracto4.Text
+        Dim tracto5 As String = VCertificados.CertificadosTextboxTracto5.Text
+        Dim tracto6 As String = VCertificados.CertificadosTextboxTracto6.Text
+        Dim tracto7 As String = VCertificados.CertificadosTextboxTracto7.Text
+        Dim tracto8 As String = VCertificados.CertificadosTextboxTracto8.Text
+        Dim tracto9 As String = VCertificados.CertificadosTextboxTracto9.Text
+        Dim tracto10 As String = VCertificados.CertificadosTextboxTracto10.Text
+        Dim acum As String = VCertificados.CertificadosTextboxAcumAnterior.Text
+        Dim total As String = VCertificados.CertificadosTextboxTotalPeriodo.Text
+
+        If (cedulaOnumAsociado = "" Or nombre = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Else
+            Try
+                If Not Directory.Exists(variablesGlobales.folderPath) Then
+                    Directory.CreateDirectory(variablesGlobales.folderPath)
+                End If
+
+                Dim pdfDoc As New Document()
+                Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reciboCertificados.pdf", FileMode.Create))
+
+                pdfDoc.Open()
+                encabezado.consultarDatos()
+                encabezado.encabezado(pdfWrite, pdfDoc)
+
+                '/////// Encabezado //////////
+                Dim FontStype3 = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
+                pdfDoc.Add(New Paragraph("                                                                                                        N° Recibo " + Convert.ToString(variablesGlobales.numReciboCertificados), FontStype3))
+                pdfDoc.Add(New Paragraph(" "))
+
+                Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.WHITE)
+
+                'para el encabezado
+                Dim table2 As PdfPTable = New PdfPTable(3)
+
+                'para certificados 1-5
+                Dim table As PdfPTable = New PdfPTable(5)
+
+                'para certificados 6-10
+                Dim table3 As PdfPTable = New PdfPTable(5)
+
+                Dim descripcionR As PdfPCell = New PdfPCell(New Phrase("Descripción: ", FontStype))
+                descripcionR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                descripcionR.Colspan = 1
+                descripcionR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+                Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("# Asociado: ", FontStype))
+                numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                numAsociadoR.Colspan = 1
+                numAsociadoR.HorizontalAlignment = 1
+
+                Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre Completo: ", FontStype))
+                nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                nombreR.Colspan = 2
+                nombreR.HorizontalAlignment = 1
+
+                Dim total1R As PdfPCell = New PdfPCell(New Phrase("1° Tracto: ", FontStype))
+                total1R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total1R.Colspan = 1
+                total1R.HorizontalAlignment = 1
+
+                Dim total2R As PdfPCell = New PdfPCell(New Phrase("2° Tracto: ", FontStype))
+                total2R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total2R.Colspan = 1
+                total2R.HorizontalAlignment = 1
+
+                Dim total3R As PdfPCell = New PdfPCell(New Phrase("3° Tracto: ", FontStype))
+                total3R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total3R.Colspan = 1
+                total3R.HorizontalAlignment = 1
+
+                Dim total4R As PdfPCell = New PdfPCell(New Phrase("4° Tracto: ", FontStype))
+                total4R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total4R.Colspan = 1
+                total4R.HorizontalAlignment = 1
+
+                Dim total5R As PdfPCell = New PdfPCell(New Phrase("5° Tracto: ", FontStype))
+                total5R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total5R.Colspan = 1
+                total5R.HorizontalAlignment = 1
+
+                Dim total6R As PdfPCell = New PdfPCell(New Phrase("6° Tracto: ", FontStype))
+                total6R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total6R.Colspan = 1
+                total6R.HorizontalAlignment = 1
+
+                Dim total7R As PdfPCell = New PdfPCell(New Phrase("7° Tracto: ", FontStype))
+                total7R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total7R.Colspan = 1
+                total7R.HorizontalAlignment = 1
+
+                Dim total8R As PdfPCell = New PdfPCell(New Phrase("8° Tracto: ", FontStype))
+                total8R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total8R.Colspan = 1
+                total8R.HorizontalAlignment = 1
+
+                Dim total9R As PdfPCell = New PdfPCell(New Phrase("9° Tracto: ", FontStype))
+                total9R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total9R.Colspan = 1
+                total9R.HorizontalAlignment = 1
+
+                Dim total10R As PdfPCell = New PdfPCell(New Phrase("10° Tracto: ", FontStype))
+                total10R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                total10R.Colspan = 1
+                total10R.HorizontalAlignment = 1
+
+
+                Dim FontStype2 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
+
+                Dim descripcionT As PdfPCell = New PdfPCell(New Phrase("Recibo de Certificados", FontStype2))
+                descripcionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                descripcionT.Colspan = 1
+                descripcionT.HorizontalAlignment = 1
+                'descripcionT.FixedHeight = 50.0F
+
+                Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(numAsociado, FontStype2))
+                numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                numAsociadoT.Colspan = 1
+                numAsociadoT.HorizontalAlignment = 1
+
+                Dim nombreTotal As String = nombre
+                Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
+                nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                nombreT.Colspan = 2
+                nombreT.HorizontalAlignment = 1
+
+                Dim subTotalInt1 As Integer = Convert.ToInt32(tracto1)
+                Dim totalT1 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt1.ToString("N"), FontStype2))
+                totalT1.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT1.Colspan = 1
+                totalT1.HorizontalAlignment = 1
+
+                Dim subTotalInt2 As Integer = Convert.ToInt32(tracto2)
+                Dim totalT2 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt2.ToString("N"), FontStype2))
+                totalT2.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT2.Colspan = 1
+                totalT2.HorizontalAlignment = 1
+
+                Dim subTotalInt3 As Integer = Convert.ToInt32(tracto3)
+                Dim totalT3 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt3.ToString("N"), FontStype2))
+                totalT3.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT3.Colspan = 1
+                totalT3.HorizontalAlignment = 1
+
+                Dim subTotalInt4 As Integer = Convert.ToInt32(tracto4)
+                Dim totalT4 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt4.ToString("N"), FontStype2))
+                totalT4.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT4.Colspan = 1
+                totalT4.HorizontalAlignment = 1
+
+                Dim subTotalInt5 As Integer = Convert.ToInt32(tracto5)
+                Dim totalT5 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt5.ToString("N"), FontStype2))
+                totalT5.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT5.Colspan = 1
+                totalT5.HorizontalAlignment = 1
+
+                Dim subTotalInt6 As Integer = Convert.ToInt32(tracto6)
+                Dim totalT6 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt6.ToString("N"), FontStype2))
+                totalT6.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT6.Colspan = 1
+                totalT6.HorizontalAlignment = 1
+
+                Dim subTotalInt7 As Integer = Convert.ToInt32(tracto7)
+                Dim totalT7 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt7.ToString("N"), FontStype2))
+                totalT7.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT7.Colspan = 1
+                totalT7.HorizontalAlignment = 1
+
+                Dim subTotalInt8 As Integer = Convert.ToInt32(tracto8)
+                Dim totalT8 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt8.ToString("N"), FontStype2))
+                totalT8.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT8.Colspan = 1
+                totalT8.HorizontalAlignment = 1
+
+                Dim subTotalInt9 As Integer = Convert.ToInt32(tracto9)
+                Dim totalT9 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt9.ToString("N"), FontStype2))
+                totalT9.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT9.Colspan = 1
+                totalT9.HorizontalAlignment = 1
+
+                Dim subTotalInt10 As Integer = Convert.ToInt32(tracto10)
+                Dim totalT10 As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt10.ToString("N"), FontStype2))
+                totalT10.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT10.Colspan = 1
+                totalT10.HorizontalAlignment = 1
+
+                table2.AddCell(descripcionR)
+                table2.AddCell(numAsociadoR)
+                table2.AddCell(nombreR)
+
+                table2.AddCell(descripcionT)
+                table2.AddCell(numAsociadoT)
+                table2.AddCell(nombreT)
+
+                table.AddCell(total1R)
+                table.AddCell(total2R)
+                table.AddCell(total3R)
+                table.AddCell(total4R)
+                table.AddCell(total5R)
+
+                table3.AddCell(total6R)
+                table3.AddCell(total7R)
+                table3.AddCell(total8R)
+                table3.AddCell(total9R)
+                table3.AddCell(total10R)
+
+                table.AddCell(totalT1)
+                table.AddCell(totalT2)
+                table.AddCell(totalT3)
+                table.AddCell(totalT4)
+                table.AddCell(totalT5)
+
+                table3.AddCell(totalT6)
+                table3.AddCell(totalT7)
+                table3.AddCell(totalT8)
+                table3.AddCell(totalT9)
+                table3.AddCell(totalT10)
+
+
+
+                'Agrega todos los valores consultados al documento
+                pdfDoc.Add(table2)
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(New Paragraph("                        Información de los certificados pagados a la fecha", FontStype3))
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(table)
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(table3)
+
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(New Paragraph(" "))
+
+
+                pdfDoc.Add(New Paragraph("                        Firma del Asociado: _________________________________________", FontStype3))
+                pdfDoc.Add(New Paragraph(" "))
+
+                pdfDoc.Close()
+
+                MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                variablesGlobales.numReciboCertificados = variablesGlobales.numReciboCertificados + 1
+                Print.Show()
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            End Try
+        End If
+    End Sub
+
 
 End Class

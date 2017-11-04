@@ -845,74 +845,88 @@ Public Class Socios
                 encabezado.consultarDatos()
                 encabezado.encabezado(pdfWrite, pdfDoc)
 
-                Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.WHITE)
 
+                '/////// Encabezado //////////
+                Dim FontStype3 = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
+                pdfDoc.Add(New Paragraph("                                                                                                        N° Recibo " + Convert.ToString(variablesGlobales.numReciboAsociados), FontStype3))
+                pdfDoc.Add(New Paragraph(" "))
+
+                Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.WHITE)
 
                 Dim table As PdfPTable = New PdfPTable(5)
 
-                Dim cedulaR As PdfPCell = New PdfPCell(New Phrase("Cédula: ", FontStype))
-                cedulaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#0489B1"))
-                cedulaR.Colspan = 1
-                cedulaR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+                Dim descripcionR As PdfPCell = New PdfPCell(New Phrase("Descripción: ", FontStype))
+                descripcionR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                descripcionR.Colspan = 1
+                descripcionR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
 
                 Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("# Asociado: ", FontStype))
-                numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#0489B1"))
+                numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 numAsociadoR.Colspan = 1
                 numAsociadoR.HorizontalAlignment = 1
 
-                Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre: ", FontStype))
-                nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#0489B1"))
+                Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre Completo: ", FontStype))
+                nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 nombreR.Colspan = 2
                 nombreR.HorizontalAlignment = 1
 
-                Dim cuotaR As PdfPCell = New PdfPCell(New Phrase("Cuota: ", FontStype))
-                cuotaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#0489B1"))
-                cuotaR.Colspan = 1
-                cuotaR.HorizontalAlignment = 1
+                Dim totalR As PdfPCell = New PdfPCell(New Phrase("Total: ", FontStype))
+                totalR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                totalR.Colspan = 1
+                totalR.HorizontalAlignment = 1
 
 
                 Dim FontStype2 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
 
-                Dim cedulaTotalR As PdfPCell = New PdfPCell(New Phrase(cedulaTotal, FontStype2))
-                cedulaTotalR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
-                cedulaTotalR.Colspan = 1
-                cedulaTotalR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+                Dim descripcionT As PdfPCell = New PdfPCell(New Phrase("Recibo de matrícula", FontStype2))
+                descripcionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                descripcionT.Colspan = 1
+                descripcionT.HorizontalAlignment = 1
+                'descripcionT.FixedHeight = 50.0F
 
                 Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(numAsociado, FontStype2))
-                numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
+                numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 numAsociadoT.Colspan = 1
                 numAsociadoT.HorizontalAlignment = 1
 
                 Dim nombreTotal As String = nombre + " " + apellidoUno + " " + apellidoDos
                 Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
-                nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
+                nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 nombreT.Colspan = 2
                 nombreT.HorizontalAlignment = 1
 
-                Dim cuotaT As PdfPCell = New PdfPCell(New Phrase(cuota, FontStype2))
-                cuotaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml("#D8D8D8"))
-                cuotaT.Colspan = 1
-                cuotaT.HorizontalAlignment = 1
+                Dim subTotalInt As Integer = Convert.ToInt32(cuota)
+                Dim totalT As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt.ToString("N"), FontStype2))
+                totalT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT.Colspan = 1
+                totalT.HorizontalAlignment = 1
 
-
-                table.AddCell(cedulaR)
+                table.AddCell(descripcionR)
                 table.AddCell(numAsociadoR)
                 table.AddCell(nombreR)
-                table.AddCell(cuotaR)
+                table.AddCell(totalR)
 
-                table.AddCell(cedulaTotalR)
+                table.AddCell(descripcionT)
                 table.AddCell(numAsociadoT)
                 table.AddCell(nombreT)
-                table.AddCell(cuotaT)
+                table.AddCell(totalT)
 
-                ' pdfDoc.Add(New Paragraph("Cédula:   " + cedulaTotal, FontStype))
-
-                'Agrega todos los valores consultados al documento
                 pdfDoc.Add(table)
+
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(New Paragraph(" "))
+
+
+                pdfDoc.Add(New Paragraph("                        Firma del Asociado: _________________________________________", FontStype3))
+                pdfDoc.Add(New Paragraph(" "))
+
 
                 pdfDoc.Close()
 
                 MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                variablesGlobales.numReciboAsociados = variablesGlobales.numReciboAsociados + 1
 
                 Print.Show()
 

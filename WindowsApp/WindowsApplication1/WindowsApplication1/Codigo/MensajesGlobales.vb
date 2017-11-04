@@ -33,5 +33,8 @@ Public Class MensajesGlobales
     Public colorInformeEconomicoGastoss As String = "#CB4335"   '"#CA6F1E"
     Public colorInformeEconomicoExcedentes As String = "#2E86C1"
 
+    Public numReciboAsociados As Integer = 1
+    Public numReciboCertificados As Integer = 1
+
 
 End Class

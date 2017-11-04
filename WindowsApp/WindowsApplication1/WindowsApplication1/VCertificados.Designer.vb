@@ -103,6 +103,7 @@ Partial Class VCertificados
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.CertificadosTextboxNombre = New System.Windows.Forms.TextBox()
+        Me.ImprimirComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,6 +137,7 @@ Partial Class VCertificados
         '
         'ComprobanteToolStripMenuItem
         '
+        Me.ComprobanteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImprimirComprobanteToolStripMenuItem})
         Me.ComprobanteToolStripMenuItem.Name = "ComprobanteToolStripMenuItem"
         Me.ComprobanteToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.ComprobanteToolStripMenuItem.Text = "Comprobante"
@@ -1023,6 +1025,12 @@ Partial Class VCertificados
         Me.CertificadosTextboxNombre.Size = New System.Drawing.Size(289, 20)
         Me.CertificadosTextboxNombre.TabIndex = 63
         '
+        'ImprimirComprobanteToolStripMenuItem
+        '
+        Me.ImprimirComprobanteToolStripMenuItem.Name = "ImprimirComprobanteToolStripMenuItem"
+        Me.ImprimirComprobanteToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.ImprimirComprobanteToolStripMenuItem.Text = "Imprimir Comprobante"
+        '
         'VCertificados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1134,4 +1142,5 @@ Partial Class VCertificados
     Friend WithEvents CertificadosButtonSaveTracto7 As Button
     Friend WithEvents CertificadosButtonSaveTracto6 As Button
     Friend WithEvents Label25 As Label
+    Friend WithEvents ImprimirComprobanteToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -351,8 +351,8 @@ Partial Class VAsociados
         'ImprimirReciboActualToolStripMenuItem
         '
         Me.ImprimirReciboActualToolStripMenuItem.Name = "ImprimirReciboActualToolStripMenuItem"
-        Me.ImprimirReciboActualToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
-        Me.ImprimirReciboActualToolStripMenuItem.Text = "Imprimir Recibo Actual"
+        Me.ImprimirReciboActualToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.ImprimirReciboActualToolStripMenuItem.Text = "Imprimir Comprobante"
         '
         'ToolStripMenuItem1
         '

@@ -155,4 +155,8 @@
     Private Sub VCertificados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         certificados.consultarFechasLimite()
     End Sub
+
+    Private Sub ImprimirComprobanteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirComprobanteToolStripMenuItem.Click
+        certificados.imprimirComprobanteCertificadosNew()
+    End Sub
 End Class

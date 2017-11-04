@@ -100,6 +100,7 @@
     <Compile Include="Codigo\Gastos.vb" />
     <Compile Include="Codigo\InformeEconomico.vb" />
     <Compile Include="Codigo\Ingreso.vb" />
+    <Compile Include="Codigo\IngresoRecibo.vb" />
     <Compile Include="Codigo\MensajesGlobales.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="Codigo\Usuarios.vb" />
@@ -144,6 +145,12 @@
       <DependentUpon>VCertificados.vb</DependentUpon>
     </Compile>
     <Compile Include="VCertificados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIngresosComprobante.Designer.vb">
+      <DependentUpon>VIngresosComprobante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VIngresosComprobante.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VSignIn.Designer.vb">
@@ -244,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VCertificados.resx">
       <DependentUpon>VCertificados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIngresosComprobante.resx">
+      <DependentUpon>VIngresosComprobante.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VSignIn.resx">
       <DependentUpon>VSignIn.vb</DependentUpon>

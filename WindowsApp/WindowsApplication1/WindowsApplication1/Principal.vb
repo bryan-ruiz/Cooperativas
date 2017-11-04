@@ -53,7 +53,7 @@
         Else
 
             Try
-                VSignIn.Close()
+
                 VIngresos.Close()
                 VIngresosReporte.Close()
                 VGastos.Close()
@@ -68,6 +68,7 @@
                 'VConfiguracionCodigoCuenta.Close()
                 VComites.Close()
                 VCertificados.Close()
+                VSignIn.Close()
 
                 Me.Close()
 
