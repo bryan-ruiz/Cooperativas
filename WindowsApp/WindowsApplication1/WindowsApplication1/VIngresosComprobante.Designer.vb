@@ -40,12 +40,12 @@ Partial Class VIngresosComprobante
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ComboBox_IngresosCodigCuentaRE = New System.Windows.Forms.ComboBox()
+        Me.TextBox_IngresosFacturaRecibosRE = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Button_IngresosImprimirReciboRE = New System.Windows.Forms.Button()
-        Me.TextBox_IngresosFacturaRecibosRE = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -70,7 +70,7 @@ Partial Class VIngresosComprobante
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'TextBox_IngresosClienteRE
@@ -213,6 +213,13 @@ Partial Class VIngresosComprobante
         Me.ComboBox_IngresosCodigCuentaRE.Size = New System.Drawing.Size(181, 27)
         Me.ComboBox_IngresosCodigCuentaRE.TabIndex = 4
         '
+        'TextBox_IngresosFacturaRecibosRE
+        '
+        Me.TextBox_IngresosFacturaRecibosRE.Location = New System.Drawing.Point(23, 68)
+        Me.TextBox_IngresosFacturaRecibosRE.Name = "TextBox_IngresosFacturaRecibosRE"
+        Me.TextBox_IngresosFacturaRecibosRE.Size = New System.Drawing.Size(112, 20)
+        Me.TextBox_IngresosFacturaRecibosRE.TabIndex = 2
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label1)
@@ -271,13 +278,6 @@ Partial Class VIngresosComprobante
         Me.Button_IngresosImprimirReciboRE.TabIndex = 30
         Me.Button_IngresosImprimirReciboRE.Text = "Imprimir Recibo"
         Me.Button_IngresosImprimirReciboRE.UseVisualStyleBackColor = True
-        '
-        'TextBox_IngresosFacturaRecibosRE
-        '
-        Me.TextBox_IngresosFacturaRecibosRE.Location = New System.Drawing.Point(23, 68)
-        Me.TextBox_IngresosFacturaRecibosRE.Name = "TextBox_IngresosFacturaRecibosRE"
-        Me.TextBox_IngresosFacturaRecibosRE.Size = New System.Drawing.Size(112, 20)
-        Me.TextBox_IngresosFacturaRecibosRE.TabIndex = 2
         '
         'VIngresosComprobante
         '

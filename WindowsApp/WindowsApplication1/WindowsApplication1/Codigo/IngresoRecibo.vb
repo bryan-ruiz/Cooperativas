@@ -10,19 +10,17 @@ Public Class IngresoRecibo
     Dim encabezado As EncabezadoClase = New EncabezadoClase
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
-
     Public Sub calcularRecibo()
         Try
             Dim cantidad As Integer = Integer.Parse(VIngresosComprobante.TextBox_IngresosCantidadRE.Text)
-            Dim precioUnitario As Integer = Integer.Parse(VIngresosComprobante.TextBox_IngresosPrecioUnitario.Text)
+            Dim precioUnitario As Integer = Integer.Parse(VIngresosComprobante.TextBox_IngresosPrecioUnitarioRE.Text)
 
-            VIngresosComprobante.TextBox_IngresosTotal.Text = cantidad * precioUnitario
+            VIngresosComprobante.TextBox_IngresosTotalRE.Text = cantidad * precioUnitario
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
     End Sub
-
 
     Public Sub obtenerDatosSeleccionarCuentaRecibo()
         Dim valores As List(Of CuentaClase)
@@ -32,23 +30,23 @@ Public Class IngresoRecibo
             valores = BD.consultarCuentas()
             If valores.Count <> 0 Then
                 estado = True
-                VIngresosComprobante.ComboBox_IngresosCodigCuenta.Items.Clear()
+                VIngresosComprobante.ComboBox_IngresosCodigCuentaRE.Items.Clear()
                 Dim contador As Integer = 0
                 Dim conta As Integer = 0
                 While valores.Count > contador
                     If valores(contador).tipo = "Ingreso" Then
-                        VIngresosComprobante.ComboBox_IngresosCodigCuenta.Items.Add(valores(contador).codDescripcion)
+                        VIngresosComprobante.ComboBox_IngresosCodigCuentaRE.Items.Add(valores(contador).codDescripcion)
                         conta += 1
                     End If
                     contador = contador + 1
                 End While
                 If conta = 0 Then
                     estado = False
-                    VIngresosComprobante.ComboBox_IngresosCodigCuenta.Items.Add("No se poseen cuentas")
+                    VIngresosComprobante.ComboBox_IngresosCodigCuentaRE.Items.Add("No se poseen cuentas")
                 End If
             Else
                 estado = False
-                VIngresosComprobante.ComboBox_IngresosCodigCuenta.Items.Add("No se poseen cuentas")
+                VIngresosComprobante.ComboBox_IngresosCodigCuentaRE.Items.Add("No se poseen cuentas")
             End If
 
             BD.CerrarConexion()
@@ -58,18 +56,20 @@ Public Class IngresoRecibo
         End Try
     End Sub
 
-
+    'limpiar
     Public Sub limpiarRecibo()
-        VIngresosComprobante.TextBox_IngresosFacturaRecibos.Text = ""
-        gggg
+        VIngresosComprobante.TextBox_IngresosFacturaRecibosRE.Text = ""
+        VIngresosComprobante.TextBox_IngresosClienteRE.Text = ""
+        VIngresosComprobante.TextBox_IngresosDescripcionRE.Text = ""
+        VIngresosComprobante.TextBox_IngresosCantidadRE.Text = ""
+        VIngresosComprobante.TextBox_IngresosPrecioUnitarioRE.Text = ""
+        VIngresosComprobante.TextBox_IngresosTotalRE.Text = ""
     End Sub
 
-
-
+    'REPORTE INGRESOS RECIBO
     Public Sub generarReporteIngresosRecibo()
 
         Dim valores As Integer
-
         Dim factura As String = VIngresosComprobante.TextBox_IngresosFacturaRecibosRE.Text
         Dim cliente As String = VIngresosComprobante.TextBox_IngresosClienteRE.Text
         Dim descripcion As String = VIngresosComprobante.TextBox_IngresosDescripcionRE.Text
@@ -84,17 +84,18 @@ Public Class IngresoRecibo
         End If
 
         Try
+            BD.ConectarBD()
+            variablesGlobales.numReciboEntradas = Convert.ToInt32(BD.obtenerReciboXTipo("ingreso").Item(0))
 
             If Not Directory.Exists(variablesGlobales.folderPath) Then
                 Directory.CreateDirectory(variablesGlobales.folderPath)
             End If
 
             Dim pdfDoc As New Document()
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reciboDeEntrada.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reciboDeEntradas.pdf", FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
-
 
             '/////// Encabezado //////////
             Dim FontStype3 = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
@@ -102,63 +103,71 @@ Public Class IngresoRecibo
             pdfDoc.Add(New Paragraph(" "))
 
             Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.WHITE)
+            Dim table As PdfPTable = New PdfPTable(9)
 
-            Dim table As PdfPTable = New PdfPTable(7)
+            Dim facturaR As PdfPCell = New PdfPCell(New Phrase("N° Factura: ", FontStype))
+            facturaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            facturaR.Colspan = 1
+            facturaR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
 
-            Dim descripcionR As PdfPCell = New PdfPCell(New Phrase("N° Factura: ", FontStype))
+            Dim clienteR As PdfPCell = New PdfPCell(New Phrase("Cliente: ", FontStype))
+            clienteR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            clienteR.Colspan = 2
+            clienteR.HorizontalAlignment = 1
+
+            Dim codigoCuentaR As PdfPCell = New PdfPCell(New Phrase("Código Cuenta: ", FontStype))
+            codigoCuentaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            codigoCuentaR.Colspan = 2
+            codigoCuentaR.HorizontalAlignment = 1
+
+            Dim descripcionR As PdfPCell = New PdfPCell(New Phrase("Descripción: ", FontStype))
             descripcionR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
-            descripcionR.Colspan = 1
-            descripcionR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
-
-            Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("# Asociado: ", FontStype))
-            numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
-            numAsociadoR.Colspan = 1
-            numAsociadoR.HorizontalAlignment = 1
-
-            Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre Completo: ", FontStype))
-            nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
-            nombreR.Colspan = 2
-            nombreR.HorizontalAlignment = 1
+            descripcionR.Colspan = 2
+            descripcionR.HorizontalAlignment = 1
 
             Dim totalR As PdfPCell = New PdfPCell(New Phrase("Total: ", FontStype))
             totalR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
-            totalR.Colspan = 1
+            totalR.Colspan = 2
             totalR.HorizontalAlignment = 1
-
 
             Dim FontStype2 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
 
-            Dim descripcionT As PdfPCell = New PdfPCell(New Phrase("Recibo de matrícula", FontStype2))
+            Dim facturaT As PdfPCell = New PdfPCell(New Phrase(factura, FontStype2))
+            facturaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            facturaT.Colspan = 1
+            facturaT.HorizontalAlignment = 1
+
+            Dim clienteT As PdfPCell = New PdfPCell(New Phrase(cliente, FontStype2))
+            clienteT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            clienteT.Colspan = 2
+            clienteT.HorizontalAlignment = 1
+
+            Dim codigoCuentaT As PdfPCell = New PdfPCell(New Phrase(codCuenta, FontStype2))
+            codigoCuentaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            codigoCuentaT.Colspan = 2
+            codigoCuentaT.HorizontalAlignment = 1
+
+            Dim descripcionT As PdfPCell = New PdfPCell(New Phrase(descripcion, FontStype2))
             descripcionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-            descripcionT.Colspan = 1
+            descripcionT.Colspan = 2
             descripcionT.HorizontalAlignment = 1
-            'descripcionT.FixedHeight = 50.0F
 
-            Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(numAsociado, FontStype2))
-            numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-            numAsociadoT.Colspan = 1
-            numAsociadoT.HorizontalAlignment = 1
-
-            Dim nombreTotal As String = nombre + " " + apellidoUno + " " + apellidoDos
-            Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
-            nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-            nombreT.Colspan = 2
-            nombreT.HorizontalAlignment = 1
-
-            Dim subTotalInt As Integer = Convert.ToInt32(cuota)
+            Dim subTotalInt As Integer = Convert.ToInt32(total)
             Dim totalT As PdfPCell = New PdfPCell(New Phrase("¢ " + subTotalInt.ToString("N"), FontStype2))
             totalT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-            totalT.Colspan = 1
+            totalT.Colspan = 2
             totalT.HorizontalAlignment = 1
 
+            table.AddCell(facturaR)
+            table.AddCell(clienteR)
+            table.AddCell(codigoCuentaR)
             table.AddCell(descripcionR)
-            table.AddCell(numAsociadoR)
-            table.AddCell(nombreR)
             table.AddCell(totalR)
 
+            table.AddCell(facturaT)
+            table.AddCell(clienteT)
+            table.AddCell(codigoCuentaT)
             table.AddCell(descripcionT)
-            table.AddCell(numAsociadoT)
-            table.AddCell(nombreT)
             table.AddCell(totalT)
 
             pdfDoc.Add(table)
@@ -176,9 +185,12 @@ Public Class IngresoRecibo
 
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
-            variablesGlobales.numReciboEntradas = variablesGlobales.numReciboEntradas + 1
+            'Incrementa el num recibo ingreso en la BD
+            BD.actualizarReciboXTipo("ingreso", variablesGlobales.numReciboEntradas + 1)
 
             Print.Show()
+
+            limpiarRecibo()
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.ToString)

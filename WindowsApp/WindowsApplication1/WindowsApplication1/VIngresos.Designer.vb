@@ -27,6 +27,7 @@ Partial Class VIngresos
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImprimirComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformeEconómicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -96,16 +97,22 @@ Partial Class VIngresos
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'ComprobanteToolStripMenuItem
         '
-        Me.ComprobanteToolStripMenuItem.Enabled = False
+        Me.ComprobanteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImprimirComprobanteToolStripMenuItem})
         Me.ComprobanteToolStripMenuItem.Name = "ComprobanteToolStripMenuItem"
         Me.ComprobanteToolStripMenuItem.ShowShortcutKeys = False
         Me.ComprobanteToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.ComprobanteToolStripMenuItem.Text = "Comprobante"
+        '
+        'ImprimirComprobanteToolStripMenuItem
+        '
+        Me.ImprimirComprobanteToolStripMenuItem.Name = "ImprimirComprobanteToolStripMenuItem"
+        Me.ImprimirComprobanteToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.ImprimirComprobanteToolStripMenuItem.Text = "Imprimir Comprobante"
         '
         'ReporteToolStripMenuItem
         '
@@ -600,4 +607,5 @@ Partial Class VIngresos
     Friend WithEvents TextBox_IngresosPrecioUnitario3 As TextBox
     Friend WithEvents TextBox_IngresosTotal3 As TextBox
     Friend WithEvents Button_IngresosCalcularTotal3 As Button
+    Friend WithEvents ImprimirComprobanteToolStripMenuItem As ToolStripMenuItem
 End Class

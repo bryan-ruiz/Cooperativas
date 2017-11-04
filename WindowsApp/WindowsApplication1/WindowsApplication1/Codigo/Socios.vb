@@ -835,6 +835,9 @@ Public Class Socios
         Else
             Try
 
+                BD.ConectarBD()
+                variablesGlobales.numReciboAsociados = Convert.ToInt32(BD.obtenerReciboXTipo("asociado").Item(0))
+
                 If Not Directory.Exists(variablesGlobales.folderPath) Then
                     Directory.CreateDirectory(variablesGlobales.folderPath)
                 End If
@@ -926,7 +929,8 @@ Public Class Socios
 
                 MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
-                variablesGlobales.numReciboAsociados = variablesGlobales.numReciboAsociados + 1
+                'Incrementa el num recibo ingreso en la BD
+                BD.actualizarReciboXTipo("asociado", variablesGlobales.numReciboAsociados + 1)
 
                 Print.Show()
 

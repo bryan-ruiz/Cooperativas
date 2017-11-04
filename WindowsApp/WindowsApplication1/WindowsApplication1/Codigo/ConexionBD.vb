@@ -1155,4 +1155,65 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    'obtiene el num del tipo de recibo 
+    Function obtenerReciboXTipo(ByVal tipoRecibo As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            If (tipoRecibo = "ingreso") Then
+                SQL = " SELECT RECIBOS.numReciboIngreso FROM RECIBOS"
+            End If
+            If (tipoRecibo = "asociado") Then
+                SQL = " SELECT RECIBOS.numReciboAsociado FROM RECIBOS"
+            End If
+            If (tipoRecibo = "certificado") Then
+                SQL = " SELECT RECIBOS.numReciboCertificado FROM RECIBOS"
+            End If
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    Function actualizarReciboXTipo(ByVal tipoRecibo As String, ByVal numero As Integer) As Integer
+        Dim MyList As Integer = 0
+        Try
+            If (tipoRecibo = "ingreso") Then
+                SQL = "UPDATE [RECIBOS] SET numReciboIngreso = '" & numero & "' "
+            End If
+            If (tipoRecibo = "asociado") Then
+                SQL = "UPDATE [RECIBOS] SET numReciboAsociado = '" & numero & "' "
+            End If
+            If (tipoRecibo = "certificado") Then
+                SQL = "UPDATE [RECIBOS] SET numReciboCertificado = '" & numero & "' "
+            End If
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
 End Class

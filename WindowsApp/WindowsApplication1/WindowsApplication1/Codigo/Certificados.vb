@@ -360,6 +360,9 @@ Public Class Certificados
             MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
+                BD.ConectarBD()
+                variablesGlobales.numReciboCertificados = Convert.ToInt32(BD.obtenerReciboXTipo("certificado").Item(0))
+
                 If Not Directory.Exists(variablesGlobales.folderPath) Then
                     Directory.CreateDirectory(variablesGlobales.folderPath)
                 End If
@@ -587,7 +590,9 @@ Public Class Certificados
 
                 MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
-                variablesGlobales.numReciboCertificados = variablesGlobales.numReciboCertificados + 1
+                'Incrementa el num recibo ingreso en la BD
+                BD.actualizarReciboXTipo("certificado", variablesGlobales.numReciboCertificados + 1)
+
                 Print.Show()
             Catch ex As Exception
                 MessageBox.Show(variablesGlobales.errorDe + ex.ToString)

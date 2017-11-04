@@ -136,5 +136,7 @@
         End If
     End Sub
 
-
+    Private Sub ImprimirComprobanteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirComprobanteToolStripMenuItem.Click
+        VIngresosComprobante.Show()
+    End Sub
 End Class
