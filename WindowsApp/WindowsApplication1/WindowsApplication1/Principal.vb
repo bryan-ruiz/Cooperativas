@@ -53,24 +53,28 @@
         Else
 
             Try
+                Environment.Exit(1)
 
-                VIngresos.Close()
-                VIngresosReporte.Close()
-                VGastos.Close()
-                VGastosReporte.Close()
-                VInformeEconomico.Close()
-                'VInformacionCuerposDirectivos.Close()
-                'VInformacionAnexoAsociados.Close()
-                VGestionAsociados.Close()
-                ' VConfiguracionPorcentajeReservas.Close()
+                ' VIngresos.Close()
+                'VIngresosReporte.Close()
+                'VGastos.Close()
+                'VGastosReporte.Close()
+                'VInformeEconomico.Close()
+                'VGestionAsociados.Close()
+
+                'xxxxx VConfiguracionPorcentajeReservas.Close()
                 'VConfiguracionInformacionCooperativa.Close()
                 'VConfiguracionFechasLimite.Close()
                 'VConfiguracionCodigoCuenta.Close()
-                VComites.Close()
-                VCertificados.Close()
-                VSignIn.Close()
+                'VInformacionCuerposDirectivos.Close()
+                'VInformacionAnexoAsociados.Close()
 
-                Me.Close()
+
+                'VComites.Close()
+                'VCertificados.Close()
+                'VSignIn.Close()
+
+                ' Me.Close()
 
             Catch ex As InvalidOperationException
                 'nothing
