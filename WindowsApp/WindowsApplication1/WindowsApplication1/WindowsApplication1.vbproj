@@ -119,6 +119,7 @@
     <Compile Include="Clases\EncabezadoClase.vb" />
     <Compile Include="Clases\GastoClase.vb" />
     <Compile Include="Clases\IngresoClase.vb" />
+    <Compile Include="Clases\SaldoClase.vb" />
     <Compile Include="Clases\Singleton.vb" />
     <Compile Include="Clases\SocioClase.vb" />
     <Compile Include="Codigo\Certificados.vb" />
@@ -130,6 +131,7 @@
     <Compile Include="Codigo\Ingreso.vb" />
     <Compile Include="Codigo\IngresoRecibo.vb" />
     <Compile Include="Codigo\MensajesGlobales.vb" />
+    <Compile Include="Codigo\Saldos.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="Codigo\Usuarios.vb" />
     <Compile Include="Print.Designer.vb">
@@ -179,6 +181,12 @@
       <DependentUpon>VIngresosComprobante.vb</DependentUpon>
     </Compile>
     <Compile Include="VIngresosComprobante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIngresosSaldos.Designer.vb">
+      <DependentUpon>VIngresosSaldos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VIngresosSaldos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VSignIn.Designer.vb">
@@ -281,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIngresosComprobante.resx">
       <DependentUpon>VIngresosComprobante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIngresosSaldos.resx">
+      <DependentUpon>VIngresosSaldos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VSignIn.resx">
       <DependentUpon>VSignIn.vb</DependentUpon>

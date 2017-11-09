@@ -139,4 +139,8 @@
     Private Sub ImprimirComprobanteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirComprobanteToolStripMenuItem.Click
         VIngresosComprobante.Show()
     End Sub
+
+    Private Sub ReporteDeSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeSaldosToolStripMenuItem.Click
+        VIngresosSaldos.Show()
+    End Sub
 End Class

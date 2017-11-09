@@ -73,6 +73,7 @@ Partial Class VIngresos
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -116,7 +117,7 @@ Partial Class VIngresos
         '
         'ReporteToolStripMenuItem
         '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.InformeEconómicoToolStripMenuItem})
+        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.InformeEconómicoToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem})
         Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
         Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ReporteToolStripMenuItem.Text = "Reporte"
@@ -125,7 +126,7 @@ Partial Class VIngresos
         '
         Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
         Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CrearReporteToolStripMenuItem.Text = "Crear reporte"
+        Me.CrearReporteToolStripMenuItem.Text = "Reporte de Entradas"
         '
         'InformeEconómicoToolStripMenuItem
         '
@@ -534,6 +535,12 @@ Partial Class VIngresos
         Me.Label9.TabIndex = 20
         Me.Label9.Text = "Fecha"
         '
+        'ReporteDeSaldosToolStripMenuItem
+        '
+        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
+        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
+        '
         'VIngresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -608,4 +615,5 @@ Partial Class VIngresos
     Friend WithEvents TextBox_IngresosTotal3 As TextBox
     Friend WithEvents Button_IngresosCalcularTotal3 As Button
     Friend WithEvents ImprimirComprobanteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteDeSaldosToolStripMenuItem As ToolStripMenuItem
 End Class

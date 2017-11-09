@@ -958,6 +958,41 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerDatosdeSaldosXFechas(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of SaldoClase)
+        Dim MyList As New List(Of SaldoClase)
+        Try
+            SQL = "SELECT INGRESOS.fecha, INGRESOS.codigoDeCuenta, INGRESOS.total 
+                    FROM [INGRESOS] 
+                    WHERE INGRESOS.fecha BETWEEN #" & fechaDesde & "# AND #" & fechaHasta & "#
+                    UNION 
+                    SELECT GASTOS.fecha, Gastos.codigoDeCuenta, Gastos.total
+                    FROM [GASTOS]
+                    WHERE GASTOS.fecha BETWEEN #" & fechaDesde & "# AND #" & fechaHasta & "#
+                    ORDER BY fecha; "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim saldo As SaldoClase = New SaldoClase
+                    Try
+                        saldo.saldoClaseCostructor(reader.GetString(1), reader.GetString(2), reader.GetString(3))
+                        MyList.Add(saldo)
+                    Catch ex As Exception
+
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
     'Obtiene los gastos por proyecto productivo
     Function obtenerInformeGastosTotales(ByVal ingresoOGasto As String, ByVal proyectoProductivo As String, ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of String)
         Dim MyList As New List(Of String)
@@ -1100,6 +1135,68 @@ Public Class ConexionBD
         Try
             SQL = " SELECT Sum(CERTIFICADOS.acumuladoAnterior) As acum 
                     FROM CERTIFICADOS "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function obtenerCodigoCuentaIngresos() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT INGRESOS.codigoDeCuenta
+                    FROM INGRESOS
+                    GROUP BY codigoDeCuenta "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function obtenerCodigoCuentaGastos() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT GASTOS.codigoDeCuenta
+                    FROM GASTOS
+                    GROUP BY codigoDeCuenta "
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)

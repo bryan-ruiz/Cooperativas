@@ -91,3 +91,4 @@ C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.xml
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VIngresosSaldos.resources
