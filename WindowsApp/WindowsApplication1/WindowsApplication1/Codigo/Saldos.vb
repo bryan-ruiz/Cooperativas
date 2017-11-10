@@ -10,8 +10,8 @@ Public Class Saldos
 
     'Genera un reporte de los Socios en PDF'
     Public Sub generarReporteSaldosNuevo()
-        Dim fechaInicial As String = VIngresosSaldos.DateTimePicker_SaldosFechaInicio.Text
-        Dim fechaFinal As String = VIngresosSaldos.DateTimePicker_SaldosFechaFinal.Text
+        Dim fechaInicial As Date = VIngresosSaldos.DateTimePicker_SaldosFechaInicio.Value.ToString("dd/MM/yyyy")
+        Dim fechaFinal As Date = VIngresosSaldos.DateTimePicker_SaldosFechaFinal.Value.ToString("dd/MM/yyyy")
 
         Try
             Dim valores As List(Of SaldoClase)
@@ -21,9 +21,9 @@ Public Class Saldos
 
             BD.ConectarBD()
 
-            valores = BD.obtenerDatosdeSaldosXFechas("#" + fechaInicial + "#", "#" + fechaFinal + "#")
-            codigosCuentaIngresos = BD.obtenerCodigoCuentaIngresos
-            codigosCuentaGastos = BD.obtenerCodigoCuentaGastos
+            valores = BD.obtenerDatosdeSaldosXFechas(fechaInicial, fechaFinal)
+            codigosCuentaIngresos = BD.obtenerCodigoCuentaIngresos()
+            codigosCuentaGastos = BD.obtenerCodigoCuentaGastos()
             saldoGlobal = 10000
 
             BD.CerrarConexion()
@@ -37,7 +37,7 @@ Public Class Saldos
 
             Dim nombreReporteSaldos As String = "reporteSaldos.pdf"
 
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & nombreReporteSaldos, FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteSaldos.pdf", FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)

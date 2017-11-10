@@ -4,7 +4,9 @@
     Public codigoCuenta As String
     Public total As String
 
-    Public Sub saldoClaseCostructor(ByVal fechap As String, ByVal codigoCuentap As String, ByVal totalp As String)
+    Public Sub saldoClaseCostructor(ByVal fechap As DateTime,
+                                    ByVal codigoCuentap As String,
+                                    ByVal totalp As String)
         fecha = fechap
         codigoCuenta = codigoCuentap
         total = totalp

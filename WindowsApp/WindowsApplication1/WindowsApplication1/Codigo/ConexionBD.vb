@@ -961,14 +961,19 @@ Public Class ConexionBD
     Function obtenerDatosdeSaldosXFechas(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of SaldoClase)
         Dim MyList As New List(Of SaldoClase)
         Try
+            'MsgBox("ENTRANDO A FECHAS...")
+
             SQL = "SELECT INGRESOS.fecha, INGRESOS.codigoDeCuenta, INGRESOS.total 
                     FROM [INGRESOS] 
-                    WHERE INGRESOS.fecha BETWEEN #" & fechaDesde & "# AND #" & fechaHasta & "#
-                    UNION 
-                    SELECT GASTOS.fecha, Gastos.codigoDeCuenta, Gastos.total
+                    WHERE INGRESOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                    UNION SELECT GASTOS.fecha, GASTOS.codigoDeCuenta, GASTOS.total
                     FROM [GASTOS]
-                    WHERE GASTOS.fecha BETWEEN #" & fechaDesde & "# AND #" & fechaHasta & "#
-                    ORDER BY fecha; "
+                    WHERE GASTOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                    ORDER BY fecha "
+
+
+
+
 
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
@@ -976,9 +981,16 @@ Public Class ConexionBD
                 Dim reader = command.ExecuteReader()
                 While reader.Read()
                     Dim saldo As SaldoClase = New SaldoClase
+                    'MsgBox("ENTRANDO AL WHILE...")
+                    'MsgBox("reader 0 is : " + reader.GetDateTime(0))
+                    'MsgBox("reader 1 is : " + reader.GetString(1))
+                    'MsgBox("reader 2 is : " + reader.GetString(2))
                     Try
-                        saldo.saldoClaseCostructor(reader.GetString(1), reader.GetString(2), reader.GetString(3))
+                        saldo.saldoClaseCostructor(reader.GetDateTime(0), reader.GetString(1), reader.GetString(2))
                         MyList.Add(saldo)
+
+                        ' MsgBox("IMPRIME : " + saldo.codigoCuenta + " xxx " + saldo.total + "xxx" + saldo.fecha)
+
                     Catch ex As Exception
 
                     End Try
@@ -1174,7 +1186,7 @@ Public Class ConexionBD
                     Dim conta As Integer = 0
                     For conta = 0 To reader.FieldCount - 1
 
-                        'MsgBox(String.Concat(" ", reader(conta)))
+                        ' MsgBox(String.Concat("ingresosXXX ", reader(conta)))
 
                         MyList.Add(reader(conta))
                     Next conta
@@ -1205,7 +1217,7 @@ Public Class ConexionBD
                     Dim conta As Integer = 0
                     For conta = 0 To reader.FieldCount - 1
 
-                        'MsgBox(String.Concat(" ", reader(conta)))
+                        '  MsgBox(String.Concat("Gastos son: ", reader(conta)))
 
                         MyList.Add(reader(conta))
                     Next conta
