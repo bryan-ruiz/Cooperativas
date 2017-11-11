@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsApplication1.exe" size="3039664">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsApplication1.exe" size="3040176">
       <assemblyIdentity name="WindowsApplication1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RUfQVtRF3K+CvmGTub3sd1TvfbAOFBAW9AoTRlja53s=</dsig:DigestValue>
+        <dsig:DigestValue>JpSS1z072k81BuvscxS3+xXQhN7xmYIvyCR5RqaM6JM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -39,6 +39,7 @@ Partial Class Principal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.CargarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -84,7 +85,7 @@ Partial Class Principal
         '
         'ConfiguraciónToolStripMenuItem
         '
-        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CodigosDeCuentasToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.FechasCertificadosToolStripMenuItem, Me.InformaciónCooperativaToolStripMenuItem, Me.GestiónDeUsuariosToolStripMenuItem})
+        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CodigosDeCuentasToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.FechasCertificadosToolStripMenuItem, Me.InformaciónCooperativaToolStripMenuItem, Me.GestiónDeUsuariosToolStripMenuItem, Me.CargarUsuariosToolStripMenuItem})
         Me.ConfiguraciónToolStripMenuItem.Name = "ConfiguraciónToolStripMenuItem"
         Me.ConfiguraciónToolStripMenuItem.Size = New System.Drawing.Size(95, 20)
         Me.ConfiguraciónToolStripMenuItem.Text = "Configuración"
@@ -161,6 +162,12 @@ Partial Class Principal
         Me.Label2.TabIndex = 35
         Me.Label2.Text = "SAC"
         '
+        'CargarUsuariosToolStripMenuItem
+        '
+        Me.CargarUsuariosToolStripMenuItem.Name = "CargarUsuariosToolStripMenuItem"
+        Me.CargarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.CargarUsuariosToolStripMenuItem.Text = "Importar Asociados"
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -200,4 +207,5 @@ Partial Class Principal
     Friend WithEvents InformaciónCooperativaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestiónDeUsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CargarUsuariosToolStripMenuItem As ToolStripMenuItem
 End Class

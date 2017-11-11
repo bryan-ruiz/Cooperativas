@@ -1,4 +1,9 @@
-﻿Public Class Principal
+﻿Imports System.Data.OleDb
+
+Public Class Principal
+
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+
     Private Sub GestionUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionUsuariosToolStripMenuItem.Click
         VAsociados.Show()
     End Sub
@@ -51,40 +56,45 @@
         If result = System.Windows.Forms.DialogResult.No Then
             e.Cancel = True
         Else
-
             Try
+                'Cierra todas las ventanas abiertas
                 Environment.Exit(1)
-
-                ' VIngresos.Close()
-                'VIngresosReporte.Close()
-                'VGastos.Close()
-                'VGastosReporte.Close()
-                'VInformeEconomico.Close()
-                'VGestionAsociados.Close()
-
-                'xxxxx VConfiguracionPorcentajeReservas.Close()
-                'VConfiguracionInformacionCooperativa.Close()
-                'VConfiguracionFechasLimite.Close()
-                'VConfiguracionCodigoCuenta.Close()
-                'VInformacionCuerposDirectivos.Close()
-                'VInformacionAnexoAsociados.Close()
-
-
-                'VComites.Close()
-                'VCertificados.Close()
-                'VSignIn.Close()
-
-                ' Me.Close()
-
             Catch ex As InvalidOperationException
                 'nothing
             End Try
         End If
     End Sub
 
+    'Importa Asociados del excel a la BD del sistema
+    Private Sub CargarUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargarUsuariosToolStripMenuItem.Click
+        Dim result As Integer = MessageBox.Show("¿Desea importar los Asociados del Excel a la base de datos del sistema?", "Importar Asociados", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            'nothing
+        ElseIf result = DialogResult.Yes Then
 
+            Dim Access As String = "C:\BD\CoopeBD.mdb"
+            Dim Excel As String = "C:\BD\Libro1.xlsx"
+            Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
 
+            Try
+                Using conn As New OleDbConnection(connect)
+                    Using cmd As New OleDbCommand()
+                        cmd.Connection = conn
+                        cmd.CommandText = "INSERT INTO [MS Access;Database=" & Access & ";PWD=C454gr154].[SOCIOS] SELECT * FROM [Hoja1$]"
 
+                        If conn.State = ConnectionState.Open Then
+                            conn.Close()
+                        End If
+                        conn.Open()
+                        cmd.ExecuteNonQuery()
+                    End Using
+                End Using
+                MessageBox.Show("Datos importados con Éxito!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Catch ex As Exception
+                MessageBox.Show("Error importando datos, favor verifique el formato del .xlsx en el Manual de Usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            End Try
 
+        End If
 
+    End Sub
 End Class
