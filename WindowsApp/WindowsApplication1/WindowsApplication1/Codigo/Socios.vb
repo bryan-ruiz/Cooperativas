@@ -104,9 +104,9 @@ Public Class Socios
                     BD.CerrarConexion()
 
                 Catch ex As Exception
-                    MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
 
-                End Try
+            End Try
             End If
 
     End Sub
@@ -214,7 +214,7 @@ Public Class Socios
                     BD.CerrarConexion()
 
                 Catch ex As Exception
-                    MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                    MessageBox.Show(variablesGlobales.errorDe + ex.Message)
 
                 End Try
             End If
@@ -364,7 +364,7 @@ Public Class Socios
                 End If
                 BD.CerrarConexion()
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString())
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message())
             End Try
         End If
     End Sub
@@ -450,7 +450,7 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -610,7 +610,7 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -796,7 +796,7 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -935,7 +935,7 @@ Public Class Socios
                 Print.Show()
 
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
     End Sub

@@ -48,7 +48,7 @@ Public Class Certificados
                 BD.CerrarConexion()
 
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
     End Sub
@@ -94,7 +94,7 @@ Public Class Certificados
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -117,7 +117,7 @@ Public Class Certificados
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
 
     End Sub
@@ -159,7 +159,7 @@ Public Class Certificados
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -176,7 +176,7 @@ Public Class Certificados
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -331,7 +331,7 @@ Public Class Certificados
                 Print.Show()
 
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
 
@@ -595,7 +595,7 @@ Public Class Certificados
 
                 Print.Show()
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
     End Sub

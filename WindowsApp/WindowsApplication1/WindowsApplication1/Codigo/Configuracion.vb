@@ -45,7 +45,7 @@ Public Class Configuracion
             BD.CerrarConexion()
         Catch ex As Exception
             estado = False
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -109,7 +109,7 @@ Public Class Configuracion
             BD.CerrarConexion()
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -128,7 +128,7 @@ Public Class Configuracion
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -147,7 +147,7 @@ Public Class Configuracion
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -166,7 +166,7 @@ Public Class Configuracion
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -184,7 +184,7 @@ Public Class Configuracion
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -306,7 +306,7 @@ Public Class Configuracion
                 End If
                 BD.CerrarConexion()
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
     End Sub
@@ -332,7 +332,7 @@ Public Class Configuracion
                 End If
                 BD.CerrarConexion()
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
     End Sub
@@ -359,7 +359,7 @@ Public Class Configuracion
                 End If
                 BD.CerrarConexion()
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
     End Sub
@@ -388,7 +388,7 @@ Public Class Configuracion
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
 
     End Sub

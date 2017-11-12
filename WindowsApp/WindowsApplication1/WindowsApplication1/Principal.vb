@@ -77,6 +77,9 @@ Public Class Principal
             Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
 
             Try
+                'Delete
+
+
                 Using conn As New OleDbConnection(connect)
                     Using cmd As New OleDbCommand()
                         cmd.Connection = conn

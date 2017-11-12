@@ -43,6 +43,8 @@ Public Class Saldos
             encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
+            Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
+            Dim FontEncabezadoFechas = FontFactory.GetFont("Arial", 9, Font.NORMAL)
 
             Dim table As PdfPTable = New PdfPTable(5)
 
@@ -97,8 +99,6 @@ Public Class Saldos
                 End If
                 conta = conta + 1
 
-                Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
-
                 'fecha
                 Dim fechaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).fecha, FontStype2))
                 fechaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
@@ -132,7 +132,6 @@ Public Class Saldos
                 celdaNula.Colspan = 1
                 celdaNula.HorizontalAlignment = 1
 
-
                 table.AddCell(fechaT)
                 table.AddCell(codigoCuentaT)
 
@@ -156,15 +155,20 @@ Public Class Saldos
 
                 table.AddCell(saldoT)
 
-
                 contador = contador + 1
             End While
 
+            '/////// Encabezado //////////
+            pdfDoc.Add(New Paragraph("                                                                            Reporte de Saldos del " + fechaInicial + " al " + fechaFinal, FontEncabezadoFechas))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
             pdfDoc.Add(table)
             pdfDoc.Close()
+
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & nombreReporteSaldos, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 

@@ -17,7 +17,7 @@ Public Class InformeEconomico
             Try
                 generarInformeTabla()
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
 
@@ -630,7 +630,7 @@ Public Class InformeEconomico
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -649,7 +649,7 @@ Public Class InformeEconomico
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             Return ""
         End Try
     End Function
@@ -670,7 +670,7 @@ Public Class InformeEconomico
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             Return ""
         End Try
     End Function
@@ -690,7 +690,7 @@ Public Class InformeEconomico
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             Return ""
         End Try
     End Function
@@ -710,7 +710,7 @@ Public Class InformeEconomico
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             Return ""
         End Try
     End Function
@@ -729,7 +729,7 @@ Public Class InformeEconomico
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             Return ""
         End Try
     End Function
@@ -748,7 +748,7 @@ Public Class InformeEconomico
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             Return ""
         End Try
     End Function
@@ -766,7 +766,7 @@ Public Class InformeEconomico
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             Return ""
         End Try
     End Function
@@ -785,7 +785,7 @@ Public Class InformeEconomico
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             Return ""
         End Try
     End Function

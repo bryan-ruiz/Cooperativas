@@ -235,7 +235,7 @@ Public Class Comites
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -301,7 +301,7 @@ Public Class Comites
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -513,7 +513,7 @@ Public Class Comites
             BD.CerrarConexion()
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
 
     End Sub
@@ -579,7 +579,7 @@ Public Class Comites
                 BD.CerrarConexion()
 
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
     End Sub

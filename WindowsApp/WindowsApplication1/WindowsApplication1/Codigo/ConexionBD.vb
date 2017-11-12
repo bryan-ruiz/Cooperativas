@@ -28,7 +28,14 @@ Public Class ConexionBD
 
         Catch ex As Exception
             conectadoBD = False
-            MessageBox.Show("Se presentó la siguiente error: " & ex.ToString)
+            MessageBox.Show("Error: " & vbCrLf & ex.Message) 'before ex.ToString
+
+            'Console.WriteLine(vbCrLf & "Message ---" & vbCrLf & ex.Message)
+            'Console.WriteLine(vbCrLf & "HelpLink ---" & vbCrLf & ex.HelpLink)
+            'Console.WriteLine(vbCrLf & "Source ---" & vbCrLf & ex.Source)
+            'Console.WriteLine(vbCrLf & "StackTrace ---" & vbCrLf & ex.StackTrace)
+            'Console.WriteLine(vbCrLf & "TargetSite ---" & vbCrLf & ex.TargetSite.ToString())
+
         End Try
     End Sub
 
@@ -40,7 +47,7 @@ Public Class ConexionBD
             objConexion.Close()
             conectadoBD = False
         Catch ex As Exception
-            MessageBox.Show("Se presentó la siguiente exepción: " & ex.ToString)
+            MessageBox.Show("Se presentó la siguiente exepción: " & ex.Message)
         End Try
     End Sub
 
@@ -62,7 +69,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return res
     End Function
@@ -82,7 +89,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return res
     End Function
@@ -104,7 +111,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return res
     End Function
@@ -134,7 +141,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return MyList
     End Function
@@ -310,7 +317,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
 
         Return res
@@ -339,7 +346,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
 
         Return res
@@ -438,7 +445,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
 
         Return res
@@ -465,7 +472,7 @@ Public Class ConexionBD
                                                     reader.GetString(16), reader.GetString(17), reader.GetString(18), reader.GetString(19))
                         MyList.Add(nuevaConfiguracion)
                     Catch ex As Exception
-                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
                     End Try
                 End While
                 reader.Close()
@@ -500,7 +507,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
 
         Return res
@@ -520,7 +527,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
 
         Return res
@@ -541,7 +548,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
 
         Return res
@@ -564,7 +571,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
 
         Return res
@@ -586,7 +593,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return res
     End Function
@@ -633,7 +640,7 @@ Public Class ConexionBD
                             MyList.Add(nuevaCuenta)
                         End If
                     Catch ex As Exception
-                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
                     End Try
                 End While
                 reader.Close()
@@ -641,7 +648,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return MyList
     End Function
@@ -669,7 +676,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return res
     End Function
@@ -698,7 +705,7 @@ Public Class ConexionBD
                             MyList.Add(nuevaCuenta)
                         End If
                     Catch ex As Exception
-                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
                     End Try
                 End While
                 reader.Close()
@@ -706,7 +713,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return MyList
     End Function
@@ -734,7 +741,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return res
     End Function
@@ -757,7 +764,7 @@ Public Class ConexionBD
                                                           reader.GetString(3))
                         MyList.Add(nuevaCuenta)
                     Catch ex As Exception
-                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
                     End Try
                 End While
                 reader.Close()
@@ -765,7 +772,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
         Return MyList
     End Function
@@ -847,7 +854,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
 
         Return res
@@ -932,7 +939,7 @@ Public Class ConexionBD
                     WHERE(((INGRESOS.codigoDeCuenta) = [CUENTAS].[cod_Descripcion]) 
                         And ((CUENTAS.tipo) = '" & ingresoOGasto & "') 
                         And ((CUENTAS.proyecto_Productivo) = '" & proyectoProductivo & "'))
-                        And INGRESOS.fecha BETWEEN #" & fechaDesde & "# And #" & fechaHasta & "#
+                        And INGRESOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
                     GROUP BY INGRESOS.codigoDeCuenta;"
 
             If conectadoBD = True Then
@@ -970,10 +977,6 @@ Public Class ConexionBD
                     FROM [GASTOS]
                     WHERE GASTOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
                     ORDER BY fecha "
-
-
-
-
 
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
@@ -1014,7 +1017,7 @@ Public Class ConexionBD
                     WHERE(((GASTOS.codigoDeCuenta) = [CUENTAS].[cod_Descripcion]) 
                         And ((CUENTAS.tipo) = '" & ingresoOGasto & "') 
                         And ((CUENTAS.proyecto_Productivo) = '" & proyectoProductivo & "'))
-                        And GASTOS.fecha BETWEEN #" & fechaDesde & "# And #" & fechaHasta & "#
+                        And GASTOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
                     GROUP BY GASTOS.codigoDeCuenta;"
 
             If conectadoBD = True Then
@@ -1050,7 +1053,7 @@ Public Class ConexionBD
                     WHERE INGRESOS.codigoDeCuenta = CUENTAS.cod_Descripcion 
                         AND CUENTAS.tipo = '" & ingresoOGasto & "' 
                         AND CUENTAS.proyecto_Productivo = '" & esProyectoProductivo & "'
-                        AND INGRESOS.fecha BETWEEN #" & fechaDesde & "# And #" & fechaHasta & "# "
+                        AND INGRESOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy') "
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -1085,7 +1088,7 @@ Public Class ConexionBD
                     WHERE GASTOS.codigoDeCuenta = CUENTAS.cod_Descripcion 
                         AND CUENTAS.tipo = '" & ingresoOGasto & "' 
                         AND CUENTAS.proyecto_Productivo = '" & esProyectoProductivo & "'
-                        AND GASTOS.fecha BETWEEN #" & fechaDesde & "# And #" & fechaHasta & "# "
+                        AND GASTOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy') "
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -1116,7 +1119,7 @@ Public Class ConexionBD
         Try
             SQL = "SELECT Sum(SOCIOS.cuotaMatricula) As suma 
                     FROM SOCIOS
-                    WHERE SOCIOS.fechaIngreso BETWEEN #" & fechaDesde & "# And #" & fechaHasta & "# "
+                    WHERE SOCIOS.fechaIngreso BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy') "
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)

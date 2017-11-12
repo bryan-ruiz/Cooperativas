@@ -14,7 +14,7 @@ Public Class EncabezadoClase
             valores = BD.obtenerDatosdeConfiguration()
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("ocurrio un error en base de datos configuración:" + ex.ToString())
+            MessageBox.Show("ocurrio un error en base de datos configuración:" + ex.Message())
             errorDatos = True
             Return
         End Try
