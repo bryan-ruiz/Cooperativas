@@ -1267,6 +1267,71 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    'SALDO ANTERIOR DE INGRESOS
+    Function obtenerSaldoTotalAnteriorDeIngresos(ByVal fechaInicial As Date) As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(INGRESOS.total) As total 
+                    FROM INGRESOS
+                    WHERE INGRESOS.fecha <  Format( #" & fechaInicial & "#, 'mm/dd/yyyy')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    'SALDO ANTERIOR DE GASTOS
+    Function obtenerSaldoTotalAnteriorDeGastos(ByVal fechaInicial As Date) As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(GASTOS.total) As total 
+                    FROM GASTOS
+                    WHERE GASTOS.fecha <  Format( #" & fechaInicial & "#, 'mm/dd/yyyy')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+
     'obtiene el num del tipo de recibo 
     Function obtenerReciboXTipo(ByVal tipoRecibo As String) As List(Of String)
         Dim MyList As New List(Of String)
@@ -1325,6 +1390,35 @@ Public Class ConexionBD
         Catch ex As Exception
             MessageBox.Show("Error de: " + ex.Message)
         End Try
+        Return MyList
+    End Function
+
+    Function borrarTablaAsociados() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " DELETE * FROM SOCIOS "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
         Return MyList
     End Function
 

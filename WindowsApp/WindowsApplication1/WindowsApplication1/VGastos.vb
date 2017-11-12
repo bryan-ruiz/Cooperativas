@@ -128,6 +128,9 @@
 
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
         Me.Close()
+    End Sub
 
+    Private Sub ReporteDeSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeSaldosToolStripMenuItem.Click
+        VIngresosSaldos.Show()
     End Sub
 End Class

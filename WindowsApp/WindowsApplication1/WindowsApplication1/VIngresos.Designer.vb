@@ -31,6 +31,7 @@ Partial Class VIngresos
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformeEconómicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TextBox_IngresosFacturaRecibos = New System.Windows.Forms.TextBox()
         Me.DateTimePicker_IngresosFecha = New System.Windows.Forms.DateTimePicker()
@@ -73,7 +74,6 @@ Partial Class VIngresos
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -117,7 +117,7 @@ Partial Class VIngresos
         '
         'ReporteToolStripMenuItem
         '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.InformeEconómicoToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem})
+        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem, Me.InformeEconómicoToolStripMenuItem})
         Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
         Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ReporteToolStripMenuItem.Text = "Reporte"
@@ -133,6 +133,12 @@ Partial Class VIngresos
         Me.InformeEconómicoToolStripMenuItem.Name = "InformeEconómicoToolStripMenuItem"
         Me.InformeEconómicoToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.InformeEconómicoToolStripMenuItem.Text = "Informe Económico"
+        '
+        'ReporteDeSaldosToolStripMenuItem
+        '
+        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
+        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
         '
         'InformaciónToolStripMenuItem
         '
@@ -534,12 +540,6 @@ Partial Class VIngresos
         Me.Label9.Size = New System.Drawing.Size(46, 16)
         Me.Label9.TabIndex = 20
         Me.Label9.Text = "Fecha"
-        '
-        'ReporteDeSaldosToolStripMenuItem
-        '
-        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
-        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
         '
         'VIngresos
         '

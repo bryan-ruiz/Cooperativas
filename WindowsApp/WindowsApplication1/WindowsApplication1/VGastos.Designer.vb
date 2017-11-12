@@ -71,6 +71,7 @@ Partial Class VGastos
         Me.TextBox_GastosPrecioUnitario = New System.Windows.Forms.TextBox()
         Me.TextBox_GastosTotal = New System.Windows.Forms.TextBox()
         Me.Button_GastosCalcular = New System.Windows.Forms.Button()
+        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -107,12 +108,12 @@ Partial Class VGastos
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'ReporteToolStripMenuItem
         '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.InformeEcónomicoToolStripMenuItem})
+        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem, Me.InformeEcónomicoToolStripMenuItem})
         Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
         Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ReporteToolStripMenuItem.Text = "Reporte"
@@ -121,7 +122,7 @@ Partial Class VGastos
         '
         Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
         Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CrearReporteToolStripMenuItem.Text = "Crear Reporte"
+        Me.CrearReporteToolStripMenuItem.Text = "Reporte de Salidas"
         '
         'InformeEcónomicoToolStripMenuItem
         '
@@ -518,6 +519,12 @@ Partial Class VGastos
         Me.Button_GastosCalcular.Text = "Calcular Total"
         Me.Button_GastosCalcular.UseVisualStyleBackColor = True
         '
+        'ReporteDeSaldosToolStripMenuItem
+        '
+        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
+        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
+        '
         'VGastos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -589,4 +596,5 @@ Partial Class VGastos
     Friend WithEvents TextBox_GastosPrecioUnitario As TextBox
     Friend WithEvents TextBox_GastosTotal As TextBox
     Friend WithEvents Button_GastosCalcular As Button
+    Friend WithEvents ReporteDeSaldosToolStripMenuItem As ToolStripMenuItem
 End Class

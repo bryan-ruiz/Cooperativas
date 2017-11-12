@@ -3,6 +3,7 @@
 Public Class Principal
 
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+    Dim BD As ConexionBD = New ConexionBD
 
     Private Sub GestionUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionUsuariosToolStripMenuItem.Click
         VAsociados.Show()
@@ -78,7 +79,8 @@ Public Class Principal
 
             Try
                 'Delete
-
+                BD.ConectarBD()
+                BD.borrarTablaAsociados()
 
                 Using conn As New OleDbConnection(connect)
                     Using cmd As New OleDbCommand()
@@ -96,6 +98,8 @@ Public Class Principal
             Catch ex As Exception
                 MessageBox.Show("Error importando datos, favor verifique el formato del .xlsx en el Manual de Usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             End Try
+
+            BD.CerrarConexion()
 
         End If
 
