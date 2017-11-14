@@ -183,7 +183,7 @@ Public Class IngresoRecibo
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reciboDeEntradas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
             'Incrementa el num recibo ingreso en la BD
             BD.actualizarReciboXTipo("ingreso", variablesGlobales.numReciboEntradas + 1)

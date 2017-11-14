@@ -627,7 +627,7 @@ Public Class InformeEconomico
             'pdfDoc.Add(table)
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteInformeEconomico.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)

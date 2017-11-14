@@ -607,7 +607,7 @@ Public Class Socios
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteAsociadosActivos.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
@@ -793,7 +793,7 @@ Public Class Socios
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteTodosLosAsociados.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
@@ -927,7 +927,7 @@ Public Class Socios
 
                 pdfDoc.Close()
 
-                MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reciboAsociado.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
                 'Incrementa el num recibo ingreso en la BD
                 BD.actualizarReciboXTipo("asociado", variablesGlobales.numReciboAsociados + 1)

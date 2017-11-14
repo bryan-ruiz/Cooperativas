@@ -35,11 +35,12 @@ Partial Class Principal
         Me.FechasCertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónCooperativaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CargarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.CargarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeSACToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -120,8 +121,15 @@ Partial Class Principal
         Me.GestiónDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.GestiónDeUsuariosToolStripMenuItem.Text = "Gestión de Usuarios"
         '
+        'CargarUsuariosToolStripMenuItem
+        '
+        Me.CargarUsuariosToolStripMenuItem.Name = "CargarUsuariosToolStripMenuItem"
+        Me.CargarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.CargarUsuariosToolStripMenuItem.Text = "Importar Asociados"
+        '
         'AcercaDeToolStripMenuItem
         '
+        Me.AcercaDeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeSACToolStripMenuItem})
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
         Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
@@ -162,11 +170,11 @@ Partial Class Principal
         Me.Label2.TabIndex = 35
         Me.Label2.Text = "SAC"
         '
-        'CargarUsuariosToolStripMenuItem
+        'AcercaDeSACToolStripMenuItem
         '
-        Me.CargarUsuariosToolStripMenuItem.Name = "CargarUsuariosToolStripMenuItem"
-        Me.CargarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.CargarUsuariosToolStripMenuItem.Text = "Importar Asociados"
+        Me.AcercaDeSACToolStripMenuItem.Name = "AcercaDeSACToolStripMenuItem"
+        Me.AcercaDeSACToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeSACToolStripMenuItem.Text = "Acerca de SAC"
         '
         'Principal
         '
@@ -208,4 +216,5 @@ Partial Class Principal
     Friend WithEvents GestiónDeUsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CargarUsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcercaDeSACToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE5CD672-9431-421E-A1C4-47801E2F3C48}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApplication1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>SAC</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Aaron\Desktop\Coope2.8\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SAC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SAC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\logocoopesag2_3xE_icon1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>57BC6D6AD567D70C084AB2843B2005FA183AEB03</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WindowsApplication1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\..\Downloads\itextsharp-all-5.5.10\itextsharp.xfaworker-dll-5.5.10\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\..\..\Downloads\itextsharp-all-5.5.10\itextsharp-dll-pdfa\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\..\..\..\Downloads\itextsharp-all-5.5.10\itextsharp-dll-xtra\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\ComiteClase.vb" />
+    <Compile Include="Clases\ConfiguracionClase.vb" />
+    <Compile Include="Clases\CuentaClase.vb" />
+    <Compile Include="Clases\EncabezadoClase.vb" />
+    <Compile Include="Clases\GastoClase.vb" />
+    <Compile Include="Clases\IngresoClase.vb" />
+    <Compile Include="Clases\SaldoClase.vb" />
+    <Compile Include="Clases\Singleton.vb" />
+    <Compile Include="Clases\SocioClase.vb" />
+    <Compile Include="Codigo\Certificados.vb" />
+    <Compile Include="Codigo\Comites.vb" />
+    <Compile Include="Codigo\ConexionBD.vb" />
+    <Compile Include="Codigo\Configuracion.vb" />
+    <Compile Include="Codigo\Gastos.vb" />
+    <Compile Include="Codigo\InformeEconomico.vb" />
+    <Compile Include="Codigo\Ingreso.vb" />
+    <Compile Include="Codigo\IngresoRecibo.vb" />
+    <Compile Include="Codigo\MensajesGlobales.vb" />
+    <Compile Include="Codigo\Saldos.vb" />
+    <Compile Include="Codigo\Socios.vb" />
+    <Compile Include="Codigo\Usuarios.vb" />
+    <Compile Include="Print.Designer.vb">
+      <DependentUpon>Print.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Print.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.vb">
+      <DependentUpon>Principal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VGestionAsociados.Designer.vb">
+      <DependentUpon>VGestionAsociados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VGestionAsociados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VConfiguracionCodigoCuenta.Designer.vb">
+      <DependentUpon>VConfiguracionCodigoCuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VConfiguracionCodigoCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VAsociados.Designer.vb">
+      <DependentUpon>VAsociados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VAsociados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VComites.Designer.vb">
+      <DependentUpon>VComites.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VComites.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCertificados.Designer.vb">
+      <DependentUpon>VCertificados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VCertificados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIngresosComprobante.Designer.vb">
+      <DependentUpon>VIngresosComprobante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VIngresosComprobante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VAcercaDe.Designer.vb">
+      <DependentUpon>VAcercaDe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VAcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIngresosSaldos.Designer.vb">
+      <DependentUpon>VIngresosSaldos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VIngresosSaldos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VSignIn.Designer.vb">
+      <DependentUpon>VSignIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VSignIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIngresos.Designer.vb">
+      <DependentUpon>VIngresos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VIngresos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIngresosReporte.Designer.vb">
+      <DependentUpon>VIngresosReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VIngresosReporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VGastos.Designer.vb">
+      <DependentUpon>VGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VGastosReporte.Designer.vb">
+      <DependentUpon>VGastosReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VGastosReporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VInformeEconomico.Designer.vb">
+      <DependentUpon>VInformeEconomico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VInformeEconomico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VConfiguracionFechasLimite.Designer.vb">
+      <DependentUpon>VConfiguracionFechasLimite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VConfiguracionFechasLimite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VConfiguracionInformacionCooperativa.Designer.vb">
+      <DependentUpon>VConfiguracionInformacionCooperativa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VConfiguracionInformacionCooperativa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VInformacionCuerposDirectivos.Designer.vb">
+      <DependentUpon>VInformacionCuerposDirectivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VInformacionCuerposDirectivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VInformacionAnexoAsociados.Designer.vb">
+      <DependentUpon>VInformacionAnexoAsociados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VInformacionAnexoAsociados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VConfiguracionPorcentajeReservas.Designer.vb">
+      <DependentUpon>VConfiguracionPorcentajeReservas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VConfiguracionPorcentajeReservas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Print.resx">
+      <DependentUpon>Print.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VAsociados.resx">
+      <DependentUpon>VAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VComites.resx">
+      <DependentUpon>VComites.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VCertificados.resx">
+      <DependentUpon>VCertificados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIngresosComprobante.resx">
+      <DependentUpon>VIngresosComprobante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VAcercaDe.resx">
+      <DependentUpon>VAcercaDe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIngresosSaldos.resx">
+      <DependentUpon>VIngresosSaldos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VSignIn.resx">
+      <DependentUpon>VSignIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIngresos.resx">
+      <DependentUpon>VIngresos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIngresosReporte.resx">
+      <DependentUpon>VIngresosReporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VGastos.resx">
+      <DependentUpon>VGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VGastosReporte.resx">
+      <DependentUpon>VGastosReporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VInformeEconomico.resx">
+      <DependentUpon>VInformeEconomico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VGestionAsociados.resx">
+      <DependentUpon>VGestionAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VConfiguracionCodigoCuenta.resx">
+      <DependentUpon>VConfiguracionCodigoCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VConfiguracionFechasLimite.resx">
+      <DependentUpon>VConfiguracionFechasLimite.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VConfiguracionInformacionCooperativa.resx">
+      <DependentUpon>VConfiguracionInformacionCooperativa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VInformacionCuerposDirectivos.resx">
+      <DependentUpon>VInformacionCuerposDirectivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VInformacionAnexoAsociados.resx">
+      <DependentUpon>VInformacionAnexoAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VConfiguracionPorcentajeReservas.resx">
+      <DependentUpon>VConfiguracionPorcentajeReservas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="WindowsApplication1_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="android_l_etched_icon_tgJ_icon.ico" />
+    <Content Include="Imagen\MEP_Logo.png" />
+    <None Include="Resources\Sin título-1.png" />
+    <None Include="Resources\loginOrForm3.jpg" />
+    <None Include="Resources\Green_abstract_nature_1920x1200.jpg" />
+    <None Include="Resources\login2.jpg" />
+    <None Include="Resources\btn2.png" />
+    <Content Include="Resources\logoCoopesag2.png" />
+    <None Include="Resources\LogoTransparente.png" />
+    <Content Include="Resources\MEP_Logo.png" />
+    <None Include="Resources\logocoopesag2_3xE_icon1.ico" />
+    <None Include="Resources\logoCoopesag21.png" />
+    <Content Include="Resources\logocoopesag2_3xE_icon.ico" />
+    <None Include="Resources\logoCoopesag.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

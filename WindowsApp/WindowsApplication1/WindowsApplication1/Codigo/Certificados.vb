@@ -588,7 +588,7 @@ Public Class Certificados
 
                 pdfDoc.Close()
 
-                MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reciboCertificados.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
                 'Incrementa el num recibo ingreso en la BD
                 BD.actualizarReciboXTipo("certificado", variablesGlobales.numReciboCertificados + 1)

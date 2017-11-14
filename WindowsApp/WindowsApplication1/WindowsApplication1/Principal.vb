@@ -77,31 +77,41 @@ Public Class Principal
             Dim Excel As String = "C:\BD\Libro1.xlsx"
             Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
 
-            Try
-                'Delete
-                BD.ConectarBD()
-                BD.borrarTablaAsociados()
+            If Singleton.rol = "Colaborador" Then
+                MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
+            Else
+                Try
+                    'Delete
+                    BD.ConectarBD()
+                    BD.borrarTablaAsociados()
+                    BD.CerrarConexion()
 
-                Using conn As New OleDbConnection(connect)
-                    Using cmd As New OleDbCommand()
-                        cmd.Connection = conn
-                        cmd.CommandText = "INSERT INTO [MS Access;Database=" & Access & ";PWD=C454gr154].[SOCIOS] SELECT * FROM [Hoja1$]"
+                    Using conn As New OleDbConnection(connect)
+                        Using cmd As New OleDbCommand()
+                            cmd.Connection = conn
+                            cmd.CommandText = "INSERT INTO [MS Access;Database=" & Access & ";PWD=C454gr154].[SOCIOS] SELECT * FROM [Hoja1$]"
 
-                        If conn.State = ConnectionState.Open Then
-                            conn.Close()
-                        End If
-                        conn.Open()
-                        cmd.ExecuteNonQuery()
+                            If conn.State = ConnectionState.Open Then
+                                conn.Close()
+                            End If
+                            conn.Open()
+                            cmd.ExecuteNonQuery()
+                        End Using
                     End Using
-                End Using
-                MessageBox.Show("Datos importados con Éxito!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-            Catch ex As Exception
-                MessageBox.Show("Error importando datos, favor verifique el formato del .xlsx en el Manual de Usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-            End Try
+                    MessageBox.Show("Datos importados con Éxito!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                Catch ex As Exception
+                    MessageBox.Show("Error importando datos, favor verifique el formato del .xlsx en el Manual de Usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
 
-            BD.CerrarConexion()
+                    MessageBox.Show("Error causado debido a la excepción : " & vbCrLf & ex.Message)
+                End Try
+
+            End If
 
         End If
 
+    End Sub
+
+    Private Sub AcercaDeSACToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeSACToolStripMenuItem.Click
+        VAcercaDe.Show()
     End Sub
 End Class
