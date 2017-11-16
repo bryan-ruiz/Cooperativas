@@ -81,11 +81,14 @@ Public Class Principal
                 MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
             Else
                 Try
-                    'Delete
+                    'Abro Conexión
                     BD.ConectarBD()
+
+                    'Borra tabla Asociados
                     BD.borrarTablaAsociados()
                     BD.CerrarConexion()
 
+                    'Inserta del Excel a la tabla Socios
                     Using conn As New OleDbConnection(connect)
                         Using cmd As New OleDbCommand()
                             cmd.Connection = conn
@@ -98,10 +101,31 @@ Public Class Principal
                             cmd.ExecuteNonQuery()
                         End Using
                     End Using
-                    MessageBox.Show("Datos importados con Éxito!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+
+
+                    BD.ConectarBD()
+                    'Borra tabla Certificados
+                    BD.borrarTablaCertificados()
+
+                    'valores con datos de tipo objeto Socio
+                    Dim valores As List(Of SocioClase)
+                    valores = BD.obtenerDatosReporteDeSocios("todos")
+
+                    Dim contador As Integer = 0
+
+                    While contador < valores.Count
+                        BD.insertarCertificadoXSocio(valores(contador).cedula.ToString, valores(contador).numAsoc.ToString, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
+                        contador = contador + 1
+                    End While
+                    BD.CerrarConexion()
+                    'Cierro conexión
+
+
+                    MessageBox.Show("Los datos de los Asociados fueron importados con Éxito!")
+
                 Catch ex As Exception
                     MessageBox.Show("Error importando datos, favor verifique el formato del .xlsx en el Manual de Usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-
                     MessageBox.Show("Error causado debido a la excepción : " & vbCrLf & ex.Message)
                 End Try
 

@@ -30,6 +30,9 @@ Partial Class VAcercaDe
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -59,7 +62,7 @@ Partial Class VAcercaDe
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(160, 139)
+        Me.Label3.Location = New System.Drawing.Point(160, 137)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(112, 18)
         Me.Label3.TabIndex = 36
@@ -70,7 +73,7 @@ Partial Class VAcercaDe
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(196, 270)
+        Me.Label4.Location = New System.Drawing.Point(196, 368)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(43, 18)
         Me.Label4.TabIndex = 37
@@ -92,7 +95,7 @@ Partial Class VAcercaDe
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(168, 297)
+        Me.Label6.Location = New System.Drawing.Point(168, 395)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(88, 18)
         Me.Label6.TabIndex = 39
@@ -109,12 +112,48 @@ Partial Class VAcercaDe
         Me.Label7.TabIndex = 40
         Me.Label7.Text = "Ing. Aarón Ruiz. "
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label8.Location = New System.Drawing.Point(153, 249)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(131, 18)
+        Me.Label8.TabIndex = 41
+        Me.Label8.Text = "Agradecimientos:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label9.Location = New System.Drawing.Point(100, 312)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(239, 18)
+        Me.Label9.TabIndex = 42
+        Me.Label9.Text = "Al Ing. Kenneth Rojas Barrantes."
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label10.Location = New System.Drawing.Point(83, 278)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(271, 18)
+        Me.Label10.TabIndex = 43
+        Me.Label10.Text = "A Dios por las bendiciones que me da."
+        '
         'VAcercaDe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(437, 336)
+        Me.ClientSize = New System.Drawing.Size(437, 448)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -137,4 +176,7 @@ Partial Class VAcercaDe
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class

@@ -785,7 +785,8 @@ Public Class ConexionBD
         Try
             SQL = "SELECT SOCIOS.nombre, SOCIOS.primerApellido, SOCIOS.segundoApellido, CERTIFICADOS.*
                     FROM [SOCIOS],[CERTIFICADOS] 
-                    WHERE ((SOCIOS.cedula) = '" & cedulaONumAsociado & "' or (SOCIOS.numAsociado)= '" & cedulaONumAsociado & "') and (CERTIFICADOS.cedulaAsociado = SOCIOS.cedula)"
+                    WHERE ((SOCIOS.cedula) = '" & cedulaONumAsociado & "' or (SOCIOS.numAsociado)= '" & cedulaONumAsociado & "') 
+                    AND (CERTIFICADOS.cedulaAsociado = SOCIOS.cedula)"
 
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
@@ -1398,6 +1399,35 @@ Public Class ConexionBD
 
         Try
             SQL = " DELETE * FROM SOCIOS "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function borrarTablaCertificados() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " DELETE * FROM CERTIFICADOS "
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)

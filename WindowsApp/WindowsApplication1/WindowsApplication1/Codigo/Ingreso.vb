@@ -316,10 +316,12 @@ Public Class Ingreso
                 End While
                 If conta = 0 Then
                     estado = False
+                    VIngresos.ComboBox_IngresosCodigCuenta.Items.Clear()
                     VIngresos.ComboBox_IngresosCodigCuenta.Items.Add("No se poseen cuentas")
                 End If
             Else
                 estado = False
+                VIngresos.ComboBox_IngresosCodigCuenta.Items.Clear()
                 VIngresos.ComboBox_IngresosCodigCuenta.Items.Add("No se poseen cuentas")
             End If
 
@@ -351,10 +353,12 @@ Public Class Ingreso
                 End While
                 If conta = 0 Then
                     estado = False
+                    VIngresos.ComboBox_IngresosCodigCuenta2.Items.Clear()
                     VIngresos.ComboBox_IngresosCodigCuenta2.Items.Add("No se poseen cuentas")
                 End If
             Else
                 estado = False
+                VIngresos.ComboBox_IngresosCodigCuenta2.Items.Clear()
                 VIngresos.ComboBox_IngresosCodigCuenta2.Items.Add("No se poseen cuentas")
             End If
 
@@ -386,10 +390,12 @@ Public Class Ingreso
                 End While
                 If conta = 0 Then
                     estado = False
+                    VIngresos.ComboBox_IngresosCodigCuenta3.Items.Clear()
                     VIngresos.ComboBox_IngresosCodigCuenta3.Items.Add("No se poseen cuentas")
                 End If
             Else
                 estado = False
+                VIngresos.ComboBox_IngresosCodigCuenta3.Items.Clear()
                 VIngresos.ComboBox_IngresosCodigCuenta3.Items.Add("No se poseen cuentas")
             End If
 

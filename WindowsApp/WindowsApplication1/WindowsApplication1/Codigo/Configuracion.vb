@@ -33,13 +33,21 @@ Public Class Configuracion
                 End While
                 If conta = 0 Then
                     estado = False
+
+                    VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Items.Clear()
                     VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Items.Add("No se poseen cuentas")
+
+                    VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaSalida.Items.Clear()
                     VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaSalida.Items.Add("No se poseen cuentas")
                 End If
             Else
                 estado = False
-                VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Items.Add("No se poseen cuentas")
+
+                VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaSalida.Items.Clear()
                 VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaSalida.Items.Add("No se poseen cuentas")
+
+                VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Items.Clear()
+                VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Items.Add("No se poseen cuentas")
             End If
 
             BD.CerrarConexion()
