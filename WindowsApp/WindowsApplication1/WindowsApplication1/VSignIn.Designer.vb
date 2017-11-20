@@ -66,7 +66,7 @@ Partial Class VSignIn
         Me.ButtonIngresar.Image = Global.WindowsApplication1.My.Resources.Resources.loginOrForm3
         Me.ButtonIngresar.Location = New System.Drawing.Point(327, 422)
         Me.ButtonIngresar.Name = "ButtonIngresar"
-        Me.ButtonIngresar.Size = New System.Drawing.Size(292, 40)
+        Me.ButtonIngresar.Size = New System.Drawing.Size(292, 47)
         Me.ButtonIngresar.TabIndex = 133
         Me.ButtonIngresar.Text = "Ingresar"
         Me.ButtonIngresar.UseVisualStyleBackColor = False

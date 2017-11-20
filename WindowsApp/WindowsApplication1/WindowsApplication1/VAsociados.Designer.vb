@@ -53,6 +53,7 @@ Partial Class VAsociados
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.ButtonSociosModificar = New System.Windows.Forms.Button()
+        Me.ButtonAsociadosBuscar = New System.Windows.Forms.Button()
         Me.LabelFechaRetiro = New System.Windows.Forms.Label()
         Me.LabelNotasRetiro = New System.Windows.Forms.Label()
         Me.DateTimeSociosFechaRetiro = New System.Windows.Forms.DateTimePicker()
@@ -92,7 +93,6 @@ Partial Class VAsociados
         Me.TextBoxSociosSeccion2 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ButtonAsociadosBuscar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -112,10 +112,10 @@ Partial Class VAsociados
         '
         Me.ButtonAsociadosAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonAsociadosAgregar.ForeColor = System.Drawing.Color.White
-        Me.ButtonAsociadosAgregar.Location = New System.Drawing.Point(42, 166)
+        Me.ButtonAsociadosAgregar.Location = New System.Drawing.Point(51, 170)
         Me.ButtonAsociadosAgregar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.ButtonAsociadosAgregar.Name = "ButtonAsociadosAgregar"
-        Me.ButtonAsociadosAgregar.Size = New System.Drawing.Size(210, 44)
+        Me.ButtonAsociadosAgregar.Size = New System.Drawing.Size(199, 44)
         Me.ButtonAsociadosAgregar.TabIndex = 4
         Me.ButtonAsociadosAgregar.Text = "Insertar Asociado"
         Me.ButtonAsociadosAgregar.UseVisualStyleBackColor = True
@@ -125,7 +125,7 @@ Partial Class VAsociados
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(415, 221)
+        Me.Label3.Location = New System.Drawing.Point(415, 219)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 16)
         Me.Label3.TabIndex = 5
@@ -136,7 +136,7 @@ Partial Class VAsociados
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(434, 252)
+        Me.Label4.Location = New System.Drawing.Point(434, 250)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 16)
         Me.Label4.TabIndex = 7
@@ -147,7 +147,7 @@ Partial Class VAsociados
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(407, 282)
+        Me.Label5.Location = New System.Drawing.Point(407, 280)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(85, 16)
         Me.Label5.TabIndex = 9
@@ -158,7 +158,7 @@ Partial Class VAsociados
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(404, 313)
+        Me.Label6.Location = New System.Drawing.Point(404, 311)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(88, 16)
         Me.Label6.TabIndex = 11
@@ -169,7 +169,7 @@ Partial Class VAsociados
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(369, 344)
+        Me.Label7.Location = New System.Drawing.Point(369, 343)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(123, 16)
         Me.Label7.TabIndex = 13
@@ -191,7 +191,7 @@ Partial Class VAsociados
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(384, 410)
+        Me.Label9.Location = New System.Drawing.Point(384, 408)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(108, 16)
         Me.Label9.TabIndex = 17
@@ -202,7 +202,7 @@ Partial Class VAsociados
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(403, 442)
+        Me.Label10.Location = New System.Drawing.Point(403, 440)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(89, 16)
         Me.Label10.TabIndex = 19
@@ -213,7 +213,7 @@ Partial Class VAsociados
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(407, 474)
+        Me.Label11.Location = New System.Drawing.Point(407, 472)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(85, 16)
         Me.Label11.TabIndex = 21
@@ -224,7 +224,7 @@ Partial Class VAsociados
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(395, 505)
+        Me.Label12.Location = New System.Drawing.Point(395, 504)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(98, 16)
         Me.Label12.TabIndex = 23
@@ -235,7 +235,7 @@ Partial Class VAsociados
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(433, 536)
+        Me.Label13.Location = New System.Drawing.Point(433, 534)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(59, 16)
         Me.Label13.TabIndex = 25
@@ -246,7 +246,7 @@ Partial Class VAsociados
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Black
-        Me.Label14.Location = New System.Drawing.Point(375, 567)
+        Me.Label14.Location = New System.Drawing.Point(375, 565)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(118, 16)
         Me.Label14.TabIndex = 27
@@ -257,7 +257,7 @@ Partial Class VAsociados
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Black
-        Me.Label19.Location = New System.Drawing.Point(429, 189)
+        Me.Label19.Location = New System.Drawing.Point(429, 187)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(64, 16)
         Me.Label19.TabIndex = 36
@@ -346,10 +346,10 @@ Partial Class VAsociados
         '
         Me.SociosButtonLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.SociosButtonLimpiar.ForeColor = System.Drawing.Color.White
-        Me.SociosButtonLimpiar.Location = New System.Drawing.Point(42, 352)
+        Me.SociosButtonLimpiar.Location = New System.Drawing.Point(51, 356)
         Me.SociosButtonLimpiar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.SociosButtonLimpiar.Name = "SociosButtonLimpiar"
-        Me.SociosButtonLimpiar.Size = New System.Drawing.Size(210, 44)
+        Me.SociosButtonLimpiar.Size = New System.Drawing.Size(199, 44)
         Me.SociosButtonLimpiar.TabIndex = 5
         Me.SociosButtonLimpiar.Text = "Limpiar Campos"
         Me.SociosButtonLimpiar.UseVisualStyleBackColor = True
@@ -389,13 +389,25 @@ Partial Class VAsociados
         '
         Me.ButtonSociosModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonSociosModificar.ForeColor = System.Drawing.Color.White
-        Me.ButtonSociosModificar.Location = New System.Drawing.Point(42, 258)
+        Me.ButtonSociosModificar.Location = New System.Drawing.Point(51, 262)
         Me.ButtonSociosModificar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.ButtonSociosModificar.Name = "ButtonSociosModificar"
-        Me.ButtonSociosModificar.Size = New System.Drawing.Size(210, 44)
+        Me.ButtonSociosModificar.Size = New System.Drawing.Size(199, 44)
         Me.ButtonSociosModificar.TabIndex = 53
         Me.ButtonSociosModificar.Text = "Actualizar Información"
         Me.ButtonSociosModificar.UseVisualStyleBackColor = True
+        '
+        'ButtonAsociadosBuscar
+        '
+        Me.ButtonAsociadosBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonAsociadosBuscar.ForeColor = System.Drawing.Color.White
+        Me.ButtonAsociadosBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
+        Me.ButtonAsociadosBuscar.Location = New System.Drawing.Point(260, 59)
+        Me.ButtonAsociadosBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonAsociadosBuscar.Name = "ButtonAsociadosBuscar"
+        Me.ButtonAsociadosBuscar.Size = New System.Drawing.Size(58, 43)
+        Me.ButtonAsociadosBuscar.TabIndex = 2
+        Me.ButtonAsociadosBuscar.UseVisualStyleBackColor = True
         '
         'LabelFechaRetiro
         '
@@ -404,9 +416,9 @@ Partial Class VAsociados
         Me.LabelFechaRetiro.ForeColor = System.Drawing.Color.Black
         Me.LabelFechaRetiro.Location = New System.Drawing.Point(915, 316)
         Me.LabelFechaRetiro.Name = "LabelFechaRetiro"
-        Me.LabelFechaRetiro.Size = New System.Drawing.Size(113, 16)
+        Me.LabelFechaRetiro.Size = New System.Drawing.Size(109, 16)
         Me.LabelFechaRetiro.TabIndex = 55
-        Me.LabelFechaRetiro.Text = "Fecha del Retiro"
+        Me.LabelFechaRetiro.Text = "Fecha de Retiro"
         '
         'LabelNotasRetiro
         '
@@ -415,9 +427,9 @@ Partial Class VAsociados
         Me.LabelNotasRetiro.ForeColor = System.Drawing.Color.Black
         Me.LabelNotasRetiro.Location = New System.Drawing.Point(915, 382)
         Me.LabelNotasRetiro.Name = "LabelNotasRetiro"
-        Me.LabelNotasRetiro.Size = New System.Drawing.Size(109, 16)
+        Me.LabelNotasRetiro.Size = New System.Drawing.Size(105, 16)
         Me.LabelNotasRetiro.TabIndex = 56
-        Me.LabelNotasRetiro.Text = "Notas del Retiro"
+        Me.LabelNotasRetiro.Text = "Notas de Retiro"
         '
         'DateTimeSociosFechaRetiro
         '
@@ -780,18 +792,6 @@ Partial Class VAsociados
         Me.Label1.Size = New System.Drawing.Size(265, 29)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Gestión de Asociados"
-        '
-        'ButtonAsociadosBuscar
-        '
-        Me.ButtonAsociadosBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonAsociadosBuscar.ForeColor = System.Drawing.Color.White
-        Me.ButtonAsociadosBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
-        Me.ButtonAsociadosBuscar.Location = New System.Drawing.Point(260, 59)
-        Me.ButtonAsociadosBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.ButtonAsociadosBuscar.Name = "ButtonAsociadosBuscar"
-        Me.ButtonAsociadosBuscar.Size = New System.Drawing.Size(58, 43)
-        Me.ButtonAsociadosBuscar.TabIndex = 2
-        Me.ButtonAsociadosBuscar.UseVisualStyleBackColor = True
         '
         'VAsociados
         '
