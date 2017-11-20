@@ -1,11 +1,14 @@
 ﻿Public Class VIngresosComprobante
 
     Dim ingresoRecibo As IngresoRecibo = New IngresoRecibo
-
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     'LOAD - cod cta data
     Private Sub VIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ingresoRecibo.obtenerDatosSeleccionarCuentaRecibo()
+
+        Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.Button_IngresosImprimirReciboRE.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
     End Sub
 
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click

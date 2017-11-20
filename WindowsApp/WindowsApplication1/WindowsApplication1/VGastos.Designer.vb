@@ -23,12 +23,12 @@ Partial Class VGastos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VGastos))
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformeEcónomicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -71,30 +71,20 @@ Partial Class VGastos
         Me.TextBox_GastosPrecioUnitario = New System.Windows.Forms.TextBox()
         Me.TextBox_GastosTotal = New System.Windows.Forms.TextBox()
         Me.Button_GastosCalcular = New System.Windows.Forms.Button()
-        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Baskerville Old Face", 14.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label18.Location = New System.Drawing.Point(615, 63)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(187, 22)
-        Me.Label18.TabIndex = 143
-        Me.Label18.Text = "Información de Salidas"
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1393, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1406, 24)
         Me.MenuStrip1.TabIndex = 147
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -123,6 +113,12 @@ Partial Class VGastos
         Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
         Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.CrearReporteToolStripMenuItem.Text = "Reporte de Salidas"
+        '
+        'ReporteDeSaldosToolStripMenuItem
+        '
+        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
+        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
         '
         'InformeEcónomicoToolStripMenuItem
         '
@@ -169,19 +165,21 @@ Partial Class VGastos
         Me.GroupBox3.Controls.Add(Me.TextBox_GastosPrecioUnitario)
         Me.GroupBox3.Controls.Add(Me.TextBox_GastosTotal)
         Me.GroupBox3.Controls.Add(Me.Button_GastosCalcular)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 117)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 179)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1384, 241)
+        Me.GroupBox3.Size = New System.Drawing.Size(1400, 241)
         Me.GroupBox3.TabIndex = 148
         Me.GroupBox3.TabStop = False
         '
         'Button_GastosAgregar3
         '
-        Me.Button_GastosAgregar3.Location = New System.Drawing.Point(1276, 148)
+        Me.Button_GastosAgregar3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Button_GastosAgregar3.ForeColor = System.Drawing.Color.White
+        Me.Button_GastosAgregar3.Location = New System.Drawing.Point(1264, 148)
         Me.Button_GastosAgregar3.Name = "Button_GastosAgregar3"
-        Me.Button_GastosAgregar3.Size = New System.Drawing.Size(93, 27)
+        Me.Button_GastosAgregar3.Size = New System.Drawing.Size(123, 28)
         Me.Button_GastosAgregar3.TabIndex = 30
-        Me.Button_GastosAgregar3.Text = "Agregar Salidas"
+        Me.Button_GastosAgregar3.Text = "Agregar Salida"
         Me.Button_GastosAgregar3.UseVisualStyleBackColor = True
         '
         'ComboBox_GastosCodCuenta3
@@ -213,7 +211,7 @@ Partial Class VGastos
         '
         Me.TextBox_GastosDescripcion3.Location = New System.Drawing.Point(648, 153)
         Me.TextBox_GastosDescripcion3.Name = "TextBox_GastosDescripcion3"
-        Me.TextBox_GastosDescripcion3.Size = New System.Drawing.Size(262, 20)
+        Me.TextBox_GastosDescripcion3.Size = New System.Drawing.Size(250, 20)
         Me.TextBox_GastosDescripcion3.TabIndex = 25
         '
         'DateTimePicker_GastosFecha3
@@ -226,14 +224,14 @@ Partial Class VGastos
         '
         'TextBox_GastosCantidad3
         '
-        Me.TextBox_GastosCantidad3.Location = New System.Drawing.Point(916, 152)
+        Me.TextBox_GastosCantidad3.Location = New System.Drawing.Point(904, 152)
         Me.TextBox_GastosCantidad3.Name = "TextBox_GastosCantidad3"
         Me.TextBox_GastosCantidad3.Size = New System.Drawing.Size(75, 20)
         Me.TextBox_GastosCantidad3.TabIndex = 26
         '
         'TextBox_GastosPrecioUnitario3
         '
-        Me.TextBox_GastosPrecioUnitario3.Location = New System.Drawing.Point(997, 152)
+        Me.TextBox_GastosPrecioUnitario3.Location = New System.Drawing.Point(985, 152)
         Me.TextBox_GastosPrecioUnitario3.Name = "TextBox_GastosPrecioUnitario3"
         Me.TextBox_GastosPrecioUnitario3.Size = New System.Drawing.Size(82, 20)
         Me.TextBox_GastosPrecioUnitario3.TabIndex = 27
@@ -241,14 +239,14 @@ Partial Class VGastos
         'TextBox_GastosTotal3
         '
         Me.TextBox_GastosTotal3.Enabled = False
-        Me.TextBox_GastosTotal3.Location = New System.Drawing.Point(1171, 153)
+        Me.TextBox_GastosTotal3.Location = New System.Drawing.Point(1159, 153)
         Me.TextBox_GastosTotal3.Name = "TextBox_GastosTotal3"
         Me.TextBox_GastosTotal3.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_GastosTotal3.TabIndex = 29
         '
         'Button_GastosCalcular3
         '
-        Me.Button_GastosCalcular3.Location = New System.Drawing.Point(1085, 150)
+        Me.Button_GastosCalcular3.Location = New System.Drawing.Point(1073, 150)
         Me.Button_GastosCalcular3.Name = "Button_GastosCalcular3"
         Me.Button_GastosCalcular3.Size = New System.Drawing.Size(80, 23)
         Me.Button_GastosCalcular3.TabIndex = 28
@@ -257,11 +255,13 @@ Partial Class VGastos
         '
         'Button_GastosAgregar2
         '
-        Me.Button_GastosAgregar2.Location = New System.Drawing.Point(1276, 105)
+        Me.Button_GastosAgregar2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Button_GastosAgregar2.ForeColor = System.Drawing.Color.White
+        Me.Button_GastosAgregar2.Location = New System.Drawing.Point(1264, 105)
         Me.Button_GastosAgregar2.Name = "Button_GastosAgregar2"
-        Me.Button_GastosAgregar2.Size = New System.Drawing.Size(93, 27)
+        Me.Button_GastosAgregar2.Size = New System.Drawing.Size(123, 28)
         Me.Button_GastosAgregar2.TabIndex = 20
-        Me.Button_GastosAgregar2.Text = "Agregar Salidas"
+        Me.Button_GastosAgregar2.Text = "Agregar Salida"
         Me.Button_GastosAgregar2.UseVisualStyleBackColor = True
         '
         'ComboBox_GastosCodCuenta2
@@ -283,11 +283,13 @@ Partial Class VGastos
         '
         'Button_GastosAgregar
         '
-        Me.Button_GastosAgregar.Location = New System.Drawing.Point(1276, 64)
+        Me.Button_GastosAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Button_GastosAgregar.ForeColor = System.Drawing.Color.White
+        Me.Button_GastosAgregar.Location = New System.Drawing.Point(1264, 64)
         Me.Button_GastosAgregar.Name = "Button_GastosAgregar"
-        Me.Button_GastosAgregar.Size = New System.Drawing.Size(93, 27)
+        Me.Button_GastosAgregar.Size = New System.Drawing.Size(123, 28)
         Me.Button_GastosAgregar.TabIndex = 10
-        Me.Button_GastosAgregar.Text = "Agregar Salidas"
+        Me.Button_GastosAgregar.Text = "Agregar Salida"
         Me.Button_GastosAgregar.UseVisualStyleBackColor = True
         '
         'TextBox_GastosProveedor2
@@ -302,7 +304,7 @@ Partial Class VGastos
         '
         Me.TextBox_GastosDescripcion2.Location = New System.Drawing.Point(648, 110)
         Me.TextBox_GastosDescripcion2.Name = "TextBox_GastosDescripcion2"
-        Me.TextBox_GastosDescripcion2.Size = New System.Drawing.Size(262, 20)
+        Me.TextBox_GastosDescripcion2.Size = New System.Drawing.Size(250, 20)
         Me.TextBox_GastosDescripcion2.TabIndex = 15
         '
         'DateTimePicker_GastosFecha2
@@ -315,14 +317,14 @@ Partial Class VGastos
         '
         'TextBox_GastosCantidad2
         '
-        Me.TextBox_GastosCantidad2.Location = New System.Drawing.Point(916, 109)
+        Me.TextBox_GastosCantidad2.Location = New System.Drawing.Point(904, 109)
         Me.TextBox_GastosCantidad2.Name = "TextBox_GastosCantidad2"
         Me.TextBox_GastosCantidad2.Size = New System.Drawing.Size(75, 20)
         Me.TextBox_GastosCantidad2.TabIndex = 16
         '
         'TextBox_GastosPrecioUnitario2
         '
-        Me.TextBox_GastosPrecioUnitario2.Location = New System.Drawing.Point(997, 109)
+        Me.TextBox_GastosPrecioUnitario2.Location = New System.Drawing.Point(985, 109)
         Me.TextBox_GastosPrecioUnitario2.Name = "TextBox_GastosPrecioUnitario2"
         Me.TextBox_GastosPrecioUnitario2.Size = New System.Drawing.Size(82, 20)
         Me.TextBox_GastosPrecioUnitario2.TabIndex = 17
@@ -330,14 +332,14 @@ Partial Class VGastos
         'TextBox_GastosTotal2
         '
         Me.TextBox_GastosTotal2.Enabled = False
-        Me.TextBox_GastosTotal2.Location = New System.Drawing.Point(1171, 110)
+        Me.TextBox_GastosTotal2.Location = New System.Drawing.Point(1159, 110)
         Me.TextBox_GastosTotal2.Name = "TextBox_GastosTotal2"
         Me.TextBox_GastosTotal2.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_GastosTotal2.TabIndex = 19
         '
         'Button_GastosCalcular2
         '
-        Me.Button_GastosCalcular2.Location = New System.Drawing.Point(1085, 107)
+        Me.Button_GastosCalcular2.Location = New System.Drawing.Point(1073, 107)
         Me.Button_GastosCalcular2.Name = "Button_GastosCalcular2"
         Me.Button_GastosCalcular2.Size = New System.Drawing.Size(80, 23)
         Me.Button_GastosCalcular2.TabIndex = 18
@@ -379,6 +381,7 @@ Partial Class VGastos
         Me.GroupBox5.Controls.Add(Me.Label17)
         Me.GroupBox5.Controls.Add(Me.Label19)
         Me.GroupBox5.Controls.Add(Me.Label20)
+        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
         Me.GroupBox5.Location = New System.Drawing.Point(6, 18)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(1265, 37)
@@ -389,7 +392,7 @@ Partial Class VGastos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(298, 14)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(72, 16)
@@ -400,7 +403,7 @@ Partial Class VGastos
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(103, 14)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(128, 16)
@@ -411,7 +414,7 @@ Partial Class VGastos
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(26, 16)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(46, 16)
@@ -422,8 +425,8 @@ Partial Class VGastos
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label7.Location = New System.Drawing.Point(906, 16)
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(895, 16)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(62, 16)
         Me.Label7.TabIndex = 12
@@ -433,7 +436,7 @@ Partial Class VGastos
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label8.ForeColor = System.Drawing.Color.Black
         Me.Label8.Location = New System.Drawing.Point(488, 14)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(116, 16)
@@ -444,7 +447,7 @@ Partial Class VGastos
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label17.ForeColor = System.Drawing.Color.Black
         Me.Label17.Location = New System.Drawing.Point(725, 14)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(80, 16)
@@ -455,8 +458,8 @@ Partial Class VGastos
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label19.Location = New System.Drawing.Point(1199, 16)
+        Me.Label19.ForeColor = System.Drawing.Color.Black
+        Me.Label19.Location = New System.Drawing.Point(1180, 16)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(39, 16)
         Me.Label19.TabIndex = 17
@@ -466,8 +469,8 @@ Partial Class VGastos
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label20.Location = New System.Drawing.Point(985, 16)
+        Me.Label20.ForeColor = System.Drawing.Color.Black
+        Me.Label20.Location = New System.Drawing.Point(972, 16)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(96, 16)
         Me.Label20.TabIndex = 14
@@ -477,7 +480,7 @@ Partial Class VGastos
         '
         Me.TextBox_GastosDescripcion.Location = New System.Drawing.Point(647, 67)
         Me.TextBox_GastosDescripcion.Name = "TextBox_GastosDescripcion"
-        Me.TextBox_GastosDescripcion.Size = New System.Drawing.Size(262, 20)
+        Me.TextBox_GastosDescripcion.Size = New System.Drawing.Size(250, 20)
         Me.TextBox_GastosDescripcion.TabIndex = 5
         '
         'DateTimePicker_GastosFecha
@@ -490,14 +493,14 @@ Partial Class VGastos
         '
         'TextBox_GastosCantidad
         '
-        Me.TextBox_GastosCantidad.Location = New System.Drawing.Point(915, 66)
+        Me.TextBox_GastosCantidad.Location = New System.Drawing.Point(903, 66)
         Me.TextBox_GastosCantidad.Name = "TextBox_GastosCantidad"
         Me.TextBox_GastosCantidad.Size = New System.Drawing.Size(75, 20)
         Me.TextBox_GastosCantidad.TabIndex = 6
         '
         'TextBox_GastosPrecioUnitario
         '
-        Me.TextBox_GastosPrecioUnitario.Location = New System.Drawing.Point(996, 66)
+        Me.TextBox_GastosPrecioUnitario.Location = New System.Drawing.Point(984, 66)
         Me.TextBox_GastosPrecioUnitario.Name = "TextBox_GastosPrecioUnitario"
         Me.TextBox_GastosPrecioUnitario.Size = New System.Drawing.Size(82, 20)
         Me.TextBox_GastosPrecioUnitario.TabIndex = 7
@@ -505,50 +508,66 @@ Partial Class VGastos
         'TextBox_GastosTotal
         '
         Me.TextBox_GastosTotal.Enabled = False
-        Me.TextBox_GastosTotal.Location = New System.Drawing.Point(1170, 67)
+        Me.TextBox_GastosTotal.Location = New System.Drawing.Point(1158, 67)
         Me.TextBox_GastosTotal.Name = "TextBox_GastosTotal"
         Me.TextBox_GastosTotal.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_GastosTotal.TabIndex = 9
         '
         'Button_GastosCalcular
         '
-        Me.Button_GastosCalcular.Location = New System.Drawing.Point(1084, 64)
+        Me.Button_GastosCalcular.Location = New System.Drawing.Point(1072, 64)
         Me.Button_GastosCalcular.Name = "Button_GastosCalcular"
         Me.Button_GastosCalcular.Size = New System.Drawing.Size(80, 23)
         Me.Button_GastosCalcular.TabIndex = 8
         Me.Button_GastosCalcular.Text = "Calcular Total"
         Me.Button_GastosCalcular.UseVisualStyleBackColor = True
         '
-        'ReporteDeSaldosToolStripMenuItem
+        'Panel1
         '
-        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
-        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(0, 24)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1408, 93)
+        Me.Panel1.TabIndex = 149
+        '
+        'Label1
+        '
+        Me.Label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(552, 31)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(277, 29)
+        Me.Label1.TabIndex = 41
+        Me.Label1.Text = "Información de Salidas"
         '
         'VGastos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1393, 472)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1406, 507)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.Label18)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "VGastos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Salidas"
+        Me.Text = "SAC"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label18 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
@@ -597,4 +616,6 @@ Partial Class VGastos
     Friend WithEvents TextBox_GastosTotal As TextBox
     Friend WithEvents Button_GastosCalcular As Button
     Friend WithEvents ReporteDeSaldosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
 End Class

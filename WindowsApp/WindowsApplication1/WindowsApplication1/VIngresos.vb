@@ -1,12 +1,18 @@
 ﻿Public Class VIngresos
 
     Dim ingreso As Ingreso = New Ingreso
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     'LOAD - cod cta data
     Private Sub VIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ingreso.obtenerDatosSeleccionarCuenta()
         ingreso.obtenerDatosSeleccionarCuenta2()
         ingreso.obtenerDatosSeleccionarCuenta3()
+
+        Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.Button_IngresosInsertar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.Button_IngresosInsertar2.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.Button_IngresosInsertar3.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
     End Sub
 
     Private Sub CrearReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearReporteToolStripMenuItem.Click

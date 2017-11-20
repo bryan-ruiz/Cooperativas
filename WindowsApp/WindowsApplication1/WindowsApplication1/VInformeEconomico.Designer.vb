@@ -29,14 +29,16 @@ Partial Class VInformeEconomico
         Me.InformeDateTimePickerHasta = New System.Windows.Forms.DateTimePicker()
         Me.InformeDateTimePickerDesde = New System.Windows.Forms.DateTimePicker()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(95, 131)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(196, 179)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 16)
         Me.Label1.TabIndex = 46
@@ -46,8 +48,8 @@ Partial Class VInformeEconomico
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label2.Location = New System.Drawing.Point(95, 101)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(192, 149)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 16)
         Me.Label2.TabIndex = 45
@@ -55,9 +57,11 @@ Partial Class VInformeEconomico
         '
         'InformeButtonGenerarInforme
         '
-        Me.InformeButtonGenerarInforme.Location = New System.Drawing.Point(190, 201)
+        Me.InformeButtonGenerarInforme.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InformeButtonGenerarInforme.ForeColor = System.Drawing.Color.White
+        Me.InformeButtonGenerarInforme.Location = New System.Drawing.Point(256, 261)
         Me.InformeButtonGenerarInforme.Name = "InformeButtonGenerarInforme"
-        Me.InformeButtonGenerarInforme.Size = New System.Drawing.Size(84, 30)
+        Me.InformeButtonGenerarInforme.Size = New System.Drawing.Size(196, 52)
         Me.InformeButtonGenerarInforme.TabIndex = 44
         Me.InformeButtonGenerarInforme.Text = "Generar"
         Me.InformeButtonGenerarInforme.UseVisualStyleBackColor = True
@@ -65,7 +69,7 @@ Partial Class VInformeEconomico
         'InformeDateTimePickerHasta
         '
         Me.InformeDateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.InformeDateTimePickerHasta.Location = New System.Drawing.Point(159, 132)
+        Me.InformeDateTimePickerHasta.Location = New System.Drawing.Point(256, 180)
         Me.InformeDateTimePickerHasta.Name = "InformeDateTimePickerHasta"
         Me.InformeDateTimePickerHasta.Size = New System.Drawing.Size(196, 20)
         Me.InformeDateTimePickerHasta.TabIndex = 43
@@ -73,7 +77,7 @@ Partial Class VInformeEconomico
         'InformeDateTimePickerDesde
         '
         Me.InformeDateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.InformeDateTimePickerDesde.Location = New System.Drawing.Point(159, 101)
+        Me.InformeDateTimePickerDesde.Location = New System.Drawing.Point(256, 149)
         Me.InformeDateTimePickerDesde.Name = "InformeDateTimePickerDesde"
         Me.InformeDateTimePickerDesde.Size = New System.Drawing.Size(196, 20)
         Me.InformeDateTimePickerDesde.TabIndex = 42
@@ -82,30 +86,41 @@ Partial Class VInformeEconomico
         '
         Me.Label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Georgia", 12.0!)
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label9.Location = New System.Drawing.Point(95, 46)
+        Me.Label9.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(171, 33)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(269, 18)
+        Me.Label9.Size = New System.Drawing.Size(335, 29)
         Me.Label9.TabIndex = 41
-        Me.Label9.Text = "Generar Reporte Informe Económico"
+        Me.Label9.Text = "Reporte Informe Económico"
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(665, 93)
+        Me.Panel1.TabIndex = 47
         '
         'VInformeEconomico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(457, 298)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(664, 381)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.InformeButtonGenerarInforme)
         Me.Controls.Add(Me.InformeDateTimePickerHasta)
         Me.Controls.Add(Me.InformeDateTimePickerDesde)
-        Me.Controls.Add(Me.Label9)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "VInformeEconomico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Informe Económico"
+        Me.Text = "SAC"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -117,4 +132,5 @@ Partial Class VInformeEconomico
     Friend WithEvents InformeDateTimePickerHasta As DateTimePicker
     Friend WithEvents InformeDateTimePickerDesde As DateTimePicker
     Friend WithEvents Label9 As Label
+    Friend WithEvents Panel1 As Panel
 End Class

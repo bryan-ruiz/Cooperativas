@@ -37,5 +37,11 @@ Public Class MensajesGlobales
     Public numReciboCertificados As Integer = 1
     Public numReciboEntradas As Integer = 1
 
+    Public colorDisenoVerde As String = "#2ABCA7"
+    Public colorDisenoMorado As String = "#616497"
+    Public colorDisenoCeleste As String = "#15B3D4"
+    Public colorDisenoTurquesa As String = "#47B1B9"
+    Public colorDisenoVerdeAgua As String = "#93CE97"
+
 
 End Class

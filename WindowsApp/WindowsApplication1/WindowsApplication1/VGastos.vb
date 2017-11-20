@@ -1,12 +1,18 @@
 ﻿Public Class VGastos
 
     Dim gasto As Gastos = New Gastos
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     'LOAD
     Private Sub VGastos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gasto.obtenerDatosSeleccionarCuenta()
         gasto.obtenerDatosSeleccionarCuenta2()
         gasto.obtenerDatosSeleccionarCuenta3()
+
+        Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.Button_GastosAgregar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.Button_GastosAgregar2.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.Button_GastosAgregar3.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
     End Sub
 
     Private Sub CrearReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearReporteToolStripMenuItem.Click
@@ -133,4 +139,6 @@
     Private Sub ReporteDeSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeSaldosToolStripMenuItem.Click
         VIngresosSaldos.Show()
     End Sub
+
+
 End Class

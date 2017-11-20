@@ -7,6 +7,10 @@
     'Carga los datos de la info de la coope
     Private Sub VConfiguracionInformacionCooperativa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         configuracionInformacion.consultarInformacionCooperativa()
+
+        Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.ButtonConfiguracionInformacionModificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+
     End Sub
 
 

@@ -37,10 +37,10 @@ Partial Class Principal
         Me.GestiónDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeSACToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.AcercaDeSACToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -134,6 +134,12 @@ Partial Class Principal
         Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
         '
+        'AcercaDeSACToolStripMenuItem
+        '
+        Me.AcercaDeSACToolStripMenuItem.Name = "AcercaDeSACToolStripMenuItem"
+        Me.AcercaDeSACToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.AcercaDeSACToolStripMenuItem.Text = "Acerca de SAC"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -169,12 +175,6 @@ Partial Class Principal
         Me.Label2.Size = New System.Drawing.Size(274, 170)
         Me.Label2.TabIndex = 35
         Me.Label2.Text = "SAC"
-        '
-        'AcercaDeSACToolStripMenuItem
-        '
-        Me.AcercaDeSACToolStripMenuItem.Name = "AcercaDeSACToolStripMenuItem"
-        Me.AcercaDeSACToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.AcercaDeSACToolStripMenuItem.Text = "Acerca de SAC"
         '
         'Principal
         '

@@ -8,6 +8,10 @@
     Private Sub VConfiguracionFechasLimite_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Load
         configuracionInformacion.consultarFechasLimite()
+
+        Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.ButtonConfiguracionFechasGuardar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+
     End Sub
 
 

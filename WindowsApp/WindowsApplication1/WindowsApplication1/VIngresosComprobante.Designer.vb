@@ -37,7 +37,6 @@ Partial Class VIngresosComprobante
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox_IngresosTotalRE = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ComboBox_IngresosCodigCuentaRE = New System.Windows.Forms.ComboBox()
         Me.TextBox_IngresosFacturaRecibosRE = New System.Windows.Forms.TextBox()
@@ -46,9 +45,12 @@ Partial Class VIngresosComprobante
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Button_IngresosImprimirReciboRE = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -85,7 +87,7 @@ Partial Class VIngresosComprobante
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(623, 14)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(80, 16)
@@ -103,7 +105,7 @@ Partial Class VIngresosComprobante
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(807, 14)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(62, 16)
@@ -121,7 +123,7 @@ Partial Class VIngresosComprobante
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(879, 14)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(96, 16)
@@ -137,7 +139,7 @@ Partial Class VIngresosComprobante
         '
         'Button_IngresosCalcularTotalRE
         '
-        Me.Button_IngresosCalcularTotalRE.Location = New System.Drawing.Point(1005, 64)
+        Me.Button_IngresosCalcularTotalRE.Location = New System.Drawing.Point(1005, 66)
         Me.Button_IngresosCalcularTotalRE.Name = "Button_IngresosCalcularTotalRE"
         Me.Button_IngresosCalcularTotalRE.Size = New System.Drawing.Size(80, 23)
         Me.Button_IngresosCalcularTotalRE.TabIndex = 8
@@ -167,24 +169,12 @@ Partial Class VIngresosComprobante
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label8.ForeColor = System.Drawing.Color.Black
         Me.Label8.Location = New System.Drawing.Point(370, 14)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(116, 16)
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Codigo de Cuenta"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Baskerville Old Face", 14.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label18.Location = New System.Drawing.Point(518, 62)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(160, 22)
-        Me.Label18.TabIndex = 138
-        Me.Label18.Text = "Recibo de Entradas"
         '
         'GroupBox2
         '
@@ -197,7 +187,9 @@ Partial Class VIngresosComprobante
         Me.GroupBox2.Controls.Add(Me.TextBox_IngresosPrecioUnitarioRE)
         Me.GroupBox2.Controls.Add(Me.TextBox_IngresosTotalRE)
         Me.GroupBox2.Controls.Add(Me.Button_IngresosCalcularTotalRE)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 124)
+        Me.GroupBox2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 180)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(1214, 109)
         Me.GroupBox2.TabIndex = 140
@@ -222,6 +214,7 @@ Partial Class VIngresosComprobante
         '
         'GroupBox3
         '
+        Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.Label10)
@@ -240,7 +233,7 @@ Partial Class VIngresosComprobante
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(1098, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(39, 16)
@@ -251,7 +244,7 @@ Partial Class VIngresosComprobante
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label11.ForeColor = System.Drawing.Color.Black
         Me.Label11.Location = New System.Drawing.Point(199, 14)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(49, 16)
@@ -262,7 +255,7 @@ Partial Class VIngresosComprobante
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label10.ForeColor = System.Drawing.Color.Black
         Me.Label10.Location = New System.Drawing.Point(6, 14)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(70, 16)
@@ -271,34 +264,58 @@ Partial Class VIngresosComprobante
         '
         'Button_IngresosImprimirReciboRE
         '
-        Me.Button_IngresosImprimirReciboRE.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_IngresosImprimirReciboRE.Location = New System.Drawing.Point(539, 283)
+        Me.Button_IngresosImprimirReciboRE.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.Button_IngresosImprimirReciboRE.ForeColor = System.Drawing.Color.White
+        Me.Button_IngresosImprimirReciboRE.Location = New System.Drawing.Point(512, 356)
         Me.Button_IngresosImprimirReciboRE.Name = "Button_IngresosImprimirReciboRE"
-        Me.Button_IngresosImprimirReciboRE.Size = New System.Drawing.Size(128, 28)
+        Me.Button_IngresosImprimirReciboRE.Size = New System.Drawing.Size(196, 52)
         Me.Button_IngresosImprimirReciboRE.TabIndex = 30
         Me.Button_IngresosImprimirReciboRE.Text = "Imprimir Recibo"
         Me.Button_IngresosImprimirReciboRE.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Location = New System.Drawing.Point(0, 24)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1247, 93)
+        Me.Panel1.TabIndex = 141
+        '
+        'Label9
+        '
+        Me.Label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(490, 32)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(237, 29)
+        Me.Label9.TabIndex = 41
+        Me.Label9.Text = "Recibo de Entradas"
         '
         'VIngresosComprobante
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1247, 368)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1247, 458)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button_IngresosImprimirReciboRE)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "VIngresosComprobante"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Recibo de Entrada"
+        Me.Text = "SAC"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -318,7 +335,6 @@ Partial Class VIngresosComprobante
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBox_IngresosTotalRE As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label18 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents ComboBox_IngresosCodigCuentaRE As ComboBox
@@ -327,4 +343,6 @@ Partial Class VIngresosComprobante
     Friend WithEvents Button_IngresosImprimirReciboRE As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox_IngresosFacturaRecibosRE As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label9 As Label
 End Class
