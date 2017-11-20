@@ -50,7 +50,7 @@ Partial Class Principal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionUsuariosToolStripMenuItem, Me.ComitésToolStripMenuItem, Me.CertificadosToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.SalidasToolStripMenuItem, Me.ConfiguraciónToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(796, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(947, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -143,8 +143,8 @@ Partial Class Principal
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logoCoopesag2
-        Me.PictureBox1.Location = New System.Drawing.Point(284, 82)
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.LogoTransparente
+        Me.PictureBox1.Location = New System.Drawing.Point(359, 117)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(217, 187)
@@ -158,7 +158,7 @@ Partial Class Principal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(22, 305)
+        Me.Label1.Location = New System.Drawing.Point(97, 340)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(740, 57)
         Me.Label1.TabIndex = 34
@@ -170,7 +170,7 @@ Partial Class Principal
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe Print", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label2.Location = New System.Drawing.Point(255, 362)
+        Me.Label2.Location = New System.Drawing.Point(330, 397)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(274, 170)
         Me.Label2.TabIndex = 35
@@ -180,8 +180,8 @@ Partial Class Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(796, 541)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(947, 610)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)

@@ -27,10 +27,10 @@ Partial Class VCertificados
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImprimirComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CertificadosTextboxCedulaNumAsociado = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -103,10 +103,8 @@ Partial Class VCertificados
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.CertificadosTextboxNombre = New System.Windows.Forms.TextBox()
-        Me.ImprimirComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -142,6 +140,12 @@ Partial Class VCertificados
         Me.ComprobanteToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.ComprobanteToolStripMenuItem.Text = "Comprobante"
         '
+        'ImprimirComprobanteToolStripMenuItem
+        '
+        Me.ImprimirComprobanteToolStripMenuItem.Name = "ImprimirComprobanteToolStripMenuItem"
+        Me.ImprimirComprobanteToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.ImprimirComprobanteToolStripMenuItem.Text = "Imprimir Comprobante"
+        '
         'InformaciónToolStripMenuItem
         '
         Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
@@ -151,7 +155,6 @@ Partial Class VCertificados
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label25)
-        Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.CertificadosTextboxCedulaNumAsociado)
         Me.GroupBox1.Controls.Add(Me.Label24)
@@ -177,17 +180,6 @@ Partial Class VCertificados
         Me.Label25.Size = New System.Drawing.Size(150, 16)
         Me.Label25.TabIndex = 64
         Me.Label25.Text = "o Número de Asociado:"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(35, 343)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(148, 140)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 63
-        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -1025,12 +1017,6 @@ Partial Class VCertificados
         Me.CertificadosTextboxNombre.Size = New System.Drawing.Size(289, 20)
         Me.CertificadosTextboxNombre.TabIndex = 63
         '
-        'ImprimirComprobanteToolStripMenuItem
-        '
-        Me.ImprimirComprobanteToolStripMenuItem.Name = "ImprimirComprobanteToolStripMenuItem"
-        Me.ImprimirComprobanteToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.ImprimirComprobanteToolStripMenuItem.Text = "Imprimir Comprobante"
-        '
         'VCertificados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1048,7 +1034,6 @@ Partial Class VCertificados
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -1127,7 +1112,6 @@ Partial Class VCertificados
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents InformaciónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
     Friend WithEvents CertificadosButtonCerrarPeriodo As Button

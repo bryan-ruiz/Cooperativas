@@ -629,7 +629,7 @@ Partial Class VAsociados
         '
         Me.Panel1.Controls.Add(Me.RadioButtonSociosMenorNo)
         Me.Panel1.Controls.Add(Me.RadioButtonSociosMenorSi)
-        Me.Panel1.Location = New System.Drawing.Point(986, 193)
+        Me.Panel1.Location = New System.Drawing.Point(999, 191)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(243, 34)
         Me.Panel1.TabIndex = 176
@@ -640,7 +640,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosMenorNo.Checked = True
         Me.RadioButtonSociosMenorNo.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButtonSociosMenorNo.ForeColor = System.Drawing.Color.Black
-        Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(119, 7)
+        Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(108, 6)
         Me.RadioButtonSociosMenorNo.Name = "RadioButtonSociosMenorNo"
         Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(43, 20)
         Me.RadioButtonSociosMenorNo.TabIndex = 19
@@ -653,7 +653,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosMenorSi.AutoSize = True
         Me.RadioButtonSociosMenorSi.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButtonSociosMenorSi.ForeColor = System.Drawing.Color.Black
-        Me.RadioButtonSociosMenorSi.Location = New System.Drawing.Point(12, 6)
+        Me.RadioButtonSociosMenorSi.Location = New System.Drawing.Point(14, 6)
         Me.RadioButtonSociosMenorSi.Name = "RadioButtonSociosMenorSi"
         Me.RadioButtonSociosMenorSi.Size = New System.Drawing.Size(39, 20)
         Me.RadioButtonSociosMenorSi.TabIndex = 18
@@ -675,7 +675,7 @@ Partial Class VAsociados
         '
         Me.Panel2.Controls.Add(Me.RadioButtonSociosMasculino)
         Me.Panel2.Controls.Add(Me.RadioButtonSociosFemenino)
-        Me.Panel2.Location = New System.Drawing.Point(985, 231)
+        Me.Panel2.Location = New System.Drawing.Point(999, 235)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(246, 34)
         Me.Panel2.TabIndex = 174
@@ -699,7 +699,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosFemenino.AutoSize = True
         Me.RadioButtonSociosFemenino.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButtonSociosFemenino.ForeColor = System.Drawing.Color.Black
-        Me.RadioButtonSociosFemenino.Location = New System.Drawing.Point(120, 7)
+        Me.RadioButtonSociosFemenino.Location = New System.Drawing.Point(109, 5)
         Me.RadioButtonSociosFemenino.Name = "RadioButtonSociosFemenino"
         Me.RadioButtonSociosFemenino.Size = New System.Drawing.Size(90, 20)
         Me.RadioButtonSociosFemenino.TabIndex = 21
@@ -711,7 +711,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosRetirado.AutoSize = True
         Me.RadioButtonSociosRetirado.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButtonSociosRetirado.ForeColor = System.Drawing.Color.Black
-        Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(1104, 210)
+        Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(1107, 276)
         Me.RadioButtonSociosRetirado.Name = "RadioButtonSociosRetirado"
         Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(80, 20)
         Me.RadioButtonSociosRetirado.TabIndex = 171
@@ -724,7 +724,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosActivo.Checked = True
         Me.RadioButtonSociosActivo.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButtonSociosActivo.ForeColor = System.Drawing.Color.Black
-        Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(999, 276)
+        Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(1011, 278)
         Me.RadioButtonSociosActivo.Name = "RadioButtonSociosActivo"
         Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(65, 20)
         Me.RadioButtonSociosActivo.TabIndex = 170

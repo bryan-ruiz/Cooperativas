@@ -31,12 +31,9 @@ Partial Class VComites
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CuerposDirectivosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBoxComitesNombre = New System.Windows.Forms.ComboBox()
         Me.ButtonVComitesGuardar = New System.Windows.Forms.Button()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.ButtonVComitesLimpiar = New System.Windows.Forms.Button()
         Me.TextBoxComitesPresidente = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -91,7 +88,6 @@ Partial Class VComites
         Me.DateTimePickerFechaVence_ComiteVocal2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePickerFechaVence_ComiteSuplente1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePickerFechaVence_ComiteSuplente2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.ButtonBuscar_asociadoSuplente2 = New System.Windows.Forms.Button()
         Me.ButtonBuscar_asociadoSuplente1 = New System.Windows.Forms.Button()
@@ -111,10 +107,10 @@ Partial Class VComites
         Me.TextBoxComitesVocal2 = New System.Windows.Forms.TextBox()
         Me.TextBoxComitesSuplente1 = New System.Windows.Forms.TextBox()
         Me.TextBoxComitesSuplente2 = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
@@ -124,6 +120,7 @@ Partial Class VComites
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -131,7 +128,7 @@ Partial Class VComites
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1279, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1296, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -176,95 +173,61 @@ Partial Class VComites
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.ComboBoxComitesNombre)
         Me.GroupBox1.Controls.Add(Me.ButtonVComitesGuardar)
-        Me.GroupBox1.Controls.Add(Me.Label24)
         Me.GroupBox1.Controls.Add(Me.ButtonVComitesLimpiar)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 39)
+        Me.GroupBox1.Location = New System.Drawing.Point(5, 127)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(205, 540)
+        Me.GroupBox1.Size = New System.Drawing.Size(231, 419)
         Me.GroupBox1.TabIndex = 53
         Me.GroupBox1.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(10, 336)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(186, 169)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 62
-        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(43, 26)
+        Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(49, 57)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(109, 16)
+        Me.Label1.Size = New System.Drawing.Size(117, 16)
         Me.Label1.TabIndex = 54
         Me.Label1.Text = "Consultar Comite"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(50, 107)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 16)
-        Me.Label2.TabIndex = 57
-        Me.Label2.Text = "Guardar Comité"
         '
         'ComboBoxComitesNombre
         '
         Me.ComboBoxComitesNombre.FormattingEnabled = True
         Me.ComboBoxComitesNombre.Items.AddRange(New Object() {"Consejo de administración", "Vigilancia", "Asesor", "Ahorro", "Educación Bienestar Social"})
-        Me.ComboBoxComitesNombre.Location = New System.Drawing.Point(10, 52)
+        Me.ComboBoxComitesNombre.Location = New System.Drawing.Point(21, 90)
         Me.ComboBoxComitesNombre.Name = "ComboBoxComitesNombre"
-        Me.ComboBoxComitesNombre.Size = New System.Drawing.Size(180, 24)
+        Me.ComboBoxComitesNombre.Size = New System.Drawing.Size(186, 24)
         Me.ComboBoxComitesNombre.TabIndex = 61
         Me.ComboBoxComitesNombre.Text = "-- Selecione una opción --"
         '
         'ButtonVComitesGuardar
         '
-        Me.ButtonVComitesGuardar.Location = New System.Drawing.Point(66, 136)
+        Me.ButtonVComitesGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonVComitesGuardar.ForeColor = System.Drawing.Color.White
+        Me.ButtonVComitesGuardar.Location = New System.Drawing.Point(32, 182)
         Me.ButtonVComitesGuardar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.ButtonVComitesGuardar.Name = "ButtonVComitesGuardar"
-        Me.ButtonVComitesGuardar.Size = New System.Drawing.Size(69, 22)
+        Me.ButtonVComitesGuardar.Size = New System.Drawing.Size(164, 44)
         Me.ButtonVComitesGuardar.TabIndex = 58
-        Me.ButtonVComitesGuardar.Text = "Guardar"
+        Me.ButtonVComitesGuardar.Text = "Guardar Comité"
         Me.ButtonVComitesGuardar.UseVisualStyleBackColor = True
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label24.Location = New System.Drawing.Point(26, 184)
-        Me.Label24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(162, 16)
-        Me.Label24.TabIndex = 60
-        Me.Label24.Text = "Limpiar todos los campos"
         '
         'ButtonVComitesLimpiar
         '
-        Me.ButtonVComitesLimpiar.Location = New System.Drawing.Point(66, 211)
+        Me.ButtonVComitesLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonVComitesLimpiar.ForeColor = System.Drawing.Color.White
+        Me.ButtonVComitesLimpiar.Location = New System.Drawing.Point(32, 282)
         Me.ButtonVComitesLimpiar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.ButtonVComitesLimpiar.Name = "ButtonVComitesLimpiar"
-        Me.ButtonVComitesLimpiar.Size = New System.Drawing.Size(69, 25)
+        Me.ButtonVComitesLimpiar.Size = New System.Drawing.Size(166, 44)
         Me.ButtonVComitesLimpiar.TabIndex = 59
-        Me.ButtonVComitesLimpiar.Text = "Limpiar"
+        Me.ButtonVComitesLimpiar.Text = "Limpiar Campos"
         Me.ButtonVComitesLimpiar.UseVisualStyleBackColor = True
         '
         'TextBoxComitesPresidente
@@ -279,14 +242,14 @@ Partial Class VComites
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(299, 9)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(169, 15)
+        Me.Label3.Size = New System.Drawing.Size(195, 16)
         Me.Label3.TabIndex = 62
-        Me.Label3.Text = "Nombre y Apellidos Completo"
+        Me.Label3.Text = "Nombre y Apellidos Completos"
         '
         'TextBoxComitesVicepresidente
         '
@@ -300,14 +263,14 @@ Partial Class VComites
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label4.Location = New System.Drawing.Point(515, 9)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(512, 9)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 15)
+        Me.Label4.Size = New System.Drawing.Size(97, 16)
         Me.Label4.TabIndex = 64
-        Me.Label4.Text = "Tipo de asociado"
+        Me.Label4.Text = "Tipo Asociado"
         '
         'TextBoxComitesSecretaria
         '
@@ -321,12 +284,12 @@ Partial Class VComites
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label5.Location = New System.Drawing.Point(626, 9)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(623, 9)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(43, 15)
+        Me.Label5.Size = New System.Drawing.Size(46, 16)
         Me.Label5.TabIndex = 66
         Me.Label5.Text = "Menor"
         '
@@ -342,14 +305,14 @@ Partial Class VComites
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label6.Location = New System.Drawing.Point(2, 9)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(6, 9)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(115, 15)
+        Me.Label6.Size = New System.Drawing.Size(129, 16)
         Me.Label6.TabIndex = 68
-        Me.Label6.Text = "Cedula / # Asociado"
+        Me.Label6.Text = "Cédula / # Asociado"
         '
         'GroupBox2
         '
@@ -359,12 +322,11 @@ Partial Class VComites
         Me.GroupBox2.Controls.Add(Me.GroupBox6)
         Me.GroupBox2.Controls.Add(Me.GroupBox5)
         Me.GroupBox2.Controls.Add(Me.GroupBox4)
-        Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Controls.Add(Me.GroupBox7)
         Me.GroupBox2.Controls.Add(Me.GroupBox8)
-        Me.GroupBox2.Location = New System.Drawing.Point(219, 40)
+        Me.GroupBox2.Location = New System.Drawing.Point(233, 128)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1057, 539)
+        Me.GroupBox2.Size = New System.Drawing.Size(1057, 418)
         Me.GroupBox2.TabIndex = 70
         Me.GroupBox2.TabStop = False
         '
@@ -386,36 +348,36 @@ Partial Class VComites
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label10.Location = New System.Drawing.Point(936, 10)
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(917, 9)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(41, 15)
+        Me.Label10.Size = New System.Drawing.Size(47, 16)
         Me.Label10.TabIndex = 73
         Me.Label10.Text = "Vence"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label9.ForeColor = System.Drawing.Color.Black
         Me.Label9.Location = New System.Drawing.Point(741, 10)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(33, 15)
+        Me.Label9.Size = New System.Drawing.Size(37, 16)
         Me.Label9.TabIndex = 71
         Me.Label9.Text = "Rige"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label7.Location = New System.Drawing.Point(193, 10)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(211, 10)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(40, 15)
+        Me.Label7.Size = New System.Drawing.Size(45, 16)
         Me.Label7.TabIndex = 71
         Me.Label7.Text = "Cargo"
         '
@@ -640,7 +602,7 @@ Partial Class VComites
         '
         'TextBoxID_ComiteSuplente2
         '
-        Me.TextBoxID_ComiteSuplente2.Location = New System.Drawing.Point(4, 297)
+        Me.TextBoxID_ComiteSuplente2.Location = New System.Drawing.Point(4, 295)
         Me.TextBoxID_ComiteSuplente2.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.TextBoxID_ComiteSuplente2.Name = "TextBoxID_ComiteSuplente2"
         Me.TextBoxID_ComiteSuplente2.Size = New System.Drawing.Size(124, 20)
@@ -788,18 +750,6 @@ Partial Class VComites
         Me.DateTimePickerFechaVence_ComiteSuplente2.Size = New System.Drawing.Size(169, 20)
         Me.DateTimePickerFechaVence_ComiteSuplente2.TabIndex = 116
         '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Baskerville Old Face", 14.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label18.Location = New System.Drawing.Point(297, 16)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(387, 22)
-        Me.Label18.TabIndex = 137
-        Me.Label18.Text = "Información Genereal de los Cuerpos Directivos"
-        '
         'GroupBox7
         '
         Me.GroupBox7.Controls.Add(Me.ButtonBuscar_asociadoSuplente2)
@@ -828,7 +778,7 @@ Partial Class VComites
         Me.ButtonBuscar_asociadoSuplente2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonBuscar_asociadoSuplente2.ForeColor = System.Drawing.Color.White
         Me.ButtonBuscar_asociadoSuplente2.Image = CType(resources.GetObject("ButtonBuscar_asociadoSuplente2.Image"), System.Drawing.Image)
-        Me.ButtonBuscar_asociadoSuplente2.Location = New System.Drawing.Point(6, 295)
+        Me.ButtonBuscar_asociadoSuplente2.Location = New System.Drawing.Point(6, 293)
         Me.ButtonBuscar_asociadoSuplente2.Name = "ButtonBuscar_asociadoSuplente2"
         Me.ButtonBuscar_asociadoSuplente2.Size = New System.Drawing.Size(35, 25)
         Me.ButtonBuscar_asociadoSuplente2.TabIndex = 246
@@ -911,8 +861,8 @@ Partial Class VComites
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label8.Location = New System.Drawing.Point(59, 36)
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(66, 37)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(80, 16)
@@ -923,8 +873,8 @@ Partial Class VComites
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label11.Location = New System.Drawing.Point(45, 76)
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(52, 75)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(106, 16)
@@ -935,8 +885,8 @@ Partial Class VComites
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label12.Location = New System.Drawing.Point(65, 117)
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(69, 119)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(70, 16)
@@ -947,8 +897,8 @@ Partial Class VComites
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label13.Location = New System.Drawing.Point(67, 163)
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(77, 159)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(53, 16)
@@ -959,8 +909,8 @@ Partial Class VComites
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label14.Location = New System.Drawing.Point(65, 209)
+        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.Location = New System.Drawing.Point(77, 204)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(53, 16)
@@ -971,8 +921,8 @@ Partial Class VComites
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label15.Location = New System.Drawing.Point(64, 253)
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(66, 250)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(71, 16)
@@ -983,8 +933,8 @@ Partial Class VComites
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label16.Location = New System.Drawing.Point(63, 298)
+        Me.Label16.ForeColor = System.Drawing.Color.Black
+        Me.Label16.Location = New System.Drawing.Point(67, 296)
         Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(71, 16)
@@ -1033,25 +983,33 @@ Partial Class VComites
         Me.TextBoxComitesSuplente2.Size = New System.Drawing.Size(214, 20)
         Me.TextBoxComitesSuplente2.TabIndex = 81
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label17)
+        Me.Panel3.Location = New System.Drawing.Point(0, 24)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1296, 93)
+        Me.Panel3.TabIndex = 180
+        '
         'Label17
         '
+        Me.Label17.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Baskerville Old Face", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.DarkTurquoise
-        Me.Label17.Location = New System.Drawing.Point(1174, 573)
-        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label17.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.White
+        Me.Label17.Location = New System.Drawing.Point(423, 30)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(102, 14)
-        Me.Label17.TabIndex = 71
-        Me.Label17.Text = "COOPESAG R.L"
+        Me.Label17.Size = New System.Drawing.Size(406, 29)
+        Me.Label17.TabIndex = 41
+        Me.Label17.Text = "Gestión de los Cuerpos Directivos"
         '
         'VComites
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1279, 591)
-        Me.Controls.Add(Me.Label17)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1296, 597)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -1064,9 +1022,7 @@ Partial Class VComites
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox10.ResumeLayout(False)
@@ -1081,6 +1037,8 @@ Partial Class VComites
         Me.GroupBox7.PerformLayout()
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1090,10 +1048,8 @@ Partial Class VComites
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label24 As Label
     Friend WithEvents ButtonVComitesLimpiar As Button
     Friend WithEvents ButtonVComitesGuardar As Button
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBoxComitesNombre As ComboBox
     Friend WithEvents TextBoxComitesPresidente As TextBox
@@ -1155,10 +1111,7 @@ Partial Class VComites
     Friend WithEvents TextBoxID_ComiteVocal1 As TextBox
     Friend WithEvents TextBoxID_ComiteSecretaria As TextBox
     Friend WithEvents TextBoxID_ComiteVicePresidente As TextBox
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label17 As Label
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents GroupBox10 As GroupBox
@@ -1175,4 +1128,6 @@ Partial Class VComites
     Friend WithEvents ButtonBuscar_asociadoVocal1 As Button
     Friend WithEvents ButtonBuscar_asociadoSecretaria As Button
     Friend WithEvents ButtonBuscar_asociadoVicePresidente As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label17 As Label
 End Class

@@ -1,6 +1,7 @@
 ﻿Public Class VComites
 
     Dim comites As Comites = New Comites
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
         Me.Close()
@@ -61,7 +62,9 @@
     End Sub
 
     Private Sub VComites_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.Panel3.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.ButtonVComitesGuardar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.ButtonVComitesLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
     End Sub
 
 
