@@ -394,6 +394,10 @@
     <None Include="Resources\Green_abstract_nature_1920x1200.jpg" />
     <None Include="Resources\login2.jpg" />
     <None Include="Resources\btn2.png" />
+    <None Include="Resources\find.png" />
+    <None Include="Resources\find5.jpg" />
+    <None Include="Resources\find7.jpg" />
+    <None Include="Resources\find81.png" />
     <Content Include="Resources\logoCoopesag2.png" />
     <None Include="Resources\LogoTransparente.png" />
     <Content Include="Resources\MEP_Logo.png" />
