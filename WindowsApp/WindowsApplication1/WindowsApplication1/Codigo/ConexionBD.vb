@@ -1098,9 +1098,18 @@ Public Class ConexionBD
                     Dim conta As Integer = 0
                     For conta = 0 To reader.FieldCount - 1
 
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
                         'MsgBox(String.Concat(" ", reader(conta)))
 
-                        MyList.Add(reader(conta))
+                        'MyList.Add(reader(conta))
                     Next conta
                 End While
                 reader.Close()
@@ -1130,8 +1139,16 @@ Public Class ConexionBD
                     For conta = 0 To reader.FieldCount - 1
 
                         'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
 
-                        MyList.Add(reader(conta))
+
+                        'MyList.Add(reader(conta))
                     Next conta
                 End While
                 reader.Close()
@@ -1160,8 +1177,16 @@ Public Class ConexionBD
                     For conta = 0 To reader.FieldCount - 1
 
                         'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
 
-                        MyList.Add(reader(conta))
+
+                        ' MyList.Add(reader(conta))
                     Next conta
                 End While
                 reader.Close()
@@ -1253,8 +1278,16 @@ Public Class ConexionBD
                     For conta = 0 To reader.FieldCount - 1
 
                         'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
 
-                        MyList.Add(reader(conta))
+
+                        'MyList.Add(reader(conta))
                     Next conta
                 End While
                 reader.Close()
@@ -1281,14 +1314,26 @@ Public Class ConexionBD
                 Dim command As New OleDbCommand(SQL, objConexion)
                 Dim reader = command.ExecuteReader()
                 While reader.Read()
+                    ' MsgBox("entro al while ingresos")
+
                     Dim conta As Integer = 0
                     For conta = 0 To reader.FieldCount - 1
 
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add(String.Empty)
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
                         'MsgBox(String.Concat(" ", reader(conta)))
 
-                        MyList.Add(reader(conta))
+                        ' MyList.Add(reader(conta))
                     Next conta
                 End While
+                'MsgBox("fin al while ingresos")
                 reader.Close()
             Else
                 MessageBox.Show("No hay conexión con la base de datos")
@@ -1313,14 +1358,24 @@ Public Class ConexionBD
                 Dim command As New OleDbCommand(SQL, objConexion)
                 Dim reader = command.ExecuteReader()
                 While reader.Read()
+                    ' MsgBox("entro al while gastos")
+
                     Dim conta As Integer = 0
                     For conta = 0 To reader.FieldCount - 1
 
-                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            'MessageBox.Show("dato es null")
+                            MyList.Add(String.Empty)
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
 
-                        MyList.Add(reader(conta))
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        'MyList.Add(reader(conta))
                     Next conta
                 End While
+                'MsgBox("salio al while gastos")
                 reader.Close()
             Else
                 MessageBox.Show("No hay conexión con la base de datos")

@@ -180,6 +180,13 @@ Public Class Gastos
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
         End If
+
+        If (total.Equals("0")) Then
+            MessageBox.Show(variablesGlobales.errorTotalEnCero, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar()
+            Return
+        End If
+
         Try
             Integer.Parse(total)
         Catch ex As Exception
@@ -217,6 +224,13 @@ Public Class Gastos
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
         End If
+
+        If (total.Equals("0")) Then
+            MessageBox.Show(variablesGlobales.errorTotalEnCero, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar2()
+            Return
+        End If
+
         Try
             Integer.Parse(total)
         Catch ex As Exception
@@ -254,6 +268,13 @@ Public Class Gastos
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
         End If
+
+        If (total.Equals("0")) Then
+            MessageBox.Show(variablesGlobales.errorTotalEnCero, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar3()
+            Return
+        End If
+
         Try
             Integer.Parse(total)
         Catch ex As Exception

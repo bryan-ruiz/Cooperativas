@@ -28,26 +28,45 @@ Public Class InformeEconomico
 
         Dim fechaDesde As Date = VInformeEconomico.InformeDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
         Dim fechaHasta As Date = VInformeEconomico.InformeDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
+
+        'MsgBox("1entrando a ingresos...")
         'INGRESOS
         Dim totalIngresos As List(Of String) = ingresosTotales("Ingreso", "Si", fechaDesde, fechaHasta)
+        'MsgBox("2paso ingresos ")
         Dim subTotalIngresos As List(Of String) = obtenerSubTotalIngresos("Ingreso", "Si", fechaDesde, fechaHasta)
+        'MsgBox("3paso sub-ingresos")
         'OTROS INGRESOS
         Dim totalOtrosIngresos As List(Of String) = ingresosTotales("Ingreso", "No", fechaDesde, fechaHasta)
+        'MsgBox("4paso otros ingresos ")
         Dim subTotalOtrosIngresos As List(Of String) = obtenerSubTotalIngresos("Ingreso", "No", fechaDesde, fechaHasta)
+        'MsgBox("5paso sub-otros ingresos")
+
         'GASTOS
+        'MsgBox("6entrando a gastos...")
         Dim totalGastos As List(Of String) = gastosTotales("Gasto", "Si", fechaDesde, fechaHasta)
+        'MsgBox("7paso total gastos")
         Dim subTotalGastos As List(Of String) = obtenerSubTotalGastos("Gasto", "Si", fechaDesde, fechaHasta)
         'OTROS GASTOS
+        'MsgBox("8paso sub total gastos")
         Dim totalOtrosGastos As List(Of String) = gastosTotales("Gasto", "No", fechaDesde, fechaHasta)
+        'MsgBox("9paso total otros gastos")
         Dim subTotalOtrosGastos As List(Of String) = obtenerSubTotalGastos("Gasto", "No", fechaDesde, fechaHasta)
+        'MsgBox("10paso sub-total otros gastos")
+
         'Valores de Reservas
         Dim valoresReserva As List(Of ConfiguracionClase) = consultarValoresConfiguracion()
+        'MsgBox("11paso sub-total otros gastos")
+
         'Afiliaciones
         Dim totalAfiliaciones As List(Of String) = obtenerTotalAfiliaciones(fechaDesde, fechaHasta)
+        'MsgBox("12paso total afiliaciones")
+
         'Aportaciones o Certificados - Acum
         Dim totalAportacionesAcum As List(Of String) = obtenerAportacionesAcumuladoAnterior()
+        'MsgBox("13paso sub-total otros gastos")
         'Aportaciones o Certificados - Total
         Dim totalAportacionesTotal As List(Of String) = obtenerAportacionesTotal()
+        'MsgBox("14paso sub-total otros gastos")
 
         Try
             If Not Directory.Exists(variablesGlobales.folderPath) Then
@@ -354,8 +373,11 @@ Public Class InformeEconomico
 
             For Each value In totalGastos
 
+                ' MsgBox("value in totalGastos es :" & vbCrLf & value)
+
                 If (contaGastos Mod 2 = 0) Then
                     'PARES - NUMERO DE INGRESOS
+
                     Dim parN As Integer = Convert.ToInt32(value)
                     Dim parT As String = parN.ToString("N")
                     Dim parTT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + parT, FontStypeLineas))
@@ -638,19 +660,20 @@ Public Class InformeEconomico
     Public Function ingresosTotales(ByVal ingresoOGasto As String, ByVal esProyProductivo As String, ByVal fechaDesde As Date, ByVal fechaHasta As Date)
 
         Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"-", "0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
         Try
             BD.ConectarBD()
             valores = BD.obtenerInformeIngresosTotales(ingresoOGasto, esProyProductivo, "#" + fechaDesde + "#", "#" + fechaHasta + "#")
             If valores.Count <> 0 Then
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                Return ""
+                'MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
             End If
             BD.CerrarConexion()
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            Return ""
+
         End Try
     End Function
 
@@ -658,6 +681,7 @@ Public Class InformeEconomico
     Public Function gastosTotales(ByVal ingresoOGasto As String, ByVal esProyProductivo As String, ByVal fechaDesde As Date, ByVal fechaHasta As Date)
 
         Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"-", "0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
         Try
             BD.ConectarBD()
             valores = BD.obtenerInformeGastosTotales(ingresoOGasto, esProyProductivo, "#" + fechaDesde + "#", "#" + fechaHasta + "#")
@@ -665,13 +689,14 @@ Public Class InformeEconomico
             If valores.Count <> 0 Then
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                Return ""
+                Return list
+                'MessageBox.Show("valores ingresooGasto son" & list.Item(0))
+
             End If
             BD.CerrarConexion()
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            Return ""
+
         End Try
     End Function
 
@@ -679,40 +704,45 @@ Public Class InformeEconomico
     Public Function obtenerSubTotalIngresos(ByVal ingresoOGasto As String, ByVal proyectoProd As String, ByVal fechaDesde As Date, ByVal fechaHasta As Date)
 
         Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
         Try
             BD.ConectarBD()
             valores = BD.obtenerSubTotalIngresos(ingresoOGasto, proyectoProd, "#" + fechaDesde + "#", "#" + fechaHasta + "#")
             If valores.Count <> 0 Then
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                Return ""
+                'MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
             End If
             BD.CerrarConexion()
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            Return ""
+
         End Try
     End Function
 
     'Consulta subtotal de gastos
     Public Function obtenerSubTotalGastos(ByVal ingresoOGasto As String, ByVal proyectoProd As String, ByVal fechaDesde As Date, ByVal fechaHasta As Date)
-
         Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
+
         Try
             BD.ConectarBD()
             valores = BD.obtenerSubTotalGastos(ingresoOGasto, proyectoProd, "#" + fechaDesde + "#", "#" + fechaHasta + "#")
+            'MessageBox.Show(vbCr + "valores count es: " + valores.Count.ToString)
             If valores.Count <> 0 Then
+                '   MessageBox.Show(vbCr + " vamos a retornar valores ")
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                Return ""
+                'MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                '  MessageBox.Show(vbCr + " vamos a retornar list list item 0 es : " + list.Item(0).ToString + "  xxxx  ")
+                Return list
             End If
             BD.CerrarConexion()
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            Return ""
         End Try
+
     End Function
 
     'Consulta todos los datos de la tabla de Configuración'
@@ -724,69 +754,73 @@ Public Class InformeEconomico
             If valores.Count <> 0 Then
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                MessageBox.Show("No existen datos en la sección de Configuracion", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            Return ""
+
         End Try
     End Function
 
     'total afiliaciones o matricula
     Public Function obtenerTotalAfiliaciones(ByVal fechaDesde As Date, ByVal fechaHasta As Date)
         Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
         Try
             BD.ConectarBD()
             valores = BD.obtenerTotalAfiliaciones("#" + fechaDesde + "#", "#" + fechaHasta + "#")
             If valores.Count <> 0 Then
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                Return ""
+                'MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
             End If
             BD.CerrarConexion()
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            Return ""
+
         End Try
     End Function
 
     Public Function obtenerAportacionesAcumuladoAnterior()
         Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
+
         Try
             BD.ConectarBD()
             valores = BD.obtenerAportacionesAcumuladoAnterior()
             If valores.Count <> 0 Then
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                Return ""
+                'MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
             End If
             BD.CerrarConexion()
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            Return ""
+
         End Try
     End Function
 
     'Total certificados o aportaciones
     Public Function obtenerAportacionesTotal()
         Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
         Try
             BD.ConectarBD()
             valores = BD.obtenerAportacionesTotal()
             If valores.Count <> 0 Then
                 Return valores
             Else
-                MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                Return ""
+                ' MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return List
             End If
             BD.CerrarConexion()
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            Return ""
+
         End Try
     End Function
 

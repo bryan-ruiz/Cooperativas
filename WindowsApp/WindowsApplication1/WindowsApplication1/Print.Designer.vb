@@ -89,6 +89,7 @@ Partial Class Print
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimizeBox = False
         Me.Name = "Print"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

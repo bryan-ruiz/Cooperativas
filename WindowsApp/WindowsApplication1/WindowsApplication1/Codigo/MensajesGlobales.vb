@@ -23,6 +23,7 @@ Public Class MensajesGlobales
     Public errorEliminandoDatos As String = "Error al eliminar los datos en el sistema"
     Public errorDe As String = "Error de: "
     Public errorDatosNoNumericos As String = "Error, debe ingresar datos numéricos"
+    Public errorTotalEnCero As String = "Error ingresando datos, el Total debe ser mayor a 0"
 
     Public licenciaCaducada As String = "Su licencia ha caducado, contacte al Administrador del Sistema"
     Public nombreUsuarioOContrasenaIncorrecto As String = "El nombre de usuario o contraseña es incorrecto"

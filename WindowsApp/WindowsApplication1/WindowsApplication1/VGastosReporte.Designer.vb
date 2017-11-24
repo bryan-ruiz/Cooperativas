@@ -144,7 +144,7 @@ Partial Class VGastosReporte
         Me.MaximizeBox = False
         Me.Name = "VGastosReporte"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Reporte Salidas"
+        Me.Text = "SAC"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)

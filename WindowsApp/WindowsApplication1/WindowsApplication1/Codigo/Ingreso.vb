@@ -461,6 +461,12 @@ Public Class Ingreso
             Return
         End If
 
+        If (total.Equals("0")) Then
+            MessageBox.Show(variablesGlobales.errorTotalEnCero, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar()
+            Return
+        End If
+
         Try
             Integer.Parse(VIngresos.TextBox_IngresosCantidad.Text)
             Integer.Parse(VIngresos.TextBox_IngresosPrecioUnitario.Text)
@@ -505,6 +511,12 @@ Public Class Ingreso
             Return
         End If
 
+        If (total2.Equals("0")) Then
+            MessageBox.Show(variablesGlobales.errorTotalEnCero, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar2()
+            Return
+        End If
+
         Try
             Integer.Parse(VIngresos.TextBox_IngresosCantidad2.Text)
             Integer.Parse(VIngresos.TextBox_IngresosPrecioUnitario2.Text)
@@ -546,6 +558,12 @@ Public Class Ingreso
 
         If (factura3 = "" Or cliente3 = "" Or descripcion3 = "" Or cantidad3 = "" Or precioUnitario3 = "" Or total3 = "" Or codCuenta3 = "" Or estado = False) Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        If (total3.Equals("0")) Then
+            MessageBox.Show(variablesGlobales.errorTotalEnCero, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar3()
             Return
         End If
 

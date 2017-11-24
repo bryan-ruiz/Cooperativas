@@ -466,7 +466,7 @@ Partial Class VAsociados
         Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label16.Location = New System.Drawing.Point(575, 186)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(14, 16)
+        Me.Label16.Size = New System.Drawing.Size(13, 16)
         Me.Label16.TabIndex = 58
         Me.Label16.Text = "-"
         '
@@ -477,7 +477,7 @@ Partial Class VAsociados
         Me.Label25.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label25.Location = New System.Drawing.Point(701, 186)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(14, 16)
+        Me.Label25.Size = New System.Drawing.Size(13, 16)
         Me.Label25.TabIndex = 59
         Me.Label25.Text = "-"
         '
@@ -563,7 +563,7 @@ Partial Class VAsociados
         Me.Label28.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label28.Location = New System.Drawing.Point(656, 375)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(14, 16)
+        Me.Label28.Size = New System.Drawing.Size(13, 16)
         Me.Label28.TabIndex = 169
         Me.Label28.Text = "-"
         '
@@ -761,7 +761,7 @@ Partial Class VAsociados
         Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label21.Location = New System.Drawing.Point(656, 533)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(14, 16)
+        Me.Label21.Size = New System.Drawing.Size(13, 16)
         Me.Label21.TabIndex = 177
         Me.Label21.Text = "-"
         '
@@ -797,8 +797,9 @@ Partial Class VAsociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1285, 716)
+        Me.ClientSize = New System.Drawing.Size(1283, 732)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.TextBoxSociosSeccion2)
         Me.Controls.Add(Me.Label21)

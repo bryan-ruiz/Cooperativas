@@ -22,7 +22,62 @@ SAC
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
+<member name="P:WindowsApplication1.My.Resources.Resources.about33">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.acercade55">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.asociado51">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.asociado66">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApplication1.My.Resources.Resources.btn2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.certi11">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.certi22">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.chancho1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.comite1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.comite55">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.comitenew1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.entrada59">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -47,7 +102,22 @@ SAC
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApplication1.My.Resources.Resources.gastos2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.gastos21">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApplication1.My.Resources.Resources.Green_abstract_nature_1920x1200">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.ingresos2">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -82,6 +152,16 @@ SAC
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApplication1.My.Resources.Resources.salidarotada59">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.salidas59">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApplication1.My.Resources.Resources.save1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -92,7 +172,27 @@ SAC
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApplication1.My.Resources.Resources.settings1pp">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.settings3">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApplication1.My.Resources.Resources.Sin_título_1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.users_icon_44710">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.users1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

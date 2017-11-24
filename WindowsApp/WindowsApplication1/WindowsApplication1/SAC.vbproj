@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Aaron\Desktop\Coope2.8.1\</PublishUrl>
+    <PublishUrl>C:\Users\Aaron\Desktop\Coope3.0\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -389,6 +389,12 @@
   <ItemGroup>
     <Content Include="android_l_etched_icon_tgJ_icon.ico" />
     <Content Include="Imagen\MEP_Logo.png" />
+    <None Include="Resources\salidarotada59.png" />
+    <None Include="Resources\salidas59.png" />
+    <None Include="Resources\settings1pp.png" />
+    <None Include="Resources\settings3.png" />
+    <None Include="Resources\users1.png" />
+    <None Include="Resources\users-icon-44710.png" />
     <None Include="Resources\Sin título-1.png" />
     <None Include="Resources\loginOrForm3.jpg" />
     <None Include="Resources\Green_abstract_nature_1920x1200.jpg" />
@@ -398,6 +404,20 @@
     <None Include="Resources\find5.jpg" />
     <None Include="Resources\find7.jpg" />
     <None Include="Resources\find81.png" />
+    <None Include="Resources\comite1.jpg" />
+    <None Include="Resources\asociado51.png" />
+    <None Include="Resources\comitenew1.jpg" />
+    <None Include="Resources\certi22.jpg" />
+    <None Include="Resources\certi11.png" />
+    <None Include="Resources\ingresos2.png" />
+    <None Include="Resources\gastos2.png" />
+    <None Include="Resources\about33.png" />
+    <None Include="Resources\chancho1.png" />
+    <None Include="Resources\comite55.png" />
+    <None Include="Resources\asociado66.png" />
+    <None Include="Resources\acercade55.png" />
+    <None Include="Resources\entrada59.png" />
+    <None Include="Resources\gastos21.png" />
     <Content Include="Resources\logoCoopesag2.png" />
     <None Include="Resources\LogoTransparente.png" />
     <Content Include="Resources\MEP_Logo.png" />

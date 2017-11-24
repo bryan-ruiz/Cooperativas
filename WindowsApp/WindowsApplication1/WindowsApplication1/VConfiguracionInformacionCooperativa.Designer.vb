@@ -69,9 +69,9 @@ Partial Class VConfiguracionInformacionCooperativa
         Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(176, 264)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(105, 19)
+        Me.Label7.Size = New System.Drawing.Size(108, 19)
         Me.Label7.TabIndex = 58
-        Me.Label7.Text = "Cédula Jiridica"
+        Me.Label7.Text = "Cédula Jurídica"
         '
         'ButtonConfiguracionInformacionModificar
         '
@@ -159,7 +159,7 @@ Partial Class VConfiguracionInformacionCooperativa
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VConfiguracionInformacionCooperativa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Información Cooperativa "
+        Me.Text = "SAC"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)

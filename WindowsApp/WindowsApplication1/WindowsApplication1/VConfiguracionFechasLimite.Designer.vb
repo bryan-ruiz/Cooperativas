@@ -312,7 +312,7 @@ Partial Class VConfiguracionFechasLimite
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VConfiguracionFechasLimite"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Fechas Limites Certificados"
+        Me.Text = "SAC"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)

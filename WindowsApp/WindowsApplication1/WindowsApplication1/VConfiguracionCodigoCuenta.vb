@@ -6,11 +6,11 @@
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     Private Sub VConfiguracionCodigoCuenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
-
         Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_ConfiguracionInsertarCodigoCuenta.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_ConfiguracionEliminarCodigoCuenta.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+
+        configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
 
     End Sub
 

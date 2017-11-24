@@ -1,6 +1,7 @@
 ﻿Public Class VCertificados
 
     Dim certificados As Certificados = New Certificados
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     Private Sub CertificadosButtonConsultar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonConsultar.Click
         certificados.consultar()
@@ -154,6 +155,11 @@
 
     Private Sub VCertificados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         certificados.consultarFechasLimite()
+
+        Me.Panel3.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.CertificadosButtonCerrarPeriodo.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.CertificadosButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+
     End Sub
 
     Private Sub ImprimirComprobanteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirComprobanteToolStripMenuItem.Click

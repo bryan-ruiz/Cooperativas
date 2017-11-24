@@ -46,10 +46,33 @@ Public Class Principal
         MessageBox.Show("Contacte al Administrador, no se tiene licencia para ingresar usuarios nuevos al sistema")
     End Sub
 
-    Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Principal_Load(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyValue = Keys.F1 Or Keys.F2 Or Keys.F3 Or Keys.F4 Or Keys.F5 Or Keys.F6 Or Keys.F7 Or Keys.F8 Or Keys.F9 Or Keys.F10 Or Keys.F11 Or Keys.F12 Then
+            'FuncKeysModule(e.KeyValue)
+            e.Handled = True
+        End If
 
     End Sub
 
+    'Function for F1, F2, etc pressed call
+    Public Sub FuncKeysModule(ByVal value As Keys)
+        Select Case value
+            Case Keys.F1
+                MessageBox.Show("F1 pressed")
+            Case Keys.F2
+                MessageBox.Show("F2 pressed")
+            Case Keys.F3
+                MessageBox.Show("F3 pressed")
+            Case Keys.F4
+                MessageBox.Show("F4 pressed")
+            Case Keys.F5
+                MessageBox.Show("F5 pressed")
+            Case Keys.F6
+                MessageBox.Show("F6 pressed")
+            Case Keys.F7
+                MessageBox.Show("F7 pressed")
+        End Select
+    End Sub
 
     '// Evento para salir del sistema, cierra todas ventanas abiertas
     Private Sub salirAPP(sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.Closing
@@ -138,4 +161,6 @@ Public Class Principal
     Private Sub AcercaDeSACToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeSACToolStripMenuItem.Click
         VAcercaDe.Show()
     End Sub
+
+
 End Class

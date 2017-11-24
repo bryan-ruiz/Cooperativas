@@ -49,18 +49,19 @@ Partial Class VConfiguracionCodigoCuenta
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
+        Me.Label2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(185, 304)
+        Me.Label2.Location = New System.Drawing.Point(187, 300)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(286, 19)
+        Me.Label2.Size = New System.Drawing.Size(291, 17)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Descripción de la cuenta a Crear o Eliminar"
         '
         'TextBox_ConfiguracionCuentaDescripcion
         '
+        Me.TextBox_ConfiguracionCuentaDescripcion.CausesValidation = False
         Me.TextBox_ConfiguracionCuentaDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_ConfiguracionCuentaDescripcion.Location = New System.Drawing.Point(190, 334)
+        Me.TextBox_ConfiguracionCuentaDescripcion.Location = New System.Drawing.Point(192, 330)
         Me.TextBox_ConfiguracionCuentaDescripcion.Multiline = True
         Me.TextBox_ConfiguracionCuentaDescripcion.Name = "TextBox_ConfiguracionCuentaDescripcion"
         Me.TextBox_ConfiguracionCuentaDescripcion.Size = New System.Drawing.Size(275, 29)
@@ -91,11 +92,11 @@ Partial Class VConfiguracionCodigoCuenta
         'Label138
         '
         Me.Label138.AutoSize = True
-        Me.Label138.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
+        Me.Label138.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label138.ForeColor = System.Drawing.Color.Black
-        Me.Label138.Location = New System.Drawing.Point(188, 443)
+        Me.Label138.Location = New System.Drawing.Point(190, 439)
         Me.Label138.Name = "Label138"
-        Me.Label138.Size = New System.Drawing.Size(142, 19)
+        Me.Label138.Size = New System.Drawing.Size(143, 17)
         Me.Label138.TabIndex = 163
         Me.Label138.Text = "Proyecto Productivo:"
         '
@@ -105,7 +106,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Panel3.Controls.Add(Me.RadioButton_ConfiguracionProyectoProductivoNO)
         Me.Panel3.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Panel3.ForeColor = System.Drawing.Color.White
-        Me.Panel3.Location = New System.Drawing.Point(192, 465)
+        Me.Panel3.Location = New System.Drawing.Point(225, 462)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(178, 34)
         Me.Panel3.TabIndex = 162
@@ -114,9 +115,11 @@ Partial Class VConfiguracionCodigoCuenta
         '
         Me.RadioButton_ConfiguracionProyectoProductivoSI.AutoSize = True
         Me.RadioButton_ConfiguracionProyectoProductivoSI.Checked = True
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.ForeColor = System.Drawing.Color.Black
         Me.RadioButton_ConfiguracionProyectoProductivoSI.Location = New System.Drawing.Point(14, 5)
         Me.RadioButton_ConfiguracionProyectoProductivoSI.Name = "RadioButton_ConfiguracionProyectoProductivoSI"
-        Me.RadioButton_ConfiguracionProyectoProductivoSI.Size = New System.Drawing.Size(41, 23)
+        Me.RadioButton_ConfiguracionProyectoProductivoSI.Size = New System.Drawing.Size(39, 21)
         Me.RadioButton_ConfiguracionProyectoProductivoSI.TabIndex = 141
         Me.RadioButton_ConfiguracionProyectoProductivoSI.TabStop = True
         Me.RadioButton_ConfiguracionProyectoProductivoSI.Text = "Si"
@@ -125,9 +128,11 @@ Partial Class VConfiguracionCodigoCuenta
         'RadioButton_ConfiguracionProyectoProductivoNO
         '
         Me.RadioButton_ConfiguracionProyectoProductivoNO.AutoSize = True
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.ForeColor = System.Drawing.Color.Black
         Me.RadioButton_ConfiguracionProyectoProductivoNO.Location = New System.Drawing.Point(96, 5)
         Me.RadioButton_ConfiguracionProyectoProductivoNO.Name = "RadioButton_ConfiguracionProyectoProductivoNO"
-        Me.RadioButton_ConfiguracionProyectoProductivoNO.Size = New System.Drawing.Size(45, 23)
+        Me.RadioButton_ConfiguracionProyectoProductivoNO.Size = New System.Drawing.Size(44, 21)
         Me.RadioButton_ConfiguracionProyectoProductivoNO.TabIndex = 142
         Me.RadioButton_ConfiguracionProyectoProductivoNO.Text = "No"
         Me.RadioButton_ConfiguracionProyectoProductivoNO.UseVisualStyleBackColor = True
@@ -135,11 +140,11 @@ Partial Class VConfiguracionCodigoCuenta
         'Label139
         '
         Me.Label139.AutoSize = True
-        Me.Label139.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
+        Me.Label139.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label139.ForeColor = System.Drawing.Color.Black
-        Me.Label139.Location = New System.Drawing.Point(187, 375)
+        Me.Label139.Location = New System.Drawing.Point(189, 371)
         Me.Label139.Name = "Label139"
-        Me.Label139.Size = New System.Drawing.Size(41, 19)
+        Me.Label139.Size = New System.Drawing.Size(39, 17)
         Me.Label139.TabIndex = 161
         Me.Label139.Text = "Tipo:"
         '
@@ -149,7 +154,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Panel4.Controls.Add(Me.ConfigurationRadioButtonGasto)
         Me.Panel4.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Panel4.ForeColor = System.Drawing.Color.White
-        Me.Panel4.Location = New System.Drawing.Point(191, 397)
+        Me.Panel4.Location = New System.Drawing.Point(225, 391)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(178, 34)
         Me.Panel4.TabIndex = 160
@@ -158,9 +163,11 @@ Partial Class VConfiguracionCodigoCuenta
         '
         Me.ConfiguracionRadioButtonIngresos.AutoSize = True
         Me.ConfiguracionRadioButtonIngresos.Checked = True
+        Me.ConfiguracionRadioButtonIngresos.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ConfiguracionRadioButtonIngresos.ForeColor = System.Drawing.Color.Black
         Me.ConfiguracionRadioButtonIngresos.Location = New System.Drawing.Point(12, 5)
         Me.ConfiguracionRadioButtonIngresos.Name = "ConfiguracionRadioButtonIngresos"
-        Me.ConfiguracionRadioButtonIngresos.Size = New System.Drawing.Size(78, 23)
+        Me.ConfiguracionRadioButtonIngresos.Size = New System.Drawing.Size(74, 21)
         Me.ConfiguracionRadioButtonIngresos.TabIndex = 141
         Me.ConfiguracionRadioButtonIngresos.TabStop = True
         Me.ConfiguracionRadioButtonIngresos.Text = "Ingreso"
@@ -169,9 +176,11 @@ Partial Class VConfiguracionCodigoCuenta
         'ConfigurationRadioButtonGasto
         '
         Me.ConfigurationRadioButtonGasto.AutoSize = True
+        Me.ConfigurationRadioButtonGasto.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ConfigurationRadioButtonGasto.ForeColor = System.Drawing.Color.Black
         Me.ConfigurationRadioButtonGasto.Location = New System.Drawing.Point(96, 5)
         Me.ConfigurationRadioButtonGasto.Name = "ConfigurationRadioButtonGasto"
-        Me.ConfigurationRadioButtonGasto.Size = New System.Drawing.Size(65, 23)
+        Me.ConfigurationRadioButtonGasto.Size = New System.Drawing.Size(65, 21)
         Me.ConfigurationRadioButtonGasto.TabIndex = 142
         Me.ConfigurationRadioButtonGasto.Text = "Gasto"
         Me.ConfigurationRadioButtonGasto.UseVisualStyleBackColor = True
@@ -189,22 +198,22 @@ Partial Class VConfiguracionCodigoCuenta
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
+        Me.Label3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(187, 123)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(143, 19)
+        Me.Label3.Size = New System.Drawing.Size(137, 17)
         Me.Label3.TabIndex = 165
         Me.Label3.Text = "Entradas existentes"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
+        Me.Label4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(187, 194)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(131, 19)
+        Me.Label4.Size = New System.Drawing.Size(126, 17)
         Me.Label4.TabIndex = 167
         Me.Label4.Text = "Salidas existentes"
         '
@@ -261,7 +270,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.MaximizeBox = False
         Me.Name = "VConfiguracionCodigoCuenta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Códigos de Cuentas"
+        Me.Text = "SAC"
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)

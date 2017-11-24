@@ -27,11 +27,21 @@ Public Class Saldos
             valores = BD.obtenerDatosdeSaldosXFechas(fechaInicial, fechaFinal)
             codigosCuentaIngresos = BD.obtenerCodigoCuentaIngresos()
             codigosCuentaGastos = BD.obtenerCodigoCuentaGastos()
+
             saldoAnteriorIngresos = (BD.obtenerSaldoTotalAnteriorDeIngresos(fechaInicial)).Item(0)
             saldoAnteriorGastos = (BD.obtenerSaldoTotalAnteriorDeGastos(fechaInicial)).Item(0)
 
+            If (saldoAnteriorIngresos = "") Then
+                saldoAnteriorIngresos = "0"
+            End If
+
+            If (saldoAnteriorGastos = "") Then
+                saldoAnteriorGastos = "0"
+            End If
+
+
             saldoGlobal = Integer.Parse(saldoAnteriorIngresos) - Integer.Parse(saldoAnteriorGastos) ' se modifica en el while
-            saldoAnterior = Integer.Parse(saldoAnteriorIngresos) - Integer.Parse(saldoAnteriorGastos) ' no se modifica
+            saldoAnterior = saldoGlobal ' no se modifica
 
             BD.CerrarConexion()
 
@@ -222,6 +232,7 @@ Public Class Saldos
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & nombreReporteSaldos, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
         End Try
     End Sub
 

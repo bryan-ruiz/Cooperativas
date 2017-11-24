@@ -271,14 +271,25 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.mensajeCedulaFormato, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             limpiar()
         Else
-            If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or seccion = "" Or especialidad = "" Or direccion = "") Then
+            If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or numAsociado = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or responsable = "" Or beneficiario = "" Or especialidad = "" Or direccion = "") Then
                 MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Else
                 Try
                     BD.ConectarBD()
-                    Dim insertado As Integer = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento,
+
+                    Dim insertado As Integer = 0
+
+                    If (seccion = "") Then
+                        insertado = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento,
+                                                                telefono + "-" + telefono2, cuota, responsable, beneficiario, fechaIngreso,
+                                                                " " + "-" + " ", especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
+
+                    Else
+
+                        insertado = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento,
                                                                 telefono + "-" + telefono2, cuota, responsable, beneficiario, fechaIngreso,
                                                                 seccion + "-" + seccion2, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
+                    End If
 
                     Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
 
@@ -537,7 +548,7 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 50 Then
+                If conta = 40 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)
@@ -704,7 +715,7 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 50 Then
+                If conta = 40 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)

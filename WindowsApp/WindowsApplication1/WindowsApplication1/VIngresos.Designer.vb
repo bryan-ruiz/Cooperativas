@@ -564,8 +564,9 @@ Partial Class VIngresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1408, 516)
+        Me.ClientSize = New System.Drawing.Size(1404, 516)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.MenuStrip1)
@@ -573,7 +574,7 @@ Partial Class VIngresos
         Me.MaximizeBox = False
         Me.Name = "VIngresos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Entradas"
+        Me.Text = "SAC"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
