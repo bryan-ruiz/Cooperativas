@@ -229,6 +229,34 @@ Public Class Certificados
 
         Dim cedula As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
 
+        BD.ConectarBD()
+        Dim periodo As Integer = BD.sumarTractosEnCertificados(cedula)
+        BD.CerrarConexion()
+
+        Dim monto As String = "0"
+
+        If numTracto = "1" Then
+            monto = VCertificados.CertificadosTextboxTracto1.Text
+        ElseIf numTracto = "2" Then
+            monto = VCertificados.CertificadosTextboxTracto2.Text
+        ElseIf numTracto = "3" Then
+            monto = VCertificados.CertificadosTextboxTracto3.Text
+        ElseIf numTracto = "4" Then
+            monto = VCertificados.CertificadosTextboxTracto4.Text
+        ElseIf numTracto = "5" Then
+            monto = VCertificados.CertificadosTextboxTracto5.Text
+        ElseIf numTracto = "6" Then
+            monto = VCertificados.CertificadosTextboxTracto6.Text
+        ElseIf numTracto = "7" Then
+            monto = VCertificados.CertificadosTextboxTracto7.Text
+        ElseIf numTracto = "8" Then
+            monto = VCertificados.CertificadosTextboxTracto8.Text
+        ElseIf numTracto = "9" Then
+            monto = VCertificados.CertificadosTextboxTracto9.Text
+        ElseIf numTracto = "10" Then
+            monto = VCertificados.CertificadosTextboxTracto10.Text
+        End If
+
         If (cedula = "") Then
             MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
@@ -238,6 +266,20 @@ Public Class Certificados
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
         End If
+
+        Dim montoEntero As Integer = Convert.ToInt32(monto)
+
+        If (montoEntero > 200) Then
+            MessageBox.Show(variablesGlobales.errorMontoCertificados, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        If ((montoEntero + periodo) > 1000) Then
+            MessageBox.Show(variablesGlobales.errorMontoCertificadosMayorMil, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+
 
         If validarFecha(fecha) Then
             MessageBox.Show(variablesGlobales.errorFechaLimiteMenorActual, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)

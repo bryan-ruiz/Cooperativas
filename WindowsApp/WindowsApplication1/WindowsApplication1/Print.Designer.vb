@@ -41,7 +41,7 @@ Partial Class Print
         Me.AxAcroPDF1.Location = New System.Drawing.Point(0, 0)
         Me.AxAcroPDF1.Name = "AxAcroPDF1"
         Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF1.Size = New System.Drawing.Size(1029, 721)
+        Me.AxAcroPDF1.Size = New System.Drawing.Size(1202, 721)
         Me.AxAcroPDF1.TabIndex = 4
         '
         'ButtonPrintAbrirPDF
@@ -53,7 +53,7 @@ Partial Class Print
         Me.ButtonPrintAbrirPDF.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ButtonPrintAbrirPDF.ForeColor = System.Drawing.Color.White
         Me.ButtonPrintAbrirPDF.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ButtonPrintAbrirPDF.Location = New System.Drawing.Point(351, 48)
+        Me.ButtonPrintAbrirPDF.Location = New System.Drawing.Point(12, 12)
         Me.ButtonPrintAbrirPDF.Name = "ButtonPrintAbrirPDF"
         Me.ButtonPrintAbrirPDF.Size = New System.Drawing.Size(157, 52)
         Me.ButtonPrintAbrirPDF.TabIndex = 3
@@ -69,7 +69,7 @@ Partial Class Print
         Me.ButtonPrintSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ButtonPrintSalir.ForeColor = System.Drawing.Color.White
         Me.ButtonPrintSalir.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ButtonPrintSalir.Location = New System.Drawing.Point(533, 48)
+        Me.ButtonPrintSalir.Location = New System.Drawing.Point(175, 12)
         Me.ButtonPrintSalir.Name = "ButtonPrintSalir"
         Me.ButtonPrintSalir.Size = New System.Drawing.Size(157, 52)
         Me.ButtonPrintSalir.TabIndex = 4
@@ -81,7 +81,7 @@ Partial Class Print
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
-        Me.ClientSize = New System.Drawing.Size(1029, 721)
+        Me.ClientSize = New System.Drawing.Size(1202, 721)
         Me.Controls.Add(Me.ButtonPrintSalir)
         Me.Controls.Add(Me.ButtonPrintAbrirPDF)
         Me.Controls.Add(Me.AxAcroPDF1)
