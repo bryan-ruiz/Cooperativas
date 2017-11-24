@@ -179,4 +179,8 @@
             Call ButtonAsociadosBuscar_Click(sender, e)
         End If
     End Sub
+
+    Private Sub ExcedentesPorAsociadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesPorAsociadoToolStripMenuItem.Click
+
+    End Sub
 End Class

@@ -187,9 +187,9 @@ Partial Class VCertificados
         Me.Label18.Location = New System.Drawing.Point(7, 44)
         Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(212, 15)
+        Me.Label18.Size = New System.Drawing.Size(203, 15)
         Me.Label18.TabIndex = 66
-        Me.Label18.Text = "Cédula (X-XXXX-XXXX) / # Asociado:"
+        Me.Label18.Text = "Cédula (x-xxxx-xxxx) / # Asociado:"
         '
         'CertificadosTextboxCedulaNumAsociado
         '
@@ -654,7 +654,6 @@ Partial Class VCertificados
         Me.CertificadosButtonSaveTracto5.Name = "CertificadosButtonSaveTracto5"
         Me.CertificadosButtonSaveTracto5.Size = New System.Drawing.Size(35, 27)
         Me.CertificadosButtonSaveTracto5.TabIndex = 251
-        Me.CertificadosButtonSaveTracto5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         Me.CertificadosButtonSaveTracto5.UseVisualStyleBackColor = False
         '
         'CertificadosButtonSaveTracto4
