@@ -166,4 +166,11 @@
         certificados.imprimirComprobanteCertificadosNew()
     End Sub
 
+
+    Private Sub CertificadosTextboxCedulaNumAsociado_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles CertificadosTextboxCedulaNumAsociado.KeyPress
+        'TextBoxSociosConsultarAsociado.PasswordChar = "*"
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Call CertificadosButtonConsultar_Click(sender, e)
+        End If
+    End Sub
 End Class

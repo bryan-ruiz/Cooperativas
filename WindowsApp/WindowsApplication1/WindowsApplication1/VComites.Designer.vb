@@ -33,6 +33,8 @@ Partial Class VComites
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBoxComitesNombre = New System.Windows.Forms.ComboBox()
+        Me.ButtonVComitesGuardar = New System.Windows.Forms.Button()
+        Me.ButtonVComitesLimpiar = New System.Windows.Forms.Button()
         Me.TextBoxComitesPresidente = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBoxComitesVicepresidente = New System.Windows.Forms.TextBox()
@@ -87,6 +89,13 @@ Partial Class VComites
         Me.DateTimePickerFechaVence_ComiteSuplente1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePickerFechaVence_ComiteSuplente2 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.ButtonBuscar_asociadoSuplente2 = New System.Windows.Forms.Button()
+        Me.ButtonBuscar_asociadoSuplente1 = New System.Windows.Forms.Button()
+        Me.ButtonBuscar_asociadoVocal2 = New System.Windows.Forms.Button()
+        Me.ButtonBuscar_asociadoVocal1 = New System.Windows.Forms.Button()
+        Me.ButtonBuscar_asociadoSecretaria = New System.Windows.Forms.Button()
+        Me.ButtonBuscar_asociadoVicePresidente = New System.Windows.Forms.Button()
+        Me.ButtonBuscar_asociadoPresidente = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -100,15 +109,6 @@ Partial Class VComites
         Me.TextBoxComitesSuplente2 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.ButtonBuscar_asociadoSuplente2 = New System.Windows.Forms.Button()
-        Me.ButtonBuscar_asociadoSuplente1 = New System.Windows.Forms.Button()
-        Me.ButtonBuscar_asociadoVocal2 = New System.Windows.Forms.Button()
-        Me.ButtonBuscar_asociadoVocal1 = New System.Windows.Forms.Button()
-        Me.ButtonBuscar_asociadoSecretaria = New System.Windows.Forms.Button()
-        Me.ButtonBuscar_asociadoVicePresidente = New System.Windows.Forms.Button()
-        Me.ButtonBuscar_asociadoPresidente = New System.Windows.Forms.Button()
-        Me.ButtonVComitesGuardar = New System.Windows.Forms.Button()
-        Me.ButtonVComitesLimpiar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -205,6 +205,36 @@ Partial Class VComites
         Me.ComboBoxComitesNombre.Size = New System.Drawing.Size(186, 24)
         Me.ComboBoxComitesNombre.TabIndex = 61
         Me.ComboBoxComitesNombre.Text = "-- Selecione una opción --"
+        '
+        'ButtonVComitesGuardar
+        '
+        Me.ButtonVComitesGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonVComitesGuardar.ForeColor = System.Drawing.Color.White
+        Me.ButtonVComitesGuardar.Image = Global.WindowsApplication1.My.Resources.Resources.savelast2
+        Me.ButtonVComitesGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonVComitesGuardar.Location = New System.Drawing.Point(21, 182)
+        Me.ButtonVComitesGuardar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
+        Me.ButtonVComitesGuardar.Name = "ButtonVComitesGuardar"
+        Me.ButtonVComitesGuardar.Size = New System.Drawing.Size(186, 44)
+        Me.ButtonVComitesGuardar.TabIndex = 58
+        Me.ButtonVComitesGuardar.Text = "Guardar Comité"
+        Me.ButtonVComitesGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonVComitesGuardar.UseVisualStyleBackColor = True
+        '
+        'ButtonVComitesLimpiar
+        '
+        Me.ButtonVComitesLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonVComitesLimpiar.ForeColor = System.Drawing.Color.White
+        Me.ButtonVComitesLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
+        Me.ButtonVComitesLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonVComitesLimpiar.Location = New System.Drawing.Point(21, 282)
+        Me.ButtonVComitesLimpiar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
+        Me.ButtonVComitesLimpiar.Name = "ButtonVComitesLimpiar"
+        Me.ButtonVComitesLimpiar.Size = New System.Drawing.Size(186, 44)
+        Me.ButtonVComitesLimpiar.TabIndex = 59
+        Me.ButtonVComitesLimpiar.Text = "Limpiar Campos"
+        Me.ButtonVComitesLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonVComitesLimpiar.UseVisualStyleBackColor = True
         '
         'TextBoxComitesPresidente
         '
@@ -748,6 +778,91 @@ Partial Class VComites
         Me.GroupBox7.TabIndex = 140
         Me.GroupBox7.TabStop = False
         '
+        'ButtonBuscar_asociadoSuplente2
+        '
+        Me.ButtonBuscar_asociadoSuplente2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ButtonBuscar_asociadoSuplente2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonBuscar_asociadoSuplente2.ForeColor = System.Drawing.Color.White
+        Me.ButtonBuscar_asociadoSuplente2.Image = CType(resources.GetObject("ButtonBuscar_asociadoSuplente2.Image"), System.Drawing.Image)
+        Me.ButtonBuscar_asociadoSuplente2.Location = New System.Drawing.Point(6, 293)
+        Me.ButtonBuscar_asociadoSuplente2.Name = "ButtonBuscar_asociadoSuplente2"
+        Me.ButtonBuscar_asociadoSuplente2.Size = New System.Drawing.Size(35, 25)
+        Me.ButtonBuscar_asociadoSuplente2.TabIndex = 246
+        Me.ButtonBuscar_asociadoSuplente2.UseVisualStyleBackColor = False
+        '
+        'ButtonBuscar_asociadoSuplente1
+        '
+        Me.ButtonBuscar_asociadoSuplente1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ButtonBuscar_asociadoSuplente1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonBuscar_asociadoSuplente1.ForeColor = System.Drawing.Color.White
+        Me.ButtonBuscar_asociadoSuplente1.Image = CType(resources.GetObject("ButtonBuscar_asociadoSuplente1.Image"), System.Drawing.Image)
+        Me.ButtonBuscar_asociadoSuplente1.Location = New System.Drawing.Point(6, 249)
+        Me.ButtonBuscar_asociadoSuplente1.Name = "ButtonBuscar_asociadoSuplente1"
+        Me.ButtonBuscar_asociadoSuplente1.Size = New System.Drawing.Size(35, 25)
+        Me.ButtonBuscar_asociadoSuplente1.TabIndex = 245
+        Me.ButtonBuscar_asociadoSuplente1.UseVisualStyleBackColor = False
+        '
+        'ButtonBuscar_asociadoVocal2
+        '
+        Me.ButtonBuscar_asociadoVocal2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ButtonBuscar_asociadoVocal2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonBuscar_asociadoVocal2.ForeColor = System.Drawing.Color.White
+        Me.ButtonBuscar_asociadoVocal2.Image = CType(resources.GetObject("ButtonBuscar_asociadoVocal2.Image"), System.Drawing.Image)
+        Me.ButtonBuscar_asociadoVocal2.Location = New System.Drawing.Point(6, 206)
+        Me.ButtonBuscar_asociadoVocal2.Name = "ButtonBuscar_asociadoVocal2"
+        Me.ButtonBuscar_asociadoVocal2.Size = New System.Drawing.Size(35, 25)
+        Me.ButtonBuscar_asociadoVocal2.TabIndex = 244
+        Me.ButtonBuscar_asociadoVocal2.UseVisualStyleBackColor = False
+        '
+        'ButtonBuscar_asociadoVocal1
+        '
+        Me.ButtonBuscar_asociadoVocal1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ButtonBuscar_asociadoVocal1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonBuscar_asociadoVocal1.ForeColor = System.Drawing.Color.White
+        Me.ButtonBuscar_asociadoVocal1.Image = CType(resources.GetObject("ButtonBuscar_asociadoVocal1.Image"), System.Drawing.Image)
+        Me.ButtonBuscar_asociadoVocal1.Location = New System.Drawing.Point(6, 161)
+        Me.ButtonBuscar_asociadoVocal1.Name = "ButtonBuscar_asociadoVocal1"
+        Me.ButtonBuscar_asociadoVocal1.Size = New System.Drawing.Size(35, 25)
+        Me.ButtonBuscar_asociadoVocal1.TabIndex = 243
+        Me.ButtonBuscar_asociadoVocal1.UseVisualStyleBackColor = False
+        '
+        'ButtonBuscar_asociadoSecretaria
+        '
+        Me.ButtonBuscar_asociadoSecretaria.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ButtonBuscar_asociadoSecretaria.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonBuscar_asociadoSecretaria.ForeColor = System.Drawing.Color.White
+        Me.ButtonBuscar_asociadoSecretaria.Image = CType(resources.GetObject("ButtonBuscar_asociadoSecretaria.Image"), System.Drawing.Image)
+        Me.ButtonBuscar_asociadoSecretaria.Location = New System.Drawing.Point(5, 117)
+        Me.ButtonBuscar_asociadoSecretaria.Name = "ButtonBuscar_asociadoSecretaria"
+        Me.ButtonBuscar_asociadoSecretaria.Size = New System.Drawing.Size(35, 25)
+        Me.ButtonBuscar_asociadoSecretaria.TabIndex = 242
+        Me.ButtonBuscar_asociadoSecretaria.UseVisualStyleBackColor = False
+        '
+        'ButtonBuscar_asociadoVicePresidente
+        '
+        Me.ButtonBuscar_asociadoVicePresidente.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ButtonBuscar_asociadoVicePresidente.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonBuscar_asociadoVicePresidente.ForeColor = System.Drawing.Color.White
+        Me.ButtonBuscar_asociadoVicePresidente.Image = CType(resources.GetObject("ButtonBuscar_asociadoVicePresidente.Image"), System.Drawing.Image)
+        Me.ButtonBuscar_asociadoVicePresidente.Location = New System.Drawing.Point(5, 73)
+        Me.ButtonBuscar_asociadoVicePresidente.Name = "ButtonBuscar_asociadoVicePresidente"
+        Me.ButtonBuscar_asociadoVicePresidente.Size = New System.Drawing.Size(35, 25)
+        Me.ButtonBuscar_asociadoVicePresidente.TabIndex = 241
+        Me.ButtonBuscar_asociadoVicePresidente.UseVisualStyleBackColor = False
+        '
+        'ButtonBuscar_asociadoPresidente
+        '
+        Me.ButtonBuscar_asociadoPresidente.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ButtonBuscar_asociadoPresidente.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.search1
+        Me.ButtonBuscar_asociadoPresidente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.ButtonBuscar_asociadoPresidente.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonBuscar_asociadoPresidente.ForeColor = System.Drawing.Color.White
+        Me.ButtonBuscar_asociadoPresidente.Location = New System.Drawing.Point(5, 32)
+        Me.ButtonBuscar_asociadoPresidente.Name = "ButtonBuscar_asociadoPresidente"
+        Me.ButtonBuscar_asociadoPresidente.Size = New System.Drawing.Size(35, 25)
+        Me.ButtonBuscar_asociadoPresidente.TabIndex = 137
+        Me.ButtonBuscar_asociadoPresidente.UseVisualStyleBackColor = False
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -894,136 +1009,23 @@ Partial Class VComites
         Me.Label17.TabIndex = 41
         Me.Label17.Text = "Gestión de los Cuerpos Directivos"
         '
-        'ButtonBuscar_asociadoSuplente2
-        '
-        Me.ButtonBuscar_asociadoSuplente2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonBuscar_asociadoSuplente2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonBuscar_asociadoSuplente2.ForeColor = System.Drawing.Color.White
-        Me.ButtonBuscar_asociadoSuplente2.Image = CType(resources.GetObject("ButtonBuscar_asociadoSuplente2.Image"), System.Drawing.Image)
-        Me.ButtonBuscar_asociadoSuplente2.Location = New System.Drawing.Point(6, 293)
-        Me.ButtonBuscar_asociadoSuplente2.Name = "ButtonBuscar_asociadoSuplente2"
-        Me.ButtonBuscar_asociadoSuplente2.Size = New System.Drawing.Size(35, 25)
-        Me.ButtonBuscar_asociadoSuplente2.TabIndex = 246
-        Me.ButtonBuscar_asociadoSuplente2.UseVisualStyleBackColor = False
-        '
-        'ButtonBuscar_asociadoSuplente1
-        '
-        Me.ButtonBuscar_asociadoSuplente1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonBuscar_asociadoSuplente1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonBuscar_asociadoSuplente1.ForeColor = System.Drawing.Color.White
-        Me.ButtonBuscar_asociadoSuplente1.Image = CType(resources.GetObject("ButtonBuscar_asociadoSuplente1.Image"), System.Drawing.Image)
-        Me.ButtonBuscar_asociadoSuplente1.Location = New System.Drawing.Point(6, 249)
-        Me.ButtonBuscar_asociadoSuplente1.Name = "ButtonBuscar_asociadoSuplente1"
-        Me.ButtonBuscar_asociadoSuplente1.Size = New System.Drawing.Size(35, 25)
-        Me.ButtonBuscar_asociadoSuplente1.TabIndex = 245
-        Me.ButtonBuscar_asociadoSuplente1.UseVisualStyleBackColor = False
-        '
-        'ButtonBuscar_asociadoVocal2
-        '
-        Me.ButtonBuscar_asociadoVocal2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonBuscar_asociadoVocal2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonBuscar_asociadoVocal2.ForeColor = System.Drawing.Color.White
-        Me.ButtonBuscar_asociadoVocal2.Image = CType(resources.GetObject("ButtonBuscar_asociadoVocal2.Image"), System.Drawing.Image)
-        Me.ButtonBuscar_asociadoVocal2.Location = New System.Drawing.Point(6, 206)
-        Me.ButtonBuscar_asociadoVocal2.Name = "ButtonBuscar_asociadoVocal2"
-        Me.ButtonBuscar_asociadoVocal2.Size = New System.Drawing.Size(35, 25)
-        Me.ButtonBuscar_asociadoVocal2.TabIndex = 244
-        Me.ButtonBuscar_asociadoVocal2.UseVisualStyleBackColor = False
-        '
-        'ButtonBuscar_asociadoVocal1
-        '
-        Me.ButtonBuscar_asociadoVocal1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonBuscar_asociadoVocal1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonBuscar_asociadoVocal1.ForeColor = System.Drawing.Color.White
-        Me.ButtonBuscar_asociadoVocal1.Image = CType(resources.GetObject("ButtonBuscar_asociadoVocal1.Image"), System.Drawing.Image)
-        Me.ButtonBuscar_asociadoVocal1.Location = New System.Drawing.Point(6, 161)
-        Me.ButtonBuscar_asociadoVocal1.Name = "ButtonBuscar_asociadoVocal1"
-        Me.ButtonBuscar_asociadoVocal1.Size = New System.Drawing.Size(35, 25)
-        Me.ButtonBuscar_asociadoVocal1.TabIndex = 243
-        Me.ButtonBuscar_asociadoVocal1.UseVisualStyleBackColor = False
-        '
-        'ButtonBuscar_asociadoSecretaria
-        '
-        Me.ButtonBuscar_asociadoSecretaria.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonBuscar_asociadoSecretaria.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonBuscar_asociadoSecretaria.ForeColor = System.Drawing.Color.White
-        Me.ButtonBuscar_asociadoSecretaria.Image = CType(resources.GetObject("ButtonBuscar_asociadoSecretaria.Image"), System.Drawing.Image)
-        Me.ButtonBuscar_asociadoSecretaria.Location = New System.Drawing.Point(5, 117)
-        Me.ButtonBuscar_asociadoSecretaria.Name = "ButtonBuscar_asociadoSecretaria"
-        Me.ButtonBuscar_asociadoSecretaria.Size = New System.Drawing.Size(35, 25)
-        Me.ButtonBuscar_asociadoSecretaria.TabIndex = 242
-        Me.ButtonBuscar_asociadoSecretaria.UseVisualStyleBackColor = False
-        '
-        'ButtonBuscar_asociadoVicePresidente
-        '
-        Me.ButtonBuscar_asociadoVicePresidente.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonBuscar_asociadoVicePresidente.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonBuscar_asociadoVicePresidente.ForeColor = System.Drawing.Color.White
-        Me.ButtonBuscar_asociadoVicePresidente.Image = CType(resources.GetObject("ButtonBuscar_asociadoVicePresidente.Image"), System.Drawing.Image)
-        Me.ButtonBuscar_asociadoVicePresidente.Location = New System.Drawing.Point(5, 73)
-        Me.ButtonBuscar_asociadoVicePresidente.Name = "ButtonBuscar_asociadoVicePresidente"
-        Me.ButtonBuscar_asociadoVicePresidente.Size = New System.Drawing.Size(35, 25)
-        Me.ButtonBuscar_asociadoVicePresidente.TabIndex = 241
-        Me.ButtonBuscar_asociadoVicePresidente.UseVisualStyleBackColor = False
-        '
-        'ButtonBuscar_asociadoPresidente
-        '
-        Me.ButtonBuscar_asociadoPresidente.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ButtonBuscar_asociadoPresidente.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.search1
-        Me.ButtonBuscar_asociadoPresidente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ButtonBuscar_asociadoPresidente.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonBuscar_asociadoPresidente.ForeColor = System.Drawing.Color.White
-        Me.ButtonBuscar_asociadoPresidente.Location = New System.Drawing.Point(5, 32)
-        Me.ButtonBuscar_asociadoPresidente.Name = "ButtonBuscar_asociadoPresidente"
-        Me.ButtonBuscar_asociadoPresidente.Size = New System.Drawing.Size(35, 25)
-        Me.ButtonBuscar_asociadoPresidente.TabIndex = 137
-        Me.ButtonBuscar_asociadoPresidente.UseVisualStyleBackColor = False
-        '
-        'ButtonVComitesGuardar
-        '
-        Me.ButtonVComitesGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonVComitesGuardar.ForeColor = System.Drawing.Color.White
-        Me.ButtonVComitesGuardar.Image = Global.WindowsApplication1.My.Resources.Resources.savelast2
-        Me.ButtonVComitesGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonVComitesGuardar.Location = New System.Drawing.Point(21, 182)
-        Me.ButtonVComitesGuardar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
-        Me.ButtonVComitesGuardar.Name = "ButtonVComitesGuardar"
-        Me.ButtonVComitesGuardar.Size = New System.Drawing.Size(186, 44)
-        Me.ButtonVComitesGuardar.TabIndex = 58
-        Me.ButtonVComitesGuardar.Text = "Guardar Comité"
-        Me.ButtonVComitesGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonVComitesGuardar.UseVisualStyleBackColor = True
-        '
-        'ButtonVComitesLimpiar
-        '
-        Me.ButtonVComitesLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonVComitesLimpiar.ForeColor = System.Drawing.Color.White
-        Me.ButtonVComitesLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
-        Me.ButtonVComitesLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonVComitesLimpiar.Location = New System.Drawing.Point(21, 282)
-        Me.ButtonVComitesLimpiar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
-        Me.ButtonVComitesLimpiar.Name = "ButtonVComitesLimpiar"
-        Me.ButtonVComitesLimpiar.Size = New System.Drawing.Size(186, 44)
-        Me.ButtonVComitesLimpiar.TabIndex = 59
-        Me.ButtonVComitesLimpiar.Text = "Limpiar Campos"
-        Me.ButtonVComitesLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonVComitesLimpiar.UseVisualStyleBackColor = True
-        '
         'VComites
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1296, 597)
+        Me.ClientSize = New System.Drawing.Size(1296, 578)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
         Me.Name = "VComites"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Formulario de integración de los cuerpos directivos"
+        Me.Text = "SAC"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

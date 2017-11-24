@@ -33,6 +33,7 @@ Partial Class VCertificados
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.CertificadosTextboxCedulaNumAsociado = New System.Windows.Forms.TextBox()
+        Me.CertificadosButtonConsultar = New System.Windows.Forms.Button()
         Me.CertificadosButtonLimpiar = New System.Windows.Forms.Button()
         Me.CertificadosButtonCerrarPeriodo = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -42,6 +43,11 @@ Partial Class VCertificados
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.CertificadosButtonSaveTracto10 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto9 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto8 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto7 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto6 = New System.Windows.Forms.Button()
         Me.CertificadosDateTimePickerFecha10 = New System.Windows.Forms.DateTimePicker()
         Me.CertificadosDateTimePickerFecha9 = New System.Windows.Forms.DateTimePicker()
         Me.CertificadosDateTimePickerFecha8 = New System.Windows.Forms.DateTimePicker()
@@ -62,6 +68,11 @@ Partial Class VCertificados
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.CertificadosButtonSaveTracto5 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto4 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto3 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto2 = New System.Windows.Forms.Button()
+        Me.CertificadosButtonSaveTracto1 = New System.Windows.Forms.Button()
         Me.CertificadosDateTimePickerFecha5 = New System.Windows.Forms.DateTimePicker()
         Me.CertificadosDateTimePickerFecha4 = New System.Windows.Forms.DateTimePicker()
         Me.CertificadosDateTimePickerFecha3 = New System.Windows.Forms.DateTimePicker()
@@ -91,17 +102,6 @@ Partial Class VCertificados
         Me.CertificadosTextboxNombre = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.CertificadosButtonSaveTracto10 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonSaveTracto9 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonSaveTracto8 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonSaveTracto7 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonSaveTracto6 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonSaveTracto5 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonSaveTracto4 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonSaveTracto3 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonSaveTracto2 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonSaveTracto1 = New System.Windows.Forms.Button()
-        Me.CertificadosButtonConsultar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -116,7 +116,7 @@ Partial Class VCertificados
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1285, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1292, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -199,6 +199,16 @@ Partial Class VCertificados
         Me.CertificadosTextboxCedulaNumAsociado.Size = New System.Drawing.Size(203, 22)
         Me.CertificadosTextboxCedulaNumAsociado.TabIndex = 54
         '
+        'CertificadosButtonConsultar
+        '
+        Me.CertificadosButtonConsultar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
+        Me.CertificadosButtonConsultar.Location = New System.Drawing.Point(216, 68)
+        Me.CertificadosButtonConsultar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
+        Me.CertificadosButtonConsultar.Name = "CertificadosButtonConsultar"
+        Me.CertificadosButtonConsultar.Size = New System.Drawing.Size(55, 38)
+        Me.CertificadosButtonConsultar.TabIndex = 55
+        Me.CertificadosButtonConsultar.UseVisualStyleBackColor = True
+        '
         'CertificadosButtonLimpiar
         '
         Me.CertificadosButtonLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
@@ -218,7 +228,7 @@ Partial Class VCertificados
         '
         Me.CertificadosButtonCerrarPeriodo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CertificadosButtonCerrarPeriodo.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonCerrarPeriodo.Image = Global.WindowsApplication1.My.Resources.Resources.addwhite2
+        Me.CertificadosButtonCerrarPeriodo.Image = Global.WindowsApplication1.My.Resources.Resources.addwhite3
         Me.CertificadosButtonCerrarPeriodo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CertificadosButtonCerrarPeriodo.Location = New System.Drawing.Point(25, 175)
         Me.CertificadosButtonCerrarPeriodo.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
@@ -339,6 +349,71 @@ Partial Class VCertificados
         Me.Label15.Size = New System.Drawing.Size(78, 15)
         Me.Label15.TabIndex = 256
         Me.Label15.Text = "Fecha Límite"
+        '
+        'CertificadosButtonSaveTracto10
+        '
+        Me.CertificadosButtonSaveTracto10.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto10.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto10.Image = CType(resources.GetObject("CertificadosButtonSaveTracto10.Image"), System.Drawing.Image)
+        Me.CertificadosButtonSaveTracto10.Location = New System.Drawing.Point(431, 179)
+        Me.CertificadosButtonSaveTracto10.Name = "CertificadosButtonSaveTracto10"
+        Me.CertificadosButtonSaveTracto10.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto10.TabIndex = 256
+        Me.CertificadosButtonSaveTracto10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto10.UseVisualStyleBackColor = False
+        '
+        'CertificadosButtonSaveTracto9
+        '
+        Me.CertificadosButtonSaveTracto9.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto9.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto9.Image = CType(resources.GetObject("CertificadosButtonSaveTracto9.Image"), System.Drawing.Image)
+        Me.CertificadosButtonSaveTracto9.Location = New System.Drawing.Point(431, 140)
+        Me.CertificadosButtonSaveTracto9.Name = "CertificadosButtonSaveTracto9"
+        Me.CertificadosButtonSaveTracto9.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto9.TabIndex = 255
+        Me.CertificadosButtonSaveTracto9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto9.UseVisualStyleBackColor = False
+        '
+        'CertificadosButtonSaveTracto8
+        '
+        Me.CertificadosButtonSaveTracto8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto8.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto8.Image = CType(resources.GetObject("CertificadosButtonSaveTracto8.Image"), System.Drawing.Image)
+        Me.CertificadosButtonSaveTracto8.Location = New System.Drawing.Point(431, 101)
+        Me.CertificadosButtonSaveTracto8.Name = "CertificadosButtonSaveTracto8"
+        Me.CertificadosButtonSaveTracto8.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto8.TabIndex = 254
+        Me.CertificadosButtonSaveTracto8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto8.UseVisualStyleBackColor = False
+        '
+        'CertificadosButtonSaveTracto7
+        '
+        Me.CertificadosButtonSaveTracto7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto7.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto7.Image = CType(resources.GetObject("CertificadosButtonSaveTracto7.Image"), System.Drawing.Image)
+        Me.CertificadosButtonSaveTracto7.Location = New System.Drawing.Point(431, 62)
+        Me.CertificadosButtonSaveTracto7.Name = "CertificadosButtonSaveTracto7"
+        Me.CertificadosButtonSaveTracto7.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto7.TabIndex = 253
+        Me.CertificadosButtonSaveTracto7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto7.UseVisualStyleBackColor = False
+        '
+        'CertificadosButtonSaveTracto6
+        '
+        Me.CertificadosButtonSaveTracto6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto6.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto6.Image = Global.WindowsApplication1.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto6.Location = New System.Drawing.Point(429, 20)
+        Me.CertificadosButtonSaveTracto6.Name = "CertificadosButtonSaveTracto6"
+        Me.CertificadosButtonSaveTracto6.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto6.TabIndex = 252
+        Me.CertificadosButtonSaveTracto6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto6.UseVisualStyleBackColor = False
         '
         'CertificadosDateTimePickerFecha10
         '
@@ -568,6 +643,73 @@ Partial Class VCertificados
         Me.Label1.Size = New System.Drawing.Size(78, 15)
         Me.Label1.TabIndex = 252
         Me.Label1.Text = "Fecha Límite"
+        '
+        'CertificadosButtonSaveTracto5
+        '
+        Me.CertificadosButtonSaveTracto5.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto5.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto5.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto5.Location = New System.Drawing.Point(419, 181)
+        Me.CertificadosButtonSaveTracto5.Name = "CertificadosButtonSaveTracto5"
+        Me.CertificadosButtonSaveTracto5.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto5.TabIndex = 251
+        Me.CertificadosButtonSaveTracto5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto5.UseVisualStyleBackColor = False
+        '
+        'CertificadosButtonSaveTracto4
+        '
+        Me.CertificadosButtonSaveTracto4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto4.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto4.Image = Global.WindowsApplication1.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto4.Location = New System.Drawing.Point(419, 139)
+        Me.CertificadosButtonSaveTracto4.Name = "CertificadosButtonSaveTracto4"
+        Me.CertificadosButtonSaveTracto4.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto4.TabIndex = 250
+        Me.CertificadosButtonSaveTracto4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto4.UseVisualStyleBackColor = False
+        '
+        'CertificadosButtonSaveTracto3
+        '
+        Me.CertificadosButtonSaveTracto3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto3.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto3.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto3.Location = New System.Drawing.Point(419, 102)
+        Me.CertificadosButtonSaveTracto3.Name = "CertificadosButtonSaveTracto3"
+        Me.CertificadosButtonSaveTracto3.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto3.TabIndex = 249
+        Me.CertificadosButtonSaveTracto3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto3.UseVisualStyleBackColor = False
+        '
+        'CertificadosButtonSaveTracto2
+        '
+        Me.CertificadosButtonSaveTracto2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto2.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.CertificadosButtonSaveTracto2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto2.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto2.Location = New System.Drawing.Point(419, 62)
+        Me.CertificadosButtonSaveTracto2.Name = "CertificadosButtonSaveTracto2"
+        Me.CertificadosButtonSaveTracto2.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto2.TabIndex = 248
+        Me.CertificadosButtonSaveTracto2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto2.UseVisualStyleBackColor = False
+        '
+        'CertificadosButtonSaveTracto1
+        '
+        Me.CertificadosButtonSaveTracto1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CertificadosButtonSaveTracto1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.CertificadosButtonSaveTracto1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CertificadosButtonSaveTracto1.ForeColor = System.Drawing.Color.White
+        Me.CertificadosButtonSaveTracto1.Image = Global.WindowsApplication1.My.Resources.Resources.save1
+        Me.CertificadosButtonSaveTracto1.Location = New System.Drawing.Point(419, 22)
+        Me.CertificadosButtonSaveTracto1.Name = "CertificadosButtonSaveTracto1"
+        Me.CertificadosButtonSaveTracto1.Size = New System.Drawing.Size(35, 27)
+        Me.CertificadosButtonSaveTracto1.TabIndex = 247
+        Me.CertificadosButtonSaveTracto1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.CertificadosButtonSaveTracto1.UseVisualStyleBackColor = False
         '
         'CertificadosDateTimePickerFecha5
         '
@@ -866,155 +1008,13 @@ Partial Class VCertificados
         Me.Label31.TabIndex = 41
         Me.Label31.Text = "Certificaciones de Aportación"
         '
-        'CertificadosButtonSaveTracto10
-        '
-        Me.CertificadosButtonSaveTracto10.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto10.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto10.Image = CType(resources.GetObject("CertificadosButtonSaveTracto10.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSaveTracto10.Location = New System.Drawing.Point(431, 179)
-        Me.CertificadosButtonSaveTracto10.Name = "CertificadosButtonSaveTracto10"
-        Me.CertificadosButtonSaveTracto10.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto10.TabIndex = 256
-        Me.CertificadosButtonSaveTracto10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto10.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonSaveTracto9
-        '
-        Me.CertificadosButtonSaveTracto9.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto9.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto9.Image = CType(resources.GetObject("CertificadosButtonSaveTracto9.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSaveTracto9.Location = New System.Drawing.Point(431, 140)
-        Me.CertificadosButtonSaveTracto9.Name = "CertificadosButtonSaveTracto9"
-        Me.CertificadosButtonSaveTracto9.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto9.TabIndex = 255
-        Me.CertificadosButtonSaveTracto9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto9.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonSaveTracto8
-        '
-        Me.CertificadosButtonSaveTracto8.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto8.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto8.Image = CType(resources.GetObject("CertificadosButtonSaveTracto8.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSaveTracto8.Location = New System.Drawing.Point(431, 101)
-        Me.CertificadosButtonSaveTracto8.Name = "CertificadosButtonSaveTracto8"
-        Me.CertificadosButtonSaveTracto8.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto8.TabIndex = 254
-        Me.CertificadosButtonSaveTracto8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto8.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonSaveTracto7
-        '
-        Me.CertificadosButtonSaveTracto7.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto7.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto7.Image = CType(resources.GetObject("CertificadosButtonSaveTracto7.Image"), System.Drawing.Image)
-        Me.CertificadosButtonSaveTracto7.Location = New System.Drawing.Point(431, 62)
-        Me.CertificadosButtonSaveTracto7.Name = "CertificadosButtonSaveTracto7"
-        Me.CertificadosButtonSaveTracto7.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto7.TabIndex = 253
-        Me.CertificadosButtonSaveTracto7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto7.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonSaveTracto6
-        '
-        Me.CertificadosButtonSaveTracto6.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto6.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto6.Image = Global.WindowsApplication1.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto6.Location = New System.Drawing.Point(429, 20)
-        Me.CertificadosButtonSaveTracto6.Name = "CertificadosButtonSaveTracto6"
-        Me.CertificadosButtonSaveTracto6.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto6.TabIndex = 252
-        Me.CertificadosButtonSaveTracto6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto6.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonSaveTracto5
-        '
-        Me.CertificadosButtonSaveTracto5.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto5.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto5.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto5.Location = New System.Drawing.Point(419, 181)
-        Me.CertificadosButtonSaveTracto5.Name = "CertificadosButtonSaveTracto5"
-        Me.CertificadosButtonSaveTracto5.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto5.TabIndex = 251
-        Me.CertificadosButtonSaveTracto5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto5.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonSaveTracto4
-        '
-        Me.CertificadosButtonSaveTracto4.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto4.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto4.Image = Global.WindowsApplication1.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto4.Location = New System.Drawing.Point(419, 139)
-        Me.CertificadosButtonSaveTracto4.Name = "CertificadosButtonSaveTracto4"
-        Me.CertificadosButtonSaveTracto4.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto4.TabIndex = 250
-        Me.CertificadosButtonSaveTracto4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto4.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonSaveTracto3
-        '
-        Me.CertificadosButtonSaveTracto3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto3.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto3.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto3.Location = New System.Drawing.Point(419, 102)
-        Me.CertificadosButtonSaveTracto3.Name = "CertificadosButtonSaveTracto3"
-        Me.CertificadosButtonSaveTracto3.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto3.TabIndex = 249
-        Me.CertificadosButtonSaveTracto3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto3.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonSaveTracto2
-        '
-        Me.CertificadosButtonSaveTracto2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto2.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.CertificadosButtonSaveTracto2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto2.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto2.Location = New System.Drawing.Point(419, 62)
-        Me.CertificadosButtonSaveTracto2.Name = "CertificadosButtonSaveTracto2"
-        Me.CertificadosButtonSaveTracto2.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto2.TabIndex = 248
-        Me.CertificadosButtonSaveTracto2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto2.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonSaveTracto1
-        '
-        Me.CertificadosButtonSaveTracto1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.CertificadosButtonSaveTracto1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.CertificadosButtonSaveTracto1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CertificadosButtonSaveTracto1.ForeColor = System.Drawing.Color.White
-        Me.CertificadosButtonSaveTracto1.Image = Global.WindowsApplication1.My.Resources.Resources.save1
-        Me.CertificadosButtonSaveTracto1.Location = New System.Drawing.Point(419, 22)
-        Me.CertificadosButtonSaveTracto1.Name = "CertificadosButtonSaveTracto1"
-        Me.CertificadosButtonSaveTracto1.Size = New System.Drawing.Size(35, 27)
-        Me.CertificadosButtonSaveTracto1.TabIndex = 247
-        Me.CertificadosButtonSaveTracto1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.CertificadosButtonSaveTracto1.UseVisualStyleBackColor = False
-        '
-        'CertificadosButtonConsultar
-        '
-        Me.CertificadosButtonConsultar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
-        Me.CertificadosButtonConsultar.Location = New System.Drawing.Point(216, 68)
-        Me.CertificadosButtonConsultar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
-        Me.CertificadosButtonConsultar.Name = "CertificadosButtonConsultar"
-        Me.CertificadosButtonConsultar.Size = New System.Drawing.Size(55, 38)
-        Me.CertificadosButtonConsultar.TabIndex = 55
-        Me.CertificadosButtonConsultar.UseVisualStyleBackColor = True
-        '
         'VCertificados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1284, 846)
+        Me.ClientSize = New System.Drawing.Size(1292, 578)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)

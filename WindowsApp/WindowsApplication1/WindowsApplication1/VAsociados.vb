@@ -172,4 +172,11 @@
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
+
+    Private Sub TextBoxSociosConsultarAsociado_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles TextBoxSociosConsultarAsociado.KeyPress
+        'TextBoxSociosConsultarAsociado.PasswordChar = "*"
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Call ButtonAsociadosBuscar_Click(sender, e)
+        End If
+    End Sub
 End Class
