@@ -48,7 +48,7 @@ Public Class Principal
 
     Private Sub Principal_Load(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyValue = Keys.F1 Or Keys.F2 Or Keys.F3 Or Keys.F4 Or Keys.F5 Or Keys.F6 Or Keys.F7 Or Keys.F8 Or Keys.F9 Or Keys.F10 Or Keys.F11 Or Keys.F12 Then
-            'FuncKeysModule(e.KeyValue)
+            FuncKeysModule(e.KeyValue)
             e.Handled = True
         End If
 
@@ -58,19 +58,15 @@ Public Class Principal
     Public Sub FuncKeysModule(ByVal value As Keys)
         Select Case value
             Case Keys.F1
-                MessageBox.Show("F1 pressed")
+                VAsociados.Show()
             Case Keys.F2
-                MessageBox.Show("F2 pressed")
+                VComites.Show()
             Case Keys.F3
-                MessageBox.Show("F3 pressed")
+                VCertificados.Show()
             Case Keys.F4
-                MessageBox.Show("F4 pressed")
+                VIngresos.Show()
             Case Keys.F5
-                MessageBox.Show("F5 pressed")
-            Case Keys.F6
-                MessageBox.Show("F6 pressed")
-            Case Keys.F7
-                MessageBox.Show("F7 pressed")
+                VGastos.Show()
         End Select
     End Sub
 
@@ -162,5 +158,7 @@ Public Class Principal
         VAcercaDe.Show()
     End Sub
 
+    Private Sub ConfiguraciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguraciónToolStripMenuItem.Click
 
+    End Sub
 End Class

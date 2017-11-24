@@ -194,7 +194,7 @@ Partial Class Principal
         'AcercaDeSACToolStripMenuItem
         '
         Me.AcercaDeSACToolStripMenuItem.Name = "AcercaDeSACToolStripMenuItem"
-        Me.AcercaDeSACToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeSACToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.AcercaDeSACToolStripMenuItem.Text = "Acerca de SAC"
         '
         'Principal

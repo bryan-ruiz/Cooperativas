@@ -389,6 +389,11 @@
   <ItemGroup>
     <Content Include="android_l_etched_icon_tgJ_icon.ico" />
     <Content Include="Imagen\MEP_Logo.png" />
+    <None Include="Resources\savelast2.png" />
+    <None Include="Resources\saveicon2.png" />
+    <None Include="Resources\refreshlast1.png" />
+    <None Include="Resources\refreshWhite1.png" />
+    <None Include="Resources\refresh user3.png" />
     <None Include="Resources\salidarotada59.png" />
     <None Include="Resources\salidas59.png" />
     <None Include="Resources\settings1pp.png" />
@@ -418,6 +423,16 @@
     <None Include="Resources\acercade55.png" />
     <None Include="Resources\entrada59.png" />
     <None Include="Resources\gastos21.png" />
+    <None Include="Resources\addUser1.png" />
+    <None Include="Resources\cleanUser3.png" />
+    <None Include="Resources\adduser7.png" />
+    <None Include="Resources\cleanWhite1.png" />
+    <None Include="Resources\addWhite1.png" />
+    <None Include="Resources\addwhite2.png" />
+    <None Include="Resources\addwhite3.png" />
+    <None Include="Resources\adduserwhite6.png" />
+    <None Include="Resources\cleanlast1.png" />
+    <None Include="Resources\cleanlast2.png" />
     <Content Include="Resources\logoCoopesag2.png" />
     <None Include="Resources\LogoTransparente.png" />
     <Content Include="Resources\MEP_Logo.png" />
