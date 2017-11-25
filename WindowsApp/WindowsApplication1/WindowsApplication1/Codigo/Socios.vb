@@ -548,7 +548,7 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 40 Then
+                If conta = 38 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)
@@ -715,7 +715,7 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 40 Then
+                If conta = 38 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)
@@ -811,6 +811,195 @@ Public Class Socios
         End Try
     End Sub
 
+
+    'Genera un reporte de los Excedentes correspondientes para cada asociado activo en PDF'
+    Public Sub generarReporteExcedentesCorrespondientesPorAsociados()
+        Dim fechaDesde As Date = VExcedentesCorrespondientes.ExcedentesCorrespDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
+        Dim fechaHasta As Date = VExcedentesCorrespondientes.ExcedentesCorrespDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
+
+        Try
+            Dim valores As List(Of SocioClase)
+            BD.ConectarBD()
+
+            valores = BD.obtenerDatosReporteDeSocios("Activos")
+
+            BD.CerrarConexion()
+
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
+            End If
+
+            'Margin of the Doc
+            Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
+
+            Dim nombreReporte As String = "reporte_ExcedentesCorrespondientes.pdf"
+
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & nombreReporte, FileMode.Create))
+            pdfDoc.Open()
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
+
+            Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
+
+            Dim table As PdfPTable = New PdfPTable(7)
+
+            'ESTABLECE TAMAÑO DE ANCHO DE COLUMNAS
+            Dim intTblWidth() As Integer = {7, 12, 12, 10, 8, 8, 8}
+            table.SetWidths(intTblWidth)
+
+            '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
+
+            Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("N° Asociado", FontStype))
+            numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            numAsociadoR.Colspan = 1
+            numAsociadoR.HorizontalAlignment = 1
+
+            Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre Completo", FontStype))
+            nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            nombreR.Colspan = 2
+            nombreR.HorizontalAlignment = 1
+
+            Dim cedulaR As PdfPCell = New PdfPCell(New Phrase(" N° Identificación", FontStype))
+            cedulaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            cedulaR.Colspan = 1
+            cedulaR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+            Dim calidadR As PdfPCell = New PdfPCell(New Phrase("Calidad", FontStype))
+            calidadR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            calidadR.Colspan = 1
+            calidadR.HorizontalAlignment = 1
+
+            Dim nivelR As PdfPCell = New PdfPCell(New Phrase("Nivel", FontStype))
+            nivelR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            nivelR.Colspan = 1
+            nivelR.HorizontalAlignment = 1
+
+            Dim excedenteCorrespR As PdfPCell = New PdfPCell(New Phrase("Excedente Corresp.", FontStype))
+            excedenteCorrespR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            excedenteCorrespR.Colspan = 1
+            excedenteCorrespR.HorizontalAlignment = 1
+
+            ' PARA AGREGAR INGRESOS Y GASTOS EN UNA PAGINA
+            Dim FontEncabezadoFechas = FontFactory.GetFont("Arial", 7, Font.NORMAL)
+            '/////// Encabezado //////////
+            pdfDoc.Add(New Paragraph("                                               Informe Excedentes Correspondientes del " + fechaDesde + " al " + fechaHasta, FontEncabezadoFechas))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
+
+            table.AddCell(numAsociadoR)
+            table.AddCell(nombreR)
+            table.AddCell(cedulaR)
+            table.AddCell(calidadR)
+            table.AddCell(nivelR)
+            table.AddCell(excedenteCorrespR)
+
+
+            Dim contador As Integer = 0
+            Dim conta As Integer = 0
+            While contador < valores.Count
+                If conta = 45 Then
+                    pdfDoc.Add(table)
+                    pdfDoc.NewPage()
+                    encabezado.encabezado(pdfWrite, pdfDoc)
+                    table.DeleteBodyRows()
+
+                    conta = 0
+                End If
+                conta = conta + 1
+
+                Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
+
+                Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).numAsoc, FontStype2))
+                numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                numAsociadoT.Colspan = 1
+                numAsociadoT.HorizontalAlignment = 1
+
+                Dim nombreTotal As String = valores(contador).nombre + " " + valores(contador).primerApellido + " " + valores(contador).segundoApellido
+                Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
+                nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                nombreT.Colspan = 2
+                nombreT.HorizontalAlignment = 1
+
+                Dim cedulaTotalT As PdfPCell = New PdfPCell(New Phrase(valores(contador).cedula, FontStype2))
+                cedulaTotalT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                cedulaTotalT.Colspan = 1
+                cedulaTotalT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+                Dim calidadT As PdfPCell = New PdfPCell(New Phrase(valores(contador).ocupacionEspecialidad, FontStype2))
+                calidadT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                calidadT.Colspan = 1
+                calidadT.HorizontalAlignment = 1
+
+                Dim seccionT As PdfPCell = New PdfPCell(New Phrase(valores(contador).seccion, FontStype2))
+                seccionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                seccionT.Colspan = 1
+                seccionT.HorizontalAlignment = 1
+
+
+                'DATOS PARA EXC CORRESPONDIENTE
+
+
+                'POR SOCIO -5200
+
+                Dim cedula As String = valores(contador).cedula
+
+                'Aportaciones o Certificados - Acum
+                ' Dim totalAportacionesAcum As List(Of String) = obtenerCertificadoXSocioAcumAnterior(cedula)
+                'Aportaciones o Certificados - Total o Periodo
+                'Dim totalAportacionesTotal As List(Of String) = obtenerCertificadoXSocioTotal(cedula)
+
+                'Subtotal X Socio de suma de acum + periodo (total)
+                'Dim subTotalAportacionesXSocio As Integer = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
+
+
+                ' TODOS - 6400
+
+                'Aportaciones o Certificados - Acum
+                ' Dim totalAportacionesAcumTodos As List(Of String) = obtenerCertificadoTodosAcumAnterior()
+                'Aportaciones o Certificados - Total o Periodo
+                ' Dim totalAportacionesTotalTodos As List(Of String) = obtenerCertificadoTodosTotal()
+
+                'Subtotal X Socio de suma de acum + periodo (total)
+                ' Dim subTotalAportacionesTodos As Integer = Integer.Parse(totalAportacionesAcumTodos.Item(0)) + Integer.Parse(totalAportacionesTotalTodos.Item(0))
+
+
+                Dim excedenteCorrespT As PdfPCell = New PdfPCell(New Phrase("55555", FontStype2))
+                excedenteCorrespT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                excedenteCorrespT.Colspan = 1
+                excedenteCorrespT.HorizontalAlignment = 1
+
+
+
+                table.AddCell(numAsociadoT)
+                table.AddCell(nombreT)
+                table.AddCell(cedulaTotalT)
+                table.AddCell(calidadT)
+                table.AddCell(seccionT)
+                table.AddCell(excedenteCorrespT)
+
+
+                ' If (valores(contador).estado.Equals("Activo")) Then
+                'table.AddCell(fechaRetiroNula)
+                'Else
+                'table.AddCell(fechaRetiroT)
+                'End If
+
+                contador = contador + 1
+
+            End While
+
+
+            pdfDoc.Add(table)
+
+            pdfDoc.Close()
+
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & nombreReporte, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
 
     'Genera un recibo de la info del socio'
     Public Sub imprimirReciboActual()

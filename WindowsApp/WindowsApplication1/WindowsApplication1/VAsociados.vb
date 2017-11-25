@@ -181,6 +181,6 @@
     End Sub
 
     Private Sub ExcedentesPorAsociadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesPorAsociadoToolStripMenuItem.Click
-
+        VExcedentesCorrespondientes.Show()
     End Sub
 End Class

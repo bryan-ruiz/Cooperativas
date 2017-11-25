@@ -816,34 +816,33 @@ Public Class ConexionBD
         Dim res As Integer = 0
         Try
             If tracto = "1" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'    WHERE ((cedula) = '" & id & "' or (numAsociado)= '" & id & "')"
                 SQL = "UPDATE [CERTIFICADOS] SET tracto1 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
             ElseIf tracto = "2" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'
                 SQL = "UPDATE [CERTIFICADOS] Set tracto2 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
             ElseIf tracto = "3" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'
                 SQL = "UPDATE [CERTIFICADOS] SET tracto3 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
             ElseIf tracto = "4" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'
                 SQL = "UPDATE [CERTIFICADOS] SET tracto4 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
             ElseIf tracto = "5" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'
                 SQL = "UPDATE [CERTIFICADOS] SET tracto5 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
             ElseIf tracto = "6" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'
                 SQL = "UPDATE [CERTIFICADOS] SET tracto6 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
             ElseIf tracto = "7" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'
                 SQL = "UPDATE [CERTIFICADOS] SET tracto7 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
             ElseIf tracto = "8" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'
                 SQL = "UPDATE [CERTIFICADOS] SET tracto8 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
             ElseIf tracto = "9" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'
                 SQL = "UPDATE [CERTIFICADOS] SET tracto9 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+
             ElseIf tracto = "10" Then
-                'Declaramos el query que queremos ejecutar, en este caso es insertar'
                 SQL = "UPDATE [CERTIFICADOS] SET tracto10 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
             End If
 

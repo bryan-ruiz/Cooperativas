@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Aaron\Desktop\Coope3.0\</PublishUrl>
+    <PublishUrl>C:\Users\Aaron\Desktop\Coope3.1\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -177,6 +177,12 @@
     <Compile Include="VCertificados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VExcedentesCorrespondientes.Designer.vb">
+      <DependentUpon>VExcedentesCorrespondientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VExcedentesCorrespondientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VIngresosComprobante.Designer.vb">
       <DependentUpon>VIngresosComprobante.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VCertificados.resx">
       <DependentUpon>VCertificados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VExcedentesCorrespondientes.resx">
+      <DependentUpon>VExcedentesCorrespondientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIngresosComprobante.resx">
       <DependentUpon>VIngresosComprobante.vb</DependentUpon>
