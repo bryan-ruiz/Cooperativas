@@ -1506,4 +1506,171 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    ' reporte exc corresp acum ant x socio
+    Function obtenerCertificadoXSocioAcumAnterior(ByVal cedula As String) As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(CERTIFICADOS.acumuladoAnterior) As acum 
+                    FROM CERTIFICADOS, SOCIOS
+                    WHERE (SOCIOS.cedula = '" & cedula & "' )
+                    AND (SOCIOS.estado = 'Activo')
+                    AND (CERTIFICADOS.cedulaAsociado = SOCIOS.cedula)  "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
+                        ' MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+
+    ' exc corresp x socio
+    Function obtenerCertificadoXSocioTotal(ByVal cedula As String) As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(CERTIFICADOS.total) As total 
+                    FROM CERTIFICADOS, SOCIOS
+                    WHERE (SOCIOS.cedula = '" & cedula & "' )
+                    AND (SOCIOS.estado = 'Activo')
+                    AND (CERTIFICADOS.cedulaAsociado = SOCIOS.cedula)  "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
+                        'MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+
+    Function obtenerCertificadoTodosAcumAnterior() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(CERTIFICADOS.acumuladoAnterior) As acum 
+                    FROM CERTIFICADOS, SOCIOS
+                    WHERE SOCIOS.estado = 'Activo'
+                    AND SOCIOS.cedula = CERTIFICADOS.cedulaAsociado "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
+                        ' MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function obtenerCertificadoTodosTotal() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(CERTIFICADOS.total) As total 
+                    FROM CERTIFICADOS, SOCIOS
+                    WHERE SOCIOS.estado = 'Activo'
+                    AND SOCIOS.cedula = CERTIFICADOS.cedulaAsociado "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
+                        'MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+
 End Class

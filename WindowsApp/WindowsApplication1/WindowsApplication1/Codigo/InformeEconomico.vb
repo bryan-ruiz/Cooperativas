@@ -754,7 +754,7 @@ Public Class InformeEconomico
             If valores.Count <> 0 Then
                 Return valores
             Else
-                MessageBox.Show("No existen datos en la sección de Configuracion", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                MessageBox.Show("No existen datos en la sección de Configuración", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return ""
             End If
             BD.CerrarConexion()

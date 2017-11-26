@@ -3,6 +3,11 @@
 Public Class MensajesGlobales
 
     Public folderPath As String = "C:\Reportes\"
+
+    Public nombreReporteExcCorresp As String = "reporte_Excedentes_Correspondientes.pdf"
+    Public nombreReporteAsociadosActivos As String = "reporte_Asociados_Activos.pdf"
+
+
     Public licenciaPermisos = "50"
     Public mensajeCedulaONumAsociado As String = "Debe ingresar la cédula o el número de asociado a consultar"
     Public mensajeDebeIngresarCodigoODescriptionDeCuenta As String = "Debe ingresar el codigo y/o descripción de la cuenta"

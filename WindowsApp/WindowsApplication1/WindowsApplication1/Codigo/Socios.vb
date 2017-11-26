@@ -7,6 +7,7 @@ Public Class Socios
     Dim BD As ConexionBD = New ConexionBD
     Dim encabezado As EncabezadoClase = New EncabezadoClase
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+    Dim informeEconomico As InformeEconomico = New InformeEconomico
 
     'consulta un asociado
     Public Sub consultarAsociado()
@@ -814,16 +815,55 @@ Public Class Socios
 
     'Genera un reporte de los Excedentes correspondientes para cada asociado activo en PDF'
     Public Sub generarReporteExcedentesCorrespondientesPorAsociados()
+
         Dim fechaDesde As Date = VExcedentesCorrespondientes.ExcedentesCorrespDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
         Dim fechaHasta As Date = VExcedentesCorrespondientes.ExcedentesCorrespDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
+
+        Dim subTotalIngresos As List(Of String) = informeEconomico.obtenerSubTotalIngresos("Ingreso", "Si", fechaDesde, fechaHasta)
+        Dim subTotalGastos As List(Of String) = informeEconomico.obtenerSubTotalGastos("Gasto", "Si", fechaDesde, fechaHasta)
 
         Try
             Dim valores As List(Of SocioClase)
             BD.ConectarBD()
-
             valores = BD.obtenerDatosReporteDeSocios("Activos")
-
             BD.CerrarConexion()
+
+            ' TODOS - 1430
+
+            'Aportaciones o Certificados - Acum
+            Dim totalAportacionesAcumTodos As List(Of String) = obtenerCertificadoTodosAcumAnterior()
+            'Aportaciones o Certificados - Total o Periodo
+            Dim totalAportacionesTotalTodos As List(Of String) = obtenerCertificadoTodosTotal()
+
+            'Subtotal X Socio de suma de acum + periodo (total)
+            Dim subTotalAportacionesTodos As Double = Integer.Parse(totalAportacionesAcumTodos.Item(0)) + Integer.Parse(totalAportacionesTotalTodos.Item(0))
+
+            'MsgBox("XXXX aportaciones suma TODOS (acum mas total) son: " + subTotalAportacionesTodos.ToString)
+
+            '------------------- START -  excedentes brutos distribuible funciones ---------
+
+
+            ' 650 (ejemplo mio para testing)
+
+            Dim excedentesBrutos As Integer = Integer.Parse(subTotalIngresos.Item(0)) - Integer.Parse(subTotalGastos.Item(0))
+
+            'Valores de Reservas
+            Dim valoresReserva As List(Of ConfiguracionClase) = consultarValoresConfiguracion()
+
+            Dim sumaLegal As Integer = (excedentesBrutos * valoresReserva(0).legal) / 100
+            Dim sumaEducacion As Integer = (excedentesBrutos * valoresReserva(0).educacion) / 100
+            Dim sumaBSocial As Integer = (excedentesBrutos * valoresReserva(0).bienestarSocial) / 100
+            Dim sumaInstitucional As Integer = (excedentesBrutos * valoresReserva(0).institucional) / 100
+            Dim sumaPatrimonial As Integer = (excedentesBrutos * valoresReserva(0).patrimonial) / 100
+
+            Dim sumaTotalReservas As Integer = sumaLegal + sumaEducacion + sumaBSocial + sumaInstitucional + sumaPatrimonial
+
+            Dim sumaExcedentesNetosDistribuibles As Integer = excedentesBrutos - sumaTotalReservas
+
+            ' MsgBox("XXX exc netos distribuibles son: " + sumaExcedentesNetosDistribuibles.ToString)
+
+            '------------------- END -- excedentes brutos distribuible funciones ---------
+
 
             If Not Directory.Exists(variablesGlobales.folderPath) Then
                 Directory.CreateDirectory(variablesGlobales.folderPath)
@@ -832,9 +872,9 @@ Public Class Socios
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
 
-            Dim nombreReporte As String = "reporte_ExcedentesCorrespondientes.pdf"
 
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & nombreReporte, FileMode.Create))
+
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & variablesGlobales.nombreReporteExcCorresp, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -882,7 +922,7 @@ Public Class Socios
             ' PARA AGREGAR INGRESOS Y GASTOS EN UNA PAGINA
             Dim FontEncabezadoFechas = FontFactory.GetFont("Arial", 7, Font.NORMAL)
             '/////// Encabezado //////////
-            pdfDoc.Add(New Paragraph("                                               Informe Excedentes Correspondientes del " + fechaDesde + " al " + fechaHasta, FontEncabezadoFechas))
+            pdfDoc.Add(New Paragraph("                                                                                                        Excedentes Correspondientes del " + fechaDesde + " al " + fechaHasta, FontEncabezadoFechas))
             pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(New Paragraph(" "))
 
@@ -894,6 +934,7 @@ Public Class Socios
             table.AddCell(nivelR)
             table.AddCell(excedenteCorrespR)
 
+            Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
 
             Dim contador As Integer = 0
             Dim conta As Integer = 0
@@ -908,7 +949,7 @@ Public Class Socios
                 End If
                 conta = conta + 1
 
-                Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
+
 
                 Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).numAsoc, FontStype2))
                 numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
@@ -943,32 +984,40 @@ Public Class Socios
                 'POR SOCIO -5200
 
                 Dim cedula As String = valores(contador).cedula
-
+                Dim nombrees As String = valores(contador).nombre
+                'MsgBox("cedula es " & cedula & " -  nombre es : " & nombrees)
                 'Aportaciones o Certificados - Acum
-                ' Dim totalAportacionesAcum As List(Of String) = obtenerCertificadoXSocioAcumAnterior(cedula)
+                Dim totalAportacionesAcum As List(Of String) = obtenerCertificadoXSocioAcumAnterior(cedula)
                 'Aportaciones o Certificados - Total o Periodo
-                'Dim totalAportacionesTotal As List(Of String) = obtenerCertificadoXSocioTotal(cedula)
+                Dim totalAportacionesTotal As List(Of String) = obtenerCertificadoXSocioTotal(cedula)
 
                 'Subtotal X Socio de suma de acum + periodo (total)
-                'Dim subTotalAportacionesXSocio As Integer = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
+                Dim subTotalAportacionesXSocio As Double = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
+
+                ' MsgBox("aportaciones X SOCIO (acum mas total) son: " + subTotalAportacionesXSocio.ToString)
+
+                Dim resultDivisionTotalSocioEntreTotalTodosLosSocios As Double = subTotalAportacionesXSocio / subTotalAportacionesTodos
+                ' MsgBox("Division double x socio es : " + resultDivisionTotalSocioEntreTotalTodosLosSocios.ToString)
 
 
-                ' TODOS - 6400
+                ' --- Testing - floor - double value 
 
-                'Aportaciones o Certificados - Acum
-                ' Dim totalAportacionesAcumTodos As List(Of String) = obtenerCertificadoTodosAcumAnterior()
-                'Aportaciones o Certificados - Total o Periodo
-                ' Dim totalAportacionesTotalTodos As List(Of String) = obtenerCertificadoTodosTotal()
+                Dim totalXSocioExcDistribuible As Double = resultDivisionTotalSocioEntreTotalTodosLosSocios * sumaExcedentesNetosDistribuibles
 
-                'Subtotal X Socio de suma de acum + periodo (total)
-                ' Dim subTotalAportacionesTodos As Integer = Integer.Parse(totalAportacionesAcumTodos.Item(0)) + Integer.Parse(totalAportacionesTotalTodos.Item(0))
+                ' MsgBox("FCE x excNetosDistrib es : " + totalXSocioExcDistribuible.ToString)
+
+                Dim floorXSocio As Double = Math.Floor(totalXSocioExcDistribuible)
+
+                '  MsgBox("Floor es : " + floorXSocio.ToString)
 
 
-                Dim excedenteCorrespT As PdfPCell = New PdfPCell(New Phrase("55555", FontStype2))
+                Dim excCorrespN As Integer = Convert.ToInt32(floorXSocio.ToString)
+                Dim excCorrespNT As String = excCorrespN.ToString("N")
+
+                Dim excedenteCorrespT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + excCorrespNT, FontStype2))
                 excedenteCorrespT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 excedenteCorrespT.Colspan = 1
                 excedenteCorrespT.HorizontalAlignment = 1
-
 
 
                 table.AddCell(numAsociadoT)
@@ -989,17 +1038,146 @@ Public Class Socios
 
             End While
 
+            Dim tableSaldoAnterior As PdfPTable = New PdfPTable(7)
 
+
+            'SALDO ANTERIOR
+            Dim excNetosDistribuiblesR As PdfPCell = New PdfPCell(New Phrase("Excedentes Netos Distribuibles: ", FontStype))
+            excNetosDistribuiblesR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            excNetosDistribuiblesR.Colspan = 5
+            excNetosDistribuiblesR.HorizontalAlignment = 1
+            'Saldo anterior
+            Dim stringTotal6 As String = sumaExcedentesNetosDistribuibles.ToString("N")
+            Dim excNetosDistribuiblesT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal6, FontStype2))
+            excNetosDistribuiblesT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            excNetosDistribuiblesT.Colspan = 2
+            excNetosDistribuiblesT.HorizontalAlignment = 1
+
+            tableSaldoAnterior.AddCell(excNetosDistribuiblesR)
+            tableSaldoAnterior.AddCell(excNetosDistribuiblesT)
+
+            pdfDoc.Add(tableSaldoAnterior)
+            pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(table)
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & nombreReporte, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.nombreReporteExcCorresp, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
+
+
+    Public Function obtenerCertificadoXSocioAcumAnterior(ByVal cedula As String)
+        Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
+
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerCertificadoXSocioAcumAnterior(cedula)
+            If valores.Count <> 0 Then
+                Return valores
+            Else
+                'MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+        End Try
+    End Function
+
+    'Total certificados o aportaciones x socio
+    Public Function obtenerCertificadoXSocioTotal(ByVal cedula As String)
+        Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerCertificadoXSocioTotal(cedula)
+            If valores.Count <> 0 Then
+                Return valores
+            Else
+                ' MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+        End Try
+    End Function
+
+    'Activos - socios - acum total de todos
+    Public Function obtenerCertificadoTodosAcumAnterior()
+        Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
+
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerCertificadoTodosAcumAnterior()
+            If valores.Count <> 0 Then
+                Return valores
+            Else
+                'MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+        End Try
+    End Function
+
+    'Total certificados o aportaciones
+    Public Function obtenerCertificadoTodosTotal()
+        Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerCertificadoTodosTotal()
+            If valores.Count <> 0 Then
+                Return valores
+            Else
+                ' MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+        End Try
+    End Function
+
+    'Consulta todos los datos de la tabla de Configuración'
+    Public Function consultarValoresConfiguracion()
+        Dim valores As List(Of ConfiguracionClase)
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerDatosdeConfiguration()
+            If valores.Count <> 0 Then
+                Return valores
+            Else
+                MessageBox.Show("No existen datos en la sección de Configuración", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return ""
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+        End Try
+    End Function
+
+
+
+
+
+
+
+
+
 
     'Genera un recibo de la info del socio'
     Public Sub imprimirReciboActual()

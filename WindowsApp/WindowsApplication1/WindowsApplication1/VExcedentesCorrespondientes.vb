@@ -9,9 +9,7 @@
     End Sub
 
     Private Sub ExcedentesCorrespButtonGenerarReporteExc_Click(sender As Object, e As EventArgs) Handles ExcedentesCorrespButtonGenerarReporteExc.Click
-        MsgBox("Feature In Progress...")
-
-        'socio.generarReporteExcedentesCorrespondientesPorAsociados()
-        'Print.Show()
+        socio.generarReporteExcedentesCorrespondientesPorAsociados()
+        Print.Show()
     End Sub
 End Class
