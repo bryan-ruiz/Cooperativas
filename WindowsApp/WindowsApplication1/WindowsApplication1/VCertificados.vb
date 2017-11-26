@@ -173,4 +173,8 @@
             Call CertificadosButtonConsultar_Click(sender, e)
         End If
     End Sub
+
+    Private Sub ReporteDeMorosidadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeMorosidadToolStripMenuItem.Click
+        VReporteMorosidad.Show()
+    End Sub
 End Class

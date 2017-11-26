@@ -66,6 +66,9 @@ Public Class EncabezadoClase
         'oImagen = iTextSharp.text.Image.GetInstance("..\..\Imagen\MEP_Logo.png")
 
 
+
+
+
         oImagen.SetAbsolutePosition(28, 737)
         'Ajuste porcentual de la imagen
         oImagen.ScalePercent(50)

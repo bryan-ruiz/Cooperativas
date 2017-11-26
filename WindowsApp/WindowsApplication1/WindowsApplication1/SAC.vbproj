@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Aaron\Desktop\Coope3.2\</PublishUrl>
+    <PublishUrl>C:\Users\Aaron\Desktop\Coope3.3\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
     <ProductName>SAC</ProductName>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -150,6 +150,12 @@
     </Compile>
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VReporteMorosidad.Designer.vb">
+      <DependentUpon>VReporteMorosidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VReporteMorosidad.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VGestionAsociados.Designer.vb">
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VExcedentesCorrespondientes.resx">
       <DependentUpon>VExcedentesCorrespondientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VReporteMorosidad.resx">
+      <DependentUpon>VReporteMorosidad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIngresosComprobante.resx">
       <DependentUpon>VIngresosComprobante.vb</DependentUpon>

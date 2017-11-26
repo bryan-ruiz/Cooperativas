@@ -5,7 +5,7 @@ Public Class MensajesGlobales
     Public folderPath As String = "C:\Reportes\"
 
     Public nombreReporteExcCorresp As String = "reporte_Excedentes_Correspondientes.pdf"
-    Public nombreReporteAsociadosActivos As String = "reporte_Asociados_Activos.pdf"
+    Public reporteMorosidad As String = "reporte_Morosidad.pdf"
 
 
     Public licenciaPermisos = "50"

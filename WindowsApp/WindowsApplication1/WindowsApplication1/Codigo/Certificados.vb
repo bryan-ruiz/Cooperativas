@@ -8,6 +8,7 @@ Public Class Certificados
     Dim estado As Boolean = True
     Dim encabezado As EncabezadoClase = New EncabezadoClase
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+    Dim socios As Socios = New Socios
 
     Public Sub consultar()
 
@@ -640,6 +641,191 @@ Public Class Certificados
                 MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
+    End Sub
+
+
+
+    'Genera un reporte de los mororos'
+    Public Sub generarReporteMorosidadAsociadosActivos()
+
+        'total del periodo actual a consultar para verificar si es o no moroso
+        Dim periodoAConsultar As Integer = Integer.Parse(VReporteMorosidad.TextBoxMorosidad.Text)
+
+
+        Try
+            Dim valores As List(Of SocioClase)
+            BD.ConectarBD()
+            valores = BD.obtenerDatosReporteDeSociosActivosPeriodoMayorA("Activos", periodoAConsultar.ToString)
+            BD.CerrarConexion()
+
+
+
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
+            End If
+
+            'Margin of the Doc
+            Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
+
+
+
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & variablesGlobales.reporteMorosidad, FileMode.Create))
+            pdfDoc.Open()
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
+
+            Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
+
+            Dim table As PdfPTable = New PdfPTable(6)
+
+            'ESTABLECE TAMAÑO DE ANCHO DE COLUMNAS
+            Dim intTblWidth() As Integer = {7, 12, 12, 10, 8, 8}
+            table.SetWidths(intTblWidth)
+
+            '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
+
+            Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("N° Asociado", FontStype))
+            numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            numAsociadoR.Colspan = 1
+            numAsociadoR.HorizontalAlignment = 1
+
+            Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre Completo", FontStype))
+            nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            nombreR.Colspan = 2
+            nombreR.HorizontalAlignment = 1
+
+            Dim nivelR As PdfPCell = New PdfPCell(New Phrase("Nivel", FontStype))
+            nivelR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            nivelR.Colspan = 1
+            nivelR.HorizontalAlignment = 1
+
+            Dim acumR As PdfPCell = New PdfPCell(New Phrase("Acum. Anterior.", FontStype))
+            acumR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            acumR.Colspan = 1
+            acumR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+            Dim pagadoR As PdfPCell = New PdfPCell(New Phrase("Total Pagado", FontStype))
+            pagadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            pagadoR.Colspan = 1
+            pagadoR.HorizontalAlignment = 1
+
+
+            ' PARA AGREGAR INGRESOS Y GASTOS EN UNA PAGINA
+            Dim FontEncabezadoFechas = FontFactory.GetFont("Arial", 7, Font.NORMAL)
+            '/////// Encabezado //////////
+            pdfDoc.Add(New Paragraph("                                                                                             Reporte de los Asociados que han pagado menos de ¢ " + VReporteMorosidad.TextBoxMorosidad.Text + " en el Periodo", FontEncabezadoFechas))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
+
+            table.AddCell(numAsociadoR)
+            table.AddCell(nombreR)
+            table.AddCell(nivelR)
+            table.AddCell(acumR)
+            table.AddCell(pagadoR)
+
+
+
+            Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
+
+            Dim contador As Integer = 0
+            Dim conta As Integer = 0
+            While contador < valores.Count
+                If conta = 45 Then
+                    pdfDoc.Add(table)
+                    pdfDoc.NewPage()
+                    encabezado.encabezado(pdfWrite, pdfDoc)
+                    table.DeleteBodyRows()
+
+                    conta = 0
+                End If
+                conta = conta + 1
+
+
+
+                Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).numAsoc, FontStype2))
+                numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                numAsociadoT.Colspan = 1
+                numAsociadoT.HorizontalAlignment = 1
+
+                Dim nombreTotal As String = valores(contador).nombre + " " + valores(contador).primerApellido + " " + valores(contador).segundoApellido
+                Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
+                nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                nombreT.Colspan = 2
+                nombreT.HorizontalAlignment = 1
+
+                Dim seccionT As PdfPCell = New PdfPCell(New Phrase(valores(contador).seccion, FontStype2))
+                seccionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                seccionT.Colspan = 1
+                seccionT.HorizontalAlignment = 1
+
+
+
+
+                Dim cedula As String = valores(contador).cedula
+
+                'Aportaciones o Certificados - Acum
+                Dim totalAportacionesAcum As List(Of String) = socios.obtenerCertificadoXSocioAcumAnterior(cedula)
+                'Aportaciones o Certificados - Total o Periodo
+                Dim totalAportacionesTotal As List(Of String) = socios.obtenerCertificadoXSocioTotal(cedula)
+
+                'Subtotal X Socio de suma de acum + periodo (total)
+                'Dim subTotalAportacionesXSocio As Double = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
+
+                Dim periodoXAsociado As Integer = Integer.Parse(totalAportacionesTotal.Item(0))
+
+                'MsgBox("User is : " + valores(contador).nombre)
+
+                If (periodoXAsociado < periodoAConsultar) Then
+                    ' MsgBox("este usuario - " + valores(contador).nombre + " esta moroso, periodo total pagado del usuario es : " + periodoXAsociado.ToString)
+                End If
+
+
+
+
+                Dim acumT As PdfPCell = New PdfPCell(New Phrase(totalAportacionesAcum.Item(0), FontStype2))
+                acumT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                acumT.Colspan = 1
+                acumT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+                Dim periodoT As PdfPCell = New PdfPCell(New Phrase(periodoXAsociado, FontStype2))
+                periodoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                periodoT.Colspan = 1
+                periodoT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+
+
+
+                table.AddCell(numAsociadoT)
+                table.AddCell(nombreT)
+                table.AddCell(seccionT)
+                table.AddCell(acumT)
+                table.AddCell(periodoT)
+
+
+
+
+
+                ' If (valores(contador).estado.Equals("Activo")) Then
+                'table.AddCell(fechaRetiroNula)
+                'Else
+                'table.AddCell(fechaRetiroT)
+                'End If
+
+                contador = contador + 1
+
+            End While
+
+
+            pdfDoc.Add(table)
+
+            pdfDoc.Close()
+
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reporteMorosidad, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
     End Sub
 
 

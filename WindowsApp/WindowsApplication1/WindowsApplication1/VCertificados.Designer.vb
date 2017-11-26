@@ -28,7 +28,7 @@ Partial Class VCertificados
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImprimirComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -102,6 +102,7 @@ Partial Class VCertificados
         Me.CertificadosTextboxNombre = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label31 = New System.Windows.Forms.Label()
+        Me.ReporteDeMorosidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -113,7 +114,7 @@ Partial Class VCertificados
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1285, 24)
@@ -146,11 +147,12 @@ Partial Class VCertificados
         Me.ImprimirComprobanteToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.ImprimirComprobanteToolStripMenuItem.Text = "Imprimir Comprobante"
         '
-        'InformaciónToolStripMenuItem
+        'ReportesToolStripMenuItem
         '
-        Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
-        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.InformaciónToolStripMenuItem.Text = "Información"
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteDeMorosidadToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'GroupBox1
         '
@@ -1007,6 +1009,12 @@ Partial Class VCertificados
         Me.Label31.TabIndex = 41
         Me.Label31.Text = "Certificaciones de Aportación"
         '
+        'ReporteDeMorosidadToolStripMenuItem
+        '
+        Me.ReporteDeMorosidadToolStripMenuItem.Name = "ReporteDeMorosidadToolStripMenuItem"
+        Me.ReporteDeMorosidadToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.ReporteDeMorosidadToolStripMenuItem.Text = "Reporte de Morosidad"
+        '
         'VCertificados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1095,7 +1103,7 @@ Partial Class VCertificados
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label30 As Label
-    Friend WithEvents InformaciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CertificadosButtonCerrarPeriodo As Button
     Friend WithEvents CertificadosButtonSaveTracto5 As Button
     Friend WithEvents CertificadosButtonSaveTracto4 As Button
@@ -1121,4 +1129,5 @@ Partial Class VCertificados
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label22 As Label
+    Friend WithEvents ReporteDeMorosidadToolStripMenuItem As ToolStripMenuItem
 End Class
