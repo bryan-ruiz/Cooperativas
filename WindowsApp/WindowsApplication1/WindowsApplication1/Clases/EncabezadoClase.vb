@@ -67,8 +67,6 @@ Public Class EncabezadoClase
 
 
 
-
-
         oImagen.SetAbsolutePosition(28, 737)
         'Ajuste porcentual de la imagen
         oImagen.ScalePercent(50)

@@ -648,6 +648,11 @@ Public Class Certificados
     'Genera un reporte de los mororos'
     Public Sub generarReporteMorosidadAsociadosActivos()
 
+        If VReporteMorosidad.TextBoxMorosidad.Text = "" Then
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
         'total del periodo actual a consultar para verificar si es o no moroso
         Dim periodoAConsultar As Integer = Integer.Parse(VReporteMorosidad.TextBoxMorosidad.Text)
 
@@ -655,9 +660,13 @@ Public Class Certificados
         Try
             Dim valores As List(Of SocioClase)
             BD.ConectarBD()
-            valores = BD.obtenerDatosReporteDeSociosActivosPeriodoMayorA("Activos", periodoAConsultar.ToString)
+            'socios activos Total (columna de CERTIFICADOS)
+            valores = BD.obtenerDatosReporteDeSociosActivosPeriodo("Activos")
             BD.CerrarConexion()
 
+
+
+            'MsgBox("1...")
 
 
             If Not Directory.Exists(variablesGlobales.folderPath) Then
@@ -730,6 +739,10 @@ Public Class Certificados
 
             Dim contador As Integer = 0
             Dim conta As Integer = 0
+
+            '  MsgBox("valores.count es " + valores.Count.ToString)
+
+
             While contador < valores.Count
                 If conta = 45 Then
                     pdfDoc.Add(table)
@@ -743,67 +756,67 @@ Public Class Certificados
 
 
 
-                Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).numAsoc, FontStype2))
-                numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                numAsociadoT.Colspan = 1
-                numAsociadoT.HorizontalAlignment = 1
-
-                Dim nombreTotal As String = valores(contador).nombre + " " + valores(contador).primerApellido + " " + valores(contador).segundoApellido
-                Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
-                nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                nombreT.Colspan = 2
-                nombreT.HorizontalAlignment = 1
-
-                Dim seccionT As PdfPCell = New PdfPCell(New Phrase(valores(contador).seccion, FontStype2))
-                seccionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                seccionT.Colspan = 1
-                seccionT.HorizontalAlignment = 1
-
-
 
 
                 Dim cedula As String = valores(contador).cedula
-
+                ' MsgBox("2...")
                 'Aportaciones o Certificados - Acum
                 Dim totalAportacionesAcum As List(Of String) = socios.obtenerCertificadoXSocioAcumAnterior(cedula)
+                ' MsgBox("3...")
+
                 'Aportaciones o Certificados - Total o Periodo
                 Dim totalAportacionesTotal As List(Of String) = socios.obtenerCertificadoXSocioTotal(cedula)
+                ' MsgBox("4...")
 
                 'Subtotal X Socio de suma de acum + periodo (total)
                 'Dim subTotalAportacionesXSocio As Double = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
 
                 Dim periodoXAsociado As Integer = Integer.Parse(totalAportacionesTotal.Item(0))
+                'MsgBox("5...")
 
                 'MsgBox("User is : " + valores(contador).nombre)
 
+
                 If (periodoXAsociado < periodoAConsultar) Then
-                    ' MsgBox("este usuario - " + valores(contador).nombre + " esta moroso, periodo total pagado del usuario es : " + periodoXAsociado.ToString)
+                    ' MsgBox("COUNT IS : " + contador.ToString + "  " + valores(contador).nombre + " esta moroso, periodo total pagado del usuario es : " + periodoXAsociado.ToString)
+
+
+
+                    Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(valores(contador).numAsoc, FontStype2))
+                    numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                    numAsociadoT.Colspan = 1
+                    numAsociadoT.HorizontalAlignment = 1
+
+                    Dim nombreTotal As String = valores(contador).nombre + " " + valores(contador).primerApellido + " " + valores(contador).segundoApellido
+                    Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
+                    nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                    nombreT.Colspan = 2
+                    nombreT.HorizontalAlignment = 1
+
+                    Dim seccionT As PdfPCell = New PdfPCell(New Phrase(valores(contador).seccion, FontStype2))
+                    seccionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                    seccionT.Colspan = 1
+                    seccionT.HorizontalAlignment = 1
+
+                    Dim acumT As PdfPCell = New PdfPCell(New Phrase(totalAportacionesAcum.Item(0), FontStype2))
+                    acumT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                    acumT.Colspan = 1
+                    acumT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+                    Dim periodoT As PdfPCell = New PdfPCell(New Phrase(periodoXAsociado, FontStype2))
+                    periodoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                    periodoT.Colspan = 1
+                    periodoT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+
+                    table.AddCell(numAsociadoT)
+                    table.AddCell(nombreT)
+                    table.AddCell(seccionT)
+                    table.AddCell(acumT)
+                    table.AddCell(periodoT)
+
+
                 End If
-
-
-
-
-                Dim acumT As PdfPCell = New PdfPCell(New Phrase(totalAportacionesAcum.Item(0), FontStype2))
-                acumT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                acumT.Colspan = 1
-                acumT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
-
-                Dim periodoT As PdfPCell = New PdfPCell(New Phrase(periodoXAsociado, FontStype2))
-                periodoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                periodoT.Colspan = 1
-                periodoT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
-
-
-
-
-                table.AddCell(numAsociadoT)
-                table.AddCell(nombreT)
-                table.AddCell(seccionT)
-                table.AddCell(acumT)
-                table.AddCell(periodoT)
-
-
-
 
 
                 ' If (valores(contador).estado.Equals("Activo")) Then

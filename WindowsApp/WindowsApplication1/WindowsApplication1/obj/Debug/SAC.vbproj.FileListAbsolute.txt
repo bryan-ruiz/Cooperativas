@@ -1,9 +1,3 @@
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.exe.config
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.exe.manifest
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.application
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.exe
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.pdb
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.xml
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\itextsharp.dll
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\itextsharp.pdfa.dll
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\itextsharp.xtra.dll
@@ -18,6 +12,7 @@ C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VComites.resources
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VCertificados.resources
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VExcedentesCorrespondientes.resources
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReporteMorosidad.resources
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VIngresosComprobante.resources
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VAcercaDe.resources
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VIngresosSaldos.resources
@@ -36,10 +31,14 @@ C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VConfiguracionPorcentajeReservas.resources
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SAC.vbproj.GenerateResource.Cache
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.exe.config
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.exe.manifest
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.application
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.exe
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.pdb
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SAC.xml
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SAC.exe.manifest
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SAC.application
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SAC.exe
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SAC.xml
 C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SAC.pdb
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SAC.vbprojResolveAssemblyReference.cache
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReporteMorosidad.resources

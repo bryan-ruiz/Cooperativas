@@ -1027,9 +1027,15 @@ Public Class ConexionBD
                     Dim conta As Integer = 0
                     For conta = 0 To reader.FieldCount - 1
 
-                        'MsgBox(String.Concat(" ", reader(conta)))
 
-                        MyList.Add(reader(conta))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
                     Next conta
                 End While
                 reader.Close()
@@ -1062,9 +1068,14 @@ Public Class ConexionBD
                     Dim conta As Integer = 0
                     For conta = 0 To reader.FieldCount - 1
 
-                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
 
-                        MyList.Add(reader(conta))
                     Next conta
                 End While
                 reader.Close()
@@ -1674,14 +1685,15 @@ Public Class ConexionBD
 
 
 
-    Function obtenerDatosReporteDeSociosActivosPeriodoMayorA(ByVal tipoReporte As String, ByVal valor As String) As List(Of SocioClase)
+    Function obtenerDatosReporteDeSociosActivosPeriodo(ByVal tipoReporte As String) As List(Of SocioClase)
         Dim MyList As New List(Of SocioClase)
         Try
             SQL = "SELECT SOCIOS.* 
                     FROM SOCIOS, CERTIFICADOS
                     WHERE ((SOCIOS.estado) = 'Activo')
-                    AND SOCIOS.cedula = CERTIFICADOS.cedulaAsociado
-                    AND CERTIFICADOS.total <'" & valor & "' "
+                    AND SOCIOS.cedula = CERTIFICADOS.cedulaAsociado "
+
+            '    And Convert(Int, CERTIFICADOS.total) > '" & valor & "' "
 
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then

@@ -100,9 +100,9 @@ Partial Class VAcercaDe
         Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(277, 501)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(87, 18)
+        Me.Label6.Size = New System.Drawing.Size(100, 18)
         Me.Label6.TabIndex = 39
-        Me.Label6.Text = "Versión 1.0"
+        Me.Label6.Text = "Versión 1.0.1"
         '
         'Label7
         '

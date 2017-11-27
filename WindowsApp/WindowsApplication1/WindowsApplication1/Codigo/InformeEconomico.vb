@@ -29,44 +29,44 @@ Public Class InformeEconomico
         Dim fechaDesde As Date = VInformeEconomico.InformeDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
         Dim fechaHasta As Date = VInformeEconomico.InformeDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
 
-        'MsgBox("1entrando a ingresos...")
+        MsgBox("1entrando a ingresos...")
         'INGRESOS
         Dim totalIngresos As List(Of String) = ingresosTotales("Ingreso", "Si", fechaDesde, fechaHasta)
-        'MsgBox("2paso ingresos ")
+        MsgBox("2paso ingresos ")
         Dim subTotalIngresos As List(Of String) = obtenerSubTotalIngresos("Ingreso", "Si", fechaDesde, fechaHasta)
-        'MsgBox("3paso sub-ingresos")
+        MsgBox("3paso sub-ingresos")
         'OTROS INGRESOS
         Dim totalOtrosIngresos As List(Of String) = ingresosTotales("Ingreso", "No", fechaDesde, fechaHasta)
-        'MsgBox("4paso otros ingresos ")
+        MsgBox("4paso otros ingresos ")
         Dim subTotalOtrosIngresos As List(Of String) = obtenerSubTotalIngresos("Ingreso", "No", fechaDesde, fechaHasta)
-        'MsgBox("5paso sub-otros ingresos")
+        MsgBox("5paso sub-otros ingresos")
 
         'GASTOS
-        'MsgBox("6entrando a gastos...")
+        MsgBox("6 entrando a gastos...")
         Dim totalGastos As List(Of String) = gastosTotales("Gasto", "Si", fechaDesde, fechaHasta)
-        'MsgBox("7paso total gastos")
+        MsgBox("7paso total gastos")
         Dim subTotalGastos As List(Of String) = obtenerSubTotalGastos("Gasto", "Si", fechaDesde, fechaHasta)
         'OTROS GASTOS
-        'MsgBox("8paso sub total gastos")
+        MsgBox("8paso sub total gastos")
         Dim totalOtrosGastos As List(Of String) = gastosTotales("Gasto", "No", fechaDesde, fechaHasta)
-        'MsgBox("9paso total otros gastos")
+        MsgBox("9paso total otros gastos")
         Dim subTotalOtrosGastos As List(Of String) = obtenerSubTotalGastos("Gasto", "No", fechaDesde, fechaHasta)
-        'MsgBox("10paso sub-total otros gastos")
+        MsgBox("10paso sub-total otros gastos")
 
         'Valores de Reservas
         Dim valoresReserva As List(Of ConfiguracionClase) = consultarValoresConfiguracion()
-        'MsgBox("11paso sub-total otros gastos")
+        MsgBox("11paso sub-total otros gastos")
 
         'Afiliaciones
         Dim totalAfiliaciones As List(Of String) = obtenerTotalAfiliaciones(fechaDesde, fechaHasta)
-        'MsgBox("12paso total afiliaciones")
+        MsgBox("12paso total afiliaciones")
 
         'Aportaciones o Certificados - Acum
         Dim totalAportacionesAcum As List(Of String) = obtenerAportacionesAcumuladoAnterior()
-        'MsgBox("13paso sub-total otros gastos")
+        MsgBox("13paso sub-total otros gastos")
         'Aportaciones o Certificados - Total
         Dim totalAportacionesTotal As List(Of String) = obtenerAportacionesTotal()
-        'MsgBox("14paso sub-total otros gastos")
+        MsgBox("14paso sub-total otros gastos")
 
         Try
             If Not Directory.Exists(variablesGlobales.folderPath) Then
