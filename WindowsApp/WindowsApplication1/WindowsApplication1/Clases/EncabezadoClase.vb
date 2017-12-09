@@ -59,6 +59,9 @@ Public Class EncabezadoClase
         ' LOGOS DEL DOCUMENTO
         '-----------------------------------------------------------------------------------------
 
+
+
+
         '//para hacer PUBLISH
         oImagen = iTextSharp.text.Image.GetInstance(My.Application.Info.DirectoryPath & "\Resources\MEP_Logo.png")
 

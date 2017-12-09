@@ -1115,7 +1115,7 @@ Public Class Socios
 
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
 
         End Try
 
@@ -1141,7 +1141,7 @@ Public Class Socios
             'MsgBox("cerrando conexion a BD...")
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
 
         End Try
 
