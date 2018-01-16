@@ -406,6 +406,14 @@ Public Class Ingreso
         End Try
     End Sub
 
+    Public Sub limpiarInfo()
+        VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text = ""
+        VIngresoInformacion.TextBox_IngresosInformacion_Proveedor.Text = ""
+        VIngresoInformacion.TextBox_IngresosInformacion_Descripcion.Text = ""
+        VIngresoInformacion.TextBox_IngresosInformacion_Cantidad.Text = ""
+        VIngresoInformacion.TextBox_IngresosInformacion_PrecioUnit.Text = ""
+        VIngresoInformacion.TextBox_IngresosInformacion_Total.Text = ""
+    End Sub
 
     Public Sub limpiar()
         VIngresos.TextBox_IngresosFacturaRecibos.Text = ""
@@ -592,5 +600,120 @@ Public Class Ingreso
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
 
+    End Sub
+
+    Public Sub buscarIngreso()
+        Dim valores As New List(Of String)
+        Dim IngresoInformacionInputID As String = VIngresoInformacion.IngresosInformacionInputID.Text
+
+        If (IngresoInformacionInputID = "") Then
+            MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar()
+        Else
+            Try
+                BD.ConectarBD()
+
+                valores = BD.obtenerIngresosPorFactura(IngresoInformacionInputID)
+                If valores.Count = 0 Then
+                    MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                    limpiar()
+
+                Else
+                    VIngresoInformacion.DateTimePicker_IngresosInformacion_fecha.Text = Date.Parse(valores.Item(0))
+                    VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text = valores.Item(1)
+                    VIngresoInformacion.TextBox_IngresosInformacion_Proveedor.Text = valores.Item(2)
+                    VIngresoInformacion.ComboBox_IngresosInformacion.Text = valores.Item(3)
+                    VIngresoInformacion.ComboBox_IngresosInformacion.Items.Add(valores.Item(3))
+                    VIngresoInformacion.TextBox_IngresosInformacion_Descripcion.Text = valores.Item(4)
+                    VIngresoInformacion.TextBox_IngresosInformacion_Cantidad.Text = valores.Item(5)
+                    VIngresoInformacion.TextBox_IngresosInformacion_PrecioUnit.Text = valores.Item(6)
+                    VIngresoInformacion.TextBox_IngresosInformacion_Total.Text = valores.Item(7)
+                End If
+
+                BD.CerrarConexion()
+
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+            End Try
+        End If
+    End Sub
+
+    Public Sub calcularInfo()
+        Try
+            Dim cantidad As Integer = Integer.Parse(VIngresoInformacion.TextBox_IngresosInformacion_Cantidad.Text)
+            Dim precioUnitario As Integer = Integer.Parse(VIngresoInformacion.TextBox_IngresosInformacion_PrecioUnit.Text)
+            VIngresoInformacion.TextBox_IngresosInformacion_Total.Text = cantidad * precioUnitario
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+    End Sub
+
+    Public Sub modificarIngresos()
+        Dim valores As Integer
+        Dim fecha As String = VIngresoInformacion.DateTimePicker_IngresosInformacion_fecha.Text
+        Dim factura As String = VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text
+        Dim cliente As String = VIngresoInformacion.TextBox_IngresosInformacion_Proveedor.Text
+        Dim descripcion As String = VIngresoInformacion.TextBox_IngresosInformacion_Descripcion.Text
+        Dim cantidad As String = VIngresoInformacion.TextBox_IngresosInformacion_Cantidad.Text
+        Dim precioUnitario As String = VIngresoInformacion.TextBox_IngresosInformacion_PrecioUnit.Text
+        Dim total As String = VIngresoInformacion.TextBox_IngresosInformacion_Total.Text
+        Dim codCuenta As String = VIngresoInformacion.ComboBox_IngresosInformacion.Text
+
+        If (factura = "" Or cliente = "" Or descripcion = "" Or total = "" Or codCuenta = "" Or estado = False) Then
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        If (total.Equals("0")) Then
+            MessageBox.Show(variablesGlobales.errorTotalEnCero, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiarInfo()
+            Return
+        End If
+
+        Try
+            Integer.Parse(total)
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End Try
+        Try
+            BD.ConectarBD()
+            valores = BD.actualizarIngreso(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
+            MessageBox.Show(valores, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            If valores <> 0 Then
+                limpiarInfo()
+                MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub eliminarIngresos()
+        Dim factura As String = VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text
+        Dim valores As Integer
+        If (factura = "") Then
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+        Try
+            BD.ConectarBD()
+            valores = BD.eliminarFacturaIngresos(factura)
+            If valores <> 0 Then
+                limpiarInfo()
+                MessageBox.Show(variablesGlobales.datosEliminadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
     End Sub
 End Class

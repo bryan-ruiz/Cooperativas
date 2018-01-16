@@ -9,6 +9,16 @@ Public Class Gastos
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     'Calcula cantidad * precioUnitario
+    Public Sub calcularInfo()
+        Try
+            Dim cantidad As Integer = Integer.Parse(VGastosInformacion.TextBox_GastosInformacion_Cantidad.Text)
+            Dim precioUnitario As Integer = Integer.Parse(VGastosInformacion.TextBox_GastosInformacion_PrecioUnit.Text)
+            VGastosInformacion.TextBox_GastosInformacion_Total.Text = cantidad * precioUnitario
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+    End Sub
+
     Public Sub calcular()
         Try
             Dim cantidad As Integer = Integer.Parse(VGastos.TextBox_GastosCantidad.Text)
@@ -156,6 +166,15 @@ Public Class Gastos
         VGastos.TextBox_GastosTotal2.Text = ""
     End Sub
 
+    Public Sub limpiar4()
+        VGastosInformacion.TextBox_GastosInformacion_Cantidad.Text = ""
+        VGastosInformacion.TextBox_GastosInformacion_Descripcion.Text = ""
+        VGastosInformacion.TextBox_GastosInformacion_Factura.Text = ""
+        VGastosInformacion.TextBox_GastosInformacion_PrecioUnit.Text = ""
+        VGastosInformacion.TextBox_GastosInformacion_Proveedor.Text = ""
+        VGastosInformacion.TextBox_GastosInformacion_Total.Text = ""
+    End Sub
+
     Public Sub limpiar3()
         VGastos.TextBox_GastosFacturaRecibo3.Text = ""
         VGastos.TextBox_GastosProveedor3.Text = ""
@@ -243,6 +262,110 @@ Public Class Gastos
             If valores <> 0 Then
                 limpiar2()
                 MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub buscarGasto()
+        Dim valores As New List(Of String)
+        Dim GastosInformacionInputID As String = VGastosInformacion.GastosInformacionInputID.Text
+
+        If (GastosInformacionInputID = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar()
+        Else
+            Try
+                BD.ConectarBD()
+
+                valores = BD.obtenerGastosPorFactura(GastosInformacionInputID)
+                If valores.Count = 0 Then
+                    MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                    limpiar()
+
+                Else
+                    VGastosInformacion.DateTimePicker_GastosInformacion_fecha.Text = Date.Parse(valores.Item(0))
+                    VGastosInformacion.TextBox_GastosInformacion_Factura.Text = valores.Item(1)
+                    VGastosInformacion.TextBox_GastosInformacion_Proveedor.Text = valores.Item(2)
+                    VGastosInformacion.ComboBox_GastosInformacion.Text = valores.Item(3)
+                    VGastosInformacion.ComboBox_GastosInformacion.Items.Add(valores.Item(3))
+                    VGastosInformacion.TextBox_GastosInformacion_Descripcion.Text = valores.Item(4)
+                    VGastosInformacion.TextBox_GastosInformacion_Cantidad.Text = valores.Item(5)
+                    VGastosInformacion.TextBox_GastosInformacion_PrecioUnit.Text = valores.Item(6)
+                    VGastosInformacion.TextBox_GastosInformacion_Total.Text = valores.Item(7)
+                End If
+
+                BD.CerrarConexion()
+
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+            End Try
+        End If
+    End Sub
+
+    Public Sub modificarGasto()
+        Dim valores As Integer
+        Dim fecha As String = VGastosInformacion.DateTimePicker_GastosInformacion_fecha.Text
+        Dim factura As String = VGastosInformacion.TextBox_GastosInformacion_Factura.Text
+        Dim cliente As String = VGastosInformacion.TextBox_GastosInformacion_Proveedor.Text
+        Dim descripcion As String = VGastosInformacion.TextBox_GastosInformacion_Descripcion.Text
+        Dim cantidad As String = VGastosInformacion.TextBox_GastosInformacion_Cantidad.Text
+        Dim precioUnitario As String = VGastosInformacion.TextBox_GastosInformacion_PrecioUnit.Text
+        Dim total As String = VGastosInformacion.TextBox_GastosInformacion_Total.Text
+        Dim codCuenta As String = VGastosInformacion.ComboBox_GastosInformacion.Text
+
+        If (factura = "" Or cliente = "" Or descripcion = "" Or total = "" Or codCuenta = "" Or estado = False) Then
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        If (total.Equals("0")) Then
+            MessageBox.Show(variablesGlobales.errorTotalEnCero, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            limpiar4()
+            Return
+        End If
+
+        Try
+            Integer.Parse(total)
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDatosNoNumericos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End Try
+        Try
+            BD.ConectarBD()
+            valores = BD.actualizarGasto(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
+            If valores <> 0 Then
+                limpiar4()
+                MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub eliminarGasto()
+        Dim factura As String = VGastosInformacion.TextBox_GastosInformacion_Factura.Text
+        Dim valores As Integer
+        If (factura = "") Then
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+        Try
+            BD.ConectarBD()
+            valores = BD.eliminarFacturaGastos(factura)
+            If valores <> 0 Then
+                limpiar4()
+                MessageBox.Show(variablesGlobales.datosEliminadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             Else
                 MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             End If

@@ -94,6 +94,157 @@ Public Class ConexionBD
         Return res
     End Function
 
+    '___________________________________ NUEVASFUNCIONES 
+
+
+    Function obtenerGastosPorFactura(ByVal idFactura As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT fecha, reciboFactura, proveedor,codigoDeCuenta, descripcion, cantidad, precioUnitario, total FROM [GASTOS]" &
+                "WHERE reciboFactura = ('" + idFactura + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    Function obtenerIngresosPorFactura(ByVal idFactura As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT fecha, reciboFactura, cliente,codigoDeCuenta, descripcion, cantidad, precioUnitario, total FROM [INGRESOS]" &
+                "WHERE reciboFactura = ('" + idFactura + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    Function actualizarIngreso(fechap As DateTime,
+                             ByVal clientep As String,
+                             ByVal descripcripcionp As String,
+                             ByVal cantidadp As String,
+                             ByVal precioUnitariop As String,
+                             ByVal totalp As String,
+                             ByVal codCuentap As String,
+                             ByVal facturaRecibop As String) As Integer
+        Dim res As Integer = 0
+        Try
+
+            SQL = "UPDATE [INGRESOS] SET fecha = '" & fechap & "', " & "cliente = '" & clientep & "', " & "descripcion = '" & descripcripcionp & "', " & "cantidad = '" & cantidadp & "',  
+            " & "precioUnitario = '" & precioUnitariop & "', " & "total = '" & totalp & "', " & "codigoDeCuenta = '" & codCuentap & "' WHERE ((reciboFactura) = '" & facturaRecibop & "' )"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
+
+
+
+
+    Function actualizarGasto(fechap As DateTime,
+                             ByVal clientep As String,
+                             ByVal descripcripcionp As String,
+                             ByVal cantidadp As String,
+                             ByVal precioUnitariop As String,
+                             ByVal totalp As String,
+                             ByVal codCuentap As String,
+                             ByVal facturaRecibop As String) As Integer
+        Dim res As Integer = 0
+        Try
+
+            SQL = "UPDATE [GASTOS] SET fecha = '" & fechap & "', " & "proveedor = '" & clientep & "', " & "descripcion = '" & descripcripcionp & "', " & "cantidad = '" & cantidadp & "',  
+            " & "precioUnitario = '" & precioUnitariop & "', " & "total = '" & totalp & "', " & "codigoDeCuenta = '" & codCuentap & "' WHERE ((reciboFactura) = '" & facturaRecibop & "' )"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
+
+    Function eliminarFacturaIngresos(ByVal idFactura As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "DELETE FROM [INGRESOS]" &
+            "WHERE reciboFactura = ('" + idFactura + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return res
+    End Function
+
+    Function eliminarFacturaGastos(ByVal idFactura As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "DELETE FROM [GASTOS]" &
+            "WHERE reciboFactura = ('" + idFactura + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return res
+    End Function
+
+
+
+
+
+
     'Eliminar un usuario  
     Function eliminarUsuario(ByVal usuario As String) As Integer
         Dim res As Integer = 0
@@ -616,6 +767,53 @@ Public Class ConexionBD
         End Try
         Return res
     End Function
+
+    Function obtenerCuentaBD(ByVal id As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT tipo, proyecto_Productivo FROM [CUENTAS]" &
+                "WHERE cod_Descripcion = ('" + id + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
+    Function modificarCuentaBD(ByVal cod_Descripcion As String, ByVal tipo As String,
+                           ByVal proyecto_Productivo As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "UPDATE [CUENTAS] SET cod_Descripcion = '" & cod_Descripcion & "', " &
+                "tipo = '" & tipo & "', " & "proyecto_Productivo = '" & proyecto_Productivo &
+                "' " & " WHERE ((cod_Descripcion) = '" & cod_Descripcion & "' )"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: La cuenta ya existe en el sistema!", " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
+
 
     ''/////////////////////////////////////////////////////////////////////
     '''                 INGRESOS

@@ -41,6 +41,8 @@ Partial Class VConfiguracionCodigoCuenta
         Me.ComboBox_CreacionCodCtaSalida = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.button_VConfiguracionCodCuenta_Modificar = New System.Windows.Forms.Button()
+        Me.Button_ConfiguracionReportesCodigoCuenta = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -51,7 +53,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(187, 300)
+        Me.Label2.Location = New System.Drawing.Point(73, 291)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(291, 17)
         Me.Label2.TabIndex = 4
@@ -61,7 +63,7 @@ Partial Class VConfiguracionCodigoCuenta
         '
         Me.TextBox_ConfiguracionCuentaDescripcion.CausesValidation = False
         Me.TextBox_ConfiguracionCuentaDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_ConfiguracionCuentaDescripcion.Location = New System.Drawing.Point(192, 330)
+        Me.TextBox_ConfiguracionCuentaDescripcion.Location = New System.Drawing.Point(76, 326)
         Me.TextBox_ConfiguracionCuentaDescripcion.Multiline = True
         Me.TextBox_ConfiguracionCuentaDescripcion.Name = "TextBox_ConfiguracionCuentaDescripcion"
         Me.TextBox_ConfiguracionCuentaDescripcion.Size = New System.Drawing.Size(275, 29)
@@ -71,7 +73,7 @@ Partial Class VConfiguracionCodigoCuenta
         '
         Me.Button_ConfiguracionInsertarCodigoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_ConfiguracionInsertarCodigoCuenta.ForeColor = System.Drawing.Color.White
-        Me.Button_ConfiguracionInsertarCodigoCuenta.Location = New System.Drawing.Point(186, 548)
+        Me.Button_ConfiguracionInsertarCodigoCuenta.Location = New System.Drawing.Point(440, 548)
         Me.Button_ConfiguracionInsertarCodigoCuenta.Name = "Button_ConfiguracionInsertarCodigoCuenta"
         Me.Button_ConfiguracionInsertarCodigoCuenta.Size = New System.Drawing.Size(144, 44)
         Me.Button_ConfiguracionInsertarCodigoCuenta.TabIndex = 21
@@ -82,7 +84,7 @@ Partial Class VConfiguracionCodigoCuenta
         '
         Me.Button_ConfiguracionEliminarCodigoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_ConfiguracionEliminarCodigoCuenta.ForeColor = System.Drawing.Color.White
-        Me.Button_ConfiguracionEliminarCodigoCuenta.Location = New System.Drawing.Point(361, 548)
+        Me.Button_ConfiguracionEliminarCodigoCuenta.Location = New System.Drawing.Point(63, 548)
         Me.Button_ConfiguracionEliminarCodigoCuenta.Name = "Button_ConfiguracionEliminarCodigoCuenta"
         Me.Button_ConfiguracionEliminarCodigoCuenta.Size = New System.Drawing.Size(144, 44)
         Me.Button_ConfiguracionEliminarCodigoCuenta.TabIndex = 22
@@ -94,7 +96,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label138.AutoSize = True
         Me.Label138.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label138.ForeColor = System.Drawing.Color.Black
-        Me.Label138.Location = New System.Drawing.Point(190, 439)
+        Me.Label138.Location = New System.Drawing.Point(67, 442)
         Me.Label138.Name = "Label138"
         Me.Label138.Size = New System.Drawing.Size(143, 17)
         Me.Label138.TabIndex = 163
@@ -106,7 +108,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Panel3.Controls.Add(Me.RadioButton_ConfiguracionProyectoProductivoNO)
         Me.Panel3.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Panel3.ForeColor = System.Drawing.Color.White
-        Me.Panel3.Location = New System.Drawing.Point(225, 462)
+        Me.Panel3.Location = New System.Drawing.Point(110, 476)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(178, 34)
         Me.Panel3.TabIndex = 162
@@ -142,7 +144,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label139.AutoSize = True
         Me.Label139.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label139.ForeColor = System.Drawing.Color.Black
-        Me.Label139.Location = New System.Drawing.Point(189, 371)
+        Me.Label139.Location = New System.Drawing.Point(73, 375)
         Me.Label139.Name = "Label139"
         Me.Label139.Size = New System.Drawing.Size(39, 17)
         Me.Label139.TabIndex = 161
@@ -154,7 +156,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Panel4.Controls.Add(Me.ConfigurationRadioButtonGasto)
         Me.Panel4.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Panel4.ForeColor = System.Drawing.Color.White
-        Me.Panel4.Location = New System.Drawing.Point(225, 391)
+        Me.Panel4.Location = New System.Drawing.Point(110, 395)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(178, 34)
         Me.Panel4.TabIndex = 160
@@ -190,7 +192,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.ComboBox_CreacionCodCtaEntrada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox_CreacionCodCtaEntrada.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_CreacionCodCtaEntrada.FormattingEnabled = True
-        Me.ComboBox_CreacionCodCtaEntrada.Location = New System.Drawing.Point(190, 155)
+        Me.ComboBox_CreacionCodCtaEntrada.Location = New System.Drawing.Point(76, 155)
         Me.ComboBox_CreacionCodCtaEntrada.Name = "ComboBox_CreacionCodCtaEntrada"
         Me.ComboBox_CreacionCodCtaEntrada.Size = New System.Drawing.Size(275, 27)
         Me.ComboBox_CreacionCodCtaEntrada.TabIndex = 164
@@ -200,7 +202,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(187, 123)
+        Me.Label3.Location = New System.Drawing.Point(73, 114)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(137, 17)
         Me.Label3.TabIndex = 165
@@ -211,7 +213,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(187, 194)
+        Me.Label4.Location = New System.Drawing.Point(73, 195)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(126, 17)
         Me.Label4.TabIndex = 167
@@ -222,7 +224,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.ComboBox_CreacionCodCtaSalida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox_CreacionCodCtaSalida.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_CreacionCodCtaSalida.FormattingEnabled = True
-        Me.ComboBox_CreacionCodCtaSalida.Location = New System.Drawing.Point(191, 224)
+        Me.ComboBox_CreacionCodCtaSalida.Location = New System.Drawing.Point(76, 231)
         Me.ComboBox_CreacionCodCtaSalida.Name = "ComboBox_CreacionCodCtaSalida"
         Me.ComboBox_CreacionCodCtaSalida.Size = New System.Drawing.Size(275, 27)
         Me.ComboBox_CreacionCodCtaSalida.TabIndex = 166
@@ -247,12 +249,38 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label6.TabIndex = 41
         Me.Label6.Text = "Gestión de Codigos de Cuentas"
         '
+        'button_VConfiguracionCodCuenta_Modificar
+        '
+        Me.button_VConfiguracionCodCuenta_Modificar.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.button_VConfiguracionCodCuenta_Modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.button_VConfiguracionCodCuenta_Modificar.ForeColor = System.Drawing.Color.White
+        Me.button_VConfiguracionCodCuenta_Modificar.Location = New System.Drawing.Point(259, 548)
+        Me.button_VConfiguracionCodCuenta_Modificar.Name = "button_VConfiguracionCodCuenta_Modificar"
+        Me.button_VConfiguracionCodCuenta_Modificar.Size = New System.Drawing.Size(144, 44)
+        Me.button_VConfiguracionCodCuenta_Modificar.TabIndex = 169
+        Me.button_VConfiguracionCodCuenta_Modificar.Text = "Modificar"
+        Me.button_VConfiguracionCodCuenta_Modificar.UseVisualStyleBackColor = False
+        '
+        'Button_ConfiguracionReportesCodigoCuenta
+        '
+        Me.Button_ConfiguracionReportesCodigoCuenta.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.Button_ConfiguracionReportesCodigoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button_ConfiguracionReportesCodigoCuenta.ForeColor = System.Drawing.Color.White
+        Me.Button_ConfiguracionReportesCodigoCuenta.Location = New System.Drawing.Point(440, 253)
+        Me.Button_ConfiguracionReportesCodigoCuenta.Name = "Button_ConfiguracionReportesCodigoCuenta"
+        Me.Button_ConfiguracionReportesCodigoCuenta.Size = New System.Drawing.Size(144, 55)
+        Me.Button_ConfiguracionReportesCodigoCuenta.TabIndex = 170
+        Me.Button_ConfiguracionReportesCodigoCuenta.Text = "Reportes"
+        Me.Button_ConfiguracionReportesCodigoCuenta.UseVisualStyleBackColor = False
+        '
         'VConfiguracionCodigoCuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(665, 630)
+        Me.ClientSize = New System.Drawing.Size(667, 630)
+        Me.Controls.Add(Me.Button_ConfiguracionReportesCodigoCuenta)
+        Me.Controls.Add(Me.button_VConfiguracionCodCuenta_Modificar)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ComboBox_CreacionCodCtaSalida)
@@ -299,4 +327,6 @@ Partial Class VConfiguracionCodigoCuenta
     Friend WithEvents ComboBox_CreacionCodCtaSalida As ComboBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
+    Friend WithEvents button_VConfiguracionCodCuenta_Modificar As Button
+    Friend WithEvents Button_ConfiguracionReportesCodigoCuenta As Button
 End Class

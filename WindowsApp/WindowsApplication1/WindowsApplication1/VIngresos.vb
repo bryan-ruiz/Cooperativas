@@ -149,4 +149,8 @@
     Private Sub ReporteDeSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeSaldosToolStripMenuItem.Click
         VIngresosSaldos.Show()
     End Sub
+
+    Private Sub InformaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónToolStripMenuItem.Click
+        VIngresoInformacion.Show()
+    End Sub
 End Class

@@ -40,9 +40,31 @@
 
     Private Sub ComboBox_CreacionCodCtaEntrada_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_CreacionCodCtaEntrada.SelectedIndexChanged
         TextBox_ConfiguracionCuentaDescripcion.Text = ComboBox_CreacionCodCtaEntrada.Text
+        configuracionCodigoCuenta.obtenerDatosCodCuenta()
     End Sub
 
     Private Sub ComboBox_CreacionCodCtaSalida_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_CreacionCodCtaSalida.SelectedIndexChanged
         TextBox_ConfiguracionCuentaDescripcion.Text = ComboBox_CreacionCodCtaSalida.Text
+        configuracionCodigoCuenta.obtenerDatosCodCuenta()
+    End Sub
+
+    Private Sub button_VConfiguracionCodCuenta_Modificar_Click(sender As Object, e As EventArgs) Handles button_VConfiguracionCodCuenta_Modificar.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
+        Else
+            configuracionCodigoCuenta.modificarCuenta()
+            ingreso.obtenerDatosSeleccionarCuenta()
+            gasto.obtenerDatosSeleccionarCuenta()
+            configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
+            TextBox_ConfiguracionCuentaDescripcion.Text = ""
+        End If
+    End Sub
+
+    Private Sub Button_ConfiguracionReportesCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionReportesCodigoCuenta.Click
+        configuracionCodigoCuenta.generarReporteCodCuenta()
+        Print.Show()
     End Sub
 End Class
+
+
+

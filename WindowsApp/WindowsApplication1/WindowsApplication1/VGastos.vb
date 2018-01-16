@@ -140,5 +140,7 @@
         VIngresosSaldos.Show()
     End Sub
 
-
+    Private Sub InformaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónToolStripMenuItem.Click
+        VGastosInformacion.Show()
+    End Sub
 End Class

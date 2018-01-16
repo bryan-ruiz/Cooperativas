@@ -142,6 +142,12 @@
     <Compile Include="Codigo\Saldos.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="Codigo\Usuarios.vb" />
+    <Compile Include="VGastosInformacion.Designer.vb">
+      <DependentUpon>VGastosInformacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VGastosInformacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Print.Designer.vb">
       <DependentUpon>Print.vb</DependentUpon>
     </Compile>
@@ -153,6 +159,12 @@
     </Compile>
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIngresoInformacion.Designer.vb">
+      <DependentUpon>VIngresoInformacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VIngresoInformacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VReporteMorosidad.Designer.vb">
@@ -315,6 +327,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VExcedentesCorrespondientes.resx">
       <DependentUpon>VExcedentesCorrespondientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VGastosInformacion.resx">
+      <DependentUpon>VGastosInformacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIngresoInformacion.resx">
+      <DependentUpon>VIngresoInformacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VReporteMorosidad.resx">
       <DependentUpon>VReporteMorosidad.vb</DependentUpon>
