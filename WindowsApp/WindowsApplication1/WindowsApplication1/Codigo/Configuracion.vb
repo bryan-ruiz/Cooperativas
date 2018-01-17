@@ -496,17 +496,17 @@ Public Class Configuracion
 
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteSalidas.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteCuentas.pdf", FileMode.Create))
             pdfDoc.Open()
-            encabezado.consultarDatos()
-            encabezado.encabezado(pdfWrite, pdfDoc)
+            'encabezado.consultarDatos()
+            'encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
 
-            Dim table As PdfPTable = New PdfPTable(11)
+            Dim table As PdfPTable = New PdfPTable(4)
 
             'ESTABLECE TAMAÑO DE ANCHO DE COLUMNAS
-            Dim intTblWidth() As Integer = {9, 8, 7, 9, 9, 10, 12, 7, 7, 8, 10}
+            Dim intTblWidth() As Integer = {10, 10, 10, 10}
             table.SetWidths(intTblWidth)
 
             '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
@@ -516,15 +516,15 @@ Public Class Configuracion
             codCuenta.Colspan = 1
             codCuenta.HorizontalAlignment = 1
 
-            Dim tipoCuenta As PdfPCell = New PdfPCell(New Phrase("Tipo", FontStype))
-            tipoCuenta.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
-            tipoCuenta.Colspan = 1
-            tipoCuenta.HorizontalAlignment = 1
-
             Dim proyProdCuenta As PdfPCell = New PdfPCell(New Phrase("Proyecto productivo", FontStype))
             proyProdCuenta.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
             proyProdCuenta.Colspan = 2
             proyProdCuenta.HorizontalAlignment = 1
+
+            Dim tipoCuenta As PdfPCell = New PdfPCell(New Phrase("Tipo", FontStype))
+            tipoCuenta.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            tipoCuenta.Colspan = 1
+            tipoCuenta.HorizontalAlignment = 1
 
             table.AddCell(codCuenta)
             table.AddCell(proyProdCuenta)
@@ -545,30 +545,29 @@ Public Class Configuracion
 
                 Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
 
-                Dim fechaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).codDescripcion, FontStype2))
-                fechaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                fechaT.Colspan = 1
-                fechaT.HorizontalAlignment = 1
+                Dim codDesc As PdfPCell = New PdfPCell(New Phrase(valores(contador).codDescripcion, FontStype2))
+                codDesc.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                codDesc.Colspan = 1
+                codDesc.HorizontalAlignment = 1
 
-                Dim facturaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).proyectoProductivo, FontStype2))
-                facturaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                facturaT.Colspan = 1
-                facturaT.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+                Dim proyProd As PdfPCell = New PdfPCell(New Phrase(valores(contador).proyectoProductivo, FontStype2))
+                proyProd.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                proyProd.Colspan = 1
+                proyProd.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
 
-                Dim codigoctaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).tipo, FontStype2))
-                codigoctaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                codigoctaT.Colspan = 2
-                codigoctaT.HorizontalAlignment = 1
+                Dim tipo As PdfPCell = New PdfPCell(New Phrase(valores(contador).tipo, FontStype2))
+                tipo.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                tipo.Colspan = 2
+                tipo.HorizontalAlignment = 1
 
-                table.AddCell(fechaT)
-                table.AddCell(facturaT)
-                table.AddCell(codigoctaT)
+                table.AddCell(codDesc)
+                table.AddCell(proyProd)
+                table.AddCell(tipo)
 
                 contador = contador + 1
             End While
 
             pdfDoc.Add(table)
-            pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Close()
 
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteSalidas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
