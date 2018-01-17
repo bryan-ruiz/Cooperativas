@@ -153,4 +153,8 @@
     Private Sub InformaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónToolStripMenuItem.Click
         VIngresoInformacion.Show()
     End Sub
+
+    Private Sub TotalDeCódigosDeCtaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TotalDeCódigosDeCtaToolStripMenuItem.Click
+
+    End Sub
 End Class

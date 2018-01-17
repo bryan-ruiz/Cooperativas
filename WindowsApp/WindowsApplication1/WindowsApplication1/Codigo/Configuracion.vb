@@ -496,18 +496,24 @@ Public Class Configuracion
 
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteCuentas.pdf", FileMode.Create))
+            Dim nombreReporte As String = "reporteCuentas.pdf"
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & nombreReporte, FileMode.Create))
             pdfDoc.Open()
-            'encabezado.consultarDatos()
-            'encabezado.encabezado(pdfWrite, pdfDoc)
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
 
-            Dim table As PdfPTable = New PdfPTable(4)
+            Dim table As PdfPTable = New PdfPTable(3)
 
             'ESTABLECE TAMAÑO DE ANCHO DE COLUMNAS
-            Dim intTblWidth() As Integer = {10, 10, 10, 10}
+            Dim intTblWidth() As Integer = {10, 10, 10}
             table.SetWidths(intTblWidth)
+
+            '/////// Titulo //////////
+            Dim FontStype3 = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
+            pdfDoc.Add(New Paragraph("                                                                                                           Reporte de Cuentas", FontStype3))
+            pdfDoc.Add(New Paragraph(" "))
 
             '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
 
@@ -518,7 +524,7 @@ Public Class Configuracion
 
             Dim proyProdCuenta As PdfPCell = New PdfPCell(New Phrase("Proyecto productivo", FontStype))
             proyProdCuenta.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
-            proyProdCuenta.Colspan = 2
+            proyProdCuenta.Colspan = 1
             proyProdCuenta.HorizontalAlignment = 1
 
             Dim tipoCuenta As PdfPCell = New PdfPCell(New Phrase("Tipo", FontStype))
@@ -557,7 +563,7 @@ Public Class Configuracion
 
                 Dim tipo As PdfPCell = New PdfPCell(New Phrase(valores(contador).tipo, FontStype2))
                 tipo.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-                tipo.Colspan = 2
+                tipo.Colspan = 1
                 tipo.HorizontalAlignment = 1
 
                 table.AddCell(codDesc)
@@ -570,7 +576,7 @@ Public Class Configuracion
             pdfDoc.Add(table)
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteSalidas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & nombreReporte, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
             MessageBox.Show("Error de: " + ex.Message)

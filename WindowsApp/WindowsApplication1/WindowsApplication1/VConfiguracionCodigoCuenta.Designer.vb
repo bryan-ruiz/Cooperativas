@@ -78,7 +78,7 @@ Partial Class VConfiguracionCodigoCuenta
         '
         Me.Button_ConfiguracionInsertarCodigoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_ConfiguracionInsertarCodigoCuenta.ForeColor = System.Drawing.Color.White
-        Me.Button_ConfiguracionInsertarCodigoCuenta.Location = New System.Drawing.Point(440, 548)
+        Me.Button_ConfiguracionInsertarCodigoCuenta.Location = New System.Drawing.Point(91, 548)
         Me.Button_ConfiguracionInsertarCodigoCuenta.Name = "Button_ConfiguracionInsertarCodigoCuenta"
         Me.Button_ConfiguracionInsertarCodigoCuenta.Size = New System.Drawing.Size(144, 44)
         Me.Button_ConfiguracionInsertarCodigoCuenta.TabIndex = 21
@@ -89,7 +89,7 @@ Partial Class VConfiguracionCodigoCuenta
         '
         Me.Button_ConfiguracionEliminarCodigoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_ConfiguracionEliminarCodigoCuenta.ForeColor = System.Drawing.Color.White
-        Me.Button_ConfiguracionEliminarCodigoCuenta.Location = New System.Drawing.Point(63, 548)
+        Me.Button_ConfiguracionEliminarCodigoCuenta.Location = New System.Drawing.Point(421, 548)
         Me.Button_ConfiguracionEliminarCodigoCuenta.Name = "Button_ConfiguracionEliminarCodigoCuenta"
         Me.Button_ConfiguracionEliminarCodigoCuenta.Size = New System.Drawing.Size(144, 44)
         Me.Button_ConfiguracionEliminarCodigoCuenta.TabIndex = 22
@@ -256,7 +256,7 @@ Partial Class VConfiguracionCodigoCuenta
         '
         'button_VConfiguracionCodCuenta_Modificar
         '
-        Me.button_VConfiguracionCodCuenta_Modificar.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.button_VConfiguracionCodCuenta_Modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.button_VConfiguracionCodCuenta_Modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.button_VConfiguracionCodCuenta_Modificar.ForeColor = System.Drawing.Color.White
         Me.button_VConfiguracionCodCuenta_Modificar.Location = New System.Drawing.Point(259, 548)
@@ -268,7 +268,7 @@ Partial Class VConfiguracionCodigoCuenta
         '
         'Button_ConfiguracionReportesCodigoCuenta
         '
-        Me.Button_ConfiguracionReportesCodigoCuenta.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.Button_ConfiguracionReportesCodigoCuenta.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Button_ConfiguracionReportesCodigoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_ConfiguracionReportesCodigoCuenta.ForeColor = System.Drawing.Color.White
         Me.Button_ConfiguracionReportesCodigoCuenta.Location = New System.Drawing.Point(440, 253)

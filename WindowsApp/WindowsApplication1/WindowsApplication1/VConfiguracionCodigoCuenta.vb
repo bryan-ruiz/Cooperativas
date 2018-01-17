@@ -9,7 +9,8 @@
         Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_ConfiguracionInsertarCodigoCuenta.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_ConfiguracionEliminarCodigoCuenta.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-
+        Me.Button_ConfiguracionReportesCodigoCuenta.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.button_VConfiguracionCodCuenta_Modificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
 
     End Sub
@@ -65,13 +66,6 @@
         Print.Show()
     End Sub
 
-    Private Sub CrearReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearReporteToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub ReporteDeSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeSaldosToolStripMenuItem.Click
-
-    End Sub
 End Class
 
 
