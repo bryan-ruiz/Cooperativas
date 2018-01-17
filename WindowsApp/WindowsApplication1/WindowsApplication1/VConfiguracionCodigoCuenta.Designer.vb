@@ -43,9 +43,14 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label6 = New System.Windows.Forms.Label()
         Me.button_VConfiguracionCodCuenta_Modificar = New System.Windows.Forms.Button()
         Me.Button_ConfiguracionReportesCodigoCuenta = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -273,12 +278,41 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Button_ConfiguracionReportesCodigoCuenta.Text = "Reportes"
         Me.Button_ConfiguracionReportesCodigoCuenta.UseVisualStyleBackColor = False
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(667, 24)
+        Me.MenuStrip1.TabIndex = 171
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ReporteToolStripMenuItem
+        '
+        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem})
+        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
+        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.ReporteToolStripMenuItem.Text = "Reporte"
+        '
+        'CrearReporteToolStripMenuItem
+        '
+        Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
+        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.CrearReporteToolStripMenuItem.Text = "Reporte de Entradas"
+        '
+        'ReporteDeSaldosToolStripMenuItem
+        '
+        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
+        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Salidas"
+        '
         'VConfiguracionCodigoCuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(667, 630)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Button_ConfiguracionReportesCodigoCuenta)
         Me.Controls.Add(Me.button_VConfiguracionCodCuenta_Modificar)
         Me.Controls.Add(Me.Panel1)
@@ -305,6 +339,8 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Panel4.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -329,4 +365,8 @@ Partial Class VConfiguracionCodigoCuenta
     Friend WithEvents Label6 As Label
     Friend WithEvents button_VConfiguracionCodCuenta_Modificar As Button
     Friend WithEvents Button_ConfiguracionReportesCodigoCuenta As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CrearReporteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteDeSaldosToolStripMenuItem As ToolStripMenuItem
 End Class

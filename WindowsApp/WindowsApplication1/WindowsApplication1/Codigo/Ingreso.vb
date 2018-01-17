@@ -81,8 +81,8 @@ Public Class Ingreso
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
             Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteEntradas.pdf", FileMode.Create))
             pdfDoc.Open()
-            encabezado.consultarDatos()
-            encabezado.encabezado(pdfWrite, pdfDoc)
+            'encabezado.consultarDatos()
+            'encabezado.encabezado(pdfWrite, pdfDoc)
 
             '/////// Encabezado //////////
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)

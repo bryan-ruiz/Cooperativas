@@ -64,6 +64,14 @@
         configuracionCodigoCuenta.generarReporteCodCuenta()
         Print.Show()
     End Sub
+
+    Private Sub CrearReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearReporteToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ReporteDeSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeSaldosToolStripMenuItem.Click
+
+    End Sub
 End Class
 
 
