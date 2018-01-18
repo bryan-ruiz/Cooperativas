@@ -167,6 +167,18 @@
     <Compile Include="VIngresoInformacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VReporteGastoCuentas.Designer.vb">
+      <DependentUpon>VReporteGastoCuentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VReporteGastoCuentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VReporteIngresoCuentas.Designer.vb">
+      <DependentUpon>VReporteIngresoCuentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VReporteIngresoCuentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VReporteMorosidad.Designer.vb">
       <DependentUpon>VReporteMorosidad.vb</DependentUpon>
     </Compile>
@@ -333,6 +345,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIngresoInformacion.resx">
       <DependentUpon>VIngresoInformacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VReporteGastoCuentas.resx">
+      <DependentUpon>VReporteGastoCuentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VReporteIngresoCuentas.resx">
+      <DependentUpon>VReporteIngresoCuentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VReporteMorosidad.resx">
       <DependentUpon>VReporteMorosidad.vb</DependentUpon>

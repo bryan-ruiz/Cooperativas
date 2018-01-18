@@ -155,6 +155,6 @@
     End Sub
 
     Private Sub TotalDeCódigosDeCtaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TotalDeCódigosDeCtaToolStripMenuItem.Click
-
+        VReporteIngresoCuentas.Show()
     End Sub
 End Class

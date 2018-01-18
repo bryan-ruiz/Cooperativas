@@ -152,8 +152,8 @@ Partial Class VIngresos
         'InformaciónToolStripMenuItem
         '
         Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
-        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.InformaciónToolStripMenuItem.Text = "Información"
+        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(123, 20)
+        Me.InformaciónToolStripMenuItem.Text = "Gestion de entradas"
         '
         'TextBox_IngresosFacturaRecibos
         '

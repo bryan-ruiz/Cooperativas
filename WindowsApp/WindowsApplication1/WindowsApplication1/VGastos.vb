@@ -143,4 +143,8 @@
     Private Sub InformaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónToolStripMenuItem.Click
         VGastosInformacion.Show()
     End Sub
+
+    Private Sub TotalesCódigoDeCuentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TotalesCódigoDeCuentasToolStripMenuItem.Click
+        VReporteGastoCuentas.Show()
+    End Sub
 End Class
