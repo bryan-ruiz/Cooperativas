@@ -794,21 +794,33 @@ Public Class ConexionBD
     End Function
 
 
-    Function modificarCuentaBD(ByVal cod_Descripcion As String, ByVal tipo As String,
+    Function modificarCuentaBD(ByVal idAntiguo As String, ByVal cod_Descripcion As String, ByVal tipo As String,
                            ByVal proyecto_Productivo As String) As Integer
         Dim res As Integer = 0
         Try
-            SQL = "UPDATE [CUENTAS] SET cod_Descripcion = '" & cod_Descripcion & "', " &
+            SQL = "                                
+                UPDATE [CUENTAS] SET cod_Descripcion = '" & cod_Descripcion & "', " &
                 "tipo = '" & tipo & "', " & "proyecto_Productivo = '" & proyecto_Productivo &
-                "' " & " WHERE ((cod_Descripcion) = '" & cod_Descripcion & "' )"
+                "' " & " WHERE ((cod_Descripcion) = '" & idAntiguo & "' );"
+
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 res = command.ExecuteNonQuery()
+                SQL = "                                
+                    UPDATE [INGRESOS] SET codigoDeCuenta = '" & cod_Descripcion & "' " &
+                    " WHERE ((codigoDeCuenta) = '" & idAntiguo & "' );"
+                command = New OleDbCommand(SQL, objConexion)
+                command.ExecuteNonQuery()
+                SQL = "                                
+                    UPDATE [GASTOS] SET codigoDeCuenta = '" & cod_Descripcion & "' " &
+                    " WHERE ((codigoDeCuenta) = '" & idAntiguo & "' );"
+                command = New OleDbCommand(SQL, objConexion)
+                command.ExecuteNonQuery()
             Else
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: La cuenta ya existe en el sistema!", " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show("Error: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
         Return res
     End Function

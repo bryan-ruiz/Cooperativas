@@ -779,7 +779,6 @@ Public Class Ingreso
         Try
             BD.ConectarBD()
             valores = BD.actualizarIngreso(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
-            MessageBox.Show(valores, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             If valores <> 0 Then
                 limpiarInfo()
                 MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)

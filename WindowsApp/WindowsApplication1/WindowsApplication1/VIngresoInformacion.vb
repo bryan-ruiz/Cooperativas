@@ -2,14 +2,12 @@
     Dim ingreso As Ingreso = New Ingreso
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
-    Private Sub VIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ingreso.obtenerDatosSeleccionarCuenta()
-        ingreso.obtenerDatosSeleccionarCuenta2()
-        ingreso.obtenerDatosSeleccionarCuenta3()
-
+    Private Sub VIngresosInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.IngresosInformacionBotonBuscar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-
+        Me.Button_IngresosCalcular.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.Button_IngresosInformacionBotonEliminar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.Button_IngresosInformacionBotonModificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
     End Sub
 
     Private Sub IngresosInformacionBotonBuscar_Click(sender As Object, e As EventArgs)

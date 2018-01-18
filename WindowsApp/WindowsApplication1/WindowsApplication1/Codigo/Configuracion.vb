@@ -99,11 +99,22 @@ Public Class Configuracion
 
     Public Sub modificarCuenta()
         Dim valores As Integer
-        Dim id As String = VConfiguracionCodigoCuenta.TextBox_ConfiguracionCuentaDescripcion.Text
+        Dim idAnt As String = ""
+        Dim idCuentaE As String = VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaEntrada.Text
+        Dim idCuentaS As String = VConfiguracionCodigoCuenta.ComboBox_CreacionCodCtaSalida.Text
+        Dim idNuev As String = VConfiguracionCodigoCuenta.TextBox_ConfiguracionCuentaDescripcion.Text
         Dim tipo As String
         Dim proyecto_Productivo As String
 
-        If (id = "") Then
+        If (idCuentaS = "") Then
+            idAnt = idCuentaE
+        End If
+
+        If (idCuentaE = "") Then
+            idAnt = idCuentaS
+        End If
+
+        If (idNuev = "") Then
             MessageBox.Show(variablesGlobales.mensajeDebeIngresarCodigoODescriptionDeCuenta, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         End If
 
@@ -121,7 +132,7 @@ Public Class Configuracion
 
         Try
             BD.ConectarBD()
-            valores = BD.modificarCuentaBD(id, tipo, proyecto_Productivo)
+            valores = BD.modificarCuentaBD(idAnt, idNuev, tipo, proyecto_Productivo)
             If valores <> 0 Then
                 MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             Else
@@ -130,7 +141,7 @@ Public Class Configuracion
 
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("El nombre de la Cuenta ya existe!")
+            MessageBox.Show("error: " + ex.Message)
         End Try
     End Sub
 

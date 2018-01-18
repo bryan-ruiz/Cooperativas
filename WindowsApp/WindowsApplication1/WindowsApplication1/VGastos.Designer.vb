@@ -30,6 +30,7 @@ Partial Class VGastos
         Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformeEcónomicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TotalesCódigoDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Button_GastosAgregar3 = New System.Windows.Forms.Button()
@@ -73,7 +74,6 @@ Partial Class VGastos
         Me.Button_GastosCalcular = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TotalesCódigoDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -127,11 +127,17 @@ Partial Class VGastos
         Me.InformeEcónomicoToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
         Me.InformeEcónomicoToolStripMenuItem.Text = "Informe Económico"
         '
+        'TotalesCódigoDeCuentasToolStripMenuItem
+        '
+        Me.TotalesCódigoDeCuentasToolStripMenuItem.Name = "TotalesCódigoDeCuentasToolStripMenuItem"
+        Me.TotalesCódigoDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
+        Me.TotalesCódigoDeCuentasToolStripMenuItem.Text = "Totales Código de cuentas"
+        '
         'InformaciónToolStripMenuItem
         '
         Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
-        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.InformaciónToolStripMenuItem.Text = "Información"
+        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.InformaciónToolStripMenuItem.Text = "Gestión de salidas"
         '
         'GroupBox3
         '
@@ -542,12 +548,6 @@ Partial Class VGastos
         Me.Label1.Size = New System.Drawing.Size(277, 29)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Información de Salidas"
-        '
-        'TotalesCódigoDeCuentasToolStripMenuItem
-        '
-        Me.TotalesCódigoDeCuentasToolStripMenuItem.Name = "TotalesCódigoDeCuentasToolStripMenuItem"
-        Me.TotalesCódigoDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
-        Me.TotalesCódigoDeCuentasToolStripMenuItem.Text = "Totales Código de cuentas"
         '
         'VGastos
         '
