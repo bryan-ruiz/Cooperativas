@@ -9,6 +9,7 @@
     Private Sub Button_IngresoCuentasReporte_aceptar_Click(sender As Object, e As EventArgs) Handles Button_IngresoCuentasReporte_aceptar.Click
         ingreso.generarReporteCuentaIngresos()
         Print.Show()
+        Me.Close()
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click

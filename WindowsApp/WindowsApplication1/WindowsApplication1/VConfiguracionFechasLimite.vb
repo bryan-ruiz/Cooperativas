@@ -22,6 +22,7 @@
             configuracionInformacion.actualizarFechasLimite()
             certificados.consultarFechasLimite()
         End If
+        Me.Close()
     End Sub
 
 

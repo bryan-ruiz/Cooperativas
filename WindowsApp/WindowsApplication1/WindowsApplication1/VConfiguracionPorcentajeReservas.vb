@@ -20,6 +20,7 @@
         Else
             configuracionReservas.actualizarPorcentajeReservas()
         End If
+        Me.Close()
     End Sub
 
     Private Sub ConfiguracionTextBoxLegal_TextChanged(sender As Object, e As KeyPressEventArgs) Handles ConfiguracionTextBoxLegal.KeyPress

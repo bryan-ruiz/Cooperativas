@@ -33,6 +33,7 @@
     Private Sub Button_IngresosInformacionBotonModificar_Click(sender As Object, e As EventArgs) Handles Button_IngresosInformacionBotonModificar.Click
         ingreso.modificarIngresos()
     End Sub
+
     Private Sub TextBox_IngresoCantidad_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_IngresosInformacion_Cantidad.KeyPress
         Me.TextBox_IngresosInformacion_Cantidad.MaxLength = 12
         If Asc(e.KeyChar) <> 8 Then

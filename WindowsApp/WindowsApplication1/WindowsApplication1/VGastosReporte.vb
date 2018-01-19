@@ -6,6 +6,7 @@
     Private Sub ButtonGastosReporte_Click(sender As Object, e As EventArgs) Handles ButtonGastosReporte.Click
         gasto.generarReporteGastosNuevo()
         Print.Show()
+        Me.Close()
     End Sub
 
     Private Sub VGastosReporte_Load(sender As Object, e As EventArgs) Handles MyBase.Load

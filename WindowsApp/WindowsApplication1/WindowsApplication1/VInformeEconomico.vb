@@ -6,6 +6,7 @@
     Private Sub InformeButtonGenerarInforme_Click(sender As Object, e As EventArgs) Handles InformeButtonGenerarInforme.Click
         informeEconomico.generarInformeEconomico()
         Print.Show()
+        Me.Close()
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint

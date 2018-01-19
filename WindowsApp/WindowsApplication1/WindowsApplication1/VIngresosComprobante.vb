@@ -36,6 +36,7 @@
     Private Sub Button_IngresosImprimirReciboRE_Click(sender As Object, e As EventArgs) Handles Button_IngresosImprimirReciboRE.Click
         'IMPRIMIR RECIBO DE ENTRADAS
         ingresoRecibo.generarReporteIngresosRecibo()
+        Me.Close()
     End Sub
 
     Private Sub Button_IngresosCalcularTotalRE_Click(sender As Object, e As EventArgs) Handles Button_IngresosCalcularTotalRE.Click

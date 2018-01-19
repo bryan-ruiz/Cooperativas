@@ -6,6 +6,7 @@
     Private Sub Button_IngresosReporteIngresos_Click(sender As Object, e As EventArgs) Handles Button_ReporteSaldos.Click
         saldos.generarReporteSaldosNuevo()
         Print.Show()
+        Me.Close()
     End Sub
 
     Private Sub VIngresosSaldos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
