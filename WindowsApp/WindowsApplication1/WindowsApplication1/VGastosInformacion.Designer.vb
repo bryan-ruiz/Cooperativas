@@ -22,14 +22,10 @@ Partial Class VGastosInformacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VGastosInformacion))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InformeEcónomicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Button_GastoInformacionBotonModificar = New System.Windows.Forms.Button()
         Me.Button_GastoInformacionBotonEliminar = New System.Windows.Forms.Button()
@@ -64,7 +60,7 @@ Partial Class VGastosInformacion
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1271, 24)
@@ -81,39 +77,8 @@ Partial Class VGastosInformacion
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
-        '
-        'ReporteToolStripMenuItem
-        '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem, Me.InformeEcónomicoToolStripMenuItem})
-        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
-        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ReporteToolStripMenuItem.Text = "Reporte"
-        '
-        'CrearReporteToolStripMenuItem
-        '
-        Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
-        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CrearReporteToolStripMenuItem.Text = "Reporte de Salidas"
-        '
-        'ReporteDeSaldosToolStripMenuItem
-        '
-        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
-        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
-        '
-        'InformeEcónomicoToolStripMenuItem
-        '
-        Me.InformeEcónomicoToolStripMenuItem.Name = "InformeEcónomicoToolStripMenuItem"
-        Me.InformeEcónomicoToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.InformeEcónomicoToolStripMenuItem.Text = "Informe Económico"
-        '
-        'InformaciónToolStripMenuItem
-        '
-        Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
-        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.InformaciónToolStripMenuItem.Text = "Información"
         '
         'GroupBox3
         '
@@ -397,8 +362,10 @@ Partial Class VGastosInformacion
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VGastosInformacion"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SAC"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -415,11 +382,6 @@ Partial Class VGastosInformacion
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CrearReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReporteDeSaldosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InformeEcónomicoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InformaciónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents ComboBox_GastosInformacion As ComboBox
     Friend WithEvents TextBox_GastosInformacion_Factura As TextBox

@@ -486,11 +486,17 @@ Public Class Socios
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
 
+            Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
+            pdfDoc.Add(New Paragraph("                                                                                     Reporte de Asociados activos ", FontStype3))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
 
             Dim table As PdfPTable = New PdfPTable(9)
 
             '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
+
 
             Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("N° Asociado", FontStype))
             numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
@@ -622,7 +628,7 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteAsociadosActivos.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
         End Try
     End Sub
 
@@ -812,7 +818,7 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteTodosLosAsociados.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
         End Try
     End Sub
 
@@ -1096,7 +1102,7 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.nombreReporteExcCorresp, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             Print.Show()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
         End Try
     End Sub
 

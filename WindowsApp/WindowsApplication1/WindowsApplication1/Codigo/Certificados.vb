@@ -837,7 +837,7 @@ Public Class Certificados
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reporteMorosidad, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
         End Try
     End Sub
 

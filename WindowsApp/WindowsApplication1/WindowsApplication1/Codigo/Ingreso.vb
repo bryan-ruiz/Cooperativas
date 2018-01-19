@@ -256,7 +256,7 @@ Public Class Ingreso
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteEntradas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show("Error de: " + variablesGlobales.mensajePdfAbierto)
         End Try
     End Sub
 
@@ -286,8 +286,10 @@ Public Class Ingreso
 
             '/////// Encabezado //////////
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
-            pdfDoc.Add(New Paragraph("                                                                                      Ingreso en Cuentas desde: " + fechaInicial + " al " + fechaFinal, FontStype3))
+            pdfDoc.Add(New Paragraph("                                                                                     Total de Entradas desde: " + fechaInicial + " al " + fechaFinal, FontStype3))
             pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
 
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
@@ -352,7 +354,7 @@ Public Class Ingreso
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteCuentasEntradas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show("Error de: " + variablesGlobales.mensajePdfAbierto)
         End Try
     End Sub
 

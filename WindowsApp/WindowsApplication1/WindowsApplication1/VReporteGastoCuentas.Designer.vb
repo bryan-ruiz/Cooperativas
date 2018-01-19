@@ -22,6 +22,7 @@ Partial Class VReporteGastoCuentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VReporteGastoCuentas))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -112,8 +113,10 @@ Partial Class VReporteGastoCuentas
         Me.Controls.Add(Me.Button_GastosCuentasReporte_aceptar)
         Me.Controls.Add(Me.DateTimePicker_GastosCuentasReporte_ff)
         Me.Controls.Add(Me.DateTimePicker_GastosCuentasReporte_fi)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VReporteGastoCuentas"
-        Me.Text = "VReporteGastoCuentas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SAC"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)

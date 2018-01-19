@@ -22,6 +22,7 @@ Partial Class VIngresoInformacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VIngresoInformacion))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Button_IngresosInformacionBotonModificar = New System.Windows.Forms.Button()
         Me.Button_IngresosInformacionBotonEliminar = New System.Windows.Forms.Button()
@@ -334,8 +335,10 @@ Partial Class VIngresoInformacion
         Me.ClientSize = New System.Drawing.Size(1269, 415)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VIngresoInformacion"
-        Me.Text = "VIngresoInformacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SAC"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
