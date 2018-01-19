@@ -30,6 +30,7 @@ Partial Class VGastos
         Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformeEcónomicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TotalesCódigoDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Button_GastosAgregar3 = New System.Windows.Forms.Button()
@@ -98,12 +99,12 @@ Partial Class VGastos
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'ReporteToolStripMenuItem
         '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem, Me.InformeEcónomicoToolStripMenuItem})
+        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem, Me.InformeEcónomicoToolStripMenuItem, Me.TotalesCódigoDeCuentasToolStripMenuItem})
         Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
         Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ReporteToolStripMenuItem.Text = "Reporte"
@@ -111,26 +112,32 @@ Partial Class VGastos
         'CrearReporteToolStripMenuItem
         '
         Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
-        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
         Me.CrearReporteToolStripMenuItem.Text = "Reporte de Salidas"
         '
         'ReporteDeSaldosToolStripMenuItem
         '
         Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
-        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
         Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
         '
         'InformeEcónomicoToolStripMenuItem
         '
         Me.InformeEcónomicoToolStripMenuItem.Name = "InformeEcónomicoToolStripMenuItem"
-        Me.InformeEcónomicoToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.InformeEcónomicoToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
         Me.InformeEcónomicoToolStripMenuItem.Text = "Informe Económico"
+        '
+        'TotalesCódigoDeCuentasToolStripMenuItem
+        '
+        Me.TotalesCódigoDeCuentasToolStripMenuItem.Name = "TotalesCódigoDeCuentasToolStripMenuItem"
+        Me.TotalesCódigoDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
+        Me.TotalesCódigoDeCuentasToolStripMenuItem.Text = "Totales Código de cuentas"
         '
         'InformaciónToolStripMenuItem
         '
         Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
-        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.InformaciónToolStripMenuItem.Text = "Información"
+        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.InformaciónToolStripMenuItem.Text = "Gestión de salidas"
         '
         'GroupBox3
         '
@@ -619,4 +626,5 @@ Partial Class VGastos
     Friend WithEvents ReporteDeSaldosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents TotalesCódigoDeCuentasToolStripMenuItem As ToolStripMenuItem
 End Class

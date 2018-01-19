@@ -28,6 +28,7 @@
 
 
         Print.Show()
+        Me.Close()
     End Sub
 
 

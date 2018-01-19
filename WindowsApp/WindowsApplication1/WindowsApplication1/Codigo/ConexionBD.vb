@@ -794,21 +794,33 @@ Public Class ConexionBD
     End Function
 
 
-    Function modificarCuentaBD(ByVal cod_Descripcion As String, ByVal tipo As String,
+    Function modificarCuentaBD(ByVal idAntiguo As String, ByVal cod_Descripcion As String, ByVal tipo As String,
                            ByVal proyecto_Productivo As String) As Integer
         Dim res As Integer = 0
         Try
-            SQL = "UPDATE [CUENTAS] SET cod_Descripcion = '" & cod_Descripcion & "', " &
+            SQL = "                                
+                UPDATE [CUENTAS] SET cod_Descripcion = '" & cod_Descripcion & "', " &
                 "tipo = '" & tipo & "', " & "proyecto_Productivo = '" & proyecto_Productivo &
-                "' " & " WHERE ((cod_Descripcion) = '" & cod_Descripcion & "' )"
+                "' " & " WHERE ((cod_Descripcion) = '" & idAntiguo & "' );"
+
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 res = command.ExecuteNonQuery()
+                SQL = "                                
+                    UPDATE [INGRESOS] SET codigoDeCuenta = '" & cod_Descripcion & "' " &
+                    " WHERE ((codigoDeCuenta) = '" & idAntiguo & "' );"
+                command = New OleDbCommand(SQL, objConexion)
+                command.ExecuteNonQuery()
+                SQL = "                                
+                    UPDATE [GASTOS] SET codigoDeCuenta = '" & cod_Descripcion & "' " &
+                    " WHERE ((codigoDeCuenta) = '" & idAntiguo & "' );"
+                command = New OleDbCommand(SQL, objConexion)
+                command.ExecuteNonQuery()
             Else
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: La cuenta ya existe en el sistema!", " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show("Error: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
         Return res
     End Function
@@ -1918,6 +1930,82 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+
+
+    '' COSAS NUVAS REALIZADAS EL MIERCOLES
+
+    Function obtenerGastosCuenta(ByVal fechaI As Date, ByVal fechaF As Date) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT CUENTAS.cod_Descripcion,SUM(GASTOS.total)
+                FROM [CUENTAS] LEFT JOIN [GASTOS] ON (
+                     CUENTAS.cod_Descripcion =  GASTOS.codigoDeCuenta
+                     And GASTOS.fecha BETWEEN Format( #" & fechaI & "#, 'mm/dd/yyyy') And Format( #" & fechaF & "#, 'mm/dd/yyyy')
+                )
+                GROUP BY CUENTAS.cod_Descripcion"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Try
+                        Dim conta As Integer = 0
+                        For conta = 0 To reader.FieldCount - 1
+                            If IsDBNull(reader(conta)) Then
+                                MyList.Add("0")
+                            Else
+                                MyList.Add(reader(conta))
+                            End If
+                        Next conta
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    Function obtenerIngresosCuenta(ByVal fechaI As Date, ByVal fechaF As Date) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT CUENTAS.cod_Descripcion,SUM(INGRESOS.total)
+                FROM [CUENTAS] LEFT JOIN [INGRESOS] ON (
+                    CUENTAS.cod_Descripcion =  INGRESOS.codigoDeCuenta
+                    AND INGRESOS.fecha BETWEEN Format( #" & fechaI & "#, 'mm/dd/yyyy') And Format( #" & fechaF & "#, 'mm/dd/yyyy')
+                )
+                GROUP BY CUENTAS.cod_Descripcion"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Try
+                        Dim conta As Integer = 0
+                        For conta = 0 To reader.FieldCount - 1
+                            If IsDBNull(reader(conta)) Then
+                                MyList.Add("0")
+                            Else
+                                MyList.Add(reader(conta))
+                            End If
+                        Next conta
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
 
 
 End Class

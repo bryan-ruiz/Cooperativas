@@ -21,6 +21,7 @@
         Else
             configuracionInformacion.actualizarInformacionCooperativa()
         End If
+        Me.Close()
     End Sub
 
 End Class

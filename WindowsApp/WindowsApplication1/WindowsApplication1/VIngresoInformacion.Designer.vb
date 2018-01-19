@@ -22,23 +22,14 @@ Partial Class VIngresoInformacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InformeEcónomicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VIngresoInformacion))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button_IngresosCalcular = New System.Windows.Forms.Button()
+        Me.Button_IngresosInformacionBotonModificar = New System.Windows.Forms.Button()
+        Me.Button_IngresosInformacionBotonEliminar = New System.Windows.Forms.Button()
         Me.IngresosInformacionBotonBuscar = New System.Windows.Forms.Button()
+        Me.Button_IngresosCalcular = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.IngresosInformacionInputID = New System.Windows.Forms.TextBox()
-        Me.IngresosInformacionBotonModificar = New System.Windows.Forms.Button()
-        Me.IngresosInformacionBotonEliminar = New System.Windows.Forms.Button()
         Me.ComboBox_IngresosInformacion = New System.Windows.Forms.ComboBox()
         Me.TextBox_IngresosInformacion_Factura = New System.Windows.Forms.TextBox()
         Me.TextBox_IngresosInformacion_Proveedor = New System.Windows.Forms.TextBox()
@@ -56,94 +47,21 @@ Partial Class VIngresoInformacion
         Me.TextBox_IngresosInformacion_Cantidad = New System.Windows.Forms.TextBox()
         Me.TextBox_IngresosInformacion_PrecioUnit = New System.Windows.Forms.TextBox()
         Me.TextBox_IngresosInformacion_Total = New System.Windows.Forms.TextBox()
-        Me.MenuStrip1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1269, 24)
-        Me.MenuStrip1.TabIndex = 148
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'MenuToolStripMenuItem
-        '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem1})
-        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.MenuToolStripMenuItem.Text = "Menu"
-        '
-        'SalirToolStripMenuItem1
-        '
-        Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
-        Me.SalirToolStripMenuItem1.Text = "Salir"
-        '
-        'ReporteToolStripMenuItem
-        '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem, Me.InformeEcónomicoToolStripMenuItem})
-        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
-        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ReporteToolStripMenuItem.Text = "Reporte"
-        '
-        'CrearReporteToolStripMenuItem
-        '
-        Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
-        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CrearReporteToolStripMenuItem.Text = "Reporte de Salidas"
-        '
-        'ReporteDeSaldosToolStripMenuItem
-        '
-        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
-        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
-        '
-        'InformeEcónomicoToolStripMenuItem
-        '
-        Me.InformeEcónomicoToolStripMenuItem.Name = "InformeEcónomicoToolStripMenuItem"
-        Me.InformeEcónomicoToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.InformeEcónomicoToolStripMenuItem.Text = "Informe Económico"
-        '
-        'InformaciónToolStripMenuItem
-        '
-        Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
-        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.InformaciónToolStripMenuItem.Text = "Información"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(0, 27)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1268, 73)
-        Me.Panel1.TabIndex = 152
-        '
-        'Label1
-        '
-        Me.Label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(465, 22)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(295, 29)
-        Me.Label1.TabIndex = 41
-        Me.Label1.Text = "Información de Entradas"
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Button_IngresosCalcular)
+        Me.GroupBox3.Controls.Add(Me.Button_IngresosInformacionBotonModificar)
+        Me.GroupBox3.Controls.Add(Me.Button_IngresosInformacionBotonEliminar)
         Me.GroupBox3.Controls.Add(Me.IngresosInformacionBotonBuscar)
+        Me.GroupBox3.Controls.Add(Me.Button_IngresosCalcular)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.IngresosInformacionInputID)
-        Me.GroupBox3.Controls.Add(Me.IngresosInformacionBotonModificar)
-        Me.GroupBox3.Controls.Add(Me.IngresosInformacionBotonEliminar)
         Me.GroupBox3.Controls.Add(Me.ComboBox_IngresosInformacion)
         Me.GroupBox3.Controls.Add(Me.TextBox_IngresosInformacion_Factura)
         Me.GroupBox3.Controls.Add(Me.TextBox_IngresosInformacion_Proveedor)
@@ -159,23 +77,50 @@ Partial Class VIngresoInformacion
         Me.GroupBox3.TabIndex = 153
         Me.GroupBox3.TabStop = False
         '
+        'Button_IngresosInformacionBotonModificar
+        '
+        Me.Button_IngresosInformacionBotonModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button_IngresosInformacionBotonModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button_IngresosInformacionBotonModificar.ForeColor = System.Drawing.Color.White
+        Me.Button_IngresosInformacionBotonModificar.Location = New System.Drawing.Point(429, 219)
+        Me.Button_IngresosInformacionBotonModificar.Name = "Button_IngresosInformacionBotonModificar"
+        Me.Button_IngresosInformacionBotonModificar.Size = New System.Drawing.Size(144, 44)
+        Me.Button_IngresosInformacionBotonModificar.TabIndex = 171
+        Me.Button_IngresosInformacionBotonModificar.Text = "Modificar"
+        Me.Button_IngresosInformacionBotonModificar.UseVisualStyleBackColor = False
+        '
+        'Button_IngresosInformacionBotonEliminar
+        '
+        Me.Button_IngresosInformacionBotonEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button_IngresosInformacionBotonEliminar.ForeColor = System.Drawing.Color.White
+        Me.Button_IngresosInformacionBotonEliminar.Location = New System.Drawing.Point(627, 219)
+        Me.Button_IngresosInformacionBotonEliminar.Name = "Button_IngresosInformacionBotonEliminar"
+        Me.Button_IngresosInformacionBotonEliminar.Size = New System.Drawing.Size(144, 44)
+        Me.Button_IngresosInformacionBotonEliminar.TabIndex = 170
+        Me.Button_IngresosInformacionBotonEliminar.Text = "Eliminar"
+        Me.Button_IngresosInformacionBotonEliminar.UseVisualStyleBackColor = True
+        '
+        'IngresosInformacionBotonBuscar
+        '
+        Me.IngresosInformacionBotonBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.IngresosInformacionBotonBuscar.ForeColor = System.Drawing.Color.White
+        Me.IngresosInformacionBotonBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
+        Me.IngresosInformacionBotonBuscar.Location = New System.Drawing.Point(787, 21)
+        Me.IngresosInformacionBotonBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.IngresosInformacionBotonBuscar.Name = "IngresosInformacionBotonBuscar"
+        Me.IngresosInformacionBotonBuscar.Size = New System.Drawing.Size(58, 43)
+        Me.IngresosInformacionBotonBuscar.TabIndex = 147
+        Me.IngresosInformacionBotonBuscar.UseVisualStyleBackColor = True
+        '
         'Button_IngresosCalcular
         '
+        Me.Button_IngresosCalcular.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button_IngresosCalcular.Location = New System.Drawing.Point(1072, 142)
         Me.Button_IngresosCalcular.Name = "Button_IngresosCalcular"
         Me.Button_IngresosCalcular.Size = New System.Drawing.Size(80, 23)
         Me.Button_IngresosCalcular.TabIndex = 146
         Me.Button_IngresosCalcular.Text = "Calcular Total"
         Me.Button_IngresosCalcular.UseVisualStyleBackColor = True
-        '
-        'IngresosInformacionBotonBuscar
-        '
-        Me.IngresosInformacionBotonBuscar.Location = New System.Drawing.Point(782, 18)
-        Me.IngresosInformacionBotonBuscar.Name = "IngresosInformacionBotonBuscar"
-        Me.IngresosInformacionBotonBuscar.Size = New System.Drawing.Size(77, 41)
-        Me.IngresosInformacionBotonBuscar.TabIndex = 145
-        Me.IngresosInformacionBotonBuscar.Text = "Buscar"
-        Me.IngresosInformacionBotonBuscar.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -195,24 +140,6 @@ Partial Class VIngresoInformacion
         Me.IngresosInformacionInputID.Name = "IngresosInformacionInputID"
         Me.IngresosInformacionInputID.Size = New System.Drawing.Size(222, 20)
         Me.IngresosInformacionInputID.TabIndex = 144
-        '
-        'IngresosInformacionBotonModificar
-        '
-        Me.IngresosInformacionBotonModificar.Location = New System.Drawing.Point(564, 212)
-        Me.IngresosInformacionBotonModificar.Name = "IngresosInformacionBotonModificar"
-        Me.IngresosInformacionBotonModificar.Size = New System.Drawing.Size(155, 41)
-        Me.IngresosInformacionBotonModificar.TabIndex = 143
-        Me.IngresosInformacionBotonModificar.Text = "Modificar"
-        Me.IngresosInformacionBotonModificar.UseVisualStyleBackColor = True
-        '
-        'IngresosInformacionBotonEliminar
-        '
-        Me.IngresosInformacionBotonEliminar.Location = New System.Drawing.Point(380, 212)
-        Me.IngresosInformacionBotonEliminar.Name = "IngresosInformacionBotonEliminar"
-        Me.IngresosInformacionBotonEliminar.Size = New System.Drawing.Size(155, 41)
-        Me.IngresosInformacionBotonEliminar.TabIndex = 142
-        Me.IngresosInformacionBotonEliminar.Text = "Eliminar"
-        Me.IngresosInformacionBotonEliminar.UseVisualStyleBackColor = True
         '
         'ComboBox_IngresosInformacion
         '
@@ -381,46 +308,50 @@ Partial Class VIngresoInformacion
         Me.TextBox_IngresosInformacion_Total.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_IngresosInformacion_Total.TabIndex = 9
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Location = New System.Drawing.Point(-4, 21)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1271, 93)
+        Me.Panel1.TabIndex = 175
+        '
+        'Label9
+        '
+        Me.Label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(430, 24)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(282, 29)
+        Me.Label9.TabIndex = 41
+        Me.Label9.Text = "Información de Entrada"
+        '
         'VIngresoInformacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1269, 415)
-        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VIngresoInformacion"
-        Me.Text = "VIngresoInformacion"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SAC"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CrearReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReporteDeSaldosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InformeEcónomicoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InformaciónToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Button_IngresosCalcular As Button
-    Friend WithEvents IngresosInformacionBotonBuscar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents IngresosInformacionInputID As TextBox
-    Friend WithEvents IngresosInformacionBotonModificar As Button
-    Friend WithEvents IngresosInformacionBotonEliminar As Button
     Friend WithEvents ComboBox_IngresosInformacion As ComboBox
     Friend WithEvents TextBox_IngresosInformacion_Factura As TextBox
     Friend WithEvents TextBox_IngresosInformacion_Proveedor As TextBox
@@ -438,4 +369,9 @@ Partial Class VIngresoInformacion
     Friend WithEvents TextBox_IngresosInformacion_Cantidad As TextBox
     Friend WithEvents TextBox_IngresosInformacion_PrecioUnit As TextBox
     Friend WithEvents TextBox_IngresosInformacion_Total As TextBox
+    Friend WithEvents IngresosInformacionBotonBuscar As Button
+    Friend WithEvents Button_IngresosInformacionBotonModificar As Button
+    Friend WithEvents Button_IngresosInformacionBotonEliminar As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label9 As Label
 End Class

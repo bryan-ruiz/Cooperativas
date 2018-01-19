@@ -22,22 +22,17 @@ Partial Class VGastosInformacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VGastosInformacion))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InformeEcónomicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button_GastoInformacionBotonModificar = New System.Windows.Forms.Button()
+        Me.Button_GastoInformacionBotonEliminar = New System.Windows.Forms.Button()
         Me.GastosInformacionBotonBuscar = New System.Windows.Forms.Button()
+        Me.Button_GastosCalcular = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GastosInformacionInputID = New System.Windows.Forms.TextBox()
-        Me.GastosInformacionBotonModificar = New System.Windows.Forms.Button()
-        Me.GastosInformacionBotonEliminar = New System.Windows.Forms.Button()
         Me.ComboBox_GastosInformacion = New System.Windows.Forms.ComboBox()
         Me.TextBox_GastosInformacion_Factura = New System.Windows.Forms.TextBox()
         Me.TextBox_GastosInformacion_Proveedor = New System.Windows.Forms.TextBox()
@@ -55,16 +50,17 @@ Partial Class VGastosInformacion
         Me.TextBox_GastosInformacion_Cantidad = New System.Windows.Forms.TextBox()
         Me.TextBox_GastosInformacion_PrecioUnit = New System.Windows.Forms.TextBox()
         Me.TextBox_GastosInformacion_Total = New System.Windows.Forms.TextBox()
-        Me.Button_GastosCalcular = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1271, 24)
@@ -81,69 +77,17 @@ Partial Class VGastosInformacion
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
-        '
-        'ReporteToolStripMenuItem
-        '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem, Me.InformeEcónomicoToolStripMenuItem})
-        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
-        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ReporteToolStripMenuItem.Text = "Reporte"
-        '
-        'CrearReporteToolStripMenuItem
-        '
-        Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
-        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CrearReporteToolStripMenuItem.Text = "Reporte de Salidas"
-        '
-        'ReporteDeSaldosToolStripMenuItem
-        '
-        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
-        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Saldos"
-        '
-        'InformeEcónomicoToolStripMenuItem
-        '
-        Me.InformeEcónomicoToolStripMenuItem.Name = "InformeEcónomicoToolStripMenuItem"
-        Me.InformeEcónomicoToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.InformeEcónomicoToolStripMenuItem.Text = "Informe Económico"
-        '
-        'InformaciónToolStripMenuItem
-        '
-        Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
-        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.InformaciónToolStripMenuItem.Text = "Información"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(0, 27)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1268, 73)
-        Me.Panel1.TabIndex = 151
-        '
-        'Label1
-        '
-        Me.Label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(465, 22)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(277, 29)
-        Me.Label1.TabIndex = 41
-        Me.Label1.Text = "Información de Salidas"
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Button_GastosCalcular)
+        Me.GroupBox3.Controls.Add(Me.Button_GastoInformacionBotonModificar)
+        Me.GroupBox3.Controls.Add(Me.Button_GastoInformacionBotonEliminar)
         Me.GroupBox3.Controls.Add(Me.GastosInformacionBotonBuscar)
+        Me.GroupBox3.Controls.Add(Me.Button_GastosCalcular)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.GastosInformacionInputID)
-        Me.GroupBox3.Controls.Add(Me.GastosInformacionBotonModificar)
-        Me.GroupBox3.Controls.Add(Me.GastosInformacionBotonEliminar)
         Me.GroupBox3.Controls.Add(Me.ComboBox_GastosInformacion)
         Me.GroupBox3.Controls.Add(Me.TextBox_GastosInformacion_Factura)
         Me.GroupBox3.Controls.Add(Me.TextBox_GastosInformacion_Proveedor)
@@ -159,14 +103,50 @@ Partial Class VGastosInformacion
         Me.GroupBox3.TabIndex = 152
         Me.GroupBox3.TabStop = False
         '
+        'Button_GastoInformacionBotonModificar
+        '
+        Me.Button_GastoInformacionBotonModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button_GastoInformacionBotonModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button_GastoInformacionBotonModificar.ForeColor = System.Drawing.Color.White
+        Me.Button_GastoInformacionBotonModificar.Location = New System.Drawing.Point(383, 202)
+        Me.Button_GastoInformacionBotonModificar.Name = "Button_GastoInformacionBotonModificar"
+        Me.Button_GastoInformacionBotonModificar.Size = New System.Drawing.Size(144, 44)
+        Me.Button_GastoInformacionBotonModificar.TabIndex = 173
+        Me.Button_GastoInformacionBotonModificar.Text = "Modificar"
+        Me.Button_GastoInformacionBotonModificar.UseVisualStyleBackColor = False
+        '
+        'Button_GastoInformacionBotonEliminar
+        '
+        Me.Button_GastoInformacionBotonEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button_GastoInformacionBotonEliminar.ForeColor = System.Drawing.Color.White
+        Me.Button_GastoInformacionBotonEliminar.Location = New System.Drawing.Point(560, 202)
+        Me.Button_GastoInformacionBotonEliminar.Name = "Button_GastoInformacionBotonEliminar"
+        Me.Button_GastoInformacionBotonEliminar.Size = New System.Drawing.Size(144, 44)
+        Me.Button_GastoInformacionBotonEliminar.TabIndex = 172
+        Me.Button_GastoInformacionBotonEliminar.Text = "Eliminar"
+        Me.Button_GastoInformacionBotonEliminar.UseVisualStyleBackColor = True
+        '
         'GastosInformacionBotonBuscar
         '
-        Me.GastosInformacionBotonBuscar.Location = New System.Drawing.Point(782, 18)
+        Me.GastosInformacionBotonBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.GastosInformacionBotonBuscar.ForeColor = System.Drawing.Color.White
+        Me.GastosInformacionBotonBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
+        Me.GastosInformacionBotonBuscar.Location = New System.Drawing.Point(799, 16)
+        Me.GastosInformacionBotonBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.GastosInformacionBotonBuscar.Name = "GastosInformacionBotonBuscar"
-        Me.GastosInformacionBotonBuscar.Size = New System.Drawing.Size(77, 41)
-        Me.GastosInformacionBotonBuscar.TabIndex = 145
-        Me.GastosInformacionBotonBuscar.Text = "Buscar"
+        Me.GastosInformacionBotonBuscar.Size = New System.Drawing.Size(58, 43)
+        Me.GastosInformacionBotonBuscar.TabIndex = 148
         Me.GastosInformacionBotonBuscar.UseVisualStyleBackColor = True
+        '
+        'Button_GastosCalcular
+        '
+        Me.Button_GastosCalcular.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button_GastosCalcular.Location = New System.Drawing.Point(1072, 142)
+        Me.Button_GastosCalcular.Name = "Button_GastosCalcular"
+        Me.Button_GastosCalcular.Size = New System.Drawing.Size(80, 23)
+        Me.Button_GastosCalcular.TabIndex = 146
+        Me.Button_GastosCalcular.Text = "Calcular Total"
+        Me.Button_GastosCalcular.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -186,24 +166,6 @@ Partial Class VGastosInformacion
         Me.GastosInformacionInputID.Name = "GastosInformacionInputID"
         Me.GastosInformacionInputID.Size = New System.Drawing.Size(222, 20)
         Me.GastosInformacionInputID.TabIndex = 144
-        '
-        'GastosInformacionBotonModificar
-        '
-        Me.GastosInformacionBotonModificar.Location = New System.Drawing.Point(564, 212)
-        Me.GastosInformacionBotonModificar.Name = "GastosInformacionBotonModificar"
-        Me.GastosInformacionBotonModificar.Size = New System.Drawing.Size(155, 41)
-        Me.GastosInformacionBotonModificar.TabIndex = 143
-        Me.GastosInformacionBotonModificar.Text = "Modificar"
-        Me.GastosInformacionBotonModificar.UseVisualStyleBackColor = True
-        '
-        'GastosInformacionBotonEliminar
-        '
-        Me.GastosInformacionBotonEliminar.Location = New System.Drawing.Point(380, 212)
-        Me.GastosInformacionBotonEliminar.Name = "GastosInformacionBotonEliminar"
-        Me.GastosInformacionBotonEliminar.Size = New System.Drawing.Size(155, 41)
-        Me.GastosInformacionBotonEliminar.TabIndex = 142
-        Me.GastosInformacionBotonEliminar.Text = "Eliminar"
-        Me.GastosInformacionBotonEliminar.UseVisualStyleBackColor = True
         '
         'ComboBox_GastosInformacion
         '
@@ -372,33 +334,46 @@ Partial Class VGastosInformacion
         Me.TextBox_GastosInformacion_Total.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_GastosInformacion_Total.TabIndex = 9
         '
-        'Button_GastosCalcular
+        'Panel1
         '
-        Me.Button_GastosCalcular.Location = New System.Drawing.Point(1072, 142)
-        Me.Button_GastosCalcular.Name = "Button_GastosCalcular"
-        Me.Button_GastosCalcular.Size = New System.Drawing.Size(80, 23)
-        Me.Button_GastosCalcular.TabIndex = 146
-        Me.Button_GastosCalcular.Text = "Calcular Total"
-        Me.Button_GastosCalcular.UseVisualStyleBackColor = True
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Location = New System.Drawing.Point(0, 46)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1271, 93)
+        Me.Panel1.TabIndex = 174
+        '
+        'Label9
+        '
+        Me.Label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(430, 24)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(261, 29)
+        Me.Label9.TabIndex = 41
+        Me.Label9.Text = "Información de salida"
         '
         'VGastosInformacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1271, 437)
-        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VGastosInformacion"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SAC"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -407,16 +382,7 @@ Partial Class VGastosInformacion
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CrearReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReporteDeSaldosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InformeEcónomicoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InformaciónToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents GastosInformacionBotonModificar As Button
-    Friend WithEvents GastosInformacionBotonEliminar As Button
     Friend WithEvents ComboBox_GastosInformacion As ComboBox
     Friend WithEvents TextBox_GastosInformacion_Factura As TextBox
     Friend WithEvents TextBox_GastosInformacion_Proveedor As TextBox
@@ -436,6 +402,10 @@ Partial Class VGastosInformacion
     Friend WithEvents TextBox_GastosInformacion_Total As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GastosInformacionInputID As TextBox
-    Friend WithEvents GastosInformacionBotonBuscar As Button
     Friend WithEvents Button_GastosCalcular As Button
+    Friend WithEvents GastosInformacionBotonBuscar As Button
+    Friend WithEvents Button_GastoInformacionBotonModificar As Button
+    Friend WithEvents Button_GastoInformacionBotonEliminar As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label9 As Label
 End Class

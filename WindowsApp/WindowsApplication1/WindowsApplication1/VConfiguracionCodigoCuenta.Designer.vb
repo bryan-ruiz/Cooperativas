@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class VConfiguracionCodigoCuenta
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class VConfiguracionCodigoCuenta
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VConfiguracionCodigoCuenta))
         Me.Label2 = New System.Windows.Forms.Label()
@@ -42,11 +42,8 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.button_VConfiguracionCodCuenta_Modificar = New System.Windows.Forms.Button()
-        Me.Button_ConfiguracionReportesCodigoCuenta = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CrearReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteDeSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -58,7 +55,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(73, 291)
+        Me.Label2.Location = New System.Drawing.Point(88, 303)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(291, 17)
         Me.Label2.TabIndex = 4
@@ -68,7 +65,7 @@ Partial Class VConfiguracionCodigoCuenta
         '
         Me.TextBox_ConfiguracionCuentaDescripcion.CausesValidation = False
         Me.TextBox_ConfiguracionCuentaDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_ConfiguracionCuentaDescripcion.Location = New System.Drawing.Point(76, 326)
+        Me.TextBox_ConfiguracionCuentaDescripcion.Location = New System.Drawing.Point(138, 323)
         Me.TextBox_ConfiguracionCuentaDescripcion.Multiline = True
         Me.TextBox_ConfiguracionCuentaDescripcion.Name = "TextBox_ConfiguracionCuentaDescripcion"
         Me.TextBox_ConfiguracionCuentaDescripcion.Size = New System.Drawing.Size(275, 29)
@@ -78,7 +75,7 @@ Partial Class VConfiguracionCodigoCuenta
         '
         Me.Button_ConfiguracionInsertarCodigoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_ConfiguracionInsertarCodigoCuenta.ForeColor = System.Drawing.Color.White
-        Me.Button_ConfiguracionInsertarCodigoCuenta.Location = New System.Drawing.Point(91, 548)
+        Me.Button_ConfiguracionInsertarCodigoCuenta.Location = New System.Drawing.Point(37, 548)
         Me.Button_ConfiguracionInsertarCodigoCuenta.Name = "Button_ConfiguracionInsertarCodigoCuenta"
         Me.Button_ConfiguracionInsertarCodigoCuenta.Size = New System.Drawing.Size(144, 44)
         Me.Button_ConfiguracionInsertarCodigoCuenta.TabIndex = 21
@@ -101,7 +98,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label138.AutoSize = True
         Me.Label138.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label138.ForeColor = System.Drawing.Color.Black
-        Me.Label138.Location = New System.Drawing.Point(67, 442)
+        Me.Label138.Location = New System.Drawing.Point(84, 453)
         Me.Label138.Name = "Label138"
         Me.Label138.Size = New System.Drawing.Size(143, 17)
         Me.Label138.TabIndex = 163
@@ -113,7 +110,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Panel3.Controls.Add(Me.RadioButton_ConfiguracionProyectoProductivoNO)
         Me.Panel3.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Panel3.ForeColor = System.Drawing.Color.White
-        Me.Panel3.Location = New System.Drawing.Point(110, 476)
+        Me.Panel3.Location = New System.Drawing.Point(201, 482)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(178, 34)
         Me.Panel3.TabIndex = 162
@@ -149,7 +146,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label139.AutoSize = True
         Me.Label139.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label139.ForeColor = System.Drawing.Color.Black
-        Me.Label139.Location = New System.Drawing.Point(73, 375)
+        Me.Label139.Location = New System.Drawing.Point(88, 378)
         Me.Label139.Name = "Label139"
         Me.Label139.Size = New System.Drawing.Size(39, 17)
         Me.Label139.TabIndex = 161
@@ -161,7 +158,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Panel4.Controls.Add(Me.ConfigurationRadioButtonGasto)
         Me.Panel4.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Panel4.ForeColor = System.Drawing.Color.White
-        Me.Panel4.Location = New System.Drawing.Point(110, 395)
+        Me.Panel4.Location = New System.Drawing.Point(200, 396)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(178, 34)
         Me.Panel4.TabIndex = 160
@@ -197,7 +194,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.ComboBox_CreacionCodCtaEntrada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox_CreacionCodCtaEntrada.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_CreacionCodCtaEntrada.FormattingEnabled = True
-        Me.ComboBox_CreacionCodCtaEntrada.Location = New System.Drawing.Point(76, 155)
+        Me.ComboBox_CreacionCodCtaEntrada.Location = New System.Drawing.Point(138, 155)
         Me.ComboBox_CreacionCodCtaEntrada.Name = "ComboBox_CreacionCodCtaEntrada"
         Me.ComboBox_CreacionCodCtaEntrada.Size = New System.Drawing.Size(275, 27)
         Me.ComboBox_CreacionCodCtaEntrada.TabIndex = 164
@@ -207,7 +204,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(73, 114)
+        Me.Label3.Location = New System.Drawing.Point(88, 135)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(137, 17)
         Me.Label3.TabIndex = 165
@@ -218,7 +215,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(73, 195)
+        Me.Label4.Location = New System.Drawing.Point(84, 210)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(126, 17)
         Me.Label4.TabIndex = 167
@@ -229,7 +226,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.ComboBox_CreacionCodCtaSalida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox_CreacionCodCtaSalida.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_CreacionCodCtaSalida.FormattingEnabled = True
-        Me.ComboBox_CreacionCodCtaSalida.Location = New System.Drawing.Point(76, 231)
+        Me.ComboBox_CreacionCodCtaSalida.Location = New System.Drawing.Point(138, 230)
         Me.ComboBox_CreacionCodCtaSalida.Name = "ComboBox_CreacionCodCtaSalida"
         Me.ComboBox_CreacionCodCtaSalida.Size = New System.Drawing.Size(275, 27)
         Me.ComboBox_CreacionCodCtaSalida.TabIndex = 166
@@ -239,7 +236,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(665, 93)
+        Me.Panel1.Size = New System.Drawing.Size(591, 93)
         Me.Panel1.TabIndex = 168
         '
         'Label6
@@ -248,7 +245,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(155, 31)
+        Me.Label6.Location = New System.Drawing.Point(86, 35)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(378, 29)
         Me.Label6.TabIndex = 41
@@ -259,61 +256,35 @@ Partial Class VConfiguracionCodigoCuenta
         Me.button_VConfiguracionCodCuenta_Modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.button_VConfiguracionCodCuenta_Modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.button_VConfiguracionCodCuenta_Modificar.ForeColor = System.Drawing.Color.White
-        Me.button_VConfiguracionCodCuenta_Modificar.Location = New System.Drawing.Point(259, 548)
+        Me.button_VConfiguracionCodCuenta_Modificar.Location = New System.Drawing.Point(234, 548)
         Me.button_VConfiguracionCodCuenta_Modificar.Name = "button_VConfiguracionCodCuenta_Modificar"
         Me.button_VConfiguracionCodCuenta_Modificar.Size = New System.Drawing.Size(144, 44)
         Me.button_VConfiguracionCodCuenta_Modificar.TabIndex = 169
         Me.button_VConfiguracionCodCuenta_Modificar.Text = "Modificar"
         Me.button_VConfiguracionCodCuenta_Modificar.UseVisualStyleBackColor = False
         '
-        'Button_ConfiguracionReportesCodigoCuenta
-        '
-        Me.Button_ConfiguracionReportesCodigoCuenta.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Button_ConfiguracionReportesCodigoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button_ConfiguracionReportesCodigoCuenta.ForeColor = System.Drawing.Color.White
-        Me.Button_ConfiguracionReportesCodigoCuenta.Location = New System.Drawing.Point(440, 253)
-        Me.Button_ConfiguracionReportesCodigoCuenta.Name = "Button_ConfiguracionReportesCodigoCuenta"
-        Me.Button_ConfiguracionReportesCodigoCuenta.Size = New System.Drawing.Size(144, 55)
-        Me.Button_ConfiguracionReportesCodigoCuenta.TabIndex = 170
-        Me.Button_ConfiguracionReportesCodigoCuenta.Text = "Reportes"
-        Me.Button_ConfiguracionReportesCodigoCuenta.UseVisualStyleBackColor = False
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(667, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(593, 24)
         Me.MenuStrip1.TabIndex = 171
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ReporteToolStripMenuItem
         '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearReporteToolStripMenuItem, Me.ReporteDeSaldosToolStripMenuItem})
         Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
         Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ReporteToolStripMenuItem.Text = "Reporte"
-        '
-        'CrearReporteToolStripMenuItem
-        '
-        Me.CrearReporteToolStripMenuItem.Name = "CrearReporteToolStripMenuItem"
-        Me.CrearReporteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CrearReporteToolStripMenuItem.Text = "Reporte de Entradas"
-        '
-        'ReporteDeSaldosToolStripMenuItem
-        '
-        Me.ReporteDeSaldosToolStripMenuItem.Name = "ReporteDeSaldosToolStripMenuItem"
-        Me.ReporteDeSaldosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.ReporteDeSaldosToolStripMenuItem.Text = "Reporte de Salidas"
         '
         'VConfiguracionCodigoCuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(667, 630)
+        Me.ClientSize = New System.Drawing.Size(593, 630)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.Button_ConfiguracionReportesCodigoCuenta)
         Me.Controls.Add(Me.button_VConfiguracionCodCuenta_Modificar)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label4)
@@ -364,9 +335,6 @@ Partial Class VConfiguracionCodigoCuenta
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents button_VConfiguracionCodCuenta_Modificar As Button
-    Friend WithEvents Button_ConfiguracionReportesCodigoCuenta As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CrearReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReporteDeSaldosToolStripMenuItem As ToolStripMenuItem
 End Class

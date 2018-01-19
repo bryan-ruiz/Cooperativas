@@ -256,9 +256,109 @@ Public Class Ingreso
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteEntradas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show("Error de: " + variablesGlobales.mensajePdfAbierto)
         End Try
     End Sub
+
+
+
+
+    Public Sub generarReporteCuentaIngresos()
+        Dim fechaInicial As Date = VReporteIngresoCuentas.DateTimePicker_IngresoCuentasReporte_fi.Value.ToString("dd/MM/yyyy")
+        Dim fechaFinal As Date = VReporteIngresoCuentas.DateTimePicker_IngresoCuentasReporte_ff.Value.ToString("dd/MM/yyyy")
+        Dim totalEntradas As Integer = 0
+        Try
+            Dim valores As List(Of String)
+            BD.ConectarBD()
+            valores = BD.obtenerIngresosCuenta(fechaInicial, fechaFinal)
+            BD.CerrarConexion()
+
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
+            End If
+
+            'Margin of the Doc
+            Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteCuentaEntradas.pdf", FileMode.Create))
+            pdfDoc.Open()
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
+
+            '/////// Encabezado //////////
+            Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
+            pdfDoc.Add(New Paragraph("                                                                                     Total de Entradas desde: " + fechaInicial + " al " + fechaFinal, FontStype3))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
+
+
+            Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
+
+            Dim table As PdfPTable = New PdfPTable(3)
+
+            'ESTABLECE TAMAÑO DE ANCHO DE COLUMNAS
+            Dim intTblWidth() As Integer = {10, 8, 8}
+            table.SetWidths(intTblWidth)
+
+            '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
+
+            Dim codigoctaR As PdfPCell = New PdfPCell(New Phrase("Código de cuenta", FontStype))
+            codigoctaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            codigoctaR.Colspan = 2
+            codigoctaR.HorizontalAlignment = 1
+
+            Dim totalR As PdfPCell = New PdfPCell(New Phrase("Total", FontStype))
+            totalR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            totalR.Colspan = 1
+            totalR.HorizontalAlignment = 1
+
+            table.AddCell(codigoctaR)
+            table.AddCell(totalR)
+
+            Dim contador As Integer = 0
+            Dim conta As Integer = 0
+            While contador < valores.Count
+                If conta = 50 Then
+                    pdfDoc.Add(table)
+                    pdfDoc.NewPage()
+                    encabezado.encabezado(pdfWrite, pdfDoc)
+                    table.DeleteBodyRows()
+                    conta = 0
+                End If
+
+                conta = conta + 1
+                Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
+
+                Dim codigoctaT As PdfPCell = New PdfPCell(New Phrase(valores(contador), FontStype2))
+                codigoctaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                codigoctaT.Colspan = 2
+                codigoctaT.HorizontalAlignment = 1
+                contador = contador + 1
+
+                Dim totalT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + valores(contador), FontStype2))
+                totalT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                totalT.Colspan = 1
+                totalT.HorizontalAlignment = 1
+
+                table.AddCell(codigoctaT)
+                table.AddCell(totalT)
+
+                contador = contador + 1
+            End While
+
+            pdfDoc.Add(table)
+            pdfDoc.Add(New Paragraph(" "))
+
+            pdfDoc.Close()
+
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteCuentasEntradas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + variablesGlobales.mensajePdfAbierto)
+        End Try
+    End Sub
+
+
 
     Public Sub calcular()
         Try
@@ -622,8 +722,8 @@ Public Class Ingreso
                     VIngresoInformacion.DateTimePicker_IngresosInformacion_fecha.Text = Date.Parse(valores.Item(0))
                     VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text = valores.Item(1)
                     VIngresoInformacion.TextBox_IngresosInformacion_Proveedor.Text = valores.Item(2)
-                    VIngresoInformacion.ComboBox_IngresosInformacion.Text = valores.Item(3)
                     VIngresoInformacion.ComboBox_IngresosInformacion.Items.Add(valores.Item(3))
+                    VIngresoInformacion.ComboBox_IngresosInformacion.SelectedIndex = 0
                     VIngresoInformacion.TextBox_IngresosInformacion_Descripcion.Text = valores.Item(4)
                     VIngresoInformacion.TextBox_IngresosInformacion_Cantidad.Text = valores.Item(5)
                     VIngresoInformacion.TextBox_IngresosInformacion_PrecioUnit.Text = valores.Item(6)
@@ -680,7 +780,6 @@ Public Class Ingreso
         Try
             BD.ConectarBD()
             valores = BD.actualizarIngreso(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
-            MessageBox.Show(valores, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             If valores <> 0 Then
                 limpiarInfo()
                 MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
