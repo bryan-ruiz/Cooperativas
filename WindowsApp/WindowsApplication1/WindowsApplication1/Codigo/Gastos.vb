@@ -386,8 +386,8 @@ Public Class Gastos
                     VGastosInformacion.DateTimePicker_GastosInformacion_fecha.Text = Date.Parse(valores.Item(0))
                     VGastosInformacion.TextBox_GastosInformacion_Factura.Text = valores.Item(1)
                     VGastosInformacion.TextBox_GastosInformacion_Proveedor.Text = valores.Item(2)
-                    VGastosInformacion.ComboBox_GastosInformacion.Text = valores.Item(3)
                     VGastosInformacion.ComboBox_GastosInformacion.Items.Add(valores.Item(3))
+                    VGastosInformacion.ComboBox_GastosInformacion.SelectedIndex = 0
                     VGastosInformacion.TextBox_GastosInformacion_Descripcion.Text = valores.Item(4)
                     VGastosInformacion.TextBox_GastosInformacion_Cantidad.Text = valores.Item(5)
                     VGastosInformacion.TextBox_GastosInformacion_PrecioUnit.Text = valores.Item(6)

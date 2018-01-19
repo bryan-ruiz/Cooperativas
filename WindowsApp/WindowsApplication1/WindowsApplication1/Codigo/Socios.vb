@@ -647,6 +647,10 @@ Public Class Socios
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
 
+            Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
+            pdfDoc.Add(New Paragraph("                                                                                         Reporte de todos los Asociados", FontStype3))
+            pdfDoc.Add(New Paragraph(" "))
+
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
 
             Dim table As PdfPTable = New PdfPTable(10)

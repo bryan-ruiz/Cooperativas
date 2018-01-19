@@ -113,7 +113,7 @@ Partial Class VIngresoInformacion
         '
         'Button_IngresosCalcular
         '
-        Me.Button_IngresosCalcular.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button_IngresosCalcular.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button_IngresosCalcular.Location = New System.Drawing.Point(1072, 142)
         Me.Button_IngresosCalcular.Name = "Button_IngresosCalcular"
         Me.Button_IngresosCalcular.Size = New System.Drawing.Size(80, 23)

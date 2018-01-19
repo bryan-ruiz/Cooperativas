@@ -316,7 +316,6 @@ Public Class Ingreso
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                MessageBox.Show(valores(contador))
                 If conta = 50 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
@@ -721,8 +720,8 @@ Public Class Ingreso
                     VIngresoInformacion.DateTimePicker_IngresosInformacion_fecha.Text = Date.Parse(valores.Item(0))
                     VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text = valores.Item(1)
                     VIngresoInformacion.TextBox_IngresosInformacion_Proveedor.Text = valores.Item(2)
-                    VIngresoInformacion.ComboBox_IngresosInformacion.Text = valores.Item(3)
                     VIngresoInformacion.ComboBox_IngresosInformacion.Items.Add(valores.Item(3))
+                    VIngresoInformacion.ComboBox_IngresosInformacion.SelectedIndex = 0
                     VIngresoInformacion.TextBox_IngresosInformacion_Descripcion.Text = valores.Item(4)
                     VIngresoInformacion.TextBox_IngresosInformacion_Cantidad.Text = valores.Item(5)
                     VIngresoInformacion.TextBox_IngresosInformacion_PrecioUnit.Text = valores.Item(6)

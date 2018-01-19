@@ -175,7 +175,7 @@ Partial Class VGastosInformacion
         '
         'Button_GastosCalcular
         '
-        Me.Button_GastosCalcular.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button_GastosCalcular.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button_GastosCalcular.Location = New System.Drawing.Point(1072, 142)
         Me.Button_GastosCalcular.Name = "Button_GastosCalcular"
         Me.Button_GastosCalcular.Size = New System.Drawing.Size(80, 23)
