@@ -292,7 +292,8 @@ Public Class Socios
                                                                 seccion + "-" + seccion2, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
                     End If
 
-                    Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
+                    Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", fechaIngreso, fechaIngreso,
+                                                                                    fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso)
 
                     If (insertado = 1 And certificadoXSocio = 1) Then
                         MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)

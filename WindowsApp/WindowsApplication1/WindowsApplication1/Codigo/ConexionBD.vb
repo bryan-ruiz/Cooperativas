@@ -451,14 +451,17 @@ Public Class ConexionBD
     'Inserta un Certificado X Socio
     Function insertarCertificadoXSocio(ByVal cedulaAsociado As String, ByVal numAsociado As String, ByVal tracto1 As String, ByVal tracto2 As String, ByVal tracto3 As String,
                                        ByVal tracto4 As String, ByVal tracto5 As String, ByVal tracto6 As String, ByVal tracto7 As String, ByVal tracto8 As String, ByVal tracto9 As String, ByVal tracto10 As String,
-                                       acumuladoAnterior As String, ByVal total As String) As Integer
+                                       acumuladoAnterior As String, ByVal total As String, ByVal fecha1 As String, ByVal fecha2 As String, ByVal fecha3 As String, ByVal fecha4 As String, ByVal fecha5 As String,
+                                       ByVal fecha6 As String, ByVal fecha7 As String, ByVal fecha8 As String, ByVal fecha9 As String, ByVal fecha10 As String) As Integer
         Dim res As Integer = 0
         Try
             'Declaramos el query que queremos ejecutar, en este caso es insertar'
             SQL = "INSERT INTO [CERTIFICADOS]" &
-           "(cedulaAsociado, numAsociado, tracto1, tracto2, tracto3, tracto4, tracto5, tracto6, tracto7, tracto8, tracto9, tracto10, acumuladoAnterior, total)" &
+           "(cedulaAsociado, numAsociado, tracto1, tracto2, tracto3, tracto4, tracto5, tracto6, tracto7, tracto8, tracto9, tracto10, acumuladoAnterior, total, fecha1,fecha2,fecha3,fecha4,fecha5,fecha6,fecha7,fecha8,fecha9,fecha10)" &
             "VALUES ('" + cedulaAsociado + "', '" + numAsociado + "', '" + tracto1 + "', '" + tracto2 + "', '" + tracto3 + "', '" + tracto4 + "', '" + tracto5 + "', '" + tracto6 + "' ,
-            '" + tracto7 + "', '" + tracto8 + "', '" + tracto9 + "', '" + tracto10 + "', '" + acumuladoAnterior + "', '" + total + "')"
+            '" + tracto7 + "', '" + tracto8 + "', '" + tracto9 + "', '" + tracto10 + "', '" + acumuladoAnterior + "', '" + total + "', '" + fecha1 + "', '" +
+            fecha2 + "', '" + fecha3 + "', '" + fecha4 + "', '" + fecha5 + "', '" + fecha6 + "', '" + fecha7 + "', '" + fecha8 + "', '" +
+            fecha9 + "', '" + fecha10 + "')"
             'Comando para ejecutar el query'
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
@@ -1024,38 +1027,41 @@ Public Class ConexionBD
     'Actualiza un tracto de certificados
     Function actualizarTracto(ByVal tracto As String, ByVal cedula As String, ByVal monto As String) As Integer
         Dim res As Integer = 0
+        'Dim todaysdate As String = String.Format("{0:dd/MM/yyyy}", DateTime.Now)
+        Dim todaysdate As Date = Date.Today()
+        MessageBox.Show(todaysdate)
         Try
             If tracto = "1" Then
-                SQL = "UPDATE [CERTIFICADOS] SET tracto1 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto1 = '" & monto & "', fecha1= '" & todaysdate & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             ElseIf tracto = "2" Then
-                SQL = "UPDATE [CERTIFICADOS] Set tracto2 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] Set tracto2 = '" & monto & "' , fecha2= '" & todaysdate & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             ElseIf tracto = "3" Then
-                SQL = "UPDATE [CERTIFICADOS] SET tracto3 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto3 = '" & monto & "' , fecha3= '" + todaysdate + "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             ElseIf tracto = "4" Then
-                SQL = "UPDATE [CERTIFICADOS] SET tracto4 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto4 = '" & monto & "' , fecha4= '" + todaysdate + "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             ElseIf tracto = "5" Then
-                SQL = "UPDATE [CERTIFICADOS] SET tracto5 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto5 = '" & monto & "' , fecha5= '" + todaysdate + "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             ElseIf tracto = "6" Then
-                SQL = "UPDATE [CERTIFICADOS] SET tracto6 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto6 = '" & monto & "' , fecha6= '" + todaysdate + "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             ElseIf tracto = "7" Then
-                SQL = "UPDATE [CERTIFICADOS] SET tracto7 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto7 = '" & monto & "' , fecha7= '" + todaysdate + "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             ElseIf tracto = "8" Then
-                SQL = "UPDATE [CERTIFICADOS] SET tracto8 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto8 = '" & monto & "' , fecha8= '" + todaysdate + "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             ElseIf tracto = "9" Then
-                SQL = "UPDATE [CERTIFICADOS] SET tracto9 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto9 = '" & monto & "' , fecha9= '" + todaysdate + "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             ElseIf tracto = "10" Then
-                SQL = "UPDATE [CERTIFICADOS] SET tracto10 = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+                SQL = "UPDATE [CERTIFICADOS] SET tracto10 = '" & monto & "' , fecha10= '" + todaysdate + "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
             End If
-
+            MessageBox.Show(SQL)
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -1066,7 +1072,6 @@ Public Class ConexionBD
         Catch ex As Exception
             MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
         End Try
-
         Return res
     End Function
 
@@ -1112,7 +1117,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show("Error de se cae aqui: " + ex.ToString)
         End Try
         Return MyList
     End Function
