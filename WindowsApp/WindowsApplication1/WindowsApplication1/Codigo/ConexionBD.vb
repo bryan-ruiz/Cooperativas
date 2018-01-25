@@ -1027,9 +1027,7 @@ Public Class ConexionBD
     'Actualiza un tracto de certificados
     Function actualizarTracto(ByVal tracto As String, ByVal cedula As String, ByVal monto As String) As Integer
         Dim res As Integer = 0
-        'Dim todaysdate As String = String.Format("{0:dd/MM/yyyy}", DateTime.Now)
         Dim todaysdate As Date = Date.Today()
-        MessageBox.Show(todaysdate)
         Try
             If tracto = "1" Then
                 SQL = "UPDATE [CERTIFICADOS] SET tracto1 = '" & monto & "', fecha1= '" & todaysdate & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
@@ -1061,7 +1059,6 @@ Public Class ConexionBD
             ElseIf tracto = "10" Then
                 SQL = "UPDATE [CERTIFICADOS] SET tracto10 = '" & monto & "' , fecha10= '" + todaysdate + "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
             End If
-            MessageBox.Show(SQL)
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -1096,7 +1093,7 @@ Public Class ConexionBD
     End Function
 
     'Selecciona cedula, num asociado y datos de los certificados por Asociado
-    Function sumarTractosEnCertificados(ByVal cedula As String) As Integer
+    Function sumarTractosEnCertificadosBD(ByVal cedula As String) As Integer
         Dim MyList As Integer = 0
         Try
             SQL = "SELECT CERTIFICADOS.*  FROM [CERTIFICADOS] 
@@ -1108,7 +1105,7 @@ Public Class ConexionBD
                 Dim reader = command.ExecuteReader()
                 While reader.Read()
                     Dim conta As Integer
-                    For conta = 3 To reader.FieldCount - 3
+                    For conta = 3 To reader.FieldCount - 13
                         MyList += reader(conta)
                     Next conta
                 End While
@@ -1117,20 +1114,39 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de se cae aqui: " + ex.ToString)
+            MessageBox.Show("Error: " + ex.ToString)
         End Try
         Return MyList
     End Function
 
-    'Selecciona cedula, num asociado y datos de los certificados por Asociado
-    Function cerrarCertificado(ByVal cedula As String, ByVal montoTotalViejo As String, ByVal monto As String) As Integer
+    Function sumarTractosAlAcumuladoAnterior() As Integer
         Dim MyList As Integer = 0
         Try
-            SQL = "UPDATE [CERTIFICADOS] SET acumuladoAnterior = '" & montoTotalViejo & "', 
-" & "tracto1 = '" & monto & "', " & "tracto2 = '" & monto & "', " & "tracto3 = '" & monto & "',
-" & "tracto4 = '" & monto & "', " & "tracto5 = '" & monto & "', " & "tracto6 = '" & monto & "', 
-" & "tracto7 = '" & monto & "', " & "tracto8 = '" & monto & "',   " & "tracto9 = '" & monto & "',  " & "tracto10 = '" & monto & "', 
-" & "total = '" & monto & "' WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            SQL = "UPDATE [CERTIFICADOS] 
+                SET acumuladoAnterior = acumuladoAnterior + total, total= 0, tracto1=0,tracto2=0
+                tracto3 = 0,tracto4 = 0,tracto5 = 0,tracto6 = 0,tracto7 = 0,tracto8 = 0,
+                tracto9 = 0,tracto10 = 0"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
+
+    'Selecciona cedula, num asociado y datos de los certificados por Asociado
+    Function totalEnPeriodo(ByVal cedula As String, ByVal montoTota As String) As Integer
+        Dim MyList As Integer = 0
+        Try
+            SQL = "UPDATE [CERTIFICADOS] SET total = '" & montoTota & "' 
+            WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
 
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then

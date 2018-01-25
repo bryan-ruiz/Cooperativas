@@ -163,4 +163,8 @@ Public Class Principal
     Private Sub ConfiguraciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguraciónToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub SumarTotalDeCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SumarTotalDeCertificadosToolStripMenuItem.Click
+        VSumarCertificados.Show()
+    End Sub
 End Class
