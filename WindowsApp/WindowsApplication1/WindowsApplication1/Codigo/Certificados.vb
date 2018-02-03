@@ -3,15 +3,39 @@ Imports iTextSharp.text.pdf
 Imports System.IO
 
 Public Class Certificados
-
+    Dim montoMaxPeriodo As Integer
+    Dim montoMaxTracto As Integer
     Dim BD As ConexionBD = New ConexionBD
+    Dim configuracion As Configuracion = New Configuracion
     Dim estado As Boolean = True
     Dim encabezado As EncabezadoClase = New EncabezadoClase
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
     Dim socios As Socios = New Socios
 
-    Public Sub consultar()
 
+    Public Sub obtenerMontoCertificadosVar()
+        Dim valores As List(Of ConfiguracionClase)
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerDatosdeConfiguration()
+            If valores.Count <> 0 Then
+                Dim contador As Integer = 0
+                While valores.Count > contador
+                    montoMaxPeriodo = valores(contador).montoMaxPeriodo
+                    montoMaxTracto = valores(contador).montoMaxTracto
+                    contador = contador + 1
+                End While
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub consultar()
+        obtenerMontoCertificadosVar()
         Dim valores As List(Of String)
         Dim cedulaOnumAsociado As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
 
@@ -84,7 +108,6 @@ Public Class Certificados
             If hecho = 0 Then
                 MessageBox.Show(variablesGlobales.errorActualizandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Else
-                MessageBox.Show(variablesGlobales.datosActualizadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                 VCertificados.CertificadosTextboxTotalPeriodo.Text = nuvoTotal.ToString
             End If
 
@@ -241,12 +264,12 @@ Public Class Certificados
 
         Dim montoEntero As Integer = Convert.ToInt32(monto)
 
-        If (montoEntero > 200) Then
+        If (montoEntero > montoMaxTracto) Then
             MessageBox.Show(variablesGlobales.errorMontoCertificados, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End If
 
-        If ((montoEntero + periodo) > 1000) Then
+        If ((montoEntero + periodo) > montoMaxPeriodo) Then
             MessageBox.Show(variablesGlobales.errorMontoCertificadosMayorMil, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End If

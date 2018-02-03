@@ -156,6 +156,7 @@
     Private Sub VCertificados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         certificados.consultarFechasLimite()
 
+
         Me.Panel3.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.CertificadosButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
 

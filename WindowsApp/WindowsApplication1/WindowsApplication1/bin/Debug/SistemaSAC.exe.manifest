@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaSAC.exe" size="3012016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaSAC.exe" size="3085744">
       <assemblyIdentity name="SistemaSAC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ztvBSOVRdBJMwgifBXIbLOqgOa7rRzXwVMvpMcqlHN4=</dsig:DigestValue>
+        <dsig:DigestValue>YNSDtyInbyeUF8tIMgtkJr6BrROQZPJOq+kfcEBWYSg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

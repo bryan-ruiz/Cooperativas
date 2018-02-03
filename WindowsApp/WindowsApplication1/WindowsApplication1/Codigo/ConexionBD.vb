@@ -623,7 +623,8 @@ Public Class ConexionBD
                                                     reader.GetDateTime(7), reader.GetDateTime(8), reader.GetDateTime(9),
                                                     reader.GetDateTime(10), reader.GetDateTime(11), reader.GetDateTime(12),
                                                     reader.GetDateTime(13), reader.GetDateTime(14), reader.GetString(15),
-                                                    reader.GetString(16), reader.GetString(17), reader.GetString(18), reader.GetString(19))
+                                                    reader.GetString(16), reader.GetString(17), reader.GetString(18), reader.GetString(19),
+                                                    reader.GetInt32(20), reader.GetInt32(21))
                         MyList.Add(nuevaConfiguracion)
                     Catch ex As Exception
                         MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
@@ -653,6 +654,26 @@ Public Class ConexionBD
 " & "fechaLimite5 = '" & fecha5 & "',   " & "fechaLimite6 = '" & fecha6 & "',  " & "fechaLimite7 = '" & fecha7 & "', " & "fechaLimite8 = '" & fecha8 & "',  " & "fechaLimite9 = '" & fecha9 & "',
 " & "fechaLimite10 = '" & fecha10 & "',  " & "legal = '" & legal & "',  " & "educacion = '" & educacion & "',  " & "bienestarSocial = '" & bienestarSocial & "',
 " & "Institucional = '" & institucional & "', " & "Patrimonial = '" & patrimonial & "' "
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
+
+    'Actualiza la info de Configuracion
+    Function actualizarConfiguracionMontoPeriodoTracto(ByVal montoPeriodo As Integer, ByVal montoTracto As Integer) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar
+            SQL = "UPDATE [CONFIGURACION] SET maxMontoPeriodo = '" & montoPeriodo & "', " & "maxMontoTracto = '" & montoTracto & "' "
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)

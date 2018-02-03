@@ -167,4 +167,8 @@ Public Class Principal
     Private Sub SumarTotalDeCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SumarTotalDeCertificadosToolStripMenuItem.Click
         VSumarCertificados.Show()
     End Sub
+
+    Private Sub MontoMáximoEnCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MontoMáximoEnCertificadosToolStripMenuItem.Click
+        VMontoCertificados.Show()
+    End Sub
 End Class

@@ -167,6 +167,12 @@
     <Compile Include="VIngresoInformacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VMontoCertificados.Designer.vb">
+      <DependentUpon>VMontoCertificados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VMontoCertificados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VReporteGastoCuentas.Designer.vb">
       <DependentUpon>VReporteGastoCuentas.vb</DependentUpon>
     </Compile>
@@ -351,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIngresoInformacion.resx">
       <DependentUpon>VIngresoInformacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VMontoCertificados.resx">
+      <DependentUpon>VMontoCertificados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VReporteGastoCuentas.resx">
       <DependentUpon>VReporteGastoCuentas.vb</DependentUpon>
