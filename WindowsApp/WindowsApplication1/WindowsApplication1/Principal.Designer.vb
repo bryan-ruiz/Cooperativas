@@ -24,9 +24,6 @@ Partial Class Principal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GestionUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComitésToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,8 +36,13 @@ Partial Class Principal
         Me.InformaciónCooperativaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SumarTotalDeCertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeSACToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.MontoMáximoEnCertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -53,42 +55,6 @@ Partial Class Principal
         Me.MenuStrip1.Size = New System.Drawing.Size(907, 43)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(113, 371)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(740, 57)
-        Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Sistema  de Administración Cooperativista"
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe Print", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(375, 443)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(138, 85)
-        Me.Label2.TabIndex = 35
-        Me.Label2.Text = "SAC"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.LogoTransparente
-        Me.PictureBox1.Location = New System.Drawing.Point(353, 111)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(205, 187)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 33
-        Me.PictureBox1.TabStop = False
         '
         'GestionUsuariosToolStripMenuItem
         '
@@ -137,7 +103,7 @@ Partial Class Principal
         '
         'ConfiguraciónToolStripMenuItem
         '
-        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CodigosDeCuentasToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.FechasCertificadosToolStripMenuItem, Me.InformaciónCooperativaToolStripMenuItem, Me.GestiónDeUsuariosToolStripMenuItem, Me.CargarUsuariosToolStripMenuItem})
+        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CodigosDeCuentasToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.FechasCertificadosToolStripMenuItem, Me.InformaciónCooperativaToolStripMenuItem, Me.GestiónDeUsuariosToolStripMenuItem, Me.CargarUsuariosToolStripMenuItem, Me.SumarTotalDeCertificadosToolStripMenuItem, Me.MontoMáximoEnCertificadosToolStripMenuItem})
         Me.ConfiguraciónToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.settings1pp
         Me.ConfiguraciónToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ConfiguraciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -148,38 +114,44 @@ Partial Class Principal
         'CodigosDeCuentasToolStripMenuItem
         '
         Me.CodigosDeCuentasToolStripMenuItem.Name = "CodigosDeCuentasToolStripMenuItem"
-        Me.CodigosDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.CodigosDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.CodigosDeCuentasToolStripMenuItem.Text = "Códigos de Cuentas"
         '
         'PorcentajesReservasToolStripMenuItem
         '
         Me.PorcentajesReservasToolStripMenuItem.Name = "PorcentajesReservasToolStripMenuItem"
-        Me.PorcentajesReservasToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.PorcentajesReservasToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.PorcentajesReservasToolStripMenuItem.Text = "Porcentajes Reservas"
         '
         'FechasCertificadosToolStripMenuItem
         '
         Me.FechasCertificadosToolStripMenuItem.Name = "FechasCertificadosToolStripMenuItem"
-        Me.FechasCertificadosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.FechasCertificadosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.FechasCertificadosToolStripMenuItem.Text = "Fechas Certificados"
         '
         'InformaciónCooperativaToolStripMenuItem
         '
         Me.InformaciónCooperativaToolStripMenuItem.Name = "InformaciónCooperativaToolStripMenuItem"
-        Me.InformaciónCooperativaToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.InformaciónCooperativaToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.InformaciónCooperativaToolStripMenuItem.Text = "Información Cooperativa"
         '
         'GestiónDeUsuariosToolStripMenuItem
         '
         Me.GestiónDeUsuariosToolStripMenuItem.Name = "GestiónDeUsuariosToolStripMenuItem"
-        Me.GestiónDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.GestiónDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.GestiónDeUsuariosToolStripMenuItem.Text = "Gestión de Usuarios"
         '
         'CargarUsuariosToolStripMenuItem
         '
         Me.CargarUsuariosToolStripMenuItem.Name = "CargarUsuariosToolStripMenuItem"
-        Me.CargarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.CargarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.CargarUsuariosToolStripMenuItem.Text = "Importar Asociados"
+        '
+        'SumarTotalDeCertificadosToolStripMenuItem
+        '
+        Me.SumarTotalDeCertificadosToolStripMenuItem.Name = "SumarTotalDeCertificadosToolStripMenuItem"
+        Me.SumarTotalDeCertificadosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.SumarTotalDeCertificadosToolStripMenuItem.Text = "Sumar total de certificados"
         '
         'AcercaDeToolStripMenuItem
         '
@@ -196,6 +168,48 @@ Partial Class Principal
         Me.AcercaDeSACToolStripMenuItem.Name = "AcercaDeSACToolStripMenuItem"
         Me.AcercaDeSACToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.AcercaDeSACToolStripMenuItem.Text = "Acerca de SAC"
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(113, 371)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(740, 57)
+        Me.Label1.TabIndex = 34
+        Me.Label1.Text = "Sistema  de Administración Cooperativista"
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe Print", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(375, 443)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(138, 85)
+        Me.Label2.TabIndex = 35
+        Me.Label2.Text = "SAC"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.LogoTransparente
+        Me.PictureBox1.Location = New System.Drawing.Point(353, 111)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(205, 187)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 33
+        Me.PictureBox1.TabStop = False
+        '
+        'MontoMáximoEnCertificadosToolStripMenuItem
+        '
+        Me.MontoMáximoEnCertificadosToolStripMenuItem.Name = "MontoMáximoEnCertificadosToolStripMenuItem"
+        Me.MontoMáximoEnCertificadosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.MontoMáximoEnCertificadosToolStripMenuItem.Text = "Monto máximo en certificados"
         '
         'Principal
         '
@@ -238,4 +252,6 @@ Partial Class Principal
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CargarUsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeSACToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SumarTotalDeCertificadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MontoMáximoEnCertificadosToolStripMenuItem As ToolStripMenuItem
 End Class

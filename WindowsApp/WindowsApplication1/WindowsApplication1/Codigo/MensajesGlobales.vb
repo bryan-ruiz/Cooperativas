@@ -30,8 +30,8 @@ Public Class MensajesGlobales
     Public errorDe As String = "Error de: "
     Public errorDatosNoNumericos As String = "Error, debe ingresar datos numéricos"
     Public errorTotalEnCero As String = "Error ingresando datos, el Total debe ser mayor a 0"
-    Public errorMontoCertificados As String = "Error ingresando datos, el Monto no debe ser mayor a 200"
-    Public errorMontoCertificadosMayorMil As String = "Error ingresando datos, el Total del Periodo no debe ser mayor a 1000"
+    Public errorMontoCertificados As String = "Error ingresando datos, el Monto no debe ser mayor al establecido"
+    Public errorMontoCertificadosMayorMil As String = "Error ingresando datos, el Total del Periodo no debe ser mayor al establecido"
 
     Public licenciaCaducada As String = "Su licencia ha caducado, contacte al Administrador del Sistema"
     Public nombreUsuarioOContrasenaIncorrecto As String = "El nombre de usuario o contraseña es incorrecto"

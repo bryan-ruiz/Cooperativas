@@ -7,8 +7,8 @@
         certificados.consultar()
     End Sub
 
-    Private Sub CertificadosButtonCerrarPeriodo_Click(sender As Object, e As EventArgs) Handles CertificadosButtonCerrarPeriodo.Click
-        certificados.cerrarCertificado()
+    Private Sub CertificadosButtonCerrarPeriodo_Click(sender As Object, e As EventArgs)
+        'certificados.cerrarCertificado()
     End Sub
 
     Private Sub CertificadosButtonLimpiar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonLimpiar.Click
@@ -156,8 +156,8 @@
     Private Sub VCertificados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         certificados.consultarFechasLimite()
 
+
         Me.Panel3.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-        Me.CertificadosButtonCerrarPeriodo.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.CertificadosButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
 
     End Sub

@@ -95,6 +95,7 @@ Public Class Principal
             Dim Access As String = "C:\BD\CoopeBD.mdb"
             Dim Excel As String = "C:\BD\Libro1.xlsx"
             Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
+            Dim todaysdate As String = String.Format("{0:dd/MM/yyyy}", DateTime.Now)
 
             If Singleton.rol = "Colaborador" Then
                 MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
@@ -134,7 +135,8 @@ Public Class Principal
                     Dim contador As Integer = 0
 
                     While contador < valores.Count
-                        BD.insertarCertificadoXSocio(valores(contador).cedula.ToString, valores(contador).numAsoc.ToString, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
+                        BD.insertarCertificadoXSocio(valores(contador).cedula.ToString, valores(contador).numAsoc.ToString, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", todaysdate,
+                                                     todaysdate, todaysdate, todaysdate, todaysdate, todaysdate, todaysdate, todaysdate, todaysdate, todaysdate)
                         contador = contador + 1
                     End While
                     BD.CerrarConexion()
@@ -160,5 +162,13 @@ Public Class Principal
 
     Private Sub ConfiguraciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguraciónToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub SumarTotalDeCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SumarTotalDeCertificadosToolStripMenuItem.Click
+        VSumarCertificados.Show()
+    End Sub
+
+    Private Sub MontoMáximoEnCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MontoMáximoEnCertificadosToolStripMenuItem.Click
+        VMontoCertificados.Show()
     End Sub
 End Class

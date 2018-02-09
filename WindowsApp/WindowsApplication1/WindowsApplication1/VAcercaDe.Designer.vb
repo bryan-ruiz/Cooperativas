@@ -35,6 +35,7 @@ Partial Class VAcercaDe
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,7 +66,7 @@ Partial Class VAcercaDe
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(269, 243)
+        Me.Label3.Location = New System.Drawing.Point(124, 239)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(112, 18)
         Me.Label3.TabIndex = 36
@@ -76,51 +77,51 @@ Partial Class VAcercaDe
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(305, 474)
+        Me.Label4.Location = New System.Drawing.Point(305, 484)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 18)
         Me.Label4.TabIndex = 37
-        Me.Label4.Text = "2017"
+        Me.Label4.Text = "2018"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(231, 299)
+        Me.Label5.Location = New System.Drawing.Point(259, 291)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(191, 18)
+        Me.Label5.Size = New System.Drawing.Size(134, 18)
         Me.Label5.TabIndex = 38
-        Me.Label5.Text = "aruiz.avantica@gmail.com"
+        Me.Label5.Text = "www.bran-labs.net"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(277, 501)
+        Me.Label6.Location = New System.Drawing.Point(277, 511)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(100, 18)
         Me.Label6.TabIndex = 39
-        Me.Label6.Text = "Versión 1.0.1"
+        Me.Label6.Text = "Versión 1.0.2"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(262, 271)
+        Me.Label7.Location = New System.Drawing.Point(259, 239)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(119, 18)
+        Me.Label7.Size = New System.Drawing.Size(81, 18)
         Me.Label7.TabIndex = 40
-        Me.Label7.Text = "Ing. Aarón Ruiz. "
+        Me.Label7.Text = "Bran-Labs"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(262, 355)
+        Me.Label8.Location = New System.Drawing.Point(105, 354)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(131, 18)
         Me.Label8.TabIndex = 41
@@ -131,7 +132,7 @@ Partial Class VAcercaDe
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(209, 418)
+        Me.Label9.Location = New System.Drawing.Point(259, 384)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(231, 18)
         Me.Label9.TabIndex = 42
@@ -142,11 +143,11 @@ Partial Class VAcercaDe
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(192, 384)
+        Me.Label10.Location = New System.Drawing.Point(259, 354)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(277, 18)
+        Me.Label10.Size = New System.Drawing.Size(280, 18)
         Me.Label10.TabIndex = 43
-        Me.Label10.Text = "A Dios por las bendiciones que me da."
+        Me.Label10.Text = "A Dios por las bendiciones que nos da."
         '
         'Panel1
         '
@@ -168,12 +169,24 @@ Partial Class VAcercaDe
         Me.Label11.TabIndex = 41
         Me.Label11.Text = "Acerca De"
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(259, 264)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(192, 18)
+        Me.Label12.TabIndex = 51
+        Me.Label12.Text = "correo: info@bran-labs.net"
+        '
         'VAcercaDe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(663, 568)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -208,4 +221,5 @@ Partial Class VAcercaDe
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
 End Class

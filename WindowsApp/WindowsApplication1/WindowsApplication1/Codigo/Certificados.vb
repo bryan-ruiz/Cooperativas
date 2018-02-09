@@ -3,15 +3,39 @@ Imports iTextSharp.text.pdf
 Imports System.IO
 
 Public Class Certificados
-
+    Dim montoMaxPeriodo As Integer
+    Dim montoMaxTracto As Integer
     Dim BD As ConexionBD = New ConexionBD
+    Dim configuracion As Configuracion = New Configuracion
     Dim estado As Boolean = True
     Dim encabezado As EncabezadoClase = New EncabezadoClase
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
     Dim socios As Socios = New Socios
 
-    Public Sub consultar()
 
+    Public Sub obtenerMontoCertificadosVar()
+        Dim valores As List(Of ConfiguracionClase)
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerDatosdeConfiguration()
+            If valores.Count <> 0 Then
+                Dim contador As Integer = 0
+                While valores.Count > contador
+                    montoMaxPeriodo = valores(contador).montoMaxPeriodo
+                    montoMaxTracto = valores(contador).montoMaxTracto
+                    contador = contador + 1
+                End While
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub consultar()
+        obtenerMontoCertificadosVar()
         Dim valores As List(Of String)
         Dim cedulaOnumAsociado As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
 
@@ -54,69 +78,39 @@ Public Class Certificados
         End If
     End Sub
 
-    'Cierra el periodo para Certificados
-    Public Sub cerrarCertificado()
 
-        Dim monto As String = "0"
-        Dim cedula As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
-
-        If (cedula = "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-            Return
-        End If
-
+    'sumar tractos en periodo total
+    Public Sub sumarTractosEnTotalAcumulado()
         Try
             BD.ConectarBD()
-
-            Dim hecho As Integer = BD.sumarTractosEnCertificados(cedula)
-            Dim acumAnt As Integer = Convert.ToInt32(VCertificados.CertificadosTextboxAcumAnterior.Text)
-            Dim acumMasPeriodo As Integer = acumAnt + hecho
+            Dim hecho As Integer = BD.sumarTractosAlAcumuladoAnterior()
+            BD.CerrarConexion()
 
             If hecho = 0 Then
-                BD.cerrarCertificado(cedula, hecho, monto)
+                MessageBox.Show(variablesGlobales.errorActualizandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Else
                 MessageBox.Show(variablesGlobales.datosActualizadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-
-                VCertificados.CertificadosTextboxTracto1.Text = "0"
-                VCertificados.CertificadosTextboxTracto2.Text = "0"
-                VCertificados.CertificadosTextboxTracto3.Text = "0"
-                VCertificados.CertificadosTextboxTracto4.Text = "0"
-                VCertificados.CertificadosTextboxTracto5.Text = "0"
-                VCertificados.CertificadosTextboxTracto6.Text = "0"
-                VCertificados.CertificadosTextboxTracto7.Text = "0"
-                VCertificados.CertificadosTextboxTracto8.Text = "0"
-                VCertificados.CertificadosTextboxTracto9.Text = "0"
-                VCertificados.CertificadosTextboxTracto10.Text = "0"
-                VCertificados.CertificadosTextboxTotalPeriodo.Text = "0"
-                VCertificados.CertificadosTextboxAcumAnterior.Text = acumMasPeriodo
-
-                BD.cerrarCertificado(cedula, acumMasPeriodo, monto)
-
             End If
-            BD.CerrarConexion()
+
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
+
     End Sub
 
     'sumar tractos
-    Public Sub sumarTractosEnCertificados()
-        Dim cedula As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
-
+    Public Sub sumarTractosEnCertificados(ByVal nuvoTotal As Integer, ByVal cedula As String)
         Try
             BD.ConectarBD()
-            Dim hecho As Integer = BD.sumarTractosEnCertificados(cedula)
+            Dim hecho As Integer = BD.totalEnPeriodo(cedula, nuvoTotal)
+            BD.CerrarConexion()
 
             If hecho = 0 Then
-                VCertificados.CertificadosTextboxTotalPeriodo.Text = hecho
+                MessageBox.Show(variablesGlobales.errorActualizandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Else
-                VCertificados.CertificadosTextboxTotalPeriodo.Text = hecho
-                hecho = BD.totalEnCertificado(cedula, CStr(hecho))
-                If hecho = 0 Then
-                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-                End If
+                VCertificados.CertificadosTextboxTotalPeriodo.Text = nuvoTotal.ToString
             End If
-            BD.CerrarConexion()
+
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
@@ -160,7 +154,7 @@ Public Class Certificados
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show("Error" + ex.ToString)
         End Try
     End Sub
 
@@ -215,7 +209,7 @@ Public Class Certificados
 
     End Function
 
-    'Valida la fecha del tracto y llama a actualizar tracto
+
     Public Sub validarTracto(ByVal numTracto As String, ByVal fecha As DateTime)
         Dim tracto1 As String = VCertificados.CertificadosTextboxTracto1.Text
         Dim tracto2 As String = VCertificados.CertificadosTextboxTracto2.Text
@@ -231,7 +225,7 @@ Public Class Certificados
         Dim cedula As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
 
         BD.ConectarBD()
-        Dim periodo As Integer = BD.sumarTractosEnCertificados(cedula)
+        Dim periodo As Integer = BD.sumarTractosEnCertificadosBD(cedula)
         BD.CerrarConexion()
 
         Dim monto As String = "0"
@@ -270,23 +264,25 @@ Public Class Certificados
 
         Dim montoEntero As Integer = Convert.ToInt32(monto)
 
-        If (montoEntero > 200) Then
+        If (montoEntero > montoMaxTracto) Then
             MessageBox.Show(variablesGlobales.errorMontoCertificados, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End If
 
-        If ((montoEntero + periodo) > 1000) Then
+        If ((montoEntero + periodo) > montoMaxPeriodo) Then
             MessageBox.Show(variablesGlobales.errorMontoCertificadosMayorMil, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End If
 
-
-
         If validarFecha(fecha) Then
             MessageBox.Show(variablesGlobales.errorFechaLimiteMenorActual, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         Else
+
             editarTracto(numTracto)
-            sumarTractosEnCertificados()
+            BD.ConectarBD()
+            periodo = BD.sumarTractosEnCertificadosBD(cedula)
+            BD.CerrarConexion()
+            sumarTractosEnCertificados(periodo, cedula)
         End If
     End Sub
 

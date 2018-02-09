@@ -8,6 +8,28 @@ Public Class Configuracion
     Dim estado As Boolean = True
     Dim encabezado As EncabezadoClase = New EncabezadoClase
 
+
+    Public Sub obtenerMontoCertificados()
+        Dim valores As List(Of ConfiguracionClase)
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerDatosdeConfiguration()
+            If valores.Count <> 0 Then
+                Dim contador As Integer = 0
+                While valores.Count > contador
+                    VMontoCertificados.MontoCertificadosTextboxPeriodo.Text = valores(contador).montoMaxPeriodo
+                    VMontoCertificados.MontoCertificadosTextboxTracto.Text = valores(contador).montoMaxTracto
+                    contador = contador + 1
+                End While
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
+
     Public Sub obtenerDatosSeleccionarCuentaGastosEIngresos()
         Dim valores As List(Of CuentaClase)
         Try
@@ -339,6 +361,30 @@ Public Class Configuracion
             conta = conta + 1
         End While
     End Sub
+
+
+    Public Sub actualizarMontoCertificados()
+        Dim periodo As String = VMontoCertificados.MontoCertificadosTextboxPeriodo.Text
+        Dim tracto As String = VMontoCertificados.MontoCertificadosTextboxTracto.Text
+
+        If (periodo = "" Or tracto = "") Then
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Else
+            Try
+                BD.ConectarBD()
+                Dim modificado = BD.actualizarConfiguracionMontoPeriodoTracto(periodo, tracto)
+                If modificado = 1 Then
+                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                Else
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                End If
+                BD.CerrarConexion()
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            End Try
+        End If
+    End Sub
+
 
     'Llena los campos con los datos de la consulta
     Public Sub llenarDatos(ByVal valores As List(Of ConfiguracionClase))

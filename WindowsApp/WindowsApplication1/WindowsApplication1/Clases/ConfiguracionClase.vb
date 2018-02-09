@@ -19,6 +19,8 @@
     Public bienestarSocial As String
     Public institucional As String
     Public patrimonial As String
+    Public montoMaxPeriodo As Integer
+    Public montoMaxTracto As Integer
 
     Public Sub configuracionClaseCostructor(ByVal periodop As String, ByVal cooperativap As String, ByVal cedulaJuridicap As String,
                                             ByVal telefonop As String, ByVal fechaLimite1p As DateTime, ByVal fechaLimite2p As DateTime,
@@ -27,7 +29,8 @@
                                             ByVal fechaLimite7p As DateTime, ByVal fechaLimite8p As DateTime,
                                             ByVal fechaLimite9p As DateTime, ByVal fechaLimite10p As DateTime,
                                             ByVal legalp As String, ByVal educacionp As String, ByVal bienestarSocialp As String,
-                                            ByVal institucionalp As String, ByVal patrimonialp As String)
+                                            ByVal institucionalp As String, ByVal patrimonialp As String,
+                                            ByVal montoMaxPeriodoP As Integer, ByVal montoMaxTractoP As Integer)
         periodo = periodop
         cooperativa = cooperativap
         cedulaJuridica = cedulaJuridicap
@@ -47,7 +50,8 @@
         bienestarSocial = bienestarSocialp
         institucional = institucionalp
         patrimonial = patrimonialp
-
+        montoMaxPeriodo = montoMaxPeriodoP
+        montoMaxTracto = montoMaxTractoP
     End Sub
 
 End Class
