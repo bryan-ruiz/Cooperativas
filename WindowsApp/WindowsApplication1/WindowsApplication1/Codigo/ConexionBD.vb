@@ -1144,7 +1144,7 @@ Public Class ConexionBD
         Dim MyList As Integer = 0
         Try
             SQL = "UPDATE [CERTIFICADOS] 
-                SET acumuladoAnterior = acumuladoAnterior + total, total= 0, tracto1=0,tracto2=0
+                SET acumuladoAnterior = acumuladoAnterior + total, total= 0, tracto1=0,tracto2=0,
                 tracto3 = 0,tracto4 = 0,tracto5 = 0,tracto6 = 0,tracto7 = 0,tracto8 = 0,
                 tracto9 = 0,tracto10 = 0"
             'pregunto antes si estoy conectado a la base de datos'
@@ -1774,7 +1774,7 @@ Public Class ConexionBD
         Dim MyList As New List(Of String)
 
         Try
-            SQL = " SELECT Sum(CERTIFICADOS.acumuladoAnterior) As acum 
+            SQL = " SELECT CERTIFICADOS.acumuladoAnterior,CERTIFICADOS.total 
                     FROM CERTIFICADOS, SOCIOS
                     WHERE (SOCIOS.cedula = '" & cedula & "' )
                     AND (SOCIOS.estado = 'Activo')
@@ -1817,7 +1817,7 @@ Public Class ConexionBD
         Dim MyList As New List(Of String)
 
         Try
-            SQL = " SELECT Sum(CERTIFICADOS.total) As total 
+            SQL = " SELECT CERTIFICADOS.total 
                     FROM CERTIFICADOS, SOCIOS
                     WHERE (SOCIOS.cedula = '" & cedula & "' )
                     AND (SOCIOS.estado = 'Activo')
