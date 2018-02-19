@@ -102,3 +102,5 @@ C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReportePAagosAlDia.resources
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReporteTodosLosPagos.resources
 >>>>>>> 1e0af0b138da215334bbc5b7b1695e8a0200d303
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReportePAagosAlDia.resources
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReporteTodosLosPagos.resources
