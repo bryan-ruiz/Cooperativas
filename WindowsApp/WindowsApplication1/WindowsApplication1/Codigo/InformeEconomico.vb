@@ -819,7 +819,7 @@ Public Class InformeEconomico
                 Return valores
             Else
                 ' MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                Return List
+                Return list
             End If
             BD.CerrarConexion()
         Catch ex As Exception
