@@ -93,3 +93,7 @@ C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\Windo
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReporteGastoCuentas.resources
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VSumarCertificados.resources
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VMontoCertificados.resources
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VMontoCertificados.resources
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReporteGastoCuentas.resources
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReporteIngresoCuentas.resources
+C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VSumarCertificados.resources
