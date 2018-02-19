@@ -6,7 +6,8 @@ Public Class MensajesGlobales
 
     Public nombreReporteExcCorresp As String = "reporte_Excedentes_Correspondientes.pdf"
     Public reporteMorosidad As String = "reporte_Morosidad.pdf"
-
+    Public reportePagoAlDia As String = "reporte_Pago_Al_Dia.pdf"
+    Public reporteTodosPago As String = "reporte_Todos_Los_Pagos.pdf"
 
     Public licenciaPermisos = "50"
     Public mensajePdfAbierto As String = "No se puede generar el reporte porque el PDF se encuentra abierto"
@@ -41,6 +42,8 @@ Public Class MensajesGlobales
     Public colorInformeEconomicoIngresos As String = "#239B56"
     Public colorInformeEconomicoGastoss As String = "#CB4335"   '"#CA6F1E"
     Public colorInformeEconomicoExcedentes As String = "#2E86C1"
+    Public colorVerdePositivo As String = "#A9DFBF"
+    Public colorRojoNegativo As String = "#F5B7B1"
 
     Public numReciboAsociados As Integer = 1
     Public numReciboCertificados As Integer = 1

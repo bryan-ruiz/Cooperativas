@@ -245,6 +245,18 @@
     <Compile Include="VIngresosSaldos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VReportePAagosAlDia.Designer.vb">
+      <DependentUpon>VReportePAagosAlDia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VReportePAagosAlDia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VReporteTodosLosPagos.Designer.vb">
+      <DependentUpon>VReporteTodosLosPagos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VReporteTodosLosPagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VSignIn.Designer.vb">
       <DependentUpon>VSignIn.vb</DependentUpon>
     </Compile>
@@ -378,6 +390,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIngresosSaldos.resx">
       <DependentUpon>VIngresosSaldos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VReportePAagosAlDia.resx">
+      <DependentUpon>VReportePAagosAlDia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VReporteTodosLosPagos.resx">
+      <DependentUpon>VReporteTodosLosPagos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VSignIn.resx">
       <DependentUpon>VSignIn.vb</DependentUpon>
