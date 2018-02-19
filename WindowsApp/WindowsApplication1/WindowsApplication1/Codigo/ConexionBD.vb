@@ -2050,4 +2050,91 @@ Public Class ConexionBD
     End Function
 
 
+
+    Function obtenerAportacionesTotalFecha(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "
+                    SELECT 
+                        (SELECT Sum(tracto1) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha1 
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo1,
+                         (SELECT Sum(tracto2) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha2 
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo2,
+                         (SELECT Sum(tracto3) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha3 
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo3,
+                         (SELECT Sum(tracto4) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha4
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo4,
+                         (SELECT Sum(tracto5) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha5 
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo5,
+                         (SELECT Sum(tracto6) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha6 
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo6,
+                         (SELECT Sum(tracto7) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha7 
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo7,
+                         (SELECT Sum(tracto8) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha8 
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo8,
+                         (SELECT Sum(tracto9) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha9 
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo9,
+                         (SELECT Sum(tracto10) FROM CERTIFICADOS 
+                            WHERE CERTIFICADOS.fecha10 
+                            BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') 
+                            And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                         ) As periodo10
+                    FROM CERTIFICADOS
+                   "
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            MyList.Add("0")
+                        Else
+                            'MsgBox(String.Concat(" ", reader(conta)))
+                            MyList.Add(reader(conta))
+                        End If
+
+                        'MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
 End Class

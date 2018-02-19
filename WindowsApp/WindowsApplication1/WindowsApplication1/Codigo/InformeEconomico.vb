@@ -65,7 +65,7 @@ Public Class InformeEconomico
         Dim totalAportacionesAcum As List(Of String) = obtenerAportacionesAcumuladoAnterior()
         'MsgBox("13paso sub-total otros gastos")
         'Aportaciones o Certificados - Total
-        Dim totalAportacionesTotal As List(Of String) = obtenerAportacionesTotal()
+        Dim totalAportacionesTotal As List(Of String) = obtenerAportacionesTotalFecha(fechaDesde, fechaHasta)
         'MsgBox("14paso sub-total otros gastos")
 
         Try
@@ -287,7 +287,11 @@ Public Class InformeEconomico
             table.AddCell(aportacionesT)
 
             'table.AddCell("Aportaciones")
-            Dim subTotalAportaciones As Integer = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
+            'Dim subTotalAportaciones As Integer = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
+            Dim subTotalAportaciones As Integer = Integer.Parse(totalAportacionesTotal.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(1)) +
+                Integer.Parse(totalAportacionesTotal.Item(2)) + Integer.Parse(totalAportacionesTotal.Item(3)) + Integer.Parse(totalAportacionesTotal.Item(4)) +
+                Integer.Parse(totalAportacionesTotal.Item(5)) + Integer.Parse(totalAportacionesTotal.Item(6)) + Integer.Parse(totalAportacionesTotal.Item(7)) +
+                Integer.Parse(totalAportacionesTotal.Item(8)) + Integer.Parse(totalAportacionesTotal.Item(9))
             'table.AddCell(Convert.ToString(subTotalAportaciones))
 
             Dim aportacionesN As Integer = Convert.ToInt32(subTotalAportaciones)
@@ -816,6 +820,27 @@ Public Class InformeEconomico
             Else
                 ' MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return List
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+        End Try
+    End Function
+
+
+
+    Public Function obtenerAportacionesTotalFecha(ByVal fechaDesde As Date, ByVal fechaHasta As Date)
+        Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerAportacionesTotalFecha("#" + fechaDesde + "#", "#" + fechaHasta + "#")
+            If valores.Count <> 0 Then
+                Return valores
+            Else
+                ' MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
             End If
             BD.CerrarConexion()
         Catch ex As Exception
