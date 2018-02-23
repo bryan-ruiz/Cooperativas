@@ -37,7 +37,7 @@
 
     End Sub
 
-    Private Sub TextBoxContraseña_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles TextBoxContraseña.KeyPress
+    Private Sub TextBoxContraseña_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles TextBoxContraseña.KeyPress, TextBoxContraseña.TextChanged
         TextBoxContraseña.PasswordChar = "*"
         If e.KeyChar = ChrW(Keys.Enter) Then
             Call ButtonInsertar_InformacionAccidente_Click(sender, e)
@@ -47,4 +47,5 @@
     Private Sub VSignIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBoxlogin.Select()
     End Sub
+
 End Class
