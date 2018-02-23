@@ -34,15 +34,16 @@ Partial Class Principal
         Me.PorcentajesReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FechasCertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónCooperativaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GestiónDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SumarTotalDeCertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MontoMáximoEnCertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeSACToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MontoMáximoEnCertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImportarAcumuladoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestiónDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -103,7 +104,7 @@ Partial Class Principal
         '
         'ConfiguraciónToolStripMenuItem
         '
-        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CodigosDeCuentasToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.FechasCertificadosToolStripMenuItem, Me.InformaciónCooperativaToolStripMenuItem, Me.GestiónDeUsuariosToolStripMenuItem, Me.CargarUsuariosToolStripMenuItem, Me.SumarTotalDeCertificadosToolStripMenuItem, Me.MontoMáximoEnCertificadosToolStripMenuItem})
+        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FechasCertificadosToolStripMenuItem, Me.MontoMáximoEnCertificadosToolStripMenuItem, Me.SumarTotalDeCertificadosToolStripMenuItem, Me.InformaciónCooperativaToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.CodigosDeCuentasToolStripMenuItem, Me.ImportarAcumuladoToolStripMenuItem, Me.CargarUsuariosToolStripMenuItem, Me.GestiónDeUsuariosToolStripMenuItem})
         Me.ConfiguraciónToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.settings1pp
         Me.ConfiguraciónToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ConfiguraciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -114,44 +115,44 @@ Partial Class Principal
         'CodigosDeCuentasToolStripMenuItem
         '
         Me.CodigosDeCuentasToolStripMenuItem.Name = "CodigosDeCuentasToolStripMenuItem"
-        Me.CodigosDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.CodigosDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
         Me.CodigosDeCuentasToolStripMenuItem.Text = "Códigos de Cuentas"
         '
         'PorcentajesReservasToolStripMenuItem
         '
         Me.PorcentajesReservasToolStripMenuItem.Name = "PorcentajesReservasToolStripMenuItem"
-        Me.PorcentajesReservasToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.PorcentajesReservasToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
         Me.PorcentajesReservasToolStripMenuItem.Text = "Porcentajes Reservas"
         '
         'FechasCertificadosToolStripMenuItem
         '
         Me.FechasCertificadosToolStripMenuItem.Name = "FechasCertificadosToolStripMenuItem"
-        Me.FechasCertificadosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
-        Me.FechasCertificadosToolStripMenuItem.Text = "Fechas Certificados"
+        Me.FechasCertificadosToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
+        Me.FechasCertificadosToolStripMenuItem.Text = "Certificados - Fechas límite"
         '
         'InformaciónCooperativaToolStripMenuItem
         '
         Me.InformaciónCooperativaToolStripMenuItem.Name = "InformaciónCooperativaToolStripMenuItem"
-        Me.InformaciónCooperativaToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
-        Me.InformaciónCooperativaToolStripMenuItem.Text = "Información Cooperativa"
-        '
-        'GestiónDeUsuariosToolStripMenuItem
-        '
-        Me.GestiónDeUsuariosToolStripMenuItem.Name = "GestiónDeUsuariosToolStripMenuItem"
-        Me.GestiónDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
-        Me.GestiónDeUsuariosToolStripMenuItem.Text = "Gestión de Usuarios"
+        Me.InformaciónCooperativaToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
+        Me.InformaciónCooperativaToolStripMenuItem.Text = "Información General"
         '
         'CargarUsuariosToolStripMenuItem
         '
         Me.CargarUsuariosToolStripMenuItem.Name = "CargarUsuariosToolStripMenuItem"
-        Me.CargarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.CargarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
         Me.CargarUsuariosToolStripMenuItem.Text = "Importar Asociados"
         '
         'SumarTotalDeCertificadosToolStripMenuItem
         '
         Me.SumarTotalDeCertificadosToolStripMenuItem.Name = "SumarTotalDeCertificadosToolStripMenuItem"
-        Me.SumarTotalDeCertificadosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
-        Me.SumarTotalDeCertificadosToolStripMenuItem.Text = "Sumar total de certificados"
+        Me.SumarTotalDeCertificadosToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
+        Me.SumarTotalDeCertificadosToolStripMenuItem.Text = "Certificados - Sumar Acumulado"
+        '
+        'MontoMáximoEnCertificadosToolStripMenuItem
+        '
+        Me.MontoMáximoEnCertificadosToolStripMenuItem.Name = "MontoMáximoEnCertificadosToolStripMenuItem"
+        Me.MontoMáximoEnCertificadosToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
+        Me.MontoMáximoEnCertificadosToolStripMenuItem.Text = "Certificados - Montos máximos"
         '
         'AcercaDeToolStripMenuItem
         '
@@ -205,11 +206,17 @@ Partial Class Principal
         Me.PictureBox1.TabIndex = 33
         Me.PictureBox1.TabStop = False
         '
-        'MontoMáximoEnCertificadosToolStripMenuItem
+        'ImportarAcumuladoToolStripMenuItem
         '
-        Me.MontoMáximoEnCertificadosToolStripMenuItem.Name = "MontoMáximoEnCertificadosToolStripMenuItem"
-        Me.MontoMáximoEnCertificadosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
-        Me.MontoMáximoEnCertificadosToolStripMenuItem.Text = "Monto máximo en certificados"
+        Me.ImportarAcumuladoToolStripMenuItem.Name = "ImportarAcumuladoToolStripMenuItem"
+        Me.ImportarAcumuladoToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
+        Me.ImportarAcumuladoToolStripMenuItem.Text = "Importar Acumulado"
+        '
+        'GestiónDeUsuariosToolStripMenuItem
+        '
+        Me.GestiónDeUsuariosToolStripMenuItem.Name = "GestiónDeUsuariosToolStripMenuItem"
+        Me.GestiónDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
+        Me.GestiónDeUsuariosToolStripMenuItem.Text = "Gestión de Usuarios"
         '
         'Principal
         '
@@ -248,10 +255,11 @@ Partial Class Principal
     Friend WithEvents PorcentajesReservasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FechasCertificadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InformaciónCooperativaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GestiónDeUsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CargarUsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeSACToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SumarTotalDeCertificadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MontoMáximoEnCertificadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ImportarAcumuladoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestiónDeUsuariosToolStripMenuItem As ToolStripMenuItem
 End Class

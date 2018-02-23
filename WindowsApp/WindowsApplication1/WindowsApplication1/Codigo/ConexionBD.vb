@@ -387,7 +387,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de que madre: " + ex.Message)
+            MessageBox.Show("Error de " + ex.Message)
         End Try
         Return MyList
     End Function
@@ -1740,6 +1740,35 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function borrarTablaAcumulado() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " DELETE * FROM ACUMULADO "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
     Function borrarTablaCertificados() As List(Of String)
         Dim MyList As New List(Of String)
 
@@ -2136,5 +2165,53 @@ Public Class ConexionBD
 
         Return MyList
     End Function
+
+
+    Function obtenerDatosAcumuladoXAsociado() As List(Of AcumuladoClase)
+        Dim MyList As New List(Of AcumuladoClase)
+        Try
+            SQL = "SELECT ACUMULADO.* FROM [ACUMULADO]"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim nuevoAcum As AcumuladoClase = New AcumuladoClase
+                    nuevoAcum.acumuladoClaseCostructor(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                                                    reader.GetString(3), reader.GetString(4), reader.GetString(5))
+                    MyList.Add(nuevoAcum)
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    Function actualizarDatosAcumuladoXAsociado(ByVal cedula As String, ByVal acumulado As String) As Integer
+        Dim MyList As Integer = 0
+        Try
+
+            SQL = "UPDATE [CERTIFICADOS] 
+                    SET acumuladoAnterior = '" & acumulado & "'
+                    WHERE(CERTIFICADOS.cedulaAsociado = '" & cedula & "' ) "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
 
 End Class

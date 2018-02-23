@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="SistemaSAC.exe" version="1.0.0.32" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="SystemSAC.exe" version="1.0.0.33" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Resources\logocoopesag2_3xE_icon1.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="SistemaSAC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-    <commandLine file="SistemaSAC.exe" parameters="" />
+    <assemblyIdentity name="SystemSAC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SystemSAC.exe" parameters="" />
   </entryPoint>
   <trustInfo>
     <security>
@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PqIQt1rD39D29sx88yvFcG9qhbiqEnmqLJYZRTCAWNo=</dsig:DigestValue>
+        <dsig:DigestValue>h/if723yAAGmO2BBFd+/GTpO8RgsNjICm8iGt2sdL08=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NwQ2RUkBWWuNwqT5IZalPDOTMRABduDRZ/wcFynDXVU=</dsig:DigestValue>
+        <dsig:DigestValue>Za1I9G4uzIyCliTsJxUlimtASJ+RVqtjVwyvoCnnXms=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaSAC.exe" size="3104176">
-      <assemblyIdentity name="SistemaSAC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemSAC.exe" size="3107760">
+      <assemblyIdentity name="SystemSAC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VqtKbZmkM9jwjrzhl5Ge0xZT0qZHmxVj5PIvDuyYpyI=</dsig:DigestValue>
+        <dsig:DigestValue>1b84OOlAZgYqtuZ591hbNOyCAH6FEw3E43U7FjJ1y1Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -168,7 +168,7 @@
       <dsig:DigestValue>W3XC/fvFyRGpmLgmBYsqzQ2DEYV9tT1Z6hmZhV8rVHg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SistemaSAC.exe.config" size="185">
+  <file name="SystemSAC.exe.config" size="185">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
