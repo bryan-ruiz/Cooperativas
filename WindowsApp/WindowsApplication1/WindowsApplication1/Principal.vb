@@ -171,4 +171,8 @@ Public Class Principal
     Private Sub MontoMáximoEnCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MontoMáximoEnCertificadosToolStripMenuItem.Click
         VMontoCertificados.Show()
     End Sub
+
+    Private Sub ReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReservasToolStripMenuItem.Click
+        VResrvasPrincipal.Show()
+    End Sub
 End Class

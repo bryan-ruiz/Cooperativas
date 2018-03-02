@@ -8,7 +8,9 @@ Public Class MensajesGlobales
     Public reporteMorosidad As String = "reporte_Morosidad.pdf"
     Public reportePagoAlDia As String = "reporte_Pago_Al_Dia.pdf"
     Public reporteTodosPago As String = "reporte_Todos_Los_Pagos.pdf"
+    Public reporteReservas As String = "reporte_Reservas.pdf"
 
+    Public mensajeNoDejarEspaciosVacios As String = "No puede dejar espacios vacíos"
     Public licenciaPermisos = "50"
     Public mensajePdfAbierto As String = "No se puede generar el reporte porque el PDF se encuentra abierto"
     Public mensajeCedulaONumAsociado As String = "Debe ingresar la cédula o el número de asociado a consultar"

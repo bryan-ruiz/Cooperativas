@@ -127,6 +127,7 @@
     <Compile Include="Clases\EncabezadoClase.vb" />
     <Compile Include="Clases\GastoClase.vb" />
     <Compile Include="Clases\IngresoClase.vb" />
+    <Compile Include="Clases\ReservaClase.vb" />
     <Compile Include="Clases\SaldoClase.vb" />
     <Compile Include="Clases\Singleton.vb" />
     <Compile Include="Clases\SocioClase.vb" />
@@ -139,6 +140,7 @@
     <Compile Include="Codigo\Ingreso.vb" />
     <Compile Include="Codigo\IngresoRecibo.vb" />
     <Compile Include="Codigo\MensajesGlobales.vb" />
+    <Compile Include="Codigo\Reservas.vb" />
     <Compile Include="Codigo\Saldos.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="Codigo\Usuarios.vb" />
@@ -159,6 +161,12 @@
     </Compile>
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VGestionDeReservas.Designer.vb">
+      <DependentUpon>VGestionDeReservas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VGestionDeReservas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIngresoInformacion.Designer.vb">
@@ -255,6 +263,12 @@
       <DependentUpon>VReporteTodosLosPagos.vb</DependentUpon>
     </Compile>
     <Compile Include="VReporteTodosLosPagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VResrvasPrincipal.Designer.vb">
+      <DependentUpon>VResrvasPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VResrvasPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VSignIn.Designer.vb">
@@ -367,6 +381,9 @@
     <EmbeddedResource Include="VGastosInformacion.resx">
       <DependentUpon>VGastosInformacion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VGestionDeReservas.resx">
+      <DependentUpon>VGestionDeReservas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIngresoInformacion.resx">
       <DependentUpon>VIngresoInformacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VReporteTodosLosPagos.resx">
       <DependentUpon>VReporteTodosLosPagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VResrvasPrincipal.resx">
+      <DependentUpon>VResrvasPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VSignIn.resx">
       <DependentUpon>VSignIn.vb</DependentUpon>
