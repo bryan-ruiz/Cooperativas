@@ -10,12 +10,25 @@ Public Class Reservas
     Dim informeEconomico As InformeEconomico = New InformeEconomico
     Dim listaDeReservas As List(Of ReservaClase)
 
+    Public Function afiliacionEnReserva(ByVal fechaDesde As Date, ByVal fechaHasta As Date)
+        Dim valores As Integer
+        Try
+            BD.ConectarBD()
+            valores = BD.afiliacionesDeReservas("#" + fechaDesde + "#", "#" + fechaHasta + "#")
+            BD.CerrarConexion()
+            Return valores
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Function
 
     Public Sub realizarCierrePeriodo()
         Dim valores1 As Integer
         Dim valores2 As Integer
         Dim valores3 As Integer
         Dim valores4 As Integer
+        Dim valores5 As Integer
+        Dim valores6 As Integer
 
         Dim fechaDesde As Date = VResrvasPrincipal.ReservasDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
         Dim fechaHasta As Date = VResrvasPrincipal.ReservasDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
@@ -34,6 +47,10 @@ Public Class Reservas
         valores2 = actualizarMontoEnBase(sumaInstitucional, "Institucional")
         valores3 = actualizarMontoEnBase(sumaPatrimonial, "Patrimonial")
         valores4 = actualizarMontoEnBase(sumaEducacion, "educacion")
+
+        Dim cantidadAfuliaciones As Integer = afiliacionEnReserva(fechaDesde, fechaHasta)
+        valores5 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "educacion")
+        valores6 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "bienestarSocial")
 
         If valores1 <> 0 And valores2 <> 0 And valores3 <> 0 And valores4 <> 0 Then
             MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
@@ -79,6 +96,45 @@ Public Class Reservas
         End While
         Return 0
     End Function
+
+    Public Sub acumuladoDeReservaCambiarEnTextBox()
+        Dim contador As Integer = 0
+        Dim nombreReservaSeleccionada As String = VGestionDeReservas.ComboBox_reservasGestion.Text
+        While contador < listaDeReservas.Count
+            If listaDeReservas(contador).nombre = nombreReservaSeleccionada Then
+                VGestionDeReservas.TextBox_ReservasGestionMontoActual.Text = listaDeReservas(contador).monto.ToString
+            End If
+            contador += 1
+        End While
+        VGestionDeReservas.TextBox_ReservasGestionMonto.Text = ""
+    End Sub
+
+    Public Sub actualizarEnReserva()
+        Dim valores As Integer
+        Dim monto As String = VGestionDeReservas.TextBox_ReservasGestionMonto.Text
+        Dim reserva As String = VGestionDeReservas.ComboBox_reservasGestion.Text
+        If (monto = "") Then
+            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        End If
+
+        If (reserva = "") Then
+            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        End If
+        Try
+            valores = 0
+            BD.ConectarBD()
+            valores = BD.actualizarMontoEnReserva(monto, reserva)
+            listaDeReservas = BD.consultarReservas()
+            If valores <> 0 Then
+                MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show("Error en base de datos")
+        End Try
+    End Sub
 
 
     Public Sub disminuriEnReserva()
@@ -140,6 +196,7 @@ Public Class Reservas
         valores = actualizarMontoEnBase(monto, reserva)
         If valores <> 0 Then
             MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
         Else
             MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End If
@@ -231,7 +288,6 @@ Public Class Reservas
 
             Dim contador As Integer = 0
             Dim conta As Integer = 0
-            MessageBox.Show(listaDeReservas.Count)
             While contador < listaDeReservas.Count
                 If conta = 50 Then
                     pdfDoc.Add(table)

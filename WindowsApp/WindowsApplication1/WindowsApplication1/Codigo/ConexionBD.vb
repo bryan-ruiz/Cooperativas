@@ -2138,6 +2138,49 @@ Public Class ConexionBD
     End Function
 
     ''*************************         NUEVAS FUNCIONES DE RESERVAS
+    Function afiliacionesDeReservas(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As Integer
+        Dim resultado As Integer = 0
+        Try
+            SQL = "SELECT Sum(SOCIOS.cuotaMatricula) As suma
+                    FROM SOCIOS
+                    WHERE SOCIOS.fechaIngreso BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy') "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    If IsDBNull(reader(0)) Then
+                        resultado = 0
+                    Else
+                        resultado = reader(0)
+                    End If
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    Function actualizarMontoEnReserva(ByVal monto As String, ByVal reserva As String) As Integer
+        Dim res As Integer = 0
+        Try
+            Dim acumulado As Integer = CInt(monto)
+            SQL = "UPDATE [RESERVAS] SET acumulado = " & acumulado & " WHERE ((nombre) = '" & reserva & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
 
     Function disminuirMontoEnReserva(ByVal monto As String, ByVal reserva As String) As Integer
         Dim res As Integer = 0
@@ -2151,7 +2194,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: La cuenta ya existe en el sistema!", " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
         Return res
     End Function
@@ -2168,7 +2211,24 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: La cuenta ya existe en el sistema!", " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
+    Function afiliacionAReserva(ByVal monto As String, ByVal reserva As String) As Integer
+        Dim res As Integer = 0
+        Try
+            Dim acumulado As Integer = CInt(monto)
+            SQL = "UPDATE [RESERVAS] SET acumulado = acumulado + " & acumulado & " WHERE ((nombre) = '" & reserva & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
         Return res
     End Function

@@ -25,7 +25,6 @@ Partial Class VResrvasPrincipal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.comprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -41,7 +40,7 @@ Partial Class VResrvasPrincipal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.comprobanteToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.GestionDeReservasToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.GestionDeReservasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(646, 24)
@@ -58,14 +57,8 @@ Partial Class VResrvasPrincipal
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
-        '
-        'comprobanteToolStripMenuItem
-        '
-        Me.comprobanteToolStripMenuItem.Name = "comprobanteToolStripMenuItem"
-        Me.comprobanteToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
-        Me.comprobanteToolStripMenuItem.Text = "Comprobantes"
         '
         'ReporteToolStripMenuItem
         '
@@ -161,7 +154,8 @@ Partial Class VResrvasPrincipal
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Name = "VResrvasPrincipal"
-        Me.Text = "VResrvasPrincipal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SAC"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -174,7 +168,6 @@ Partial Class VResrvasPrincipal
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents comprobanteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestionDeReservasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
