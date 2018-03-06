@@ -43,6 +43,7 @@ Public Class Reservas
         Dim sumaInstitucional As Integer = (excedentesBrutos * valoresReserva(0).institucional) / 100
         Dim sumaPatrimonial As Integer = (excedentesBrutos * valoresReserva(0).patrimonial) / 100
         Dim sumaEducacion As Integer = (excedentesBrutos * valoresReserva(0).educacion) / 100
+
         valores1 = actualizarMontoEnBase(sumaBSocial, "bienestarSocial")
         valores2 = actualizarMontoEnBase(sumaInstitucional, "Institucional")
         valores3 = actualizarMontoEnBase(sumaPatrimonial, "Patrimonial")
