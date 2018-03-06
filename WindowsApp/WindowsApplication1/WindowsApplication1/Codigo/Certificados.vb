@@ -382,6 +382,7 @@ Public Class Certificados
         Dim cedulaOnumAsociado As String = VCertificados.CertificadosTextboxCedulaNumAsociado.Text
         Dim nombre As String = VCertificados.CertificadosTextboxNombre.Text
         Dim numAsociado As String = VCertificados.CertificadosTextboxNumAsociado.Text
+        Dim acumuladoAnterior As String = VCertificados.CertificadosTextboxAcumAnterior.Text
         Dim tracto1 As String = VCertificados.CertificadosTextboxTracto1.Text
         Dim tracto2 As String = VCertificados.CertificadosTextboxTracto2.Text
         Dim tracto3 As String = VCertificados.CertificadosTextboxTracto3.Text
@@ -618,9 +619,9 @@ Public Class Certificados
                 pdfDoc.Add(table3)
 
                 pdfDoc.Add(New Paragraph(" "))
-                pdfDoc.Add(New Paragraph(" "))
-                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(New Paragraph("                        ACUMULADO ANTERIOR: ¢" + acumuladoAnterior, FontStype3))
 
+                pdfDoc.Add(New Paragraph(" "))
 
                 pdfDoc.Add(New Paragraph("                        Firma del Asociado: _________________________________________", FontStype3))
                 pdfDoc.Add(New Paragraph(" "))

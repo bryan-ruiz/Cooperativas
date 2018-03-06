@@ -2166,20 +2166,39 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+<<<<<<< HEAD
+    ''*************************         NUEVAS FUNCIONES DE RESERVAS
+    Function afiliacionesDeReservas(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As Integer
+        Dim resultado As Integer = 0
+        Try
+            SQL = "SELECT Sum(SOCIOS.cuotaMatricula) As suma
+                    FROM SOCIOS
+                    WHERE SOCIOS.fechaIngreso BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy') "
+
+=======
 
     Function obtenerDatosAcumuladoXAsociado() As List(Of AcumuladoClase)
         Dim MyList As New List(Of AcumuladoClase)
         Try
             SQL = "SELECT ACUMULADO.* FROM [ACUMULADO]"
             'pregunto antes si estoy conectado a la base de datos'
+>>>>>>> master
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 Dim reader = command.ExecuteReader()
                 While reader.Read()
+<<<<<<< HEAD
+                    If IsDBNull(reader(0)) Then
+                        resultado = 0
+                    Else
+                        resultado = reader(0)
+                    End If
+=======
                     Dim nuevoAcum As AcumuladoClase = New AcumuladoClase
                     nuevoAcum.acumuladoClaseCostructor(reader.GetString(0), reader.GetString(1), reader.GetString(2),
                                                     reader.GetString(3), reader.GetString(4), reader.GetString(5))
                     MyList.Add(nuevoAcum)
+>>>>>>> master
                 End While
                 reader.Close()
             Else
@@ -2188,6 +2207,53 @@ Public Class ConexionBD
         Catch ex As Exception
             MessageBox.Show("Error de: " + ex.Message)
         End Try
+<<<<<<< HEAD
+        Return resultado
+    End Function
+
+    Function actualizarMontoEnReserva(ByVal monto As String, ByVal reserva As String) As Integer
+        Dim res As Integer = 0
+        Try
+            Dim acumulado As Integer = CInt(monto)
+            SQL = "UPDATE [RESERVAS] SET acumulado = " & acumulado & " WHERE ((nombre) = '" & reserva & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
+    Function disminuirMontoEnReserva(ByVal monto As String, ByVal reserva As String) As Integer
+        Dim res As Integer = 0
+        Try
+            Dim acumulado As Integer = CInt(monto)
+            SQL = "UPDATE [RESERVAS] SET acumulado = acumulado - " & acumulado & " WHERE ((nombre) = '" & reserva & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
+    Function insertarMontoEnReserva(ByVal monto As String, ByVal reserva As String) As Integer
+        Dim res As Integer = 0
+        Try
+            Dim acumulado As Integer = CInt(monto)
+            SQL = "UPDATE [RESERVAS] SET acumulado = acumulado + " & acumulado & " WHERE ((nombre) = '" & reserva & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+=======
         Return MyList
     End Function
 
@@ -2203,10 +2269,62 @@ Public Class ConexionBD
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 MyList = command.ExecuteNonQuery()
+>>>>>>> master
             Else
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
+<<<<<<< HEAD
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
+    Function afiliacionAReserva(ByVal monto As String, ByVal reserva As String) As Integer
+        Dim res As Integer = 0
+        Try
+            Dim acumulado As Integer = CInt(monto)
+            SQL = "UPDATE [RESERVAS] SET acumulado = acumulado + " & acumulado & " WHERE ((nombre) = '" & reserva & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
+
+    Function consultarReservas() As List(Of ReservaClase)
+        Dim MyList As New List(Of ReservaClase)
+        Try
+            SQL = "SELECT RESERVAS.nombre, RESERVAS.acumulado FROM [RESERVAS]"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Try
+                        Dim nuevaCuenta As ReservaClase = New ReservaClase
+                        nuevaCuenta.ReservaClaseCostructor(reader.GetString(0),
+                                                          reader.GetInt32(1))
+                        MyList.Add(nuevaCuenta)
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
+=======
             MessageBox.Show("Error de: " + ex.Message)
         End Try
         Return MyList
@@ -2214,4 +2332,5 @@ Public Class ConexionBD
 
 
 
+>>>>>>> master
 End Class

@@ -174,6 +174,10 @@ Public Class Principal
         VMontoCertificados.Show()
     End Sub
 
+<<<<<<< HEAD
+    Private Sub ReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReservasToolStripMenuItem.Click
+        VResrvasPrincipal.Show()
+=======
     'Importa Acumulado del Excel a la BD del sistema
     Private Sub ImportarAcumuladoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportarAcumuladoToolStripMenuItem.Click
 
@@ -242,5 +246,6 @@ Public Class Principal
             End If
 
         End If
+>>>>>>> master
     End Sub
 End Class

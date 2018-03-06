@@ -14,7 +14,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD:WindowsApp/WindowsApplication1/WindowsApplication1/obj/Debug/SistemaSAC.application
+        <dsig:DigestValue>t3rUf9bI3AN6yd+caumLKWlYUss3hmbgsnvZo2CCpW4=</dsig:DigestValue>
+=======
         <dsig:DigestValue>XG+a/Oa37TCDf3oBir28ld9cl3gnKUqiIRvUVCehTEE=</dsig:DigestValue>
+>>>>>>> master:WindowsApp/WindowsApplication1/WindowsApplication1/bin/Debug/SystemSAC.application
       </hash>
     </dependentAssembly>
   </dependency>

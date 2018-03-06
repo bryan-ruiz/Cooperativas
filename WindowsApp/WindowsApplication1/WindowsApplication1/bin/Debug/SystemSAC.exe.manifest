@@ -103,14 +103,23 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+<<<<<<< HEAD:WindowsApp/WindowsApplication1/WindowsApplication1/obj/Debug/SistemaSAC.exe.manifest
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaSAC.exe" size="3131312">
+      <assemblyIdentity name="SistemaSAC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+=======
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemSAC.exe" size="3107760">
       <assemblyIdentity name="SystemSAC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+>>>>>>> master:WindowsApp/WindowsApplication1/WindowsApplication1/bin/Debug/SystemSAC.exe.manifest
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD:WindowsApp/WindowsApplication1/WindowsApplication1/obj/Debug/SistemaSAC.exe.manifest
+        <dsig:DigestValue>6Rf8T7cxdj5c8axiUXPCwzwA/dbcJxC8uH/fXZmro2c=</dsig:DigestValue>
+=======
         <dsig:DigestValue>D71cAnRLr9pxDIjb9eLSZcBDlIUIPikzj6VH1qqzSdQ=</dsig:DigestValue>
+>>>>>>> master:WindowsApp/WindowsApplication1/WindowsApplication1/bin/Debug/SystemSAC.exe.manifest
       </hash>
     </dependentAssembly>
   </dependency>
