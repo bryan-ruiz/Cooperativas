@@ -656,7 +656,7 @@ Public Class InformeEconomico
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteInformeEconomico.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -819,7 +819,7 @@ Public Class InformeEconomico
                 Return valores
             Else
                 ' MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                Return List
+                Return list
             End If
             BD.CerrarConexion()
         Catch ex As Exception

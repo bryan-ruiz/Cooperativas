@@ -231,7 +231,7 @@ Public Class Saldos
 
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & nombreReporteSaldos, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
 
         End Try
     End Sub

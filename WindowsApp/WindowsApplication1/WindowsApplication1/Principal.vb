@@ -93,7 +93,7 @@ Public Class Principal
         ElseIf result = DialogResult.Yes Then
 
             Dim Access As String = "C:\BD\CoopeBD.mdb"
-            Dim Excel As String = "C:\BD\Libro1.xlsx"
+            Dim Excel As String = "C:\BD\Asociados.xlsx"
             Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
             Dim todaysdate As String = String.Format("{0:dd/MM/yyyy}", DateTime.Now)
 
@@ -124,9 +124,9 @@ Public Class Principal
 
 
 
+                    'Abro Conexión
                     BD.ConectarBD()
-                    'Borra tabla Certificados
-                    BD.borrarTablaCertificados()
+
 
                     'valores con datos de tipo objeto Socio
                     Dim valores As List(Of SocioClase)
@@ -139,6 +139,8 @@ Public Class Principal
                                                      todaysdate, todaysdate, todaysdate, todaysdate, todaysdate, todaysdate, todaysdate, todaysdate, todaysdate)
                         contador = contador + 1
                     End While
+
+
                     BD.CerrarConexion()
                     'Cierro conexión
 
@@ -172,7 +174,78 @@ Public Class Principal
         VMontoCertificados.Show()
     End Sub
 
+<<<<<<< HEAD
     Private Sub ReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReservasToolStripMenuItem.Click
         VResrvasPrincipal.Show()
+=======
+    'Importa Acumulado del Excel a la BD del sistema
+    Private Sub ImportarAcumuladoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportarAcumuladoToolStripMenuItem.Click
+
+        MessageBox.Show("NOTA: Deben existir Asociados en el Sistema, favor crear o importar Asociados antes de realizar esta acción.", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+
+        Dim result As Integer = MessageBox.Show("¿Desea importar los Acumulados por Asociado del Excel a la base de datos del sistema?", "Importar Acumulado", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            'nothing
+        ElseIf result = DialogResult.Yes Then
+
+            Dim baseDatos As String = "C:\BD\CoopeBD.mdb"
+            Dim Excel As String = "C:\BD\Acumulado.xlsx"
+            Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
+
+            If Singleton.rol = "Colaborador" Then
+                MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
+            Else
+                Try
+                    'Abro Conexión
+                    BD.ConectarBD()
+
+                    'Borra tabla acum - la que contiene ced, nombre y acum por asociado
+                    BD.borrarTablaAcumulado()
+                    BD.CerrarConexion()
+
+                    'Inserta del Excel a la tabla Acumulado
+                    Using conn As New OleDbConnection(connect)
+                        Using cmd As New OleDbCommand()
+                            cmd.Connection = conn
+                            cmd.CommandText = "INSERT INTO [MS Access;Database=" & baseDatos & ";PWD=C454gr154].[ACUMULADO] SELECT * FROM [Hoja1$]"
+                            If conn.State = ConnectionState.Open Then
+                                conn.Close()
+                            End If
+                            conn.Open()
+                            cmd.ExecuteNonQuery()
+                        End Using
+                    End Using
+
+
+
+                    BD.ConectarBD()
+
+
+                    Dim valores As List(Of AcumuladoClase)
+                    valores = BD.obtenerDatosAcumuladoXAsociado()
+
+
+
+                    Dim contador As Integer = 0
+
+                    While contador < valores.Count
+                        BD.actualizarDatosAcumuladoXAsociado(valores(contador).cedula.ToString, valores(contador).acumuladoAnterior.ToString)
+                        contador = contador + 1
+                    End While
+                    BD.CerrarConexion()
+                    'Cierro conexión
+
+
+                    MessageBox.Show("Los datos de los Acumulados fueron importados con Éxito!")
+
+                Catch ex As Exception
+                    MessageBox.Show("Error importando datos, favor verifique el formato del .xlsx en el Manual de Usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                    MessageBox.Show("Error causado debido a la excepción : " & vbCrLf & ex.Message)
+                End Try
+
+            End If
+
+        End If
+>>>>>>> master
     End Sub
 End Class

@@ -629,7 +629,7 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteAsociadosActivos.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -819,7 +819,7 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteTodosLosAsociados.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -1103,7 +1103,7 @@ Public Class Socios
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.nombreReporteExcCorresp, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             Print.Show()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 

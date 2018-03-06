@@ -64,7 +64,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto1_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto1.KeyPress
-        Me.CertificadosTextboxTracto1.MaxLength = 3
+        Me.CertificadosTextboxTracto1.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -73,7 +73,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto2_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto2.KeyPress
-        Me.CertificadosTextboxTracto2.MaxLength = 3
+        Me.CertificadosTextboxTracto2.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -82,7 +82,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto3_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto3.KeyPress
-        Me.CertificadosTextboxTracto3.MaxLength = 3
+        Me.CertificadosTextboxTracto3.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -91,7 +91,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto4_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto4.KeyPress
-        Me.CertificadosTextboxTracto4.MaxLength = 3
+        Me.CertificadosTextboxTracto4.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -100,7 +100,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto5_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto5.KeyPress
-        Me.CertificadosTextboxTracto5.MaxLength = 3
+        Me.CertificadosTextboxTracto5.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -109,7 +109,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto6_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto6.KeyPress
-        Me.CertificadosTextboxTracto6.MaxLength = 3
+        Me.CertificadosTextboxTracto6.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -118,7 +118,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto7_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto7.KeyPress
-        Me.CertificadosTextboxTracto7.MaxLength = 3
+        Me.CertificadosTextboxTracto7.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -127,7 +127,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto8_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto8.KeyPress
-        Me.CertificadosTextboxTracto8.MaxLength = 3
+        Me.CertificadosTextboxTracto8.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -136,7 +136,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto9_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto9.KeyPress
-        Me.CertificadosTextboxTracto9.MaxLength = 3
+        Me.CertificadosTextboxTracto9.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -145,7 +145,7 @@
     End Sub
 
     Private Sub CertificadosTextboxTracto10_TextChanged(sender As Object, e As KeyPressEventArgs) Handles CertificadosTextboxTracto10.KeyPress
-        Me.CertificadosTextboxTracto10.MaxLength = 3
+        Me.CertificadosTextboxTracto10.MaxLength = 7
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -185,4 +185,5 @@
     Private Sub ReporteDeTodosLosPagosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeTodosLosPagosToolStripMenuItem.Click
         VReporteTodosLosPagos.Show()
     End Sub
+
 End Class

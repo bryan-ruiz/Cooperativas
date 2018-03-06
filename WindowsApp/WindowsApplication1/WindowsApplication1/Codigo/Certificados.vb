@@ -829,15 +829,9 @@ Public Class Certificados
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reporteMorosidad, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
-
-
-
-
-
-
 
 
     'Genera un reporte de los pagos al dia'
@@ -994,7 +988,7 @@ Public Class Certificados
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reportePagoAlDia, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
@@ -1121,7 +1115,7 @@ Public Class Certificados
             pdfDoc.Close()
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reporteTodosPago, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 End Class

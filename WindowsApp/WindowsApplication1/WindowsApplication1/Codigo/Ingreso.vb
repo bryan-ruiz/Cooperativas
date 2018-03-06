@@ -256,7 +256,7 @@ Public Class Ingreso
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteEntradas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show("Error de: " + ex.Message)
         End Try
     End Sub
 
@@ -354,7 +354,7 @@ Public Class Ingreso
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteCuentasEntradas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + variablesGlobales.mensajePdfAbierto)
+            MessageBox.Show("Error de: " + ex.Message)
         End Try
     End Sub
 
