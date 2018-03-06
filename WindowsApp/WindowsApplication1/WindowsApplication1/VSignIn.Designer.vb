@@ -99,7 +99,6 @@ Partial Class VSignIn
         Me.TextBoxlogin.Name = "TextBoxlogin"
         Me.TextBoxlogin.Size = New System.Drawing.Size(293, 22)
         Me.TextBoxlogin.TabIndex = 131
-        Me.TextBoxlogin.Text = "admin"
         '
         'Label27
         '
