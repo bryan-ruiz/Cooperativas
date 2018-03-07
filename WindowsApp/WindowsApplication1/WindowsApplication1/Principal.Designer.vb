@@ -40,11 +40,11 @@ Partial Class Principal
         Me.CargarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SumarTotalDeCertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MontoMáximoEnCertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-<<<<<<< HEAD
+
         Me.ReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeSACToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-=======
+
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeSACToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -52,7 +52,7 @@ Partial Class Principal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ImportarAcumuladoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
->>>>>>> master
+
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -149,11 +149,11 @@ Partial Class Principal
         '
         'ConfiguraciónToolStripMenuItem
         '
-<<<<<<< HEAD
+
         Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CodigosDeCuentasToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.FechasCertificadosToolStripMenuItem, Me.InformaciónCooperativaToolStripMenuItem, Me.GestiónDeUsuariosToolStripMenuItem, Me.CargarUsuariosToolStripMenuItem, Me.SumarTotalDeCertificadosToolStripMenuItem, Me.MontoMáximoEnCertificadosToolStripMenuItem, Me.ReservasToolStripMenuItem})
-=======
+
         Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FechasCertificadosToolStripMenuItem, Me.MontoMáximoEnCertificadosToolStripMenuItem, Me.SumarTotalDeCertificadosToolStripMenuItem, Me.InformaciónCooperativaToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.CodigosDeCuentasToolStripMenuItem, Me.ImportarAcumuladoToolStripMenuItem, Me.CargarUsuariosToolStripMenuItem, Me.GestiónDeUsuariosToolStripMenuItem})
->>>>>>> master
+
         Me.ConfiguraciónToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.settings1pp
         Me.ConfiguraciónToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ConfiguraciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -231,8 +231,7 @@ Partial Class Principal
         Me.AcercaDeSACToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.AcercaDeSACToolStripMenuItem.Text = "Acerca de SAC"
         '
-<<<<<<< HEAD
-=======
+
         'Label1
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -281,7 +280,7 @@ Partial Class Principal
         Me.GestiónDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(247, 22)
         Me.GestiónDeUsuariosToolStripMenuItem.Text = "Gestión de Usuarios"
         '
->>>>>>> master
+
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -324,10 +323,10 @@ Partial Class Principal
     Friend WithEvents AcercaDeSACToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SumarTotalDeCertificadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MontoMáximoEnCertificadosToolStripMenuItem As ToolStripMenuItem
-<<<<<<< HEAD
+
     Friend WithEvents ReservasToolStripMenuItem As ToolStripMenuItem
-=======
+
     Friend WithEvents ImportarAcumuladoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestiónDeUsuariosToolStripMenuItem As ToolStripMenuItem
->>>>>>> master
+
 End Class

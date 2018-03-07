@@ -101,8 +101,6 @@ C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\Windo
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SistemaSAC.xml
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SistemaSAC.pdb
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VIngresoInformacion.resources
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VGastosInformacion.resources
-C:\Users\Aaron\Documents\CoopeProject\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VIngresoInformacion.resources
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReporteIngresoCuentas.resources
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReporteGastoCuentas.resources
 C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VSumarCertificados.resources
@@ -166,3 +164,14 @@ C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\Wi
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SystemSAC.exe.manifest
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SystemSAC.application
 >>>>>>> master
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SystemSAC.exe
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SystemSAC.xml
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SystemSAC.pdb
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SystemSAC.exe.config
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SystemSAC.exe.manifest
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SystemSAC.application
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SystemSAC.exe
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SystemSAC.pdb
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\bin\Debug\SystemSAC.xml
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SystemSAC.exe.manifest
+C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\SystemSAC.application
