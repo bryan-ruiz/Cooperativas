@@ -43,7 +43,6 @@ Public Class Reservas
         Dim sumaInstitucional As Integer = (excedentesBrutos * valoresReserva(0).institucional) / 100
         Dim sumaPatrimonial As Integer = (excedentesBrutos * valoresReserva(0).patrimonial) / 100
         Dim sumaEducacion As Integer = (excedentesBrutos * valoresReserva(0).educacion) / 100
-
         valores1 = actualizarMontoEnBase(sumaBSocial, "bienestarSocial")
         valores2 = actualizarMontoEnBase(sumaInstitucional, "Institucional")
         valores3 = actualizarMontoEnBase(sumaPatrimonial, "Patrimonial")
@@ -195,9 +194,9 @@ Public Class Reservas
             MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         End If
         valores = actualizarMontoEnBase(monto, reserva)
-        MessageBox.Show(valores)
         If valores <> 0 Then
             MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
         Else
             MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End If

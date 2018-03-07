@@ -63,10 +63,10 @@ Public Class EncabezadoClase
 
 
         '//para hacer PUBLISH
-        oImagen = iTextSharp.text.Image.GetInstance(My.Application.Info.DirectoryPath & "\Resources\MEP_Logo.png")
+        ' oImagen = iTextSharp.text.Image.GetInstance(My.Application.Info.DirectoryPath & "\Resources\MEP_Logo.png")
 
         '// PARA TRABAJAR PROYECTO EN PC LOCAL
-        'oImagen = iTextSharp.text.Image.GetInstance("..\..\Imagen\MEP_Logo.png")
+        oImagen = iTextSharp.text.Image.GetInstance("..\..\Imagen\MEP_Logo.png")
 
 
 

@@ -322,7 +322,7 @@ Partial Class VIngresoInformacion
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(488, 33)
+        Me.Label9.Location = New System.Drawing.Point(430, 24)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(282, 29)
         Me.Label9.TabIndex = 41
@@ -336,7 +336,6 @@ Partial Class VIngresoInformacion
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.Name = "VIngresoInformacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SAC"

@@ -65,11 +65,11 @@ Partial Class VConfiguracionPorcentajeReservas
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label5.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(270, 144)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(97, 16)
+        Me.Label5.Size = New System.Drawing.Size(100, 19)
         Me.Label5.TabIndex = 32
         Me.Label5.Text = "Reserva Legal"
         '
@@ -83,11 +83,11 @@ Partial Class VConfiguracionPorcentajeReservas
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(177, 232)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(180, 16)
+        Me.Label2.Size = New System.Drawing.Size(193, 19)
         Me.Label2.TabIndex = 24
         Me.Label2.Text = "Reserva de Bienestar Social"
         '
@@ -101,11 +101,11 @@ Partial Class VConfiguracionPorcentajeReservas
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label7.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(141, 188)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(223, 16)
+        Me.Label7.Size = New System.Drawing.Size(229, 19)
         Me.Label7.TabIndex = 38
         Me.Label7.Text = "Reserva de Educación Cooperativa"
         '
@@ -119,11 +119,11 @@ Partial Class VConfiguracionPorcentajeReservas
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label8.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(132, 276)
+        Me.Label8.Location = New System.Drawing.Point(115, 276)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(228, 16)
+        Me.Label8.Size = New System.Drawing.Size(255, 19)
         Me.Label8.TabIndex = 40
         Me.Label8.Text = "Reserva de Mejoras de la Institución "
         '
@@ -137,11 +137,11 @@ Partial Class VConfiguracionPorcentajeReservas
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label9.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(167, 321)
+        Me.Label9.Location = New System.Drawing.Point(166, 321)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(190, 16)
+        Me.Label9.Size = New System.Drawing.Size(201, 19)
         Me.Label9.TabIndex = 42
         Me.Label9.Text = "Reserva de Patrimonio Social "
         '

@@ -27,28 +27,21 @@
         gasto.eliminarGasto()
     End Sub
 
+    Private Sub TextBox_GastosCantidad_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_GastosInformacion_Cantidad.KeyPress
+        Me.TextBox_GastosInformacion_Cantidad.MaxLength = 12
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
     Private Sub TextBox_GastosPrecioUnitario_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_GastosInformacion_PrecioUnit.KeyPress
-        Me.TextBox_GastosInformacion_PrecioUnit.MaxLength = 9
+        Me.TextBox_GastosInformacion_PrecioUnit.MaxLength = 12
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
             End If
-        End If
-    End Sub
-
-    Private Sub TextBox_GastosInformacion_Cantidad_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_GastosInformacion_Cantidad.KeyPress
-        Me.TextBox_GastosInformacion_Cantidad.MaxLength = 9
-        If Asc(e.KeyChar) <> 8 Then
-            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
-                e.Handled = True
-            End If
-        End If
-    End Sub
-
-    Private Sub GastosInformacionInputID_TextChanged(sender As Object, e As KeyPressEventArgs) Handles GastosInformacionInputID.KeyPress
-        'TextBoxSociosConsultarAsociado.PasswordChar = "*"
-        If e.KeyChar = ChrW(Keys.Enter) Then
-            Call GastosInformacionBotonBuscar_Click(sender, e)
         End If
     End Sub
 End Class

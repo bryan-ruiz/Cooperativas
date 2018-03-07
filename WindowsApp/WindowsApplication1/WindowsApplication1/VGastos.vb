@@ -27,8 +27,8 @@
         gasto.calcular()
     End Sub
 
-    Private Sub TextBox_GastosCantidad_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_GastosCantidad.KeyPress
-        Me.TextBox_GastosCantidad.MaxLength = 9
+    Private Sub TextBox_GastosCantidad_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBox_GastosCantidad.KeyPress, TextBox_GastosCantidad.TextChanged
+        Me.TextBox_GastosCantidad.MaxLength = 12
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -148,4 +148,7 @@
         VReporteGastoCuentas.Show()
     End Sub
 
+    Private Sub TextBox_GastosCantidad_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

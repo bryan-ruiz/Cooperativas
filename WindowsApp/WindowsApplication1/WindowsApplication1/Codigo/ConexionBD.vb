@@ -387,7 +387,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de " + ex.Message)
+            MessageBox.Show("Error de que madre: " + ex.Message)
         End Try
         Return MyList
     End Function
@@ -1740,35 +1740,6 @@ Public Class ConexionBD
         Return MyList
     End Function
 
-    Function borrarTablaAcumulado() As List(Of String)
-        Dim MyList As New List(Of String)
-
-        Try
-            SQL = " DELETE * FROM ACUMULADO "
-
-            If conectadoBD = True Then
-                Dim command As New OleDbCommand(SQL, objConexion)
-                Dim reader = command.ExecuteReader()
-                While reader.Read()
-                    Dim conta As Integer = 0
-                    For conta = 0 To reader.FieldCount - 1
-
-                        'MsgBox(String.Concat(" ", reader(conta)))
-
-                        MyList.Add(reader(conta))
-                    Next conta
-                End While
-                reader.Close()
-            Else
-                MessageBox.Show("No hay conexión con la base de datos")
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
-        End Try
-
-        Return MyList
-    End Function
-
     Function borrarTablaCertificados() As List(Of String)
         Dim MyList As New List(Of String)
 
@@ -2166,7 +2137,6 @@ Public Class ConexionBD
         Return MyList
     End Function
 
-
     ''*************************         NUEVAS FUNCIONES DE RESERVAS
     Function afiliacionesDeReservas(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As Integer
         Dim resultado As Integer = 0
@@ -2174,38 +2144,16 @@ Public Class ConexionBD
             SQL = "SELECT Sum(SOCIOS.cuotaMatricula) As suma
                     FROM SOCIOS
                     WHERE SOCIOS.fechaIngreso BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy') "
-            Return resultado
-
-        Catch ex As Exception
-
-        End Try
-
-    End Function
-
-
-    Function obtenerDatosAcumuladoXAsociado() As List(Of AcumuladoClase)
-        Dim MyList As New List(Of AcumuladoClase)
-        Dim resultado As Integer = 0
-        Try
-            SQL = "SELECT ACUMULADO.* FROM [ACUMULADO]"
-            'pregunto antes si estoy conectado a la base de datos'
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 Dim reader = command.ExecuteReader()
                 While reader.Read()
-
                     If IsDBNull(reader(0)) Then
                         resultado = 0
                     Else
                         resultado = reader(0)
                     End If
-
-                    Dim nuevoAcum As AcumuladoClase = New AcumuladoClase
-                    nuevoAcum.acumuladoClaseCostructor(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                                                    reader.GetString(3), reader.GetString(4), reader.GetString(5))
-                    MyList.Add(nuevoAcum)
-
                 End While
                 reader.Close()
             Else
@@ -2214,8 +2162,8 @@ Public Class ConexionBD
         Catch ex As Exception
             MessageBox.Show("Error de: " + ex.Message)
         End Try
+        Return resultado
     End Function
-
 
     Function actualizarMontoEnReserva(ByVal monto As String, ByVal reserva As String) As Integer
         Dim res As Integer = 0
@@ -2259,31 +2207,13 @@ Public Class ConexionBD
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 res = command.ExecuteNonQuery()
-            End If
-
-        Catch ex As Exception
-
-        End Try
-
-    End Function
-
-    Function actualizarDatosAcumuladoXAsociado(ByVal cedula As String, ByVal acumulado As String) As Integer
-        Dim MyList As Integer = 0
-        Try
-
-            SQL = "UPDATE [CERTIFICADOS] 
-                    SET acumuladoAnterior = '" & acumulado & "'
-                    WHERE(CERTIFICADOS.cedulaAsociado = '" & cedula & "' ) "
-
-            'pregunto antes si estoy conectado a la base de datos'
-            If conectadoBD = True Then
-                Dim command As New OleDbCommand(SQL, objConexion)
-                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
             MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
-        Return MyList
+        Return res
     End Function
 
     Function afiliacionAReserva(ByVal monto As String, ByVal reserva As String) As Integer
@@ -2330,5 +2260,4 @@ Public Class ConexionBD
         End Try
         Return MyList
     End Function
-
 End Class

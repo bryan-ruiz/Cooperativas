@@ -77,7 +77,7 @@ Partial Class VGastosInformacion
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'GroupBox3
@@ -108,7 +108,7 @@ Partial Class VGastosInformacion
         Me.Button_GastoInformacionBotonModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Button_GastoInformacionBotonModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_GastoInformacionBotonModificar.ForeColor = System.Drawing.Color.White
-        Me.Button_GastoInformacionBotonModificar.Location = New System.Drawing.Point(480, 203)
+        Me.Button_GastoInformacionBotonModificar.Location = New System.Drawing.Point(383, 202)
         Me.Button_GastoInformacionBotonModificar.Name = "Button_GastoInformacionBotonModificar"
         Me.Button_GastoInformacionBotonModificar.Size = New System.Drawing.Size(144, 44)
         Me.Button_GastoInformacionBotonModificar.TabIndex = 173
@@ -119,7 +119,7 @@ Partial Class VGastosInformacion
         '
         Me.Button_GastoInformacionBotonEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_GastoInformacionBotonEliminar.ForeColor = System.Drawing.Color.White
-        Me.Button_GastoInformacionBotonEliminar.Location = New System.Drawing.Point(657, 203)
+        Me.Button_GastoInformacionBotonEliminar.Location = New System.Drawing.Point(560, 202)
         Me.Button_GastoInformacionBotonEliminar.Name = "Button_GastoInformacionBotonEliminar"
         Me.Button_GastoInformacionBotonEliminar.Size = New System.Drawing.Size(144, 44)
         Me.Button_GastoInformacionBotonEliminar.TabIndex = 172
@@ -348,7 +348,7 @@ Partial Class VGastosInformacion
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(504, 34)
+        Me.Label9.Location = New System.Drawing.Point(430, 24)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(261, 29)
         Me.Label9.TabIndex = 41

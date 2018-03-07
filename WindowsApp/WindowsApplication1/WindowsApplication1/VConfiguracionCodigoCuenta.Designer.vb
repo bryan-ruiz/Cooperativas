@@ -245,7 +245,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(102, 43)
+        Me.Label6.Location = New System.Drawing.Point(86, 35)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(378, 29)
         Me.Label6.TabIndex = 41

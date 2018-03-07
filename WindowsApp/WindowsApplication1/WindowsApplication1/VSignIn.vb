@@ -47,5 +47,4 @@
     Private Sub VSignIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBoxlogin.Select()
     End Sub
-
 End Class

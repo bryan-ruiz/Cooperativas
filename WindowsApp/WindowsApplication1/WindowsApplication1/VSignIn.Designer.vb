@@ -78,6 +78,7 @@ Partial Class VSignIn
         Me.TextBoxContraseña.Name = "TextBoxContraseña"
         Me.TextBoxContraseña.Size = New System.Drawing.Size(292, 22)
         Me.TextBoxContraseña.TabIndex = 132
+        Me.TextBoxContraseña.Text = "123"
         '
         'Label26
         '
@@ -98,6 +99,7 @@ Partial Class VSignIn
         Me.TextBoxlogin.Name = "TextBoxlogin"
         Me.TextBoxlogin.Size = New System.Drawing.Size(293, 22)
         Me.TextBoxlogin.TabIndex = 131
+        Me.TextBoxlogin.Text = "admin"
         '
         'Label27
         '
