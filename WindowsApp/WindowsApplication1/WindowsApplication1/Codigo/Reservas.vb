@@ -29,6 +29,7 @@ Public Class Reservas
         Dim valores4 As Integer
         Dim valores5 As Integer
         Dim valores6 As Integer
+        Dim valores7 As Integer
 
         Dim fechaDesde As Date = VResrvasPrincipal.ReservasDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
         Dim fechaHasta As Date = VResrvasPrincipal.ReservasDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
@@ -47,12 +48,13 @@ Public Class Reservas
         valores2 = actualizarMontoEnBase(sumaInstitucional, "Institucional")
         valores3 = actualizarMontoEnBase(sumaPatrimonial, "Patrimonial")
         valores4 = actualizarMontoEnBase(sumaEducacion, "educacion")
+        valores7 = actualizarMontoEnBase(sumaEducacion, "legal")
 
         Dim cantidadAfuliaciones As Integer = afiliacionEnReserva(fechaDesde, fechaHasta)
         valores5 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "educacion")
         valores6 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "bienestarSocial")
 
-        If valores1 <> 0 And valores2 <> 0 And valores3 <> 0 And valores4 <> 0 Then
+        If valores1 <> 0 And valores2 <> 0 And valores3 <> 0 And valores4 <> 0 And valores7 <> 0 Then
             MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Else
             MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
