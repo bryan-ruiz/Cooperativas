@@ -10,9 +10,12 @@ Public Class MensajesGlobales
     Public reporteTodosPago As String = "reporte_Todos_Los_Pagos.pdf"
     Public reporteReservas As String = "reporte_Reservas.pdf"
 
-    Public mensajeNoDejarEspaciosVacios As String = "No puede dejar espacios vacíos"
-    Public licenciaPermisos = "50"
+    Public mensajeNoDejarEspaciosVacios As String = "No deben haber campos vacíos!"
+
+    Public licenciaPermisos = "300"
+
     Public mensajePdfAbierto As String = "No se puede generar el reporte porque el PDF se encuentra abierto"
+
     Public mensajeCedulaONumAsociado As String = "Debe ingresar la cédula o el número de asociado a consultar"
     Public mensajeDebeIngresarCodigoODescriptionDeCuenta As String = "Debe ingresar el codigo y/o descripción de la cuenta"
     Public mensajeCedulaFormato As String = "La cédula debe llevar el formato X-XXXX-XXXX"
@@ -56,6 +59,9 @@ Public Class MensajesGlobales
     Public colorDisenoCeleste As String = "#15B3D4"
     Public colorDisenoTurquesa As String = "#47B1B9"
     Public colorDisenoVerdeAgua As String = "#93CE97"
+
+    Public licenciasRenovadas As String = "La Licencia se renovado con éxito!"
+    Public errorRenovandoLicencia As String = "Error renovando la licencia, favor contacte al Administrador"
 
 
 End Class

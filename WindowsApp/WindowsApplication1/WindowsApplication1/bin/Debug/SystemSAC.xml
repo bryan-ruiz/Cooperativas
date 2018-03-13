@@ -2,7 +2,7 @@
 <doc>
 <assembly>
 <name>
-SistemaSAC
+SystemSAC
 </name>
 </assembly>
 <members>
@@ -168,6 +168,31 @@ SistemaSAC
 </summary>
 </member>
 <member name="P:WindowsApplication1.My.Resources.Resources.ingresos2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.lock1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.lock2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.lock3">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.lock4">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.locky_1016554">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

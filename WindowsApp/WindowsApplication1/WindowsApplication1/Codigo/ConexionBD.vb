@@ -387,7 +387,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de que madre: " + ex.Message)
+            MessageBox.Show("Error de " + ex.Message)
         End Try
         Return MyList
     End Function
@@ -1740,6 +1740,35 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function borrarTablaAcumulado() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " DELETE * FROM ACUMULADO "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
     Function borrarTablaCertificados() As List(Of String)
         Dim MyList As New List(Of String)
 
@@ -2137,7 +2166,172 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+
+    Function obtenerDatosAcumuladoXAsociado() As List(Of AcumuladoClase)
+        Dim MyList As New List(Of AcumuladoClase)
+        Try
+            SQL = "SELECT ACUMULADO.* FROM [ACUMULADO]"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim nuevoAcum As AcumuladoClase = New AcumuladoClase
+                    nuevoAcum.acumuladoClaseCostructor(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                                                    reader.GetString(3), reader.GetString(4), reader.GetString(5))
+                    MyList.Add(nuevoAcum)
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    Function actualizarDatosAcumuladoXAsociado(ByVal cedula As String, ByVal acumulado As String) As Integer
+        Dim MyList As Integer = 0
+        Try
+
+            SQL = "UPDATE [CERTIFICADOS] 
+                    SET acumuladoAnterior = '" & acumulado & "'
+                    WHERE(CERTIFICADOS.cedulaAsociado = '" & cedula & "' ) "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
+
+
+
+    '***********************************************
+    '***********************************************
+
+
+    'LICENCIAS 
+
+
+    'Inserta un X cantidad de licencias en la BD
+    Function insertarLicencia(ByVal codigo As String, ByVal estado As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "INSERT INTO [LICENCIAS]" &
+           "(codigo, estado)" &
+            "VALUES ('" + codigo + "', '" + estado + "')"
+            'Comando para ejecutar el query'
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            'MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+
+        Return res
+    End Function
+
+    'Actualiza el estado de una Licencia que fue usada, el estado pasa de 1 a 0 (activo a inactivo)  
+    Function actualizarEstadoLicencia(ByVal codigo As String, ByVal estado As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "UPDATE [LICENCIAS] SET estado = '" & estado & "' WHERE ((codigo) = '" & codigo & "')"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return res
+    End Function
+
+
+    'Buscar una Licencia que esté activa en la base de datos activa = 1
+    Function xxxxxxxxx(ByVal codigo As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            'SQL = "SELECT LICENCIAS.* FROM [LICENCIAS] WHERE codigo = '" + codigo + "' AND estado = '1' "
+
+            SQL = "SELECT codigo FROM [LICENCIAS]" &
+                "WHERE codigo = ('" + codigo + "')"
+
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return res
+    End Function
+
+
+    'Selecciona cedula, num asociado y datos de los certificados por Asociado
+    Function consultarLicencia(ByVal codigo As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+
+            SQL = "SELECT LICENCIAS.*
+                    FROM [LICENCIAS]
+                    WHERE (LICENCIAS.codigo = '" & codigo & "' AND LICENCIAS.estado = '1' ) "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        ' MsgBox(String.Concat("XXXXXXX ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+
+    End Function
+
+
+
+
     ''*************************         NUEVAS FUNCIONES DE RESERVAS
+
+
+
     Function afiliacionesDeReservas(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As Integer
         Dim resultado As Integer = 0
         Try

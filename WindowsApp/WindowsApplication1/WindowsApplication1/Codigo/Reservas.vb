@@ -1,5 +1,5 @@
-﻿Imports iTextSharp.text
-Imports iTextSharp.text.pdf
+﻿Imports itextsharp.text
+Imports itextsharp.text.pdf
 Imports System.IO
 
 Public Class Reservas

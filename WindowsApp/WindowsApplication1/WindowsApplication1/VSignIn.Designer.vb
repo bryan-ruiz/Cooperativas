@@ -32,6 +32,7 @@ Partial Class VSignIn
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ButtonLicencia = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,7 +79,6 @@ Partial Class VSignIn
         Me.TextBoxContraseña.Name = "TextBoxContraseña"
         Me.TextBoxContraseña.Size = New System.Drawing.Size(292, 22)
         Me.TextBoxContraseña.TabIndex = 132
-        Me.TextBoxContraseña.Text = "123"
         '
         'Label26
         '
@@ -99,7 +99,6 @@ Partial Class VSignIn
         Me.TextBoxlogin.Name = "TextBoxlogin"
         Me.TextBoxlogin.Size = New System.Drawing.Size(293, 22)
         Me.TextBoxlogin.TabIndex = 131
-        Me.TextBoxlogin.Text = "admin"
         '
         'Label27
         '
@@ -140,6 +139,22 @@ Partial Class VSignIn
         Me.PictureBox1.TabIndex = 147
         Me.PictureBox1.TabStop = False
         '
+        'ButtonLicencia
+        '
+        Me.ButtonLicencia.BackColor = System.Drawing.Color.Transparent
+        Me.ButtonLicencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.ButtonLicencia.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.ButtonLicencia.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.ButtonLicencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonLicencia.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonLicencia.ForeColor = System.Drawing.Color.White
+        Me.ButtonLicencia.Image = Global.WindowsApplication1.My.Resources.Resources.lock4
+        Me.ButtonLicencia.Location = New System.Drawing.Point(3, 538)
+        Me.ButtonLicencia.Name = "ButtonLicencia"
+        Me.ButtonLicencia.Size = New System.Drawing.Size(42, 37)
+        Me.ButtonLicencia.TabIndex = 149
+        Me.ButtonLicencia.UseVisualStyleBackColor = False
+        '
         'VSignIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -148,6 +163,7 @@ Partial Class VSignIn
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.login2
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(742, 578)
+        Me.Controls.Add(Me.ButtonLicencia)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ButtonIngresar)
@@ -178,4 +194,5 @@ Partial Class VSignIn
     Friend WithEvents Label27 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ButtonLicencia As Button
 End Class
