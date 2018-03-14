@@ -9,6 +9,7 @@ Public Class Reservas
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
     Dim informeEconomico As InformeEconomico = New InformeEconomico
     Dim listaDeReservas As List(Of ReservaClase)
+    Dim socios As Socios = New Socios
 
     Public Function afiliacionEnReserva(ByVal fechaDesde As Date, ByVal fechaHasta As Date)
         Dim valores As Integer
@@ -22,6 +23,7 @@ Public Class Reservas
         End Try
     End Function
 
+    'Cierre del Periodo en rango de fechas desde - hasta
     Public Sub realizarCierrePeriodo()
         Dim valores1 As Integer
         Dim valores2 As Integer
@@ -44,6 +46,30 @@ Public Class Reservas
         Dim sumaInstitucional As Integer = (excedentesBrutos * valoresReserva(0).institucional) / 100
         Dim sumaPatrimonial As Integer = (excedentesBrutos * valoresReserva(0).patrimonial) / 100
         Dim sumaEducacion As Integer = (excedentesBrutos * valoresReserva(0).educacion) / 100
+        Dim sumaLegal As Integer = (excedentesBrutos * valoresReserva(0).legal) / 100
+
+        'Si es negativo se deja en 0
+        If sumaBSocial < 0 Then
+            sumaBSocial = 0
+        End If
+
+        If sumaInstitucional < 0 Then
+            sumaInstitucional = 0
+        End If
+
+        If sumaPatrimonial < 0 Then
+            sumaPatrimonial = 0
+        End If
+
+        If sumaEducacion < 0 Then
+            sumaEducacion = 0
+        End If
+
+        If sumaLegal < 0 Then
+            sumaLegal = 0
+        End If
+
+        'Se actualizan los montos
         valores1 = actualizarMontoEnBase(sumaBSocial, "bienestarSocial")
         valores2 = actualizarMontoEnBase(sumaInstitucional, "Institucional")
         valores3 = actualizarMontoEnBase(sumaPatrimonial, "Patrimonial")
@@ -61,6 +87,7 @@ Public Class Reservas
         End If
     End Sub
 
+
     Public Sub crearReporteReservas()
         If Singleton.rol = "Colaborador" Then
             MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -73,17 +100,125 @@ Public Class Reservas
         End If
     End Sub
 
+    'Función principal que llama a realizar cierre periodo
     Public Sub cerrarPeriodo()
         If Singleton.rol = "Colaborador" Then
             MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 realizarCierrePeriodo()
+                borrarExcedentesEnTransito()
+                GenerarExcedentesEnTransito()
             Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+                MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
             End Try
         End If
     End Sub
+
+    'Borra la tabla de Excedentes en Tránsito para dejarla limpia (no hacer drop table, sino delete)
+    Public Sub borrarExcedentesEnTransito()
+        BD.ConectarBD()
+        BD.borrarTablaExcedenteEnTransito()
+        BD.CerrarConexion()
+    End Sub
+
+    'Genera un reporte de los Excedentes correspondientes para cada asociado activo en PDF'
+    Public Sub GenerarExcedentesEnTransito()
+
+        'Fechas del View de Reservas
+        Dim fechaDesde As Date = VResrvasPrincipal.ReservasDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
+        Dim fechaHasta As Date = VResrvasPrincipal.ReservasDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
+
+        Dim subTotalIngresos As List(Of String) = informeEconomico.obtenerSubTotalIngresos("Ingreso", "Si", fechaDesde, fechaHasta)
+        Dim subTotalGastos As List(Of String) = informeEconomico.obtenerSubTotalGastos("Gasto", "Si", fechaDesde, fechaHasta)
+
+        'Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
+
+        Try
+            Dim valores As List(Of SocioClase)
+            BD.ConectarBD()
+            valores = BD.obtenerDatosReporteDeSocios("Activos")
+            BD.CerrarConexion()
+
+            'Aportaciones o Certificados - Acum
+            Dim totalAportacionesAcumTodos As List(Of String) = socios.obtenerCertificadoTodosAcumAnterior()
+            'Aportaciones o Certificados - Total o Periodo
+            Dim totalAportacionesTotalTodos As List(Of String) = socios.obtenerCertificadoTodosTotal()
+
+            'Subtotal X Socio de suma de acum + periodo (total)
+            Dim subTotalAportacionesTodos As Double = Integer.Parse(totalAportacionesAcumTodos.Item(0)) + Integer.Parse(totalAportacionesTotalTodos.Item(0))
+
+            Dim excedentesBrutos As Integer = Integer.Parse(subTotalIngresos.Item(0)) - Integer.Parse(subTotalGastos.Item(0))
+
+            If excedentesBrutos < 0 Then
+                MessageBox.Show("El reporte no se ha generado, los Exc. Brutos tienen un valor negativo", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return
+            End If
+
+            If excedentesBrutos = 0 Then
+                MessageBox.Show("El reporte no se ha generado, los Exc. Brutos tienen un valor de 0", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return
+            End If
+
+            'Valores de Reservas
+            Dim valoresReserva As List(Of ConfiguracionClase) = socios.consultarValoresConfiguracion()
+
+            Dim sumaLegal As Integer = (excedentesBrutos * valoresReserva(0).legal) / 100
+            Dim sumaEducacion As Integer = (excedentesBrutos * valoresReserva(0).educacion) / 100
+            Dim sumaBSocial As Integer = (excedentesBrutos * valoresReserva(0).bienestarSocial) / 100
+            Dim sumaInstitucional As Integer = (excedentesBrutos * valoresReserva(0).institucional) / 100
+            Dim sumaPatrimonial As Integer = (excedentesBrutos * valoresReserva(0).patrimonial) / 100
+
+            Dim sumaTotalReservas As Integer = sumaLegal + sumaEducacion + sumaBSocial + sumaInstitucional + sumaPatrimonial
+
+            Dim sumaExcedentesNetosDistribuibles As Integer = excedentesBrutos - sumaTotalReservas
+
+            Dim contador As Integer = 0
+            Dim conta As Integer = 0
+            While contador < valores.Count
+                If conta = 45 Then
+
+                    conta = 0
+                End If
+                conta = conta + 1
+
+                'DATOS PARA EXC CORRESPONDIENTE
+
+                Dim cedula As String = valores(contador).cedula
+                Dim nombrees As String = valores(contador).nombre
+
+                Dim totalAportacionesAcum As List(Of String) = socios.obtenerCertificadoXSocioAcumAnterior(cedula)
+                Dim totalAportacionesTotal As List(Of String) = socios.obtenerCertificadoXSocioTotal(cedula)
+                Dim subTotalAportacionesXSocio As Double = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
+                Dim resultDivisionTotalSocioEntreTotalTodosLosSocios As Double = subTotalAportacionesXSocio / subTotalAportacionesTodos
+                Dim totalXSocioExcDistribuible As Double = resultDivisionTotalSocioEntreTotalTodosLosSocios * sumaExcedentesNetosDistribuibles
+                Dim floorXSocio As Double = Math.Floor(totalXSocioExcDistribuible)
+                Dim excCorrespN As Integer = Convert.ToInt32(floorXSocio.ToString)
+                Dim excCorrespNT As String = excCorrespN.ToString("N")
+                'Dim excedenteCorrespT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + excCorrespNT, FontStype2))
+
+
+                BD.ConectarBD()
+                BD.insertarExcedenteEnTransito(Convert.ToString(valores(contador).numAsoc), Convert.ToString(valores(contador).cedula), Convert.ToString(valores(contador).nombre), Convert.ToString(valores(contador).primerApellido), Convert.ToString(valores(contador).segundoApellido), Convert.ToString(excCorrespN), Convert.ToString("Pendiente"))
+                BD.CerrarConexion()
+
+                contador = contador + 1
+
+            End While
+
+            'pdfDoc.Add(table)
+
+            'pdfDoc.Close()
+
+            ' MessageBox.Show("Excedentes ingresados con éxito!")
+
+            'MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.nombreReporteExcCorresp, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            'Print.Show()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
+
 
     Function acumuladoDeReserva(ByVal monto As String, ByVal reserva As String) As Integer
         Dim contador As Integer = 0

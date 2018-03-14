@@ -41,9 +41,9 @@ Public Class Principal
         VConfiguracionInformacionCooperativa.Show()
     End Sub
 
-    Private Sub GestiónDeUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeUsuariosToolStripMenuItem.Click
+    Private Sub GestiónDeUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'VGestionAsociados.Show()
-        MessageBox.Show("Contacte al Administrador, no se tiene licencia para ingresar usuarios nuevos al sistema")
+        'MessageBox.Show("Contacte al Administrador, no se tiene licencia para ingresar usuarios nuevos al sistema")
     End Sub
 
     Private Sub Principal_Load(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
@@ -97,9 +97,15 @@ Public Class Principal
             Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
             Dim todaysdate As String = String.Format("{0:dd/MM/yyyy}", DateTime.Now)
 
+            If Singleton.rol = "Admin" Then
+                MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos)
+                Return
+            End If
+
             If Singleton.rol = "Colaborador" Then
-                MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
+                MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos)
             Else
+
                 Try
                     'Abro Conexión
                     BD.ConectarBD()
@@ -188,8 +194,14 @@ Public Class Principal
             Dim Excel As String = "C:\BD\Acumulado.xlsx"
             Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
 
+
+            If Singleton.rol = "Admin" Then
+                MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos)
+                Return
+            End If
+
             If Singleton.rol = "Colaborador" Then
-                MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
+                MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos)
             Else
                 Try
                     'Abro Conexión
@@ -247,4 +259,9 @@ Public Class Principal
     Private Sub CerrarPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarPeriodoToolStripMenuItem.Click
         VResrvasPrincipal.Show()
     End Sub
+
+    Private Sub ExcedentesMoverAReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesMoverAReservasToolStripMenuItem.Click
+        VGestionDeExcedentes.Show()
+    End Sub
+
 End Class

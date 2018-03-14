@@ -24,6 +24,7 @@ Public Class MensajesGlobales
     Public noDebenHaberCamposVacios As String = "No deben haber campos vacíos!"
     Public reporteGeneradoConExito As String = "Reporte generado con éxito en C:/Reportes/"
     Public permisosDeAdminRequeridos As String = "Se requieren permisos de Administrador para realizar la acción"
+    Public permisosDeSuperAdminRequeridos As String = "Se requieren permisos de super admin para realizar la acción"
 
     Public datosIngresadosConExito As String = "Datos ingresados con éxito!"
     Public datosActualizadosConExito As String = "Datos actualizados con éxito!"

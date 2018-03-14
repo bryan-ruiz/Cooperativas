@@ -2002,8 +2002,12 @@ Public Class ConexionBD
     End Function
 
 
+    '******************************
+    '******************************
+    ' CUENTAS
+    '******************************
+    '******************************
 
-    '' COSAS NUVAS REALIZADAS EL MIERCOLES
 
     Function obtenerGastosCuenta(ByVal fechaI As Date, ByVal fechaF As Date) As List(Of String)
         Dim MyList As New List(Of String)
@@ -2213,14 +2217,11 @@ Public Class ConexionBD
     End Function
 
 
-
-
-
-    '***********************************************
-    '***********************************************
-
-
-    'LICENCIAS 
+    '******************************
+    '******************************
+    ' LICENCIAS
+    '******************************
+    '******************************
 
 
     'Inserta un X cantidad de licencias en la BD
@@ -2327,9 +2328,11 @@ Public Class ConexionBD
 
 
 
-
-    ''*************************         NUEVAS FUNCIONES DE RESERVAS
-
+    '******************************
+    '******************************
+    ' RESERVAS
+    '******************************
+    '******************************
 
 
     Function afiliacionesDeReservas(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As Integer
@@ -2454,4 +2457,90 @@ Public Class ConexionBD
         End Try
         Return MyList
     End Function
+
+
+    '******************************
+    '******************************
+    ' EXCEDENTES EN TRANSITO
+    '******************************
+    '******************************
+
+    Function insertarExcedenteEnTransito(ByVal numAsociado As String, ByVal cedula As String, ByVal nombre As String, ByVal primerApellido As String, ByVal segundoApellido As String, ByVal excedente As String, ByVal estado As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "INSERT INTO [EXCEDENTE_EN_TRANSITO]" &
+           "(numAsociado, cedula, nombre, primerApellido, segundoApellido, excedente, estado)" &
+            "VALUES ('" + numAsociado + "', '" + cedula + "', '" + nombre + "', '" + primerApellido + "', '" + segundoApellido + "', '" + excedente + "', '" + estado + "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+        End Try
+        Return res
+    End Function
+
+    Function borrarTablaExcedenteEnTransito() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " DELETE * FROM EXCEDENTE_EN_TRANSITO "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    'Selecciona cedula, num asociado y datos de los certificados por Asociado
+    Function consultarAsociadoCedOrNumAsociadoEnTablaExcedenteEnTransito(ByVal cedulaONumAsociado As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT EXCEDENTE_EN_TRANSITO.*
+                    FROM [EXCEDENTE_EN_TRANSITO]
+                    WHERE ((EXCEDENTE_EN_TRANSITO.cedula) = '" & cedulaONumAsociado & "' or (EXCEDENTE_EN_TRANSITO.numAsociado)= '" & cedulaONumAsociado & "') "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+
+    End Function
+
 End Class

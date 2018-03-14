@@ -137,6 +137,7 @@
     <Compile Include="Codigo\ConexionBD.vb" />
     <Compile Include="Codigo\Configuracion.vb" />
     <Compile Include="Codigo\Gastos.vb" />
+    <Compile Include="Codigo\GestionExcedentes.vb" />
     <Compile Include="Codigo\InformeEconomico.vb" />
     <Compile Include="Codigo\Ingreso.vb" />
     <Compile Include="Codigo\IngresoRecibo.vb" />
@@ -146,6 +147,12 @@
     <Compile Include="Codigo\Saldos.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="Codigo\Usuarios.vb" />
+    <Compile Include="VGestionDeExcedentes.Designer.vb">
+      <DependentUpon>VGestionDeExcedentes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VGestionDeExcedentes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VGestionDeReservas.Designer.vb">
       <DependentUpon>VGestionDeReservas.vb</DependentUpon>
     </Compile>
@@ -379,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VExcedentesCorrespondientes.resx">
       <DependentUpon>VExcedentesCorrespondientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VGestionDeExcedentes.resx">
+      <DependentUpon>VGestionDeExcedentes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VGestionDeReservas.resx">
       <DependentUpon>VGestionDeReservas.vb</DependentUpon>
