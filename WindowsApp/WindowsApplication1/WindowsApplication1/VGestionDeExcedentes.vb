@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub GestionExcButtonLimpiar_Click(sender As Object, e As EventArgs) Handles GestionExcButtonLimpiar.Click
-
+        gestionExcedentes.limpiar()
     End Sub
 
     Private Sub GestionExcButtonConsultar_Click(sender As Object, e As EventArgs) Handles GestionExcButtonConsultar.Click
@@ -38,5 +38,25 @@
         If e.KeyChar = ChrW(Keys.Enter) Then
             Call GestionExcButtonConsultar_Click(sender, e)
         End If
+    End Sub
+
+    Private Sub ExcedentesEnEstadoPendienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesEnEstadoPendienteToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ExcedentesEnEstadoRetiradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesEnEstadoRetiradoToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ExcedentesEnEstadoAcumuladoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesEnEstadoAcumuladoToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ExcedentesEnEstadoReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesEnEstadoReservasToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ReporteDeTodosLosEstadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeTodosLosEstadosToolStripMenuItem.Click
+
     End Sub
 End Class

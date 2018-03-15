@@ -28,12 +28,15 @@ Partial Class VGestionDeExcedentes
         Me.GestionExcButtonSumarAReservas = New System.Windows.Forms.Button()
         Me.GestionExcButtonSumarAlAcumulado = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.GestionExcButtonRetirarExcedente = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GestionExcTextboxExcCorrespondiente = New System.Windows.Forms.TextBox()
         Me.GestionExcTextboxStatus = New System.Windows.Forms.TextBox()
         Me.GestionExcTextboxCed = New System.Windows.Forms.TextBox()
         Me.GestionExcTextboxNumAsociado = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -44,19 +47,25 @@ Partial Class VGestionDeExcedentes
         Me.GestionExcTextboxCedulaNumAsociado = New System.Windows.Forms.TextBox()
         Me.GestionExcButtonConsultar = New System.Windows.Forms.Button()
         Me.GestionExcButtonLimpiar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.GestionExcButtonRetirarExcedente = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExcedentesEnEstadoPendienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExcedentesEnEstadoRetiradoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExcedentesEnEstadoAcumuladoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExcedentesEnEstadoReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeTodosLosEstadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Location = New System.Drawing.Point(0, 3)
+        Me.Panel1.Location = New System.Drawing.Point(0, 29)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1224, 93)
         Me.Panel1.TabIndex = 150
@@ -97,6 +106,7 @@ Partial Class VGestionDeExcedentes
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.GestionExcButtonRetirarExcedente)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.GestionExcTextboxExcCorrespondiente)
@@ -113,6 +123,29 @@ Partial Class VGestionDeExcedentes
         Me.GroupBox2.TabIndex = 176
         Me.GroupBox2.TabStop = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(582, 84)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(14, 15)
+        Me.Label5.TabIndex = 73
+        Me.Label5.Text = "¢"
+        '
+        'GestionExcButtonRetirarExcedente
+        '
+        Me.GestionExcButtonRetirarExcedente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.GestionExcButtonRetirarExcedente.ForeColor = System.Drawing.Color.White
+        Me.GestionExcButtonRetirarExcedente.Location = New System.Drawing.Point(111, 197)
+        Me.GestionExcButtonRetirarExcedente.Name = "GestionExcButtonRetirarExcedente"
+        Me.GestionExcButtonRetirarExcedente.Size = New System.Drawing.Size(187, 44)
+        Me.GestionExcButtonRetirarExcedente.TabIndex = 175
+        Me.GestionExcButtonRetirarExcedente.Text = "Retirar Excedente"
+        Me.GestionExcButtonRetirarExcedente.UseVisualStyleBackColor = True
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -121,19 +154,19 @@ Partial Class VGestionDeExcedentes
         Me.Label2.Location = New System.Drawing.Point(79, 139)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(733, 16)
+        Me.Label2.Size = New System.Drawing.Size(726, 16)
         Me.Label2.TabIndex = 178
-        Me.Label2.Text = "Al realizar el Cierre del Periodo se generan excedentes en tránsito, selecciones " &
-    "una opción para cambiar el estado actual."
+        Me.Label2.Text = "Al realizar el Cierre del Periodo se generan excedentes en tránsito, seleccione u" &
+    "na opción para cambiar el estado actual."
         '
         'GestionExcTextboxExcCorrespondiente
         '
         Me.GestionExcTextboxExcCorrespondiente.Enabled = False
-        Me.GestionExcTextboxExcCorrespondiente.Location = New System.Drawing.Point(595, 82)
+        Me.GestionExcTextboxExcCorrespondiente.Location = New System.Drawing.Point(599, 82)
         Me.GestionExcTextboxExcCorrespondiente.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.GestionExcTextboxExcCorrespondiente.Multiline = True
         Me.GestionExcTextboxExcCorrespondiente.Name = "GestionExcTextboxExcCorrespondiente"
-        Me.GestionExcTextboxExcCorrespondiente.Size = New System.Drawing.Size(126, 20)
+        Me.GestionExcTextboxExcCorrespondiente.Size = New System.Drawing.Size(122, 20)
         Me.GestionExcTextboxExcCorrespondiente.TabIndex = 140
         '
         'GestionExcTextboxStatus
@@ -178,17 +211,29 @@ Partial Class VGestionDeExcedentes
         Me.GroupBox3.TabIndex = 70
         Me.GroupBox3.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(601, 8)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(101, 30)
+        Me.Label1.TabIndex = 72
+        Me.Label1.Text = "      Excedente " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Correspondiente"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(756, 16)
+        Me.Label3.Location = New System.Drawing.Point(749, 16)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 15)
+        Me.Label3.Size = New System.Drawing.Size(84, 15)
         Me.Label3.TabIndex = 71
-        Me.Label3.Text = "Estado:"
+        Me.Label3.Text = "Estado Actual:"
         '
         'Label7
         '
@@ -232,7 +277,7 @@ Partial Class VGestionDeExcedentes
         Me.GestionExcTextboxNombre.Location = New System.Drawing.Point(302, 82)
         Me.GestionExcTextboxNombre.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.GestionExcTextboxNombre.Name = "GestionExcTextboxNombre"
-        Me.GestionExcTextboxNombre.Size = New System.Drawing.Size(289, 20)
+        Me.GestionExcTextboxNombre.Size = New System.Drawing.Size(275, 20)
         Me.GestionExcTextboxNombre.TabIndex = 63
         '
         'GroupBox1
@@ -293,29 +338,6 @@ Partial Class VGestionDeExcedentes
         Me.GestionExcButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.GestionExcButtonLimpiar.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(601, 8)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 30)
-        Me.Label1.TabIndex = 72
-        Me.Label1.Text = "      Excedente " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Correspondiente"
-        '
-        'GestionExcButtonRetirarExcedente
-        '
-        Me.GestionExcButtonRetirarExcedente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.GestionExcButtonRetirarExcedente.ForeColor = System.Drawing.Color.White
-        Me.GestionExcButtonRetirarExcedente.Location = New System.Drawing.Point(111, 197)
-        Me.GestionExcButtonRetirarExcedente.Name = "GestionExcButtonRetirarExcedente"
-        Me.GestionExcButtonRetirarExcedente.Size = New System.Drawing.Size(187, 44)
-        Me.GestionExcButtonRetirarExcedente.TabIndex = 175
-        Me.GestionExcButtonRetirarExcedente.Text = "Retirar Excedente"
-        Me.GestionExcButtonRetirarExcedente.UseVisualStyleBackColor = True
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -329,17 +351,64 @@ Partial Class VGestionDeExcedentes
         Me.Label4.Text = "Nota: Al sumar el excedente a Reservas, se asigna un 50% a Educación y 50% a Bien" &
     "estar Social"
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1224, 24)
+        Me.MenuStrip1.TabIndex = 180
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExcedentesEnEstadoPendienteToolStripMenuItem, Me.ExcedentesEnEstadoRetiradoToolStripMenuItem, Me.ExcedentesEnEstadoAcumuladoToolStripMenuItem, Me.ExcedentesEnEstadoReservasToolStripMenuItem, Me.ReporteDeTodosLosEstadosToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
+        'ExcedentesEnEstadoPendienteToolStripMenuItem
+        '
+        Me.ExcedentesEnEstadoPendienteToolStripMenuItem.Name = "ExcedentesEnEstadoPendienteToolStripMenuItem"
+        Me.ExcedentesEnEstadoPendienteToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.ExcedentesEnEstadoPendienteToolStripMenuItem.Text = "Reporte de excedentes - Pendientes"
+        '
+        'ExcedentesEnEstadoRetiradoToolStripMenuItem
+        '
+        Me.ExcedentesEnEstadoRetiradoToolStripMenuItem.Name = "ExcedentesEnEstadoRetiradoToolStripMenuItem"
+        Me.ExcedentesEnEstadoRetiradoToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.ExcedentesEnEstadoRetiradoToolStripMenuItem.Text = "Reporte de excedentes - Retirados"
+        '
+        'ExcedentesEnEstadoAcumuladoToolStripMenuItem
+        '
+        Me.ExcedentesEnEstadoAcumuladoToolStripMenuItem.Name = "ExcedentesEnEstadoAcumuladoToolStripMenuItem"
+        Me.ExcedentesEnEstadoAcumuladoToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.ExcedentesEnEstadoAcumuladoToolStripMenuItem.Text = "Reporte de excedentes - en Acumulado"
+        '
+        'ExcedentesEnEstadoReservasToolStripMenuItem
+        '
+        Me.ExcedentesEnEstadoReservasToolStripMenuItem.Name = "ExcedentesEnEstadoReservasToolStripMenuItem"
+        Me.ExcedentesEnEstadoReservasToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.ExcedentesEnEstadoReservasToolStripMenuItem.Text = "Reporte de excedentes - en Reservas"
+        '
+        'ReporteDeTodosLosEstadosToolStripMenuItem
+        '
+        Me.ReporteDeTodosLosEstadosToolStripMenuItem.Name = "ReporteDeTodosLosEstadosToolStripMenuItem"
+        Me.ReporteDeTodosLosEstadosToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.ReporteDeTodosLosEstadosToolStripMenuItem.Text = "Reporte de Todos los Estados"
+        '
         'VGestionDeExcedentes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1224, 505)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "VGestionDeExcedentes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -352,6 +421,8 @@ Partial Class VGestionDeExcedentes
         Me.GroupBox3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -381,4 +452,12 @@ Partial Class VGestionDeExcedentes
     Friend WithEvents GestionExcButtonRetirarExcedente As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExcedentesEnEstadoPendienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExcedentesEnEstadoRetiradoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExcedentesEnEstadoAcumuladoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExcedentesEnEstadoReservasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteDeTodosLosEstadosToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -103,7 +103,7 @@ Partial Class VAcercaDe
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(100, 18)
         Me.Label6.TabIndex = 39
-        Me.Label6.Text = "Versión 1.0.3"
+        Me.Label6.Text = "Versión 1.0.6"
         '
         'Label7
         '

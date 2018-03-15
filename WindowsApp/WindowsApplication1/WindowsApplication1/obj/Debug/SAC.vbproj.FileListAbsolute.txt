@@ -157,3 +157,4 @@ C:\Users\Aaron\Desktop\WindowsApp\WindowsApplication1\WindowsApplication1\obj\De
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VGestionDeExcedentes.resources
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VGestionDeReservas.resources
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VResrvasPrincipal.resources
+C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VGestionDeCertificados.resources

@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>35</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -137,6 +137,7 @@
     <Compile Include="Codigo\ConexionBD.vb" />
     <Compile Include="Codigo\Configuracion.vb" />
     <Compile Include="Codigo\Gastos.vb" />
+    <Compile Include="Codigo\GestionCertificados.vb" />
     <Compile Include="Codigo\GestionExcedentes.vb" />
     <Compile Include="Codigo\InformeEconomico.vb" />
     <Compile Include="Codigo\Ingreso.vb" />
@@ -147,6 +148,12 @@
     <Compile Include="Codigo\Saldos.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="Codigo\Usuarios.vb" />
+    <Compile Include="VGestionDeCertificados.Designer.vb">
+      <DependentUpon>VGestionDeCertificados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VGestionDeCertificados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VGestionDeExcedentes.Designer.vb">
       <DependentUpon>VGestionDeExcedentes.vb</DependentUpon>
     </Compile>
@@ -386,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VExcedentesCorrespondientes.resx">
       <DependentUpon>VExcedentesCorrespondientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VGestionDeCertificados.resx">
+      <DependentUpon>VGestionDeCertificados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VGestionDeExcedentes.resx">
       <DependentUpon>VGestionDeExcedentes.vb</DependentUpon>

@@ -25,8 +25,8 @@ Public Class Principal
         VGastos.Show()
     End Sub
 
-    Private Sub FechasCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FechasCertificadosToolStripMenuItem.Click
-        VConfiguracionFechasLimite.Show()
+    Private Sub FechasCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        'VConfiguracionFechasLimite.Show()
     End Sub
 
     Private Sub CodigosDeCuentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CodigosDeCuentasToolStripMenuItem.Click
@@ -172,12 +172,12 @@ Public Class Principal
 
     End Sub
 
-    Private Sub SumarTotalDeCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SumarTotalDeCertificadosToolStripMenuItem.Click
-        VSumarCertificados.Show()
+    Private Sub SumarTotalDeCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        'VSumarCertificados.Show()
     End Sub
 
-    Private Sub MontoMáximoEnCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MontoMáximoEnCertificadosToolStripMenuItem.Click
-        VMontoCertificados.Show()
+    Private Sub MontoMáximoEnCertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        'VMontoCertificados.Show()
     End Sub
 
     'Importa Acumulado del Excel a la BD del sistema
@@ -264,4 +264,7 @@ Public Class Principal
         VGestionDeExcedentes.Show()
     End Sub
 
+    Private Sub CertificadosEnTránsitoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CertificadosEnTránsitoToolStripMenuItem.Click
+        VGestionDeCertificados.Show()
+    End Sub
 End Class

@@ -10,6 +10,7 @@ Public Class Reservas
     Dim informeEconomico As InformeEconomico = New InformeEconomico
     Dim listaDeReservas As List(Of ReservaClase)
     Dim socios As Socios = New Socios
+    Dim certificados As Certificados = New Certificados
 
     Public Function afiliacionEnReserva(ByVal fechaDesde As Date, ByVal fechaHasta As Date)
         Dim valores As Integer
@@ -106,9 +107,20 @@ Public Class Reservas
             MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
+
+                'Suma los tractos al Acumulado automáticamente para todos los asociados
+                certificados.sumarTractosEnTotalAcumulado()
+                'Hace la función de sumar Reservas
                 realizarCierrePeriodo()
+                'Borra la tabla de excedentes en tránsito
                 borrarExcedentesEnTransito()
+                'Inserta datos nuevos en la tabla excedentes en tránsito
                 GenerarExcedentesEnTransito()
+                'Borra la tabla de certificados en tránsito
+                borrarCertificadosEnTransito()
+                'Inserta datos nuevos en la tabla de certificados en tránsito
+                GenerarCertificadosEnTransito()
+
             Catch ex As Exception
                 MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
             End Try
@@ -122,7 +134,14 @@ Public Class Reservas
         BD.CerrarConexion()
     End Sub
 
-    'Genera un reporte de los Excedentes correspondientes para cada asociado activo en PDF'
+    'Borra la tabla de Certificados en Tránsito para dejarla limpia (no hacer drop table, sino delete)
+    Public Sub borrarCertificadosEnTransito()
+        BD.ConectarBD()
+        BD.borrarTablaCertificadoEnTransito()
+        BD.CerrarConexion()
+    End Sub
+
+    'Genera un reporte de los Excedentes correspondientes para cada asociado activo'
     Public Sub GenerarExcedentesEnTransito()
 
         'Fechas del View de Reservas
@@ -131,8 +150,6 @@ Public Class Reservas
 
         Dim subTotalIngresos As List(Of String) = informeEconomico.obtenerSubTotalIngresos("Ingreso", "Si", fechaDesde, fechaHasta)
         Dim subTotalGastos As List(Of String) = informeEconomico.obtenerSubTotalGastos("Gasto", "Si", fechaDesde, fechaHasta)
-
-        'Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
 
         Try
             Dim valores As List(Of SocioClase)
@@ -147,7 +164,6 @@ Public Class Reservas
 
             'Subtotal X Socio de suma de acum + periodo (total)
             Dim subTotalAportacionesTodos As Double = Integer.Parse(totalAportacionesAcumTodos.Item(0)) + Integer.Parse(totalAportacionesTotalTodos.Item(0))
-
             Dim excedentesBrutos As Integer = Integer.Parse(subTotalIngresos.Item(0)) - Integer.Parse(subTotalGastos.Item(0))
 
             If excedentesBrutos < 0 Then
@@ -206,19 +222,61 @@ Public Class Reservas
 
             End While
 
-            'pdfDoc.Add(table)
-
-            'pdfDoc.Close()
-
-            ' MessageBox.Show("Excedentes ingresados con éxito!")
-
-            'MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.nombreReporteExcCorresp, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-            'Print.Show()
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
         End Try
     End Sub
 
+    'Genera un reporte de los Certificados correspondientes para cada asociado activo'
+    Public Sub GenerarCertificadosEnTransito()
+
+        'Fechas del View de Reservas
+        Dim fechaDesde As Date = VResrvasPrincipal.ReservasDateTimePickerDesde.Value.ToString("dd/MM/yyyy")
+        Dim fechaHasta As Date = VResrvasPrincipal.ReservasDateTimePickerHasta.Value.ToString("dd/MM/yyyy")
+
+        Try
+            Dim valores As List(Of SocioClase)
+
+            BD.ConectarBD()
+            valores = BD.obtenerDatosReporteDeSocios("Activos")
+            BD.CerrarConexion()
+
+            Dim contador As Integer = 0
+            Dim conta As Integer = 0
+            While contador < valores.Count
+                If conta = 45 Then
+
+                    conta = 0
+                End If
+                conta = conta + 1
+
+                'DATOS PARA ACUM X SOCIO
+
+                Dim cedula As String = valores(contador).cedula
+                Dim nombrees As String = valores(contador).nombre
+
+
+                Dim totalAportacionesAcum As List(Of String) = socios.obtenerCertificadoXSocioAcumAnterior(cedula)
+
+
+                Dim totalAportacionesTotal As List(Of String) = socios.obtenerCertificadoXSocioTotal(cedula)
+                Dim subTotalAcumuladoXSocio As Double = Integer.Parse(totalAportacionesAcum.Item(0))
+                'Dim excCorrespN As Integer = Convert.ToInt32(subTotalAcumuladoXSocio.ToString)
+                'Dim excCorrespNT As String = excCorrespN.ToString("N")
+                'Dim excedenteCorrespT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + excCorrespNT, FontStype2))
+
+                BD.ConectarBD()
+                BD.insertarCertificadoEnTransito(Convert.ToString(valores(contador).numAsoc), Convert.ToString(valores(contador).cedula), Convert.ToString(valores(contador).nombre), Convert.ToString(valores(contador).primerApellido), Convert.ToString(valores(contador).segundoApellido), Convert.ToString(subTotalAcumuladoXSocio), Convert.ToString("Pendiente"))
+                BD.CerrarConexion()
+
+                contador = contador + 1
+
+            End While
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
 
     Function acumuladoDeReserva(ByVal monto As String, ByVal reserva As String) As Integer
         Dim contador As Integer = 0
@@ -339,7 +397,7 @@ Public Class Reservas
         End If
     End Sub
 
-
+    'Consulta las Reservas
     Public Sub obtenerDatosSeleccionarReserva()
         Try
             BD.ConectarBD()
