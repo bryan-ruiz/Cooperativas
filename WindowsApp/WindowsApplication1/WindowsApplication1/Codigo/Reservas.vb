@@ -107,6 +107,8 @@ Public Class Reservas
             MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
+                'Validar que no existen estados "Pendiente" EXCEDENTES-EN-TRANSITO ni en CERTIFICADOS-EN-TRANSITO
+                'validarNoExistenPendientes()
 
                 'Suma los tractos al Acumulado automáticamente para todos los asociados
                 certificados.sumarTractosEnTotalAcumulado()
