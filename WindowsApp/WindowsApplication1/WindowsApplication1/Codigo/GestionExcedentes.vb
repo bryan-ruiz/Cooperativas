@@ -3,6 +3,39 @@
     Dim BD As ConexionBD = New ConexionBD
     Dim encabezado As EncabezadoClase = New EncabezadoClase
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+    Dim Reserva As Reservas = New Reservas
+
+
+    'sumar excedentes de un usuario a reservas ediucacion social y bienestar social.
+    Public Sub sumarAReservasLlamado()
+        Dim valores, valorDeConsultaEducacion, valorConsultaBienestarSoc As Int32
+        Dim cedulaNumAsociado As String = VGestionDeExcedentes.GestionExcTextboxCedulaNumAsociado.Text
+        Dim excedenteDeUsuario As String = VGestionDeExcedentes.GestionExcTextboxExcCorrespondiente.Text
+        If (cedulaNumAsociado = "" Or excedenteDeUsuario = "") Then
+            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Else
+            Try
+                Dim ubicacionEstado As String = "En Reservas"
+                Dim cantidad As Integer = Integer.Parse(excedenteDeUsuario)
+                Dim cincuentaPorciento As Integer = cantidad / 2
+
+                BD.ConectarBD()
+                valorConsultaBienestarSoc = Reserva.actualizarMontoEnBase(cincuentaPorciento, "bienestarSocial")
+                valorDeConsultaEducacion = Reserva.actualizarMontoEnBase(cincuentaPorciento, "educacion")
+                valores = BD.retirarExcedente(cedulaNumAsociado, ubicacionEstado)
+                If valores <> 0 And valorDeConsultaEducacion <> 0 And valorConsultaBienestarSoc <> 0 Then
+                    MessageBox.Show(variablesGlobales.retiradoExcedenteExitoso, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                Else
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                End If
+                limpiar()
+                BD.CerrarConexion()
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            End Try
+        End If
+    End Sub
+
 
 
     'Retirar excedentes de un usuario
@@ -14,7 +47,8 @@
         Else
             Try
                 BD.ConectarBD()
-                valores = BD.retirarExcedente(cedulaNumAsociado)
+                Dim ubicacionEstado As String = "Retirado"
+                valores = BD.retirarExcedente(cedulaNumAsociado, ubicacionEstado)
                 If valores <> 0 Then
                     MessageBox.Show(variablesGlobales.retiradoExcedenteExitoso, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                 Else
@@ -26,7 +60,6 @@
                 MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
         End If
-
     End Sub
 
     'consulta un asociado por ced o numAsociado en la tabla de Excedentes en Tránsito

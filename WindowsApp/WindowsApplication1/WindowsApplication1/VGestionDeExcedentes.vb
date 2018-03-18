@@ -26,7 +26,7 @@
     End Sub
 
     Private Sub GestionExcButtonSumarAReservas_Click(sender As Object, e As EventArgs) Handles GestionExcButtonSumarAReservas.Click
-
+        gestionExcedentes.sumarAReservasLlamado()
     End Sub
 
     Private Sub GestionExcButtonRetirarExcedente_Click(sender As Object, e As EventArgs) Handles GestionExcButtonRetirarExcedente.Click
