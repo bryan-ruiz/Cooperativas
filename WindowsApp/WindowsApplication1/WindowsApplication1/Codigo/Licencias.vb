@@ -6,7 +6,7 @@ Public Class Licencias
 
 
     'inserta "cantidadCodigos" licencias en la base de datos con estaod 1 (activa) (nota son licencias random)
-    Public Sub insertarLicenciasEnBD()
+    Public Sub insertarLicenciasEnBD(ByVal cantidadDeLicenciasRandom As Integer)
 
         Dim obj As New Random()
         Dim posibles As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
@@ -19,7 +19,7 @@ Public Class Licencias
         Dim codigo As String = ""
 
         'cantidad de veces que se ingresará en la BD
-        Dim cantidadCodigos As Integer = 10
+        Dim cantidadCodigos As Integer = cantidadDeLicenciasRandom
 
         For cantidad As Integer = 0 To cantidadCodigos - 1
 
@@ -74,11 +74,11 @@ Public Class Licencias
 
             Dim insertado As Integer = 0
             insertado = BD.actualizarEstadoLicencia(codigo, estado)
-            If (insertado = 1) Then
-                MessageBox.Show(variablesGlobales.licenciasRenovadas, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-            Else
-                MessageBox.Show(variablesGlobales.errorRenovandoLicencia, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            End If
+            'If (insertado = 1) Then
+            'MessageBox.Show(variablesGlobales.licenciasRenovadas, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            'Else
+            'MessageBox.Show(variablesGlobales.errorRenovandoLicencia, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            'End If
 
             BD.CerrarConexion()
 
@@ -90,7 +90,7 @@ Public Class Licencias
 
 
     'Valida que la Licencia exista en la base de datos
-    Public Function consultarLicenciaEnBD(ByVal codigo As String)
+    Public Function consultarLicenciaExisteEnBD(ByVal codigo As String)
         Dim valores As List(Of String)
         Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
         Dim result As List(Of String)
@@ -116,8 +116,41 @@ Public Class Licencias
 
     End Function
 
+    Public Sub validarYRenovarLicencia(ByVal codigo As String)
+        Dim valores As List(Of String)
+        valores = consultarLicenciaExisteEnBD(codigo)
 
+        If valores.Count <> 0 Then
+            Try
+                actualizarEstadoLicencia(valores.Item(1), "0")
+                renovarContadorDeLicencias("400")
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorRenovandoLicencia, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End Try
+        End If
+    End Sub
 
+    'Renueva el contador de licencias es decir la cantidad de permisos para ingresar para todos los usuarios
+    Public Sub renovarContadorDeLicencias(ByVal cantidad As String)
+        Try
+            BD.ConectarBD()
+
+            Dim insertado As Integer = 0
+            insertado = BD.actualizarCantidadDePermisos(cantidad)
+
+            If (insertado = 1) Then
+                MessageBox.Show(variablesGlobales.licenciasRenovadas, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorRenovandoLicencia, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+
+            BD.CerrarConexion()
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+
+    End Sub
 
 End Class
 
