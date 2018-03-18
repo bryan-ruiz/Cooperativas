@@ -22,7 +22,7 @@
     End Sub
 
     Private Sub GestionExcButtonSumarAlAcumulado_Click(sender As Object, e As EventArgs) Handles GestionExcButtonSumarAlAcumulado.Click
-
+        gestionExcedentes.sumarAlAcumuladoLlamado()
     End Sub
 
     Private Sub GestionExcButtonSumarAReservas_Click(sender As Object, e As EventArgs) Handles GestionExcButtonSumarAReservas.Click

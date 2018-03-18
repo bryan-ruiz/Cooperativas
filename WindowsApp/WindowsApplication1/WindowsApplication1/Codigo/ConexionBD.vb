@@ -1160,6 +1160,23 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function sumarAcumuladoAnterior(ByVal cedula As String, ByVal monto As Integer) As Integer
+        Dim MyList As Integer = 0
+        Try
+            SQL = "UPDATE [CERTIFICADOS] 
+                SET acumuladoAnterior = acumuladoAnterior + " & monto & " WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
 
 
     'Selecciona cedula, num asociado y datos de los certificados por Asociado

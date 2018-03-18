@@ -6,6 +6,33 @@
     Dim Reserva As Reservas = New Reservas
 
 
+    Public Sub sumarAlAcumuladoLlamado()
+        Dim valores, valorEnCertificado As Int32
+        Dim cedulaNumAsociado As String = VGestionDeExcedentes.GestionExcTextboxCedulaNumAsociado.Text
+        Dim excedenteDeUsuario As String = VGestionDeExcedentes.GestionExcTextboxExcCorrespondiente.Text
+        If (cedulaNumAsociado = "" Or excedenteDeUsuario = "") Then
+            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Else
+            Try
+                Dim ubicacionEstado As String = "En Acumulado"
+                Dim cantidad As Integer = Integer.Parse(excedenteDeUsuario)
+
+                BD.ConectarBD()
+                valores = BD.retirarExcedente(cedulaNumAsociado, ubicacionEstado)
+                valorEnCertificado = BD.sumarAcumuladoAnterior(cedulaNumAsociado, cantidad)
+                If valores <> 0 And valorEnCertificado <> 0 Then
+                    MessageBox.Show(variablesGlobales.retiradoExcedenteExitoso, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                Else
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                End If
+                limpiar()
+                BD.CerrarConexion()
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            End Try
+        End If
+    End Sub
+
     'sumar excedentes de un usuario a reservas ediucacion social y bienestar social.
     Public Sub sumarAReservasLlamado()
         Dim valores, valorDeConsultaEducacion, valorConsultaBienestarSoc As Int32
