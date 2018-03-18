@@ -5,6 +5,30 @@
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
 
+    'Retirar excedentes de un usuario
+    Public Sub retirarExcedentesLlamado()
+        Dim valores As Int32
+        Dim cedulaNumAsociado As String = VGestionDeExcedentes.GestionExcTextboxCedulaNumAsociado.Text
+        If (cedulaNumAsociado = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Else
+            Try
+                BD.ConectarBD()
+                valores = BD.retirarExcedente(cedulaNumAsociado)
+                If valores <> 0 Then
+                    MessageBox.Show(variablesGlobales.retiradoExcedenteExitoso, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                Else
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                End If
+                limpiar()
+                BD.CerrarConexion()
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            End Try
+        End If
+
+    End Sub
+
     'consulta un asociado por ced o numAsociado en la tabla de Excedentes en Tránsito
     Public Sub consultar()
 
