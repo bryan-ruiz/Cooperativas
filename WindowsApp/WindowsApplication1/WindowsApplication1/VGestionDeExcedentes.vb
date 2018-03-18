@@ -30,7 +30,7 @@
     End Sub
 
     Private Sub GestionExcButtonRetirarExcedente_Click(sender As Object, e As EventArgs) Handles GestionExcButtonRetirarExcedente.Click
-
+        gestionExcedentes.retirarExcedentesLlamado()
     End Sub
 
     'para cuando presiona Enter en el Textfield de cedula num asociado

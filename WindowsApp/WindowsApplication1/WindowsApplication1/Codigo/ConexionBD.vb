@@ -2543,6 +2543,24 @@ Public Class ConexionBD
 
     End Function
 
+
+
+    Function retirarExcedente(ByVal idAsoc As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "UPDATE [EXCEDENTE_EN_TRANSITO] SET  estado= 'Retirado',excedente= '0' WHERE (cedula = '" & idAsoc & "' or numAsociado= '" & idAsoc & "') "
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If            
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
     '******************************
     '******************************
     ' CERTIFICADOS EN TRANSITO
