@@ -203,6 +203,12 @@
     <Compile Include="VReporteGastoCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VLicencias.Designer.vb">
+      <DependentUpon>VLicencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VLicencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VResrvasPrincipal.Designer.vb">
       <DependentUpon>VResrvasPrincipal.vb</DependentUpon>
     </Compile>
@@ -414,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VReporteGastoCuentas.resx">
       <DependentUpon>VReporteGastoCuentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VLicencias.resx">
+      <DependentUpon>VLicencias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VResrvasPrincipal.resx">
       <DependentUpon>VResrvasPrincipal.vb</DependentUpon>

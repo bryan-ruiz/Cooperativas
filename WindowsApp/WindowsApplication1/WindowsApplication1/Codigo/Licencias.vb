@@ -14,12 +14,12 @@ Public Class Licencias
         Dim letra As Char
 
         'largo de la cadena
-        Dim longitudnuevacadena As Integer = 9
+        Dim longitudnuevacadena As Integer = 10
         'codigo final de la cadena
         Dim codigo As String = ""
 
         'cantidad de veces que se ingresará en la BD
-        Dim cantidadCodigos As Integer = 3
+        Dim cantidadCodigos As Integer = 10
 
         For cantidad As Integer = 0 To cantidadCodigos - 1
 

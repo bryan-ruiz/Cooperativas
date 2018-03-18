@@ -51,7 +51,7 @@
 
     Private Sub ButtonLicencia_Click(sender As Object, e As EventArgs) Handles ButtonLicencia.Click
         'Esto se hace solo una vez en la BD
-        'licencias.insertarLicenciasEnBD()
+        licencias.insertarLicenciasEnBD()
 
 
         ' Dim existe As Integer = 0
