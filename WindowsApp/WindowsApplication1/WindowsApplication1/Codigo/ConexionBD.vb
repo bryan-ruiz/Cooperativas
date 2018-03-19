@@ -2293,7 +2293,7 @@ Public Class ConexionBD
 
 
     'Selecciona cedula, num asociado y datos de los certificados por Asociado
-    Function consultarLicencia(ByVal codigo As String) As List(Of String)
+    Function consultarLicenciaActiva(ByVal codigo As String) As List(Of String)
         Dim MyList As New List(Of String)
         Try
 

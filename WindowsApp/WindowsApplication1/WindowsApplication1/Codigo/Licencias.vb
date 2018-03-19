@@ -97,7 +97,8 @@ Public Class Licencias
 
         Try
             BD.ConectarBD()
-            valores = BD.consultarLicencia(codigo)
+
+            valores = BD.consultarLicenciaActiva(codigo)
             If valores.Count <> 0 Then
                 result = valores
             Else
@@ -107,6 +108,7 @@ Public Class Licencias
             '  MsgBox("cerrando conexion a BD...")
 
             BD.CerrarConexion()
+
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
 
@@ -124,6 +126,10 @@ Public Class Licencias
             Try
                 actualizarEstadoLicencia(valores.Item(1), "0")
                 renovarContadorDeLicencias("400")
+                VLicencias.LicenciasTextBoxCodigo.Text = ""
+                MessageBox.Show(variablesGlobales.licenciasRenovadas, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                VLicencias.Hide()
+
             Catch ex As Exception
                 MessageBox.Show(variablesGlobales.errorRenovandoLicencia, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             End Try
@@ -138,11 +144,11 @@ Public Class Licencias
             Dim insertado As Integer = 0
             insertado = BD.actualizarCantidadDePermisos(cantidad)
 
-            If (insertado = 1) Then
-                MessageBox.Show(variablesGlobales.licenciasRenovadas, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-            Else
-                MessageBox.Show(variablesGlobales.errorRenovandoLicencia, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            End If
+            'If (insertado = 1) Then
+            'MessageBox.Show(variablesGlobales.licenciasRenovadas, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            'Else
+            'MessageBox.Show(variablesGlobales.errorRenovandoLicencia, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            'End If
 
             BD.CerrarConexion()
 

@@ -103,30 +103,27 @@ Public Class Reservas
 
     'Función principal que llama a realizar cierre periodo
     Public Sub cerrarPeriodo()
-        If Singleton.rol = "Colaborador" Then
-            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        Else
-            Try
-                'Validar que no existen estados "Pendiente" EXCEDENTES-EN-TRANSITO ni en CERTIFICADOS-EN-TRANSITO
-                'validarNoExistenPendientes()
+        Try
+            'Validar que no existen estados "Pendiente" EXCEDENTES-EN-TRANSITO ni en CERTIFICADOS-EN-TRANSITO
+            'validarNoExistenPendientes()
 
-                'Suma los tractos al Acumulado automáticamente para todos los asociados
-                certificados.sumarTractosEnTotalAcumulado()
-                'Hace la función de sumar Reservas
-                realizarCierrePeriodo()
-                'Borra la tabla de excedentes en tránsito
-                borrarExcedentesEnTransito()
-                'Inserta datos nuevos en la tabla excedentes en tránsito
-                GenerarExcedentesEnTransito()
-                'Borra la tabla de certificados en tránsito
-                borrarCertificadosEnTransito()
-                'Inserta datos nuevos en la tabla de certificados en tránsito
-                GenerarCertificadosEnTransito()
+            'Suma los tractos al Acumulado automáticamente para todos los asociados
+            certificados.sumarTractosEnTotalAcumulado()
+            'Hace la función de sumar Reservas
+            realizarCierrePeriodo()
+            'Borra la tabla de excedentes en tránsito
+            borrarExcedentesEnTransito()
+            'Inserta datos nuevos en la tabla excedentes en tránsito
+            GenerarExcedentesEnTransito()
+            'Borra la tabla de certificados en tránsito
+            borrarCertificadosEnTransito()
+            'Inserta datos nuevos en la tabla de certificados en tránsito
+            GenerarCertificadosEnTransito()
 
-            Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
-            End Try
-        End If
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
+        End Try
+
     End Sub
 
     'Borra la tabla de Excedentes en Tránsito para dejarla limpia (no hacer drop table, sino delete)
