@@ -2293,7 +2293,7 @@ Public Class ConexionBD
 
 
     'Selecciona cedula, num asociado y datos de los certificados por Asociado
-    Function consultarLicencia(ByVal codigo As String) As List(Of String)
+    Function consultarLicenciaActiva(ByVal codigo As String) As List(Of String)
         Dim MyList As New List(Of String)
         Try
 
@@ -2325,6 +2325,26 @@ Public Class ConexionBD
         Return MyList
 
     End Function
+
+    'Actualiza el contador de permisos para los usuarios al renovar la licencia  
+    Function actualizarCantidadDePermisos(ByVal cantidad As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "UPDATE [USUARIOS] SET Permisos = '" & cantidad & "' "
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return res
+    End Function
+
 
 
 
@@ -2645,6 +2665,8 @@ Public Class ConexionBD
         Return MyList
 
     End Function
+
+
 
 
 End Class
