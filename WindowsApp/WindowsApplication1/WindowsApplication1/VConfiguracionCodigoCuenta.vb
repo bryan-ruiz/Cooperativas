@@ -11,31 +11,22 @@
         Me.Button_ConfiguracionEliminarCodigoCuenta.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.button_VConfiguracionCodCuenta_Modificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
-
     End Sub
 
     Private Sub Button_ConfiguracionInsertarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionInsertarCodigoCuenta.Click
-        If Singleton.rol = "Colaborador" Then
-            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
-        Else
-            configuracionCodigoCuenta.insertarCuenta()
-            ingreso.obtenerDatosSeleccionarCuenta()
-            gasto.obtenerDatosSeleccionarCuenta()
-            configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
-            TextBox_ConfiguracionCuentaDescripcion.Text = ""
-        End If
+        configuracionCodigoCuenta.insertarCuenta()
+        ingreso.obtenerDatosSeleccionarCuenta()
+        gasto.obtenerDatosSeleccionarCuenta()
+        configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
+        TextBox_ConfiguracionCuentaDescripcion.Text = ""
     End Sub
 
     Private Sub Button_ConfiguracionEliminarCodigoCuenta_Click(sender As Object, e As EventArgs) Handles Button_ConfiguracionEliminarCodigoCuenta.Click
-        If Singleton.rol = "Colaborador" Then
-            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
-        Else
-            configuracionCodigoCuenta.eliminarCuenta()
-            ingreso.obtenerDatosSeleccionarCuenta()
-            gasto.obtenerDatosSeleccionarCuenta()
-            configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
-            TextBox_ConfiguracionCuentaDescripcion.Text = ""
-        End If
+        configuracionCodigoCuenta.eliminarCuenta()
+        ingreso.obtenerDatosSeleccionarCuenta()
+        gasto.obtenerDatosSeleccionarCuenta()
+        configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
+        TextBox_ConfiguracionCuentaDescripcion.Text = ""
     End Sub
 
     Private Sub ComboBox_CreacionCodCtaEntrada_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_CreacionCodCtaEntrada.SelectedIndexChanged
@@ -49,15 +40,11 @@
     End Sub
 
     Private Sub button_VConfiguracionCodCuenta_Modificar_Click(sender As Object, e As EventArgs) Handles button_VConfiguracionCodCuenta_Modificar.Click
-        If Singleton.rol = "Colaborador" Then
-            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
-        Else
-            configuracionCodigoCuenta.modificarCuenta()
-            ingreso.obtenerDatosSeleccionarCuenta()
-            gasto.obtenerDatosSeleccionarCuenta()
-            configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
-            TextBox_ConfiguracionCuentaDescripcion.Text = ""
-        End If
+        configuracionCodigoCuenta.modificarCuenta()
+        ingreso.obtenerDatosSeleccionarCuenta()
+        gasto.obtenerDatosSeleccionarCuenta()
+        configuracionCodigoCuenta.obtenerDatosSeleccionarCuentaGastosEIngresos()
+        TextBox_ConfiguracionCuentaDescripcion.Text = ""
     End Sub
 
     Private Sub Button_ConfiguracionReportesCodigoCuenta_Click(sender As Object, e As EventArgs)

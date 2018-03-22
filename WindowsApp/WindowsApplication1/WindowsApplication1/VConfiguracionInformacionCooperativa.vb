@@ -16,11 +16,7 @@
 
     'Modificar Informacion Cooperativa
     Private Sub ButtonConfiguracionInformacionModificar_Click(sender As Object, e As EventArgs) Handles ButtonConfiguracionInformacionModificar.Click
-        If Singleton.rol = "Colaborador" Then
-            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
-        Else
-            configuracionInformacion.actualizarInformacionCooperativa()
-        End If
+        configuracionInformacion.actualizarInformacionCooperativa()
         Me.Close()
     End Sub
 

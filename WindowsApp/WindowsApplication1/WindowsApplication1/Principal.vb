@@ -30,15 +30,35 @@ Public Class Principal
     End Sub
 
     Private Sub CodigosDeCuentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CodigosDeCuentasToolStripMenuItem.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'si es admin o super admin puede ver la ventana
         VConfiguracionCodigoCuenta.Show()
     End Sub
 
+
     Private Sub PorcentajesReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PorcentajesReservasToolStripMenuItem.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'si es admin o super admin puede ver la ventana
         VConfiguracionPorcentajeReservas.Show()
     End Sub
 
     Private Sub InformaciónCooperativaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónCooperativaToolStripMenuItem.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'si es admin o super admin puede ver la ventana
         VConfiguracionInformacionCooperativa.Show()
+
     End Sub
 
     Private Sub GestiónDeUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -87,6 +107,17 @@ Public Class Principal
 
     'Importa Asociados del excel a la BD del sistema
     Private Sub CargarUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargarUsuariosToolStripMenuItem.Click
+        If Singleton.rol = "Admin" Then
+            MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+
         Dim result As Integer = MessageBox.Show("¿Desea importar los Asociados del Excel a la base de datos del sistema?", "Importar Asociados", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             'nothing
@@ -97,16 +128,7 @@ Public Class Principal
             Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
             Dim todaysdate As String = String.Format("{0:dd/MM/yyyy}", DateTime.Now)
 
-            If Singleton.rol = "Admin" Then
-                MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos)
-                Return
-            End If
-
-            If Singleton.rol = "Colaborador" Then
-                MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos)
-            Else
-
-                Try
+            Try
                     'Abro Conexión
                     BD.ConectarBD()
 
@@ -160,7 +182,7 @@ Public Class Principal
 
             End If
 
-        End If
+
 
     End Sub
 
@@ -182,6 +204,16 @@ Public Class Principal
 
     'Importa Acumulado del Excel a la BD del sistema
     Private Sub ImportarAcumuladoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportarAcumuladoToolStripMenuItem.Click
+        If Singleton.rol = "Admin" Then
+            MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
 
         MessageBox.Show("NOTA: Deben existir Asociados en el Sistema, favor crear o importar Asociados antes de realizar esta acción.", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
 
@@ -194,16 +226,7 @@ Public Class Principal
             Dim Excel As String = "C:\BD\Acumulado.xlsx"
             Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
 
-
-            If Singleton.rol = "Admin" Then
-                MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos)
-                Return
-            End If
-
-            If Singleton.rol = "Colaborador" Then
-                MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos)
-            Else
-                Try
+            Try
                     'Abro Conexión
                     BD.ConectarBD()
 
@@ -253,18 +276,35 @@ Public Class Principal
 
             End If
 
-        End If
     End Sub
 
     Private Sub CerrarPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarPeriodoToolStripMenuItem.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'si es admin o super admin puede ver la ventana
         VResrvasPrincipal.Show()
     End Sub
 
     Private Sub ExcedentesMoverAReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesMoverAReservasToolStripMenuItem.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'si es admin o super admin puede ver la ventana
         VGestionDeExcedentes.Show()
     End Sub
 
     Private Sub CertificadosEnTránsitoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CertificadosEnTránsitoToolStripMenuItem.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'si es admin o super admin puede ver la ventana
         VGestionDeCertificados.Show()
     End Sub
 End Class
