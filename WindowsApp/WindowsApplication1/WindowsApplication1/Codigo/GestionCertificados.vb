@@ -4,6 +4,54 @@
     Dim encabezado As EncabezadoClase = New EncabezadoClase
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
+    Public Sub sumarEnReservasoCertLlamado()
+        Dim valores, valoresCert As Integer
+        'Textfield para consultar por ced o num asociado
+        Dim cedulaNumAsociado As String = VGestionDeCertificados.GestionCertificadoTextboxCed.Text
+        If (cedulaNumAsociado = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Else
+            Try
+                BD.ConectarBD()
+                valores = BD.retirarCertificadoEnTransito(cedulaNumAsociado, "En Reservas")
+                valoresCert = BD.actualizarAcumuladoDeCertificado(cedulaNumAsociado, 0)
+                If valores <> 0 And valoresCert <> 0 Then
+                    MessageBox.Show(variablesGlobales.seHaAcumuladoConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                Else
+                    MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                End If
+                BD.CerrarConexion()
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            End Try
+        End If
+        limpiar()
+    End Sub
+
+    Public Sub retirarAcumuladoCertLlamado()
+        Dim valores, valoresCert As Integer
+        'Textfield para consultar por ced o num asociado
+        Dim cedulaNumAsociado As String = VGestionDeCertificados.GestionCertificadoTextboxCed.Text
+        If (cedulaNumAsociado = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Else
+            Try
+                BD.ConectarBD()
+                valores = BD.retirarCertificadoEnTransito(cedulaNumAsociado, "En Acumulado")
+                valoresCert = BD.actualizarAcumuladoDeCertificado(cedulaNumAsociado, 0)
+                If valores <> 0 And valoresCert <> 0 Then
+                    MessageBox.Show(variablesGlobales.seHaAcumuladoConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                Else
+                    MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                End If
+                BD.CerrarConexion()
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            End Try
+        End If
+        limpiar()
+    End Sub
+
     'consulta un asociado por ced o numAsociado en la tabla de Excedentes en Tránsito
     Public Sub consultar()
 

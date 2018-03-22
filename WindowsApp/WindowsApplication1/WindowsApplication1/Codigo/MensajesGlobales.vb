@@ -4,6 +4,9 @@ Public Class MensajesGlobales
 
     Public folderPath As String = "C:\Reportes\"
 
+    Public seHaAcumuladoConExito As String = "Se ha acumulado con éxito"
+
+
     Public retiradoExcedenteExitoso As String = "Se ha retirado el excedente con éxito"
 
     Public nombreReporteExcCorresp As String = "reporte_Excedentes_Correspondientes.pdf"

@@ -2584,6 +2584,39 @@ Public Class ConexionBD
     '******************************
     '******************************
 
+    Function actualizarAcumuladoDeCertificado(ByVal idAsoc As String, ByVal montoAcumulao As Integer) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "UPDATE [CERTIFICADOS] SET  acumuladoAnterior= " & montoAcumulao & " WHERE (cedulaAsociado = '" & idAsoc & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
+
+    Function retirarCertificadoEnTransito(ByVal idAsoc As String, ByVal ubicacionEstado As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "UPDATE [CERTIFICADO_EN_TRANSITO] SET  estado= '" & ubicacionEstado & "',acumuladoActual= '0' WHERE (cedula = '" & idAsoc & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
 
     Function insertarCertificadoEnTransito(ByVal numAsociado As String, ByVal cedula As String, ByVal nombre As String, ByVal primerApellido As String, ByVal segundoApellido As String, ByVal acumuladoActual As String, ByVal estado As String) As Integer
         Dim res As Integer = 0

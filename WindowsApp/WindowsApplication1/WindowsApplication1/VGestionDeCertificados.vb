@@ -32,10 +32,15 @@
     End Sub
 
     Private Sub GestionCertificadoButtonRetirarAcum_Click(sender As Object, e As EventArgs) Handles GestionCertificadoButtonRetirarAcum.Click
+        gestionCertificados.retirarAcumuladoCertLlamado()
+        Me.Close()
+        VGastos.Show()
 
     End Sub
 
     Private Sub GestionCertificadoButtonSumarReservas_Click(sender As Object, e As EventArgs) Handles GestionCertificadoButtonSumarReservas.Click
-
+        gestionCertificados.retirarAcumuladoCertLlamado()
+        Me.Close()
+        VGastos.Show()
     End Sub
 End Class
