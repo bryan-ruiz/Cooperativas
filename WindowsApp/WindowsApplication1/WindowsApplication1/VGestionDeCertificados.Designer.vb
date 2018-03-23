@@ -51,10 +51,10 @@ Partial Class VGestionDeCertificados
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificadosEnEstadoPendienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificadosEnEstadoReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeCertificadosRetiradosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDeTodosLosEstadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FechasLímiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MontosMáximosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteDeCertificadosRetiradosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -367,6 +367,12 @@ Partial Class VGestionDeCertificados
         Me.CertificadosEnEstadoReservasToolStripMenuItem.Size = New System.Drawing.Size(267, 22)
         Me.CertificadosEnEstadoReservasToolStripMenuItem.Text = "Reporte de certificados - en Reservas"
         '
+        'ReporteDeCertificadosRetiradosToolStripMenuItem
+        '
+        Me.ReporteDeCertificadosRetiradosToolStripMenuItem.Name = "ReporteDeCertificadosRetiradosToolStripMenuItem"
+        Me.ReporteDeCertificadosRetiradosToolStripMenuItem.Size = New System.Drawing.Size(267, 22)
+        Me.ReporteDeCertificadosRetiradosToolStripMenuItem.Text = "Reporte de certificados - Retirados"
+        '
         'ReporteDeTodosLosEstadosToolStripMenuItem
         '
         Me.ReporteDeTodosLosEstadosToolStripMenuItem.Name = "ReporteDeTodosLosEstadosToolStripMenuItem"
@@ -384,12 +390,6 @@ Partial Class VGestionDeCertificados
         Me.MontosMáximosToolStripMenuItem.Name = "MontosMáximosToolStripMenuItem"
         Me.MontosMáximosToolStripMenuItem.Size = New System.Drawing.Size(111, 20)
         Me.MontosMáximosToolStripMenuItem.Text = "Montos Máximos"
-        '
-        'ReporteDeCertificadosRetiradosToolStripMenuItem
-        '
-        Me.ReporteDeCertificadosRetiradosToolStripMenuItem.Name = "ReporteDeCertificadosRetiradosToolStripMenuItem"
-        Me.ReporteDeCertificadosRetiradosToolStripMenuItem.Size = New System.Drawing.Size(267, 22)
-        Me.ReporteDeCertificadosRetiradosToolStripMenuItem.Text = "Reporte de certificados - Retirados"
         '
         'VGestionDeCertificados
         '
