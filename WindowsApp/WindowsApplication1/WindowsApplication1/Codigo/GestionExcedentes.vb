@@ -12,9 +12,9 @@ Public Class GestionExcedentes
     Public Sub reporteCertificadosEnTransito(ByVal estado As String)
         Dim totalEntradas As Integer = 0
         Try
-            Dim listaCertificadosEnTransito As List(Of String)
+            Dim listaExcedenteEnTransito As List(Of String)
             BD.ConectarBD()
-            listaCertificadosEnTransito = BD.seleccionarExcedenteTreansitoEnEstadoX(estado)
+            listaExcedenteEnTransito = BD.seleccionarExcedenteTreansitoEnEstadoX(estado)
             BD.CerrarConexion()
 
             If Not Directory.Exists(variablesGlobales.folderPath) Then
@@ -26,8 +26,8 @@ Public Class GestionExcedentes
             Dim nombreReporte As String = "excedentes_En_Transito.pdf"
             Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & nombreReporte, FileMode.Create))
             pdfDoc.Open()
-            ''encabezado.consultarDatos()
-            ''encabezado.encabezado(pdfWrite, pdfDoc)
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
 
@@ -78,12 +78,16 @@ Public Class GestionExcedentes
             Dim contador As Integer = 0
             Dim conta As Integer = 0
 
+            If listaExcedenteEnTransito.Count = 0 Then
+                MessageBox.Show(variablesGlobales.reporteSinDatos & nombreReporte, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return
+            End If
 
-            While contador < listaCertificadosEnTransito.Count
+            While contador < listaExcedenteEnTransito.Count
                 If conta = 50 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
-                    'encabezado.encabezado(pdfWrite, pdfDoc)
+                    encabezado.encabezado(pdfWrite, pdfDoc)
                     table.DeleteBodyRows()
                     conta = 0
                 End If
@@ -93,31 +97,31 @@ Public Class GestionExcedentes
                 Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
 
 
-                Dim numAsocOb As PdfPCell = New PdfPCell(New Phrase(listaCertificadosEnTransito(contador), FontStype2))
+                Dim numAsocOb As PdfPCell = New PdfPCell(New Phrase(listaExcedenteEnTransito(contador), FontStype2))
                 numAsocOb.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 numAsocOb.Colspan = 1
                 numAsocOb.HorizontalAlignment = 1
                 contador += 1
 
-                Dim cedulaAsocOb As PdfPCell = New PdfPCell(New Phrase(listaCertificadosEnTransito(contador), FontStype2))
+                Dim cedulaAsocOb As PdfPCell = New PdfPCell(New Phrase(listaExcedenteEnTransito(contador), FontStype2))
                 cedulaAsocOb.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 cedulaAsocOb.Colspan = 1
                 cedulaAsocOb.HorizontalAlignment = 1
                 contador += 1
 
-                Dim nombreComObt As PdfPCell = New PdfPCell(New Phrase(listaCertificadosEnTransito(contador), FontStype2))
+                Dim nombreComObt As PdfPCell = New PdfPCell(New Phrase(listaExcedenteEnTransito(contador), FontStype2))
                 nombreComObt.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 nombreComObt.Colspan = 1
                 nombreComObt.HorizontalAlignment = 1
                 contador += 1
 
-                Dim acumuladoOb As PdfPCell = New PdfPCell(New Phrase(" ¢ " + listaCertificadosEnTransito(contador), FontStype2))
+                Dim acumuladoOb As PdfPCell = New PdfPCell(New Phrase(" ¢ " + listaExcedenteEnTransito(contador), FontStype2))
                 acumuladoOb.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 acumuladoOb.Colspan = 1
                 acumuladoOb.HorizontalAlignment = 1
                 contador += 1
 
-                Dim estadoOb As PdfPCell = New PdfPCell(New Phrase(listaCertificadosEnTransito(contador), FontStype2))
+                Dim estadoOb As PdfPCell = New PdfPCell(New Phrase(listaExcedenteEnTransito(contador), FontStype2))
                 estadoOb.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 estadoOb.Colspan = 1
                 estadoOb.HorizontalAlignment = 1

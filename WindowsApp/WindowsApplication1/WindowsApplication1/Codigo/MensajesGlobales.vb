@@ -2,6 +2,8 @@
 'Clase para los mensajes del sistema
 Public Class MensajesGlobales
 
+    Public reporteSinDatos As String = "No se encontraron datos dentro del reporte"
+
     Public folderPath As String = "C:\Reportes\"
 
     Public seHaAcumuladoConExito As String = "Se ha acumulado con éxito"

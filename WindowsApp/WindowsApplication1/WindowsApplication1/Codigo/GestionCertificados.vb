@@ -26,8 +26,8 @@ Public Class GestionCertificados
             Dim nombreReporte As String = "certificados_En_Transito.pdf"
             Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & nombreReporte, FileMode.Create))
             pdfDoc.Open()
-            ''encabezado.consultarDatos()
-            ''encabezado.encabezado(pdfWrite, pdfDoc)
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
 
@@ -78,12 +78,16 @@ Public Class GestionCertificados
             Dim contador As Integer = 0
             Dim conta As Integer = 0
 
+            If listaCertificadosEnTransito.Count = 0 Then
+                MessageBox.Show(variablesGlobales.reporteSinDatos & nombreReporte, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return
+            End If
 
             While contador < listaCertificadosEnTransito.Count
                 If conta = 50 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
-                    'encabezado.encabezado(pdfWrite, pdfDoc)
+                    encabezado.encabezado(pdfWrite, pdfDoc)
                     table.DeleteBodyRows()
                     conta = 0
                 End If
