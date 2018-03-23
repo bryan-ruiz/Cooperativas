@@ -101,11 +101,36 @@ Public Class Reservas
         End If
     End Sub
 
+    Function validarNoExistenPendientes() As Integer
+        Dim pendienteExcedente, pendienteCertificado As List(Of String)
+        Dim cantidad As Integer = 0
+        Dim estado As String = "Pendiente"
+        Try
+
+            BD.ConectarBD()
+            pendienteExcedente = BD.seleccionarExcedenteTreansitoEnEstadoX(estado)
+            pendienteCertificado = BD.seleccionarcertificadoTreansitoEnEstadoX(estado)
+            cantidad = pendienteCertificado.Count + pendienteExcedente.Count
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
+        End Try
+        Return cantidad
+    End Function
+
+
+
+
     'Función principal que llama a realizar cierre periodo
     Public Sub cerrarPeriodo()
+        Dim cantidadDePendiente As Integer = 0
         Try
             'Validar que no existen estados "Pendiente" EXCEDENTES-EN-TRANSITO ni en CERTIFICADOS-EN-TRANSITO
-            'validarNoExistenPendientes()
+            cantidadDePendiente = validarNoExistenPendientes()
+            If cantidadDePendiente <> 0 Then
+                MessageBox.Show(variablesGlobales.errorExistenDatosPendientes, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                Return
+            End If
 
             'Suma los tractos al Acumulado automáticamente para todos los asociados
             certificados.sumarTractosEnTotalAcumulado()

@@ -22,11 +22,11 @@
     End Sub
 
     Private Sub GestionExcButtonSumarAlAcumulado_Click(sender As Object, e As EventArgs) Handles GestionExcButtonSumarAlAcumulado.Click
-
+        gestionExcedentes.sumarAlAcumuladoLlamado()
     End Sub
 
     Private Sub GestionExcButtonSumarAReservas_Click(sender As Object, e As EventArgs) Handles GestionExcButtonSumarAReservas.Click
-
+        gestionExcedentes.sumarAReservasLlamado()
     End Sub
 
     Private Sub GestionExcButtonRetirarExcedente_Click(sender As Object, e As EventArgs) Handles GestionExcButtonRetirarExcedente.Click
@@ -41,22 +41,27 @@
     End Sub
 
     Private Sub ExcedentesEnEstadoPendienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesEnEstadoPendienteToolStripMenuItem.Click
-
+        gestionExcedentes.reporteCertificadosEnTransito("Pendiente")
+        Print.Show()
     End Sub
 
     Private Sub ExcedentesEnEstadoRetiradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesEnEstadoRetiradoToolStripMenuItem.Click
-
+        gestionExcedentes.reporteCertificadosEnTransito("Retirado")
+        Print.Show()
     End Sub
 
     Private Sub ExcedentesEnEstadoAcumuladoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesEnEstadoAcumuladoToolStripMenuItem.Click
-
+        gestionExcedentes.reporteCertificadosEnTransito("En Acumulado")
+        Print.Show()
     End Sub
 
     Private Sub ExcedentesEnEstadoReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesEnEstadoReservasToolStripMenuItem.Click
-
+        gestionExcedentes.reporteCertificadosEnTransito("En Reservas")
+        Print.Show()
     End Sub
 
     Private Sub ReporteDeTodosLosEstadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeTodosLosEstadosToolStripMenuItem.Click
-
+        gestionExcedentes.reporteCertificadosEnTransito("Todos")
+        Print.Show()
     End Sub
 End Class

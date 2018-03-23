@@ -2,7 +2,12 @@
 'Clase para los mensajes del sistema
 Public Class MensajesGlobales
 
+    Public reporteSinDatos As String = "No se encontraron datos dentro del reporte"
+
     Public folderPath As String = "C:\Reportes\"
+
+    Public seHaAcumuladoConExito As String = "Se ha acumulado con éxito"
+    Public enQueVentanaEstoy As String = "ninguna"
 
     Public retiradoExcedenteExitoso As String = "Se ha retirado el excedente con éxito"
 
@@ -41,6 +46,7 @@ Public Class MensajesGlobales
     Public errorTotalEnCero As String = "Error ingresando datos, el Total debe ser mayor a 0"
     Public errorMontoCertificados As String = "Error ingresando datos, el Monto no debe ser mayor al establecido"
     Public errorMontoCertificadosMayorMil As String = "Error ingresando datos, el Total del Periodo no debe ser mayor al establecido"
+    Public errorExistenDatosPendientes As String = "Error no se puede realizar cierre porque existen datos pendientes"
 
     Public licenciaCaducada As String = "Su licencia ha caducado, contacte al Administrador del Sistema"
     Public nombreUsuarioOContrasenaIncorrecto As String = "El nombre de usuario o contraseña es incorrecto"

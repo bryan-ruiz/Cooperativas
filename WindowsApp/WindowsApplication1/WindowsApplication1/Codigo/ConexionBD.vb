@@ -1160,6 +1160,23 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function sumarAcumuladoAnterior(ByVal cedula As String, ByVal monto As Integer) As Integer
+        Dim MyList As Integer = 0
+        Try
+            SQL = "UPDATE [CERTIFICADOS] 
+                SET acumuladoAnterior = acumuladoAnterior + " & monto & " WHERE ((cedulaAsociado) = '" & cedula & "' or (numAsociado)= '" & cedula & "')"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
 
 
     'Selecciona cedula, num asociado y datos de los certificados por Asociado
@@ -2484,6 +2501,44 @@ Public Class ConexionBD
     ' EXCEDENTES EN TRANSITO
     '******************************
     '******************************
+    Function seleccionarExcedenteTreansitoEnEstadoX(ByVal excedenteEstado As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Dim SQL As String
+        Try
+            If excedenteEstado = "Todos" Then
+                SQL = "SELECT EXCEDENTE_EN_TRANSITO.numAsociado, EXCEDENTE_EN_TRANSITO.cedula, 
+                    (EXCEDENTE_EN_TRANSITO.nombre +' '+ EXCEDENTE_EN_TRANSITO.primerApellido +' '+ EXCEDENTE_EN_TRANSITO.segundoApellido ) as nombreCompleto,
+                    EXCEDENTE_EN_TRANSITO.excedente, EXCEDENTE_EN_TRANSITO.estado
+                    FROM [EXCEDENTE_EN_TRANSITO]
+                    order by EXCEDENTE_EN_TRANSITO.estado"
+            Else
+                SQL = "SELECT EXCEDENTE_EN_TRANSITO.numAsociado, EXCEDENTE_EN_TRANSITO.cedula, 
+                    (EXCEDENTE_EN_TRANSITO.nombre +' '+ EXCEDENTE_EN_TRANSITO.primerApellido +' '+ EXCEDENTE_EN_TRANSITO.segundoApellido ) as nombreCompleto,
+                    EXCEDENTE_EN_TRANSITO.excedente, EXCEDENTE_EN_TRANSITO.estado
+                    FROM [EXCEDENTE_EN_TRANSITO]
+                    WHERE ((EXCEDENTE_EN_TRANSITO.estado) = '" & excedenteEstado & "') order by EXCEDENTE_EN_TRANSITO.estado"
+            End If
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+        End Try
+        Return MyList
+    End Function
+
 
     Function insertarExcedenteEnTransito(ByVal numAsociado As String, ByVal cedula As String, ByVal nombre As String, ByVal primerApellido As String, ByVal segundoApellido As String, ByVal excedente As String, ByVal estado As String) As Integer
         Dim res As Integer = 0
@@ -2565,16 +2620,16 @@ Public Class ConexionBD
 
 
 
-    Function retirarExcedente(ByVal idAsoc As String) As Integer
+    Function retirarExcedente(ByVal idAsoc As String, ByVal ubicacionEstado As String) As Integer
         Dim res As Integer = 0
         Try
-            SQL = "UPDATE [EXCEDENTE_EN_TRANSITO] SET  estado= 'Retirado',excedente= '0' WHERE (cedula = '" & idAsoc & "' or numAsociado= '" & idAsoc & "') "
+            SQL = "UPDATE [EXCEDENTE_EN_TRANSITO] SET  estado= '" & ubicacionEstado & "',excedente= '0' WHERE (cedula = '" & idAsoc & "' or numAsociado= '" & idAsoc & "') "
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 res = command.ExecuteNonQuery()
             Else
                 MessageBox.Show("No hay conexión con la base de datos")
-            End If            
+            End If
         Catch ex As Exception
             MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
@@ -2586,6 +2641,77 @@ Public Class ConexionBD
     ' CERTIFICADOS EN TRANSITO
     '******************************
     '******************************
+
+    Function seleccionarcertificadoTreansitoEnEstadoX(ByVal certificadoEstado As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Dim SQL As String
+        Try
+            If certificadoEstado = "Todos" Then
+                SQL = "SELECT CERTIFICADO_EN_TRANSITO.numAsociado, CERTIFICADO_EN_TRANSITO.cedula, 
+                    (CERTIFICADO_EN_TRANSITO.nombre +' '+ CERTIFICADO_EN_TRANSITO.primerApellido +' '+ CERTIFICADO_EN_TRANSITO.segundoApellido ) as nombreCompleto,
+                    CERTIFICADO_EN_TRANSITO.acumuladoActual, CERTIFICADO_EN_TRANSITO.estado
+                    FROM [CERTIFICADO_EN_TRANSITO]
+                    order by CERTIFICADO_EN_TRANSITO.estado"
+            Else
+                SQL = "SELECT CERTIFICADO_EN_TRANSITO.numAsociado, CERTIFICADO_EN_TRANSITO.cedula, 
+                    (CERTIFICADO_EN_TRANSITO.nombre +' '+ CERTIFICADO_EN_TRANSITO.primerApellido +' '+ CERTIFICADO_EN_TRANSITO.segundoApellido ) as nombreCompleto,
+                    CERTIFICADO_EN_TRANSITO.acumuladoActual, CERTIFICADO_EN_TRANSITO.estado
+                    FROM [CERTIFICADO_EN_TRANSITO]
+                    WHERE ((CERTIFICADO_EN_TRANSITO.estado) = '" & certificadoEstado & "') order by CERTIFICADO_EN_TRANSITO.estado"
+            End If
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.ToString)
+        End Try
+        Return MyList
+    End Function
+
+    Function actualizarAcumuladoDeCertificado(ByVal idAsoc As String, ByVal montoAcumulao As Integer) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "UPDATE [CERTIFICADOS] SET  acumuladoAnterior= " & montoAcumulao & " WHERE (cedulaAsociado = '" & idAsoc & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
+
+    Function retirarCertificadoEnTransito(ByVal idAsoc As String, ByVal ubicacionEstado As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "UPDATE [CERTIFICADO_EN_TRANSITO] SET  estado= '" & ubicacionEstado & "',acumuladoActual= '0' WHERE (cedula = '" & idAsoc & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message.ToString, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
 
 
     Function insertarCertificadoEnTransito(ByVal numAsociado As String, ByVal cedula As String, ByVal nombre As String, ByVal primerApellido As String, ByVal segundoApellido As String, ByVal acumuladoActual As String, ByVal estado As String) As Integer
