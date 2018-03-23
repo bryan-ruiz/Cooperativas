@@ -168,7 +168,7 @@ Public Class GestionCertificados
                 valorDeConsultaEducacion = Reserva.actualizarMontoEnBase(cincuentaPorciento, "educacion")
 
                 If valores <> 0 And valoresCert <> 0 And valorDeConsultaEducacion <> 0 And valorConsultaBienestarSoc <> 0 Then
-                    MessageBox.Show(variablesGlobales.seHaAcumuladoConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                 Else
                     MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                 End If
@@ -189,10 +189,10 @@ Public Class GestionCertificados
         Else
             Try
                 BD.ConectarBD()
-                valores = BD.retirarCertificadoEnTransito(cedulaNumAsociado, "En Acumulado")
+                valores = BD.retirarCertificadoEnTransito(cedulaNumAsociado, "Retirado")
                 valoresCert = BD.actualizarAcumuladoDeCertificado(cedulaNumAsociado, 0)
                 If valores <> 0 And valoresCert <> 0 Then
-                    MessageBox.Show(variablesGlobales.seHaAcumuladoConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                 Else
                     MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                 End If

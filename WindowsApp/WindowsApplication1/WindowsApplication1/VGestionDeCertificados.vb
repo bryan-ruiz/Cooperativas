@@ -55,7 +55,7 @@
     End Sub
 
     Private Sub ReporteDeCertificadosRetiradosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeCertificadosRetiradosToolStripMenuItem.Click
-        gestionCertificados.reporteCertificadosEnTransito("Retirados")
+        gestionCertificados.reporteCertificadosEnTransito("Retirado")
         Print.Show()
     End Sub
 
