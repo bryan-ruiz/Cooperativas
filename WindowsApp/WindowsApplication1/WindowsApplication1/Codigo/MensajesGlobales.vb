@@ -22,7 +22,7 @@ Public Class MensajesGlobales
     Public licenciaPermisos = "300"
 
     Public mensajePdfAbierto As String = "No se puede generar el reporte porque el PDF se encuentra abierto"
-
+    Public mensajePendienteRequerido As String = "Para realizar la acción el estado debe ser: Pendiente"
     Public mensajeCedulaONumAsociado As String = "Debe ingresar la cédula o el número de asociado a consultar"
     Public mensajeDebeIngresarCodigoODescriptionDeCuenta As String = "Debe ingresar el codigo y/o descripción de la cuenta"
     Public mensajeCedulaFormato As String = "La cédula debe llevar el formato X-XXXX-XXXX"

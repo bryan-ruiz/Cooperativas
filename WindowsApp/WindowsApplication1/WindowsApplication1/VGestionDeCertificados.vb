@@ -33,15 +33,10 @@
 
     Private Sub GestionCertificadoButtonRetirarAcum_Click(sender As Object, e As EventArgs) Handles GestionCertificadoButtonRetirarAcum.Click
         gestionCertificados.retirarAcumuladoCertLlamado()
-        Me.Close()
-        VGastos.Show()
-
     End Sub
 
     Private Sub GestionCertificadoButtonSumarReservas_Click(sender As Object, e As EventArgs) Handles GestionCertificadoButtonSumarReservas.Click
         gestionCertificados.sumarEnReservasoCertLlamado()
-        Me.Close()
-        VGastos.Show()
     End Sub
 
     Private Sub CertificadosEnEstadoPendienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CertificadosEnEstadoPendienteToolStripMenuItem.Click
@@ -62,5 +57,9 @@
     Private Sub ReporteDeTodosLosEstadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeTodosLosEstadosToolStripMenuItem.Click
         gestionCertificados.reporteCertificadosEnTransito("Todos")
         Print.Show()
+    End Sub
+
+    Private Sub GestionCertificadoButtonLimpiar_Click(sender As Object, e As EventArgs) Handles GestionCertificadoButtonLimpiar.Click
+        gestionCertificados.limpiar()
     End Sub
 End Class

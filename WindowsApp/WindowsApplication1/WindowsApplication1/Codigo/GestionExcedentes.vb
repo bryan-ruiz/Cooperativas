@@ -151,27 +151,36 @@ Public Class GestionExcedentes
         Dim valores, valorEnCertificado As Int32
         Dim cedulaNumAsociado As String = VGestionDeExcedentes.GestionExcTextboxCedulaNumAsociado.Text
         Dim excedenteDeUsuario As String = VGestionDeExcedentes.GestionExcTextboxExcCorrespondiente.Text
-        If (cedulaNumAsociado = "" Or excedenteDeUsuario = "") Then
-            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        Else
-            Try
-                Dim ubicacionEstado As String = "En Acumulado"
-                Dim cantidad As Integer = Integer.Parse(excedenteDeUsuario)
+        Dim status As String = VGestionDeExcedentes.GestionExcTextboxStatus.Text
 
-                BD.ConectarBD()
-                valores = BD.retirarExcedente(cedulaNumAsociado, ubicacionEstado)
-                valorEnCertificado = BD.sumarAcumuladoAnterior(cedulaNumAsociado, cantidad)
-                If valores <> 0 And valorEnCertificado <> 0 Then
-                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-                Else
-                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-                End If
-                limpiar()
-                BD.CerrarConexion()
-            Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            End Try
+        If (cedulaNumAsociado = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
         End If
+
+        If (status <> "Pendiente") Then
+            MessageBox.Show(variablesGlobales.mensajePendienteRequerido, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        Try
+            Dim ubicacionEstado As String = "En Acumulado"
+            Dim cantidad As Integer = Integer.Parse(excedenteDeUsuario)
+
+            BD.ConectarBD()
+            valores = BD.retirarExcedente(cedulaNumAsociado, ubicacionEstado)
+            valorEnCertificado = BD.sumarAcumuladoAnterior(cedulaNumAsociado, cantidad)
+            If valores <> 0 And valorEnCertificado <> 0 Then
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+            limpiar()
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+
     End Sub
 
     'sumar excedentes de un usuario a reservas ediucacion social y bienestar social.
@@ -179,29 +188,38 @@ Public Class GestionExcedentes
         Dim valores, valorDeConsultaEducacion, valorConsultaBienestarSoc As Int32
         Dim cedulaNumAsociado As String = VGestionDeExcedentes.GestionExcTextboxCedulaNumAsociado.Text
         Dim excedenteDeUsuario As String = VGestionDeExcedentes.GestionExcTextboxExcCorrespondiente.Text
-        If (cedulaNumAsociado = "" Or excedenteDeUsuario = "") Then
-            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        Else
-            Try
-                Dim ubicacionEstado As String = "En Reservas"
-                Dim cantidad As Integer = Integer.Parse(excedenteDeUsuario)
-                Dim cincuentaPorciento As Integer = cantidad / 2
+        Dim status As String = VGestionDeExcedentes.GestionExcTextboxStatus.Text
 
-                BD.ConectarBD()
-                valorConsultaBienestarSoc = Reserva.actualizarMontoEnBase(cincuentaPorciento, "bienestarSocial")
-                valorDeConsultaEducacion = Reserva.actualizarMontoEnBase(cincuentaPorciento, "educacion")
-                valores = BD.retirarExcedente(cedulaNumAsociado, ubicacionEstado)
-                If valores <> 0 And valorDeConsultaEducacion <> 0 And valorConsultaBienestarSoc <> 0 Then
-                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-                Else
-                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-                End If
-                limpiar()
-                BD.CerrarConexion()
-            Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            End Try
+        If (cedulaNumAsociado = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
         End If
+
+        If (status <> "Pendiente") Then
+            MessageBox.Show(variablesGlobales.mensajePendienteRequerido, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        Try
+            Dim ubicacionEstado As String = "En Reservas"
+            Dim cantidad As Integer = Integer.Parse(excedenteDeUsuario)
+            Dim cincuentaPorciento As Integer = cantidad / 2
+
+            BD.ConectarBD()
+            valorConsultaBienestarSoc = Reserva.actualizarMontoEnBase(cincuentaPorciento, "bienestarSocial")
+            valorDeConsultaEducacion = Reserva.actualizarMontoEnBase(cincuentaPorciento, "educacion")
+            valores = BD.retirarExcedente(cedulaNumAsociado, ubicacionEstado)
+            If valores <> 0 And valorDeConsultaEducacion <> 0 And valorConsultaBienestarSoc <> 0 Then
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+            limpiar()
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+
     End Sub
 
 
@@ -210,24 +228,37 @@ Public Class GestionExcedentes
     Public Sub retirarExcedentesLlamado()
         Dim valores As Int32
         Dim cedulaNumAsociado As String = VGestionDeExcedentes.GestionExcTextboxCedulaNumAsociado.Text
+        Dim status As String = VGestionDeExcedentes.GestionExcTextboxStatus.Text
+
         If (cedulaNumAsociado = "") Then
             MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        Else
-            Try
-                BD.ConectarBD()
-                Dim ubicacionEstado As String = "Retirado"
-                valores = BD.retirarExcedente(cedulaNumAsociado, ubicacionEstado)
-                If valores <> 0 Then
-                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-                Else
-                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-                End If
-                limpiar()
-                BD.CerrarConexion()
-            Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            End Try
+            Return
         End If
+
+        If (status <> "Pendiente") Then
+            MessageBox.Show(variablesGlobales.mensajePendienteRequerido, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        Try
+            BD.ConectarBD()
+            Dim ubicacionEstado As String = "Retirado"
+            valores = BD.retirarExcedente(cedulaNumAsociado, ubicacionEstado)
+            If valores <> 0 Then
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+            limpiar()
+            BD.CerrarConexion()
+
+            VGestionDeExcedentes.Hide()
+            VGastos.Show()
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+
     End Sub
 
     'consulta un asociado por ced o numAsociado en la tabla de Excedentes en Tránsito

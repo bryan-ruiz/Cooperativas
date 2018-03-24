@@ -153,30 +153,39 @@ Public Class GestionCertificados
         'Textfield para consultar por ced o num asociado
         Dim cedulaNumAsociado As String = VGestionDeCertificados.GestionCertificadoTextboxCed.Text
         Dim acumulado As String = VGestionDeCertificados.GestionCertificadoTextboxAcumuladoActual.Text
-        If (cedulaNumAsociado = "" Or acumulado = "") Then
+        Dim status As String = VGestionDeCertificados.GestionCertificadoTextboxStatus.Text
+
+        If (cedulaNumAsociado = "") Then
             MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        Else
-            Try
-                BD.ConectarBD()
-                valores = BD.retirarCertificadoEnTransito(cedulaNumAsociado, "En Reservas")
-                valoresCert = BD.actualizarAcumuladoDeCertificado(cedulaNumAsociado, 0)
-
-                Dim cantidad As Integer = Integer.Parse(acumulado)
-                Dim cincuentaPorciento As Integer = cantidad / 2
-
-                valorConsultaBienestarSoc = Reserva.actualizarMontoEnBase(cincuentaPorciento, "bienestarSocial")
-                valorDeConsultaEducacion = Reserva.actualizarMontoEnBase(cincuentaPorciento, "educacion")
-
-                If valores <> 0 And valoresCert <> 0 And valorDeConsultaEducacion <> 0 And valorConsultaBienestarSoc <> 0 Then
-                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-                Else
-                    MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-                End If
-                BD.CerrarConexion()
-            Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            End Try
+            Return
         End If
+
+        If (status <> "Pendiente") Then
+            MessageBox.Show(variablesGlobales.mensajePendienteRequerido, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        Try
+            BD.ConectarBD()
+            valores = BD.retirarCertificadoEnTransito(cedulaNumAsociado, "En Reservas")
+            valoresCert = BD.actualizarAcumuladoDeCertificado(cedulaNumAsociado, 0)
+
+            Dim cantidad As Integer = Integer.Parse(acumulado)
+            Dim cincuentaPorciento As Integer = cantidad / 2
+
+            valorConsultaBienestarSoc = Reserva.actualizarMontoEnBase(cincuentaPorciento, "bienestarSocial")
+            valorDeConsultaEducacion = Reserva.actualizarMontoEnBase(cincuentaPorciento, "educacion")
+
+            If valores <> 0 And valoresCert <> 0 And valorDeConsultaEducacion <> 0 And valorConsultaBienestarSoc <> 0 Then
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+
         limpiar()
     End Sub
 
@@ -184,23 +193,38 @@ Public Class GestionCertificados
         Dim valores, valoresCert As Integer
         'Textfield para consultar por ced o num asociado
         Dim cedulaNumAsociado As String = VGestionDeCertificados.GestionCertificadoTextboxCed.Text
+        Dim status As String = VGestionDeCertificados.GestionCertificadoTextboxStatus.Text
+
         If (cedulaNumAsociado = "") Then
             MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        Else
-            Try
-                BD.ConectarBD()
-                valores = BD.retirarCertificadoEnTransito(cedulaNumAsociado, "Retirado")
-                valoresCert = BD.actualizarAcumuladoDeCertificado(cedulaNumAsociado, 0)
-                If valores <> 0 And valoresCert <> 0 Then
-                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-                Else
-                    MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-                End If
-                BD.CerrarConexion()
-            Catch ex As Exception
-                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-            End Try
+            Return
         End If
+
+        If (status <> "Pendiente") Then
+            MessageBox.Show(variablesGlobales.mensajePendienteRequerido, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        Try
+            BD.ConectarBD()
+            valores = BD.retirarCertificadoEnTransito(cedulaNumAsociado, "Retirado")
+            valoresCert = BD.actualizarAcumuladoDeCertificado(cedulaNumAsociado, 0)
+
+            If valores <> 0 And valoresCert <> 0 Then
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+
+            BD.CerrarConexion()
+
+            VGestionDeCertificados.Hide()
+            VGastos.Show()
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            End Try
+
         limpiar()
     End Sub
 
