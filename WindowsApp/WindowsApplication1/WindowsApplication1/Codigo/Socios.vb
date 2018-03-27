@@ -853,7 +853,10 @@ Public Class Socios
             'Subtotal X Socio de suma de acum + periodo (total)
             Dim subTotalAportacionesTodos As Double = Integer.Parse(totalAportacionesAcumTodos.Item(0)) + Integer.Parse(totalAportacionesTotalTodos.Item(0))
 
-
+            If Convert.ToInt64(subTotalAportacionesTodos) = 0 Then
+                MessageBox.Show("El reporte no se ha generado, las aportaciones totales de los Asociados tiene un valor de 0.", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return
+            End If
 
             'MsgBox("XXXX aportaciones suma TODOS (acum mas total) son: " + subTotalAportacionesTodos.ToString)
 
@@ -1040,8 +1043,11 @@ Public Class Socios
 
                 Dim cedula As String = valores(contador).cedula
                 Dim nombrees As String = valores(contador).nombre
-                ' MsgBox("cedula es " & cedula & " -  nombre es : " & nombrees)
+
+                'MsgBox("cedula es " & cedula & " -  nombre es : " & nombrees)
+
                 'Aportaciones o Certificados - Acum
+
                 Dim totalAportacionesAcum As List(Of String) = obtenerCertificadoXSocioAcumAnterior(cedula)
                 'Aportaciones o Certificados - Total o Periodo
 
@@ -1050,24 +1056,29 @@ Public Class Socios
                 'Subtotal X Socio de suma de acum + periodo (total)
                 Dim subTotalAportacionesXSocio As Double = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
 
-                ' MsgBox("aportaciones X SOCIO (acum mas total) son: " + subTotalAportacionesXSocio.ToString)
+                'MsgBox("aportaciones X SOCIO (acum mas total) son: " + subTotalAportacionesXSocio.ToString)
 
                 Dim resultDivisionTotalSocioEntreTotalTodosLosSocios As Double = subTotalAportacionesXSocio / subTotalAportacionesTodos
-                ' MsgBox("Division double x socio es : " + resultDivisionTotalSocioEntreTotalTodosLosSocios.ToString)
+
+                'MsgBox("Division double x socio es : " + resultDivisionTotalSocioEntreTotalTodosLosSocios.ToString)
 
 
                 ' --- Testing - floor - double value 
 
                 Dim totalXSocioExcDistribuible As Double = resultDivisionTotalSocioEntreTotalTodosLosSocios * sumaExcedentesNetosDistribuibles
 
-                ' MsgBox("FCE x excNetosDistrib es : " + totalXSocioExcDistribuible.ToString)
+                'MsgBox("FCE x excNetosDistrib es : " + totalXSocioExcDistribuible.ToString)
 
                 Dim floorXSocio As Double = Math.Floor(totalXSocioExcDistribuible)
 
-                ' MsgBox("Floor es : " + floorXSocio.ToString)
+                'MsgBox("XXXXXX Floor es : " + floorXSocio.ToString)
 
 
-                Dim excCorrespN As Integer = Convert.ToInt32(floorXSocio.ToString)
+                Dim excCorrespN As Integer = Convert.ToInt64(floorXSocio.ToString)
+
+                'MsgBox("XXXXXX excCorrespN es : " + excCorrespN.ToString)
+
+
                 Dim excCorrespNT As String = excCorrespN.ToString("N")
 
                 Dim excedenteCorrespT As PdfPCell = New PdfPCell(New Phrase(" ¢ " + excCorrespNT, FontStype2))
