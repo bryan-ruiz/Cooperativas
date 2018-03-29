@@ -247,19 +247,11 @@ Public Class Principal
                         End Using
                     End Using
 
-
-
-                    BD.ConectarBD()
-
-
-                    Dim valores As List(Of AcumuladoClase)
-                    valores = BD.obtenerDatosAcumuladoXAsociado()
-
-
-
-                    Dim contador As Integer = 0
-
-                    While contador < valores.Count
+                BD.ConectarBD()
+                Dim valores As List(Of AcumuladoClase)
+                valores = BD.obtenerDatosAcumuladoXAsociado()
+                Dim contador As Integer = 0
+                While contador < valores.Count
                         BD.actualizarDatosAcumuladoXAsociado(valores(contador).cedula.ToString, valores(contador).acumuladoAnterior.ToString)
                         contador = contador + 1
                     End While
