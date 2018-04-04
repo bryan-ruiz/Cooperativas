@@ -45,6 +45,7 @@ Public Class ConexionBD
     Sub CerrarConexion()
         Try
             objConexion.Close()
+            objConexion.Dispose()
             conectadoBD = False
         Catch ex As Exception
             MessageBox.Show("Se presentó la siguiente exepción: " & ex.Message)
@@ -125,8 +126,10 @@ Public Class ConexionBD
     Function obtenerIngresosPorFactura(ByVal idFactura As String) As List(Of String)
         Dim MyList As New List(Of String)
         Try
-            SQL = "SELECT fecha, reciboFactura, cliente,codigoDeCuenta, descripcion, cantidad, precioUnitario, total FROM [INGRESOS]" &
-                "WHERE reciboFactura = ('" + idFactura + "')"
+
+            SQL = "SELECT fecha, reciboFactura, cliente, codigoDeCuenta, descripcion, cantidad, precioUnitario, total
+                    FROM [INGRESOS]
+                    WHERE INGRESOS.reciboFactura = ('" + idFactura + "')"
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -135,6 +138,7 @@ Public Class ConexionBD
                     Dim conta As Integer = 0
                     For conta = 0 To reader.FieldCount - 1
                         MyList.Add(reader(conta))
+                        ' MessageBox.Show("XXXXX  " + reader(conta))
                     Next conta
                 End While
                 reader.Close()
@@ -854,10 +858,13 @@ Public Class ConexionBD
     ''/////////////////////////////////////////////////////////////////////
     '''                 INGRESOS
 
-    Function obtenerIngresos(ByVal fechaI As String, ByVal fechaF As String) As List(Of IngresoClase)
+    Function obtenerIngresos(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of IngresoClase)
         Dim MyList As New List(Of IngresoClase)
         Try
-            SQL = "SELECT fecha,cliente,descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura FROM [INGRESOS]"
+            SQL = "SELECT fecha,cliente,descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura 
+                    FROM [INGRESOS]
+                    WHERE INGRESOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
+                    ORDER BY INGRESOS.fecha;"
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -870,11 +877,15 @@ Public Class ConexionBD
                                                            reader.GetString(3), reader.GetString(4),
                                                            reader.GetString(5), reader.GetString(6),
                                                            reader.GetString(7))
-                        If nuevaCuenta.fecha >= fechaI And nuevaCuenta.fecha <= fechaF Then
-                            MyList.Add(nuevaCuenta)
-                        End If
+                        ' If nuevaCuenta.fecha >= fechaI And nuevaCuenta.fecha <= fechaF Then
+                        'MyList.Add(nuevaCuenta)
+                        'End If
+
+                        ' Lo agregué nuevo:
+                        MyList.Add(nuevaCuenta)
+
                     Catch ex As Exception
-                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+                        MessageBox.Show("Error :  " & ex.Message)
                     End Try
                 End While
                 reader.Close()
@@ -882,7 +893,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show("Error de :" & ex.Message)
         End Try
         Return MyList
     End Function

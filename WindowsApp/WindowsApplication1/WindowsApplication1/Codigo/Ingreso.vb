@@ -81,8 +81,8 @@ Public Class Ingreso
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
             Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteEntradas.pdf", FileMode.Create))
             pdfDoc.Open()
-            'encabezado.consultarDatos()
-            'encabezado.encabezado(pdfWrite, pdfDoc)
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
 
             '/////// Encabezado //////////
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
@@ -703,22 +703,27 @@ Public Class Ingreso
     End Sub
 
     Public Sub buscarIngreso()
+
         Dim valores As New List(Of String)
         Dim IngresoInformacionInputID As String = VIngresoInformacion.IngresosInformacionInputID.Text
+        ' MessageBox.Show("xxxxinput is : " + IngresoInformacionInputID)
 
         If (IngresoInformacionInputID = "") Then
-            MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             limpiar()
+            VIngresoInformacion.IngresosInformacionInputID.Text = ""
         Else
             Try
                 BD.ConectarBD()
 
                 valores = BD.obtenerIngresosPorFactura(IngresoInformacionInputID)
+
                 If valores.Count = 0 Then
                     MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     limpiar()
 
                 Else
+                    VIngresoInformacion.IngresosInformacionInputID.Text = ""
                     VIngresoInformacion.DateTimePicker_IngresosInformacion_fecha.Text = Date.Parse(valores.Item(0))
                     VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text = valores.Item(1)
                     VIngresoInformacion.TextBox_IngresosInformacion_Proveedor.Text = valores.Item(2)
@@ -728,13 +733,14 @@ Public Class Ingreso
                     VIngresoInformacion.TextBox_IngresosInformacion_Cantidad.Text = valores.Item(5)
                     VIngresoInformacion.TextBox_IngresosInformacion_PrecioUnit.Text = valores.Item(6)
                     VIngresoInformacion.TextBox_IngresosInformacion_Total.Text = valores.Item(7)
+
+
                 End If
 
                 BD.CerrarConexion()
 
             Catch ex As Exception
                 MessageBox.Show(variablesGlobales.errorDe + ex.Message)
-
             End Try
         End If
     End Sub

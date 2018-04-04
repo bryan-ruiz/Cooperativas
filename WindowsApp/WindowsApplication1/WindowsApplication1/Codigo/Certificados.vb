@@ -444,52 +444,52 @@ Public Class Certificados
                 nombreR.Colspan = 2
                 nombreR.HorizontalAlignment = 1
 
-                Dim total1R As PdfPCell = New PdfPCell(New Phrase("1° Tracto: ", FontStype))
+                Dim total1R As PdfPCell = New PdfPCell(New Phrase("1° Certificado: ", FontStype))
                 total1R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total1R.Colspan = 1
                 total1R.HorizontalAlignment = 1
 
-                Dim total2R As PdfPCell = New PdfPCell(New Phrase("2° Tracto: ", FontStype))
+                Dim total2R As PdfPCell = New PdfPCell(New Phrase("2° Certificado: ", FontStype))
                 total2R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total2R.Colspan = 1
                 total2R.HorizontalAlignment = 1
 
-                Dim total3R As PdfPCell = New PdfPCell(New Phrase("3° Tracto: ", FontStype))
+                Dim total3R As PdfPCell = New PdfPCell(New Phrase("3° Certificado: ", FontStype))
                 total3R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total3R.Colspan = 1
                 total3R.HorizontalAlignment = 1
 
-                Dim total4R As PdfPCell = New PdfPCell(New Phrase("4° Tracto: ", FontStype))
+                Dim total4R As PdfPCell = New PdfPCell(New Phrase("4° Certificado: ", FontStype))
                 total4R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total4R.Colspan = 1
                 total4R.HorizontalAlignment = 1
 
-                Dim total5R As PdfPCell = New PdfPCell(New Phrase("5° Tracto: ", FontStype))
+                Dim total5R As PdfPCell = New PdfPCell(New Phrase("5° Certificado: ", FontStype))
                 total5R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total5R.Colspan = 1
                 total5R.HorizontalAlignment = 1
 
-                Dim total6R As PdfPCell = New PdfPCell(New Phrase("6° Tracto: ", FontStype))
+                Dim total6R As PdfPCell = New PdfPCell(New Phrase("6° Certificado: ", FontStype))
                 total6R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total6R.Colspan = 1
                 total6R.HorizontalAlignment = 1
 
-                Dim total7R As PdfPCell = New PdfPCell(New Phrase("7° Tracto: ", FontStype))
+                Dim total7R As PdfPCell = New PdfPCell(New Phrase("7° Certificado: ", FontStype))
                 total7R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total7R.Colspan = 1
                 total7R.HorizontalAlignment = 1
 
-                Dim total8R As PdfPCell = New PdfPCell(New Phrase("8° Tracto: ", FontStype))
+                Dim total8R As PdfPCell = New PdfPCell(New Phrase("8° Certificado: ", FontStype))
                 total8R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total8R.Colspan = 1
                 total8R.HorizontalAlignment = 1
 
-                Dim total9R As PdfPCell = New PdfPCell(New Phrase("9° Tracto: ", FontStype))
+                Dim total9R As PdfPCell = New PdfPCell(New Phrase("9° Certificado: ", FontStype))
                 total9R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total9R.Colspan = 1
                 total9R.HorizontalAlignment = 1
 
-                Dim total10R As PdfPCell = New PdfPCell(New Phrase("10° Tracto: ", FontStype))
+                Dim total10R As PdfPCell = New PdfPCell(New Phrase("10° Certificado: ", FontStype))
                 total10R.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
                 total10R.Colspan = 1
                 total10R.HorizontalAlignment = 1
@@ -616,6 +616,9 @@ Public Class Certificados
                 pdfDoc.Add(table)
                 pdfDoc.Add(New Paragraph(" "))
                 pdfDoc.Add(table3)
+
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(New Paragraph("                        Acumulado de años anteriores: ¢ " + acum.ToString, FontStype3))
 
                 pdfDoc.Add(New Paragraph(" "))
                 pdfDoc.Add(New Paragraph(" "))

@@ -105,7 +105,7 @@ Partial Class VIngresoInformacion
         Me.IngresosInformacionBotonBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.IngresosInformacionBotonBuscar.ForeColor = System.Drawing.Color.White
         Me.IngresosInformacionBotonBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
-        Me.IngresosInformacionBotonBuscar.Location = New System.Drawing.Point(787, 21)
+        Me.IngresosInformacionBotonBuscar.Location = New System.Drawing.Point(776, 21)
         Me.IngresosInformacionBotonBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.IngresosInformacionBotonBuscar.Name = "IngresosInformacionBotonBuscar"
         Me.IngresosInformacionBotonBuscar.Size = New System.Drawing.Size(58, 43)

@@ -378,6 +378,7 @@ Public Class Gastos
                 BD.ConectarBD()
 
                 valores = BD.obtenerGastosPorFactura(GastosInformacionInputID)
+
                 If valores.Count = 0 Then
                     MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     limpiar()

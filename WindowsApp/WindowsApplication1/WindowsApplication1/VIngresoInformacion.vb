@@ -7,6 +7,8 @@
         Me.IngresosInformacionBotonBuscar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_IngresosInformacionBotonEliminar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_IngresosInformacionBotonModificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.IngresosInformacionInputID.Select()
+
     End Sub
 
 
@@ -20,10 +22,6 @@
 
     Private Sub Button_IngresosCalcular_Click(sender As Object, e As EventArgs) Handles Button_IngresosCalcular.Click
         ingreso.calcularInfo()
-    End Sub
-
-    Private Sub IngresosInformacionBotonBuscar_Click_1(sender As Object, e As EventArgs) Handles IngresosInformacionBotonBuscar.Click
-        ingreso.buscarIngreso()
     End Sub
 
     Private Sub Button_IngresosInformacionBotonEliminar_Click(sender As Object, e As EventArgs) Handles Button_IngresosInformacionBotonEliminar.Click
@@ -50,5 +48,16 @@
                 e.Handled = True
             End If
         End If
+    End Sub
+
+    Private Sub IngresosInformacionInputID_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles IngresosInformacionInputID.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            e.Handled = True
+            Call IngresosInformacionBotonBuscar_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub IngresosInformacionBotonBuscar_Click(sender As Object, e As EventArgs) Handles IngresosInformacionBotonBuscar.Click
+        ingreso.buscarIngreso()
     End Sub
 End Class

@@ -131,7 +131,7 @@ Partial Class VGastosInformacion
         Me.GastosInformacionBotonBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.GastosInformacionBotonBuscar.ForeColor = System.Drawing.Color.White
         Me.GastosInformacionBotonBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
-        Me.GastosInformacionBotonBuscar.Location = New System.Drawing.Point(761, 16)
+        Me.GastosInformacionBotonBuscar.Location = New System.Drawing.Point(770, 16)
         Me.GastosInformacionBotonBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.GastosInformacionBotonBuscar.Name = "GastosInformacionBotonBuscar"
         Me.GastosInformacionBotonBuscar.Size = New System.Drawing.Size(58, 43)
@@ -350,9 +350,9 @@ Partial Class VGastosInformacion
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(504, 34)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(261, 29)
+        Me.Label9.Size = New System.Drawing.Size(264, 29)
         Me.Label9.TabIndex = 41
-        Me.Label9.Text = "Información de salida"
+        Me.Label9.Text = "Información de Salida"
         '
         'VGastosInformacion
         '

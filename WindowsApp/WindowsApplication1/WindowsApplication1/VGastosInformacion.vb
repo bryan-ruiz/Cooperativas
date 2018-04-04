@@ -8,15 +8,12 @@
         Me.GastosInformacionBotonBuscar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_GastoInformacionBotonEliminar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_GastoInformacionBotonModificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.GastosInformacionInputID.Select()
+
     End Sub
 
     Private Sub Button_GastosCalcular_Click(sender As Object, e As EventArgs) Handles Button_GastosCalcular.Click
         gasto.calcularInfo()
-    End Sub
-
-
-    Private Sub GastosInformacionBotonBuscar_Click(sender As Object, e As EventArgs) Handles GastosInformacionBotonBuscar.Click
-        gasto.buscarGasto()
     End Sub
 
     Private Sub Button_GastoInformacionBotonModificar_Click(sender As Object, e As EventArgs) Handles Button_GastoInformacionBotonModificar.Click
@@ -45,10 +42,14 @@
         End If
     End Sub
 
-    Private Sub GastosInformacionInputID_TextChanged(sender As Object, e As KeyPressEventArgs) Handles GastosInformacionInputID.KeyPress
-        'TextBoxSociosConsultarAsociado.PasswordChar = "*"
+    Private Sub GastosInformacionInputID_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles GastosInformacionInputID.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
+            e.Handled = True
             Call GastosInformacionBotonBuscar_Click(sender, e)
         End If
+    End Sub
+
+    Private Sub GastosInformacionBotonBuscar_Click(sender As Object, e As EventArgs) Handles GastosInformacionBotonBuscar.Click
+        gasto.buscarGasto()
     End Sub
 End Class

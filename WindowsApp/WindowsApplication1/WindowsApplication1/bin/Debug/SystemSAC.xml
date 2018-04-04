@@ -300,7 +300,7 @@ SystemSAC
 <member name="M:WindowsApplication1.ConexionBD.eliminarCuenta(System.String)">
                  CUENTAS
 </member>
-<member name="M:WindowsApplication1.ConexionBD.obtenerIngresos(System.String,System.String)">
+<member name="M:WindowsApplication1.ConexionBD.obtenerIngresos(System.DateTime,System.DateTime)">
                  INGRESOS
 </member>
 <member name="M:WindowsApplication1.ConexionBD.obtenerGastos(System.String,System.String)">
