@@ -30,7 +30,6 @@ Partial Class VGestionDeReservas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button_ReservasInsertar = New System.Windows.Forms.Button()
         Me.Button_ReservasDisminuir = New System.Windows.Forms.Button()
-        Me.Button_ReservasEditar = New System.Windows.Forms.Button()
         Me.TextBox_ReservasGestionMontoActual = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -61,7 +60,7 @@ Partial Class VGestionDeReservas
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(145, 126)
+        Me.Label4.Location = New System.Drawing.Point(209, 133)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 17)
         Me.Label4.TabIndex = 171
@@ -92,44 +91,33 @@ Partial Class VGestionDeReservas
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(145, 323)
+        Me.Label2.Location = New System.Drawing.Point(211, 334)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 17)
+        Me.Label2.Size = New System.Drawing.Size(273, 17)
         Me.Label2.TabIndex = 168
-        Me.Label2.Text = "Monto"
+        Me.Label2.Text = "Favor ingrese el monto a sumar o restar:"
         '
         'Button_ReservasInsertar
         '
         Me.Button_ReservasInsertar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_ReservasInsertar.ForeColor = System.Drawing.Color.White
-        Me.Button_ReservasInsertar.Location = New System.Drawing.Point(446, 431)
+        Me.Button_ReservasInsertar.Location = New System.Drawing.Point(191, 431)
         Me.Button_ReservasInsertar.Name = "Button_ReservasInsertar"
         Me.Button_ReservasInsertar.Size = New System.Drawing.Size(144, 44)
         Me.Button_ReservasInsertar.TabIndex = 172
-        Me.Button_ReservasInsertar.Text = "Insertar"
+        Me.Button_ReservasInsertar.Text = "Sumar"
         Me.Button_ReservasInsertar.UseVisualStyleBackColor = True
         '
         'Button_ReservasDisminuir
         '
         Me.Button_ReservasDisminuir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button_ReservasDisminuir.ForeColor = System.Drawing.Color.White
-        Me.Button_ReservasDisminuir.Location = New System.Drawing.Point(248, 431)
+        Me.Button_ReservasDisminuir.Location = New System.Drawing.Point(380, 431)
         Me.Button_ReservasDisminuir.Name = "Button_ReservasDisminuir"
         Me.Button_ReservasDisminuir.Size = New System.Drawing.Size(144, 44)
         Me.Button_ReservasDisminuir.TabIndex = 173
-        Me.Button_ReservasDisminuir.Text = "Disminuir"
+        Me.Button_ReservasDisminuir.Text = "Restar"
         Me.Button_ReservasDisminuir.UseVisualStyleBackColor = True
-        '
-        'Button_ReservasEditar
-        '
-        Me.Button_ReservasEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button_ReservasEditar.ForeColor = System.Drawing.Color.White
-        Me.Button_ReservasEditar.Location = New System.Drawing.Point(61, 431)
-        Me.Button_ReservasEditar.Name = "Button_ReservasEditar"
-        Me.Button_ReservasEditar.Size = New System.Drawing.Size(144, 44)
-        Me.Button_ReservasEditar.TabIndex = 174
-        Me.Button_ReservasEditar.Text = "Editar"
-        Me.Button_ReservasEditar.UseVisualStyleBackColor = True
         '
         'TextBox_ReservasGestionMontoActual
         '
@@ -147,11 +135,11 @@ Partial Class VGestionDeReservas
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(145, 228)
+        Me.Label1.Location = New System.Drawing.Point(215, 237)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(90, 17)
+        Me.Label1.Size = New System.Drawing.Size(98, 17)
         Me.Label1.TabIndex = 175
-        Me.Label1.Text = "Monto Actual"
+        Me.Label1.Text = "Monto Actual: "
         '
         'VGestionDeReservas
         '
@@ -160,7 +148,6 @@ Partial Class VGestionDeReservas
         Me.ClientSize = New System.Drawing.Size(645, 516)
         Me.Controls.Add(Me.TextBox_ReservasGestionMontoActual)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button_ReservasEditar)
         Me.Controls.Add(Me.Button_ReservasDisminuir)
         Me.Controls.Add(Me.Button_ReservasInsertar)
         Me.Controls.Add(Me.Label4)
@@ -186,7 +173,6 @@ Partial Class VGestionDeReservas
     Friend WithEvents Label2 As Label
     Friend WithEvents Button_ReservasInsertar As Button
     Friend WithEvents Button_ReservasDisminuir As Button
-    Friend WithEvents Button_ReservasEditar As Button
     Friend WithEvents TextBox_ReservasGestionMontoActual As TextBox
     Friend WithEvents Label1 As Label
 End Class

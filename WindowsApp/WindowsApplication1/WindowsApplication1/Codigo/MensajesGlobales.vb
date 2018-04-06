@@ -16,6 +16,7 @@ Public Class MensajesGlobales
     Public reportePagoAlDia As String = "reporte_Pago_Al_Dia.pdf"
     Public reporteTodosPago As String = "reporte_Todos_Los_Pagos.pdf"
     Public reporteReservas As String = "reporte_Reservas.pdf"
+    Public reporteDeSaldos As String = "reporte_De_Saldos.pdf"
 
     Public mensajeNoDejarEspaciosVacios As String = "No deben haber campos vacíos!"
 
@@ -24,7 +25,7 @@ Public Class MensajesGlobales
     Public mensajePdfAbierto As String = "No se puede generar el reporte porque el PDF se encuentra abierto"
     Public mensajePendienteRequerido As String = "Para realizar la acción el estado debe ser: Pendiente"
     Public mensajeCedulaONumAsociado As String = "Debe ingresar la cédula o el número de asociado a consultar"
-    Public mensajeDebeIngresarCodigoODescriptionDeCuenta As String = "Debe ingresar el codigo y/o descripción de la cuenta"
+    Public mensajeDebeIngresarCodigoODescriptionDeCuenta As String = "Debe ingresar el código y/o descripción de la cuenta"
     Public mensajeCedulaFormato As String = "La cédula debe llevar el formato X-XXXX-XXXX"
 
     Public noExistenDatos As String = "No se encontraron datos en el sistema"
@@ -33,9 +34,9 @@ Public Class MensajesGlobales
     Public permisosDeAdminRequeridos As String = "Se requieren permisos de Administrador para realizar la acción"
     Public permisosDeSuperAdminRequeridos As String = "Se requieren permisos de Super Admin para realizar la acción"
 
-    Public datosIngresadosConExito As String = "Datos ingresados con éxito!"
-    Public datosActualizadosConExito As String = "Datos actualizados con éxito!"
-    Public datosEliminadosConExito As String = "Datos eliminados con éxito!"
+    Public datosIngresadosConExito As String = "Éxito al ingresar Datos!"
+    Public datosActualizadosConExito As String = "Éxito al actualizar Datos!"
+    Public datosEliminadosConExito As String = "Éxito al eliminar Datos!"
 
     Public errorFechaLimiteMenorActual As String = "La fecha actual es mayor a la fecha límite para agregar el Certificado"
     Public errorIngresandoDatos As String = "Error al ingresar los datos en el sistema"
@@ -47,6 +48,7 @@ Public Class MensajesGlobales
     Public errorMontoCertificados As String = "Error ingresando datos, el Monto no debe ser mayor al establecido"
     Public errorMontoCertificadosMayorMil As String = "Error ingresando datos, el Total del Periodo no debe ser mayor al establecido"
     Public errorExistenDatosPendientes As String = "Error, no se puede Cerrar el Periodo si existen estados Pendientes en tránsito."
+    Public errorFacturaOReciboExiste As String = "Error, la factura o recibo ya se encuentra en el Sistema, favor ingrese una nueva."
 
     Public licenciaCaducada As String = "Su licencia ha caducado, contacte al Administrador del Sistema"
     Public nombreUsuarioOContrasenaIncorrecto As String = "El nombre de usuario o contraseña es incorrecto"

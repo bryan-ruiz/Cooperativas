@@ -95,9 +95,13 @@ Public Class ConexionBD
         Return res
     End Function
 
-    '___________________________________ NUEVASFUNCIONES 
+    '############################
+    '########## GASTOS ########## 
+    '############################
 
 
+    '@Return - List of String
+    '@factura - id de la factura o recibo a consultar
     Function obtenerGastosPorFactura(ByVal idFactura As String) As List(Of String)
         Dim MyList As New List(Of String)
         Try
@@ -1250,10 +1254,10 @@ Public Class ConexionBD
         Try
             'MsgBox("ENTRANDO A FECHAS...")
 
-            SQL = "SELECT INGRESOS.fecha, INGRESOS.codigoDeCuenta, INGRESOS.total 
+            SQL = "SELECT INGRESOS.fecha, INGRESOS.reciboFactura, INGRESOS.codigoDeCuenta, INGRESOS.total 
                     FROM [INGRESOS] 
                     WHERE INGRESOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
-                    UNION SELECT GASTOS.fecha, GASTOS.codigoDeCuenta, GASTOS.total
+                    UNION SELECT GASTOS.fecha, GASTOS.reciboFactura, GASTOS.codigoDeCuenta, GASTOS.total
                     FROM [GASTOS]
                     WHERE GASTOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
                     ORDER BY fecha "
@@ -1269,7 +1273,7 @@ Public Class ConexionBD
                     'MsgBox("reader 1 is : " + reader.GetString(1))
                     'MsgBox("reader 2 is : " + reader.GetString(2))
                     Try
-                        saldo.saldoClaseCostructor(reader.GetDateTime(0), reader.GetString(1), reader.GetString(2))
+                        saldo.saldoClaseCostructor(reader.GetDateTime(0), reader.GetString(1), reader.GetString(2), reader.GetString(3))
                         MyList.Add(saldo)
 
                         ' MsgBox("IMPRIME : " + saldo.codigoCuenta + " xxx " + saldo.total + "xxx" + saldo.fecha)
@@ -2512,6 +2516,9 @@ Public Class ConexionBD
     ' EXCEDENTES EN TRANSITO
     '******************************
     '******************************
+
+    '@Return - List of String
+    '@excedenteEstado - Todos, Pendiente, En Acumulado, En Reserva
     Function seleccionarExcedenteTreansitoEnEstadoX(ByVal excedenteEstado As String) As List(Of String)
         Dim MyList As New List(Of String)
         Dim SQL As String

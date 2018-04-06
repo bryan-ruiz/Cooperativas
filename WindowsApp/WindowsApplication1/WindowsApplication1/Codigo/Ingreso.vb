@@ -541,6 +541,27 @@ Public Class Ingreso
         VIngresos.TextBox_IngresosPrecioUnitario3.Text = ""
         VIngresos.TextBox_IngresosTotal3.Text = ""
     End Sub
+
+    'Valida que no exista la factura en la tabla Ingresos
+    Function validarNoExistenFacturasRepetidasIngresos(ByVal factura As String) As Integer
+        Dim facturasRepetidas As List(Of String)
+        Dim cantidad As Integer = 0
+
+        Try
+            BD.ConectarBD()
+
+            facturasRepetidas = BD.obtenerIngresosPorFactura(factura)
+            cantidad = facturasRepetidas.Count
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
+        End Try
+        Return cantidad
+    End Function
+
+
+
     'Inserta un ingreso asociado a una cuenta en la BD
     Public Sub insertarIngreso()
 
@@ -554,6 +575,7 @@ Public Class Ingreso
         Dim precioUnitario As String = VIngresos.TextBox_IngresosPrecioUnitario.Text
         Dim total As String = VIngresos.TextBox_IngresosTotal.Text
         Dim codCuenta As String = VIngresos.ComboBox_IngresosCodigCuenta.Text
+        Dim facturaReciboYaExiste As Integer = 0
 
         Dim fecha2 As String = VIngresos.DateTimePicker_IngresosFecha2.Text
         Dim factura2 As String = VIngresos.TextBox_IngresosFacturaRecibos2.Text
@@ -584,6 +606,15 @@ Public Class Ingreso
             Return
         End Try
 
+        'Validar que no existen facturas con el mismo ID en el Sistema
+        facturaReciboYaExiste = validarNoExistenFacturasRepetidasIngresos(factura)
+        If facturaReciboYaExiste <> 0 Then
+            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            VIngresos.TextBox_IngresosFacturaRecibos.Text = ""
+            VIngresos.TextBox_IngresosFacturaRecibos.Select()
+            Return
+        End If
+
         Try
             BD.ConectarBD()
             valores = BD.insertarIngresos(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
@@ -613,6 +644,7 @@ Public Class Ingreso
         Dim precioUnitario2 As String = VIngresos.TextBox_IngresosPrecioUnitario2.Text
         Dim total2 As String = VIngresos.TextBox_IngresosTotal2.Text
         Dim codCuenta2 As String = VIngresos.ComboBox_IngresosCodigCuenta2.Text
+        Dim facturaReciboYaExiste As Integer = 0
 
         If (factura2 = "" Or cliente2 = "" Or descripcion2 = "" Or cantidad2 = "" Or precioUnitario2 = "" Or total2 = "" Or codCuenta2 = "" Or estado = False) Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -633,6 +665,15 @@ Public Class Ingreso
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End Try
+
+        'Validar que no existen facturas con el mismo ID en el Sistema
+        facturaReciboYaExiste = validarNoExistenFacturasRepetidasIngresos(factura2)
+        If facturaReciboYaExiste <> 0 Then
+            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            VIngresos.TextBox_IngresosFacturaRecibos2.Text = ""
+            VIngresos.TextBox_IngresosFacturaRecibos2.Select()
+            Return
+        End If
 
         Try
             BD.ConectarBD()
@@ -663,6 +704,7 @@ Public Class Ingreso
         Dim precioUnitario3 As String = VIngresos.TextBox_IngresosPrecioUnitario3.Text
         Dim total3 As String = VIngresos.TextBox_IngresosTotal3.Text
         Dim codCuenta3 As String = VIngresos.ComboBox_IngresosCodigCuenta3.Text
+        Dim facturaReciboYaExiste As Integer = 0
 
         If (factura3 = "" Or cliente3 = "" Or descripcion3 = "" Or cantidad3 = "" Or precioUnitario3 = "" Or total3 = "" Or codCuenta3 = "" Or estado = False) Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -683,6 +725,15 @@ Public Class Ingreso
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End Try
+
+        'Validar que no existen facturas con el mismo ID en el Sistema
+        facturaReciboYaExiste = validarNoExistenFacturasRepetidasIngresos(factura3)
+        If facturaReciboYaExiste <> 0 Then
+            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            VIngresos.TextBox_IngresosFacturaRecibos3.Text = ""
+            VIngresos.TextBox_IngresosFacturaRecibos3.Select()
+            Return
+        End If
 
         Try
             BD.ConectarBD()

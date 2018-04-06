@@ -89,9 +89,9 @@ Partial Class VResrvasPrincipal
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(209, 38)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(213, 29)
+        Me.Label9.Size = New System.Drawing.Size(220, 29)
         Me.Label9.TabIndex = 41
-        Me.Label9.Text = "Cierre de Periodo"
+        Me.Label9.Text = "Cierre del Periodo"
         '
         'Label1
         '

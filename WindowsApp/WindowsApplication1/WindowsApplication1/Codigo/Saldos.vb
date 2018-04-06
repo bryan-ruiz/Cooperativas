@@ -10,6 +10,7 @@ Public Class Saldos
 
     'Genera un reporte de los Socios en PDF'
     Public Sub generarReporteSaldosNuevo()
+
         Dim fechaInicial As Date = VIngresosSaldos.DateTimePicker_SaldosFechaInicio.Value.ToString("dd/MM/yyyy")
         Dim fechaFinal As Date = VIngresosSaldos.DateTimePicker_SaldosFechaFinal.Value.ToString("dd/MM/yyyy")
 
@@ -52,9 +53,7 @@ Public Class Saldos
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
 
-            Dim nombreReporteSaldos As String = "reporteSaldos.pdf"
-
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteSaldos.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & variablesGlobales.reporteDeSaldos, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -63,7 +62,7 @@ Public Class Saldos
             Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
             Dim FontEncabezadoFechas = FontFactory.GetFont("Arial", 9, Font.NORMAL)
 
-            Dim table As PdfPTable = New PdfPTable(5)
+            Dim table As PdfPTable = New PdfPTable(6)
 
             'ESTABLECE TAMAÑO DE ANCHO DE COLUMNAS
             ' Dim intTblWidth() As Integer = {7, 12, 12, 10, 9, 8, 7, 7, 7, 8}
@@ -71,10 +70,17 @@ Public Class Saldos
 
             '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
 
+
+
             Dim fechaR As PdfPCell = New PdfPCell(New Phrase("Fecha", FontStype))
             fechaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
             fechaR.Colspan = 1
             fechaR.HorizontalAlignment = 1
+
+            Dim facturaR As PdfPCell = New PdfPCell(New Phrase("N° Factura o Recibo", FontStype))
+            facturaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            facturaR.Colspan = 1
+            facturaR.HorizontalAlignment = 1
 
             Dim codigoCuentaR As PdfPCell = New PdfPCell(New Phrase("Código de Cuenta", FontStype))
             codigoCuentaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
@@ -98,6 +104,7 @@ Public Class Saldos
             saldoR.HorizontalAlignment = 1
 
             table.AddCell(fechaR)
+            table.AddCell(facturaR)
             table.AddCell(codigoCuentaR)
             table.AddCell(entradasR)
             table.AddCell(salidasR)
@@ -121,6 +128,12 @@ Public Class Saldos
                 fechaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 fechaT.Colspan = 1
                 fechaT.HorizontalAlignment = 1
+
+                'factura o recibo
+                Dim facturaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).facturaRecibo, FontStype2))
+                facturaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                facturaT.Colspan = 1
+                facturaT.HorizontalAlignment = 1
 
                 'codigo cta
                 Dim codigoCuentaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).codigoCuenta, FontStype2))
@@ -150,6 +163,7 @@ Public Class Saldos
                 celdaNula.HorizontalAlignment = 1
 
                 table.AddCell(fechaT)
+                table.AddCell(facturaT)
                 table.AddCell(codigoCuentaT)
 
                 If Not codigosCuentaIngresos.Contains(valores(contador).codigoCuenta) Then
@@ -229,7 +243,7 @@ Public Class Saldos
             pdfDoc.Add(tableSaldoTotal)
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & nombreReporteSaldos, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reporteDeSaldos, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
 

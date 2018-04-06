@@ -278,7 +278,27 @@ Public Class Gastos
         VGastos.TextBox_GastosTotal3.Text = ""
     End Sub
 
+    'Valida que no exista la factura en la tabla Gastos
+    Function validarNoExistenFacturasRepetidasGastos(ByVal factura As String) As Integer
+        Dim facturasRepetidasGastos As List(Of String)
+        Dim cantidad As Integer = 0
+
+        Try
+            BD.ConectarBD()
+
+            facturasRepetidasGastos = BD.obtenerGastosPorFactura(factura)
+            cantidad = facturasRepetidasGastos.Count
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
+        End Try
+        Return cantidad
+    End Function
+
+
     Public Sub insertarGasto()
+
         Dim valores As Integer
         Dim fecha As String = VGastos.DateTimePicker_GastosFecha.Text
         Dim factura As String = VGastos.TextBox_GastosFacturaRecibo.Text
@@ -288,6 +308,7 @@ Public Class Gastos
         Dim precioUnitario As String = VGastos.TextBox_GastosPrecioUnitario.Text
         Dim total As String = VGastos.TextBox_GastosTotal.Text
         Dim codCuenta As String = VGastos.ComboBox_GastosCodCuenta.Text
+        Dim facturaReciboYaExiste As Integer = 0
 
         If (factura = "" Or cliente = "" Or descripcion = "" Or total = "" Or codCuenta = "" Or estado = False) Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -300,14 +321,26 @@ Public Class Gastos
             Return
         End If
 
+
         Try
             Integer.Parse(total)
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End Try
+
+        'Validar que no existen facturas con el mismo ID en el Sistema
+        facturaReciboYaExiste = validarNoExistenFacturasRepetidasGastos(factura)
+        If facturaReciboYaExiste <> 0 Then
+            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            VGastos.TextBox_GastosFacturaRecibo.Text = ""
+            VGastos.TextBox_GastosFacturaRecibo.Select()
+            Return
+        End If
+
         Try
             BD.ConectarBD()
+
             valores = BD.insertarGastos(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
             If valores <> 0 Then
                 limpiar()
@@ -323,6 +356,7 @@ Public Class Gastos
     End Sub
 
     Public Sub insertarGasto2()
+
         Dim valores As Integer
         Dim fecha As String = VGastos.DateTimePicker_GastosFecha2.Text
         Dim factura As String = VGastos.TextBox_GastosFacturaRecibo2.Text
@@ -332,6 +366,7 @@ Public Class Gastos
         Dim precioUnitario As String = VGastos.TextBox_GastosPrecioUnitario2.Text
         Dim total As String = VGastos.TextBox_GastosTotal2.Text
         Dim codCuenta As String = VGastos.ComboBox_GastosCodCuenta2.Text
+        Dim facturaReciboYaExiste As Integer = 0
 
         If (factura = "" Or cliente = "" Or descripcion = "" Or total = "" Or codCuenta = "" Or estado = False) Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -350,6 +385,16 @@ Public Class Gastos
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End Try
+
+        'Validar que no existen facturas con el mismo ID en el Sistema
+        facturaReciboYaExiste = validarNoExistenFacturasRepetidasGastos(factura)
+        If facturaReciboYaExiste <> 0 Then
+            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            VGastos.TextBox_GastosFacturaRecibo2.Text = ""
+            VGastos.TextBox_GastosFacturaRecibo2.Select()
+            Return
+        End If
+
         Try
             BD.ConectarBD()
             valores = BD.insertarGastos(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
@@ -481,6 +526,7 @@ Public Class Gastos
         Dim precioUnitario As String = VGastos.TextBox_GastosPrecioUnitario3.Text
         Dim total As String = VGastos.TextBox_GastosTotal3.Text
         Dim codCuenta As String = VGastos.ComboBox_GastosCodCuenta3.Text
+        Dim facturaReciboYaExiste As Integer = 0
 
         If (factura = "" Or cliente = "" Or descripcion = "" Or total = "" Or codCuenta = "" Or estado = False) Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
@@ -499,6 +545,16 @@ Public Class Gastos
             MessageBox.Show(variablesGlobales.errorDatosNoNumericos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End Try
+
+        'Validar que no existen facturas con el mismo ID en el Sistema
+        facturaReciboYaExiste = validarNoExistenFacturasRepetidasGastos(factura)
+        If facturaReciboYaExiste <> 0 Then
+            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            VGastos.TextBox_GastosFacturaRecibo3.Text = ""
+            VGastos.TextBox_GastosFacturaRecibo3.Select()
+            Return
+        End If
+
         Try
             BD.ConectarBD()
             valores = BD.insertarGastos(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
