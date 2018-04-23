@@ -291,7 +291,7 @@ Public Class Gastos
 
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
         End Try
         Return cantidad
     End Function

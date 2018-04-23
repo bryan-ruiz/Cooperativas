@@ -222,6 +222,46 @@ Public Class Socios
         End If
     End Sub
 
+
+    'Valida que no exista el num de asociado en el sistema
+    Function validarNoExisteNumAsociadoRepetido(ByVal numAsociado As String) As Integer
+        Dim listaNumAsociados As List(Of String)
+        Dim cantidad As Integer = 0
+
+        Try
+            BD.ConectarBD()
+
+            listaNumAsociados = BD.obtenerNumAsociadoDeSocios(numAsociado)
+            cantidad = listaNumAsociados.Count
+
+            BD.CerrarConexion()
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
+        End Try
+        Return cantidad
+    End Function
+
+    'Valida que no exista el num de cedula en el sistema
+    Function validarNoExisteNumCedulaRepetido(ByVal numCedula As String) As Integer
+        Dim listaNumAsociados As List(Of String)
+        Dim cantidad As Integer = 0
+
+        Try
+            BD.ConectarBD()
+
+            listaNumAsociados = BD.obtenerNumCedulaDeAsociado(numCedula)
+            cantidad = listaNumAsociados.Count
+
+            BD.CerrarConexion()
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
+        End Try
+        Return cantidad
+    End Function
+
+
     'Insertar Socio
     Public Sub insertar()
         Dim cedula As String = VAsociados.TextBoxSociosCedula.Text
@@ -247,6 +287,8 @@ Public Class Socios
         Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
         Dim notasRetiro As String = VAsociados.TextBoxSociosNotasRetiro.Text
         Dim menor As String = ""
+        Dim numAsociadoExiste As Integer = 0
+        Dim numCedulaExiste As Integer = 0
 
         'Para el genero
         If (VAsociados.RadioButtonSociosMasculino.Checked = True) Then
@@ -276,6 +318,28 @@ Public Class Socios
                 MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Else
                 Try
+
+
+                    'Validar que no existen asociados con el mismo num de Asociado
+                    numAsociadoExiste = validarNoExisteNumAsociadoRepetido(numAsociado)
+                    If numAsociadoExiste <> 0 Then
+                        MessageBox.Show(variablesGlobales.errorNumAsociadoExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                        VAsociados.TextBoxSociosNumAsociado.Text = ""
+                        VAsociados.TextBoxSociosNumAsociado.Select()
+                        Return
+                    End If
+
+                    'Validar que no existen asociados con el mismo num de cedula
+                    numCedulaExiste = validarNoExisteNumCedulaRepetido(cedula + "-" + cedula2 + "-" + cedula3)
+                    If numCedulaExiste <> 0 Then
+                        MessageBox.Show(variablesGlobales.errorNumCedulaExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                        VAsociados.TextBoxSociosCedula.Text = ""
+                        VAsociados.TextBoxSociosCedula2.Text = ""
+                        VAsociados.TextBoxSociosCedula3.Text = ""
+                        VAsociados.TextBoxSociosCedula.Select()
+                        Return
+                    End If
+
                     BD.ConectarBD()
 
                     Dim insertado As Integer = 0

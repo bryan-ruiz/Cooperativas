@@ -146,10 +146,8 @@ Public Class GestionCertificados
         End Try
     End Sub
 
-
-
     Public Sub sumarEnReservasoCertLlamado()
-        Dim valores, valoresCert, valorConsultaBienestarSoc, valorDeConsultaEducacion As Integer
+        Dim valores, asociadoActivo, valoresCert, valorConsultaBienestarSoc, valorDeConsultaEducacion As Integer
         'Textfield para consultar por ced o num asociado
         Dim cedulaNumAsociado As String = VGestionDeCertificados.GestionCertificadoTextboxCed.Text
         Dim acumulado As String = VGestionDeCertificados.GestionCertificadoTextboxAcumuladoActual.Text
@@ -157,6 +155,14 @@ Public Class GestionCertificados
 
         If (cedulaNumAsociado = "") Then
             MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'Valida Asociado Activo no pueda Retirar Acumulado
+        asociadoActivo = validarAsociadoActivo(cedulaNumAsociado)
+        If asociadoActivo <> 0 Then
+            MessageBox.Show(variablesGlobales.errorAsociadoEnEstadoActivo, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            limpiar()
             Return
         End If
 
@@ -190,13 +196,21 @@ Public Class GestionCertificados
     End Sub
 
     Public Sub retirarAcumuladoCertLlamado()
-        Dim valores, valoresCert As Integer
+        Dim valores, asociadoActivo, valoresCert As Integer
         'Textfield para consultar por ced o num asociado
         Dim cedulaNumAsociado As String = VGestionDeCertificados.GestionCertificadoTextboxCed.Text
         Dim status As String = VGestionDeCertificados.GestionCertificadoTextboxStatus.Text
 
         If (cedulaNumAsociado = "") Then
             MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'Valida Asociado Activo no pueda Retirar Acumulado
+        asociadoActivo = validarAsociadoActivo(cedulaNumAsociado)
+        If asociadoActivo <> 0 Then
+            MessageBox.Show(variablesGlobales.errorAsociadoEnEstadoActivo, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            limpiar()
             Return
         End If
 
@@ -224,6 +238,89 @@ Public Class GestionCertificados
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             End Try
+
+        limpiar()
+    End Sub
+
+    'Valida que el usuario no esté en estado Retirado o Inactivo
+    Function validarAsociadoRetirado(ByVal cedulaNumAsociado As String) As Integer
+        Dim usuariosRetirados As List(Of String)
+        Dim cantidad As Integer = 0
+
+        Try
+            BD.ConectarBD()
+
+            usuariosRetirados = BD.consultarAsociadoRetiradoXCedOrNumAsoc(cedulaNumAsociado)
+            cantidad = usuariosRetirados.Count
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
+        End Try
+        Return cantidad
+    End Function
+
+
+    'Valida que el usuario no esté en estado Activo
+    Function validarAsociadoActivo(ByVal cedulaNumAsociado As String) As Integer
+        Dim usuariosActivos As List(Of String)
+        Dim cantidad As Integer = 0
+
+        Try
+            BD.ConectarBD()
+
+            usuariosActivos = BD.consultarAsociadoActivoXCedOrNumAsoc(cedulaNumAsociado)
+            cantidad = usuariosActivos.Count
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
+        End Try
+        Return cantidad
+    End Function
+
+    'No retira el certificado y el estado queda como "No Retirado"
+    Public Sub noRetirarAcumuladoCertificado()
+        Dim valores, asociadoRetirado As Integer
+        'Textfield para consultar por ced o num asociado
+        Dim cedulaNumAsociado As String = VGestionDeCertificados.GestionCertificadoTextboxCed.Text
+        Dim status As String = VGestionDeCertificados.GestionCertificadoTextboxStatus.Text
+
+        If (cedulaNumAsociado = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'Valida Asociado NO esté en estado Retirado
+        asociadoRetirado = validarAsociadoRetirado(cedulaNumAsociado)
+        If asociadoRetirado <> 0 Then
+            MessageBox.Show(variablesGlobales.errorAsociadoEnEstadoRetirado, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            limpiar()
+            Return
+        End If
+
+
+        If (status <> "Pendiente") Then
+            MessageBox.Show(variablesGlobales.mensajePendienteRequerido, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        Try
+            BD.ConectarBD()
+
+            valores = BD.noRetirarAcumuladoCertificadoEnTransito(cedulaNumAsociado, "No Retirado")
+
+            If (valores <> 0) Then
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+
+            BD.CerrarConexion()
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
 
         limpiar()
     End Sub

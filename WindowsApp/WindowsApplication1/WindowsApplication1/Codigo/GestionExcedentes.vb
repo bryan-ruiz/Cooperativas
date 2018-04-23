@@ -146,15 +146,42 @@ Public Class GestionExcedentes
         End Try
     End Sub
 
+    'Valida que el usuario no esté en estado Retirado o Inactivo
+    Function validarAsociadoRetirado(ByVal cedulaNumAsociado As String) As Integer
+        Dim usuariosRetirados As List(Of String)
+        Dim cantidad As Integer = 0
+
+        Try
+            BD.ConectarBD()
+
+            usuariosRetirados = BD.consultarAsociadoRetiradoXCedOrNumAsoc(cedulaNumAsociado)
+            cantidad = usuariosRetirados.Count
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
+        End Try
+        Return cantidad
+    End Function
+
 
     Public Sub sumarAlAcumuladoLlamado()
         Dim valores, valorEnCertificado As Int32
         Dim cedulaNumAsociado As String = VGestionDeExcedentes.GestionExcTextboxCedulaNumAsociado.Text
         Dim excedenteDeUsuario As String = VGestionDeExcedentes.GestionExcTextboxExcCorrespondiente.Text
         Dim status As String = VGestionDeExcedentes.GestionExcTextboxStatus.Text
+        Dim asociadoRetirado As Integer
 
         If (cedulaNumAsociado = "") Then
             MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'Valida Asociado NO esté en estado Retirado
+        asociadoRetirado = validarAsociadoRetirado(cedulaNumAsociado)
+        If asociadoRetirado <> 0 Then
+            MessageBox.Show(variablesGlobales.errorAsociadoEnEstadoRetirado, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            limpiar()
             Return
         End If
 

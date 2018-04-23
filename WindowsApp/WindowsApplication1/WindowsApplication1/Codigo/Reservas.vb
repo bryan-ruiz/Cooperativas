@@ -39,17 +39,28 @@ Public Class Reservas
 
         Dim subTotalIngresos As List(Of String) = informeEconomico.obtenerSubTotalIngresos("Ingreso", "Si", fechaDesde, fechaHasta)
         Dim subTotalGastos As List(Of String) = informeEconomico.obtenerSubTotalGastos("Gasto", "Si", fechaDesde, fechaHasta)
+
+        'MessageBox.Show("realizar cierre del periodo con fecha inicial = " + fechaDesde + " fecha final = " + fechaHasta + " ingresos si = " + subTotalIngresos.Item(0) + " gastos si " + subTotalGastos.Item(0))
+
         Dim valoresReserva As List(Of ConfiguracionClase) = informeEconomico.consultarValoresConfiguracion()
 
         Dim excedentesBrutos As Integer = Integer.Parse(subTotalIngresos.Item(0)) - Integer.Parse(subTotalGastos.Item(0))
 
+        Dim sumaLegal As Integer = (excedentesBrutos * valoresReserva(0).legal) / 100
+        Dim sumaEducacion As Integer = (excedentesBrutos * valoresReserva(0).educacion) / 100
         Dim sumaBSocial As Integer = (excedentesBrutos * valoresReserva(0).bienestarSocial) / 100
         Dim sumaInstitucional As Integer = (excedentesBrutos * valoresReserva(0).institucional) / 100
         Dim sumaPatrimonial As Integer = (excedentesBrutos * valoresReserva(0).patrimonial) / 100
-        Dim sumaEducacion As Integer = (excedentesBrutos * valoresReserva(0).educacion) / 100
-        Dim sumaLegal As Integer = (excedentesBrutos * valoresReserva(0).legal) / 100
 
         'Si es negativo se deja en 0
+        If sumaLegal < 0 Then
+            sumaLegal = 0
+        End If
+
+        If sumaEducacion < 0 Then
+            sumaEducacion = 0
+        End If
+
         If sumaBSocial < 0 Then
             sumaBSocial = 0
         End If
@@ -62,24 +73,28 @@ Public Class Reservas
             sumaPatrimonial = 0
         End If
 
-        If sumaEducacion < 0 Then
-            sumaEducacion = 0
-        End If
-
-        If sumaLegal < 0 Then
-            sumaLegal = 0
-        End If
-
         'Se actualizan los montos
         valores1 = actualizarMontoEnBase(sumaBSocial, "bienestarSocial")
         valores2 = actualizarMontoEnBase(sumaInstitucional, "Institucional")
         valores3 = actualizarMontoEnBase(sumaPatrimonial, "Patrimonial")
         valores4 = actualizarMontoEnBase(sumaEducacion, "educacion")
-        valores7 = actualizarMontoEnBase(sumaEducacion, "legal")
+        valores7 = actualizarMontoEnBase(sumaLegal, "legal")
 
         Dim cantidadAfuliaciones As Integer = afiliacionEnReserva(fechaDesde, fechaHasta)
         valores5 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "educacion")
         valores6 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "bienestarSocial")
+
+
+
+        ' MessageBox.Show("Exc brutos son = " + excedentesBrutos.ToString + " " +
+        '                " Reservas son: " +
+        '               "Legal = " + sumaLegal.ToString +
+        '             " Ed = " + sumaEducacion.ToString +
+        '            " BS = " + sumaBSocial.ToString +
+        '          " Inst = " + sumaInstitucional.ToString +
+        '         " patri = " + sumaPatrimonial.ToString +
+        '        "Afiliaciones el total entre ed y bs es = " + cantidadAfuliaciones.ToString)
+
 
         If valores1 <> 0 And valores2 <> 0 And valores3 <> 0 And valores4 <> 0 And valores7 <> 0 Then
             MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
@@ -114,7 +129,7 @@ Public Class Reservas
 
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
         End Try
         Return cantidad
     End Function
@@ -147,7 +162,7 @@ Public Class Reservas
             GenerarCertificadosEnTransito()
 
         Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + "" + ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
         End Try
 
     End Sub
@@ -179,7 +194,7 @@ Public Class Reservas
         Try
             Dim valores As List(Of SocioClase)
             BD.ConectarBD()
-            valores = BD.obtenerDatosReporteDeSocios("Activos")
+            valores = BD.obtenerDatosReporteDeSocios("Todos")
             BD.CerrarConexion()
 
             'Aportaciones o Certificados - Acum
@@ -263,7 +278,7 @@ Public Class Reservas
             Dim valores As List(Of SocioClase)
 
             BD.ConectarBD()
-            valores = BD.obtenerDatosReporteDeSocios("Activos")
+            valores = BD.obtenerDatosReporteDeSocios("Todos")
             BD.CerrarConexion()
 
             Dim contador As Integer = 0
@@ -477,7 +492,7 @@ Public Class Reservas
 
             '/////// Encabezado //////////
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
-            pdfDoc.Add(New Paragraph("                                                                                     Total de Acumulado en Reservas", FontStype3))
+            pdfDoc.Add(New Paragraph("                                                                                        Total de Acumulado en Reservas", FontStype3))
             pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(New Paragraph(" "))
 
@@ -547,4 +562,55 @@ Public Class Reservas
             MessageBox.Show("Error de: " + ex.Message())
         End Try
     End Sub
+
+    Public Sub llenarDatosFechasCerrarPeriodo(ByVal valores As List(Of CerrarPeriodoFechasClase))
+        Dim conta As Integer = 0
+        While conta < valores.Count
+            VResrvasPrincipal.ReservasDateTimePickerDesde.Value = Date.Parse(valores(conta).fechaDesde)
+            VResrvasPrincipal.ReservasDateTimePickerDesde.Value = Date.Parse(valores(conta).fechaHasta)
+            conta = conta + 1
+        End While
+    End Sub
+
+    'Consulta todos los datos de la tabla de Cerrar periodo fechas
+    Public Sub consultarFechasLimiteCerrarPeriodo()
+        Dim valores As List(Of CerrarPeriodoFechasClase)
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerDatosdeCerrarPeriodoFechas()
+            If valores.Count <> 0 Then
+                llenarDatosFechasCerrarPeriodo(valores)
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
+
+
+    'Actualiza todos los datos en la tabla de "Cerrar Periodo Fechas"
+    Public Sub actualizarCerrarPeriodoFechas()
+
+        Dim fechaDesde As Date = VConfiguracionFechasLimite.ConfiguracionDateTimePickerFecha1.Value.ToString("dd/MM/yyyy")
+        Dim fechaHasta As Date = VConfiguracionFechasLimite.ConfiguracionDateTimePickerFecha2.Value.ToString("dd/MM/yyyy")
+
+        Try
+            BD.ConectarBD()
+            Dim modificado = BD.actualizarCerrarPeriodoFechas(fechaDesde, fechaHasta)
+            If modificado = 1 Then
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+
+    End Sub
+
+
 End Class

@@ -28,7 +28,7 @@ Public Class ConexionBD
 
         Catch ex As Exception
             conectadoBD = False
-            MessageBox.Show("Error: " & vbCrLf & ex.Message) 'before ex.ToString
+            MessageBox.Show("Error: " & vbCrLf & ex.Message)
 
             'Console.WriteLine(vbCrLf & "Message ---" & vbCrLf & ex.Message)
             'Console.WriteLine(vbCrLf & "HelpLink ---" & vbCrLf & ex.HelpLink)
@@ -249,10 +249,6 @@ Public Class ConexionBD
     End Function
 
 
-
-
-
-
     'Eliminar un usuario  
     Function eliminarUsuario(ByVal usuario As String) As Integer
         Dim res As Integer = 0
@@ -306,6 +302,60 @@ Public Class ConexionBD
     End Function
 
 
+    '@Return - List of String
+    '@numAsociado - num del socio
+    Function obtenerNumAsociadoDeSocios(ByVal idNumAsociado As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT nombre FROM [SOCIOS]" &
+                "WHERE numAsociado = ('" + idNumAsociado + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
+    '@Return - List of String
+    '@id - cedula del socio
+    Function obtenerNumCedulaDeAsociado(ByVal id As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT nombre FROM [SOCIOS]" &
+                "WHERE cedula = ('" + id + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
 
     'Selecciona todos los campos de un Socio por número de cédula
     Function consultarSocioPorCedula(ByVal cedula As String) As List(Of String)
@@ -332,6 +382,72 @@ Public Class ConexionBD
         End Try
 
         Return MyList
+    End Function
+
+
+    'Selecciona nombre de un usuario con estado Retirado 
+    Function consultarAsociadoRetiradoXCedOrNumAsoc(ByVal cedulaONumAsociado As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT SOCIOS.nombre
+                    FROM [SOCIOS]
+                    WHERE ((SOCIOS.cedula) = '" & cedulaONumAsociado & "' or (SOCIOS.numAsociado)= '" & cedulaONumAsociado & "')
+                    AND ((SOCIOS.estado) = 'Retirado') "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+
+    End Function
+
+
+    'Selecciona nombre de un usuario con estado Activo 
+    Function consultarAsociadoActivoXCedOrNumAsoc(ByVal cedulaONumAsociado As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT SOCIOS.nombre
+                    FROM [SOCIOS]
+                    WHERE ((SOCIOS.cedula) = '" & cedulaONumAsociado & "' or (SOCIOS.numAsociado)= '" & cedulaONumAsociado & "')
+                    AND ((SOCIOS.estado) = 'Activo') "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+
     End Function
 
     '///////////////// CERTIFICADOS ///////////////////
@@ -450,7 +566,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            'MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            'MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.)
         End Try
 
         Return res
@@ -2273,7 +2389,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            'MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            'MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.M)
         End Try
 
         Return res
@@ -2382,9 +2498,59 @@ Public Class ConexionBD
 
     '******************************
     '******************************
-    ' RESERVAS
+    ' RESERVAS o CERRAR PERIODO
     '******************************
     '******************************
+
+    'Actualiza la info de Cerrar Periodo fechas
+    Function actualizarCerrarPeriodoFechas(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar
+            SQL = "UPDATE [CERRAR_PERIODO_FECHAS] SET fechaDesde = '" & fechaDesde & "', " & "fechaHasta = '" & fechaHasta & "' "
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+        End Try
+
+        Return res
+    End Function
+
+    Function obtenerDatosdeCerrarPeriodoFechas() As List(Of CerrarPeriodoFechasClase)
+        Dim MyList As New List(Of CerrarPeriodoFechasClase)
+        Try
+            SQL = "SELECT CERRAR_PERIODO_FECHAS.* FROM [CERRAR_PERIODO_FECHAS]"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim datos As CerrarPeriodoFechasClase = New CerrarPeriodoFechasClase
+                    Try
+                        datos.cerrarPeriodoFechasConstructor(reader.GetDateTime(0), reader.GetDateTime(1))
+                        MyList.Add(datos)
+
+                        MsgBox(String.Concat("xxxx cerrar periodo fechas son ", reader.GetDateTime(0) + " --- " + reader.GetDateTime(1)))
+
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
 
 
     Function afiliacionesDeReservas(ByVal fechaDesde As Date, ByVal fechaHasta As Date) As Integer
@@ -2714,11 +2880,27 @@ Public Class ConexionBD
         Return res
     End Function
 
-
     Function retirarCertificadoEnTransito(ByVal idAsoc As String, ByVal ubicacionEstado As String) As Integer
         Dim res As Integer = 0
         Try
             SQL = "UPDATE [CERTIFICADO_EN_TRANSITO] SET  estado= '" & ubicacionEstado & "',acumuladoActual= '0' WHERE (cedula = '" & idAsoc & "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+        Return res
+    End Function
+
+    Function noRetirarAcumuladoCertificadoEnTransito(ByVal idAsoc As String, ByVal ubicacionEstado As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = " UPDATE [CERTIFICADO_EN_TRANSITO] SET  estado= '" & ubicacionEstado & "'
+                    WHERE (cedula = '" & idAsoc & "') "
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 res = command.ExecuteNonQuery()

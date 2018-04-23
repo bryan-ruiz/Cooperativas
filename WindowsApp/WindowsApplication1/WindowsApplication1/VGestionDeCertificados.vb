@@ -9,6 +9,7 @@
         Me.GestionCertificadoButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.GestionCertificadoButtonRetirarAcum.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.GestionCertificadoButtonSumarReservas.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.GestionCertificadoButtonNoRetirarAcum.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
 
     End Sub
 
@@ -62,4 +63,9 @@
     Private Sub GestionCertificadoButtonLimpiar_Click(sender As Object, e As EventArgs) Handles GestionCertificadoButtonLimpiar.Click
         gestionCertificados.limpiar()
     End Sub
+
+    Private Sub GestionCertificadoButtonNoRetirarAcum_Click(sender As Object, e As EventArgs) Handles GestionCertificadoButtonNoRetirarAcum.Click
+        gestionCertificados.noRetirarAcumuladoCertificado()
+    End Sub
+
 End Class

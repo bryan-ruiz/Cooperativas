@@ -37,6 +37,7 @@ Public Class MensajesGlobales
     Public datosIngresadosConExito As String = "Éxito al ingresar Datos!"
     Public datosActualizadosConExito As String = "Éxito al actualizar Datos!"
     Public datosEliminadosConExito As String = "Éxito al eliminar Datos!"
+    Public tractosSumadosConExitoParaTodosAsociados As String = "Éxito al sumar los Tractos para todos los Asociados!"
 
     Public errorFechaLimiteMenorActual As String = "La fecha actual es mayor a la fecha límite para agregar el Certificado"
     Public errorIngresandoDatos As String = "Error al ingresar los datos en el sistema"
@@ -49,6 +50,10 @@ Public Class MensajesGlobales
     Public errorMontoCertificadosMayorMil As String = "Error ingresando datos, el Total del Periodo no debe ser mayor al establecido"
     Public errorExistenDatosPendientes As String = "Error, no se puede Cerrar el Periodo si existen estados Pendientes en tránsito."
     Public errorFacturaOReciboExiste As String = "Error, la factura o recibo ya se encuentra en el Sistema, favor ingrese una nueva."
+    Public errorNumAsociadoExiste As String = "Error, el Número de Asociado ya se encuentra en el Sistema, favor ingrese uno nuevo."
+    Public errorNumCedulaExiste As String = "Error, el Número de Cédula ya se encuentra en el Sistema, favor ingrese uno nuevo."
+    Public errorAsociadoEnEstadoRetirado As String = "Error, el Asociado se encuentra en estado Retirado, no se puede realizar esta acción. "
+    Public errorAsociadoEnEstadoActivo As String = "Error, el Asociado se encuentra en estado Activo, no se puede realizar esta acción. "
 
     Public licenciaCaducada As String = "Su licencia ha caducado, contacte al Administrador del Sistema"
     Public nombreUsuarioOContrasenaIncorrecto As String = "El nombre de usuario o contraseña es incorrecto"

@@ -27,6 +27,7 @@ Partial Class VGestionDeCertificados
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GestionCertificadoButtonSumarReservas = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GestionCertificadoButtonNoRetirarAcum = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GestionCertificadoButtonRetirarAcum = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -86,15 +87,16 @@ Partial Class VGestionDeCertificados
         '
         Me.GestionCertificadoButtonSumarReservas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.GestionCertificadoButtonSumarReservas.ForeColor = System.Drawing.Color.White
-        Me.GestionCertificadoButtonSumarReservas.Location = New System.Drawing.Point(466, 197)
+        Me.GestionCertificadoButtonSumarReservas.Location = New System.Drawing.Point(613, 197)
         Me.GestionCertificadoButtonSumarReservas.Name = "GestionCertificadoButtonSumarReservas"
-        Me.GestionCertificadoButtonSumarReservas.Size = New System.Drawing.Size(187, 44)
+        Me.GestionCertificadoButtonSumarReservas.Size = New System.Drawing.Size(192, 44)
         Me.GestionCertificadoButtonSumarReservas.TabIndex = 173
         Me.GestionCertificadoButtonSumarReservas.Text = "Sumar a Reservas"
         Me.GestionCertificadoButtonSumarReservas.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.GestionCertificadoButtonNoRetirarAcum)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.GestionCertificadoButtonRetirarAcum)
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -110,6 +112,17 @@ Partial Class VGestionDeCertificados
         Me.GroupBox2.Size = New System.Drawing.Size(915, 287)
         Me.GroupBox2.TabIndex = 176
         Me.GroupBox2.TabStop = False
+        '
+        'GestionCertificadoButtonNoRetirarAcum
+        '
+        Me.GestionCertificadoButtonNoRetirarAcum.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.GestionCertificadoButtonNoRetirarAcum.ForeColor = System.Drawing.Color.White
+        Me.GestionCertificadoButtonNoRetirarAcum.Location = New System.Drawing.Point(101, 197)
+        Me.GestionCertificadoButtonNoRetirarAcum.Name = "GestionCertificadoButtonNoRetirarAcum"
+        Me.GestionCertificadoButtonNoRetirarAcum.Size = New System.Drawing.Size(197, 44)
+        Me.GestionCertificadoButtonNoRetirarAcum.TabIndex = 179
+        Me.GestionCertificadoButtonNoRetirarAcum.Text = "No Retirar Acumulado"
+        Me.GestionCertificadoButtonNoRetirarAcum.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -127,9 +140,9 @@ Partial Class VGestionDeCertificados
         '
         Me.GestionCertificadoButtonRetirarAcum.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.GestionCertificadoButtonRetirarAcum.ForeColor = System.Drawing.Color.White
-        Me.GestionCertificadoButtonRetirarAcum.Location = New System.Drawing.Point(214, 197)
+        Me.GestionCertificadoButtonRetirarAcum.Location = New System.Drawing.Point(361, 197)
         Me.GestionCertificadoButtonRetirarAcum.Name = "GestionCertificadoButtonRetirarAcum"
-        Me.GestionCertificadoButtonRetirarAcum.Size = New System.Drawing.Size(187, 44)
+        Me.GestionCertificadoButtonRetirarAcum.Size = New System.Drawing.Size(194, 44)
         Me.GestionCertificadoButtonRetirarAcum.TabIndex = 175
         Me.GestionCertificadoButtonRetirarAcum.Text = "Retirar Acumulado"
         Me.GestionCertificadoButtonRetirarAcum.UseVisualStyleBackColor = True
@@ -286,7 +299,7 @@ Partial Class VGestionDeCertificados
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.Black
-        Me.Label22.Location = New System.Drawing.Point(7, 51)
+        Me.Label22.Location = New System.Drawing.Point(8, 49)
         Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(203, 15)
@@ -295,7 +308,7 @@ Partial Class VGestionDeCertificados
         '
         'GestionCertificadoTextboxCedulaNumAsociado
         '
-        Me.GestionCertificadoTextboxCedulaNumAsociado.Location = New System.Drawing.Point(9, 74)
+        Me.GestionCertificadoTextboxCedulaNumAsociado.Location = New System.Drawing.Point(9, 77)
         Me.GestionCertificadoTextboxCedulaNumAsociado.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.GestionCertificadoTextboxCedulaNumAsociado.Name = "GestionCertificadoTextboxCedulaNumAsociado"
         Me.GestionCertificadoTextboxCedulaNumAsociado.Size = New System.Drawing.Size(203, 22)
@@ -304,7 +317,7 @@ Partial Class VGestionDeCertificados
         'GestionCertificadoButtonConsultar
         '
         Me.GestionCertificadoButtonConsultar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
-        Me.GestionCertificadoButtonConsultar.Location = New System.Drawing.Point(216, 68)
+        Me.GestionCertificadoButtonConsultar.Location = New System.Drawing.Point(219, 67)
         Me.GestionCertificadoButtonConsultar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.GestionCertificadoButtonConsultar.Name = "GestionCertificadoButtonConsultar"
         Me.GestionCertificadoButtonConsultar.Size = New System.Drawing.Size(55, 38)
@@ -317,7 +330,7 @@ Partial Class VGestionDeCertificados
         Me.GestionCertificadoButtonLimpiar.ForeColor = System.Drawing.Color.White
         Me.GestionCertificadoButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
         Me.GestionCertificadoButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GestionCertificadoButtonLimpiar.Location = New System.Drawing.Point(25, 199)
+        Me.GestionCertificadoButtonLimpiar.Location = New System.Drawing.Point(43, 199)
         Me.GestionCertificadoButtonLimpiar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.GestionCertificadoButtonLimpiar.Name = "GestionCertificadoButtonLimpiar"
         Me.GestionCertificadoButtonLimpiar.Size = New System.Drawing.Size(187, 44)
@@ -334,9 +347,9 @@ Partial Class VGestionDeCertificados
         Me.Label4.Location = New System.Drawing.Point(10, 480)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(588, 16)
+        Me.Label4.Size = New System.Drawing.Size(592, 16)
         Me.Label4.TabIndex = 179
-        Me.Label4.Text = "Nota: Al sumar el excedente a Reservas, se asigna un 50% a Educación y 50% a Bien" &
+        Me.Label4.Text = "Nota: Al sumar el acumulado a Reservas, se asigna un 50% a Educación y 50% a Bien" &
     "estar Social"
         '
         'MenuStrip1
@@ -455,4 +468,5 @@ Partial Class VGestionDeCertificados
     Friend WithEvents FechasLímiteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MontosMáximosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteDeCertificadosRetiradosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestionCertificadoButtonNoRetirarAcum As Button
 End Class

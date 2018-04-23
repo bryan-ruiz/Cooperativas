@@ -617,6 +617,10 @@ Public Class InformeEconomico
 
             table.AddCell(sumaPatrimonialTT)
 
+            ' MessageBox.Show("Exc brutos son = " + excedentesBrutos.ToString + " " +
+            '                " Reservas son: " + "Legal = " + sumaLegal.ToString +
+            '               " Ed = " + sumaEducacion.ToString + " BS = " + sumaBSocial.ToString +
+            '              " Inst = " + sumaInstitucional.ToString + " patri = " + sumaPatrimonial.ToString)
 
             '///// DIV /////
             table.AddCell(divisor)
@@ -653,7 +657,7 @@ Public Class InformeEconomico
             'pdfDoc.Add(table)
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteInformeEconomico.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporte_Informe_Economico.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)

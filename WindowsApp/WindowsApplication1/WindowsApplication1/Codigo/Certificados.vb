@@ -89,7 +89,7 @@ Public Class Certificados
             If hecho = 0 Then
                 MessageBox.Show(variablesGlobales.errorActualizandoDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             Else
-                MessageBox.Show(variablesGlobales.datosActualizadosConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.tractosSumadosConExitoParaTodosAsociados, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
             End If
 
         Catch ex As Exception
@@ -154,7 +154,7 @@ Public Class Certificados
             End If
             BD.CerrarConexion()
         Catch ex As Exception
-            MessageBox.Show("Error" + ex.ToString)
+            MessageBox.Show("Error" + ex.Message)
         End Try
     End Sub
 

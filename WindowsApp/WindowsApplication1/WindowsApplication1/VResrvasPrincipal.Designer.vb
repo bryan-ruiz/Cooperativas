@@ -28,6 +28,7 @@ Partial Class VResrvasPrincipal
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FechasLímiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,13 +36,14 @@ Partial Class VResrvasPrincipal
         Me.ReservasButtonGenerarInforme = New System.Windows.Forms.Button()
         Me.ReservasDateTimePickerHasta = New System.Windows.Forms.DateTimePicker()
         Me.ReservasDateTimePickerDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.GestionDeReservasToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.GestionDeReservasToolStripMenuItem, Me.FechasLímiteToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(646, 24)
@@ -72,6 +74,12 @@ Partial Class VResrvasPrincipal
         Me.GestionDeReservasToolStripMenuItem.Name = "GestionDeReservasToolStripMenuItem"
         Me.GestionDeReservasToolStripMenuItem.Size = New System.Drawing.Size(123, 20)
         Me.GestionDeReservasToolStripMenuItem.Text = "Gestion de Reservas"
+        '
+        'FechasLímiteToolStripMenuItem
+        '
+        Me.FechasLímiteToolStripMenuItem.Name = "FechasLímiteToolStripMenuItem"
+        Me.FechasLímiteToolStripMenuItem.Size = New System.Drawing.Size(91, 20)
+        Me.FechasLímiteToolStripMenuItem.Text = "Fechas Límite"
         '
         'Panel1
         '
@@ -128,6 +136,7 @@ Partial Class VResrvasPrincipal
         '
         'ReservasDateTimePickerHasta
         '
+        Me.ReservasDateTimePickerHasta.Enabled = False
         Me.ReservasDateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.ReservasDateTimePickerHasta.Location = New System.Drawing.Point(223, 192)
         Me.ReservasDateTimePickerHasta.Name = "ReservasDateTimePickerHasta"
@@ -136,17 +145,29 @@ Partial Class VResrvasPrincipal
         '
         'ReservasDateTimePickerDesde
         '
+        Me.ReservasDateTimePickerDesde.Enabled = False
         Me.ReservasDateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.ReservasDateTimePickerDesde.Location = New System.Drawing.Point(223, 161)
         Me.ReservasDateTimePickerDesde.Name = "ReservasDateTimePickerDesde"
         Me.ReservasDateTimePickerDesde.Size = New System.Drawing.Size(196, 20)
         Me.ReservasDateTimePickerDesde.TabIndex = 150
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(12, 370)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(0, 16)
+        Me.Label3.TabIndex = 155
+        '
         'VResrvasPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(646, 381)
+        Me.ClientSize = New System.Drawing.Size(646, 386)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ReservasButtonGenerarInforme)
@@ -155,6 +176,7 @@ Partial Class VResrvasPrincipal
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "VResrvasPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SAC"
@@ -179,4 +201,6 @@ Partial Class VResrvasPrincipal
     Friend WithEvents ReservasButtonGenerarInforme As Button
     Friend WithEvents ReservasDateTimePickerHasta As DateTimePicker
     Friend WithEvents ReservasDateTimePickerDesde As DateTimePicker
+    Friend WithEvents Label3 As Label
+    Friend WithEvents FechasLímiteToolStripMenuItem As ToolStripMenuItem
 End Class

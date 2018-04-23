@@ -55,7 +55,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(88, 303)
+        Me.Label2.Location = New System.Drawing.Point(88, 300)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(291, 17)
         Me.Label2.TabIndex = 4
@@ -204,7 +204,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(88, 135)
+        Me.Label3.Location = New System.Drawing.Point(88, 132)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(137, 17)
         Me.Label3.TabIndex = 165
@@ -215,7 +215,7 @@ Partial Class VConfiguracionCodigoCuenta
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(84, 210)
+        Me.Label4.Location = New System.Drawing.Point(84, 207)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(126, 17)
         Me.Label4.TabIndex = 167
