@@ -137,33 +137,41 @@ Public Class Reservas
 
     'Función principal que llama a realizar cierre periodo
     Public Sub cerrarPeriodo()
-        Dim cantidadDePendiente As Integer = 0
 
-        Try
-            'Validar que no existen estados "Pendiente" EXCEDENTES-EN-TRANSITO ni en CERTIFICADOS-EN-TRANSITO
-            cantidadDePendiente = validarNoExistenPendientes()
+        Dim result As Integer = MessageBox.Show("¿Seguro que desea generar el Cierre del Perido con las fechas seleccionadas?", "Favor Validar Fechas", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If result = DialogResult.No Then
+            'nothing
+        ElseIf result = DialogResult.Yes Then
 
-            If cantidadDePendiente <> 0 Then
-                MessageBox.Show(variablesGlobales.errorExistenDatosPendientes, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-                Return
-            End If
+            Dim cantidadDePendiente As Integer = 0
 
-            'Suma los tractos al Acumulado automáticamente para todos los asociados
-            certificados.sumarTractosEnTotalAcumulado()
-            'Hace la función de sumar Reservas
-            realizarCierrePeriodo()
-            'Borra la tabla de excedentes en tránsito
-            borrarExcedentesEnTransito()
-            'Inserta datos nuevos en la tabla excedentes en tránsito
-            GenerarExcedentesEnTransito()
-            'Borra la tabla de certificados en tránsito
-            borrarCertificadosEnTransito()
-            'Inserta datos nuevos en la tabla de certificados en tránsito
-            GenerarCertificadosEnTransito()
+            Try
+                'Validar que no existen estados "Pendiente" EXCEDENTES-EN-TRANSITO ni en CERTIFICADOS-EN-TRANSITO
+                cantidadDePendiente = validarNoExistenPendientes()
 
-        Catch ex As Exception
-            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
-        End Try
+                If cantidadDePendiente <> 0 Then
+                    MessageBox.Show(variablesGlobales.errorExistenDatosPendientes, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                    Return
+                End If
+
+                'Suma los tractos al Acumulado automáticamente para todos los asociados
+                certificados.sumarTractosEnTotalAcumulado()
+                'Hace la función de sumar Reservas
+                realizarCierrePeriodo()
+                'Borra la tabla de excedentes en tránsito
+                borrarExcedentesEnTransito()
+                'Inserta datos nuevos en la tabla excedentes en tránsito
+                GenerarExcedentesEnTransito()
+                'Borra la tabla de certificados en tránsito
+                borrarCertificadosEnTransito()
+                'Inserta datos nuevos en la tabla de certificados en tránsito
+                GenerarCertificadosEnTransito()
+
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
+            End Try
+        End If
+
 
     End Sub
 
@@ -567,9 +575,20 @@ Public Class Reservas
         Dim conta As Integer = 0
         While conta < valores.Count
             VResrvasPrincipal.ReservasDateTimePickerDesde.Value = Date.Parse(valores(conta).fechaDesde)
-            VResrvasPrincipal.ReservasDateTimePickerDesde.Value = Date.Parse(valores(conta).fechaHasta)
+            VResrvasPrincipal.ReservasDateTimePickerHasta.Value = Date.Parse(valores(conta).fechaHasta)
             conta = conta + 1
         End While
+    End Sub
+
+    Public Sub llenarDatosFechasCerrarP(ByVal valores As List(Of CerrarPeriodoFechasClase))
+        Dim conta As Integer = 0
+
+        While conta < valores.Count
+            VCerrarPeriodoFechasLimite.CerrarPeriodoFechasDateTimePickerFechaInicial.Value = Date.Parse(valores(conta).fechaDesde)
+            VCerrarPeriodoFechasLimite.CerrarPeriodoFechasDateTimePickerFechaFinal.Value = Date.Parse(valores(conta).fechaHasta)
+            conta = conta + 1
+        End While
+
     End Sub
 
     'Consulta todos los datos de la tabla de Cerrar periodo fechas
@@ -590,12 +609,29 @@ Public Class Reservas
         End Try
     End Sub
 
+    Public Sub consultarFechasCierreP()
+        Dim valores As List(Of CerrarPeriodoFechasClase)
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerDatosdeCerrarPeriodoFechas()
+            If valores.Count <> 0 Then
+                llenarDatosFechasCerrarP(valores)
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+    End Sub
+
 
     'Actualiza todos los datos en la tabla de "Cerrar Periodo Fechas"
     Public Sub actualizarCerrarPeriodoFechas()
 
-        Dim fechaDesde As Date = VConfiguracionFechasLimite.ConfiguracionDateTimePickerFecha1.Value.ToString("dd/MM/yyyy")
-        Dim fechaHasta As Date = VConfiguracionFechasLimite.ConfiguracionDateTimePickerFecha2.Value.ToString("dd/MM/yyyy")
+        Dim fechaDesde As Date = VCerrarPeriodoFechasLimite.CerrarPeriodoFechasDateTimePickerFechaInicial.Value.ToString("dd/MM/yyyy")
+        Dim fechaHasta As Date = VCerrarPeriodoFechasLimite.CerrarPeriodoFechasDateTimePickerFechaFinal.Value.ToString("dd/MM/yyyy")
 
         Try
             BD.ConectarBD()

@@ -28,7 +28,7 @@ Partial Class VCerrarPeriodoFechasLimite
         Me.Label4 = New System.Windows.Forms.Label()
         Me.CerrarPeriodoFechasDateTimePickerFechaInicial = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ButtonConfiguracionFechasGuardar = New System.Windows.Forms.Button()
+        Me.ButtonCerrarPeriodoFechasGuardar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
@@ -85,16 +85,16 @@ Partial Class VCerrarPeriodoFechasLimite
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Desde:"
         '
-        'ButtonConfiguracionFechasGuardar
+        'ButtonCerrarPeriodoFechasGuardar
         '
-        Me.ButtonConfiguracionFechasGuardar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.ButtonConfiguracionFechasGuardar.ForeColor = System.Drawing.Color.White
-        Me.ButtonConfiguracionFechasGuardar.Location = New System.Drawing.Point(260, 254)
-        Me.ButtonConfiguracionFechasGuardar.Name = "ButtonConfiguracionFechasGuardar"
-        Me.ButtonConfiguracionFechasGuardar.Size = New System.Drawing.Size(196, 52)
-        Me.ButtonConfiguracionFechasGuardar.TabIndex = 21
-        Me.ButtonConfiguracionFechasGuardar.Text = "Guardar"
-        Me.ButtonConfiguracionFechasGuardar.UseVisualStyleBackColor = True
+        Me.ButtonCerrarPeriodoFechasGuardar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.ButtonCerrarPeriodoFechasGuardar.ForeColor = System.Drawing.Color.White
+        Me.ButtonCerrarPeriodoFechasGuardar.Location = New System.Drawing.Point(260, 254)
+        Me.ButtonCerrarPeriodoFechasGuardar.Name = "ButtonCerrarPeriodoFechasGuardar"
+        Me.ButtonCerrarPeriodoFechasGuardar.Size = New System.Drawing.Size(196, 52)
+        Me.ButtonCerrarPeriodoFechasGuardar.TabIndex = 21
+        Me.ButtonCerrarPeriodoFechasGuardar.Text = "Guardar"
+        Me.ButtonCerrarPeriodoFechasGuardar.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -123,7 +123,7 @@ Partial Class VCerrarPeriodoFechasLimite
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(664, 410)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.ButtonConfiguracionFechasGuardar)
+        Me.Controls.Add(Me.ButtonCerrarPeriodoFechasGuardar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VCerrarPeriodoFechasLimite"
@@ -138,7 +138,7 @@ Partial Class VCerrarPeriodoFechasLimite
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ButtonConfiguracionFechasGuardar As Button
+    Friend WithEvents ButtonCerrarPeriodoFechasGuardar As Button
     Friend WithEvents CerrarPeriodoFechasDateTimePickerFechaFinal As DateTimePicker
     Friend WithEvents Label4 As Label
     Friend WithEvents CerrarPeriodoFechasDateTimePickerFechaInicial As DateTimePicker

@@ -2533,10 +2533,10 @@ Public Class ConexionBD
                 While reader.Read()
                     Dim datos As CerrarPeriodoFechasClase = New CerrarPeriodoFechasClase
                     Try
-                        datos.cerrarPeriodoFechasConstructor(reader.GetDateTime(0), reader.GetDateTime(1))
+                        datos.cerrarPeriodoFechasConstructor(reader.GetDateTime(1), reader.GetDateTime(2))
                         MyList.Add(datos)
 
-                        MsgBox(String.Concat("xxxx cerrar periodo fechas son ", reader.GetDateTime(0) + " --- " + reader.GetDateTime(1)))
+                        'MsgBox(String.Concat("xxxx cerrar periodo fechas son ", reader.GetDateTime(1).ToString + " --- " + reader.GetDateTime(2).ToString))
 
                     Catch ex As Exception
                         MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)

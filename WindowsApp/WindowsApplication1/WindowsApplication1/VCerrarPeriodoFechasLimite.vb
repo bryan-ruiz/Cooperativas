@@ -4,26 +4,24 @@
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
     Dim certificados As Certificados = New Certificados
 
-
-    Private Sub VConfiguracionFechasLimite_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub VCerrarPeriodoFechasLimite_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Load
-        cerrarPeriodo.consultarFechasLimiteCerrarPeriodo()
+        cerrarPeriodo.consultarFechasCierreP()
 
         Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-        Me.ButtonConfiguracionFechasGuardar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.ButtonCerrarPeriodoFechasGuardar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
 
     End Sub
 
-
-    Private Sub ButtonConfiguracionFechasGuardar_Click(sender As Object, e As EventArgs) Handles ButtonConfiguracionFechasGuardar.Click
+    Private Sub ButtonCerrarPeriodoFechasGuardar_Click(sender As Object, e As EventArgs) Handles ButtonCerrarPeriodoFechasGuardar.Click
         If Singleton.rol = "Colaborador" Then
             MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos)
         Else
             cerrarPeriodo.actualizarCerrarPeriodoFechas()
-            certificados.consultarFechasLimite()
+            cerrarPeriodo.consultarFechasLimiteCerrarPeriodo()
         End If
+
         Me.Close()
     End Sub
-
 
 End Class

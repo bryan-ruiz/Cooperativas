@@ -7,4 +7,5 @@
         fechaDesde = fechaDesdep
         fechaHasta = fechaHastap
     End Sub
+
 End Class

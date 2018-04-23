@@ -127,7 +127,7 @@ Partial Class VResrvasPrincipal
         '
         Me.ReservasButtonGenerarInforme.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservasButtonGenerarInforme.ForeColor = System.Drawing.Color.White
-        Me.ReservasButtonGenerarInforme.Location = New System.Drawing.Point(223, 273)
+        Me.ReservasButtonGenerarInforme.Location = New System.Drawing.Point(223, 260)
         Me.ReservasButtonGenerarInforme.Name = "ReservasButtonGenerarInforme"
         Me.ReservasButtonGenerarInforme.Size = New System.Drawing.Size(196, 52)
         Me.ReservasButtonGenerarInforme.TabIndex = 152

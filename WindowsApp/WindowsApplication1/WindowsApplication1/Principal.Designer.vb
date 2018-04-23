@@ -31,13 +31,13 @@ Partial Class Principal
         Me.SalidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónCooperativaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CodigosDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorcentajesReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CodigosDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExcedentesMoverAReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificadosEnTránsitoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImportarAcumuladoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -119,29 +119,29 @@ Partial Class Principal
         Me.InformaciónCooperativaToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.InformaciónCooperativaToolStripMenuItem.Text = "Información General"
         '
-        'CodigosDeCuentasToolStripMenuItem
-        '
-        Me.CodigosDeCuentasToolStripMenuItem.Name = "CodigosDeCuentasToolStripMenuItem"
-        Me.CodigosDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
-        Me.CodigosDeCuentasToolStripMenuItem.Text = "Códigos de Cuentas"
-        '
         'PorcentajesReservasToolStripMenuItem
         '
         Me.PorcentajesReservasToolStripMenuItem.Name = "PorcentajesReservasToolStripMenuItem"
         Me.PorcentajesReservasToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.PorcentajesReservasToolStripMenuItem.Text = "Porcentajes Reservas"
         '
+        'CodigosDeCuentasToolStripMenuItem
+        '
+        Me.CodigosDeCuentasToolStripMenuItem.Name = "CodigosDeCuentasToolStripMenuItem"
+        Me.CodigosDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.CodigosDeCuentasToolStripMenuItem.Text = "Códigos de Cuentas"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(239, 22)
+        Me.ToolStripMenuItem4.Text = "---------------------------------"
+        '
         'CerrarPeriodoToolStripMenuItem
         '
         Me.CerrarPeriodoToolStripMenuItem.Name = "CerrarPeriodoToolStripMenuItem"
         Me.CerrarPeriodoToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.CerrarPeriodoToolStripMenuItem.Text = "Cerrar Periodo"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(239, 22)
-        Me.ToolStripMenuItem3.Text = "---------------------------------"
         '
         'ExcedentesMoverAReservasToolStripMenuItem
         '
@@ -155,11 +155,11 @@ Partial Class Principal
         Me.CertificadosEnTránsitoToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.CertificadosEnTránsitoToolStripMenuItem.Text = "Gestión de Certifcados"
         '
-        'ToolStripMenuItem4
+        'ToolStripMenuItem3
         '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(239, 22)
-        Me.ToolStripMenuItem4.Text = "---------------------------------"
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(239, 22)
+        Me.ToolStripMenuItem3.Text = "---------------------------------"
         '
         'CargarUsuariosToolStripMenuItem
         '
