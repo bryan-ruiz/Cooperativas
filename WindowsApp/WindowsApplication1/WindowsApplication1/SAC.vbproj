@@ -126,6 +126,7 @@
     <Compile Include="Clases\ComiteClase.vb" />
     <Compile Include="Clases\ConfiguracionClase.vb" />
     <Compile Include="Clases\CuentaClase.vb" />
+    <Compile Include="Clases\CuotaAdmisionClase.vb" />
     <Compile Include="Clases\EncabezadoClase.vb" />
     <Compile Include="Clases\GastoClase.vb" />
     <Compile Include="Clases\IngresoClase.vb" />
@@ -137,6 +138,7 @@
     <Compile Include="Codigo\Comites.vb" />
     <Compile Include="Codigo\ConexionBD.vb" />
     <Compile Include="Codigo\Configuracion.vb" />
+    <Compile Include="Codigo\CuotaAdmision.vb" />
     <Compile Include="Codigo\Gastos.vb" />
     <Compile Include="Codigo\GestionCertificados.vb" />
     <Compile Include="Codigo\GestionExcedentes.vb" />
@@ -153,6 +155,12 @@
       <DependentUpon>VCerrarPeriodoFechasLimite.vb</DependentUpon>
     </Compile>
     <Compile Include="VCerrarPeriodoFechasLimite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VConfiguracionCuotaAdmision.Designer.vb">
+      <DependentUpon>VConfiguracionCuotaAdmision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VConfiguracionCuotaAdmision.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VGestionDeCertificados.Designer.vb">
@@ -406,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VCerrarPeriodoFechasLimite.resx">
       <DependentUpon>VCerrarPeriodoFechasLimite.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VConfiguracionCuotaAdmision.resx">
+      <DependentUpon>VConfiguracionCuotaAdmision.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VExcedentesCorrespondientes.resx">
       <DependentUpon>VExcedentesCorrespondientes.vb</DependentUpon>

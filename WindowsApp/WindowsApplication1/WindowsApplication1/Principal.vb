@@ -300,4 +300,11 @@ Public Class Principal
         VGestionDeCertificados.Show()
     End Sub
 
+    Private Sub ToolStripMenuItemReservas_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemReservas.Click
+        VGestionDeReservas.Show()
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        VConfiguracionCuotaAdmision.Show()
+    End Sub
 End Class

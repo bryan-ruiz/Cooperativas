@@ -27,7 +27,6 @@ Partial Class VResrvasPrincipal
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GestionDeReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FechasLímiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -43,7 +42,7 @@ Partial Class VResrvasPrincipal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.GestionDeReservasToolStripMenuItem, Me.FechasLímiteToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.FechasLímiteToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(646, 24)
@@ -68,12 +67,6 @@ Partial Class VResrvasPrincipal
         Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
         Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReporteToolStripMenuItem.Text = "Reportes"
-        '
-        'GestionDeReservasToolStripMenuItem
-        '
-        Me.GestionDeReservasToolStripMenuItem.Name = "GestionDeReservasToolStripMenuItem"
-        Me.GestionDeReservasToolStripMenuItem.Size = New System.Drawing.Size(123, 20)
-        Me.GestionDeReservasToolStripMenuItem.Text = "Gestion de Reservas"
         '
         'FechasLímiteToolStripMenuItem
         '
@@ -193,7 +186,6 @@ Partial Class VResrvasPrincipal
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GestionDeReservasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label9 As Label
     Friend WithEvents Label1 As Label

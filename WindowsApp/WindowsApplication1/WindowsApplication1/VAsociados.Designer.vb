@@ -180,11 +180,11 @@ Partial Class VAsociados
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(384, 408)
+        Me.Label9.Location = New System.Drawing.Point(353, 408)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(108, 16)
+        Me.Label9.Size = New System.Drawing.Size(139, 16)
         Me.Label9.TabIndex = 17
-        Me.Label9.Text = "Cuota Matrícula"
+        Me.Label9.Text = "Cuota de Admisión ¢"
         '
         'Label10
         '
@@ -352,7 +352,7 @@ Partial Class VAsociados
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(349, 509)
+        Me.GroupBox1.Size = New System.Drawing.Size(327, 509)
         Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
         '
@@ -610,6 +610,7 @@ Partial Class VAsociados
         '
         'TextBoxSociosCuotaMatricula
         '
+        Me.TextBoxSociosCuotaMatricula.Enabled = False
         Me.TextBoxSociosCuotaMatricula.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSociosCuotaMatricula.Location = New System.Drawing.Point(498, 404)
         Me.TextBoxSociosCuotaMatricula.Name = "TextBoxSociosCuotaMatricula"

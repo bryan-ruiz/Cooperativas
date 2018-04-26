@@ -10,6 +10,7 @@
     Dim certificados As Certificados = New Certificados
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
     Dim informeEconomico As InformeEconomico = New InformeEconomico
+    Dim cuotaAdmision As CuotaAdmision = New CuotaAdmision
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.WindowState = FormWindowState.Maximized, Para maximizar la pantalla'
@@ -19,6 +20,8 @@
         Me.ButtonAsociadosAgregar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.ButtonSociosModificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.SociosButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+
+        cuotaAdmision.consultarCuotaAdmision()
 
     End Sub
 

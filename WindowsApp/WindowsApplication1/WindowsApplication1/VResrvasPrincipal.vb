@@ -11,10 +11,6 @@
 
     End Sub
 
-    Private Sub GestionDeReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeReservasToolStripMenuItem.Click
-        VGestionDeReservas.Show()
-    End Sub
-
     Private Sub ReservasButtonGenerarInforme_Click(sender As Object, e As EventArgs) Handles ReservasButtonGenerarInforme.Click
         cerrarPeriodo.cerrarPeriodo()
     End Sub

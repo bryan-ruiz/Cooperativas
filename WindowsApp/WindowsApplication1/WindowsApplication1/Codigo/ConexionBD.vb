@@ -2992,7 +2992,55 @@ Public Class ConexionBD
 
     End Function
 
+    '/////////////////////////////// CUOTA ADMISION /////////////////////////////////
 
+    Function obtenerDatosdeCuotaAdmision() As List(Of CuotaAdmisionClase)
+        Dim MyList As New List(Of CuotaAdmisionClase)
+        Try
+            SQL = "SELECT CUOTA_ADMISION.* FROM [CUOTA_ADMISION]"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim datos As CuotaAdmisionClase = New CuotaAdmisionClase
+                    Try
+                        'MsgBox(String.Concat("XXXX 1", reader.GetInt32(1), " xxxx pos 0", reader.GetInt32(0)))
+                        datos.cuotaAdmisionClaseConstructor(reader.GetInt32(1))
+                        MyList.Add(datos)
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    'Actualiza la info de Configuracion
+    Function actualizarConfiguracionCuotaAdmision(ByVal monto As Integer) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar
+            SQL = "UPDATE [CUOTA_ADMISION] SET cuota = '" & monto & "' "
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
 
 
 End Class

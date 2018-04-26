@@ -304,9 +304,9 @@ Public Class InformeEconomico
             table.AddCell(montoAportacionesTT)
 
 
-            'AFILIACIONES -----------------------------------------
+            'AFILIACIONES - ahora label es admisiones -----------------------------------------
 
-            Dim afiliacionesT As PdfPCell = New PdfPCell(New Phrase("Afiliaciones", FontStypeLineas))
+            Dim afiliacionesT As PdfPCell = New PdfPCell(New Phrase("Admisiones", FontStypeLineas))
             afiliacionesT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas)) '"#8EA9DB" excedentes
             afiliacionesT.Colspan = 1
             afiliacionesT.HorizontalAlignment = 1
