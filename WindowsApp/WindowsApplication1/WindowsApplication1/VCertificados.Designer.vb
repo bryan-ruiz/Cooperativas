@@ -103,6 +103,8 @@ Partial Class VCertificados
         Me.CertificadosTextboxNombre = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label31 = New System.Windows.Forms.Label()
+        Me.EntradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -114,7 +116,7 @@ Partial Class VCertificados
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.EntradasToolStripMenuItem, Me.SalidasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1285, 24)
@@ -999,6 +1001,18 @@ Partial Class VCertificados
         Me.Label31.TabIndex = 41
         Me.Label31.Text = "Certificaciones de Aportación"
         '
+        'EntradasToolStripMenuItem
+        '
+        Me.EntradasToolStripMenuItem.Name = "EntradasToolStripMenuItem"
+        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.EntradasToolStripMenuItem.Text = "Entradas"
+        '
+        'SalidasToolStripMenuItem
+        '
+        Me.SalidasToolStripMenuItem.Name = "SalidasToolStripMenuItem"
+        Me.SalidasToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
+        Me.SalidasToolStripMenuItem.Text = "Salidas"
+        '
         'VCertificados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1114,4 +1128,6 @@ Partial Class VCertificados
     Friend WithEvents ReporteDeMorosidadToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteDePagosAlDíaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteDeTodosLosPagosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EntradasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalidasToolStripMenuItem As ToolStripMenuItem
 End Class

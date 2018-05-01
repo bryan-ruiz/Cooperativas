@@ -155,6 +155,34 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerCertificadosEntradasPorFactura(ByVal idFactura As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+
+            SQL = "SELECT fecha, reciboFactura, cliente, codigoDeCuenta, descripcion, cantidad, precioUnitario, total
+                    FROM [CERTIFICADOS_ENTRADAS]
+                    WHERE CERTIFICADOS_ENTRADAS.reciboFactura = ('" + idFactura + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                        ' MessageBox.Show("XXXXX  " + reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
     Function actualizarIngreso(fechap As DateTime,
                              ByVal clientep As String,
                              ByVal descripcripcionp As String,
@@ -1046,6 +1074,26 @@ Public Class ConexionBD
         Return res
     End Function
 
+    Function insertarCertificadosEntradas(ByVal fechap As DateTime, ByVal clientep As String, ByVal descripcripcionp As String,
+                             ByVal cantidadp As String, ByVal precioUnitariop As String, ByVal totalp As String,
+                             ByVal codCuentap As String, ByVal facturaRecibop As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "INSERT INTO [CERTIFICADOS_ENTRADAS]" &
+           "(fecha,cliente, descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura)" &
+            "VALUES ('" + fechap + "', '" + clientep + "', '" + descripcripcionp + "', " + cantidadp + ", " +
+            precioUnitariop + ", " + totalp + ", '" + codCuentap + "', '" + facturaRecibop + "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return res
+    End Function
 
     ''/////////////////////////////////////////////////////////////////////
     '''                 GASTOS

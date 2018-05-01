@@ -186,4 +186,11 @@
         VReporteTodosLosPagos.Show()
     End Sub
 
+    Private Sub EntradasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradasToolStripMenuItem.Click
+        VCertificadosEntradas.Show()
+    End Sub
+
+    Private Sub SalidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidasToolStripMenuItem.Click
+
+    End Sub
 End Class

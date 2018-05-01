@@ -210,9 +210,27 @@ Public Class GestionExcedentes
 
     End Sub
 
+    'Valida que el usuario no esté en estado Activo
+    Function validarAsociadoActivo(ByVal cedulaNumAsociado As String) As Integer
+        Dim usuariosActivos As List(Of String)
+        Dim cantidad As Integer = 0
+
+        Try
+            BD.ConectarBD()
+
+            usuariosActivos = BD.consultarAsociadoActivoXCedOrNumAsoc(cedulaNumAsociado)
+            cantidad = usuariosActivos.Count
+
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
+        End Try
+        Return cantidad
+    End Function
+
     'sumar excedentes de un usuario a reservas ediucacion social y bienestar social.
     Public Sub sumarAReservasLlamado()
-        Dim valores, valorDeConsultaEducacion, valorConsultaBienestarSoc As Int32
+        Dim valores, valorDeConsultaEducacion, valorConsultaBienestarSoc, asociadoActivo As Integer
         Dim cedulaNumAsociado As String = VGestionDeExcedentes.GestionExcTextboxCedulaNumAsociado.Text
         Dim excedenteDeUsuario As String = VGestionDeExcedentes.GestionExcTextboxExcCorrespondiente.Text
         Dim status As String = VGestionDeExcedentes.GestionExcTextboxStatus.Text
@@ -224,6 +242,14 @@ Public Class GestionExcedentes
 
         If (status <> "Pendiente") Then
             MessageBox.Show(variablesGlobales.mensajePendienteRequerido, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        'Valida Asociado Activo no pueda Retirar Acumulado
+        asociadoActivo = validarAsociadoActivo(cedulaNumAsociado)
+        If asociadoActivo <> 0 Then
+            MessageBox.Show(variablesGlobales.errorAsociadoEnEstadoActivo, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            limpiar()
             Return
         End If
 
