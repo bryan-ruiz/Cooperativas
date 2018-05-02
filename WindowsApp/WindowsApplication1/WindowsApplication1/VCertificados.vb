@@ -191,6 +191,6 @@
     End Sub
 
     Private Sub SalidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidasToolStripMenuItem.Click
-
+        VCertificadosSalidas.Show()
     End Sub
 End Class

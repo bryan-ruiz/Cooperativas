@@ -217,3 +217,4 @@ C:\Users\Joha\Documents\GitHub\Cooperativas\WindowsApp\WindowsApplication1\Windo
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VCerrarPeriodoFechasLimite.resources
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VConfiguracionCuotaAdmision.resources
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VCertificadosEntradas.resources
+C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VCertificadosSalidas.resources

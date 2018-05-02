@@ -54,6 +54,7 @@ Public Class MensajesGlobales
     Public errorNumCedulaExiste As String = "Error, el Número de Cédula ya se encuentra en el Sistema, favor ingrese uno nuevo."
     Public errorAsociadoEnEstadoRetirado As String = "Error, el Asociado se encuentra en estado Retirado, no se puede realizar esta acción. "
     Public errorAsociadoEnEstadoActivo As String = "Error, el Asociado se encuentra en estado Activo, no se puede realizar esta acción. "
+    Public errorMontoMayorAlSaldoAportaciones As String = "Error, el monto debe ser menor o igual al Saldo Total de las Aportaciones. "
 
     Public licenciaCaducada As String = "Su licencia ha caducado, contacte al Administrador del Sistema"
     Public nombreUsuarioOContrasenaIncorrecto As String = "El nombre de usuario o contraseña es incorrecto"

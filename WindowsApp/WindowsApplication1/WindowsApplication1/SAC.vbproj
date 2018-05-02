@@ -135,6 +135,7 @@
     <Compile Include="Clases\Singleton.vb" />
     <Compile Include="Clases\SocioClase.vb" />
     <Compile Include="Codigo\Certificados.vb" />
+    <Compile Include="Codigo\CertificadosSalidas.vb" />
     <Compile Include="Codigo\CertificadosEntradas.vb" />
     <Compile Include="Codigo\Comites.vb" />
     <Compile Include="Codigo\ConexionBD.vb" />
@@ -156,6 +157,12 @@
       <DependentUpon>VCerrarPeriodoFechasLimite.vb</DependentUpon>
     </Compile>
     <Compile Include="VCerrarPeriodoFechasLimite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCertificadosSalidas.Designer.vb">
+      <DependentUpon>VCertificadosSalidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VCertificadosSalidas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VConfiguracionCuotaAdmision.Designer.vb">
@@ -412,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VAsociados.resx">
       <DependentUpon>VAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VCertificadosSalidas.resx">
+      <DependentUpon>VCertificadosSalidas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VComites.resx">
       <DependentUpon>VComites.vb</DependentUpon>

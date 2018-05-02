@@ -183,6 +183,34 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerCertificadosSalidasPorFactura(ByVal idFactura As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+
+            SQL = "SELECT fecha, reciboFactura, proveedor, codigoDeCuenta, descripcion, cantidad, precioUnitario, total
+                    FROM [CERTIFICADOS_SALIDAS]
+                    WHERE CERTIFICADOS_SALIDAS.reciboFactura = ('" + idFactura + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                        ' MessageBox.Show("XXXXX  " + reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
     Function actualizarIngreso(fechap As DateTime,
                              ByVal clientep As String,
                              ByVal descripcripcionp As String,
@@ -1095,6 +1123,28 @@ Public Class ConexionBD
         Return res
     End Function
 
+
+    Function insertarCertificadosSalidas(ByVal fechap As DateTime, ByVal clientep As String, ByVal descripcripcionp As String,
+                             ByVal cantidadp As String, ByVal precioUnitariop As String, ByVal totalp As String,
+                             ByVal codCuentap As String, ByVal facturaRecibop As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "INSERT INTO [CERTIFICADOS_SALIDAS]" &
+           "(fecha,proveedor, descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura)" &
+            "VALUES ('" + fechap + "', '" + clientep + "', '" + descripcripcionp + "', " + cantidadp + ", " +
+            precioUnitariop + ", " + totalp + ", '" + codCuentap + "', '" + facturaRecibop + "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return res
+    End Function
+
     ''/////////////////////////////////////////////////////////////////////
     '''                 GASTOS
 
@@ -1727,6 +1777,82 @@ Public Class ConexionBD
         Try
             SQL = " SELECT Sum(CERTIFICADOS.total) As total 
                                 FROM CERTIFICADOS "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
+                        'MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function obtenerAportacionesEntradasTotal() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(CERTIFICADOS_ENTRADAS.total) As total 
+                                FROM CERTIFICADOS_ENTRADAS "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
+                        'MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function obtenerAportacionesSalidasTotal() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(CERTIFICADOS_SALIDAS.total) As total 
+                                FROM CERTIFICADOS_SALIDAS "
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)

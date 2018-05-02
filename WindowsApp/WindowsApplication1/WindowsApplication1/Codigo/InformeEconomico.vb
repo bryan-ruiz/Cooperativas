@@ -64,7 +64,8 @@ Public Class InformeEconomico
         'Aportaciones o Certificados - Acum
         Dim totalAportacionesAcum As List(Of String) = obtenerAportacionesAcumuladoAnterior()
         'MsgBox("13paso sub-total otros gastos")
-        'Aportaciones o Certificados - Total
+
+        'Aportaciones o Certificados - Total o Periodo Actual
         Dim totalAportacionesTotal As List(Of String) = obtenerAportacionesTotalFecha(fechaDesde, fechaHasta)
         'MsgBox("14paso sub-total otros gastos")
 
