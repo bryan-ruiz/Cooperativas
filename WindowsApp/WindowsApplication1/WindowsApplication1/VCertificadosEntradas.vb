@@ -44,4 +44,11 @@
     Private Sub CertificadosEntradasAgregarEntrada_Click(sender As Object, e As EventArgs) Handles CertificadosEntradasAgregarEntrada.Click
         certificadoEntrada.insertarCertificadoEntrada()
     End Sub
+
+    Private Sub ReporteDeAportacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeAportacionesToolStripMenuItem.Click
+        certificadoEntrada.generarReporteAportaciones()
+        Print.Show()
+        Print.abrirReporte(variablesGlobales.pathReporteAportaciones)
+        Me.Close()
+    End Sub
 End Class

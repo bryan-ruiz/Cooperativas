@@ -2,6 +2,7 @@
 
     Dim certificadoSalida As CertificadosSalidas = New CertificadosSalidas
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+    Dim certificadoEntrada As CertificadosEntradas = New CertificadosEntradas
 
     Private Sub VCertificadosSalidas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
@@ -41,5 +42,12 @@
 
     Private Sub CertificadosSalidasAgregarEntrada_Click(sender As Object, e As EventArgs) Handles CertificadosSalidasAgregarEntrada.Click
         certificadoSalida.insertarCertificadoSalida()
+    End Sub
+
+    Private Sub ReporteDeAportacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeAportacionesToolStripMenuItem.Click
+        certificadoEntrada.generarReporteAportaciones()
+        Print.Show()
+        Print.abrirReporte(variablesGlobales.pathReporteAportaciones)
+        Me.Close()
     End Sub
 End Class

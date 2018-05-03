@@ -25,6 +25,8 @@ Partial Class VCertificadosEntradas
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VCertificadosEntradas))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeAportacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeSaldosDeAportacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificadosEntradasTextboxFacturaRecibos = New System.Windows.Forms.TextBox()
         Me.CertificadosEntradasFecha = New System.Windows.Forms.DateTimePicker()
         Me.CertificadosEntradasTexboxCliente = New System.Windows.Forms.TextBox()
@@ -47,8 +49,6 @@ Partial Class VCertificadosEntradas
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ReporteDeAportacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteDeSaldosDeAportacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -70,6 +70,18 @@ Partial Class VCertificadosEntradas
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
+        'ReporteDeAportacionesToolStripMenuItem
+        '
+        Me.ReporteDeAportacionesToolStripMenuItem.Name = "ReporteDeAportacionesToolStripMenuItem"
+        Me.ReporteDeAportacionesToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.ReporteDeAportacionesToolStripMenuItem.Text = "Reporte - Aportaciones"
+        '
+        'ReporteDeSaldosDeAportacionesToolStripMenuItem
+        '
+        Me.ReporteDeSaldosDeAportacionesToolStripMenuItem.Name = "ReporteDeSaldosDeAportacionesToolStripMenuItem"
+        Me.ReporteDeSaldosDeAportacionesToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.ReporteDeSaldosDeAportacionesToolStripMenuItem.Text = "Reporte - Saldos de Aportaciones"
         '
         'CertificadosEntradasTextboxFacturaRecibos
         '
@@ -296,18 +308,6 @@ Partial Class VCertificadosEntradas
         Me.Label1.Size = New System.Drawing.Size(296, 29)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Entrada de Aportaciones"
-        '
-        'ReporteDeAportacionesToolStripMenuItem
-        '
-        Me.ReporteDeAportacionesToolStripMenuItem.Name = "ReporteDeAportacionesToolStripMenuItem"
-        Me.ReporteDeAportacionesToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
-        Me.ReporteDeAportacionesToolStripMenuItem.Text = "Reporte - Aportaciones"
-        '
-        'ReporteDeSaldosDeAportacionesToolStripMenuItem
-        '
-        Me.ReporteDeSaldosDeAportacionesToolStripMenuItem.Name = "ReporteDeSaldosDeAportacionesToolStripMenuItem"
-        Me.ReporteDeSaldosDeAportacionesToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
-        Me.ReporteDeSaldosDeAportacionesToolStripMenuItem.Text = "Reporte - Saldos de Aportaciones"
         '
         'VCertificadosEntradas
         '

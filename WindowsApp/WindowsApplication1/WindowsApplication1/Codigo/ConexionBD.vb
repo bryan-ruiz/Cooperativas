@@ -1506,6 +1506,49 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerDatosdeReporteAportaciones() As List(Of AportacionesClase)
+        Dim MyList As New List(Of AportacionesClase)
+        Try
+            'MsgBox("ENTRANDO A FECHAS...")
+
+            SQL = "SELECT SOCIOS.numAsociado, SOCIOS.nombre, SOCIOS.primerApellido, SOCIOS.segundoApellido, SOCIOS.cedula, SOCIOS.ocupacionEspecialidad, SOCIOS.estado, CERTIFICADOS.acumuladoAnterior, CERTIFICADOS.total
+                    FROM SOCIOS, CERTIFICADOS
+                    WHERE (SOCIOS.estado = 'Activo' or SOCIOS.estado = 'Retirado')
+                    AND (CERTIFICADOS.cedulaAsociado = SOCIOS.cedula) "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim aportaciones As AportacionesClase = New AportacionesClase
+
+                    ' MsgBox("ENTRANDO AL WHILE...")
+
+                    'MsgBox("reader 0 Is  " + reader.GetString(0))
+                    'MsgBox("reader 1 Is : " + reader.GetString(1))
+                    'MsgBox("reader 2 Is : " + reader.GetString(2))
+                    Try
+                        aportaciones.aportacionesClaseCostructor(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4),
+                                                                 reader.GetString(5), reader.GetString(6), reader.GetInt32(7), reader.GetInt32(8))
+                        MyList.Add(aportaciones)
+
+                        'MsgBox("acum anterior es : " + aportaciones.acumAnterior + " nombre es " + aportaciones.nombre + " periodo es " + aportaciones.periodoActual)
+
+                    Catch ex As Exception
+
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
     'Obtiene los gastos por proyecto productivo
     Function obtenerInformeGastosTotales(ByVal ingresoOGasto As String, ByVal proyectoProductivo As String, ByVal fechaDesde As Date, ByVal fechaHasta As Date) As List(Of String)
         Dim MyList As New List(Of String)

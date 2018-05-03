@@ -166,7 +166,7 @@
 
         Dim saldoTotalAportaciones As Integer = Integer.Parse(totalAportacionesAcum.Item(0)) +
                                                 Integer.Parse(totalAportacionesTotal.Item(0)) +
-                                                Integer.Parse(totalAportacionesEntradas.Item(0)) +
+                                                Integer.Parse(totalAportacionesEntradas.Item(0)) -
                                                 Integer.Parse(totalAportacionesSalidas.Item(0))
 
         'MessageBox.Show("El acum es : " + totalAportacionesAcum.Item(0))
@@ -175,8 +175,11 @@
         'MessageBox.Show("El total salidas es : " + totalAportacionesSalidas.Item(0))
 
         ' Si el monto de salida es mayor al saldo total no se puede insertar la salida
+        'Format ¢ 1,000.00
+        '¢ + Dim stringTotal As String = resultado.ToString("N")
+
         If (Integer.Parse(total) > saldoTotalAportaciones) Then
-            MessageBox.Show("El Saldo total de las Aportaciones es de: " + saldoTotalAportaciones.ToString)
+            MessageBox.Show("Nota: El Saldo total de las Aportaciones es de: ¢ " + saldoTotalAportaciones.ToString("N"))
             MessageBox.Show(variablesGlobales.errorMontoMayorAlSaldoAportaciones, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             VCertificadosSalidas.CertificadosSalidasCantidad.Text = ""
             VCertificadosSalidas.CertificadosSalidasPrecioUnitario.Text = ""

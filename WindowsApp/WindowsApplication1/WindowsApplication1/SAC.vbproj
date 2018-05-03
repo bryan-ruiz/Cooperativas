@@ -122,6 +122,7 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Clases\AcumuladoClase.vb" />
+    <Compile Include="Clases\AportacionesClase.vb" />
     <Compile Include="Clases\CerrarPeriodoFechasClase.vb" />
     <Compile Include="Clases\ComiteClase.vb" />
     <Compile Include="Clases\ConfiguracionClase.vb" />

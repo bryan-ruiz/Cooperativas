@@ -2,10 +2,12 @@
 'Clase para los mensajes del sistema
 Public Class MensajesGlobales
 
-    Public reporteSinDatos As String = "No se encontraron datos dentro del reporte"
+    Public pathReporteAportaciones As String = "C:\Reportes\reporte_De_Aportaciones.pdf"
+
+    Public favorCerrarAdobeReader As String = "Favor cerrar Adobe Reader en caso de estar abierto y volver a generar el reporte. "
 
     Public folderPath As String = "C:\Reportes\"
-
+    Public reporteSinDatos As String = "No se encontraron datos dentro del reporte"
     Public seHaAcumuladoConExito As String = "Se ha acumulado con éxito"
     Public enQueVentanaEstoy As String = "ninguna"
 
@@ -17,6 +19,7 @@ Public Class MensajesGlobales
     Public reporteTodosPago As String = "reporte_Todos_Los_Pagos.pdf"
     Public reporteReservas As String = "reporte_Reservas.pdf"
     Public reporteDeSaldos As String = "reporte_De_Saldos.pdf"
+    Public reporteDeAportaciones As String = "reporte_De_Aportaciones.pdf"
 
     Public mensajeNoDejarEspaciosVacios As String = "No deben haber campos vacíos!"
 
@@ -54,7 +57,7 @@ Public Class MensajesGlobales
     Public errorNumCedulaExiste As String = "Error, el Número de Cédula ya se encuentra en el Sistema, favor ingrese uno nuevo."
     Public errorAsociadoEnEstadoRetirado As String = "Error, el Asociado se encuentra en estado Retirado, no se puede realizar esta acción. "
     Public errorAsociadoEnEstadoActivo As String = "Error, el Asociado se encuentra en estado Activo, no se puede realizar esta acción. "
-    Public errorMontoMayorAlSaldoAportaciones As String = "Error, el monto debe ser menor o igual al Saldo Total de las Aportaciones. "
+    Public errorMontoMayorAlSaldoAportaciones As String = "Error, el monto de la Salida debe ser menor o igual al Saldo Total de las Aportaciones. "
 
     Public licenciaCaducada As String = "Su licencia ha caducado, contacte al Administrador del Sistema"
     Public nombreUsuarioOContrasenaIncorrecto As String = "El nombre de usuario o contraseña es incorrecto"
