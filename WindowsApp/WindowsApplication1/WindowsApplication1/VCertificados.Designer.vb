@@ -32,6 +32,8 @@ Partial Class VCertificados
         Me.ReporteDeMorosidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDePagosAlDíaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDeTodosLosPagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EntradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.CertificadosTextboxCedulaNumAsociado = New System.Windows.Forms.TextBox()
@@ -103,8 +105,7 @@ Partial Class VCertificados
         Me.CertificadosTextboxNombre = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.EntradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PonerseAlDíaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -116,7 +117,7 @@ Partial Class VCertificados
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.EntradasToolStripMenuItem, Me.SalidasToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ComprobanteToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.EntradasToolStripMenuItem, Me.SalidasToolStripMenuItem, Me.PonerseAlDíaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1285, 24)
@@ -133,7 +134,7 @@ Partial Class VCertificados
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'ComprobanteToolStripMenuItem
@@ -173,6 +174,18 @@ Partial Class VCertificados
         Me.ReporteDeTodosLosPagosToolStripMenuItem.Name = "ReporteDeTodosLosPagosToolStripMenuItem"
         Me.ReporteDeTodosLosPagosToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
         Me.ReporteDeTodosLosPagosToolStripMenuItem.Text = "Reporte de todos los pagos"
+        '
+        'EntradasToolStripMenuItem
+        '
+        Me.EntradasToolStripMenuItem.Name = "EntradasToolStripMenuItem"
+        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.EntradasToolStripMenuItem.Text = "Entradas"
+        '
+        'SalidasToolStripMenuItem
+        '
+        Me.SalidasToolStripMenuItem.Name = "SalidasToolStripMenuItem"
+        Me.SalidasToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
+        Me.SalidasToolStripMenuItem.Text = "Salidas"
         '
         'GroupBox1
         '
@@ -1001,17 +1014,11 @@ Partial Class VCertificados
         Me.Label31.TabIndex = 41
         Me.Label31.Text = "Certificaciones de Aportación"
         '
-        'EntradasToolStripMenuItem
+        'PonerseAlDíaToolStripMenuItem
         '
-        Me.EntradasToolStripMenuItem.Name = "EntradasToolStripMenuItem"
-        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
-        Me.EntradasToolStripMenuItem.Text = "Entradas"
-        '
-        'SalidasToolStripMenuItem
-        '
-        Me.SalidasToolStripMenuItem.Name = "SalidasToolStripMenuItem"
-        Me.SalidasToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
-        Me.SalidasToolStripMenuItem.Text = "Salidas"
+        Me.PonerseAlDíaToolStripMenuItem.Name = "PonerseAlDíaToolStripMenuItem"
+        Me.PonerseAlDíaToolStripMenuItem.Size = New System.Drawing.Size(95, 20)
+        Me.PonerseAlDíaToolStripMenuItem.Text = "Ponerse Al Día"
         '
         'VCertificados
         '
@@ -1019,7 +1026,7 @@ Partial Class VCertificados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1283, 629)
+        Me.ClientSize = New System.Drawing.Size(1283, 646)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -1130,4 +1137,5 @@ Partial Class VCertificados
     Friend WithEvents ReporteDeTodosLosPagosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EntradasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalidasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PonerseAlDíaToolStripMenuItem As ToolStripMenuItem
 End Class

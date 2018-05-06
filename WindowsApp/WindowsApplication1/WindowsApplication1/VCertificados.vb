@@ -193,4 +193,8 @@
     Private Sub SalidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidasToolStripMenuItem.Click
         VCertificadosSalidas.Show()
     End Sub
+
+    Private Sub PonerseAlDíaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PonerseAlDíaToolStripMenuItem.Click
+        VCertificadosPonerseAlDia.Show()
+    End Sub
 End Class

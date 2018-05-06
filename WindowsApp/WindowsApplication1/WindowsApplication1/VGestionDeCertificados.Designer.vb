@@ -56,6 +56,7 @@ Partial Class VGestionDeCertificados
         Me.ReporteDeTodosLosEstadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FechasLímiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MontosMáximosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionCertificadoButtonLiquidar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -87,7 +88,7 @@ Partial Class VGestionDeCertificados
         '
         Me.GestionCertificadoButtonSumarReservas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.GestionCertificadoButtonSumarReservas.ForeColor = System.Drawing.Color.White
-        Me.GestionCertificadoButtonSumarReservas.Location = New System.Drawing.Point(613, 197)
+        Me.GestionCertificadoButtonSumarReservas.Location = New System.Drawing.Point(452, 197)
         Me.GestionCertificadoButtonSumarReservas.Name = "GestionCertificadoButtonSumarReservas"
         Me.GestionCertificadoButtonSumarReservas.Size = New System.Drawing.Size(192, 44)
         Me.GestionCertificadoButtonSumarReservas.TabIndex = 173
@@ -96,6 +97,7 @@ Partial Class VGestionDeCertificados
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.GestionCertificadoButtonLiquidar)
         Me.GroupBox2.Controls.Add(Me.GestionCertificadoButtonNoRetirarAcum)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.GestionCertificadoButtonRetirarAcum)
@@ -117,7 +119,7 @@ Partial Class VGestionDeCertificados
         '
         Me.GestionCertificadoButtonNoRetirarAcum.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.GestionCertificadoButtonNoRetirarAcum.ForeColor = System.Drawing.Color.White
-        Me.GestionCertificadoButtonNoRetirarAcum.Location = New System.Drawing.Point(101, 197)
+        Me.GestionCertificadoButtonNoRetirarAcum.Location = New System.Drawing.Point(15, 197)
         Me.GestionCertificadoButtonNoRetirarAcum.Name = "GestionCertificadoButtonNoRetirarAcum"
         Me.GestionCertificadoButtonNoRetirarAcum.Size = New System.Drawing.Size(197, 44)
         Me.GestionCertificadoButtonNoRetirarAcum.TabIndex = 179
@@ -140,7 +142,7 @@ Partial Class VGestionDeCertificados
         '
         Me.GestionCertificadoButtonRetirarAcum.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.GestionCertificadoButtonRetirarAcum.ForeColor = System.Drawing.Color.White
-        Me.GestionCertificadoButtonRetirarAcum.Location = New System.Drawing.Point(361, 197)
+        Me.GestionCertificadoButtonRetirarAcum.Location = New System.Drawing.Point(234, 197)
         Me.GestionCertificadoButtonRetirarAcum.Name = "GestionCertificadoButtonRetirarAcum"
         Me.GestionCertificadoButtonRetirarAcum.Size = New System.Drawing.Size(194, 44)
         Me.GestionCertificadoButtonRetirarAcum.TabIndex = 175
@@ -404,6 +406,17 @@ Partial Class VGestionDeCertificados
         Me.MontosMáximosToolStripMenuItem.Size = New System.Drawing.Size(111, 20)
         Me.MontosMáximosToolStripMenuItem.Text = "Montos Máximos"
         '
+        'GestionCertificadoButtonLiquidar
+        '
+        Me.GestionCertificadoButtonLiquidar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.GestionCertificadoButtonLiquidar.ForeColor = System.Drawing.Color.White
+        Me.GestionCertificadoButtonLiquidar.Location = New System.Drawing.Point(671, 197)
+        Me.GestionCertificadoButtonLiquidar.Name = "GestionCertificadoButtonLiquidar"
+        Me.GestionCertificadoButtonLiquidar.Size = New System.Drawing.Size(192, 44)
+        Me.GestionCertificadoButtonLiquidar.TabIndex = 180
+        Me.GestionCertificadoButtonLiquidar.Text = "Liquidar"
+        Me.GestionCertificadoButtonLiquidar.UseVisualStyleBackColor = True
+        '
         'VGestionDeCertificados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -469,4 +482,5 @@ Partial Class VGestionDeCertificados
     Friend WithEvents MontosMáximosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteDeCertificadosRetiradosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestionCertificadoButtonNoRetirarAcum As Button
+    Friend WithEvents GestionCertificadoButtonLiquidar As Button
 End Class

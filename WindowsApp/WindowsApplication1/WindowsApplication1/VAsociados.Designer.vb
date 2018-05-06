@@ -94,6 +94,7 @@ Partial Class VAsociados
         Me.TextBoxSociosSeccion2 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.AsociadosPorSecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -301,7 +302,7 @@ Partial Class VAsociados
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AsociadosActivosResumidoToolStripMenuItem, Me.ToolStripMenuAsociadosReporteTodos, Me.ExcedentesPorAsociadoToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AsociadosActivosResumidoToolStripMenuItem, Me.ToolStripMenuAsociadosReporteTodos, Me.ExcedentesPorAsociadoToolStripMenuItem, Me.AsociadosPorSecciónToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(65, 19)
         Me.ToolStripMenuItem1.Text = "Reportes"
@@ -810,6 +811,12 @@ Partial Class VAsociados
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Gestión de Asociados"
         '
+        'AsociadosPorSecciónToolStripMenuItem
+        '
+        Me.AsociadosPorSecciónToolStripMenuItem.Name = "AsociadosPorSecciónToolStripMenuItem"
+        Me.AsociadosPorSecciónToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.AsociadosPorSecciónToolStripMenuItem.Text = "Asociados Por Sección"
+        '
         'VAsociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -961,4 +968,5 @@ Partial Class VAsociados
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents ExcedentesPorAsociadoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AsociadosPorSecciónToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -572,6 +572,42 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerDatosReporteDeSociosXSeccion(ByVal tipoReporte As String) As List(Of SocioClase)
+        Dim MyList As New List(Of SocioClase)
+        Try
+            If tipoReporte = "Activos" Then
+                SQL = "SELECT SOCIOS.* 
+                        FROM [SOCIOS] 
+                        WHERE ((estado) = 'Activo')
+                        ORDER BY seccion "
+            Else
+                SQL = "SELECT SOCIOS.* FROM [SOCIOS]"
+            End If
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim nuevosocio As SocioClase = New SocioClase
+                    nuevosocio.socioClaseCostructor(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                                                    reader.GetString(3), reader.GetString(4), reader.GetDateTime(5),
+                                                    reader.GetString(6), reader.GetString(7), reader.GetString(8),
+                                                    reader.GetString(9), reader.GetDateTime(10), reader.GetString(11),
+                                                    reader.GetString(12), reader.GetString(13), reader.GetString(14),
+                                                    reader.GetString(15), reader.GetDateTime(16), reader.GetString(17))
+                    MyList.Add(nuevosocio)
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
 
     'Selecciona todos los campos de un Socio por número de socio
     Function consultarSocioPorNumAsociado(ByVal numAsociado As String) As List(Of String)
@@ -2670,6 +2706,28 @@ Public Class ConexionBD
 
             SQL = "UPDATE [CERTIFICADOS] 
                     SET acumuladoAnterior = '" & acumulado & "'
+                    WHERE(CERTIFICADOS.cedulaAsociado = '" & cedula & "' ) "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                MyList = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
+    Function actualizarSumarAlAcumAnteriorXSocio(ByVal cedula As String, ByVal acumulado As Integer) As Integer
+        Dim MyList As Integer = 0
+        Try
+
+            SQL = "UPDATE [CERTIFICADOS] 
+                    SET acumuladoAnterior = acumuladoAnterior + " & acumulado & " 
                     WHERE(CERTIFICADOS.cedulaAsociado = '" & cedula & "' ) "
 
             'pregunto antes si estoy conectado a la base de datos'

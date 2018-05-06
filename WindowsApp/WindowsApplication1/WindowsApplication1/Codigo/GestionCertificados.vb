@@ -374,4 +374,43 @@ Public Class GestionCertificados
         VGestionDeCertificados.GestionCertificadoTextboxStatus.Text = ""
     End Sub
 
+    'Si el Asociado está Activo, puede Liquidarse
+    Public Sub liquidarAsociado()
+        Dim valores, valoresCert As Integer
+        'Textfield para consultar por ced o num asociado
+        Dim cedulaNumAsociado As String = VGestionDeCertificados.GestionCertificadoTextboxCed.Text
+        Dim status As String = VGestionDeCertificados.GestionCertificadoTextboxStatus.Text
+
+        If (cedulaNumAsociado = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        If (status <> "Pendiente") Then
+            MessageBox.Show(variablesGlobales.mensajePendienteRequerido, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        Try
+            BD.ConectarBD()
+            valores = BD.retirarCertificadoEnTransito(cedulaNumAsociado, "Liquidado")
+            valoresCert = BD.actualizarAcumuladoDeCertificado(cedulaNumAsociado, 0)
+
+            If valores <> 0 And valoresCert <> 0 Then
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Else
+                MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            End If
+
+            BD.CerrarConexion()
+
+            VGestionDeCertificados.Hide()
+            VGastos.Show()
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+        End Try
+
+        limpiar()
+    End Sub
 End Class

@@ -136,6 +136,7 @@
     <Compile Include="Clases\SaldoClase.vb" />
     <Compile Include="Clases\Singleton.vb" />
     <Compile Include="Clases\SocioClase.vb" />
+    <Compile Include="Codigo\CertificadosAlDia.vb" />
     <Compile Include="Codigo\Certificados.vb" />
     <Compile Include="Codigo\CertificadosSalidas.vb" />
     <Compile Include="Codigo\CertificadosEntradas.vb" />
@@ -159,6 +160,12 @@
       <DependentUpon>VCerrarPeriodoFechasLimite.vb</DependentUpon>
     </Compile>
     <Compile Include="VCerrarPeriodoFechasLimite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCertificadosPonerseAlDia.Designer.vb">
+      <DependentUpon>VCertificadosPonerseAlDia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VCertificadosPonerseAlDia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VReportesTodos.Designer.vb">
@@ -427,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VAsociados.resx">
       <DependentUpon>VAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VCertificadosPonerseAlDia.resx">
+      <DependentUpon>VCertificadosPonerseAlDia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VReportesTodos.resx">
       <DependentUpon>VReportesTodos.vb</DependentUpon>

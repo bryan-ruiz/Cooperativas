@@ -186,4 +186,11 @@
     Private Sub ExcedentesPorAsociadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcedentesPorAsociadoToolStripMenuItem.Click
         VExcedentesCorrespondientes.Show()
     End Sub
+
+    Private Sub AsociadosPorSecciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsociadosPorSecciónToolStripMenuItem.Click
+        socios.reporteAsociadosXSeccion()
+        Print.Show()
+        Print.abrirReporte(variablesGlobales.pathReporteAsociadosXSeccion)
+        Me.Close()
+    End Sub
 End Class

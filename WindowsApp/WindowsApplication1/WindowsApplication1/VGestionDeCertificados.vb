@@ -68,4 +68,7 @@
         gestionCertificados.noRetirarAcumuladoCertificado()
     End Sub
 
+    Private Sub GestionCertificadoButtonLiquidar_Click(sender As Object, e As EventArgs) Handles GestionCertificadoButtonLiquidar.Click
+        gestionCertificados.liquidarAsociado()
+    End Sub
 End Class

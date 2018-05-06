@@ -4,10 +4,18 @@ Public Class MensajesGlobales
 
     Public pathReporteAportaciones As String = "C:\Reportes\reporte_De_Aportaciones.pdf"
     Public pathreporteDeSaldosDeAportaciones As String = "C:\Reportes\reporte_De_Saldos_De_Aportaciones.pdf"
+    Public pathReporteAsociadosXSeccion As String = "C:\Reportes\reporte_Asociados_Por_Seccion.pdf"
+
+
+    Public reporteGeneradoConExito As String = "Reporte generado con éxito en C:/Reportes/"
+    Public folderPath As String = "C:\Reportes\"
+
+
+
 
     Public favorCerrarAdobeReader As String = "Favor cerrar Adobe Reader en caso de estar abierto y volver a generar el reporte. "
 
-    Public folderPath As String = "C:\Reportes\"
+
     Public reporteSinDatos As String = "No se encontraron datos dentro del reporte"
     Public seHaAcumuladoConExito As String = "Se ha acumulado con éxito"
     Public enQueVentanaEstoy As String = "ninguna"
@@ -35,7 +43,7 @@ Public Class MensajesGlobales
 
     Public noExistenDatos As String = "No se encontraron datos en el sistema"
     Public noDebenHaberCamposVacios As String = "No deben haber campos vacíos!"
-    Public reporteGeneradoConExito As String = "Reporte generado con éxito en C:/Reportes/"
+
     Public permisosDeAdminRequeridos As String = "Se requieren permisos de Administrador para realizar la acción"
     Public permisosDeSuperAdminRequeridos As String = "Se requieren permisos de Super Admin para realizar la acción"
 
