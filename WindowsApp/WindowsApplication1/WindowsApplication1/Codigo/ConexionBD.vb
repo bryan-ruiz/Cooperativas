@@ -1506,6 +1506,47 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerDatosSaldoDeAportaciones() As List(Of SaldoAportacionesClase)
+        Dim MyList As New List(Of SaldoAportacionesClase)
+        Try
+            SQL = "SELECT CERTIFICADOS_ENTRADAS.fecha, CERTIFICADOS_ENTRADAS.reciboFactura, CERTIFICADOS_ENTRADAS.codigoDeCuenta, CERTIFICADOS_ENTRADAS.total 
+                    FROM [CERTIFICADOS_ENTRADAS] 
+                   
+                    UNION SELECT CERTIFICADOS_SALIDAS.fecha, CERTIFICADOS_SALIDAS.reciboFactura, CERTIFICADOS_SALIDAS.codigoDeCuenta, CERTIFICADOS_SALIDAS.total
+                    FROM [CERTIFICADOS_SALIDAS]
+                   
+                    ORDER BY fecha "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim saldo As SaldoAportacionesClase = New SaldoAportacionesClase
+                    'MsgBox("ENTRANDO AL WHILE...")
+                    'MsgBox("reader 0 is : " + reader.GetDateTime(0))
+                    'MsgBox("reader 1 is : " + reader.GetString(1))
+                    'MsgBox("reader 2 is : " + reader.GetString(2))
+                    Try
+                        saldo.SaldoAportacionesClaseConstructor(reader.GetDateTime(0), reader.GetString(1), reader.GetString(2), reader.GetString(3))
+                        MyList.Add(saldo)
+
+                        ' MsgBox("IMPRIME : " + saldo.codigoCuenta + " xxx " + saldo.total + "xxx" + saldo.fecha)
+
+                    Catch ex As Exception
+
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
     Function obtenerDatosdeReporteAportaciones() As List(Of AportacionesClase)
         Dim MyList As New List(Of AportacionesClase)
         Try
@@ -1782,6 +1823,38 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+
+    Function obtenerCodigoCuentaCertificadosEntradas() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT CERTIFICADOS_ENTRADAS.codigoDeCuenta
+                    FROM CERTIFICADOS_ENTRADAS
+                    GROUP BY codigoDeCuenta "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        ' MsgBox(String.Concat("ingresosXXX ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
     Function obtenerCodigoCuentaGastos() As List(Of String)
         Dim MyList As New List(Of String)
 
@@ -1813,6 +1886,37 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+
+    Function obtenerCodigoCuentaCertificadosSalidas() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT CERTIFICADOS_SALIDAS.codigoDeCuenta
+                    FROM CERTIFICADOS_SALIDAS
+                    GROUP BY codigoDeCuenta "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        '  MsgBox(String.Concat("Gastos son: ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
 
     Function obtenerAportacionesTotal() As List(Of String)
         Dim MyList As New List(Of String)

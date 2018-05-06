@@ -3,6 +3,7 @@
 Public Class MensajesGlobales
 
     Public pathReporteAportaciones As String = "C:\Reportes\reporte_De_Aportaciones.pdf"
+    Public pathreporteDeSaldosDeAportaciones As String = "C:\Reportes\reporte_De_Saldos_De_Aportaciones.pdf"
 
     Public favorCerrarAdobeReader As String = "Favor cerrar Adobe Reader en caso de estar abierto y volver a generar el reporte. "
 
@@ -19,6 +20,7 @@ Public Class MensajesGlobales
     Public reporteTodosPago As String = "reporte_Todos_Los_Pagos.pdf"
     Public reporteReservas As String = "reporte_Reservas.pdf"
     Public reporteDeSaldos As String = "reporte_De_Saldos.pdf"
+    Public reporteDeSaldosDeAportaciones As String = "reporte_De_Saldos_De_Aportaciones.pdf"
     Public reporteDeAportaciones As String = "reporte_De_Aportaciones.pdf"
 
     Public mensajeNoDejarEspaciosVacios As String = "No deben haber campos vacíos!"

@@ -164,6 +164,7 @@
         Dim totalAportacionesEntradas As List(Of String) = obtenerAportacionesEntradas()
         Dim totalAportacionesSalidas As List(Of String) = obtenerAportacionesSalidas()
 
+        'SALDO TOTAL = 15.200 (EJEMPLO DEL GOOGLE DOC, RECALCULA SIEMPRE EL ACUM + TOTAL PERIODO + ENTRADAS - SALIDAS, ES DECIR RETORNA SALDO TOTAL, NO SALDO APORTACIONES.
         Dim saldoTotalAportaciones As Integer = Integer.Parse(totalAportacionesAcum.Item(0)) +
                                                 Integer.Parse(totalAportacionesTotal.Item(0)) +
                                                 Integer.Parse(totalAportacionesEntradas.Item(0)) -

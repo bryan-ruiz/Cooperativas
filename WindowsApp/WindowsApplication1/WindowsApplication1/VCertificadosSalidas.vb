@@ -50,4 +50,11 @@
         Print.abrirReporte(variablesGlobales.pathReporteAportaciones)
         Me.Close()
     End Sub
+
+    Private Sub ReporteDeSaldosDeAportacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeSaldosDeAportacionesToolStripMenuItem.Click
+        certificadoEntrada.generarReporteSaldosDeAportaciones()
+        Print.Show()
+        Print.abrirReporte(variablesGlobales.pathreporteDeSaldosDeAportaciones)
+        Me.Close()
+    End Sub
 End Class
