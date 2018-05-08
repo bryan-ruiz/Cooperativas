@@ -138,6 +138,8 @@
     <Compile Include="Clases\SocioClase.vb" />
     <Compile Include="Codigo\CertificadosAlDia.vb" />
     <Compile Include="Codigo\Certificados.vb" />
+    <Compile Include="Codigo\ReservasSalidas.vb" />
+    <Compile Include="Codigo\ReservasEntradas.vb" />
     <Compile Include="Codigo\CertificadosSalidas.vb" />
     <Compile Include="Codigo\CertificadosEntradas.vb" />
     <Compile Include="Codigo\Comites.vb" />
@@ -160,6 +162,18 @@
       <DependentUpon>VCerrarPeriodoFechasLimite.vb</DependentUpon>
     </Compile>
     <Compile Include="VCerrarPeriodoFechasLimite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VReservasSalidas.Designer.vb">
+      <DependentUpon>VReservasSalidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VReservasSalidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VReservasEntradas.Designer.vb">
+      <DependentUpon>VReservasEntradas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VReservasEntradas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VCertificadosPonerseAlDia.Designer.vb">
@@ -434,6 +448,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VAsociados.resx">
       <DependentUpon>VAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VReservasSalidas.resx">
+      <DependentUpon>VReservasSalidas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VReservasEntradas.resx">
+      <DependentUpon>VReservasEntradas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VCertificadosPonerseAlDia.resx">
       <DependentUpon>VCertificadosPonerseAlDia.vb</DependentUpon>

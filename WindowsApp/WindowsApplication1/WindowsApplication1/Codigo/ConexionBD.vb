@@ -183,6 +183,62 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerReservasEntradasPorFactura(ByVal idFactura As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+
+            SQL = "SELECT fecha, reciboFactura, cliente, codigoDeCuenta, descripcion, cantidad, precioUnitario, total
+                    FROM [RESERVAS_ENTRADAS]
+                    WHERE RESERVAS_ENTRADAS.reciboFactura = ('" + idFactura + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                        ' MessageBox.Show("XXXXX  " + reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    Function obtenerReservasSalidasPorFactura(ByVal idFactura As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+
+            SQL = "SELECT fecha, reciboFactura, proveedor, codigoDeCuenta, descripcion, cantidad, precioUnitario, total
+                    FROM [RESERVAS_SALIDAS]
+                    WHERE RESERVAS_SALIDAS.reciboFactura = ('" + idFactura + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                        ' MessageBox.Show("XXXXX  " + reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
     Function obtenerCertificadosSalidasPorFactura(ByVal idFactura As String) As List(Of String)
         Dim MyList As New List(Of String)
         Try
@@ -1159,6 +1215,48 @@ Public Class ConexionBD
         Return res
     End Function
 
+
+    Function insertarReservasEntradas(ByVal fechap As DateTime, ByVal clientep As String, ByVal descripcripcionp As String,
+                             ByVal cantidadp As String, ByVal precioUnitariop As String, ByVal totalp As String,
+                             ByVal codCuentap As String, ByVal facturaRecibop As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "INSERT INTO [RESERVAS_ENTRADAS]" &
+           "(fecha,cliente, descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura)" &
+            "VALUES ('" + fechap + "', '" + clientep + "', '" + descripcripcionp + "', " + cantidadp + ", " +
+            precioUnitariop + ", " + totalp + ", '" + codCuentap + "', '" + facturaRecibop + "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return res
+    End Function
+
+    Function insertarReservasSalidas(ByVal fechap As DateTime, ByVal clientep As String, ByVal descripcripcionp As String,
+                             ByVal cantidadp As String, ByVal precioUnitariop As String, ByVal totalp As String,
+                             ByVal codCuentap As String, ByVal facturaRecibop As String) As Integer
+        Dim res As Integer = 0
+        Try
+            SQL = "INSERT INTO [RESERVAS_SALIDAS]" &
+           "(fecha,proveedor, descripcion,cantidad,precioUnitario,total,codigoDeCuenta,reciboFactura)" &
+            "VALUES ('" + fechap + "', '" + clientep + "', '" + descripcripcionp + "', " + cantidadp + ", " +
+            precioUnitariop + ", " + totalp + ", '" + codCuentap + "', '" + facturaRecibop + "')"
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return res
+    End Function
 
     Function insertarCertificadosSalidas(ByVal fechap As DateTime, ByVal clientep As String, ByVal descripcripcionp As String,
                              ByVal cantidadp As String, ByVal precioUnitariop As String, ByVal totalp As String,
@@ -3051,6 +3149,39 @@ Public Class ConexionBD
             End If
         Catch ex As Exception
             MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
+    Function consultarReservasXNombre(ByVal reserva As String) As List(Of ReservaClase)
+        Dim MyList As New List(Of ReservaClase)
+        Try
+            SQL = "SELECT RESERVAS.nombre, RESERVAS.acumulado 
+                    FROM [RESERVAS]
+                    WHERE RESERVAS.nombre = '" & reserva & "' "
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Try
+                        Dim nuevaCuenta As ReservaClase = New ReservaClase
+                        nuevaCuenta.ReservaClaseCostructor(reader.GetString(0), reader.GetInt32(1))
+                        MyList.Add(nuevaCuenta)
+
+                        'MsgBox(String.Concat("nombre x ", reader.GetString(0)))
+                        'MsgBox(String.Concat("monto x ", reader.GetInt32(1)))
+
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
         End Try
         Return MyList
     End Function

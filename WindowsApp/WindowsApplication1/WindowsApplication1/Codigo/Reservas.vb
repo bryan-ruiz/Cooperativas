@@ -3,6 +3,7 @@ Imports itextsharp.text.pdf
 Imports System.IO
 
 Public Class Reservas
+
     Dim BD As ConexionBD = New ConexionBD
     Dim estado As Boolean = True
     Dim encabezado As EncabezadoClase = New EncabezadoClase
@@ -349,69 +350,69 @@ Public Class Reservas
             End If
             contador += 1
         End While
-        VGestionDeReservas.TextBox_ReservasGestionMonto.Text = ""
+        'VGestionDeReservas.TextBox_ReservasGestionMonto.Text = ""
     End Sub
 
-    Public Sub actualizarEnReserva()
-        Dim valores As Integer
-        Dim monto As String = VGestionDeReservas.TextBox_ReservasGestionMonto.Text
-        Dim reserva As String = VGestionDeReservas.ComboBox_reservasGestion.Text
-        If (monto = "") Then
-            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        End If
+    ' Public Sub actualizarEnReserva()
+    'Dim valores As Integer
+    'Dim monto As String = VGestionDeReservas.TextBox_ReservasGestionMonto.Text
+    'Dim reserva As String = VGestionDeReservas.ComboBox_reservasGestion.Text
+    'If (monto = "") Then
+    '       MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+    'End If
+    '
+    'If (reserva = "") Then
+    '       MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+    'End If
+    'Try
+    '       valores = 0
+    '      BD.ConectarBD()
+    '     valores = BD.actualizarMontoEnReserva(monto, reserva)
+    '    listaDeReservas = BD.consultarReservas()
+    'If valores <> 0 Then
+    '           MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+    'Else
+    '           MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+    'End If
+    '       BD.CerrarConexion()
+    'Catch ex As Exception
+    '       MessageBox.Show("Error en base de datos")
+    'End Try
+    'End Sub
 
-        If (reserva = "") Then
-            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        End If
-        Try
-            valores = 0
-            BD.ConectarBD()
-            valores = BD.actualizarMontoEnReserva(monto, reserva)
-            listaDeReservas = BD.consultarReservas()
-            If valores <> 0 Then
-                MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-            Else
-                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            End If
-            BD.CerrarConexion()
-        Catch ex As Exception
-            MessageBox.Show("Error en base de datos")
-        End Try
-    End Sub
 
+    'Public Sub disminuriEnReserva()
+    'Dim valores As Integer
+    'Dim monto As String = VGestionDeReservas.TextBox_ReservasGestionMonto.Text
+    'Dim reserva As String = VGestionDeReservas.ComboBox_reservasGestion.Text
+    'If (monto = "") Then
+    '       MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+    'End If
 
-    Public Sub disminuriEnReserva()
-        Dim valores As Integer
-        Dim monto As String = VGestionDeReservas.TextBox_ReservasGestionMonto.Text
-        Dim reserva As String = VGestionDeReservas.ComboBox_reservasGestion.Text
-        If (monto = "") Then
-            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        End If
-
-        If (reserva = "") Then
-            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        End If
-        Try
-            valores = acumuladoDeReserva(monto, reserva)
-            If valores = 1 Then
-                MessageBox.Show("Error monto superior al que se posee registrado en la base de datos")
-                Return
-            Else
-                valores = 0
-                BD.ConectarBD()
-                valores = BD.disminuirMontoEnReserva(monto, reserva)
-                listaDeReservas = BD.consultarReservas()
-                If valores <> 0 Then
-                    MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-                Else
-                    MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-                End If
-            End If
-            BD.CerrarConexion()
-        Catch ex As Exception
-            MessageBox.Show("Error en base de datos")
-        End Try
-    End Sub
+    'If (reserva = "") Then
+    '       MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+    'End If
+    'Try
+    '       valores = acumuladoDeReserva(monto, reserva)
+    'If valores = 1 Then
+    '           MessageBox.Show("Error monto superior al que se posee registrado en la base de datos")
+    'Return
+    'Else
+    '           valores = 0
+    '          BD.ConectarBD()
+    '         valores = BD.disminuirMontoEnReserva(monto, reserva)
+    '        listaDeReservas = BD.consultarReservas()
+    'If valores <> 0 Then
+    '               MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+    'Else
+    '               MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+    'End If
+    'End If
+    '       BD.CerrarConexion()
+    'Catch ex As Exception
+    '       MessageBox.Show("Error en base de datos")
+    'End Try
+    'End Sub
 
     Function actualizarMontoEnBase(ByVal monto As String, ByVal reserva As String) As Integer
         Dim valores As Integer
@@ -426,24 +427,24 @@ Public Class Reservas
         End Try
     End Function
 
-    Public Sub insertarEnReserva()
-        Dim valores As Integer
-        Dim monto As String = VGestionDeReservas.TextBox_ReservasGestionMonto.Text
-        Dim reserva As String = VGestionDeReservas.ComboBox_reservasGestion.Text
-        If (monto = "") Then
-            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        End If
-        If (reserva = "") Then
-            MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-        End If
-        valores = actualizarMontoEnBase(monto, reserva)
-        If valores <> 0 Then
-            MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-
-        Else
-            MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-        End If
-    End Sub
+    'Public Sub insertarEnReserva()
+    'Dim valores As Integer
+    'Dim monto As String = VGestionDeReservas.TextBox_ReservasGestionMonto.Text
+    'Dim reserva As String = VGestionDeReservas.ComboBox_reservasGestion.Text
+    'If (monto = "") Then
+    '       MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+    'End If
+    'If (reserva = "") Then
+    '       MessageBox.Show(variablesGlobales.mensajeNoDejarEspaciosVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+    'End If
+    '   valores = actualizarMontoEnBase(monto, reserva)
+    'If valores <> 0 Then
+    '  MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+    '
+    '   Else
+    '      MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+    ' End If
+    'End Sub
 
     'Consulta las Reservas
     Public Sub obtenerDatosSeleccionarReserva()
@@ -480,7 +481,7 @@ Public Class Reservas
     End Sub
 
 
-    Public Sub generarReporteReservas()
+    Private Sub generarReporteReservas()
         Try
 
             BD.ConectarBD()
@@ -500,7 +501,7 @@ Public Class Reservas
 
             '/////// Encabezado //////////
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
-            pdfDoc.Add(New Paragraph("                                                                                        Total de Acumulado en Reservas", FontStype3))
+            pdfDoc.Add(New Paragraph("                                                                                        Total Acumulado en Reservas", FontStype3))
             pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(New Paragraph(" "))
 

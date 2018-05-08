@@ -1,6 +1,6 @@
 ﻿Public Class VResrvasPrincipal
-    Dim cerrarPeriodo As Reservas = New Reservas
 
+    Dim cerrarPeriodo As Reservas = New Reservas
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
     Private Sub VReservasPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -15,12 +15,7 @@
         cerrarPeriodo.cerrarPeriodo()
     End Sub
 
-    Private Sub ReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteToolStripMenuItem.Click
-        cerrarPeriodo.crearReporteReservas()
-        Print.Show()
-    End Sub
-
-    Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
+    Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 

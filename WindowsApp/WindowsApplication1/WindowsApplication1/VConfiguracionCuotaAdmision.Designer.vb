@@ -54,7 +54,7 @@ Partial Class VConfiguracionCuotaAdmision
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(178, 139)
+        Me.Label5.Location = New System.Drawing.Point(276, 141)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(130, 19)
         Me.Label5.TabIndex = 52

@@ -24,15 +24,15 @@ Partial Class VReportesTodos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VReportesTodos))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.AsociadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ComitésToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,6 +46,36 @@ Partial Class VReportesTodos
         Me.MenuStrip1.Size = New System.Drawing.Size(1408, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'AsociadosToolStripMenuItem
+        '
+        Me.AsociadosToolStripMenuItem.Name = "AsociadosToolStripMenuItem"
+        Me.AsociadosToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
+        Me.AsociadosToolStripMenuItem.Text = "Asociados"
+        '
+        'ComitésToolStripMenuItem
+        '
+        Me.ComitésToolStripMenuItem.Name = "ComitésToolStripMenuItem"
+        Me.ComitésToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
+        Me.ComitésToolStripMenuItem.Text = "Comités"
+        '
+        'CertificadosToolStripMenuItem
+        '
+        Me.CertificadosToolStripMenuItem.Name = "CertificadosToolStripMenuItem"
+        Me.CertificadosToolStripMenuItem.Size = New System.Drawing.Size(82, 20)
+        Me.CertificadosToolStripMenuItem.Text = "Certificados"
+        '
+        'EntradasToolStripMenuItem
+        '
+        Me.EntradasToolStripMenuItem.Name = "EntradasToolStripMenuItem"
+        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.EntradasToolStripMenuItem.Text = "Entradas"
+        '
+        'SalidasToolStripMenuItem
+        '
+        Me.SalidasToolStripMenuItem.Name = "SalidasToolStripMenuItem"
+        Me.SalidasToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
+        Me.SalidasToolStripMenuItem.Text = "Salidas"
         '
         'Label10
         '
@@ -77,47 +107,17 @@ Partial Class VReportesTodos
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Todos los Reportes"
         '
-        'AsociadosToolStripMenuItem
-        '
-        Me.AsociadosToolStripMenuItem.Name = "AsociadosToolStripMenuItem"
-        Me.AsociadosToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
-        Me.AsociadosToolStripMenuItem.Text = "Asociados"
-        '
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.LogoTransparente
-        Me.PictureBox1.Location = New System.Drawing.Point(615, 166)
+        Me.PictureBox1.Location = New System.Drawing.Point(618, 157)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(133, 119)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 143
         Me.PictureBox1.TabStop = False
-        '
-        'ComitésToolStripMenuItem
-        '
-        Me.ComitésToolStripMenuItem.Name = "ComitésToolStripMenuItem"
-        Me.ComitésToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
-        Me.ComitésToolStripMenuItem.Text = "Comités"
-        '
-        'CertificadosToolStripMenuItem
-        '
-        Me.CertificadosToolStripMenuItem.Name = "CertificadosToolStripMenuItem"
-        Me.CertificadosToolStripMenuItem.Size = New System.Drawing.Size(82, 20)
-        Me.CertificadosToolStripMenuItem.Text = "Certificados"
-        '
-        'EntradasToolStripMenuItem
-        '
-        Me.EntradasToolStripMenuItem.Name = "EntradasToolStripMenuItem"
-        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
-        Me.EntradasToolStripMenuItem.Text = "Entradas"
-        '
-        'SalidasToolStripMenuItem
-        '
-        Me.SalidasToolStripMenuItem.Name = "SalidasToolStripMenuItem"
-        Me.SalidasToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
-        Me.SalidasToolStripMenuItem.Text = "Salidas"
         '
         'VReportesTodos
         '
