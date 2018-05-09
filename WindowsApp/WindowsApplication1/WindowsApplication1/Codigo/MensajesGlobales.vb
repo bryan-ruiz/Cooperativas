@@ -5,12 +5,14 @@ Public Class MensajesGlobales
     Public pathReporteAportaciones As String = "C:\Reportes\reporte_De_Aportaciones.pdf"
     Public pathreporteDeSaldosDeAportaciones As String = "C:\Reportes\reporte_De_Saldos_De_Aportaciones.pdf"
     Public pathReporteAsociadosXSeccion As String = "C:\Reportes\reporte_Asociados_Por_Seccion.pdf"
-
+    Public pathReporteDeAcumuladoReservas As String = "C:\Reportes\reporte_Acumulado_Reservas.pdf"
+    Public pathReporteDeSaldosDeReservas As String = "C:\Reportes\reporte_De_Saldos_De_Reservas.pdf"
 
     Public reporteGeneradoConExito As String = "Reporte generado con éxito en C:/Reportes/"
     Public folderPath As String = "C:\Reportes\"
 
 
+    Public reporteDeSaldosDeReservas As String = "reporte_De_Saldos_De_Reservas.pdf"
 
 
     Public favorCerrarAdobeReader As String = "Favor cerrar Adobe Reader en caso de estar abierto y volver a generar el reporte. "

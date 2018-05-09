@@ -132,6 +132,7 @@
     <Compile Include="Clases\GastoClase.vb" />
     <Compile Include="Clases\IngresoClase.vb" />
     <Compile Include="Clases\ReservaClase.vb" />
+    <Compile Include="Clases\SaldoReservasClase.vb" />
     <Compile Include="Clases\SaldoAportacionesClase.vb" />
     <Compile Include="Clases\SaldoClase.vb" />
     <Compile Include="Clases\Singleton.vb" />

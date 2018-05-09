@@ -1681,6 +1681,84 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerDatosSaldoDeReservasEntradas() As List(Of SaldoReservasClase)
+        Dim MyList As New List(Of SaldoReservasClase)
+        Try
+            SQL = "SELECT RESERVAS_ENTRADAS.fecha, RESERVAS_ENTRADAS.reciboFactura, RESERVAS_ENTRADAS.codigoDeCuenta, RESERVAS_ENTRADAS.total 
+                    FROM [RESERVAS_ENTRADAS] 
+                  
+                    ORDER BY fecha "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim saldo As SaldoReservasClase = New SaldoReservasClase
+                    'MsgBox("ENTRANDO AL WHILE...")
+                    'MsgBox("reader 0 is : " + reader.GetDateTime(0))
+                    'MsgBox("reader 1 is : " + reader.GetString(1))
+                    'MsgBox("reader 2 is : " + reader.GetString(2))
+                    Try
+                        saldo.SaldoReservasClaseConstructor(reader.GetDateTime(0), reader.GetString(1), reader.GetString(2), reader.GetString(3))
+                        MyList.Add(saldo)
+
+                        ' MsgBox("IMPRIME : " + saldo.codigoCuenta + " xxx " + saldo.total + "xxx" + saldo.fecha)
+
+                    Catch ex As Exception
+
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
+    Function obtenerDatosSaldoDeReservasSalidas() As List(Of SaldoReservasClase)
+        Dim MyList As New List(Of SaldoReservasClase)
+        Try
+            SQL = "SELECT RESERVAS_SALIDAS.fecha, RESERVAS_SALIDAS.reciboFactura, RESERVAS_SALIDAS.codigoDeCuenta, RESERVAS_SALIDAS.total
+                    FROM [RESERVAS_SALIDAS]
+                   
+                    ORDER BY fecha "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim saldo As SaldoReservasClase = New SaldoReservasClase
+                    'MsgBox("ENTRANDO AL WHILE...")
+                    'MsgBox("reader 0 is : " + reader.GetDateTime(0))
+                    'MsgBox("reader 1 is : " + reader.GetString(1))
+                    'MsgBox("reader 2 is : " + reader.GetString(2))
+                    Try
+                        saldo.SaldoReservasClaseConstructor(reader.GetDateTime(0), reader.GetString(1), reader.GetString(2), reader.GetString(3))
+                        MyList.Add(saldo)
+
+                        ' MsgBox("IMPRIME : " + saldo.codigoCuenta + " xxx " + saldo.total + "xxx" + saldo.fecha)
+
+                    Catch ex As Exception
+
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
     Function obtenerDatosdeReporteAportaciones() As List(Of AportacionesClase)
         Dim MyList As New List(Of AportacionesClase)
         Try
@@ -1989,6 +2067,38 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+
+    Function obtenerCodigoCuentaReservasEntradas() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT RESERVAS_ENTRADAS.codigoDeCuenta
+                    FROM RESERVAS_ENTRADAS
+                    GROUP BY codigoDeCuenta "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        ' MsgBox(String.Concat("ingresosXXX ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
     Function obtenerCodigoCuentaGastos() As List(Of String)
         Dim MyList As New List(Of String)
 
@@ -2027,6 +2137,38 @@ Public Class ConexionBD
         Try
             SQL = " SELECT CERTIFICADOS_SALIDAS.codigoDeCuenta
                     FROM CERTIFICADOS_SALIDAS
+                    GROUP BY codigoDeCuenta "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        '  MsgBox(String.Concat("Gastos son: ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+
+    Function obtenerCodigoCuentaReservasSalidas() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT RESERVAS_SALIDAS.codigoDeCuenta
+                    FROM RESERVAS_SALIDAS
                     GROUP BY codigoDeCuenta "
 
             If conectadoBD = True Then
@@ -2128,12 +2270,89 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    Function obtenerReservasEntradasTotal() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(RESERVAS_ENTRADAS.total) As total 
+                                FROM RESERVAS_ENTRADAS "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
+                        'MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
     Function obtenerAportacionesSalidasTotal() As List(Of String)
         Dim MyList As New List(Of String)
 
         Try
             SQL = " SELECT Sum(CERTIFICADOS_SALIDAS.total) As total 
                                 FROM CERTIFICADOS_SALIDAS "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+                        If IsDBNull(reader(conta)) Then
+                            ' MessageBox.Show("dato es null")
+                            MyList.Add("0")
+                        Else
+                            ' MessageBox.Show("hay datos")
+                            MyList.Add(reader(conta))
+                        End If
+
+
+                        'MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+
+    Function obtenerReservasSalidasTotal() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = " SELECT Sum(RESERVAS_SALIDAS.total) As total 
+                                FROM RESERVAS_SALIDAS "
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)

@@ -75,17 +75,30 @@ Public Class Reservas
         End If
 
         'Se actualizan los montos
-        valores1 = actualizarMontoEnBase(sumaBSocial, "bienestarSocial")
+        valores1 = actualizarMontoEnBase(sumaBSocial, "Bienestar Social")
         valores2 = actualizarMontoEnBase(sumaInstitucional, "Institucional")
         valores3 = actualizarMontoEnBase(sumaPatrimonial, "Patrimonial")
-        valores4 = actualizarMontoEnBase(sumaEducacion, "educacion")
-        valores7 = actualizarMontoEnBase(sumaLegal, "legal")
+        valores4 = actualizarMontoEnBase(sumaEducacion, "Educacion")
+        valores7 = actualizarMontoEnBase(sumaLegal, "Legal")
+
 
         Dim cantidadAfuliaciones As Integer = afiliacionEnReserva(fechaDesde, fechaHasta)
-        valores5 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "educacion")
-        valores6 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "bienestarSocial")
+
+        'Suma 50% de las afiliaciones en la reserva de Educacion y 50% en Bienestar Social
+        valores5 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "Educacion")
+        valores6 = actualizarMontoEnBase((cantidadAfuliaciones / 100) * 50, "Bienestar Social")
 
 
+        'Para sumar las afiliaciones en Reservas Entradas.
+        Dim fecha As String = DateTime.Now.ToString("dd/MM/yyyy")
+        Dim random As Integer = CInt(Math.Ceiling(Rnd() * 5000)) + 1
+        Dim random2 As Integer = CInt(Math.Ceiling(Rnd() * 5000)) + 1
+
+        BD.ConectarBD()
+        Dim totalASumar As String = (cantidadAfuliaciones / 100) * 50
+        BD.insertarReservasEntradas(fecha, "admin", "Suma Admisiones a Reserva Educación", "1", totalASumar, totalASumar, "Educacion", "factura " + random.ToString)
+        BD.insertarReservasEntradas(fecha, "admin", "Suma Admisiones a Reserva Bienestar Social", "1", totalASumar, totalASumar, "Bienestar Social", "factura " + random2.ToString)
+        BD.CerrarConexion()
 
         ' MessageBox.Show("Exc brutos son = " + excedentesBrutos.ToString + " " +
         '                " Reservas son: " +
@@ -104,8 +117,391 @@ Public Class Reservas
         End If
     End Sub
 
+    'Total de entradas 
+    Public Function obtenerReservasEntradas()
+        Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
 
-    Public Sub crearReporteReservas()
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerReservasEntradasTotal()
+            If valores.Count <> 0 Then
+                Return valores
+            Else
+                'MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+        End Try
+    End Function
+
+    'Total de salidas 
+    Public Function obtenerReservasSalidas()
+        Dim valores As List(Of String)
+        Dim list As New List(Of String)(New String() {"0"}) ' Cuando no hay valores, es porque es nulo, retornamos la lista para imprimir en el informe económico
+
+        Try
+            BD.ConectarBD()
+            valores = BD.obtenerReservasSalidasTotal()
+            If valores.Count <> 0 Then
+                Return valores
+            Else
+                'MessageBox.Show(variablesGlobales.noExistenDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                Return list
+            End If
+            BD.CerrarConexion()
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+
+        End Try
+    End Function
+
+    'Saldos de reservas - reporte
+    Public Sub generarReporteSaldosDeReservas()
+
+        Try
+            Dim valores As List(Of SaldoReservasClase)
+            Dim valoresSalidas As List(Of SaldoReservasClase)
+            Dim codigosCuentaIngresos As List(Of String)
+            Dim codigosCuentaGastos As List(Of String)
+            Dim saldoAnteriorIngresos As String
+            Dim saldoAnteriorGastos As String
+            Dim saldoGlobal As Integer = 0
+            'Dim saldoAnterior As Integer = 0
+
+            BD.ConectarBD()
+
+            valores = BD.obtenerDatosSaldoDeReservasEntradas()
+            valoresSalidas = BD.obtenerDatosSaldoDeReservasSalidas()
+            codigosCuentaIngresos = BD.obtenerCodigoCuentaReservasEntradas()
+            codigosCuentaGastos = BD.obtenerCodigoCuentaReservasSalidas()
+
+            'Dim totalAportacionesAcum As List(Of String) = CertificadosSalidas.obtenerAportacionesAcumuladoAnterior()
+            'Dim totalAportacionesTotal As List(Of String) = CertificadosSalidas.obtenerAportacionesTotal()
+            Dim totalAportacionesEntradas As List(Of String) = obtenerReservasEntradas()
+            Dim totalAportacionesSalidas As List(Of String) = obtenerReservasSalidas()
+
+            ' saldoGlobal = Integer.Parse(totalAportacionesAcum.Item(0)) + Integer.Parse(totalAportacionesTotal.Item(0))
+            'Integer.Parse(totalAportacionesEntradas.Item(0)) -
+            'Integer.Parse(totalAportacionesSalidas.Item(0))
+
+            saldoAnteriorIngresos = totalAportacionesEntradas.Item(0)
+            saldoAnteriorGastos = totalAportacionesSalidas.Item(0)
+
+            If (saldoAnteriorIngresos = "") Then
+                saldoAnteriorIngresos = "0"
+            End If
+
+            If (saldoAnteriorGastos = "") Then
+                saldoAnteriorGastos = "0"
+            End If
+
+            'saldoAnterior = saldoGlobal ' no se modifica el saldo anterior
+
+            BD.CerrarConexion()
+
+            If Not Directory.Exists(variablesGlobales.folderPath) Then
+                Directory.CreateDirectory(variablesGlobales.folderPath)
+            End If
+
+            'Margin of the Doc
+            Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
+
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & variablesGlobales.reporteDeSaldosDeReservas, FileMode.Create))
+            pdfDoc.Open()
+            encabezado.consultarDatos()
+            encabezado.encabezado(pdfWrite, pdfDoc)
+
+            Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
+            Dim FontStype2 = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK)
+            Dim FontEncabezadoFechas = FontFactory.GetFont("Arial", 9, Font.NORMAL)
+
+            '/////// Encabezado //////////
+            pdfDoc.Add(New Paragraph("                                                                                         Reporte de Saldos de Reservas", FontEncabezadoFechas))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
+
+            Dim table As PdfPTable = New PdfPTable(6)
+
+            'ESTABLECE TAMAÑO DE ANCHO DE COLUMNAS
+            ' Dim intTblWidth() As Integer = {7, 12, 12, 10, 9, 8, 7, 7, 7, 8}
+            'table.SetWidths(intTblWidth)
+
+            '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
+
+
+            Dim fechaR As PdfPCell = New PdfPCell(New Phrase("Fecha", FontStype))
+            fechaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            fechaR.Colspan = 1
+            fechaR.HorizontalAlignment = 1
+
+            Dim facturaR As PdfPCell = New PdfPCell(New Phrase("N° Factura o Recibo", FontStype))
+            facturaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            facturaR.Colspan = 1
+            facturaR.HorizontalAlignment = 1
+
+            Dim codigoCuentaR As PdfPCell = New PdfPCell(New Phrase("Código de Cuenta", FontStype))
+            codigoCuentaR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            codigoCuentaR.Colspan = 1
+            codigoCuentaR.HorizontalAlignment = 1
+
+            Dim entradasR As PdfPCell = New PdfPCell(New Phrase("Entradas", FontStype))
+            entradasR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            entradasR.Colspan = 1
+            entradasR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+            Dim salidasR As PdfPCell = New PdfPCell(New Phrase("Salidas", FontStype))
+            salidasR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            salidasR.Colspan = 1
+            salidasR.HorizontalAlignment = 1
+
+            Dim saldoR As PdfPCell = New PdfPCell(New Phrase("Saldo", FontStype))
+            saldoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            saldoR.Colspan = 1
+            saldoR.HorizontalAlignment = 1
+
+            table.AddCell(fechaR)
+            table.AddCell(facturaR)
+            table.AddCell(codigoCuentaR)
+            table.AddCell(entradasR)
+            table.AddCell(salidasR)
+            table.AddCell(saldoR)
+
+            Dim contador As Integer = 0
+            Dim conta As Integer = 0
+
+            While contador < valores.Count
+                If conta = 50 Then
+                    pdfDoc.Add(table)
+                    pdfDoc.NewPage()
+                    encabezado.encabezado(pdfWrite, pdfDoc)
+                    table.DeleteBodyRows()
+
+                    conta = 0
+                End If
+                conta = conta + 1
+
+                'fecha
+                Dim fechaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).fecha, FontStype2))
+                fechaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                fechaT.Colspan = 1
+                fechaT.HorizontalAlignment = 1
+
+                'factura o recibo
+                Dim facturaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).facturaRecibo, FontStype2))
+                facturaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                facturaT.Colspan = 1
+                facturaT.HorizontalAlignment = 1
+
+                'codigo cta
+                Dim codigoCuentaT As PdfPCell = New PdfPCell(New Phrase(valores(contador).codigoCuenta, FontStype2))
+                codigoCuentaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                codigoCuentaT.Colspan = 1
+                codigoCuentaT.HorizontalAlignment = 1
+
+                'Entradas
+                Dim totalEntradas As Integer = Convert.ToInt32(valores(contador).total)
+                Dim stringTotal As String = totalEntradas.ToString("N")
+                Dim entradasT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal, FontStype2))
+                entradasT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                entradasT.Colspan = 1
+                entradasT.HorizontalAlignment = 1
+
+                'Salidas
+                Dim totalSalidas As Integer = Convert.ToInt32(valores(contador).total)
+                Dim stringTotal2 As String = totalSalidas.ToString("N")
+                Dim salidasT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal2, FontStype2))
+                salidasT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                salidasT.Colspan = 1
+                salidasT.HorizontalAlignment = 1
+
+                Dim celdaNula As PdfPCell = New PdfPCell(New Phrase("", FontStype2))
+                celdaNula.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                celdaNula.Colspan = 1
+                celdaNula.HorizontalAlignment = 1
+
+                table.AddCell(fechaT)
+                table.AddCell(facturaT)
+                table.AddCell(codigoCuentaT)
+
+                'Para Entradas
+                If codigosCuentaIngresos.Contains(valores(contador).codigoCuenta) Then
+                    table.AddCell(entradasT)
+                    table.AddCell(celdaNula)
+                    saldoGlobal = saldoGlobal + valores(contador).total
+                End If
+
+                'Else
+                'table.AddCell(entradasT)
+                'table.AddCell(celdaNula) 'para salidas
+                'saldoGlobal = saldoGlobal + valores(contador).total
+                'End If
+
+
+                'Saldo
+                Dim totalSaldo As Integer = saldoGlobal
+                Dim stringTotalGeneral As String = totalSaldo.ToString("N")
+                Dim saldoT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotalGeneral, FontStype2))
+                saldoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                saldoT.Colspan = 1
+                saldoT.HorizontalAlignment = 1
+
+                table.AddCell(saldoT)
+
+                contador = contador + 1
+            End While
+
+            'New WHILE FOR SALIDAS
+
+            Dim contador2 As Integer = 0
+            Dim conta2 As Integer = 0
+
+            While contador2 < valoresSalidas.Count
+                If conta2 = 50 Then
+                    pdfDoc.Add(table)
+                    pdfDoc.NewPage()
+                    encabezado.encabezado(pdfWrite, pdfDoc)
+                    table.DeleteBodyRows()
+
+                    conta2 = 0
+                End If
+
+                conta2 = conta2 + 1
+
+
+                'fecha
+                Dim fechaT As PdfPCell = New PdfPCell(New Phrase(valoresSalidas(contador2).fecha, FontStype2))
+                fechaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                fechaT.Colspan = 1
+                fechaT.HorizontalAlignment = 1
+
+                'factura o recibo
+                Dim facturaT As PdfPCell = New PdfPCell(New Phrase(valoresSalidas(contador2).facturaRecibo, FontStype2))
+                facturaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                facturaT.Colspan = 1
+                facturaT.HorizontalAlignment = 1
+
+                'codigo cta
+                Dim codigoCuentaT As PdfPCell = New PdfPCell(New Phrase(valoresSalidas(contador2).codigoCuenta, FontStype2))
+                codigoCuentaT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                codigoCuentaT.Colspan = 1
+                codigoCuentaT.HorizontalAlignment = 1
+
+                'Entradas
+                Dim totalEntradas As Integer = Convert.ToInt32(valoresSalidas(contador2).total)
+                Dim stringTotal As String = totalEntradas.ToString("N")
+                Dim entradasT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal, FontStype2))
+                entradasT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                entradasT.Colspan = 1
+                entradasT.HorizontalAlignment = 1
+
+
+                table.AddCell(fechaT)
+                table.AddCell(facturaT)
+                table.AddCell(codigoCuentaT)
+
+                'Salidas
+                Dim totalSalidas As Integer = Convert.ToInt32(valoresSalidas(contador2).total)
+                Dim stringTotal2 As String = totalSalidas.ToString("N")
+                Dim salidasT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal2, FontStype2))
+                salidasT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                salidasT.Colspan = 1
+                salidasT.HorizontalAlignment = 1
+
+                'Nula
+                Dim celdaNula As PdfPCell = New PdfPCell(New Phrase("", FontStype2))
+                celdaNula.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                celdaNula.Colspan = 1
+                celdaNula.HorizontalAlignment = 1
+
+
+                'Para salidas
+                If codigosCuentaGastos.Contains(valoresSalidas(contador2).codigoCuenta) Then
+                    table.AddCell(celdaNula)
+                    table.AddCell(salidasT)
+                    saldoGlobal = saldoGlobal - valoresSalidas(contador2).total
+                End If
+
+                'Saldo
+                Dim totalSaldo As Integer = saldoGlobal
+                Dim stringTotalGeneral As String = totalSaldo.ToString("N")
+                Dim saldoT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotalGeneral, FontStype2))
+                saldoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                saldoT.Colspan = 1
+                saldoT.HorizontalAlignment = 1
+
+                table.AddCell(saldoT)
+
+                contador2 = contador2 + 1
+
+            End While
+
+
+
+
+
+            Dim tableSaldoTotal As PdfPTable = New PdfPTable(5)
+            ' Dim tableSaldoAnterior As PdfPTable = New PdfPTable(5)
+
+            Dim FontStypeSaldoBlanco = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.WHITE)
+
+            'PARA TOTAL GENERAL
+            Dim saldoGeneralR As PdfPCell = New PdfPCell(New Phrase("Saldo Total: ", FontStypeSaldoBlanco))
+            saldoGeneralR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            saldoGeneralR.Colspan = 3
+            saldoGeneralR.HorizontalAlignment = 1
+
+            Dim FontStype4 = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.BLACK)
+            Dim FontStypeSubTotales = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
+
+            'Saldo total
+            Dim stringTotal5 As String = saldoGlobal.ToString("N")
+
+            Dim saldoGeneralT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal5, FontStypeSubTotales))
+            saldoGeneralT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            saldoGeneralT.Colspan = 2
+            saldoGeneralT.HorizontalAlignment = 1
+
+
+
+            'SALDO ANTERIOR
+            'Dim saldoAnteriorR As PdfPCell = New PdfPCell(New Phrase("Saldo Anterior: ", FontStypeSaldoBlanco))
+            'saldoAnteriorR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            'saldoAnteriorR.Colspan = 3
+            'saldoAnteriorR.HorizontalAlignment = 1
+            'Saldo anterior
+            'Dim stringTotal6 As String = saldoAnterior.ToString("N")
+            'Dim saldoAnteriorT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal6, FontStypeSubTotales))
+            'saldoAnteriorT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            'saldoAnteriorT.Colspan = 2
+            'saldoAnteriorT.HorizontalAlignment = 1
+
+
+
+            tableSaldoTotal.AddCell(saldoGeneralR)
+            tableSaldoTotal.AddCell(saldoGeneralT)
+            'tableSaldoAnterior.AddCell(saldoAnteriorR)
+            'tableSaldoAnterior.AddCell(saldoAnteriorT)
+
+            'pdfDoc.Add(tableSaldoAnterior)
+            'pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(table)
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(tableSaldoTotal)
+            pdfDoc.Close()
+
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reporteDeSaldosDeReservas, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
+        End Try
+    End Sub
+
+    Public Sub crearReporteAcumuladoReservas()
         If Singleton.rol = "Colaborador" Then
             MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
@@ -494,7 +890,7 @@ Public Class Reservas
 
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporte_Reservas.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporte_Acumulado_Reservas.pdf", FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -565,7 +961,7 @@ Public Class Reservas
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporte_Reservas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporte_Acumulado_Reservas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
         Catch ex As Exception
             MessageBox.Show("Error de: " + ex.Message())
