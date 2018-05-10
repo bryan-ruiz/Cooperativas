@@ -80,8 +80,28 @@ Public Class Configuracion
         End Try
     End Sub
 
-    Public Sub insertarCuenta()
+    'Valida que no exista el cod de cuenta en el sistema
+    Function validarNoExisteNumCodigoCuentaRepetido(ByVal numAsociado As String) As Integer
+        Dim listaNum As List(Of String)
+        Dim cantidad As Integer = 0
 
+        Try
+            BD.ConectarBD()
+
+            listaNum = BD.obtenerNumCodigosDeCuenta(numAsociado)
+            cantidad = listaNum.Count
+
+            BD.CerrarConexion()
+
+        Catch ex As Exception
+            MessageBox.Show(variablesGlobales.errorDe + "" + ex.Message)
+        End Try
+        Return cantidad
+    End Function
+
+    'Inserta la cuenta con el id (descripcion de la cta) / tipo (ingreso o gasto) / proy productivo (si o no)
+    Public Sub insertarCuenta()
+        Dim numCodigoCuentaExiste As Integer = 0
         Dim valores As Integer
         Dim id As String = VConfiguracionCodigoCuenta.TextBox_ConfiguracionCuentaDescripcion.Text
         Dim tipo As String
@@ -104,6 +124,15 @@ Public Class Configuracion
         End If
 
         Try
+            'Validar que no existen cod de cta iguales
+            numCodigoCuentaExiste = validarNoExisteNumCodigoCuentaRepetido(id)
+            If numCodigoCuentaExiste <> 0 Then
+                MessageBox.Show(variablesGlobales.errorCodigoCuentaExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                VConfiguracionCodigoCuenta.TextBox_ConfiguracionCuentaDescripcion.Text = ""
+                VConfiguracionCodigoCuenta.TextBox_ConfiguracionCuentaDescripcion.Select()
+                Return
+            End If
+
             BD.ConectarBD()
             valores = BD.insertarCuenta(id, tipo, proyecto_Productivo)
             If valores <> 0 Then
