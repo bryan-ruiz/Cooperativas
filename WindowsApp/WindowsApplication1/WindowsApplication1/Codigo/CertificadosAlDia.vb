@@ -684,7 +684,7 @@ Public Class CertificadosAlDia
 
 
 
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & variablesGlobales.reporteMorosidad, FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteCertificadosMorosidad, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -835,10 +835,13 @@ Public Class CertificadosAlDia
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reporteMorosidad, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteCertificadosMorosidad)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 
@@ -868,7 +871,7 @@ Public Class CertificadosAlDia
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
 
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & variablesGlobales.reportePagoAlDia, FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteCertificadosPagosAldia, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -994,10 +997,13 @@ Public Class CertificadosAlDia
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reportePagoAlDia, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteCertificadosPagosAldia)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 
@@ -1020,7 +1026,7 @@ Public Class CertificadosAlDia
             End If
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & variablesGlobales.reporteTodosPago, FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteCertificadosTodosLosPagos, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -1122,9 +1128,13 @@ Public Class CertificadosAlDia
             End While
             pdfDoc.Add(table)
             pdfDoc.Close()
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reporteTodosPago, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteCertificadosTodosLosPagos)
+
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 End Class

@@ -23,8 +23,7 @@ Public Class GestionExcedentes
 
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
-            Dim nombreReporte As String = "excedentes_En_Transito.pdf"
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & nombreReporte, FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteExcedenteEnTransito, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -79,7 +78,7 @@ Public Class GestionExcedentes
             Dim conta As Integer = 0
 
             If listaExcedenteEnTransito.Count = 0 Then
-                MessageBox.Show(variablesGlobales.reporteSinDatos & nombreReporte, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.reporteSinDatos, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return
             End If
 
@@ -139,10 +138,13 @@ Public Class GestionExcedentes
             pdfDoc.Add(table)
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & nombreReporte, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteExcedenteEnTransito)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 

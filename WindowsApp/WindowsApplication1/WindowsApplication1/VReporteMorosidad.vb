@@ -23,11 +23,7 @@
         certificados.generarReporteMorosidadAsociadosActivos()
         Me.LabelWait.Text = ""
         ' System.Threading.Thread.Sleep(8000)
-
         'Me.Refresh()
-
-
-        Print.Show()
         Me.Close()
     End Sub
 

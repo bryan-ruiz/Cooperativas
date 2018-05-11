@@ -79,7 +79,7 @@ Public Class Ingreso
 
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteEntradas.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteEntradas, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -220,8 +220,6 @@ Public Class Ingreso
                 contador = contador + 1
             End While
 
-
-
             Dim table2 As PdfPTable = New PdfPTable(11)
 
             'PARA TOTAL GENERAL
@@ -247,16 +245,15 @@ Public Class Ingreso
             pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(table2)
 
-
-            ' pdfDoc.Add(New Paragraph("      Total: " + Convert.ToString(totalEntradas), FontStype3))
-            'pdfDoc.Add(New Paragraph(" "))
-
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteEntradas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteEntradas)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 
@@ -279,7 +276,7 @@ Public Class Ingreso
 
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteCuentaEntradas.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteCuentasEntradas, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -351,10 +348,13 @@ Public Class Ingreso
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteCuentasEntradas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteCuentasEntradas)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 

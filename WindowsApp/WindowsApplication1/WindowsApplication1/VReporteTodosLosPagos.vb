@@ -22,7 +22,6 @@
         Me.labelWait.Text = "Generando Reporte, por favor espere..."
         certificados.generarReporteTodosLosPAgos()
         Me.labelWait.Text = ""
-        Print.Show()
         Me.Close()
     End Sub
 End Class

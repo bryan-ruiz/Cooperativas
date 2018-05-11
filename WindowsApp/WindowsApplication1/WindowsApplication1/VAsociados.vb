@@ -164,12 +164,10 @@
 
     Private Sub AsociadosActivosResumidoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsociadosActivosResumidoToolStripMenuItem.Click
         socios.generarReporteDeSociosResumido("Activos")
-        Print.Show()
     End Sub
 
     Private Sub ToolStripMenuAsociadosReporteTodos_Click(sender As Object, e As EventArgs) Handles ToolStripMenuAsociadosReporteTodos.Click
         socios.generarReporteDeSociosResumidoTodos("Todos")
-        Print.Show()
     End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
@@ -189,8 +187,5 @@
 
     Private Sub AsociadosPorSecciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsociadosPorSecciónToolStripMenuItem.Click
         socios.reporteAsociadosXSeccion()
-        Print.Show()
-        Print.abrirReporte(variablesGlobales.pathReporteAsociadosXSeccion)
-        Me.Close()
     End Sub
 End Class

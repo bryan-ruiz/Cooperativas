@@ -11,5 +11,6 @@
     Private Sub ExcedentesCorrespButtonGenerarReporteExc_Click(sender As Object, e As EventArgs) Handles ExcedentesCorrespButtonGenerarReporteExc.Click
         socio.generarReporteExcedentesCorrespondientesPorAsociados()
         Me.Close()
+
     End Sub
 End Class

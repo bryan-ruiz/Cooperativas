@@ -35,8 +35,8 @@ Partial Class Principal
         Me.CodigosDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItemReservas = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItemReservas = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExcedentesMoverAReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificadosEnTránsitoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,6 +47,7 @@ Partial Class Principal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -107,7 +108,7 @@ Partial Class Principal
         '
         'ConfiguraciónToolStripMenuItem
         '
-        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InformaciónCooperativaToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.CodigosDeCuentasToolStripMenuItem, Me.ToolStripMenuItem1, Me.ToolStripMenuItem4, Me.CerrarPeriodoToolStripMenuItem, Me.ToolStripMenuItemReservas, Me.ExcedentesMoverAReservasToolStripMenuItem, Me.CertificadosEnTránsitoToolStripMenuItem, Me.ToolStripMenuItem3, Me.CargarUsuariosToolStripMenuItem, Me.ImportarAcumuladoToolStripMenuItem})
+        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InformaciónCooperativaToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.CodigosDeCuentasToolStripMenuItem, Me.ToolStripMenuItem1, Me.ToolStripMenuItem4, Me.ReportesToolStripMenuItem, Me.CerrarPeriodoToolStripMenuItem, Me.ToolStripMenuItemReservas, Me.ExcedentesMoverAReservasToolStripMenuItem, Me.CertificadosEnTránsitoToolStripMenuItem, Me.ToolStripMenuItem3, Me.CargarUsuariosToolStripMenuItem, Me.ImportarAcumuladoToolStripMenuItem})
         Me.ConfiguraciónToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.settings1pp
         Me.ConfiguraciónToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ConfiguraciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -145,17 +146,17 @@ Partial Class Principal
         Me.ToolStripMenuItem4.Size = New System.Drawing.Size(239, 22)
         Me.ToolStripMenuItem4.Text = "---------------------------------"
         '
-        'ToolStripMenuItemReservas
-        '
-        Me.ToolStripMenuItemReservas.Name = "ToolStripMenuItemReservas"
-        Me.ToolStripMenuItemReservas.Size = New System.Drawing.Size(239, 22)
-        Me.ToolStripMenuItemReservas.Text = "Gestión de Reservas"
-        '
         'CerrarPeriodoToolStripMenuItem
         '
         Me.CerrarPeriodoToolStripMenuItem.Name = "CerrarPeriodoToolStripMenuItem"
         Me.CerrarPeriodoToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.CerrarPeriodoToolStripMenuItem.Text = "Cerrar Periodo"
+        '
+        'ToolStripMenuItemReservas
+        '
+        Me.ToolStripMenuItemReservas.Name = "ToolStripMenuItemReservas"
+        Me.ToolStripMenuItemReservas.Size = New System.Drawing.Size(239, 22)
+        Me.ToolStripMenuItemReservas.Text = "Gestión de Reservas"
         '
         'ExcedentesMoverAReservasToolStripMenuItem
         '
@@ -239,6 +240,12 @@ Partial Class Principal
         Me.PictureBox1.TabIndex = 33
         Me.PictureBox1.TabStop = False
         '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -286,4 +293,5 @@ Partial Class Principal
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItemReservas As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
 End Class

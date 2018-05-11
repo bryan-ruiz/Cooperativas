@@ -51,15 +51,11 @@
 
     Private Sub AcumuladoEnReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcumuladoEnReservasToolStripMenuItem.Click
         reserva.crearReporteAcumuladoReservas()
-        Print.Show()
-        Print.abrirReporte(variablesGlobales.pathReporteDeAcumuladoReservas)
         Me.Close()
     End Sub
 
     Private Sub SaldosDeReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaldosDeReservasToolStripMenuItem.Click
         reserva.generarReporteSaldosDeReservas()
-        Print.Show()
-        Print.abrirReporte(variablesGlobales.pathReporteDeSaldosDeReservas)
         Me.Close()
     End Sub
 End Class

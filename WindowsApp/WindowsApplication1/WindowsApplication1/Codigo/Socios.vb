@@ -546,13 +546,13 @@ Public Class Socios
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
 
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteAsociadosActivos.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteAsociadosActivos, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
-            pdfDoc.Add(New Paragraph("                                                                                     Reporte de Asociados activos ", FontStype3))
+            pdfDoc.Add(New Paragraph("                                                                                     Reporte de Asociados Activos", FontStype3))
             pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(New Paragraph(" "))
 
@@ -690,10 +690,14 @@ Public Class Socios
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteAsociadosActivos.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteAsociadosActivos)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 
@@ -713,13 +717,13 @@ Public Class Socios
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
 
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporte_Asociados_Por_Seccion.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteAsociadosXSeccion, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
-            pdfDoc.Add(New Paragraph("                                                                                      Reporte de Asociados por sección ", FontStype3))
+            pdfDoc.Add(New Paragraph("                                                                                      Reporte de Asociados por Sección ", FontStype3))
             pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(New Paragraph(" "))
 
@@ -818,7 +822,9 @@ Public Class Socios
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporte_Asociados_Por_Seccion.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteAsociadosXSeccion)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
@@ -841,13 +847,13 @@ Public Class Socios
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
 
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporteTodosLosAsociados.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteAsociadosTodos, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
-            pdfDoc.Add(New Paragraph("                                                                                         Reporte de todos los Asociados", FontStype3))
+            pdfDoc.Add(New Paragraph("                                                                                         Reporte de Todos los Asociados", FontStype3))
             pdfDoc.Add(New Paragraph(" "))
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
@@ -1008,10 +1014,13 @@ Public Class Socios
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporteTodosLosAsociados.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteAsociadosTodos)
 
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 
@@ -1033,8 +1042,6 @@ Public Class Socios
             valores = BD.obtenerDatosReporteDeSocios("Activos")
             BD.CerrarConexion()
 
-
-
             ' TODOS - 1430
 
             'Aportaciones o Certificados - Acum
@@ -1049,14 +1056,8 @@ Public Class Socios
                 MessageBox.Show("El reporte no se ha generado, las aportaciones totales de los Asociados tiene un valor de 0.", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return
             End If
-
             'MsgBox("XXXX aportaciones suma TODOS (acum mas total) son: " + subTotalAportacionesTodos.ToString)
-
             '------------------- START -  excedentes brutos distribuible funciones ---------
-
-
-            ' 650 (ejemplo mio para testing)
-
             Dim excedentesBrutos As Integer = Integer.Parse(subTotalIngresos.Item(0)) - Integer.Parse(subTotalGastos.Item(0))
 
             If excedentesBrutos < 0 Then
@@ -1068,8 +1069,6 @@ Public Class Socios
                 MessageBox.Show("El reporte no se ha generado, los Exc. Brutos tienen un valor de 0", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Return
             End If
-
-
 
             'Valores de Reservas
             Dim valoresReserva As List(Of ConfiguracionClase) = consultarValoresConfiguracion()
@@ -1084,12 +1083,8 @@ Public Class Socios
 
             Dim sumaExcedentesNetosDistribuibles As Integer = excedentesBrutos - sumaTotalReservas
 
-
             'MsgBox("XXX exc netos distribuibles son: " + sumaExcedentesNetosDistribuibles.ToString)
-
             '------------------- END -- excedentes brutos distribuible funciones ---------
-
-
             If Not Directory.Exists(variablesGlobales.folderPath) Then
                 Directory.CreateDirectory(variablesGlobales.folderPath)
             End If
@@ -1099,7 +1094,7 @@ Public Class Socios
 
 
 
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & variablesGlobales.nombreReporteExcCorresp, FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteAsociadosExcedenteCorrespondiente, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -1303,10 +1298,15 @@ Public Class Socios
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.nombreReporteExcCorresp, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
             Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteAsociadosExcedenteCorrespondiente)
+
+
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 

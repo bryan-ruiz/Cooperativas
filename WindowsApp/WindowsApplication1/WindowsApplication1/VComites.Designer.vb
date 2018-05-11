@@ -24,8 +24,6 @@ Partial Class VComites
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VComites))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuReporteComites = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -125,25 +123,12 @@ Partial Class VComites
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReporteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteToolStripMenuItem, Me.InformaciónToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1296, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'MenuToolStripMenuItem
-        '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem1})
-        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.MenuToolStripMenuItem.Text = "Menu"
-        '
-        'SalirToolStripMenuItem1
-        '
-        Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
-        Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'ReporteToolStripMenuItem
         '
@@ -155,7 +140,7 @@ Partial Class VComites
         'ToolStripMenuReporteComites
         '
         Me.ToolStripMenuReporteComites.Name = "ToolStripMenuReporteComites"
-        Me.ToolStripMenuReporteComites.Size = New System.Drawing.Size(146, 22)
+        Me.ToolStripMenuReporteComites.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuReporteComites.Text = "Crear Reporte"
         '
         'InformaciónToolStripMenuItem
@@ -1003,7 +988,7 @@ Partial Class VComites
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(423, 30)
+        Me.Label17.Location = New System.Drawing.Point(423, 32)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(406, 29)
         Me.Label17.TabIndex = 41
@@ -1053,7 +1038,6 @@ Partial Class VComites
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ButtonVComitesLimpiar As Button
@@ -1119,7 +1103,6 @@ Partial Class VComites
     Friend WithEvents TextBoxID_ComiteVocal1 As TextBox
     Friend WithEvents TextBoxID_ComiteSecretaria As TextBox
     Friend WithEvents TextBoxID_ComiteVicePresidente As TextBox
-    Friend WithEvents SalirToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents GroupBox10 As GroupBox

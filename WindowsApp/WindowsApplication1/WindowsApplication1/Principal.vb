@@ -307,4 +307,8 @@ Public Class Principal
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         VConfiguracionCuotaAdmision.Show()
     End Sub
+
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        VReportesTodos.Show()
+    End Sub
 End Class

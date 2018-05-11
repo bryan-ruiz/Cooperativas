@@ -5,7 +5,6 @@
 
     Private Sub InformeButtonGenerarInforme_Click(sender As Object, e As EventArgs) Handles InformeButtonGenerarInforme.Click
         informeEconomico.generarInformeEconomico()
-        Print.Show()
         Me.Close()
     End Sub
 

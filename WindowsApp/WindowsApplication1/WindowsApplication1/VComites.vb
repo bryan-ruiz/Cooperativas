@@ -3,7 +3,7 @@
     Dim comites As Comites = New Comites
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
-    Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
+    Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
@@ -17,7 +17,6 @@
 
     Private Sub ToolStripMenuReporteComites_Click(sender As Object, e As EventArgs) Handles ToolStripMenuReporteComites.Click
         comites.generarReporteDeComitesNuevo()
-        Print.Show()
     End Sub
 
     Private Sub ButtonVComitesGuardar_Click(sender As Object, e As EventArgs) Handles ButtonVComitesGuardar.Click

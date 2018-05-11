@@ -8,7 +8,7 @@
 
     Private Sub Button_GastosCuentasReporte_aceptar_Click(sender As Object, e As EventArgs) Handles Button_GastosCuentasReporte_aceptar.Click
         gaston.generarReporteCuentaGastos()
-        Print.Show()
+
         Me.Close()
     End Sub
 End Class

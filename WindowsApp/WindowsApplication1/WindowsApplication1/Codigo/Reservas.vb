@@ -210,7 +210,7 @@ Public Class Reservas
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
 
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & variablesGlobales.reporteDeSaldosDeReservas, FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteSaldosReserva, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -441,9 +441,6 @@ Public Class Reservas
             End While
 
 
-
-
-
             Dim tableSaldoTotal As PdfPTable = New PdfPTable(5)
             ' Dim tableSaldoAnterior As PdfPTable = New PdfPTable(5)
 
@@ -466,35 +463,18 @@ Public Class Reservas
             saldoGeneralT.Colspan = 2
             saldoGeneralT.HorizontalAlignment = 1
 
-
-
-            'SALDO ANTERIOR
-            'Dim saldoAnteriorR As PdfPCell = New PdfPCell(New Phrase("Saldo Anterior: ", FontStypeSaldoBlanco))
-            'saldoAnteriorR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
-            'saldoAnteriorR.Colspan = 3
-            'saldoAnteriorR.HorizontalAlignment = 1
-            'Saldo anterior
-            'Dim stringTotal6 As String = saldoAnterior.ToString("N")
-            'Dim saldoAnteriorT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal6, FontStypeSubTotales))
-            'saldoAnteriorT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-            'saldoAnteriorT.Colspan = 2
-            'saldoAnteriorT.HorizontalAlignment = 1
-
-
-
             tableSaldoTotal.AddCell(saldoGeneralR)
             tableSaldoTotal.AddCell(saldoGeneralT)
-            'tableSaldoAnterior.AddCell(saldoAnteriorR)
-            'tableSaldoAnterior.AddCell(saldoAnteriorT)
 
-            'pdfDoc.Add(tableSaldoAnterior)
-            'pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(table)
             pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(tableSaldoTotal)
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & variablesGlobales.reporteDeSaldosDeReservas, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteSaldosReserva)
+
         Catch ex As Exception
             MessageBox.Show(variablesGlobales.errorDe + ex.Message)
             MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
@@ -890,7 +870,7 @@ Public Class Reservas
 
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reporte_Acumulado_Reservas.pdf", FileMode.Create))
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteDeAcumuladoReservas, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -961,10 +941,13 @@ Public Class Reservas
 
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reporte_Acumulado_Reservas.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteDeAcumuladoReservas)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message())
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 

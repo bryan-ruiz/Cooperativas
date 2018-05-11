@@ -49,9 +49,9 @@ Partial Class VReporteIngresoCuentas
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(138, 33)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(381, 29)
+        Me.Label3.Size = New System.Drawing.Size(348, 29)
         Me.Label3.TabIndex = 41
-        Me.Label3.Text = "Reporte de Ingresos de Cuentas"
+        Me.Label3.Text = "Reporte Cuentas de Entradas"
         '
         'Label1
         '
