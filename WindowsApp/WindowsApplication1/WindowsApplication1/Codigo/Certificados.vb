@@ -610,18 +610,19 @@ Public Class Certificados
 
                 'Agrega todos los valores consultados al documento
                 pdfDoc.Add(table2)
-                pdfDoc.Add(New Paragraph(" "))
-                pdfDoc.Add(New Paragraph("                        Información de los certificados pagados a la fecha", FontStype3))
+                'pdfDoc.Add(New Paragraph(" "))
+                'pdfDoc.Add(New Paragraph("                        Información de los certificados pagados a la fecha", FontStype3))
                 pdfDoc.Add(New Paragraph(" "))
                 pdfDoc.Add(table)
-                pdfDoc.Add(New Paragraph(" "))
+                'pdfDoc.Add(New Paragraph(" "))
                 pdfDoc.Add(table3)
 
                 pdfDoc.Add(New Paragraph(" "))
-                pdfDoc.Add(New Paragraph("                        Acumulado de años anteriores: ¢ " + acum.ToString, FontStype3))
+                pdfDoc.Add(New Paragraph("                        Acumulado: ¢ " + acum.ToString, FontStype3))
+                pdfDoc.Add(New Paragraph("                        Total del Periodo: ¢ " + total.ToString, FontStype3))
 
-                pdfDoc.Add(New Paragraph(" "))
-                pdfDoc.Add(New Paragraph(" "))
+                'pdfDoc.Add(New Paragraph(" "))
+                'pdfDoc.Add(New Paragraph(" "))
                 pdfDoc.Add(New Paragraph(" "))
 
 
