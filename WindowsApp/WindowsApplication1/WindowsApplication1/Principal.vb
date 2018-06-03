@@ -177,8 +177,8 @@ Public Class Principal
 
                 Catch ex As Exception
                     MessageBox.Show("Error importando datos, favor verifique el formato del .xlsx en el Manual de Usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                    MessageBox.Show("Error causado debido a la excepción : " & vbCrLf & ex.Message)
-                End Try
+                MessageBox.Show("Error causado debido a la excepción : " & vbCrLf & ex.Message)
+            End Try
 
             End If
 

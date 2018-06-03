@@ -22,6 +22,7 @@ Public Class MensajesGlobales
     Public pathReporteCertificadosMorosidad As String = "C:\Reportes\reporte_Morosidad.pdf"
     Public pathReporteCertificadosPagosAldia As String = "C:\Reportes\reporte_Pago_Al_Dia.pdf"
     Public pathReporteCertificadosTodosLosPagos As String = "C:\Reportes\reporte_Todos_Los_Pagos.pdf"
+    Public pathReporteCertificadosRecibo As String = "C:\Reportes\reporte_Recibo_Certificados.pdf"
 
     'ENTRADAS
     Public pathReporteEntradas As String = "C:\Reportes\reporte_Entradas.pdf"

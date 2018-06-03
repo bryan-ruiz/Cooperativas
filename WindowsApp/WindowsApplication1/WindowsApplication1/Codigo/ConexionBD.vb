@@ -623,9 +623,14 @@ Public Class ConexionBD
         Dim MyList As New List(Of SocioClase)
         Try
             If tipoReporte = "Activos" Then
-                SQL = "SELECT SOCIOS.* FROM [SOCIOS] WHERE ((estado) = 'Activo')"
+                SQL = "SELECT SOCIOS.* 
+                        FROM [SOCIOS] 
+                        WHERE ((estado) = 'Activo')
+                        ORDER BY seccion "
             Else
-                SQL = "SELECT SOCIOS.* FROM [SOCIOS]"
+                SQL = "SELECT SOCIOS.* 
+                        FROM [SOCIOS]
+                        ORDER BY seccion "
             End If
 
             'pregunto antes si estoy conectado a la base de datos'

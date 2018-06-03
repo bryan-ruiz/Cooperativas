@@ -35,6 +35,7 @@ Partial Class Principal
         Me.CodigosDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItemReservas = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExcedentesMoverAReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,7 +48,6 @@ Partial Class Principal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -85,8 +85,8 @@ Partial Class Principal
         Me.CertificadosToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.CertificadosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CertificadosToolStripMenuItem.Name = "CertificadosToolStripMenuItem"
-        Me.CertificadosToolStripMenuItem.Size = New System.Drawing.Size(129, 39)
-        Me.CertificadosToolStripMenuItem.Text = "  Certificados  "
+        Me.CertificadosToolStripMenuItem.Size = New System.Drawing.Size(130, 39)
+        Me.CertificadosToolStripMenuItem.Text = "  Aportaciones"
         '
         'IngresosToolStripMenuItem
         '
@@ -145,6 +145,12 @@ Partial Class Principal
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
         Me.ToolStripMenuItem4.Size = New System.Drawing.Size(239, 22)
         Me.ToolStripMenuItem4.Text = "---------------------------------"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'CerrarPeriodoToolStripMenuItem
         '
@@ -210,7 +216,7 @@ Partial Class Principal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(113, 371)
+        Me.Label1.Location = New System.Drawing.Point(110, 392)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(740, 57)
         Me.Label1.TabIndex = 34
@@ -222,7 +228,7 @@ Partial Class Principal
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe Print", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(375, 443)
+        Me.Label2.Location = New System.Drawing.Point(372, 464)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(138, 85)
         Me.Label2.TabIndex = 35
@@ -239,12 +245,6 @@ Partial Class Principal
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 33
         Me.PictureBox1.TabStop = False
-        '
-        'ReportesToolStripMenuItem
-        '
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
-        Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'Principal
         '
