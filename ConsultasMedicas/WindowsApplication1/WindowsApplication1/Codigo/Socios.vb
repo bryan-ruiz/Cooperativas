@@ -78,15 +78,15 @@ Public Class Socios
                         'Para Estado
                         If valores.Item(15).Equals("Activo") Then
                             VAsociados.RadioButtonSociosActivo.Checked = True
-                            VAsociados.RadioButtonSociosRetirado.Checked = False
+                            VAsociados.RadioButtonSociosCerrado.Checked = False
                         End If
                         If valores.Item(15).Equals("Retirado") Then
                             VAsociados.RadioButtonSociosActivo.Checked = False
-                            VAsociados.RadioButtonSociosRetirado.Checked = True
+                            VAsociados.RadioButtonSociosCerrado.Checked = True
                         End If
 
-                    VAsociados.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
-                    VAsociados.TextBoxSociosNotasRetiro.Text = valores.Item(17).ToString()
+                    VAsociados.DateTimeSociosFechaCierre.Value = Date.Parse(valores.Item(16))
+                    VAsociados.TextBoxSociosNotasCierre.Text = valores.Item(17).ToString()
 
                 Else
                         MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
@@ -171,15 +171,15 @@ Public Class Socios
                         'Para Estado
                         If valores.Item(15).Equals("Activo") Then
                             VAsociados.RadioButtonSociosActivo.Checked = True
-                            VAsociados.RadioButtonSociosRetirado.Checked = False
+                            VAsociados.RadioButtonSociosCerrado.Checked = False
                         End If
                         If valores.Item(15).Equals("Retirado") Then
                             VAsociados.RadioButtonSociosActivo.Checked = False
-                            VAsociados.RadioButtonSociosRetirado.Checked = True
+                            VAsociados.RadioButtonSociosCerrado.Checked = True
                         End If
 
-                        VAsociados.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
-                        VAsociados.TextBoxSociosNotasRetiro.Text = valores.Item(17)
+                        VAsociados.DateTimeSociosFechaCierre.Value = Date.Parse(valores.Item(16))
+                        VAsociados.TextBoxSociosNotasCierre.Text = valores.Item(17)
 
                     Else
                         MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
@@ -255,8 +255,8 @@ Public Class Socios
         Dim direccion As String = VAsociados.TextBoxSociosDireccionResidencia.Text
         Dim genero As String = ""
         Dim estado As String = ""
-        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
-        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasRetiro.Text
+        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaCierre.Value.ToString("dd/MM/yyyy")
+        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasCierre.Text
         Dim menor As String = ""
         Dim numAsociadoExiste As Integer = 0
         Dim numCedulaExiste As Integer = 0
@@ -273,7 +273,7 @@ Public Class Socios
         If (VAsociados.RadioButtonSociosActivo.Checked = True) Then
             estado = VAsociados.RadioButtonSociosActivo.Text
         Else
-            estado = VAsociados.RadioButtonSociosRetirado.Text
+            estado = VAsociados.RadioButtonSociosCerrado.Text
         End If
 
         If (cedula2.Length < 4 Or cedula3.Length < 4) Then
@@ -356,8 +356,8 @@ Public Class Socios
         Dim genero As String = ""
         Dim estado As String = ""
         Dim menor As String = ""
-        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
-        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasRetiro.Text
+        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaCierre.Value.ToString("dd/MM/yyyy")
+        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasCierre.Text
 
         'Para el genero
         If (VAsociados.RadioButtonSociosMasculino.Checked = True) Then
@@ -370,7 +370,7 @@ Public Class Socios
         If (VAsociados.RadioButtonSociosActivo.Checked = True) Then
             estado = VAsociados.RadioButtonSociosActivo.Text
         Else
-            estado = VAsociados.RadioButtonSociosRetirado.Text
+            estado = VAsociados.RadioButtonSociosCerrado.Text
         End If
 
         If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or telefono2 = "" Or cuota = "" Or direccion = "") Then
@@ -408,7 +408,7 @@ Public Class Socios
         VAsociados.TextBoxSociosEdad.Text = ""
 
         VAsociados.TextBoxSociosDireccionResidencia.Text = ""
-        VAsociados.TextBoxSociosNotasRetiro.Text = ""
+        VAsociados.TextBoxSociosNotasCierre.Text = ""
         VAsociados.TextBoxSociosConsultarAsociado.Text = ""
     End Sub
 
@@ -1415,8 +1415,8 @@ Public Class Socios
         Dim genero As String = ""
         Dim estado As String = ""
         Dim menor As String = ""
-        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
-        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasRetiro.Text
+        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaCierre.Value.ToString("dd/MM/yyyy")
+        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasCierre.Text
 
         If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or telefono2 = "" Or cuota = "" Or direccion = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)

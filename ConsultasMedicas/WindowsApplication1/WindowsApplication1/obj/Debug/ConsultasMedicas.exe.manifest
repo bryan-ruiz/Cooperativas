@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsultasMedicas.exe" size="6545328">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsultasMedicas.exe" size="6959024">
       <assemblyIdentity name="ConsultasMedicas" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>v6K9+aW4i5W72LNT5+ttu9P7bZ1bzvXlwyQBwlC5OPw=</dsig:DigestValue>
+        <dsig:DigestValue>eUKwG+k40sIuc0s7RTOqjDSF7OBhx7i9dYH+ShMduro=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

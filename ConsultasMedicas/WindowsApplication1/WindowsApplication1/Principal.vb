@@ -9,9 +9,6 @@ Public Class Principal
         VAsociados.Show()
     End Sub
 
-    Private Sub ComitésToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComitésToolStripMenuItem.Click
-        VComites.Show()
-    End Sub
 
     Private Sub CertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CertificadosToolStripMenuItem.Click
         VCertificados.Show()
@@ -311,4 +308,7 @@ Public Class Principal
         VReportesTodos.Show()
     End Sub
 
+    Private Sub ExpedientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExpedientesToolStripMenuItem.Click
+        VExpediente.Show()
+    End Sub
 End Class

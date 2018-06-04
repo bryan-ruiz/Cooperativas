@@ -362,6 +362,11 @@ ConsultasMedicas
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="M:WindowsApplication1.Pacientes.imprimirReciboActual">
+ <summary>
+ 
+ </summary>
+</member>
 <member name="M:WindowsApplication1.ConexionBD.eliminarCuenta(System.String)">
                  CUENTAS
 </member>

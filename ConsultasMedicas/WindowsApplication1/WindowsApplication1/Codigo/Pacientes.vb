@@ -10,9 +10,9 @@ Public Class Pacientes
     Dim informeEconomico As InformeEconomico = New InformeEconomico
 
     'consulta un asociado
-    Public Sub consultarAsociado()
+    Public Sub consultarPaciente()
 
-        Dim valores As List(Of String)
+        Dim valores As List(Of PacienteClase)
         Dim cedula As String = VAsociados.TextBoxSociosCedula.Text
         Dim cedula2 As String = VAsociados.TextBoxSociosCedula2.Text
         Dim cedula3 As String = VAsociados.TextBoxSociosCedula3.Text
@@ -22,17 +22,17 @@ Public Class Pacientes
 
 
         If (consultarAsociado = "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.mensajeCedulaNula, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             limpiar()
         Else
             Try
                 BD.ConectarBD()
 
-                valores = BD.consultarAsociadoCedOrNum(consultarAsociado)
+                valores = BD.consultarPacienteXCedula(consultarAsociado)
 
                 If valores.Count <> 0 Then
 
-                    Dim myCedula As String = valores(0)
+                    Dim myCedula As String = valores(0).cedula
                     Dim parts As String() = myCedula.Split(New Char() {"-"c})
                     'Dim part As String
 
@@ -44,49 +44,48 @@ Public Class Pacientes
                     VAsociados.TextBoxSociosCedula2.Text = parts(1)
                     VAsociados.TextBoxSociosCedula3.Text = parts(2)
 
-                    VAsociados.TextBoxSociosNombre.Text = valores.Item(2)
-                    VAsociados.TextBoxSocios1erApellido.Text = valores.Item(3)
-                    VAsociados.TextBoxSocios2doApellido.Text = valores.Item(4)
-                    VAsociados.DateTimeSociosFechaNacimiento.Value = Date.Parse(valores.Item(5))
+                    VAsociados.TextBoxSociosNombre.Text = valores(0).nombre
+                    VAsociados.TextBoxSocios1erApellido.Text = valores(0).primerApellido
+                    VAsociados.TextBoxSocios2doApellido.Text = valores(0).segundoApellido
+                    VAsociados.DateTimeSociosFechaNacimiento.Value = Date.Parse(valores(0).fechaNacimiento)
+                    VAsociados.TextBoxSociosEdad.Text = valores(0).edad
 
-                    Dim tel As String = valores(6)
+
+                    Dim tel As String = valores(0).telefonoPersonal
                     Dim telefonos As String() = tel.Split(New Char() {"-"c})
                     VAsociados.TextBoxSociosTelefono.Text = telefonos(0)
                     VAsociados.TextBoxSociosTelefono2.Text = telefonos(1)
 
-                    VAsociados.TextBoxSociosEdad.Text = valores.Item(7)
+                    Dim tel2 As String = valores(0).telefonoTrabajo
+                    Dim telefonos2 As String() = tel2.Split(New Char() {"-"c})
+                    VAsociados.TextBoxSociosTelefonoTrabajo.Text = telefonos2(0)
+                    VAsociados.TextBoxSociosTelefonoTrabajo2.Text = telefonos2(1)
 
-                    VAsociados.DateTimeSociosFechaIngreso.Value = Date.Parse(valores.Item(10))
-                    ' VAsociados.TextBoxSociosSeccion.Text = valores.Item(11)
-
-                    Dim sec As String = valores(11)
-                    Dim secciones As String() = sec.Split(New Char() {"-"c})
-
-
-
-                    VAsociados.TextBoxSociosDireccionResidencia.Text = valores.Item(13)
+                    VAsociados.DateTimeSociosFechaIngreso.Value = Date.Parse(valores(0).fechaIngreso)
+                    VAsociados.TextBoxSociosDireccionResidencia.Text = valores(0).direccionResidencia
+                    VAsociados.TextBoxSociosDireccionTrabajo.Text = valores(0).direccionTrabajo
 
                     'Para Genero
-                    If valores.Item(14).Equals("Masculino") Then
+                    If valores(0).genero.Equals("Masculino") Then
                         VAsociados.RadioButtonSociosMasculino.Checked = True
                         VAsociados.RadioButtonSociosFemenino.Checked = False
                     End If
-                    If valores.Item(14).Equals("Femenino") Then
+                    If valores(0).genero.Equals("Femenino") Then
                         VAsociados.RadioButtonSociosFemenino.Checked = True
                         VAsociados.RadioButtonSociosMasculino.Checked = False
                     End If
                     'Para Estado
-                    If valores.Item(15).Equals("Activo") Then
+                    If valores(0).estado.Equals("Activo") Then
                         VAsociados.RadioButtonSociosActivo.Checked = True
-                        VAsociados.RadioButtonSociosRetirado.Checked = False
+                        VAsociados.RadioButtonSociosCerrado.Checked = False
                     End If
-                    If valores.Item(15).Equals("Retirado") Then
+                    If valores(0).estado.Equals("Cerrado") Then
                         VAsociados.RadioButtonSociosActivo.Checked = False
-                        VAsociados.RadioButtonSociosRetirado.Checked = True
+                        VAsociados.RadioButtonSociosCerrado.Checked = True
                     End If
 
-                    VAsociados.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
-                    VAsociados.TextBoxSociosNotasRetiro.Text = valores.Item(17).ToString()
+                    VAsociados.DateTimeSociosFechaCierre.Value = Date.Parse(valores(0).fechaCierre)
+                    VAsociados.TextBoxSociosNotasCierre.Text = valores(0).notasCierre
 
                 Else
                     MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
@@ -171,15 +170,15 @@ Public Class Pacientes
                         'Para Estado
                         If valores.Item(15).Equals("Activo") Then
                             VAsociados.RadioButtonSociosActivo.Checked = True
-                            VAsociados.RadioButtonSociosRetirado.Checked = False
+                            VAsociados.RadioButtonSociosCerrado.Checked = False
                         End If
                         If valores.Item(15).Equals("Retirado") Then
                             VAsociados.RadioButtonSociosActivo.Checked = False
-                            VAsociados.RadioButtonSociosRetirado.Checked = True
+                            VAsociados.RadioButtonSociosCerrado.Checked = True
                         End If
 
-                        VAsociados.DateTimeSociosFechaRetiro.Value = Date.Parse(valores.Item(16))
-                        VAsociados.TextBoxSociosNotasRetiro.Text = valores.Item(17)
+                        VAsociados.DateTimeSociosFechaCierre.Value = Date.Parse(valores.Item(16))
+                        VAsociados.TextBoxSociosNotasCierre.Text = valores.Item(17)
 
                     Else
                         MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
@@ -224,7 +223,7 @@ Public Class Pacientes
         Try
             BD.ConectarBD()
 
-            listaNumAsociados = BD.obtenerNumCedulaDeAsociado(numCedula)
+            listaNumAsociados = BD.obtenerNumCedulaDelPaciente(numCedula)
             cantidad = listaNumAsociados.Count
 
             BD.CerrarConexion()
@@ -237,7 +236,7 @@ Public Class Pacientes
 
 
     'Insertar Socio
-    Public Sub insertar()
+    Public Sub insertarPaciente()
         Dim cedula As String = VAsociados.TextBoxSociosCedula.Text
         Dim cedula2 As String = VAsociados.TextBoxSociosCedula2.Text
         Dim cedula3 As String = VAsociados.TextBoxSociosCedula3.Text
@@ -246,19 +245,19 @@ Public Class Pacientes
         Dim apellidoUno As String = VAsociados.TextBoxSocios1erApellido.Text
         Dim apellidoDos As String = VAsociados.TextBoxSocios2doApellido.Text
         Dim fechaNacimiento As Date = VAsociados.DateTimeSociosFechaNacimiento.Value.ToString("dd/MM/yyyy")
+        Dim edad As String = VAsociados.TextBoxSociosEdad.Text
         Dim telefono As String = VAsociados.TextBoxSociosTelefono.Text
         Dim telefono2 As String = VAsociados.TextBoxSociosTelefono2.Text
-        Dim cuota As String = VAsociados.TextBoxSociosEdad.Text
-
+        Dim telefonoTrabajo As String = VAsociados.TextBoxSociosTelefonoTrabajo.Text
+        Dim telefonoTrabajo2 As String = VAsociados.TextBoxSociosTelefonoTrabajo2.Text
         Dim fechaIngreso As Date = VAsociados.DateTimeSociosFechaIngreso.Value.ToString("dd/MM/yyyy")
-
-        Dim direccion As String = VAsociados.TextBoxSociosDireccionResidencia.Text
+        Dim direccionResidencia As String = VAsociados.TextBoxSociosDireccionResidencia.Text
+        Dim direccionTrabajo As String = VAsociados.TextBoxSociosDireccionTrabajo.Text
         Dim genero As String = ""
         Dim estado As String = ""
-        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
-        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasRetiro.Text
-        Dim menor As String = ""
-        Dim numAsociadoExiste As Integer = 0
+        Dim fechaCierre As Date = VAsociados.DateTimeSociosFechaCierre.Value.ToString("dd/MM/yyyy")
+        Dim notasCierre As String = VAsociados.TextBoxSociosNotasCierre.Text
+
         Dim numCedulaExiste As Integer = 0
 
         'Para el genero
@@ -273,14 +272,14 @@ Public Class Pacientes
         If (VAsociados.RadioButtonSociosActivo.Checked = True) Then
             estado = VAsociados.RadioButtonSociosActivo.Text
         Else
-            estado = VAsociados.RadioButtonSociosRetirado.Text
+            estado = VAsociados.RadioButtonSociosCerrado.Text
         End If
 
         If (cedula2.Length < 4 Or cedula3.Length < 4) Then
             MessageBox.Show(variablesGlobales.mensajeCedulaFormato, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             limpiar()
         Else
-            If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or cuota = "" Or direccion = "") Then
+            If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "") Then
                 MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Else
                 Try
@@ -300,22 +299,34 @@ Public Class Pacientes
 
                     Dim insertado As Integer = 0
 
-                    '   If (telefono = "") Then
-                    '  insertado = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, nombre, apellidoUno, apellidoDos, fechaNacimiento,
-                    ' telefono + "-" + telefono2, cuota, beneficiario, fechaIngreso,
-                    '                                            " " + "-" + " ", especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
+                    'si telefono personal y del trabajo son NULL
+                    If (telefono = "" And telefono2 = "" And telefonoTrabajo = "" And telefonoTrabajo2 = "") Then
+                        insertado = BD.insertarPaciente(cedula + "-" + cedula2 + "-" + cedula3, nombre, apellidoUno, apellidoDos, fechaNacimiento, edad,
+                                                   "1111-1111", "1111-1111",
+                                                   fechaIngreso, direccionResidencia, direccionTrabajo, genero, estado, fechaCierre, notasCierre)
+                    End If
+                    'si telefono personal NULL trabajo Not Null
+                    If (telefono = "" And telefono2 = "" And telefonoTrabajo <> "" And telefonoTrabajo2 <> "") Then
+                        insertado = BD.insertarPaciente(cedula + "-" + cedula2 + "-" + cedula3, nombre, apellidoUno, apellidoDos, fechaNacimiento, edad,
+                                                   "1111-1111", telefonoTrabajo + "-" + telefonoTrabajo2,
+                                                   fechaIngreso, direccionResidencia, direccionTrabajo, genero, estado, fechaCierre, notasCierre)
+                    End If
+                    'si telefono personal NOT NULL trabajo NULL
+                    If (telefono <> "" And telefono2 <> "" And telefonoTrabajo = "" And telefonoTrabajo2 = "") Then
+                        insertado = BD.insertarPaciente(cedula + "-" + cedula2 + "-" + cedula3, nombre, apellidoUno, apellidoDos, fechaNacimiento, edad,
+                                                   telefono + "-" + telefono2, "1111-1111",
+                                                   fechaIngreso, direccionResidencia, direccionTrabajo, genero, estado, fechaCierre, notasCierre)
+                    End If
+                    'si telefono personal NOT NULL & trabajo NOT NULL
+                    If (telefono <> "" And telefono2 <> "" And telefonoTrabajo <> "" And telefonoTrabajo2 <> "") Then
+                        insertado = BD.insertarPaciente(cedula + "-" + cedula2 + "-" + cedula3, nombre, apellidoUno, apellidoDos, fechaNacimiento, edad,
+                                                   telefono + "-" + telefono2, telefonoTrabajo + "-" + telefonoTrabajo2,
+                                                   fechaIngreso, direccionResidencia, direccionTrabajo, genero, estado, fechaCierre, notasCierre)
+                    End If
 
-                    'Else
+                    Dim expedienteXSocio As Integer = BD.insertarExpedienteXSocio(cedula + "-" + cedula2 + "-" + cedula3, fechaIngreso, "", "", "", "", "", "", "", "")
 
-                    'insertado = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento,
-                    'telefono + "-" + telefono2, cuota, responsable, beneficiario, fechaIngreso,
-                    'seccion + "-" + seccion2, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
-                    'End If
-
-                    Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula + "-" + cedula2 + "-" + cedula3, "numasociadoBORRAR", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", fechaIngreso, fechaIngreso,
-                    fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso)
-
-                    If (insertado = 1 And certificadoXSocio = 1) Then
+                    If (insertado = 1 And expedienteXSocio = 1) Then
                         MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                         limpiar()
                     Else
@@ -332,32 +343,37 @@ Public Class Pacientes
         End If
     End Sub
 
-    'Actualizar Info de Socios'
+    'Actualizar Info de Pacientes'
     Public Sub actualizar()
 
         Dim cedula As String = VAsociados.TextBoxSociosCedula.Text
         Dim cedula2 As String = VAsociados.TextBoxSociosCedula2.Text
         Dim cedula3 As String = VAsociados.TextBoxSociosCedula3.Text
         Dim cedulaTotal As String = cedula + "-" + cedula2 + "-" + cedula3
-        Dim telefono As String = VAsociados.TextBoxSociosTelefono.Text
-        Dim telefono2 As String = VAsociados.TextBoxSociosTelefono2.Text
-        Dim telefonoTotal As String = telefono + "-" + telefono2
 
         Dim nombre As String = VAsociados.TextBoxSociosNombre.Text
         Dim apellidoUno As String = VAsociados.TextBoxSocios1erApellido.Text
         Dim apellidoDos As String = VAsociados.TextBoxSocios2doApellido.Text
         Dim fechaNacimiento As Date = VAsociados.DateTimeSociosFechaNacimiento.Value.ToString("dd/MM/yyyy")
-        Dim cuota As String = VAsociados.TextBoxSociosEdad.Text
+        Dim edad As String = VAsociados.TextBoxSociosEdad.Text
+
+        Dim telefono As String = VAsociados.TextBoxSociosTelefono.Text
+        Dim telefono2 As String = VAsociados.TextBoxSociosTelefono2.Text
+        Dim telefonoTotal As String = telefono + "-" + telefono2
+
+        Dim telefonoTrabajo As String = VAsociados.TextBoxSociosTelefonoTrabajo.Text
+        Dim telefonoTrabajo2 As String = VAsociados.TextBoxSociosTelefonoTrabajo2.Text
+        Dim telefonoTotalTrabajo As String = telefonoTrabajo + "-" + telefonoTrabajo2
 
         Dim fechaIngreso As Date = VAsociados.DateTimeSociosFechaIngreso.Value.ToString("dd/MM/yyyy")
 
-
-        Dim direccion As String = VAsociados.TextBoxSociosDireccionResidencia.Text
+        Dim direccionResidencia As String = VAsociados.TextBoxSociosDireccionResidencia.Text
+        Dim direccionTrabajo As String = VAsociados.TextBoxSociosDireccionTrabajo.Text
         Dim genero As String = ""
         Dim estado As String = ""
-        Dim menor As String = ""
-        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
-        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasRetiro.Text
+
+        Dim fechaCierre As Date = VAsociados.DateTimeSociosFechaCierre.Value.ToString("dd/MM/yyyy")
+        Dim notasCierre As String = VAsociados.TextBoxSociosNotasCierre.Text
 
         'Para el genero
         If (VAsociados.RadioButtonSociosMasculino.Checked = True) Then
@@ -370,16 +386,38 @@ Public Class Pacientes
         If (VAsociados.RadioButtonSociosActivo.Checked = True) Then
             estado = VAsociados.RadioButtonSociosActivo.Text
         Else
-            estado = VAsociados.RadioButtonSociosRetirado.Text
+            estado = VAsociados.RadioButtonSociosCerrado.Text
         End If
 
-        If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or telefono2 = "" Or cuota = "" Or direccion = "") Then
+        If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
-                Dim modificado = BD.actualizarSocio(cedulaTotal, "", nombre, apellidoUno, apellidoDos, fechaNacimiento, telefonoTotal, cuota, "", "", fechaIngreso, "", "",
-                                                    direccion, genero, estado, fechaRetiro, notasRetiro, menor)
+
+                Dim modificado As Integer = 0
+
+                'si telefono personal y del trabajo son NULL
+                If (telefono = "" And telefono2 = "" And telefonoTrabajo = "" And telefonoTrabajo2 = "") Then
+                    modificado = BD.actualizarPaciente(cedulaTotal, nombre, apellidoUno, apellidoDos, fechaNacimiento, edad, "1111-1111", "1111-1111",
+                                                    fechaIngreso, direccionResidencia, direccionTrabajo, genero, estado, fechaCierre, notasCierre)
+                End If
+                'si telefono personal NULL trabajo Not Null
+                If (telefono = "" And telefono2 = "" And telefonoTrabajo <> "" And telefonoTrabajo2 <> "") Then
+                    modificado = BD.actualizarPaciente(cedulaTotal, nombre, apellidoUno, apellidoDos, fechaNacimiento, edad, "1111-1111", telefonoTotalTrabajo,
+                                                    fechaIngreso, direccionResidencia, direccionTrabajo, genero, estado, fechaCierre, notasCierre)
+                End If
+                'si telefono personal NOT NULL trabajo NULL
+                If (telefono <> "" And telefono2 <> "" And telefonoTrabajo = "" And telefonoTrabajo2 = "") Then
+                    modificado = BD.actualizarPaciente(cedulaTotal, nombre, apellidoUno, apellidoDos, fechaNacimiento, edad, telefonoTotal, "1111-1111",
+                                                    fechaIngreso, direccionResidencia, direccionTrabajo, genero, estado, fechaCierre, notasCierre)
+                End If
+                'si telefono personal NOT NULL & trabajo NOT NULL
+                If (telefono <> "" And telefono2 <> "" And telefonoTrabajo <> "" And telefonoTrabajo2 <> "") Then
+                    modificado = BD.actualizarPaciente(cedulaTotal, nombre, apellidoUno, apellidoDos, fechaNacimiento, edad, telefonoTotal, telefonoTotalTrabajo,
+                                                    fechaIngreso, direccionResidencia, direccionTrabajo, genero, estado, fechaCierre, notasCierre)
+                End If
+
                 If modificado = 1 Then
                     MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                     limpiar()
@@ -394,22 +432,24 @@ Public Class Pacientes
         End If
     End Sub
 
-    'Limpia los campos de Socios'
+    'Limpia los campos de Pacientes'
     Public Sub limpiar()
+        VAsociados.TextBoxSociosConsultarAsociado.Text = ""
         VAsociados.TextBoxSociosCedula.Text = ""
         VAsociados.TextBoxSociosCedula2.Text = ""
         VAsociados.TextBoxSociosCedula3.Text = ""
-
         VAsociados.TextBoxSociosNombre.Text = ""
         VAsociados.TextBoxSocios1erApellido.Text = ""
         VAsociados.TextBoxSocios2doApellido.Text = ""
+        VAsociados.TextBoxSociosEdad.Text = ""
         VAsociados.TextBoxSociosTelefono.Text = ""
         VAsociados.TextBoxSociosTelefono2.Text = ""
-        VAsociados.TextBoxSociosEdad.Text = ""
-
+        VAsociados.TextBoxSociosTelefonoTrabajo.Text = ""
+        VAsociados.TextBoxSociosTelefonoTrabajo2.Text = ""
         VAsociados.TextBoxSociosDireccionResidencia.Text = ""
-        VAsociados.TextBoxSociosNotasRetiro.Text = ""
-        VAsociados.TextBoxSociosConsultarAsociado.Text = ""
+        VAsociados.TextBoxSociosDireccionTrabajo.Text = ""
+        VAsociados.TextBoxSociosNotasCierre.Text = ""
+
     End Sub
 
     'Recibe Activos o Todos, como parámetro para el tipo de reporte de asociados
@@ -1415,8 +1455,8 @@ Public Class Pacientes
         Dim genero As String = ""
         Dim estado As String = ""
         Dim menor As String = ""
-        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaRetiro.Value.ToString("dd/MM/yyyy")
-        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasRetiro.Text
+        Dim fechaRetiro As Date = VAsociados.DateTimeSociosFechaCierre.Value.ToString("dd/MM/yyyy")
+        Dim notasRetiro As String = VAsociados.TextBoxSociosNotasCierre.Text
 
         If (cedula = "" Or cedula2 = "" Or cedula3 = "" Or nombre = "" Or apellidoUno = "" Or apellidoDos = "" Or telefono = "" Or telefono2 = "" Or cuota = "" Or direccion = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)

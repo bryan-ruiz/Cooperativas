@@ -26,7 +26,7 @@ Partial Class Principal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.GestionUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IngresosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ComitésToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExpedientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónCooperativaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,7 +40,7 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionUsuariosToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.ComitésToolStripMenuItem, Me.CertificadosToolStripMenuItem, Me.ConfiguraciónToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionUsuariosToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.ExpedientesToolStripMenuItem, Me.CertificadosToolStripMenuItem, Me.ConfiguraciónToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(912, 43)
@@ -65,14 +65,14 @@ Partial Class Principal
         Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(151, 39)
         Me.IngresosToolStripMenuItem.Text = "  Motivo Consulta "
         '
-        'ComitésToolStripMenuItem
+        'ExpedientesToolStripMenuItem
         '
-        Me.ComitésToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.folder2
-        Me.ComitésToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.ComitésToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ComitésToolStripMenuItem.Name = "ComitésToolStripMenuItem"
-        Me.ComitésToolStripMenuItem.Size = New System.Drawing.Size(125, 39)
-        Me.ComitésToolStripMenuItem.Text = "  Expedientes "
+        Me.ExpedientesToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.folder2
+        Me.ExpedientesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ExpedientesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ExpedientesToolStripMenuItem.Name = "ExpedientesToolStripMenuItem"
+        Me.ExpedientesToolStripMenuItem.Size = New System.Drawing.Size(125, 39)
+        Me.ExpedientesToolStripMenuItem.Text = "  Expedientes "
         '
         'CertificadosToolStripMenuItem
         '
@@ -182,7 +182,7 @@ Partial Class Principal
     End Sub
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents GestionUsuariosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ComitésToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExpedientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CertificadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents IngresosToolStripMenuItem As ToolStripMenuItem

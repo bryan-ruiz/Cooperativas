@@ -14,19 +14,20 @@ Public Class PacienteClase
     Public direccionTrabajo As String
     Public genero As String
     Public estado As String
-    Public fechaRetiro As DateTime
-    Public notasRetiro As String
+    Public fechaCierre As DateTime
+    Public notasCierre As String
 
-    Public Sub socioClaseCostructor(ByVal cedulap As String, ByVal nombrep As String, ByVal primerApellidop As String, ByVal segundoApellidop As String,
+    Public Sub pacienteClaseConstructor(ByVal cedulap As String, ByVal nombrep As String, ByVal primerApellidop As String, ByVal segundoApellidop As String,
                                     ByVal fechaNacimientop As DateTime, ByVal edadp As String, ByVal telefonoPersonalp As String,
                                     ByVal telefonoTrabajop As String, ByVal fechaIngresop As DateTime, ByVal direccionResidenciap As String,
                                     ByVal direccionTrabajop As String, ByVal generop As String, ByVal estadop As String,
-                                    ByVal fechaRetirop As DateTime, ByVal notasRetirop As String)
+                                    ByVal fechaCierrep As DateTime, ByVal notasCierrep As String)
         nombre = nombrep
         cedula = cedulap
         primerApellido = primerApellidop
         segundoApellido = segundoApellidop
         fechaNacimiento = fechaNacimientop
+        edad = edadp
         telefonoPersonal = telefonoPersonalp
         telefonoTrabajo = telefonoTrabajop
         fechaIngreso = fechaIngresop
@@ -34,8 +35,8 @@ Public Class PacienteClase
         direccionTrabajo = direccionTrabajop
         genero = generop
         estado = estadop
-        fechaRetiro = fechaRetirop
-        notasRetiro = notasRetirop
+        fechaCierre = fechaCierrep
+        notasCierre = notasCierrep
 
     End Sub
 

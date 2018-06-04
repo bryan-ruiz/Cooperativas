@@ -129,6 +129,7 @@
     <Compile Include="Clases\CuentaClase.vb" />
     <Compile Include="Clases\CuotaAdmisionClase.vb" />
     <Compile Include="Clases\EncabezadoClase.vb" />
+    <Compile Include="Clases\ExpedienteClase.vb" />
     <Compile Include="Clases\GastoClase.vb" />
     <Compile Include="Clases\IngresoClase.vb" />
     <Compile Include="Clases\PacienteClase.vb" />
@@ -140,6 +141,7 @@
     <Compile Include="Clases\SocioClase.vb" />
     <Compile Include="Codigo\CertificadosAlDia.vb" />
     <Compile Include="Codigo\Certificados.vb" />
+    <Compile Include="Codigo\Expedientes.vb" />
     <Compile Include="Codigo\Pacientes.vb" />
     <Compile Include="Codigo\ReservasSalidas.vb" />
     <Compile Include="Codigo\ReservasEntradas.vb" />
@@ -165,6 +167,12 @@
       <DependentUpon>VCerrarPeriodoFechasLimite.vb</DependentUpon>
     </Compile>
     <Compile Include="VCerrarPeriodoFechasLimite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VExpediente.Designer.vb">
+      <DependentUpon>VExpediente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VExpediente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VMotivoConsulta.Designer.vb">
@@ -463,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VAsociados.resx">
       <DependentUpon>VAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VExpediente.resx">
+      <DependentUpon>VExpediente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VMotivoConsulta.resx">
       <DependentUpon>VMotivoConsulta.vb</DependentUpon>

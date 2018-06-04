@@ -11,6 +11,7 @@
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
     Dim informeEconomico As InformeEconomico = New InformeEconomico
     Dim cuotaAdmision As CuotaAdmision = New CuotaAdmision
+    Dim pacientes As Pacientes = New Pacientes
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.WindowState = FormWindowState.Maximized, Para maximizar la pantalla'
@@ -75,33 +76,19 @@
     End Sub
 
 
-    Private Sub TextBoxSociosCuotaMatricula_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosEdad.KeyPress
-        Me.TextBoxSociosEdad.MaxLength = 15
-        If Asc(e.KeyChar) <> 8 Then
-            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
-                e.Handled = True
-            End If
-        End If
-    End Sub
-
-    'CONSULTAR
-    Private Sub ButtonAsociadosBuscar_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscar.Click
-        socios.consultarAsociado()
-    End Sub
-
     Private Sub ButtonAsociadosAgregar_Click(sender As Object, e As EventArgs) Handles PacientesButtonAgregarPaciente.Click
-        socios.insertar()
+        pacientes.insertarPaciente()
     End Sub
 
     Private Sub ButtonSociosModificar_Click(sender As Object, e As EventArgs) Handles PacientesButtonModificar.Click
-        socios.actualizar()
+        pacientes.actualizar()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles PacientesButtonLimpiar.Click
-        socios.limpiar()
+        pacientes.limpiar()
     End Sub
 
-    Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
+    Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
@@ -113,12 +100,12 @@
         VInformacionAnexoAsociados.Show()
     End Sub
 
-    Private Sub RadioButtonSociosRetirado_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonSociosRetirado.CheckedChanged
-        If RadioButtonSociosRetirado.Checked = True Then
-            TextBoxSociosNotasRetiro.Enabled = True
-            DateTimeSociosFechaRetiro.Enabled = True
-            TextBoxSociosNotasRetiro.Visible = True
-            DateTimeSociosFechaRetiro.Visible = True
+    Private Sub RadioButtonSociosRetirado_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonSociosCerrado.CheckedChanged
+        If RadioButtonSociosCerrado.Checked = True Then
+            TextBoxSociosNotasCierre.Enabled = True
+            DateTimeSociosFechaCierre.Enabled = True
+            TextBoxSociosNotasCierre.Visible = True
+            DateTimeSociosFechaCierre.Visible = True
             LabelNotasRetiro.Visible = True
             LabelFechaRetiro.Visible = True
         End If
@@ -126,10 +113,10 @@
 
     Private Sub RadioButtonSociosActivo_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonSociosActivo.CheckedChanged
         If RadioButtonSociosActivo.Checked = True Then
-            TextBoxSociosNotasRetiro.Enabled = False
-            DateTimeSociosFechaRetiro.Enabled = False
-            TextBoxSociosNotasRetiro.Visible = False
-            DateTimeSociosFechaRetiro.Visible = False
+            TextBoxSociosNotasCierre.Enabled = False
+            DateTimeSociosFechaCierre.Enabled = False
+            TextBoxSociosNotasCierre.Visible = False
+            DateTimeSociosFechaCierre.Visible = False
             LabelNotasRetiro.Visible = False
             LabelFechaRetiro.Visible = False
         End If
@@ -151,13 +138,6 @@
 
     End Sub
 
-    Private Sub TextBoxSociosConsultarAsociado_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles TextBoxSociosConsultarAsociado.KeyPress
-        'TextBoxSociosConsultarAsociado.PasswordChar = "*"
-        If e.KeyChar = ChrW(Keys.Enter) Then
-            Call ButtonAsociadosBuscar_Click(sender, e)
-        End If
-    End Sub
-
     Private Sub ExcedentesPorAsociadoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         VExcedentesCorrespondientes.Show()
     End Sub
@@ -166,13 +146,58 @@
         socios.reporteAsociadosXSeccion()
     End Sub
 
-    Private Sub AbrirExpedienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbrirExpedienteToolStripMenuItem.Click
+    Private Sub AbrirExpedienteToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'abrir expediente
     End Sub
 
     Private Sub PacientesButtonAbrirExpediente_Click(sender As Object, e As EventArgs) Handles PacientesButtonAbrirExpediente.Click
         'abrir expediente
         'VImagenes.Show()
-        VMotivoConsulta.Show()
+        'VMotivoConsulta.Show()
+        VExpediente.Show()
+
+    End Sub
+
+    Private Sub TextBoxSociosConsultarAsociado_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles TextBoxSociosConsultarAsociado.KeyPress
+        'TextBoxSociosConsultarAsociado.PasswordChar = "*"
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Call ButtonAsociadosBuscar_Click(sender, e)
+        End If
+    End Sub
+
+    'Valida que ingrese números en el campo de edad y que no ingrese más de 3 dígitos
+    Private Sub TextBoxSociosEdad_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosEdad.KeyPress
+        Me.TextBoxSociosEdad.MaxLength = 3
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBoxSociosTelefonoTrabajo_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosTelefonoTrabajo.KeyPress
+        Me.TextBoxSociosTelefonoTrabajo.MaxLength = 4
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBoxSociosTelefonoTrabajo2_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TextBoxSociosTelefonoTrabajo2.KeyPress
+        Me.TextBoxSociosTelefonoTrabajo2.MaxLength = 4
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub ButtonAsociadosBuscar_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscar.Click
+        pacientes.consultarPaciente()
+    End Sub
+
+    Private Sub PacientesButtonBuscarXNombre_Click(sender As Object, e As EventArgs) Handles PacientesButtonBuscarXNombre.Click
+        MsgBox("Funcionalidad no desarrollada, estado en Progreso")
     End Sub
 End Class

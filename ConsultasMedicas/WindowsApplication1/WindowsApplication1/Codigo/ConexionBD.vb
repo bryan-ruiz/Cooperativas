@@ -3840,6 +3840,187 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+    '///////////////// CERTIFICADOS ///////////////////
+
+    'Selecciona id, cedula, etc...
+    Function consultarPacienteXCedula(ByVal cedula As String) As List(Of PacienteClase)
+        Dim MyList As New List(Of PacienteClase)
+        Try
+            SQL = "SELECT PACIENTES.*
+                    FROM [PACIENTES]
+                    WHERE ((PACIENTES.cedula) = '" & cedula & "') "
+            ' MsgBox("XXXXXX")
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim nuevosocio As PacienteClase = New PacienteClase
+                    'MsgBox("XXXXXX1")
+                    'MsgBox(String.Concat("... 1...", reader.GetString(1), "...2", reader.GetString(2)))
+                    'MsgBox("XXXXXX2")
+
+                    nuevosocio.pacienteClaseConstructor(reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4),
+                                                        reader.GetDateTime(5), reader.GetString(6), reader.GetString(7), reader.GetString(8),
+                                                        reader.GetDateTime(9), reader.GetString(10), reader.GetString(11), reader.GetString(12),
+                                                        reader.GetString(13), reader.GetDateTime(14), reader.GetString(15))
+                    ' MsgBox(String.Concat("... 1", reader.GetString(1), "...2", reader.GetString(2)))
+
+                    MyList.Add(nuevosocio)
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de " + ex.ToString)
+        End Try
+        Return MyList
+    End Function
+
+    '@obtiene el num de ced del paciente para validar luego que no exista
+    Function obtenerNumCedulaDelPaciente(ByVal id As String) As List(Of String)
+        Dim MyList As New List(Of String)
+        Try
+            SQL = "SELECT nombre FROM [PACIENTES]" &
+                "WHERE PACIENTES.cedula = ('" + id + "')"
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+    'Inserta un paciente
+    Function insertarPaciente(ByVal cedula As String, ByVal nombre As String, ByVal apellidoUno As String, ByVal apellidoDos As String,
+                              ByVal fechaNacimiento As Date, ByVal edad As String, ByVal telefono As String, ByVal telefonoTrabajo As String,
+                              ByVal fechaIngreso As Date, ByVal direccionResidencia As String, ByVal direccionTrabajo As String,
+                              ByVal genero As String, ByVal estado As String, ByVal fechaCierre As Date, notasCierre As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "INSERT INTO [PACIENTES]" &
+           "(cedula, nombre, primerApellido, segundoApellido, fechaNacimiento, edad, telefonoPersonal, telefonoTrabajo, fechaIngreso, direccionResidencia, direccionTrabajo, genero, estadoExpediente, fechaCierre, notasCierre)" &
+            "VALUES ('" + cedula + "', '" + nombre + "', '" + apellidoUno + "', '" + apellidoDos + "', '" + fechaNacimiento + "', '" + edad + "', '" + telefono + "' , '" + telefonoTrabajo + "', 
+            '" + fechaIngreso + "', '" + direccionResidencia + "', '" + direccionTrabajo + "', '" + genero + "', '" + estado + "', '" + fechaCierre + "', '" + notasCierre + "' ) "
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            'MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.)
+        End Try
+
+        Return res
+
+    End Function
+
+
+    'Selecciona id, cedula, etc...
+    Function consultarExpedienteXCedula(ByVal cedula As String) As List(Of ExpedienteClase)
+        Dim MyList As New List(Of ExpedienteClase)
+        Try
+            SQL = "SELECT EXPEDIENTES.*
+                    FROM [EXPEDIENTES]
+                    WHERE ((EXPEDIENTES.cedula) = '" & cedula & "') "
+            ' MsgBox("XXXXXX")
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim nuevosocio As ExpedienteClase = New ExpedienteClase
+                    'MsgBox("XXXXXX1")
+                    'MsgBox(String.Concat("... 1...", reader.GetString(1), "...2", reader.GetString(2)))
+                    'MsgBox("XXXXXX2")
+
+                    nuevosocio.expedienteClaseConstructor(reader.GetString(1), reader.GetDateTime(2), reader.GetString(3), reader.GetString(4),
+                                                          reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8),
+                                                        reader.GetString(9), reader.GetDateTime(10))
+                    ' MsgBox(String.Concat("... 1", reader.GetString(1), "...2", reader.GetString(2)))
+
+                    MyList.Add(nuevosocio)
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de " + ex.ToString)
+        End Try
+        Return MyList
+    End Function
+
+    'Inserta un Expediente X Socio
+    Function insertarExpedienteXSocio(ByVal cedulaAsociado As String, ByVal fechaExpediente As Date, ByVal G3 As String, ByVal P3 As String,
+                                      ByVal A0 As String, ByVal C0 As String, ByVal CC As String, ByVal Aqx As String, ByVal AfyAp As String, ByVal AnP As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "INSERT INTO [EXPEDIENTES]" &
+           "(cedula, fechaExpediente, g, p, a, c, cc, aqx, afyap, anp)" &
+            "VALUES ('" + cedulaAsociado + "', '" + fechaExpediente + "', '" + G3 + "', '" + P3 + "', '" + A0 + "', '" + C0 + "', '" + CC + "', '" + Aqx + "' ,
+            '" + AfyAp + "', '" + AnP + "') "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
+
+    'Actualiza la info del paciente
+    Function actualizarPaciente(ByVal cedula As String, ByVal nombre As String, ByVal primerApellido As String, ByVal segundoApellido As String, ByVal fechaNacimiento As Date, ByVal edad As String,
+                                ByVal telefonoPersonal As String, ByVal telefonoTrabajo As String, ByVal fechaIngreso As Date, ByVal direccionResidencia As String, ByVal direccionTrabajo As String,
+                                ByVal genero As String, ByVal estado As String, ByVal fechaCierre As Date, ByVal notasCierre As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "UPDATE [PACIENTES] SET cedula = '" & cedula & "', " & "nombre = '" & nombre & "',
+                    " & "primerApellido = '" & primerApellido & "', " & "segundoApellido = '" & segundoApellido & "',
+                    " & "fechaNacimiento = '" & fechaNacimiento & "', " & "edad = '" & edad & "', " & "telefonoPersonal = '" & telefonoPersonal & "',
+                    " & "telefonoTrabajo = '" & telefonoTrabajo & "', " & "fechaIngreso = '" & fechaIngreso & "', " & "direccionResidencia = '" & direccionResidencia & "', 
+                    " & "direccionTrabajo = '" & direccionTrabajo & "', " & "genero = '" & genero & "',  " & "estadoExpediente = '" & estado & "',   
+                    " & "fechaCierre = '" & fechaCierre & "', " & "notasCierre = '" & notasCierre & "' 
+
+                    WHERE ((cedula) = '" & cedula & "') "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
 
 
 End Class

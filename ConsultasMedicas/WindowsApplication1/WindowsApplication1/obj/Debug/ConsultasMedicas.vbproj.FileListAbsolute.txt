@@ -66,3 +66,4 @@ C:\Users\Aaron\Documents\CoopeNew\Cooperativas\ConsultasMedicas\WindowsApplicati
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\ConsultasMedicas\WindowsApplication1\WindowsApplication1\obj\Debug\ConsultasMedicas.pdb
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\ConsultasMedicas\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VImagenes.resources
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\ConsultasMedicas\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VMotivoConsulta.resources
+C:\Users\Aaron\Documents\CoopeNew\Cooperativas\ConsultasMedicas\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VExpediente.resources
