@@ -11,7 +11,7 @@ Public Class Principal
 
 
     Private Sub CertificadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CertificadosToolStripMenuItem.Click
-        VCertificados.Show()
+        'VCertificados.Show()
     End Sub
 
     Private Sub IngresosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IngresosToolStripMenuItem.Click
@@ -54,7 +54,7 @@ Public Class Principal
         End If
 
         'si es admin o super admin puede ver la ventana
-        VConfiguracionInformacionCooperativa.Show()
+        'VConfiguracionInformacionCooperativa.Show()
 
     End Sub
 

@@ -9,11 +9,11 @@ Public Class Expedientes
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
     Dim informeEconomico As InformeEconomico = New InformeEconomico
 
-    'consulta un asociado
-    Public Sub consultarExpedienteDelPaciente()
+    'consulta un exp x cedula
+    Public Sub consultarExpedienteXCedula()
 
         Dim valores As List(Of ExpedienteClase)
-
+        Dim valores2 As List(Of PacienteClase)
         Dim consultarAsociado As String = VExpediente.ExpedienteTextboxConsultarCedula.Text
 
         If (consultarAsociado = "") Then
@@ -24,7 +24,7 @@ Public Class Expedientes
                 BD.ConectarBD()
 
                 valores = BD.consultarExpedienteXCedula(consultarAsociado)
-
+                valores2 = BD.consultarPacienteXCedula(consultarAsociado)
                 If valores.Count <> 0 Then
 
                     VExpediente.ExpedienteTextboxCed.Text = valores(0).cedula
@@ -37,7 +37,8 @@ Public Class Expedientes
                     VExpediente.ExpedienteTextboxAqx.Text = valores(0).Aqx
                     VExpediente.ExpedienteTextboxAfyAp.Text = valores(0).AfyAp
                     VExpediente.ExpedienteTextboxAnP.Text = valores(0).AnP
-
+                    'Para llenar nombre completo
+                    VExpediente.ExpedienteTextboxNombreYApellidos.Text = valores2(0).nombre + " " + valores2(0).primerApellido + " " + valores2(0).segundoApellido
                 Else
                     MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
                     limpiar()

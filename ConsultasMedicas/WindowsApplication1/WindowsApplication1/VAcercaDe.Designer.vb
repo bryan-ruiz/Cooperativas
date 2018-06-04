@@ -207,7 +207,7 @@ Partial Class VAcercaDe
         Me.MaximizeBox = False
         Me.Name = "VAcercaDe"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SAC"
+        Me.Text = "Consultas Médicas"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

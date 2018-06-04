@@ -3873,7 +3873,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de " + ex.ToString)
+            MessageBox.Show("Error de " + ex.Message)
         End Try
         Return MyList
     End Function
@@ -3952,7 +3952,7 @@ Public Class ConexionBD
 
                     nuevosocio.expedienteClaseConstructor(reader.GetString(1), reader.GetDateTime(2), reader.GetString(3), reader.GetString(4),
                                                           reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8),
-                                                        reader.GetString(9), reader.GetDateTime(10))
+                                                        reader.GetString(9), reader.GetString(10))
                     ' MsgBox(String.Concat("... 1", reader.GetString(1), "...2", reader.GetString(2)))
 
                     MyList.Add(nuevosocio)
@@ -3962,7 +3962,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de " + ex.ToString)
+            MessageBox.Show("Error de " + ex.Message)
         End Try
         Return MyList
     End Function

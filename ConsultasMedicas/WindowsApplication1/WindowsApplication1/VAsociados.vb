@@ -127,11 +127,11 @@
     End Sub
 
     Private Sub AsociadosActivosResumidoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsociadosActivosResumidoToolStripMenuItem.Click
-        socios.generarReporteDeSociosResumido("Activos")
+        ' socios.generarReporteDeSociosResumido("Activos")
     End Sub
 
     Private Sub ToolStripMenuAsociadosReporteTodos_Click(sender As Object, e As EventArgs) Handles ToolStripMenuAsociadosReporteTodos.Click
-        socios.generarReporteDeSociosResumidoTodos("Todos")
+        ' socios.generarReporteDeSociosResumidoTodos("Todos")
     End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter

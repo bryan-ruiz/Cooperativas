@@ -10,9 +10,10 @@ Public Class VExpediente
     Dim cmd As OleDbCommand
     Dim adapter As OleDbDataAdapter
     Dim dt As DataTable = New DataTable()
+    Dim expediente As Expedientes = New Expedientes
 
 
-    Private Sub VMotivoConsulta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub VExpediente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
 
         Me.ExpedienteButtonBuscar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
@@ -20,32 +21,11 @@ Public Class VExpediente
         Me.ExpedienteButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.ExpedienteButtonActualizarDatos.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.ExpedienteButtonVerMotivoConsulta.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-
+        ExpedienteTextboxConsultarCedula.Select()
     End Sub
-
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-
 
     Private Sub MotivoConsultaButtonBuscar_Click(sender As Object, e As EventArgs) Handles ExpedienteButtonBuscar.Click
-        'Buscar x cedula de paciente
-        'etc
-
-        'carga la info desde la BD para un paciente
-        Dim cedula As String = ExpedienteTextboxCed.Text
-        If (cedula = "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaNula, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-            Return
-        End If
-
-
+        expediente.consultarExpedienteXCedula()
     End Sub
 
     Private Sub MotivoConsultaButtonLimpiar_Click(sender As Object, e As EventArgs) Handles ExpedienteButtonLimpiar.Click
@@ -53,13 +33,18 @@ Public Class VExpediente
     End Sub
 
     Public Sub limpiar()
+        ExpedienteTextboxConsultarCedula.Text = ""
         ExpedienteTextboxCed.Text = ""
         ExpedienteTextboxNombreYApellidos.Text = ""
-        ExpedienteTextboxConsultarCedula.Text = ""
-
-        'etc
+        ExpedienteTextboxG3.Text = ""
+        ExpedienteTextboxP3.Text = ""
+        ExpedienteTextboxA0.Text = ""
+        ExpedienteTextboxC0.Text = ""
+        ExpedienteTextboxCC.Text = ""
+        ExpedienteTextboxAqx.Text = ""
+        ExpedienteTextboxAfyAp.Text = ""
+        ExpedienteTextboxAnP.Text = ""
     End Sub
-
 
     Private Sub ExpedienteButtonBuscarXNombre_Click(sender As Object, e As EventArgs) Handles ExpedienteButtonBuscarXNombre.Click
         'Pending
@@ -74,4 +59,12 @@ Public Class VExpediente
         'llamar con la cedula a buscar motivo consulta para cargar los datos automáticamente
         'pending
     End Sub
+
+    Private Sub ExpedienteTextboxConsultarCedula_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles ExpedienteTextboxConsultarCedula.KeyPress
+        'TextBoxSociosConsultarAsociado.PasswordChar = "*"
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Call MotivoConsultaButtonBuscar_Click(sender, e)
+        End If
+    End Sub
+
 End Class
