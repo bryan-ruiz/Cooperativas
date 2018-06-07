@@ -135,7 +135,7 @@ Partial Class VLicencias
         Me.MaximizeBox = False
         Me.Name = "VLicencias"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SAC"
+        Me.Text = "Consultas Médicas"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)

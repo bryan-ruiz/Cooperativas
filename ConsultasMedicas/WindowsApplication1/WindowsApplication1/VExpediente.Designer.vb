@@ -39,7 +39,6 @@ Partial Class VExpediente
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ExpedienteDateTimeFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.ExpedienteTextboxG3 = New System.Windows.Forms.TextBox()
         Me.ExpedienteTextboxCed = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -48,12 +47,9 @@ Partial Class VExpediente
         Me.ExpedienteTextboxNombreYApellidos = New System.Windows.Forms.TextBox()
         Me.ExpedienteTextboxCC = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.ExpedienteTextboxC0 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.ExpedienteTextboxP3 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -135,7 +131,7 @@ Partial Class VExpediente
         Me.ExpedienteButtonVerMotivoConsulta.ForeColor = System.Drawing.Color.White
         Me.ExpedienteButtonVerMotivoConsulta.Image = Global.WindowsApplication1.My.Resources.Resources.addwhite2
         Me.ExpedienteButtonVerMotivoConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ExpedienteButtonVerMotivoConsulta.Location = New System.Drawing.Point(39, 305)
+        Me.ExpedienteButtonVerMotivoConsulta.Location = New System.Drawing.Point(39, 212)
         Me.ExpedienteButtonVerMotivoConsulta.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.ExpedienteButtonVerMotivoConsulta.Name = "ExpedienteButtonVerMotivoConsulta"
         Me.ExpedienteButtonVerMotivoConsulta.Size = New System.Drawing.Size(199, 40)
@@ -150,7 +146,7 @@ Partial Class VExpediente
         Me.ExpedienteButtonActualizarDatos.ForeColor = System.Drawing.Color.White
         Me.ExpedienteButtonActualizarDatos.Image = Global.WindowsApplication1.My.Resources.Resources.refreshlast1
         Me.ExpedienteButtonActualizarDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ExpedienteButtonActualizarDatos.Location = New System.Drawing.Point(39, 221)
+        Me.ExpedienteButtonActualizarDatos.Location = New System.Drawing.Point(39, 279)
         Me.ExpedienteButtonActualizarDatos.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.ExpedienteButtonActualizarDatos.Name = "ExpedienteButtonActualizarDatos"
         Me.ExpedienteButtonActualizarDatos.Size = New System.Drawing.Size(199, 44)
@@ -212,7 +208,7 @@ Partial Class VExpediente
         Me.ExpedienteButtonLimpiar.ForeColor = System.Drawing.Color.White
         Me.ExpedienteButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
         Me.ExpedienteButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ExpedienteButtonLimpiar.Location = New System.Drawing.Point(39, 390)
+        Me.ExpedienteButtonLimpiar.Location = New System.Drawing.Point(39, 348)
         Me.ExpedienteButtonLimpiar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.ExpedienteButtonLimpiar.Name = "ExpedienteButtonLimpiar"
         Me.ExpedienteButtonLimpiar.Size = New System.Drawing.Size(199, 44)
@@ -223,10 +219,10 @@ Partial Class VExpediente
         '
         'ExpedienteTextboxAqx
         '
-        Me.ExpedienteTextboxAqx.Location = New System.Drawing.Point(435, 369)
+        Me.ExpedienteTextboxAqx.Location = New System.Drawing.Point(454, 369)
         Me.ExpedienteTextboxAqx.Multiline = True
         Me.ExpedienteTextboxAqx.Name = "ExpedienteTextboxAqx"
-        Me.ExpedienteTextboxAqx.Size = New System.Drawing.Size(792, 59)
+        Me.ExpedienteTextboxAqx.Size = New System.Drawing.Size(773, 59)
         Me.ExpedienteTextboxAqx.TabIndex = 11
         '
         'GroupBox3
@@ -258,20 +254,9 @@ Partial Class VExpediente
         Me.ExpedienteDateTimeFecha.Size = New System.Drawing.Size(123, 20)
         Me.ExpedienteDateTimeFecha.TabIndex = 40
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(277, 18)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(24, 16)
-        Me.Label11.TabIndex = 22
-        Me.Label11.Text = "P3"
-        '
         'ExpedienteTextboxG3
         '
-        Me.ExpedienteTextboxG3.Location = New System.Drawing.Point(171, 15)
+        Me.ExpedienteTextboxG3.Location = New System.Drawing.Point(63, 17)
         Me.ExpedienteTextboxG3.Name = "ExpedienteTextboxG3"
         Me.ExpedienteTextboxG3.Size = New System.Drawing.Size(82, 20)
         Me.ExpedienteTextboxG3.TabIndex = 3
@@ -341,15 +326,11 @@ Partial Class VExpediente
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.Label16)
         Me.GroupBox5.Controls.Add(Me.Label14)
-        Me.GroupBox5.Controls.Add(Me.Label6)
         Me.GroupBox5.Controls.Add(Me.Label13)
         Me.GroupBox5.Controls.Add(Me.ExpedienteTextboxC0)
-        Me.GroupBox5.Controls.Add(Me.Label2)
         Me.GroupBox5.Controls.Add(Me.Label15)
         Me.GroupBox5.Controls.Add(Me.ExpedienteTextboxCC)
-        Me.GroupBox5.Controls.Add(Me.Label11)
         Me.GroupBox5.Controls.Add(Me.ExpedienteTextboxP3)
         Me.GroupBox5.Controls.Add(Me.Label10)
         Me.GroupBox5.Controls.Add(Me.ExpedienteTextboxA0)
@@ -361,38 +342,16 @@ Partial Class VExpediente
         Me.GroupBox5.TabIndex = 142
         Me.GroupBox5.TabStop = False
         '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Black
-        Me.Label16.Location = New System.Drawing.Point(549, 17)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(24, 16)
-        Me.Label16.TabIndex = 168
-        Me.Label16.Text = "C0"
-        '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Black
-        Me.Label14.Location = New System.Drawing.Point(12, 13)
+        Me.Label14.Location = New System.Drawing.Point(7, 19)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(37, 16)
         Me.Label14.TabIndex = 166
         Me.Label14.Text = "AGO"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(140, 19)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(25, 16)
-        Me.Label6.TabIndex = 22
-        Me.Label6.Text = "G3"
         '
         'Label13
         '
@@ -406,28 +365,17 @@ Partial Class VExpediente
         '
         'ExpedienteTextboxC0
         '
-        Me.ExpedienteTextboxC0.Location = New System.Drawing.Point(579, 15)
+        Me.ExpedienteTextboxC0.Location = New System.Drawing.Point(381, 17)
         Me.ExpedienteTextboxC0.Name = "ExpedienteTextboxC0"
         Me.ExpedienteTextboxC0.Size = New System.Drawing.Size(82, 20)
         Me.ExpedienteTextboxC0.TabIndex = 6
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(413, 17)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(24, 16)
-        Me.Label2.TabIndex = 167
-        Me.Label2.Text = "A0"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(531, 16)
+        Me.Label15.Location = New System.Drawing.Point(363, 18)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(12, 16)
         Me.Label15.TabIndex = 172
@@ -435,7 +383,7 @@ Partial Class VExpediente
         '
         'ExpedienteTextboxP3
         '
-        Me.ExpedienteTextboxP3.Location = New System.Drawing.Point(307, 15)
+        Me.ExpedienteTextboxP3.Location = New System.Drawing.Point(169, 17)
         Me.ExpedienteTextboxP3.Name = "ExpedienteTextboxP3"
         Me.ExpedienteTextboxP3.Size = New System.Drawing.Size(82, 20)
         Me.ExpedienteTextboxP3.TabIndex = 4
@@ -445,7 +393,7 @@ Partial Class VExpediente
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(395, 17)
+        Me.Label10.Location = New System.Drawing.Point(257, 19)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(12, 16)
         Me.Label10.TabIndex = 171
@@ -453,7 +401,7 @@ Partial Class VExpediente
         '
         'ExpedienteTextboxA0
         '
-        Me.ExpedienteTextboxA0.Location = New System.Drawing.Point(443, 15)
+        Me.ExpedienteTextboxA0.Location = New System.Drawing.Point(275, 17)
         Me.ExpedienteTextboxA0.Name = "ExpedienteTextboxA0"
         Me.ExpedienteTextboxA0.Size = New System.Drawing.Size(82, 20)
         Me.ExpedienteTextboxA0.TabIndex = 5
@@ -463,7 +411,7 @@ Partial Class VExpediente
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(259, 17)
+        Me.Label8.Location = New System.Drawing.Point(151, 19)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(12, 16)
         Me.Label8.TabIndex = 168
@@ -474,7 +422,7 @@ Partial Class VExpediente
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Black
-        Me.Label21.Location = New System.Drawing.Point(398, 393)
+        Me.Label21.Location = New System.Drawing.Point(404, 393)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(31, 16)
         Me.Label21.TabIndex = 166
@@ -485,7 +433,7 @@ Partial Class VExpediente
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(379, 497)
+        Me.Label4.Location = New System.Drawing.Point(385, 497)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 16)
         Me.Label4.TabIndex = 167
@@ -493,10 +441,10 @@ Partial Class VExpediente
         '
         'ExpedienteTextboxAfyAp
         '
-        Me.ExpedienteTextboxAfyAp.Location = New System.Drawing.Point(435, 474)
+        Me.ExpedienteTextboxAfyAp.Location = New System.Drawing.Point(454, 474)
         Me.ExpedienteTextboxAfyAp.Multiline = True
         Me.ExpedienteTextboxAfyAp.Name = "ExpedienteTextboxAfyAp"
-        Me.ExpedienteTextboxAfyAp.Size = New System.Drawing.Size(792, 59)
+        Me.ExpedienteTextboxAfyAp.Size = New System.Drawing.Size(773, 59)
         Me.ExpedienteTextboxAfyAp.TabIndex = 12
         '
         'Label5
@@ -504,7 +452,7 @@ Partial Class VExpediente
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(396, 609)
+        Me.Label5.Location = New System.Drawing.Point(402, 609)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(33, 16)
         Me.Label5.TabIndex = 169
@@ -512,10 +460,10 @@ Partial Class VExpediente
         '
         'ExpedienteTextboxAnP
         '
-        Me.ExpedienteTextboxAnP.Location = New System.Drawing.Point(435, 587)
+        Me.ExpedienteTextboxAnP.Location = New System.Drawing.Point(454, 587)
         Me.ExpedienteTextboxAnP.Multiline = True
         Me.ExpedienteTextboxAnP.Name = "ExpedienteTextboxAnP"
-        Me.ExpedienteTextboxAnP.Size = New System.Drawing.Size(792, 59)
+        Me.ExpedienteTextboxAnP.Size = New System.Drawing.Size(773, 59)
         Me.ExpedienteTextboxAnP.TabIndex = 13
         '
         'VExpediente
@@ -570,7 +518,6 @@ Partial Class VExpediente
     Friend WithEvents ExpedienteTextboxG3 As TextBox
     Friend WithEvents ExpedienteTextboxAqx As TextBox
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents ExpedienteDateTimeFecha As DateTimePicker
     Friend WithEvents ExpedienteTextboxCed As TextBox
@@ -583,10 +530,7 @@ Partial Class VExpediente
     Friend WithEvents ExpedienteTextboxCC As TextBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents ExpedienteTextboxP3 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents ExpedienteTextboxC0 As TextBox

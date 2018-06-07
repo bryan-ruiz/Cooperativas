@@ -12,7 +12,7 @@
 
     Private Sub LicenciasButtonRenovar_Click(sender As Object, e As EventArgs) Handles LicenciasButtonRenovar.Click
         'NOTA= inserta X cantidad de licencias random en el sistema, realizar sólo 1 vez para la cooperativa.
-        'licencias.insertarLicenciasEnBD(1000)
+        'licencias.insertarLicenciasEnBD(5000)
 
         Dim codigo As String = LicenciasTextBoxCodigo.Text
         licencias.validarYRenovarLicencia(codigo)

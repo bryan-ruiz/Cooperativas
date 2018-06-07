@@ -38,13 +38,7 @@ Partial Class VAsociados
         Me.AsociadosActivosResumidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuAsociadosReporteTodos = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.PacientesButtonAbrirExpediente = New System.Windows.Forms.Button()
-        Me.PacientesButtonBuscarXNombre = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.PacientesButtonModificar = New System.Windows.Forms.Button()
-        Me.ButtonAsociadosBuscar = New System.Windows.Forms.Button()
-        Me.PacientesButtonAgregarPaciente = New System.Windows.Forms.Button()
-        Me.PacientesButtonLimpiar = New System.Windows.Forms.Button()
         Me.LabelFechaRetiro = New System.Windows.Forms.Label()
         Me.LabelNotasRetiro = New System.Windows.Forms.Label()
         Me.DateTimeSociosFechaCierre = New System.Windows.Forms.DateTimePicker()
@@ -79,6 +73,12 @@ Partial Class VAsociados
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBoxSociosDireccionTrabajo = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.PacientesButtonAbrirExpediente = New System.Windows.Forms.Button()
+        Me.PacientesButtonBuscarXNombre = New System.Windows.Forms.Button()
+        Me.PacientesButtonModificar = New System.Windows.Forms.Button()
+        Me.ButtonAsociadosBuscar = New System.Windows.Forms.Button()
+        Me.PacientesButtonAgregarPaciente = New System.Windows.Forms.Button()
+        Me.PacientesButtonLimpiar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -242,36 +242,6 @@ Partial Class VAsociados
         Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
         '
-        'PacientesButtonAbrirExpediente
-        '
-        Me.PacientesButtonAbrirExpediente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.PacientesButtonAbrirExpediente.ForeColor = System.Drawing.Color.White
-        Me.PacientesButtonAbrirExpediente.Image = Global.WindowsApplication1.My.Resources.Resources.folder7
-        Me.PacientesButtonAbrirExpediente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.PacientesButtonAbrirExpediente.Location = New System.Drawing.Point(51, 136)
-        Me.PacientesButtonAbrirExpediente.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.PacientesButtonAbrirExpediente.Name = "PacientesButtonAbrirExpediente"
-        Me.PacientesButtonAbrirExpediente.Size = New System.Drawing.Size(199, 44)
-        Me.PacientesButtonAbrirExpediente.TabIndex = 186
-        Me.PacientesButtonAbrirExpediente.Text = "Abrir Expediente"
-        Me.PacientesButtonAbrirExpediente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.PacientesButtonAbrirExpediente.UseVisualStyleBackColor = True
-        '
-        'PacientesButtonBuscarXNombre
-        '
-        Me.PacientesButtonBuscarXNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.PacientesButtonBuscarXNombre.ForeColor = System.Drawing.Color.White
-        Me.PacientesButtonBuscarXNombre.Image = Global.WindowsApplication1.My.Resources.Resources.search9
-        Me.PacientesButtonBuscarXNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.PacientesButtonBuscarXNombre.Location = New System.Drawing.Point(51, 202)
-        Me.PacientesButtonBuscarXNombre.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.PacientesButtonBuscarXNombre.Name = "PacientesButtonBuscarXNombre"
-        Me.PacientesButtonBuscarXNombre.Size = New System.Drawing.Size(199, 44)
-        Me.PacientesButtonBuscarXNombre.TabIndex = 66
-        Me.PacientesButtonBuscarXNombre.Text = " Buscar por Nombre"
-        Me.PacientesButtonBuscarXNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.PacientesButtonBuscarXNombre.UseVisualStyleBackColor = True
-        '
         'Label22
         '
         Me.Label22.AutoSize = True
@@ -283,63 +253,6 @@ Partial Class VAsociados
         Me.Label22.Size = New System.Drawing.Size(221, 16)
         Me.Label22.TabIndex = 65
         Me.Label22.Text = "Buscar por Cédula (x-xxxx-xxxx):"
-        '
-        'PacientesButtonModificar
-        '
-        Me.PacientesButtonModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.PacientesButtonModificar.ForeColor = System.Drawing.Color.White
-        Me.PacientesButtonModificar.Image = Global.WindowsApplication1.My.Resources.Resources.refreshlast1
-        Me.PacientesButtonModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.PacientesButtonModificar.Location = New System.Drawing.Point(51, 332)
-        Me.PacientesButtonModificar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.PacientesButtonModificar.Name = "PacientesButtonModificar"
-        Me.PacientesButtonModificar.Size = New System.Drawing.Size(199, 44)
-        Me.PacientesButtonModificar.TabIndex = 53
-        Me.PacientesButtonModificar.Text = "Actualizar Datos"
-        Me.PacientesButtonModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.PacientesButtonModificar.UseVisualStyleBackColor = True
-        '
-        'ButtonAsociadosBuscar
-        '
-        Me.ButtonAsociadosBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonAsociadosBuscar.ForeColor = System.Drawing.Color.White
-        Me.ButtonAsociadosBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
-        Me.ButtonAsociadosBuscar.Location = New System.Drawing.Point(260, 59)
-        Me.ButtonAsociadosBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.ButtonAsociadosBuscar.Name = "ButtonAsociadosBuscar"
-        Me.ButtonAsociadosBuscar.Size = New System.Drawing.Size(58, 43)
-        Me.ButtonAsociadosBuscar.TabIndex = 2
-        Me.ButtonAsociadosBuscar.UseVisualStyleBackColor = True
-        '
-        'PacientesButtonAgregarPaciente
-        '
-        Me.PacientesButtonAgregarPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.PacientesButtonAgregarPaciente.ForeColor = System.Drawing.Color.White
-        Me.PacientesButtonAgregarPaciente.Image = Global.WindowsApplication1.My.Resources.Resources.adduserwhite6
-        Me.PacientesButtonAgregarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.PacientesButtonAgregarPaciente.Location = New System.Drawing.Point(51, 267)
-        Me.PacientesButtonAgregarPaciente.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.PacientesButtonAgregarPaciente.Name = "PacientesButtonAgregarPaciente"
-        Me.PacientesButtonAgregarPaciente.Size = New System.Drawing.Size(199, 44)
-        Me.PacientesButtonAgregarPaciente.TabIndex = 4
-        Me.PacientesButtonAgregarPaciente.Text = "Agregar Paciente"
-        Me.PacientesButtonAgregarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.PacientesButtonAgregarPaciente.UseVisualStyleBackColor = True
-        '
-        'PacientesButtonLimpiar
-        '
-        Me.PacientesButtonLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.PacientesButtonLimpiar.ForeColor = System.Drawing.Color.White
-        Me.PacientesButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
-        Me.PacientesButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.PacientesButtonLimpiar.Location = New System.Drawing.Point(51, 395)
-        Me.PacientesButtonLimpiar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.PacientesButtonLimpiar.Name = "PacientesButtonLimpiar"
-        Me.PacientesButtonLimpiar.Size = New System.Drawing.Size(199, 44)
-        Me.PacientesButtonLimpiar.TabIndex = 5
-        Me.PacientesButtonLimpiar.Text = "Limpiar Campos"
-        Me.PacientesButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.PacientesButtonLimpiar.UseVisualStyleBackColor = True
         '
         'LabelFechaRetiro
         '
@@ -677,6 +590,93 @@ Partial Class VAsociados
         Me.Label10.Size = New System.Drawing.Size(120, 16)
         Me.Label10.TabIndex = 185
         Me.Label10.Text = "Dirección Trabajo"
+        '
+        'PacientesButtonAbrirExpediente
+        '
+        Me.PacientesButtonAbrirExpediente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.PacientesButtonAbrirExpediente.ForeColor = System.Drawing.Color.White
+        Me.PacientesButtonAbrirExpediente.Image = Global.WindowsApplication1.My.Resources.Resources.folder7
+        Me.PacientesButtonAbrirExpediente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.PacientesButtonAbrirExpediente.Location = New System.Drawing.Point(51, 200)
+        Me.PacientesButtonAbrirExpediente.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.PacientesButtonAbrirExpediente.Name = "PacientesButtonAbrirExpediente"
+        Me.PacientesButtonAbrirExpediente.Size = New System.Drawing.Size(199, 44)
+        Me.PacientesButtonAbrirExpediente.TabIndex = 186
+        Me.PacientesButtonAbrirExpediente.Text = "Abrir Expediente"
+        Me.PacientesButtonAbrirExpediente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PacientesButtonAbrirExpediente.UseVisualStyleBackColor = True
+        '
+        'PacientesButtonBuscarXNombre
+        '
+        Me.PacientesButtonBuscarXNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.PacientesButtonBuscarXNombre.ForeColor = System.Drawing.Color.White
+        Me.PacientesButtonBuscarXNombre.Image = Global.WindowsApplication1.My.Resources.Resources.search9
+        Me.PacientesButtonBuscarXNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.PacientesButtonBuscarXNombre.Location = New System.Drawing.Point(51, 136)
+        Me.PacientesButtonBuscarXNombre.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.PacientesButtonBuscarXNombre.Name = "PacientesButtonBuscarXNombre"
+        Me.PacientesButtonBuscarXNombre.Size = New System.Drawing.Size(199, 44)
+        Me.PacientesButtonBuscarXNombre.TabIndex = 66
+        Me.PacientesButtonBuscarXNombre.Text = " Buscar por Nombre"
+        Me.PacientesButtonBuscarXNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PacientesButtonBuscarXNombre.UseVisualStyleBackColor = True
+        '
+        'PacientesButtonModificar
+        '
+        Me.PacientesButtonModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.PacientesButtonModificar.ForeColor = System.Drawing.Color.White
+        Me.PacientesButtonModificar.Image = Global.WindowsApplication1.My.Resources.Resources.refreshlast1
+        Me.PacientesButtonModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.PacientesButtonModificar.Location = New System.Drawing.Point(51, 330)
+        Me.PacientesButtonModificar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.PacientesButtonModificar.Name = "PacientesButtonModificar"
+        Me.PacientesButtonModificar.Size = New System.Drawing.Size(199, 44)
+        Me.PacientesButtonModificar.TabIndex = 53
+        Me.PacientesButtonModificar.Text = "Actualizar Datos"
+        Me.PacientesButtonModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PacientesButtonModificar.UseVisualStyleBackColor = True
+        '
+        'ButtonAsociadosBuscar
+        '
+        Me.ButtonAsociadosBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonAsociadosBuscar.ForeColor = System.Drawing.Color.White
+        Me.ButtonAsociadosBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
+        Me.ButtonAsociadosBuscar.Location = New System.Drawing.Point(260, 59)
+        Me.ButtonAsociadosBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonAsociadosBuscar.Name = "ButtonAsociadosBuscar"
+        Me.ButtonAsociadosBuscar.Size = New System.Drawing.Size(58, 43)
+        Me.ButtonAsociadosBuscar.TabIndex = 2
+        Me.ButtonAsociadosBuscar.UseVisualStyleBackColor = True
+        '
+        'PacientesButtonAgregarPaciente
+        '
+        Me.PacientesButtonAgregarPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.PacientesButtonAgregarPaciente.ForeColor = System.Drawing.Color.White
+        Me.PacientesButtonAgregarPaciente.Image = Global.WindowsApplication1.My.Resources.Resources.adduserwhite6
+        Me.PacientesButtonAgregarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.PacientesButtonAgregarPaciente.Location = New System.Drawing.Point(51, 267)
+        Me.PacientesButtonAgregarPaciente.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.PacientesButtonAgregarPaciente.Name = "PacientesButtonAgregarPaciente"
+        Me.PacientesButtonAgregarPaciente.Size = New System.Drawing.Size(199, 44)
+        Me.PacientesButtonAgregarPaciente.TabIndex = 4
+        Me.PacientesButtonAgregarPaciente.Text = "Agregar Paciente"
+        Me.PacientesButtonAgregarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PacientesButtonAgregarPaciente.UseVisualStyleBackColor = True
+        '
+        'PacientesButtonLimpiar
+        '
+        Me.PacientesButtonLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.PacientesButtonLimpiar.ForeColor = System.Drawing.Color.White
+        Me.PacientesButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
+        Me.PacientesButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.PacientesButtonLimpiar.Location = New System.Drawing.Point(51, 394)
+        Me.PacientesButtonLimpiar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.PacientesButtonLimpiar.Name = "PacientesButtonLimpiar"
+        Me.PacientesButtonLimpiar.Size = New System.Drawing.Size(199, 44)
+        Me.PacientesButtonLimpiar.TabIndex = 5
+        Me.PacientesButtonLimpiar.Text = "Limpiar Campos"
+        Me.PacientesButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PacientesButtonLimpiar.UseVisualStyleBackColor = True
         '
         'VAsociados
         '

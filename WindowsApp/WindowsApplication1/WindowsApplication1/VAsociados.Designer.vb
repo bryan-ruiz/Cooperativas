@@ -47,9 +47,11 @@ Partial Class VAsociados
         Me.AsociadosActivosResumidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuAsociadosReporteTodos = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExcedentesPorAsociadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsociadosPorSecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeAsociadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ButtonAsociadosBuscarXNombre = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.ButtonSociosModificar = New System.Windows.Forms.Button()
         Me.ButtonAsociadosBuscar = New System.Windows.Forms.Button()
@@ -94,7 +96,6 @@ Partial Class VAsociados
         Me.TextBoxSociosSeccion2 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.AsociadosPorSecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -325,6 +326,12 @@ Partial Class VAsociados
         Me.ExcedentesPorAsociadoToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
         Me.ExcedentesPorAsociadoToolStripMenuItem.Text = "Excedentes por Asociado"
         '
+        'AsociadosPorSecciónToolStripMenuItem
+        '
+        Me.AsociadosPorSecciónToolStripMenuItem.Name = "AsociadosPorSecciónToolStripMenuItem"
+        Me.AsociadosPorSecciónToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.AsociadosPorSecciónToolStripMenuItem.Text = "Asociados Por Sección"
+        '
         'InformaciónToolStripMenuItem
         '
         Me.InformaciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeAsociadosToolStripMenuItem})
@@ -340,6 +347,7 @@ Partial Class VAsociados
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ButtonAsociadosBuscarXNombre)
         Me.GroupBox1.Controls.Add(Me.Label22)
         Me.GroupBox1.Controls.Add(Me.ButtonSociosModificar)
         Me.GroupBox1.Controls.Add(Me.TextBoxSociosConsultarAsociado)
@@ -356,6 +364,21 @@ Partial Class VAsociados
         Me.GroupBox1.Size = New System.Drawing.Size(327, 509)
         Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
+        '
+        'ButtonAsociadosBuscarXNombre
+        '
+        Me.ButtonAsociadosBuscarXNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonAsociadosBuscarXNombre.ForeColor = System.Drawing.Color.White
+        Me.ButtonAsociadosBuscarXNombre.Image = Global.WindowsApplication1.My.Resources.Resources.search9
+        Me.ButtonAsociadosBuscarXNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonAsociadosBuscarXNombre.Location = New System.Drawing.Point(51, 155)
+        Me.ButtonAsociadosBuscarXNombre.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonAsociadosBuscarXNombre.Name = "ButtonAsociadosBuscarXNombre"
+        Me.ButtonAsociadosBuscarXNombre.Size = New System.Drawing.Size(199, 44)
+        Me.ButtonAsociadosBuscarXNombre.TabIndex = 66
+        Me.ButtonAsociadosBuscarXNombre.Text = "Buscar por Nombre"
+        Me.ButtonAsociadosBuscarXNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonAsociadosBuscarXNombre.UseVisualStyleBackColor = True
         '
         'Label22
         '
@@ -375,7 +398,7 @@ Partial Class VAsociados
         Me.ButtonSociosModificar.ForeColor = System.Drawing.Color.White
         Me.ButtonSociosModificar.Image = Global.WindowsApplication1.My.Resources.Resources.refreshlast1
         Me.ButtonSociosModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonSociosModificar.Location = New System.Drawing.Point(51, 262)
+        Me.ButtonSociosModificar.Location = New System.Drawing.Point(51, 314)
         Me.ButtonSociosModificar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.ButtonSociosModificar.Name = "ButtonSociosModificar"
         Me.ButtonSociosModificar.Size = New System.Drawing.Size(199, 44)
@@ -402,7 +425,7 @@ Partial Class VAsociados
         Me.ButtonAsociadosAgregar.ForeColor = System.Drawing.Color.White
         Me.ButtonAsociadosAgregar.Image = Global.WindowsApplication1.My.Resources.Resources.adduserwhite6
         Me.ButtonAsociadosAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonAsociadosAgregar.Location = New System.Drawing.Point(51, 170)
+        Me.ButtonAsociadosAgregar.Location = New System.Drawing.Point(51, 233)
         Me.ButtonAsociadosAgregar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.ButtonAsociadosAgregar.Name = "ButtonAsociadosAgregar"
         Me.ButtonAsociadosAgregar.Size = New System.Drawing.Size(199, 44)
@@ -417,7 +440,7 @@ Partial Class VAsociados
         Me.SociosButtonLimpiar.ForeColor = System.Drawing.Color.White
         Me.SociosButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
         Me.SociosButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.SociosButtonLimpiar.Location = New System.Drawing.Point(51, 356)
+        Me.SociosButtonLimpiar.Location = New System.Drawing.Point(51, 390)
         Me.SociosButtonLimpiar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.SociosButtonLimpiar.Name = "SociosButtonLimpiar"
         Me.SociosButtonLimpiar.Size = New System.Drawing.Size(199, 44)
@@ -516,6 +539,7 @@ Partial Class VAsociados
         '
         'TextBoxSociosNumAsociado
         '
+        Me.TextBoxSociosNumAsociado.Enabled = False
         Me.TextBoxSociosNumAsociado.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSociosNumAsociado.Location = New System.Drawing.Point(498, 215)
         Me.TextBoxSociosNumAsociado.Name = "TextBoxSociosNumAsociado"
@@ -811,19 +835,13 @@ Partial Class VAsociados
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Gestión de Asociados"
         '
-        'AsociadosPorSecciónToolStripMenuItem
-        '
-        Me.AsociadosPorSecciónToolStripMenuItem.Name = "AsociadosPorSecciónToolStripMenuItem"
-        Me.AsociadosPorSecciónToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
-        Me.AsociadosPorSecciónToolStripMenuItem.Text = "Asociados Por Sección"
-        '
         'VAsociados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1284, 719)
+        Me.ClientSize = New System.Drawing.Size(1284, 770)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.TextBoxSociosSeccion2)
         Me.Controls.Add(Me.Label21)
@@ -969,4 +987,5 @@ Partial Class VAsociados
     Friend WithEvents Label1 As Label
     Friend WithEvents ExcedentesPorAsociadoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AsociadosPorSecciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ButtonAsociadosBuscarXNombre As Button
 End Class

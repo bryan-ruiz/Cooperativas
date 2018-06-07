@@ -68,7 +68,7 @@ Partial Class VImagenes
         '
         Me.ImagenesButtonBrowse.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ImagenesButtonBrowse.ForeColor = System.Drawing.Color.White
-        Me.ImagenesButtonBrowse.Location = New System.Drawing.Point(189, 551)
+        Me.ImagenesButtonBrowse.Location = New System.Drawing.Point(268, 582)
         Me.ImagenesButtonBrowse.Name = "ImagenesButtonBrowse"
         Me.ImagenesButtonBrowse.Size = New System.Drawing.Size(196, 52)
         Me.ImagenesButtonBrowse.TabIndex = 152
@@ -88,26 +88,27 @@ Partial Class VImagenes
         'ImagenesTextboxPath
         '
         Me.ImagenesTextboxPath.Enabled = False
-        Me.ImagenesTextboxPath.Location = New System.Drawing.Point(224, 502)
+        Me.ImagenesTextboxPath.Location = New System.Drawing.Point(215, 536)
         Me.ImagenesTextboxPath.Name = "ImagenesTextboxPath"
-        Me.ImagenesTextboxPath.Size = New System.Drawing.Size(497, 20)
+        Me.ImagenesTextboxPath.Size = New System.Drawing.Size(531, 20)
         Me.ImagenesTextboxPath.TabIndex = 157
         '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(189, 141)
+        Me.PictureBox1.Location = New System.Drawing.Point(176, 141)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(532, 355)
+        Me.PictureBox1.Size = New System.Drawing.Size(570, 389)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 156
         Me.PictureBox1.TabStop = False
         '
         'ImagenesButtonGuardar
         '
+        Me.ImagenesButtonGuardar.Enabled = False
         Me.ImagenesButtonGuardar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ImagenesButtonGuardar.ForeColor = System.Drawing.Color.White
-        Me.ImagenesButtonGuardar.Location = New System.Drawing.Point(397, 551)
+        Me.ImagenesButtonGuardar.Location = New System.Drawing.Point(476, 582)
         Me.ImagenesButtonGuardar.Name = "ImagenesButtonGuardar"
         Me.ImagenesButtonGuardar.Size = New System.Drawing.Size(196, 52)
         Me.ImagenesButtonGuardar.TabIndex = 158
@@ -117,7 +118,7 @@ Partial Class VImagenes
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(186, 505)
+        Me.Label1.Location = New System.Drawing.Point(177, 539)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(32, 13)
         Me.Label1.TabIndex = 159

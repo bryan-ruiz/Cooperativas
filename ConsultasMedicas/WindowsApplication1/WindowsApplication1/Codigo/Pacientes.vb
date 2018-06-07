@@ -325,8 +325,9 @@ Public Class Pacientes
                     End If
 
                     Dim expedienteXSocio As Integer = BD.insertarExpedienteXSocio(cedula + "-" + cedula2 + "-" + cedula3, fechaIngreso, "", "", "", "", "", "", "", "")
+                    Dim motivoXSocio As Integer = BD.insertarMotivoXSocio(cedula + "-" + cedula2 + "-" + cedula3, fechaIngreso, "0", "Creación del Paciente")
 
-                    If (insertado = 1 And expedienteXSocio = 1) Then
+                    If (insertado = 1 And expedienteXSocio = 1 And motivoXSocio = 1) Then
                         MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                         limpiar()
                     Else

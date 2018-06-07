@@ -11,6 +11,7 @@
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
     Dim informeEconomico As InformeEconomico = New InformeEconomico
     Dim cuotaAdmision As CuotaAdmision = New CuotaAdmision
+    Dim consecutivoAsociado As ConsecutivoAsociado = New ConsecutivoAsociado
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.WindowState = FormWindowState.Maximized, Para maximizar la pantalla'
@@ -20,8 +21,8 @@
         Me.ButtonAsociadosAgregar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.ButtonSociosModificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.SociosButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-
         cuotaAdmision.consultarCuotaAdmision()
+        consecutivoAsociado.consultarInformacionConsecutivo()
 
     End Sub
 
@@ -114,6 +115,9 @@
 
     Private Sub ButtonAsociadosAgregar_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosAgregar.Click
         socios.insertar()
+        TextBoxSociosNumAsociado.Text = ""
+        consecutivoAsociado.consultarInformacionConsecutivo()
+
     End Sub
 
     Private Sub ButtonSociosModificar_Click(sender As Object, e As EventArgs) Handles ButtonSociosModificar.Click
@@ -170,10 +174,6 @@
         socios.generarReporteDeSociosResumidoTodos("Todos")
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
     Private Sub TextBoxSociosConsultarAsociado_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles TextBoxSociosConsultarAsociado.KeyPress
         'TextBoxSociosConsultarAsociado.PasswordChar = "*"
         If e.KeyChar = ChrW(Keys.Enter) Then
@@ -187,5 +187,13 @@
 
     Private Sub AsociadosPorSecciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsociadosPorSecciónToolStripMenuItem.Click
         socios.reporteAsociadosXSeccion()
+    End Sub
+
+    Private Sub ButtonAsociadosBuscarXNombre_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscarXNombre.Click
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class

@@ -103,6 +103,7 @@ Public Class MensajesGlobales
     Public numReciboCertificados As Integer = 1
     Public numReciboEntradas As Integer = 1
 
+
     'Colores para los reportes
     Public colorEncabezado As String = "#0489B1" 'Header de reportes - azul
     Public colorLineas As String = "#D8D8D8" ' color líneas del reporte - gris

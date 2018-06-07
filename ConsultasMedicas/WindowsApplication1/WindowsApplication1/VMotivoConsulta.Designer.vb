@@ -28,7 +28,7 @@ Partial Class VMotivoConsulta
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.PacientesButtonAbrirExpediente = New System.Windows.Forms.Button()
         Me.MotivoConsultaButtonBuscarXNombre = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.MotivoConsultaTextboxConsultarCedula = New System.Windows.Forms.TextBox()
@@ -49,7 +49,6 @@ Partial Class VMotivoConsulta
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.MotivoConsultaButtonAgregar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ButtonBorrar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -96,8 +95,7 @@ Partial Class VMotivoConsulta
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.ButtonBorrar)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.PacientesButtonAbrirExpediente)
         Me.GroupBox1.Controls.Add(Me.MotivoConsultaButtonBuscarXNombre)
         Me.GroupBox1.Controls.Add(Me.Label22)
         Me.GroupBox1.Controls.Add(Me.MotivoConsultaTextboxConsultarCedula)
@@ -106,27 +104,28 @@ Partial Class VMotivoConsulta
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 134)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 124)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(310, 579)
+        Me.GroupBox1.Size = New System.Drawing.Size(302, 278)
         Me.GroupBox1.TabIndex = 159
         Me.GroupBox1.TabStop = False
         '
-        'Button1
+        'PacientesButtonAbrirExpediente
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(146, 416)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(129, 44)
-        Me.Button1.TabIndex = 166
-        Me.Button1.Text = "cargar"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.PacientesButtonAbrirExpediente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.PacientesButtonAbrirExpediente.ForeColor = System.Drawing.Color.White
+        Me.PacientesButtonAbrirExpediente.Image = Global.WindowsApplication1.My.Resources.Resources.folder7
+        Me.PacientesButtonAbrirExpediente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.PacientesButtonAbrirExpediente.Location = New System.Drawing.Point(34, 154)
+        Me.PacientesButtonAbrirExpediente.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.PacientesButtonAbrirExpediente.Name = "PacientesButtonAbrirExpediente"
+        Me.PacientesButtonAbrirExpediente.Size = New System.Drawing.Size(199, 44)
+        Me.PacientesButtonAbrirExpediente.TabIndex = 7
+        Me.PacientesButtonAbrirExpediente.Text = "Abrir Archivos"
+        Me.PacientesButtonAbrirExpediente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PacientesButtonAbrirExpediente.UseVisualStyleBackColor = True
         '
         'MotivoConsultaButtonBuscarXNombre
         '
@@ -134,11 +133,11 @@ Partial Class VMotivoConsulta
         Me.MotivoConsultaButtonBuscarXNombre.ForeColor = System.Drawing.Color.White
         Me.MotivoConsultaButtonBuscarXNombre.Image = Global.WindowsApplication1.My.Resources.Resources.search9
         Me.MotivoConsultaButtonBuscarXNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MotivoConsultaButtonBuscarXNombre.Location = New System.Drawing.Point(39, 140)
+        Me.MotivoConsultaButtonBuscarXNombre.Location = New System.Drawing.Point(34, 100)
         Me.MotivoConsultaButtonBuscarXNombre.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.MotivoConsultaButtonBuscarXNombre.Name = "MotivoConsultaButtonBuscarXNombre"
         Me.MotivoConsultaButtonBuscarXNombre.Size = New System.Drawing.Size(199, 44)
-        Me.MotivoConsultaButtonBuscarXNombre.TabIndex = 66
+        Me.MotivoConsultaButtonBuscarXNombre.TabIndex = 6
         Me.MotivoConsultaButtonBuscarXNombre.Text = " Buscar por Nombre"
         Me.MotivoConsultaButtonBuscarXNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.MotivoConsultaButtonBuscarXNombre.UseVisualStyleBackColor = True
@@ -148,7 +147,7 @@ Partial Class VMotivoConsulta
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.Black
-        Me.Label22.Location = New System.Drawing.Point(17, 42)
+        Me.Label22.Location = New System.Drawing.Point(12, 27)
         Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(221, 16)
@@ -157,7 +156,7 @@ Partial Class VMotivoConsulta
         '
         'MotivoConsultaTextboxConsultarCedula
         '
-        Me.MotivoConsultaTextboxConsultarCedula.Location = New System.Drawing.Point(16, 69)
+        Me.MotivoConsultaTextboxConsultarCedula.Location = New System.Drawing.Point(11, 54)
         Me.MotivoConsultaTextboxConsultarCedula.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.MotivoConsultaTextboxConsultarCedula.Name = "MotivoConsultaTextboxConsultarCedula"
         Me.MotivoConsultaTextboxConsultarCedula.Size = New System.Drawing.Size(222, 22)
@@ -168,7 +167,7 @@ Partial Class VMotivoConsulta
         Me.MotivoConsultaButtonBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.MotivoConsultaButtonBuscar.ForeColor = System.Drawing.Color.White
         Me.MotivoConsultaButtonBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
-        Me.MotivoConsultaButtonBuscar.Location = New System.Drawing.Point(244, 59)
+        Me.MotivoConsultaButtonBuscar.Location = New System.Drawing.Point(239, 43)
         Me.MotivoConsultaButtonBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.MotivoConsultaButtonBuscar.Name = "MotivoConsultaButtonBuscar"
         Me.MotivoConsultaButtonBuscar.Size = New System.Drawing.Size(58, 43)
@@ -181,29 +180,29 @@ Partial Class VMotivoConsulta
         Me.MotivoConsultaButtonLimpiar.ForeColor = System.Drawing.Color.White
         Me.MotivoConsultaButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
         Me.MotivoConsultaButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MotivoConsultaButtonLimpiar.Location = New System.Drawing.Point(39, 216)
+        Me.MotivoConsultaButtonLimpiar.Location = New System.Drawing.Point(34, 208)
         Me.MotivoConsultaButtonLimpiar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.MotivoConsultaButtonLimpiar.Name = "MotivoConsultaButtonLimpiar"
         Me.MotivoConsultaButtonLimpiar.Size = New System.Drawing.Size(199, 44)
-        Me.MotivoConsultaButtonLimpiar.TabIndex = 5
+        Me.MotivoConsultaButtonLimpiar.TabIndex = 8
         Me.MotivoConsultaButtonLimpiar.Text = "Limpiar Campos"
         Me.MotivoConsultaButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.MotivoConsultaButtonLimpiar.UseVisualStyleBackColor = True
         '
         'MotivoConsultaTextboxMotivoConsulta
         '
-        Me.MotivoConsultaTextboxMotivoConsulta.Location = New System.Drawing.Point(634, 233)
+        Me.MotivoConsultaTextboxMotivoConsulta.Location = New System.Drawing.Point(638, 278)
         Me.MotivoConsultaTextboxMotivoConsulta.Multiline = True
         Me.MotivoConsultaTextboxMotivoConsulta.Name = "MotivoConsultaTextboxMotivoConsulta"
-        Me.MotivoConsultaTextboxMotivoConsulta.Size = New System.Drawing.Size(453, 59)
-        Me.MotivoConsultaTextboxMotivoConsulta.TabIndex = 3
+        Me.MotivoConsultaTextboxMotivoConsulta.Size = New System.Drawing.Size(453, 79)
+        Me.MotivoConsultaTextboxMotivoConsulta.TabIndex = 4
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Location = New System.Drawing.Point(391, 193)
+        Me.GroupBox3.Location = New System.Drawing.Point(395, 238)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(831, 37)
         Me.GroupBox3.TabIndex = 141
@@ -245,25 +244,26 @@ Partial Class VMotivoConsulta
         'MotivoConsultaDateTimeFecha
         '
         Me.MotivoConsultaDateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.MotivoConsultaDateTimeFecha.Location = New System.Drawing.Point(391, 243)
+        Me.MotivoConsultaDateTimeFecha.Location = New System.Drawing.Point(395, 288)
         Me.MotivoConsultaDateTimeFecha.Name = "MotivoConsultaDateTimeFecha"
         Me.MotivoConsultaDateTimeFecha.Size = New System.Drawing.Size(102, 20)
-        Me.MotivoConsultaDateTimeFecha.TabIndex = 1
+        Me.MotivoConsultaDateTimeFecha.TabIndex = 32
         '
         'MotivoConsultaTextboxValorConsulta
         '
-        Me.MotivoConsultaTextboxValorConsulta.Location = New System.Drawing.Point(499, 243)
+        Me.MotivoConsultaTextboxValorConsulta.Location = New System.Drawing.Point(503, 288)
         Me.MotivoConsultaTextboxValorConsulta.Name = "MotivoConsultaTextboxValorConsulta"
         Me.MotivoConsultaTextboxValorConsulta.Size = New System.Drawing.Size(129, 20)
-        Me.MotivoConsultaTextboxValorConsulta.TabIndex = 2
+        Me.MotivoConsultaTextboxValorConsulta.TabIndex = 3
         '
         'MotivoConsultaTextboxCed
         '
+        Me.MotivoConsultaTextboxCed.Enabled = False
         Me.MotivoConsultaTextboxCed.Location = New System.Drawing.Point(76, 14)
         Me.MotivoConsultaTextboxCed.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.MotivoConsultaTextboxCed.Name = "MotivoConsultaTextboxCed"
         Me.MotivoConsultaTextboxCed.Size = New System.Drawing.Size(161, 20)
-        Me.MotivoConsultaTextboxCed.TabIndex = 164
+        Me.MotivoConsultaTextboxCed.TabIndex = 30
         '
         'GroupBox4
         '
@@ -309,15 +309,22 @@ Partial Class VMotivoConsulta
         Me.MotivoConsultaTextboxNombreYApellidos.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.MotivoConsultaTextboxNombreYApellidos.Name = "MotivoConsultaTextboxNombreYApellidos"
         Me.MotivoConsultaTextboxNombreYApellidos.Size = New System.Drawing.Size(349, 20)
-        Me.MotivoConsultaTextboxNombreYApellidos.TabIndex = 161
+        Me.MotivoConsultaTextboxNombreYApellidos.TabIndex = 31
         '
         'ListView1
         '
-        Me.ListView1.Location = New System.Drawing.Point(330, 325)
+        Me.ListView1.AllowColumnReorder = True
+        Me.ListView1.BackColor = System.Drawing.Color.White
+        Me.ListView1.ForeColor = System.Drawing.Color.Black
+        Me.ListView1.FullRowSelect = True
+        Me.ListView1.GridLines = True
+        Me.ListView1.Location = New System.Drawing.Point(7, 404)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(907, 389)
+        Me.ListView1.ShowItemToolTips = True
+        Me.ListView1.Size = New System.Drawing.Size(1228, 267)
         Me.ListView1.TabIndex = 163
         Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.List
         '
         'MotivoConsultaButtonAgregar
         '
@@ -325,11 +332,11 @@ Partial Class VMotivoConsulta
         Me.MotivoConsultaButtonAgregar.ForeColor = System.Drawing.Color.White
         Me.MotivoConsultaButtonAgregar.Image = Global.WindowsApplication1.My.Resources.Resources.addwhite2
         Me.MotivoConsultaButtonAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MotivoConsultaButtonAgregar.Location = New System.Drawing.Point(1097, 243)
+        Me.MotivoConsultaButtonAgregar.Location = New System.Drawing.Point(1097, 288)
         Me.MotivoConsultaButtonAgregar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.MotivoConsultaButtonAgregar.Name = "MotivoConsultaButtonAgregar"
         Me.MotivoConsultaButtonAgregar.Size = New System.Drawing.Size(125, 40)
-        Me.MotivoConsultaButtonAgregar.TabIndex = 164
+        Me.MotivoConsultaButtonAgregar.TabIndex = 5
         Me.MotivoConsultaButtonAgregar.Text = "Agregar"
         Me.MotivoConsultaButtonAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.MotivoConsultaButtonAgregar.UseVisualStyleBackColor = True
@@ -339,31 +346,17 @@ Partial Class VMotivoConsulta
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(393, 302)
+        Me.Label2.Location = New System.Drawing.Point(421, 370)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 16)
         Me.Label2.TabIndex = 165
         Me.Label2.Text = "Historial:"
         '
-        'ButtonBorrar
-        '
-        Me.ButtonBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonBorrar.ForeColor = System.Drawing.Color.White
-        Me.ButtonBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonBorrar.Location = New System.Drawing.Point(146, 362)
-        Me.ButtonBorrar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.ButtonBorrar.Name = "ButtonBorrar"
-        Me.ButtonBorrar.Size = New System.Drawing.Size(129, 44)
-        Me.ButtonBorrar.TabIndex = 167
-        Me.ButtonBorrar.Text = "borrar"
-        Me.ButtonBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonBorrar.UseVisualStyleBackColor = True
-        '
         'VMotivoConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1247, 726)
+        Me.ClientSize = New System.Drawing.Size(1247, 688)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.MotivoConsultaButtonAgregar)
         Me.Controls.Add(Me.ListView1)
@@ -420,6 +413,5 @@ Partial Class VMotivoConsulta
     Friend WithEvents ListView1 As ListView
     Friend WithEvents MotivoConsultaButtonAgregar As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents ButtonBorrar As Button
+    Friend WithEvents PacientesButtonAbrirExpediente As Button
 End Class

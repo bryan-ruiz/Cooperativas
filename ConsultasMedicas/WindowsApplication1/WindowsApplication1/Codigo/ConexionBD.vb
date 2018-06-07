@@ -3992,6 +3992,28 @@ Public Class ConexionBD
         Return res
     End Function
 
+    'Inserta un motivo consulta X Socio
+    Function insertarMotivoXSocio(ByVal cedula As String, ByVal fecha As Date, ByVal valor As String, ByVal motivo As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "INSERT INTO [MOTIVO_CONSULTA]" &
+           "(cedula, fecha, valor, motivo)" &
+            "VALUES ('" + cedula + "', '" + fecha + "', '" + valor + "', '" + motivo + "') "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
     'Actualiza la info del paciente
     Function actualizarPaciente(ByVal cedula As String, ByVal nombre As String, ByVal primerApellido As String, ByVal segundoApellido As String, ByVal fechaNacimiento As Date, ByVal edad As String,
                                 ByVal telefonoPersonal As String, ByVal telefonoTrabajo As String, ByVal fechaIngreso As Date, ByVal direccionResidencia As String, ByVal direccionTrabajo As String,
@@ -4022,5 +4044,60 @@ Public Class ConexionBD
         Return res
     End Function
 
+    'Actualiza la info del expediente del paciente
+    Function actualizarExpediente(ByVal cedula As String, ByVal fechaExpediente As Date, ByVal G3 As String,
+                                ByVal P3 As String, ByVal A0 As String, ByVal C0 As String, ByVal CC As String,
+                                ByVal Aqx As String, ByVal AfyAp As String, ByVal AnP As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar, en este caso es insertar'
+            SQL = "UPDATE [EXPEDIENTES] SET cedula = '" & cedula & "', " & "fechaExpediente = '" & fechaExpediente & "',
+                    " & "g = '" & G3 & "', " & "p = '" & P3 & "', " & "a = '" & A0 & "', " & "c = '" & C0 & "',
+                    " & "cc = '" & CC & "',
+                    " & "aqx = '" & Aqx & "', " & "afyap = '" & AfyAp & "', " & "anp = '" & AnP & "'
+
+                    WHERE ((cedula) = '" & cedula & "') "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
+
+    'Selecciona id, cedula, etc...
+    Function consultarMotivoConsultaXCedula(ByVal cedula As String) As List(Of MotivoConsultaClase)
+        Dim MyList As New List(Of MotivoConsultaClase)
+        Try
+            SQL = "SELECT MOTIVO_CONSULTA.*
+                    FROM [MOTIVO_CONSULTA]
+                    WHERE ((MOTIVO_CONSULTA.cedula) = '" & cedula & "') "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim nuevosocio As MotivoConsultaClase = New MotivoConsultaClase
+
+                    nuevosocio.motivoConsultaClaseConstructor(reader.GetString(1), reader.GetDateTime(2), reader.GetString(3), reader.GetString(4))
+
+                    MyList.Add(nuevosocio)
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de " + ex.Message)
+        End Try
+        Return MyList
+    End Function
 
 End Class

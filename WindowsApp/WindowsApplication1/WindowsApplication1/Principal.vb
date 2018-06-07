@@ -305,10 +305,19 @@ Public Class Principal
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+        'si es admin o super admin puede ver la ventana
         VConfiguracionCuotaAdmision.Show()
     End Sub
 
     Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
         VReportesTodos.Show()
+    End Sub
+
+    Private Sub ConsecutivoAsociadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsecutivoAsociadosToolStripMenuItem.Click
+        VConsecutivoAsociado.Show()
     End Sub
 End Class

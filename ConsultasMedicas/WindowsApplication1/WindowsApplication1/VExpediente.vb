@@ -17,7 +17,7 @@ Public Class VExpediente
         Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
 
         Me.ExpedienteButtonBuscar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-        Me.ExpedienteButtonBuscarXNombre.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        'Me.ExpedienteButtonBuscarXNombre.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.ExpedienteButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.ExpedienteButtonActualizarDatos.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.ExpedienteButtonVerMotivoConsulta.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
@@ -51,7 +51,7 @@ Public Class VExpediente
     End Sub
 
     Private Sub ExpedienteButtonActualizarDatos_Click(sender As Object, e As EventArgs) Handles ExpedienteButtonActualizarDatos.Click
-
+        expediente.actualizar()
     End Sub
 
     Private Sub ExpedienteButtonVerMotivoConsulta_Click(sender As Object, e As EventArgs) Handles ExpedienteButtonVerMotivoConsulta.Click

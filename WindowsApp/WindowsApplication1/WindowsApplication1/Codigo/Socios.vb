@@ -8,6 +8,7 @@ Public Class Socios
     Dim encabezado As EncabezadoClase = New EncabezadoClase
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
     Dim informeEconomico As InformeEconomico = New InformeEconomico
+    Dim consecutivoAsociado As ConsecutivoAsociado = New ConsecutivoAsociado
 
     'consulta un asociado
     Public Sub consultarAsociado()
@@ -344,20 +345,31 @@ Public Class Socios
 
                     Dim insertado As Integer = 0
 
+                    'Convierte a minúscula y luego a letra capital
+                    Dim nombre2 As String = Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombre.ToLower)
+                    Dim apellidoUno2 As String = Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(apellidoUno.ToLower)
+                    Dim apellidoDos2 As String = Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(apellidoDos.ToLower)
+
                     If (seccion = "") Then
-                        insertado = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento,
+                        insertado = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre2, apellidoUno2, apellidoDos2, fechaNacimiento,
                                                                 telefono + "-" + telefono2, cuota, responsable, beneficiario, fechaIngreso,
                                                                 " " + "-" + " ", especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
 
                     Else
 
-                        insertado = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre, apellidoUno, apellidoDos, fechaNacimiento,
+                        insertado = BD.insertarSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, nombre2, apellidoUno2, apellidoDos2, fechaNacimiento,
                                                                 telefono + "-" + telefono2, cuota, responsable, beneficiario, fechaIngreso,
                                                                 seccion + "-" + seccion2, especialidad, direccion, genero, estado, fechaRetiro, notasRetiro, menor)
                     End If
 
+
+
                     Dim certificadoXSocio As Integer = BD.insertarCertificadoXSocio(cedula + "-" + cedula2 + "-" + cedula3, numAsociado, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", fechaIngreso, fechaIngreso,
                                                                                     fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso)
+
+                    'Incrementa el num de consecutivo del asociado
+                    Dim consecutivoInt As Integer = Convert.ToInt32(VAsociados.TextBoxSociosNumAsociado.Text)
+                    BD.actualizarConsecutivoAsociado(consecutivoInt + 1)
 
                     If (insertado = 1 And certificadoXSocio = 1) Then
                         MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
@@ -451,13 +463,13 @@ Public Class Socios
         VAsociados.TextBoxSociosCedula.Text = ""
         VAsociados.TextBoxSociosCedula2.Text = ""
         VAsociados.TextBoxSociosCedula3.Text = ""
-        VAsociados.TextBoxSociosNumAsociado.Text = ""
+        'VAsociados.TextBoxSociosNumAsociado.Text = ""
         VAsociados.TextBoxSociosNombre.Text = ""
         VAsociados.TextBoxSocios1erApellido.Text = ""
         VAsociados.TextBoxSocios2doApellido.Text = ""
         VAsociados.TextBoxSociosTelefono.Text = ""
         VAsociados.TextBoxSociosTelefono2.Text = ""
-        VAsociados.TextBoxSociosCuotaMatricula.Text = ""
+        'VAsociados.TextBoxSociosCuotaMatricula.Text = ""
         VAsociados.TextBoxSociosResponsable.Text = ""
         VAsociados.TextBoxSociosBeneficiario.Text = ""
         VAsociados.TextBoxSociosSeccion.Text = ""

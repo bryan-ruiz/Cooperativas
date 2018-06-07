@@ -10,53 +10,76 @@ Public Class VMotivoConsulta
     Dim cmd As OleDbCommand
     Dim adapter As OleDbDataAdapter
     Dim dt As DataTable = New DataTable()
+    Dim motivoConsulta As MotivoConsulta = New MotivoConsulta
 
 
     Private Sub VMotivoConsulta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.MotivoConsultaButtonAgregar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.MotivoConsultaButtonBuscar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-        Me.MotivoConsultaButtonBuscarXNombre.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        ' Me.MotivoConsultaButtonBuscarXNombre.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.MotivoConsultaButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-
+        Me.MotivoConsultaTextboxConsultarCedula.Select()
         'SET LISTVIEW PROPERTIES
         ListView1.View = View.Details
         'CONSTRUCT COLUMNS
         ListView1.Columns.Add("Fecha", 100)
         ListView1.Columns.Add("Valor", 100)
-        ListView1.Columns.Add("Motivo", 2000)
+        ListView1.Columns.Add("Motivo", 100)
 
         'to auto size width colum 
-        ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
-        ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
+        'ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
+        'ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
 
     End Sub
 
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
+    'RETRIEVE FROM DB
+    Public Sub Retrieve(ByVal cedula As String)
+        ListView1.Items.Clear()
+        'SQL STMT
+        Dim sql As String = "SELECT MOTIVO_CONSULTA.fecha, MOTIVO_CONSULTA.valor, MOTIVO_CONSULTA.motivo 
+                                FROM [MOTIVO_CONSULTA]" &
+                                "WHERE cedula = ('" + cedula + "')"
 
-    End Sub
+        cmd = New OleDbCommand(sql, con)
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        'OPEN CON,RETRIEVE,FILL LISTVIEW
+        Try
+            con.Open()
+            adapter = New OleDbDataAdapter(cmd)
+            adapter.Fill(dt)
+
+            'FILL
+            For Each row In dt.Rows
+                'Populate(row(1), row(2), row(3))
+                Populate(row(0), row(1), row(2))
+
+            Next
+
+            'CLEAR DT
+            dt.Rows.Clear()
+            con.Close()
+
+            'to auto size width colum 
+            ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
+            ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
+
+
+        Catch ex As Exception
+            MsgBox("Error : " & ex.ToString)
+            con.Close()
+        End Try
 
     End Sub
 
     '############### codigo listview ########################
 
-    'Boton Agregar
-    Private Sub MotivoConsultaButtonAgregar_Click(sender As Object, e As EventArgs) Handles MotivoConsultaButtonAgregar.Click
-        Dim cedula As String = MotivoConsultaTextboxCed.Text
-        Dim fecha As Date = MotivoConsultaDateTimeFecha.Value.ToString("dd/MM/yyyy")
-        Dim valor As String = MotivoConsultaTextboxValorConsulta.Text
-        Dim motivo As String = MotivoConsultaTextboxMotivoConsulta.Text
 
-        Add(cedula, fecha, valor, motivo)
-
-    End Sub
-
-    Private Sub Add(cedula As String, fecha As Date, valor As String, motivo As String)
+    Public Sub Add(cedula As String, fecha As Date, valor As String, motivo As String)
         If (cedula = "") Then
             MessageBox.Show(variablesGlobales.mensajeCedulaNula, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            motivoConsulta.limpiar()
             Return
         End If
         If (valor = "" Or motivo = "") Then
@@ -104,87 +127,69 @@ Public Class VMotivoConsulta
         ListView1.Items.Add(item)
     End Sub
 
-    'RETRIEVE FROM DB
-    Private Sub Retrieve(ByVal cedula As String)
-        ListView1.Items.Clear()
-        'SQL STMT
-        Dim sql As String = "SELECT MOTIVO_CONSULTA.fecha, MOTIVO_CONSULTA.valor, MOTIVO_CONSULTA.motivo 
-                                FROM [MOTIVO_CONSULTA]" &
-                                "WHERE cedula = ('" + cedula + "')"
 
-        cmd = New OleDbCommand(sql, con)
-
-        'OPEN CON,RETRIEVE,FILL LISTVIEW
-        Try
-            con.Open()
-            adapter = New OleDbDataAdapter(cmd)
-            adapter.Fill(dt)
-
-            'FILL
-            For Each row In dt.Rows
-                'Populate(row(1), row(2), row(3))
-                Populate(row(0), row(1), row(2))
-            Next
-
-            'CLEAR DT
-            dt.Rows.Clear()
-            con.Close()
-
-            'to auto size width colum 
-            ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
-            ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
+    '#######################################################################################
 
 
-        Catch ex As Exception
-            MsgBox("Error : " & ex.ToString)
-            con.Close()
-        End Try
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+
+    End Sub
+
 
 
     Private Sub MotivoConsultaButtonBuscar_Click(sender As Object, e As EventArgs) Handles MotivoConsultaButtonBuscar.Click
-        'Buscar x cedula de paciente
-        'etc
-
-        'carga la info desde la BD para un paciente
-        Dim cedula As String = MotivoConsultaTextboxCed.Text
-        If (cedula = "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaNula, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-            Return
-        End If
-
-        Retrieve(MotivoConsultaTextboxCed.Text)
+        motivoConsulta.consultarMotivoConsultaXCedula()
     End Sub
 
     Private Sub MotivoConsultaButtonLimpiar_Click(sender As Object, e As EventArgs) Handles MotivoConsultaButtonLimpiar.Click
-        ListView1.Items.Clear()
-        limpiar()
+        motivoConsulta.limpiar()
     End Sub
 
-    Public Sub limpiar()
-        'limpia el listview
-        ListView1.Items.Clear()
-        'limpia textfields
-        MotivoConsultaTextboxCed.Text = ""
-        MotivoConsultaTextboxNombreYApellidos.Text = ""
-        MotivoConsultaTextboxConsultarCedula.Text = ""
-        'etc
+    'para borrar
+    'Private Sub ButtonBorrar_Click(sender As Object, e As EventArgs)
+    'Try
+    'Dim motivo As String = ListView1.SelectedItems(0).SubItems(2).Text
+    'MsgBox("Seleccionó : " & motivo)
+    'Delete(name)
+    ''http://camposha.info/source/vb-net-ms-access-listview-insert-select-update-delete
+    'Catch ex As Exception
+    'End Try
+    'End Sub
+
+    Private Sub MotivoConsultaTextboxConsultarCedula_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles MotivoConsultaTextboxConsultarCedula.KeyPress
+        'TextBoxSociosConsultarAsociado.PasswordChar = "*"
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Call MotivoConsultaButtonBuscar_Click(sender, e)
+        End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Retrieve(MotivoConsultaTextboxCed.Text)
+    Private Sub PacientesButtonAbrirExpediente_Click(sender As Object, e As EventArgs) Handles PacientesButtonAbrirExpediente.Click
+        VImagenes.Show()
     End Sub
 
-    Private Sub ButtonBorrar_Click(sender As Object, e As EventArgs) Handles ButtonBorrar.Click
-        Try
-            Dim motivo As String = ListView1.SelectedItems(0).SubItems(2).Text
-            MsgBox("Seleccionó : " & motivo)
-            'Delete(name)
-            'http://camposha.info/source/vb-net-ms-access-listview-insert-select-update-delete
-        Catch ex As Exception
+    'Boton Agregar
+    Private Sub MotivoConsultaButtonAgregar_Click(sender As Object, e As EventArgs) Handles MotivoConsultaButtonAgregar.Click
+        Dim cedula As String = MotivoConsultaTextboxCed.Text
+        Dim fecha As Date = MotivoConsultaDateTimeFecha.Value.ToString("dd/MM/yyyy")
+        Dim valor As String = MotivoConsultaTextboxValorConsulta.Text
+        Dim motivo As String = MotivoConsultaTextboxMotivoConsulta.Text
 
-        End Try
+        Add(cedula, fecha, valor, motivo)
 
+    End Sub
+
+    Private Sub MotivoConsultaTextboxValorConsulta_TextChanged(sender As Object, e As KeyPressEventArgs) Handles MotivoConsultaTextboxValorConsulta.KeyPress
+        Me.MotivoConsultaTextboxValorConsulta.MaxLength = 8
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
     End Sub
 End Class

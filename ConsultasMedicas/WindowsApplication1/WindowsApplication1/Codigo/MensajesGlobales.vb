@@ -3,6 +3,7 @@
 Public Class MensajesGlobales
 
     Public mensajeCedulaNula As String = "Debe ingresar la cédula a consultar"
+    Public mensajeCedulaNulaExpediente As String = "Debe ingresar la cédula para actualizar la información"
     'Mensaje Generado con Éxito
     Public reporteGeneradoConExito As String = "Reporte generado con éxito en C:/Reportes/"
 

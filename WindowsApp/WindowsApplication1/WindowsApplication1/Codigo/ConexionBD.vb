@@ -626,11 +626,11 @@ Public Class ConexionBD
                 SQL = "SELECT SOCIOS.* 
                         FROM [SOCIOS] 
                         WHERE ((estado) = 'Activo')
-                        ORDER BY seccion "
+                        ORDER BY numAsociado "
             Else
                 SQL = "SELECT SOCIOS.* 
                         FROM [SOCIOS]
-                        ORDER BY seccion "
+                        ORDER BY numAsociado "
             End If
 
             'pregunto antes si estoy conectado a la base de datos'
@@ -941,6 +941,35 @@ Public Class ConexionBD
         Return MyList
     End Function
 
+
+    Function obtenerDatosdeConfigurationConsecutivoAsociado() As List(Of ConsecutivoAsociadoClase)
+        Dim MyList As New List(Of ConsecutivoAsociadoClase)
+        Try
+            SQL = "SELECT CONSECUTIVO_ASOCIADO.* FROM [CONSECUTIVO_ASOCIADO]"
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim valor As ConsecutivoAsociadoClase = New ConsecutivoAsociadoClase
+                    Try
+                        valor.consecutivoClaseCostructor(reader.GetString(1))
+                        MyList.Add(valor)
+                    Catch ex As Exception
+                        MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+                    End Try
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error en la base de datos: " + ex.Message)
+        End Try
+        Return MyList
+    End Function
+
+
     'Actualiza la info de Configuracion
     Function actualizarConfiguracion(ByVal periodo As String, ByVal cooperativa As String, ByVal cedulaJuridica As String, ByVal telefono As String,
                                      ByVal fecha1 As Date, ByVal fecha2 As Date, ByVal fecha3 As Date, ByVal fech4 As Date, ByVal fecha5 As Date,
@@ -1009,6 +1038,26 @@ Public Class ConexionBD
         Return res
     End Function
 
+    'Actualiza la info de Configuracion
+    Function actualizarConsecutivoAsociado(ByVal consecutivo As Integer) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar
+            SQL = "UPDATE [CONSECUTIVO_ASOCIADO] SET consecutivo = '" & consecutivo & "' "
+
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
 
     'Actualiza la info de Configuracion porcentaje de reservas
     Function actualizarConfiguracionPorcentajeReservas(ByVal legal As String, ByVal educacion As String, ByVal bienestarSocial As String, ByVal institucional As String, ByVal patrimonial As String) As Integer

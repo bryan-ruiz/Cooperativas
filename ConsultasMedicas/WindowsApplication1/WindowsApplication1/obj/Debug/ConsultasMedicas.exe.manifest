@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ConsultasMedicas.exe" version="1.1.1.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="Resources\logocoopesag2_3xE_icon1.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv1:assemblyIdentity name="ConsultasMedicas.exe" version="1.1.1.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Resources\CMico.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="ConsultasMedicas" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsultasMedicas.exe" size="7261616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsultasMedicas.exe" size="8245168">
       <assemblyIdentity name="ConsultasMedicas" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>l6yWn9x/xQoK44O7f3klj3sghuuX9kZAABno0DkTDqY=</dsig:DigestValue>
+        <dsig:DigestValue>YGIs0UWmGdQXROvfxqsNDPkfD34vkPudy2vMkVlaySk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -141,6 +141,15 @@
       <dsig:DigestValue>W3XC/fvFyRGpmLgmBYsqzQ2DEYV9tT1Z6hmZhV8rVHg=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Resources\CMico.ico" size="370070">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7VPH0tgpG5GhKv25rZw+mF60jhqMDHHWa0N4XJC9qok=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Resources\logoCoopesag2.png" size="30182">
     <hash>
       <dsig:Transforms>
@@ -151,15 +160,6 @@
     </hash>
   </file>
   <file name="Resources\logocoopesag2_3xE_icon.ico" size="67633">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>PM23NpRUiS7omCqRrYHN4XupJE/+KP+zsvzjYuKdDiY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\logocoopesag2_3xE_icon1.ico" size="67633">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />

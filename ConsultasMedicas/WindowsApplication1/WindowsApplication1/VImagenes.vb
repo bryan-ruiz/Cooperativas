@@ -10,6 +10,7 @@ Public Class VImagenes
     Private Sub VReservasPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Panel1.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.ImagenesButtonBrowse.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        cargarImageXDefecto()
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -62,27 +63,46 @@ Public Class VImagenes
 
     Private Sub ImagenesButtonGuardar_Click(sender As Object, e As EventArgs) Handles ImagenesButtonGuardar.Click
         Try
-
             If Not Directory.Exists(variablesGlobales.folderPathImages) Then
                 Directory.CreateDirectory(variablesGlobales.folderPathImages)
             End If
-
             Dim root As String = "C:\"
             Dim file As String = "data.png" ' path folder
             Dim filename As String = System.IO.Path.Combine(root & file)
             'Carga el picture box con la imagen
-            PictureBox1.Image = Image.FromFile(filename)
+            ' PictureBox1.Image = Image.FromFile(filename)
+
+            Dim root2 As String = "C:\BD\"
+            Dim file2 As String = "noImage.png" ' path folder
+            Dim filename2 As String = System.IO.Path.Combine(root2 & file2)
+            'Carga el picture box con la imagen
+            PictureBox1.Image = Image.FromFile(filename2)
+
 
             'Para copiar una imagen "desde , hasta"
             FileCopy(root & file, variablesGlobales.folderPathImages & file)
-            MsgBox("Imagen copiada!")
+            ' MsgBox("Imagen copiada!")
         Catch ex As Exception
             MsgBox("Error de: " & ex.Message)
         End Try
 
-
-
     End Sub
 
+    Private Sub cargarImageXDefecto()
+        Try
+            If Not Directory.Exists(variablesGlobales.folderPathImages) Then
+                Directory.CreateDirectory(variablesGlobales.folderPathImages)
+            End If
+
+            Dim root2 As String = "C:\BD\"
+            Dim file2 As String = "noImage.jpg" ' path folder
+            Dim filename2 As String = System.IO.Path.Combine(root2 & file2)
+            'Carga el picture box con la imagen
+            PictureBox1.Image = Image.FromFile(filename2)
+
+        Catch ex As Exception
+            MsgBox("Error de: " & ex.Message)
+        End Try
+    End Sub
 
 End Class

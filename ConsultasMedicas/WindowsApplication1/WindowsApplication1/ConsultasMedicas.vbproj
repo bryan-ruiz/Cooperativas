@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Aaron\Desktop\ConsultasMedicas\1.1.1.1\</PublishUrl>
+    <PublishUrl>C:\Users\Aaron\Desktop\ConsultasMedicas1.1.1.4\1.1.1.4\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -67,7 +67,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\logocoopesag2_3xE_icon1.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\CMico.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>57BC6D6AD567D70C084AB2843B2005FA183AEB03</ManifestCertificateThumbprint>
@@ -132,6 +132,7 @@
     <Compile Include="Clases\ExpedienteClase.vb" />
     <Compile Include="Clases\GastoClase.vb" />
     <Compile Include="Clases\IngresoClase.vb" />
+    <Compile Include="Clases\MotivoConsultaClase.vb" />
     <Compile Include="Clases\PacienteClase.vb" />
     <Compile Include="Clases\ReservaClase.vb" />
     <Compile Include="Clases\SaldoReservasClase.vb" />
@@ -142,6 +143,7 @@
     <Compile Include="Codigo\CertificadosAlDia.vb" />
     <Compile Include="Codigo\Certificados.vb" />
     <Compile Include="Codigo\Expedientes.vb" />
+    <Compile Include="Codigo\MotivoConsulta.vb" />
     <Compile Include="Codigo\Pacientes.vb" />
     <Compile Include="Codigo\ReservasSalidas.vb" />
     <Compile Include="Codigo\ReservasEntradas.vb" />
@@ -173,6 +175,12 @@
       <DependentUpon>VExpediente.vb</DependentUpon>
     </Compile>
     <Compile Include="VExpediente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VBusquedaXNombre.Designer.vb">
+      <DependentUpon>VBusquedaXNombre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VBusquedaXNombre.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VMotivoConsulta.Designer.vb">
@@ -474,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VExpediente.resx">
       <DependentUpon>VExpediente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBusquedaXNombre.resx">
+      <DependentUpon>VBusquedaXNombre.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VMotivoConsulta.resx">
       <DependentUpon>VMotivoConsulta.vb</DependentUpon>

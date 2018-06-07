@@ -133,8 +133,14 @@
   <data name="refreshWhite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refreshWhite1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="find5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\find5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cleanUser3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cleanUser3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sin título-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sin título-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="find81" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\find81.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,6 +162,9 @@
   </data>
   <data name="gastos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gastos2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logocoopesag2_3xE_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logocoopesag2_3xE_icon1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loginOrForm3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginOrForm3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,9 +208,6 @@
   <data name="locky_1016554" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\locky_1016554.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Green_abstract_nature_1920x1200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Green_abstract_nature_1920x1200.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,17 +217,14 @@
   <data name="adduserwhite6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adduserwhite6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logocoopesag2_3xE_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logocoopesag2_3xE_icon1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="users1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adduser7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adduser7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="asociado51" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\asociado51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings1pp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings1pp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,11 +238,14 @@
   <data name="addUser1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addUser1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="comitenew1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\comitenew1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoCoopesag2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoCoopesag21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,14 +253,11 @@
   <data name="LogoTransparente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoTransparente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sin título-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sin título-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="entrada59" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\entrada59.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ingresos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ingresos2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,14 +265,14 @@
   <data name="users-icon-44710" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users-icon-44710.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="find5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\find5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="asociado51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\asociado51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="certi11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\certi11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoCoopesag2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoCoopesag21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addwhite2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addwhite2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,7 +283,7 @@
   <data name="login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lock4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lock4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

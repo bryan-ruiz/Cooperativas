@@ -22,9 +22,8 @@
         Me.PacientesButtonModificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.PacientesButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.PacientesButtonAbrirExpediente.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-        Me.PacientesButtonBuscarXNombre.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        ' Me.PacientesButtonBuscarXNombre.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
 
-        'cuotaAdmision.consultarCuotaAdmision()
 
     End Sub
 
@@ -198,6 +197,7 @@
     End Sub
 
     Private Sub PacientesButtonBuscarXNombre_Click(sender As Object, e As EventArgs) Handles PacientesButtonBuscarXNombre.Click
-        MsgBox("Funcionalidad no desarrollada, estado en Progreso")
+        'MsgBox("Funcionalidad no desarrollada, estado en Progreso")
+        VBusquedaXNombre.Show()
     End Sub
 End Class

@@ -126,6 +126,7 @@
     <Compile Include="Clases\CerrarPeriodoFechasClase.vb" />
     <Compile Include="Clases\ComiteClase.vb" />
     <Compile Include="Clases\ConfiguracionClase.vb" />
+    <Compile Include="Clases\ConsecutivoAsociadoClase.vb" />
     <Compile Include="Clases\CuentaClase.vb" />
     <Compile Include="Clases\CuotaAdmisionClase.vb" />
     <Compile Include="Clases\EncabezadoClase.vb" />
@@ -139,6 +140,7 @@
     <Compile Include="Clases\SocioClase.vb" />
     <Compile Include="Codigo\CertificadosAlDia.vb" />
     <Compile Include="Codigo\Certificados.vb" />
+    <Compile Include="Codigo\ConsecutivoAsociado.vb" />
     <Compile Include="Codigo\ReservasSalidas.vb" />
     <Compile Include="Codigo\ReservasEntradas.vb" />
     <Compile Include="Codigo\CertificadosSalidas.vb" />
@@ -163,6 +165,12 @@
       <DependentUpon>VCerrarPeriodoFechasLimite.vb</DependentUpon>
     </Compile>
     <Compile Include="VCerrarPeriodoFechasLimite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VConsecutivoAsociado.Designer.vb">
+      <DependentUpon>VConsecutivoAsociado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VConsecutivoAsociado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VReservasSalidas.Designer.vb">
@@ -450,6 +458,9 @@
     <EmbeddedResource Include="VAsociados.resx">
       <DependentUpon>VAsociados.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VConsecutivoAsociado.resx">
+      <DependentUpon>VConsecutivoAsociado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VReservasSalidas.resx">
       <DependentUpon>VReservasSalidas.vb</DependentUpon>
     </EmbeddedResource>
@@ -622,6 +633,7 @@
   <ItemGroup>
     <Content Include="android_l_etched_icon_tgJ_icon.ico" />
     <Content Include="Imagen\MEP_Logo.png" />
+    <None Include="Resources\search9.png" />
     <None Include="Resources\savelast2.png" />
     <None Include="Resources\saveicon2.png" />
     <None Include="Resources\refreshlast1.png" />

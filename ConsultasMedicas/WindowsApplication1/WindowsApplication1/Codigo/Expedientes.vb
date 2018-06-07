@@ -69,4 +69,44 @@ Public Class Expedientes
         VExpediente.ExpedienteTextboxAnP.Text = ""
     End Sub
 
+    'Actualizar Info de Pacientes'
+    Public Sub actualizar()
+
+        Dim cedula As String = VExpediente.ExpedienteTextboxCed.Text
+        Dim fechaExpediente As Date = VExpediente.ExpedienteDateTimeFecha.Value.ToString("dd/MM/yyyy")
+        Dim G3 As String = VExpediente.ExpedienteTextboxG3.Text
+        Dim P3 As String = VExpediente.ExpedienteTextboxP3.Text
+        Dim A0 As String = VExpediente.ExpedienteTextboxA0.Text
+        Dim C0 As String = VExpediente.ExpedienteTextboxC0.Text
+        Dim CC As String = VExpediente.ExpedienteTextboxCC.Text
+        Dim Aqx As String = VExpediente.ExpedienteTextboxAqx.Text
+        Dim AfyAp As String = VExpediente.ExpedienteTextboxAfyAp.Text
+        Dim AnP As String = VExpediente.ExpedienteTextboxAnP.Text
+
+
+        If (cedula = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaNulaExpediente, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        Else
+            Try
+                BD.ConectarBD()
+
+                Dim modificado As Integer = 0
+
+                modificado = BD.actualizarExpediente(cedula, fechaExpediente, G3, P3, A0, C0, CC, Aqx, AfyAp, AnP)
+
+                If modificado = 1 Then
+                    MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                    limpiar()
+                Else
+                    MessageBox.Show(variablesGlobales.errorActualizandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                    limpiar()
+                End If
+                BD.CerrarConexion()
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message())
+            End Try
+        End If
+    End Sub
+
 End Class
