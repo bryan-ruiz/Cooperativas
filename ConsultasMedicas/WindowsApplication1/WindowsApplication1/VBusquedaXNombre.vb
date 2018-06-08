@@ -163,7 +163,7 @@ Public Class VBusquedaXNombre
     'End Try
     'End Sub
 
-    Private Sub MotivoConsultaTextboxConsultarCedula_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles MotivoConsultaTextboxConsultarCedula.KeyPress
+    Private Sub MotivoConsultaTextboxConsultarCedula_TextChanged(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles MotivoConsultaTextboxConsultarCedula.KeyPress, MotivoConsultaTextboxConsultarCedula.TextChanged
         'TextBoxSociosConsultarAsociado.PasswordChar = "*"
         If e.KeyChar = ChrW(Keys.Enter) Then
             Call MotivoConsultaButtonBuscar_Click(sender, e)
@@ -189,6 +189,10 @@ Public Class VBusquedaXNombre
             ''http://camposha.info/source/vb-net-ms-access-listview-insert-select-update-delete
         Catch ex As Exception
         End Try
+
+    End Sub
+
+    Private Sub MotivoConsultaTextboxConsultarCedula_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class

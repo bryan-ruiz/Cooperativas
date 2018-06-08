@@ -51,12 +51,7 @@ Partial Class VAsociados
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeAsociadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ButtonAsociadosBuscarXNombre = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.ButtonSociosModificar = New System.Windows.Forms.Button()
-        Me.ButtonAsociadosBuscar = New System.Windows.Forms.Button()
-        Me.ButtonAsociadosAgregar = New System.Windows.Forms.Button()
-        Me.SociosButtonLimpiar = New System.Windows.Forms.Button()
         Me.LabelFechaRetiro = New System.Windows.Forms.Label()
         Me.LabelNotasRetiro = New System.Windows.Forms.Label()
         Me.DateTimeSociosFechaRetiro = New System.Windows.Forms.DateTimePicker()
@@ -96,6 +91,11 @@ Partial Class VAsociados
         Me.TextBoxSociosSeccion2 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ButtonAsociadosBuscarXNombre = New System.Windows.Forms.Button()
+        Me.ButtonSociosModificar = New System.Windows.Forms.Button()
+        Me.ButtonAsociadosBuscar = New System.Windows.Forms.Button()
+        Me.ButtonAsociadosAgregar = New System.Windows.Forms.Button()
+        Me.SociosButtonLimpiar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -365,21 +365,6 @@ Partial Class VAsociados
         Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
         '
-        'ButtonAsociadosBuscarXNombre
-        '
-        Me.ButtonAsociadosBuscarXNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonAsociadosBuscarXNombre.ForeColor = System.Drawing.Color.White
-        Me.ButtonAsociadosBuscarXNombre.Image = Global.WindowsApplication1.My.Resources.Resources.search9
-        Me.ButtonAsociadosBuscarXNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonAsociadosBuscarXNombre.Location = New System.Drawing.Point(51, 155)
-        Me.ButtonAsociadosBuscarXNombre.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.ButtonAsociadosBuscarXNombre.Name = "ButtonAsociadosBuscarXNombre"
-        Me.ButtonAsociadosBuscarXNombre.Size = New System.Drawing.Size(199, 44)
-        Me.ButtonAsociadosBuscarXNombre.TabIndex = 66
-        Me.ButtonAsociadosBuscarXNombre.Text = "Buscar por Nombre"
-        Me.ButtonAsociadosBuscarXNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonAsociadosBuscarXNombre.UseVisualStyleBackColor = True
-        '
         'Label22
         '
         Me.Label22.AutoSize = True
@@ -391,63 +376,6 @@ Partial Class VAsociados
         Me.Label22.Size = New System.Drawing.Size(230, 16)
         Me.Label22.TabIndex = 65
         Me.Label22.Text = "Cédula (x-xxxx-xxxx) / # Asociado:"
-        '
-        'ButtonSociosModificar
-        '
-        Me.ButtonSociosModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonSociosModificar.ForeColor = System.Drawing.Color.White
-        Me.ButtonSociosModificar.Image = Global.WindowsApplication1.My.Resources.Resources.refreshlast1
-        Me.ButtonSociosModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonSociosModificar.Location = New System.Drawing.Point(51, 314)
-        Me.ButtonSociosModificar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.ButtonSociosModificar.Name = "ButtonSociosModificar"
-        Me.ButtonSociosModificar.Size = New System.Drawing.Size(199, 44)
-        Me.ButtonSociosModificar.TabIndex = 53
-        Me.ButtonSociosModificar.Text = "Actualizar Datos"
-        Me.ButtonSociosModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonSociosModificar.UseVisualStyleBackColor = True
-        '
-        'ButtonAsociadosBuscar
-        '
-        Me.ButtonAsociadosBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonAsociadosBuscar.ForeColor = System.Drawing.Color.White
-        Me.ButtonAsociadosBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
-        Me.ButtonAsociadosBuscar.Location = New System.Drawing.Point(260, 59)
-        Me.ButtonAsociadosBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.ButtonAsociadosBuscar.Name = "ButtonAsociadosBuscar"
-        Me.ButtonAsociadosBuscar.Size = New System.Drawing.Size(58, 43)
-        Me.ButtonAsociadosBuscar.TabIndex = 2
-        Me.ButtonAsociadosBuscar.UseVisualStyleBackColor = True
-        '
-        'ButtonAsociadosAgregar
-        '
-        Me.ButtonAsociadosAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonAsociadosAgregar.ForeColor = System.Drawing.Color.White
-        Me.ButtonAsociadosAgregar.Image = Global.WindowsApplication1.My.Resources.Resources.adduserwhite6
-        Me.ButtonAsociadosAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonAsociadosAgregar.Location = New System.Drawing.Point(51, 233)
-        Me.ButtonAsociadosAgregar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.ButtonAsociadosAgregar.Name = "ButtonAsociadosAgregar"
-        Me.ButtonAsociadosAgregar.Size = New System.Drawing.Size(199, 44)
-        Me.ButtonAsociadosAgregar.TabIndex = 4
-        Me.ButtonAsociadosAgregar.Text = "Agregar Asociado"
-        Me.ButtonAsociadosAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonAsociadosAgregar.UseVisualStyleBackColor = True
-        '
-        'SociosButtonLimpiar
-        '
-        Me.SociosButtonLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.SociosButtonLimpiar.ForeColor = System.Drawing.Color.White
-        Me.SociosButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
-        Me.SociosButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.SociosButtonLimpiar.Location = New System.Drawing.Point(51, 390)
-        Me.SociosButtonLimpiar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.SociosButtonLimpiar.Name = "SociosButtonLimpiar"
-        Me.SociosButtonLimpiar.Size = New System.Drawing.Size(199, 44)
-        Me.SociosButtonLimpiar.TabIndex = 5
-        Me.SociosButtonLimpiar.Text = "Limpiar Campos"
-        Me.SociosButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.SociosButtonLimpiar.UseVisualStyleBackColor = True
         '
         'LabelFechaRetiro
         '
@@ -473,7 +401,9 @@ Partial Class VAsociados
         '
         'DateTimeSociosFechaRetiro
         '
+        Me.DateTimeSociosFechaRetiro.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimeSociosFechaRetiro.Enabled = False
+        Me.DateTimeSociosFechaRetiro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimeSociosFechaRetiro.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimeSociosFechaRetiro.Location = New System.Drawing.Point(919, 339)
         Me.DateTimeSociosFechaRetiro.Margin = New System.Windows.Forms.Padding(4)
@@ -484,6 +414,7 @@ Partial Class VAsociados
         'TextBoxSociosNotasRetiro
         '
         Me.TextBoxSociosNotasRetiro.Enabled = False
+        Me.TextBoxSociosNotasRetiro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSociosNotasRetiro.Location = New System.Drawing.Point(919, 410)
         Me.TextBoxSociosNotasRetiro.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.TextBoxSociosNotasRetiro.Multiline = True
@@ -682,7 +613,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosMenorNo.Checked = True
         Me.RadioButtonSociosMenorNo.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButtonSociosMenorNo.ForeColor = System.Drawing.Color.Black
-        Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(108, 6)
+        Me.RadioButtonSociosMenorNo.Location = New System.Drawing.Point(109, 6)
         Me.RadioButtonSociosMenorNo.Name = "RadioButtonSociosMenorNo"
         Me.RadioButtonSociosMenorNo.Size = New System.Drawing.Size(43, 20)
         Me.RadioButtonSociosMenorNo.TabIndex = 21
@@ -753,7 +684,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosRetirado.AutoSize = True
         Me.RadioButtonSociosRetirado.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButtonSociosRetirado.ForeColor = System.Drawing.Color.Black
-        Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(1107, 276)
+        Me.RadioButtonSociosRetirado.Location = New System.Drawing.Point(1108, 277)
         Me.RadioButtonSociosRetirado.Name = "RadioButtonSociosRetirado"
         Me.RadioButtonSociosRetirado.Size = New System.Drawing.Size(80, 20)
         Me.RadioButtonSociosRetirado.TabIndex = 25
@@ -766,7 +697,7 @@ Partial Class VAsociados
         Me.RadioButtonSociosActivo.Checked = True
         Me.RadioButtonSociosActivo.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButtonSociosActivo.ForeColor = System.Drawing.Color.Black
-        Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(1011, 278)
+        Me.RadioButtonSociosActivo.Location = New System.Drawing.Point(1013, 278)
         Me.RadioButtonSociosActivo.Name = "RadioButtonSociosActivo"
         Me.RadioButtonSociosActivo.Size = New System.Drawing.Size(65, 20)
         Me.RadioButtonSociosActivo.TabIndex = 24
@@ -834,6 +765,78 @@ Partial Class VAsociados
         Me.Label1.Size = New System.Drawing.Size(265, 29)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Gestión de Asociados"
+        '
+        'ButtonAsociadosBuscarXNombre
+        '
+        Me.ButtonAsociadosBuscarXNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonAsociadosBuscarXNombre.ForeColor = System.Drawing.Color.White
+        Me.ButtonAsociadosBuscarXNombre.Image = Global.WindowsApplication1.My.Resources.Resources.search9
+        Me.ButtonAsociadosBuscarXNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonAsociadosBuscarXNombre.Location = New System.Drawing.Point(51, 155)
+        Me.ButtonAsociadosBuscarXNombre.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonAsociadosBuscarXNombre.Name = "ButtonAsociadosBuscarXNombre"
+        Me.ButtonAsociadosBuscarXNombre.Size = New System.Drawing.Size(199, 44)
+        Me.ButtonAsociadosBuscarXNombre.TabIndex = 66
+        Me.ButtonAsociadosBuscarXNombre.Text = "Buscar por Nombre"
+        Me.ButtonAsociadosBuscarXNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonAsociadosBuscarXNombre.UseVisualStyleBackColor = True
+        '
+        'ButtonSociosModificar
+        '
+        Me.ButtonSociosModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonSociosModificar.ForeColor = System.Drawing.Color.White
+        Me.ButtonSociosModificar.Image = Global.WindowsApplication1.My.Resources.Resources.refreshlast1
+        Me.ButtonSociosModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonSociosModificar.Location = New System.Drawing.Point(51, 314)
+        Me.ButtonSociosModificar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonSociosModificar.Name = "ButtonSociosModificar"
+        Me.ButtonSociosModificar.Size = New System.Drawing.Size(199, 44)
+        Me.ButtonSociosModificar.TabIndex = 53
+        Me.ButtonSociosModificar.Text = "Actualizar Datos"
+        Me.ButtonSociosModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonSociosModificar.UseVisualStyleBackColor = True
+        '
+        'ButtonAsociadosBuscar
+        '
+        Me.ButtonAsociadosBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonAsociadosBuscar.ForeColor = System.Drawing.Color.White
+        Me.ButtonAsociadosBuscar.Image = Global.WindowsApplication1.My.Resources.Resources.find81
+        Me.ButtonAsociadosBuscar.Location = New System.Drawing.Point(260, 59)
+        Me.ButtonAsociadosBuscar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonAsociadosBuscar.Name = "ButtonAsociadosBuscar"
+        Me.ButtonAsociadosBuscar.Size = New System.Drawing.Size(58, 43)
+        Me.ButtonAsociadosBuscar.TabIndex = 2
+        Me.ButtonAsociadosBuscar.UseVisualStyleBackColor = True
+        '
+        'ButtonAsociadosAgregar
+        '
+        Me.ButtonAsociadosAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonAsociadosAgregar.ForeColor = System.Drawing.Color.White
+        Me.ButtonAsociadosAgregar.Image = Global.WindowsApplication1.My.Resources.Resources.adduserwhite6
+        Me.ButtonAsociadosAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonAsociadosAgregar.Location = New System.Drawing.Point(51, 233)
+        Me.ButtonAsociadosAgregar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonAsociadosAgregar.Name = "ButtonAsociadosAgregar"
+        Me.ButtonAsociadosAgregar.Size = New System.Drawing.Size(199, 44)
+        Me.ButtonAsociadosAgregar.TabIndex = 4
+        Me.ButtonAsociadosAgregar.Text = "Agregar Asociado"
+        Me.ButtonAsociadosAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonAsociadosAgregar.UseVisualStyleBackColor = True
+        '
+        'SociosButtonLimpiar
+        '
+        Me.SociosButtonLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.SociosButtonLimpiar.ForeColor = System.Drawing.Color.White
+        Me.SociosButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
+        Me.SociosButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.SociosButtonLimpiar.Location = New System.Drawing.Point(51, 390)
+        Me.SociosButtonLimpiar.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.SociosButtonLimpiar.Name = "SociosButtonLimpiar"
+        Me.SociosButtonLimpiar.Size = New System.Drawing.Size(199, 44)
+        Me.SociosButtonLimpiar.TabIndex = 5
+        Me.SociosButtonLimpiar.Text = "Limpiar Campos"
+        Me.SociosButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.SociosButtonLimpiar.UseVisualStyleBackColor = True
         '
         'VAsociados
         '

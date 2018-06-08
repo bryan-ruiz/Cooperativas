@@ -21,6 +21,7 @@
         Me.ButtonAsociadosAgregar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.ButtonSociosModificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.SociosButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.ButtonAsociadosBuscarXNombre.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         cuotaAdmision.consultarCuotaAdmision()
         consecutivoAsociado.consultarInformacionConsecutivo()
 
@@ -109,7 +110,7 @@
     End Sub
 
     'CONSULTAR
-    Private Sub ButtonAsociadosBuscar_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscar.Click
+    Public Sub ButtonAsociadosBuscar_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscar.Click
         socios.consultarAsociado()
     End Sub
 
@@ -190,6 +191,7 @@
     End Sub
 
     Private Sub ButtonAsociadosBuscarXNombre_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscarXNombre.Click
+        VBusquedaXNombre.Show()
 
     End Sub
 

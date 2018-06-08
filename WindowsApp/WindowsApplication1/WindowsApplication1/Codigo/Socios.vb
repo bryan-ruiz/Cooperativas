@@ -478,6 +478,7 @@ Public Class Socios
         VAsociados.TextBoxSociosDireccion.Text = ""
         VAsociados.TextBoxSociosNotasRetiro.Text = ""
         VAsociados.TextBoxSociosConsultarAsociado.Text = ""
+        VAsociados.TextBoxSociosConsultarAsociado.Select()
     End Sub
 
     'Recibe Activos o Todos, como parámetro para el tipo de reporte de asociados

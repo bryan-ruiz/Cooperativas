@@ -167,6 +167,12 @@
     <Compile Include="VCerrarPeriodoFechasLimite.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VBusquedaXNombre.Designer.vb">
+      <DependentUpon>VBusquedaXNombre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VBusquedaXNombre.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VConsecutivoAsociado.Designer.vb">
       <DependentUpon>VConsecutivoAsociado.vb</DependentUpon>
     </Compile>
@@ -457,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VAsociados.resx">
       <DependentUpon>VAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBusquedaXNombre.resx">
+      <DependentUpon>VBusquedaXNombre.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VConsecutivoAsociado.resx">
       <DependentUpon>VConsecutivoAsociado.vb</DependentUpon>

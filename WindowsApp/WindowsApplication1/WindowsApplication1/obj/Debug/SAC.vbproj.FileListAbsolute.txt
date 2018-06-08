@@ -223,3 +223,4 @@ C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\Wi
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReservasEntradas.resources
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VReservasSalidas.resources
 C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VConsecutivoAsociado.resources
+C:\Users\Aaron\Documents\CoopeNew\Cooperativas\WindowsApp\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.VBusquedaXNombre.resources
