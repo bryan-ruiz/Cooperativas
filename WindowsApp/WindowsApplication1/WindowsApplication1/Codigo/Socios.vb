@@ -368,7 +368,7 @@ Public Class Socios
                                                                                     fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso, fechaIngreso)
 
                     'Incrementa el num de consecutivo del asociado
-                    Dim consecutivoInt As Integer = Convert.ToInt32(VAsociados.TextBoxSociosNumAsociado.Text)
+                    Dim consecutivoInt As Integer = Convert.ToInt32(VConsecutivoAsociado.ConsecutivoAsociadosTextboxConsecutivo.Text)
                     BD.actualizarConsecutivoAsociado(consecutivoInt + 1)
 
                     If (insertado = 1 And certificadoXSocio = 1) Then

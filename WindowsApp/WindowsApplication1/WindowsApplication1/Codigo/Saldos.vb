@@ -110,10 +110,45 @@ Public Class Saldos
             table.AddCell(salidasR)
             table.AddCell(saldoR)
 
+
+            Dim FontStypeSaldoBlanco = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.WHITE)
+            Dim FontStype4 = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.BLACK)
+            Dim FontStypeSubTotales = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
+
+
+            Dim tableSaldoTotal As PdfPTable = New PdfPTable(5)
+            Dim tableSaldoAnterior As PdfPTable = New PdfPTable(5)
+
+            'SALDO ANTERIOR
+            Dim saldoAnteriorR As PdfPCell = New PdfPCell(New Phrase("Saldo Anterior: ", FontStypeSaldoBlanco))
+            saldoAnteriorR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+            saldoAnteriorR.Colspan = 3
+            saldoAnteriorR.HorizontalAlignment = 1
+            'Saldo anterior
+            Dim stringTotal6 As String = saldoAnterior.ToString("N")
+            Dim saldoAnteriorT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal6, FontStypeSubTotales))
+            saldoAnteriorT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+            saldoAnteriorT.Colspan = 2
+            saldoAnteriorT.HorizontalAlignment = 1
+
+            tableSaldoAnterior.AddCell(saldoAnteriorR)
+            tableSaldoAnterior.AddCell(saldoAnteriorT)
+
+
+            '/////// Encabezado //////////
+            pdfDoc.Add(New Paragraph("                                                                               Reporte de Saldos del " + fechaInicial + " al " + fechaFinal, FontEncabezadoFechas))
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph(" "))
+
+            pdfDoc.Add(tableSaldoAnterior)
+            pdfDoc.Add(New Paragraph(" "))
+
+
+
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 50 Then
+                If conta = 48 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)
@@ -189,19 +224,14 @@ Public Class Saldos
                 contador = contador + 1
             End While
 
-            Dim tableSaldoTotal As PdfPTable = New PdfPTable(5)
-            Dim tableSaldoAnterior As PdfPTable = New PdfPTable(5)
 
-            Dim FontStypeSaldoBlanco = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.WHITE)
+
 
             'PARA TOTAL GENERAL
             Dim saldoGeneralR As PdfPCell = New PdfPCell(New Phrase("Saldo Total: ", FontStypeSaldoBlanco))
             saldoGeneralR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
             saldoGeneralR.Colspan = 3
             saldoGeneralR.HorizontalAlignment = 1
-
-            Dim FontStype4 = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.BLACK)
-            Dim FontStypeSubTotales = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
 
             'Saldo total
             Dim stringTotal5 As String = saldoGlobal.ToString("N")
@@ -212,35 +242,15 @@ Public Class Saldos
             saldoGeneralT.HorizontalAlignment = 1
 
 
-
-            'SALDO ANTERIOR
-            Dim saldoAnteriorR As PdfPCell = New PdfPCell(New Phrase("Saldo Anterior: ", FontStypeSaldoBlanco))
-            saldoAnteriorR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
-            saldoAnteriorR.Colspan = 3
-            saldoAnteriorR.HorizontalAlignment = 1
-            'Saldo anterior
-            Dim stringTotal6 As String = saldoAnterior.ToString("N")
-            Dim saldoAnteriorT As PdfPCell = New PdfPCell(New Phrase("¢ " + stringTotal6, FontStypeSubTotales))
-            saldoAnteriorT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
-            saldoAnteriorT.Colspan = 2
-            saldoAnteriorT.HorizontalAlignment = 1
-
-
-            '/////// Encabezado //////////
-            pdfDoc.Add(New Paragraph("                                                                               Reporte de Saldos del " + fechaInicial + " al " + fechaFinal, FontEncabezadoFechas))
-            pdfDoc.Add(New Paragraph(" "))
-            pdfDoc.Add(New Paragraph(" "))
-
             tableSaldoTotal.AddCell(saldoGeneralR)
             tableSaldoTotal.AddCell(saldoGeneralT)
-            tableSaldoAnterior.AddCell(saldoAnteriorR)
-            tableSaldoAnterior.AddCell(saldoAnteriorT)
 
-            pdfDoc.Add(tableSaldoAnterior)
-            pdfDoc.Add(New Paragraph(" "))
+
             pdfDoc.Add(table)
             pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(tableSaldoTotal)
+
+
             pdfDoc.Close()
 
             MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)

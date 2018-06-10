@@ -152,7 +152,7 @@ Public Class Ingreso
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 50 Then
+                If conta = 48 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)

@@ -6,13 +6,14 @@
     'Guarda el consecutivo para el num de asociado
     Public Sub guardarConsecutivo()
         Dim consecutivo As String = VConsecutivoAsociado.ConsecutivoAsociadosTextboxConsecutivo.Text
+        Dim ano As String = VConsecutivoAsociado.ConsecutivoAsociadosTextboxAno.Text
 
-        If (consecutivo = "") Then
+        If (consecutivo = "" Or ano = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
         Else
             Try
                 BD.ConectarBD()
-                Dim modificado = BD.actualizarConsecutivoAsociado(Convert.ToInt32(consecutivo))
+                Dim modificado = BD.actualizarConsecutivoAsociado(Convert.ToInt32(consecutivo), Convert.ToInt32(ano))
                 If modificado = 1 Then
                     MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                 Else
@@ -35,6 +36,7 @@
             Else
                 MessageBox.Show(variablesGlobales.noExistenDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 VConsecutivoAsociado.ConsecutivoAsociadosTextboxConsecutivo.Text = ""
+                VConsecutivoAsociado.ConsecutivoAsociadosTextboxAno.Text = ""
 
             End If
             BD.CerrarConexion()
@@ -47,10 +49,11 @@
     Public Sub llenarDatos(ByVal valores As List(Of ConsecutivoAsociadoClase))
         Dim conta As Integer = 0
 
-        VAsociados.TextBoxSociosNumAsociado.Text = valores(0).consecutivo.ToString
+        VAsociados.TextBoxSociosNumAsociado.Text = valores(0).consecutivo.ToString + "" + valores(0).ano.ToString
 
         While conta < valores.Count
             VConsecutivoAsociado.ConsecutivoAsociadosTextboxConsecutivo.Text = valores(conta).consecutivo.ToString
+            VConsecutivoAsociado.ConsecutivoAsociadosTextboxAno.Text = valores(conta).ano.ToString
 
             conta = conta + 1
         End While

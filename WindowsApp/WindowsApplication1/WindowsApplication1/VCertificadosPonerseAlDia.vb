@@ -2,6 +2,7 @@
 
     Dim certificadosAlDia As CertificadosAlDia = New CertificadosAlDia
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+    Dim certificados As Certificados = New Certificados
 
     'LOAD
     Private Sub VCertificados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -40,6 +41,7 @@
 
     Private Sub CertificadosAlDiaButtonSumarAlAcumulado_Click(sender As Object, e As EventArgs) Handles CertificadosAlDiaButtonSumarAlAcumulado.Click
         certificadosAlDia.actualizarSumarAlAcumAnteriorXSocio()
+        certificados.limpiar()
     End Sub
 
     Private Sub ImprimirComprobanteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirComprobanteToolStripMenuItem.Click

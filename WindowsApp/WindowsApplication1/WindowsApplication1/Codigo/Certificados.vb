@@ -782,7 +782,7 @@ Public Class Certificados
 
 
             While contador < valores.Count
-                If conta = 45 Then
+                If conta = 48 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)
@@ -790,7 +790,7 @@ Public Class Certificados
 
                     conta = 0
                 End If
-                conta = conta + 1
+                'conta = conta + 1
 
                 Dim cedula As String = valores(contador).cedula
 
@@ -839,7 +839,7 @@ Public Class Certificados
                     table.AddCell(acumT)
                     table.AddCell(periodoT)
 
-
+                    conta = conta + 1
                 End If
 
 
@@ -965,7 +965,7 @@ Public Class Certificados
 
                     conta = 0
                 End If
-                conta = conta + 1
+                'conta = conta + 1
 
                 Dim cedula As String = valores(contador).cedula
 
@@ -1007,6 +1007,8 @@ Public Class Certificados
                     table.AddCell(seccionT)
                     table.AddCell(acumT)
                     table.AddCell(periodoT)
+
+                    conta = conta + 1
 
 
                 End If
@@ -1082,7 +1084,7 @@ Public Class Certificados
             ' PARA AGREGAR INGRESOS Y GASTOS EN UNA PAGINA
             Dim FontEncabezadoFechas = FontFactory.GetFont("Arial", 7, Font.NORMAL)
             '/////// Encabezado //////////
-            pdfDoc.Add(New Paragraph("                                                                                             Reporte de los Asociados que han o no han pagado un monto mayor o igual a ¢ " + VReportePAagosAlDia.TextBoxPagosAlDia.Text + " en el Periodo", FontEncabezadoFechas))
+            pdfDoc.Add(New Paragraph("                                                                        Reporte de los Asociados que han o no han pagado un monto mayor o igual a ¢ " + VReporteTodosLosPagos.TextBoxTodosLosPagos.Text + " en el Periodo", FontEncabezadoFechas))
             pdfDoc.Add(New Paragraph(" "))
             pdfDoc.Add(New Paragraph(" "))
             table.AddCell(numAsociadoR)
@@ -1094,7 +1096,7 @@ Public Class Certificados
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 45 Then
+                If conta = 48 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)

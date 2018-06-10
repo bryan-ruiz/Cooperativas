@@ -582,8 +582,8 @@ Public Class Configuracion
 
             'Margin of the Doc
             Dim pdfDoc As New Document(PageSize.A4, 0, 1, 50, 1)
-            Dim nombreReporte As String = "reporteCuentas.pdf"
-            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & nombreReporte, FileMode.Create))
+
+            Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteConfiguracionCodigoCuentas, FileMode.Create))
             pdfDoc.Open()
             encabezado.consultarDatos()
             encabezado.encabezado(pdfWrite, pdfDoc)
@@ -598,7 +598,7 @@ Public Class Configuracion
 
             '/////// Titulo //////////
             Dim FontStype3 = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
-            pdfDoc.Add(New Paragraph("                                                                                                           Reporte de Cuentas", FontStype3))
+            pdfDoc.Add(New Paragraph("                                                                                                      Reporte Códigos de Cuentas", FontStype3))
             pdfDoc.Add(New Paragraph(" "))
 
             '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
@@ -662,10 +662,14 @@ Public Class Configuracion
             pdfDoc.Add(table)
             pdfDoc.Close()
 
-            MessageBox.Show(variablesGlobales.reporteGeneradoConExito & nombreReporte, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+            Print.Show()
+            Print.abrirReporte(variablesGlobales.pathReporteConfiguracionCodigoCuentas)
 
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+            MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
 End Class

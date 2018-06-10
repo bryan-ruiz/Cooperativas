@@ -11,7 +11,7 @@
         'certificados.cerrarCertificado()
     End Sub
 
-    Private Sub CertificadosButtonLimpiar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonLimpiar.Click
+    Public Sub CertificadosButtonLimpiar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonLimpiar.Click
         certificados.limpiar()
     End Sub
 

@@ -28,6 +28,9 @@ Partial Class VConsecutivoAsociado
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.ConsecutivoAsociadosTextboxAno = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -35,7 +38,7 @@ Partial Class VConsecutivoAsociado
         '
         Me.ButtonConsecutivoAsociadosGuardar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold)
         Me.ButtonConsecutivoAsociadosGuardar.ForeColor = System.Drawing.Color.White
-        Me.ButtonConsecutivoAsociadosGuardar.Location = New System.Drawing.Point(223, 250)
+        Me.ButtonConsecutivoAsociadosGuardar.Location = New System.Drawing.Point(232, 361)
         Me.ButtonConsecutivoAsociadosGuardar.Name = "ButtonConsecutivoAsociadosGuardar"
         Me.ButtonConsecutivoAsociadosGuardar.Size = New System.Drawing.Size(196, 52)
         Me.ButtonConsecutivoAsociadosGuardar.TabIndex = 57
@@ -44,7 +47,7 @@ Partial Class VConsecutivoAsociado
         '
         'ConsecutivoAsociadosTextboxConsecutivo
         '
-        Me.ConsecutivoAsociadosTextboxConsecutivo.Location = New System.Drawing.Point(180, 191)
+        Me.ConsecutivoAsociadosTextboxConsecutivo.Location = New System.Drawing.Point(168, 232)
         Me.ConsecutivoAsociadosTextboxConsecutivo.Name = "ConsecutivoAsociadosTextboxConsecutivo"
         Me.ConsecutivoAsociadosTextboxConsecutivo.Size = New System.Drawing.Size(318, 20)
         Me.ConsecutivoAsociadosTextboxConsecutivo.TabIndex = 53
@@ -54,11 +57,11 @@ Partial Class VConsecutivoAsociado
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(180, 165)
+        Me.Label5.Location = New System.Drawing.Point(124, 147)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(264, 19)
+        Me.Label5.Size = New System.Drawing.Size(417, 19)
         Me.Label5.TabIndex = 52
-        Me.Label5.Text = "Consecutivo para el número de Asociado"
+        Me.Label5.Text = "El num de Asociado se forma con el consecutivo seguido del año."
         '
         'Panel1
         '
@@ -80,12 +83,44 @@ Partial Class VConsecutivoAsociado
         Me.Label6.TabIndex = 41
         Me.Label6.Text = "Consecutivo de Asociados"
         '
+        'ConsecutivoAsociadosTextboxAno
+        '
+        Me.ConsecutivoAsociadosTextboxAno.Location = New System.Drawing.Point(168, 304)
+        Me.ConsecutivoAsociadosTextboxAno.Name = "ConsecutivoAsociadosTextboxAno"
+        Me.ConsecutivoAsociadosTextboxAno.Size = New System.Drawing.Size(318, 20)
+        Me.ConsecutivoAsociadosTextboxAno.TabIndex = 63
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(168, 280)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(36, 19)
+        Me.Label1.TabIndex = 64
+        Me.Label1.Text = "Año:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 10.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(168, 210)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(89, 19)
+        Me.Label2.TabIndex = 65
+        Me.Label2.Text = "Consecutivo:"
+        '
         'VConsecutivoAsociado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(661, 369)
+        Me.ClientSize = New System.Drawing.Size(661, 445)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ConsecutivoAsociadosTextboxAno)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ButtonConsecutivoAsociadosGuardar)
         Me.Controls.Add(Me.ConsecutivoAsociadosTextboxConsecutivo)
@@ -105,4 +140,7 @@ Partial Class VConsecutivoAsociado
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
+    Friend WithEvents ConsecutivoAsociadosTextboxAno As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

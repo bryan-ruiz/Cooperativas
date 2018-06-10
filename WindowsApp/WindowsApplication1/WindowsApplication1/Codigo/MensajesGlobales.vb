@@ -46,6 +46,8 @@ Public Class MensajesGlobales
     'GESTIÓN DE CERTIFICADOS
     Public pathReporteCertificadoEnTransito As String = "C:\Reportes\reporte_Certificados_En_Transito.pdf"
 
+    'CONFIGURACIÓN
+    Public pathReporteConfiguracionCodigoCuentas As String = "C:\Reportes\reporte_Codigo_Cuentas.pdf"
 
 
     Public pathReporteAportaciones As String = "C:\Reportes\reporte_De_Aportaciones.pdf"

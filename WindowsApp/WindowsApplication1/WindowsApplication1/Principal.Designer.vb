@@ -238,7 +238,7 @@ Partial Class Principal
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(100, 77)
+        Me.Label1.Location = New System.Drawing.Point(87, 170)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(740, 57)
         Me.Label1.TabIndex = 34
@@ -251,7 +251,7 @@ Partial Class Principal
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe Print", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(387, 131)
+        Me.Label2.Location = New System.Drawing.Point(374, 224)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(138, 85)
         Me.Label2.TabIndex = 35
@@ -262,7 +262,7 @@ Partial Class Principal
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.LogoTransparente
-        Me.PictureBox1.Location = New System.Drawing.Point(356, 224)
+        Me.PictureBox1.Location = New System.Drawing.Point(343, 317)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(205, 187)
