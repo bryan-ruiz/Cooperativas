@@ -550,6 +550,7 @@ Public Class Socios
             Dim valores As List(Of SocioClase)
             BD.ConectarBD()
             valores = BD.obtenerDatosReporteDeSocios(tipoReporte)
+            ' MsgBox("valores count total de asociados es : " & valores.Count.ToString)
             BD.CerrarConexion()
 
             If Not Directory.Exists(variablesGlobales.folderPath) Then
@@ -565,15 +566,16 @@ Public Class Socios
             encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
-            pdfDoc.Add(New Paragraph("                                                                                     Reporte de Asociados Activos", FontStype3))
-            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(New Paragraph("                                                                            Reporte de Asociados Activos. Cantidad Total: " & valores.Count.ToString, FontStype3))
             pdfDoc.Add(New Paragraph(" "))
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
 
             Dim table As PdfPTable = New PdfPTable(9)
 
-            '' PARA ENCABEZADO DEL REPORTE - COLUMNAS
+            'ESTABLECE TAMAÑO DE ANCHO DE COLUMNAS
+            Dim intTblWidth() As Integer = {7, 12, 12, 10, 9, 8, 7, 7, 7}
+            table.SetWidths(intTblWidth)
 
 
             Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("N° Asociado", FontStype))
@@ -633,7 +635,7 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 38 Then
+                If conta = 50 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)
@@ -738,7 +740,7 @@ Public Class Socios
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
             pdfDoc.Add(New Paragraph("                                                                                      Reporte de Asociados por Sección ", FontStype3))
             pdfDoc.Add(New Paragraph(" "))
-            pdfDoc.Add(New Paragraph(" "))
+            '  pdfDoc.Add(New Paragraph(" "))
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
 
@@ -782,7 +784,7 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 38 Then
+                If conta = 50 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)
@@ -866,7 +868,7 @@ Public Class Socios
             encabezado.encabezado(pdfWrite, pdfDoc)
 
             Dim FontStype3 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
-            pdfDoc.Add(New Paragraph("                                                                                         Reporte de Todos los Asociados", FontStype3))
+            pdfDoc.Add(New Paragraph("                                                                           Reporte de Todos los Asociados. Cantidad Total: " & valores.Count.ToString, FontStype3))
             pdfDoc.Add(New Paragraph(" "))
 
             Dim FontStype = FontFactory.GetFont("Arial", 7, Font.BOLD, BaseColor.WHITE)
@@ -938,7 +940,7 @@ Public Class Socios
             Dim contador As Integer = 0
             Dim conta As Integer = 0
             While contador < valores.Count
-                If conta = 38 Then
+                If conta = 50 Then
                     pdfDoc.Add(table)
                     pdfDoc.NewPage()
                     encabezado.encabezado(pdfWrite, pdfDoc)
@@ -1499,7 +1501,7 @@ Public Class Socios
                 End If
 
                 Dim pdfDoc As New Document()
-                Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.folderPath & "reciboAsociado.pdf", FileMode.Create))
+                Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReciboAdmisionAsociado, FileMode.Create))
                 pdfDoc.Open()
                 encabezado.consultarDatos()
                 encabezado.encabezado(pdfWrite, pdfDoc)
@@ -1507,7 +1509,7 @@ Public Class Socios
 
                 '/////// Encabezado //////////
                 Dim FontStype3 = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
-                pdfDoc.Add(New Paragraph("                                                                                                        N° Recibo " + Convert.ToString(variablesGlobales.numReciboAsociados), FontStype3))
+                pdfDoc.Add(New Paragraph("                                                                                                        N° Recibo A" + Convert.ToString(variablesGlobales.numReciboAsociados), FontStype3))
                 pdfDoc.Add(New Paragraph(" "))
 
                 Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.WHITE)
@@ -1537,7 +1539,7 @@ Public Class Socios
 
                 Dim FontStype2 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
 
-                Dim descripcionT As PdfPCell = New PdfPCell(New Phrase("Recibo de matrícula", FontStype2))
+                Dim descripcionT As PdfPCell = New PdfPCell(New Phrase("Recibo de Admisión", FontStype2))
                 descripcionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
                 descripcionT.Colspan = 1
                 descripcionT.HorizontalAlignment = 1
@@ -1583,16 +1585,21 @@ Public Class Socios
 
                 pdfDoc.Close()
 
-                MessageBox.Show(variablesGlobales.reporteGeneradoConExito & "reciboAsociado.pdf", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
 
                 'Incrementa el num recibo ingreso en la BD
                 BD.actualizarReciboXTipo("asociado", variablesGlobales.numReciboAsociados + 1)
 
+                MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
                 Print.Show()
+                Print.abrirReporte(variablesGlobales.pathReciboAdmisionAsociado)
 
             Catch ex As Exception
                 MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+                MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
             End Try
+
         End If
     End Sub
 End Class

@@ -4,36 +4,44 @@
 
     Private Sub ButtonInsertar_InformacionAccidente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonIngresar.Click
 
-        If (TextBoxlogin.Text = "" Or TextBoxContraseña.Text = "") Then
-            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        Try
 
-            TextBoxlogin.Text = ""
-            TextBoxContraseña.Text = ""
-        Else
-            Dim usuario As Usuarios = New Usuarios
-            usuario.buscar()
-            If (TextBoxlogin.Text = Singleton.usuario) Then
-                If (TextBoxContraseña.Text = Singleton.contrasena) Then
 
-                    If Singleton.permisos = "0" Then
-                        MessageBox.Show(variablesGlobales.licenciaCaducada, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            If (TextBoxlogin.Text = "" Or TextBoxContraseña.Text = "") Then
+                MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+
+                TextBoxlogin.Text = ""
+                TextBoxContraseña.Text = ""
+            Else
+                Dim usuario As Usuarios = New Usuarios
+                usuario.buscar()
+                If (TextBoxlogin.Text = Singleton.usuario) Then
+                    If (TextBoxContraseña.Text = Singleton.contrasena) Then
+
+                        If Singleton.permisos = "0" Then
+                            MessageBox.Show(variablesGlobales.licenciaCaducada, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                        Else
+                            usuario.login()
+                            Me.Hide()
+                            Principal.Show()
+                            'Principal.Refresh()
+                        End If
                     Else
-                        usuario.login()
-                        Me.Hide()
-                        Principal.Show()
-                        Principal.Refresh()
+                        MessageBox.Show(variablesGlobales.nombreUsuarioOContrasenaIncorrecto, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                        TextBoxlogin.Text = ""
+                        TextBoxContraseña.Text = ""
+                        TextBoxlogin.Select()
                     End If
                 Else
                     MessageBox.Show(variablesGlobales.nombreUsuarioOContrasenaIncorrecto, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                     TextBoxlogin.Text = ""
                     TextBoxContraseña.Text = ""
                 End If
-            Else
-                MessageBox.Show(variablesGlobales.nombreUsuarioOContrasenaIncorrecto, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                TextBoxlogin.Text = ""
-                TextBoxContraseña.Text = ""
             End If
-        End If
+
+        Catch ex As Exception
+            ' MsgBox("Error de: " & ex.ToString)
+        End Try
 
     End Sub
 

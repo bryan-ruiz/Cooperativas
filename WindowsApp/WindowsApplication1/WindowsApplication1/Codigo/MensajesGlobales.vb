@@ -14,6 +14,7 @@ Public Class MensajesGlobales
     Public pathReporteAsociadosTodos As String = "C:\Reportes\reporte_Asociados_Todos.pdf"
     Public pathReporteAsociadosExcedenteCorrespondiente As String = "C:\Reportes\reporte_Excedentes_Correspondientes.pdf"
     Public pathReporteAsociadosXSeccion As String = "C:\Reportes\reporte_Asociados_Por_Seccion.pdf"
+    Public pathReciboAdmisionAsociado As String = "C:\Reportes\recibo_de_Admision.pdf"
 
     'COMITÉS
     Public pathReporteCuerposDirectivos As String = "C:\Reportes\reporte_Cuerpos_Directivos.pdf"
@@ -23,6 +24,7 @@ Public Class MensajesGlobales
     Public pathReporteCertificadosPagosAldia As String = "C:\Reportes\reporte_Pago_Al_Dia.pdf"
     Public pathReporteCertificadosTodosLosPagos As String = "C:\Reportes\reporte_Todos_Los_Pagos.pdf"
     Public pathReporteCertificadosRecibo As String = "C:\Reportes\reporte_Recibo_Certificados.pdf"
+    Public pathReporteCertificadosReciboAlDia As String = "C:\Reportes\reporte_Recibo_Certificados_Al_Dia_.pdf"
 
     'ENTRADAS
     Public pathReporteEntradas As String = "C:\Reportes\reporte_Entradas.pdf"
@@ -114,9 +116,10 @@ Public Class MensajesGlobales
     Public colorRojoNegativo As String = "#F5B7B1"
     Public colorDisenoVerde As String = "#2ABCA7"
     Public colorDisenoMorado As String = "#616497"
-    Public colorDisenoCeleste As String = "#15B3D4"
+    Public colorDisenoCeleste As String = "#01A9DB" 'azul oscuro "#0E5589"  celeste '"#15B3D4"
     Public colorDisenoTurquesa As String = "#47B1B9"
     Public colorDisenoVerdeAgua As String = "#93CE97"
+    Public colorDisenoPrincipalAzul As String = "#0E5589"
 
     'Licencia
     Public licenciasRenovadas As String = "La Licencia se ha renovado con éxito!, favor vuelva a iniciar sesión."

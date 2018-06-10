@@ -664,7 +664,7 @@ Public Class ConexionBD
                 SQL = "SELECT SOCIOS.* 
                         FROM [SOCIOS] 
                         WHERE ((estado) = 'Activo')
-                        ORDER BY seccion "
+                        ORDER BY SOCIOS.seccion asc "
             Else
                 SQL = "SELECT SOCIOS.* FROM [SOCIOS]"
             End If
@@ -3835,6 +3835,114 @@ Public Class ConexionBD
         Try
             'Declaramos el query que queremos ejecutar
             SQL = "UPDATE [CUOTA_ADMISION] SET cuota = '" & monto & "' "
+            'pregunto antes si estoy conectado a la base de datos'
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                res = command.ExecuteNonQuery()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+        End Try
+
+        Return res
+    End Function
+
+
+    Function actualizarNombresALetraCapital() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = "UPDATE [SOCIOS] SET SOCIOS.nombre = StrConv([SOCIOS.nombre] , 3) "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function actualizarPrimerApellidoALetraCapital() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = "UPDATE [SOCIOS] SET SOCIOS.primerApellido = StrConv([SOCIOS.primerApellido] , 3) "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function actualizarSegundoApellidoALetraCapital() As List(Of String)
+        Dim MyList As New List(Of String)
+
+        Try
+            SQL = "UPDATE [SOCIOS] SET SOCIOS.segundoApellido = StrConv([SOCIOS.segundoApellido] , 3) "
+
+            If conectadoBD = True Then
+                Dim command As New OleDbCommand(SQL, objConexion)
+                Dim reader = command.ExecuteReader()
+                While reader.Read()
+                    Dim conta As Integer = 0
+                    For conta = 0 To reader.FieldCount - 1
+
+                        'MsgBox(String.Concat(" ", reader(conta)))
+
+                        MyList.Add(reader(conta))
+                    Next conta
+                End While
+                reader.Close()
+            Else
+                MessageBox.Show("No hay conexión con la base de datos")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error de: " + ex.Message)
+        End Try
+
+        Return MyList
+    End Function
+
+    Function actualizarPasswordDelUsuario(ByVal usuario As String, ByVal pass As String) As Integer
+        Dim res As Integer = 0
+        Try
+            'Declaramos el query que queremos ejecutar
+            SQL = "UPDATE [USUARIOS] SET Contrasena = '" & pass & "'
+                    WHERE ((USUARIOS.Usuario) = '" & usuario & "' )"
             'pregunto antes si estoy conectado a la base de datos'
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)

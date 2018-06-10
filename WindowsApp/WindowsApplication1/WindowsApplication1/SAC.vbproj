@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Aaron\Desktop\1.1.1.8\</PublishUrl>
+    <PublishUrl>C:\Users\Aaron\Desktop\2.0.0.1\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,8 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>9</ApplicationRevision>
-    <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -161,6 +161,18 @@
     <Compile Include="Codigo\Saldos.vb" />
     <Compile Include="Codigo\Socios.vb" />
     <Compile Include="Codigo\Usuarios.vb" />
+    <Compile Include="VBusquedaXNombreCertificadosPonerseAlDia.Designer.vb">
+      <DependentUpon>VBusquedaXNombreCertificadosPonerseAlDia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VBusquedaXNombreCertificadosPonerseAlDia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VBusquedaXNombreFromCertificados.Designer.vb">
+      <DependentUpon>VBusquedaXNombreFromCertificados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VBusquedaXNombreFromCertificados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VCerrarPeriodoFechasLimite.Designer.vb">
       <DependentUpon>VCerrarPeriodoFechasLimite.vb</DependentUpon>
     </Compile>
@@ -171,6 +183,12 @@
       <DependentUpon>VBusquedaXNombre.vb</DependentUpon>
     </Compile>
     <Compile Include="VBusquedaXNombre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VConfiguracionCambiarPassword.Designer.vb">
+      <DependentUpon>VConfiguracionCambiarPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VConfiguracionCambiarPassword.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VConsecutivoAsociado.Designer.vb">
@@ -464,8 +482,17 @@
     <EmbeddedResource Include="VAsociados.resx">
       <DependentUpon>VAsociados.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VBusquedaXNombreCertificadosPonerseAlDia.resx">
+      <DependentUpon>VBusquedaXNombreCertificadosPonerseAlDia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBusquedaXNombreFromCertificados.resx">
+      <DependentUpon>VBusquedaXNombreFromCertificados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VBusquedaXNombre.resx">
       <DependentUpon>VBusquedaXNombre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VConfiguracionCambiarPassword.resx">
+      <DependentUpon>VConfiguracionCambiarPassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VConsecutivoAsociado.resx">
       <DependentUpon>VConsecutivoAsociado.vb</DependentUpon>
@@ -692,6 +719,7 @@
     <None Include="Resources\lock2.png" />
     <None Include="Resources\lock3.png" />
     <None Include="Resources\lock4.png" />
+    <None Include="Resources\login3.jpg" />
     <Content Include="Resources\logoCoopesag2.png" />
     <None Include="Resources\LogoTransparente.png" />
     <Content Include="Resources\MEP_Logo.png" />

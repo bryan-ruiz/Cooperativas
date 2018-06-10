@@ -66,13 +66,6 @@ Public Class Principal
         'MessageBox.Show("Contacte al Administrador, no se tiene licencia para ingresar usuarios nuevos al sistema")
     End Sub
 
-    Private Sub Principal_Load(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyValue = Keys.F1 Or Keys.F2 Or Keys.F3 Or Keys.F4 Or Keys.F5 Or Keys.F6 Or Keys.F7 Or Keys.F8 Or Keys.F9 Or Keys.F10 Or Keys.F11 Or Keys.F12 Then
-            FuncKeysModule(e.KeyValue)
-            e.Handled = True
-        End If
-
-    End Sub
 
     'Function for F1, F2, etc pressed call
     Public Sub FuncKeysModule(ByVal value As Keys)
@@ -301,6 +294,10 @@ Public Class Principal
     End Sub
 
     Private Sub ToolStripMenuItemReservas_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemReservas.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
         VGestionDeReservas.Show()
     End Sub
 
@@ -318,6 +315,57 @@ Public Class Principal
     End Sub
 
     Private Sub ConsecutivoAsociadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsecutivoAsociadosToolStripMenuItem.Click
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
         VConsecutivoAsociado.Show()
     End Sub
+
+    Private Sub NormalizarNombresALetraCapitalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NormalizarNombresALetraCapitalToolStripMenuItem.Click
+        If Singleton.rol = "Admin" Then
+            MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+        Try
+            BD.ConectarBD()
+            BD.actualizarNombresALetraCapital()
+            BD.actualizarPrimerApellidoALetraCapital()
+            BD.actualizarSegundoApellidoALetraCapital()
+            BD.CerrarConexion()
+            MessageBox.Show("Actualización con éxito, ahora nombres y apellidos tienen letra capital.", " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+        Catch ex As Exception
+            MsgBox("Error : " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub GestiónDeContraseñasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeContraseñasToolStripMenuItem.Click
+        If Singleton.rol = "Admin" Then
+            MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        If Singleton.rol = "Colaborador" Then
+            MessageBox.Show(variablesGlobales.permisosDeSuperAdminRequeridos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
+        End If
+
+        VConfiguracionCambiarPassword.Show()
+    End Sub
+
+    Private Sub Principal_Load(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyValue = Keys.F1 Or Keys.F2 Or Keys.F3 Or Keys.F4 Or Keys.F5 Or Keys.F6 Or Keys.F7 Or Keys.F8 Or Keys.F9 Or Keys.F10 Or Keys.F11 Or Keys.F12 Then
+            FuncKeysModule(e.KeyValue)
+            e.Handled = True
+        End If
+
+    End Sub
+
 End Class

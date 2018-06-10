@@ -44,6 +44,8 @@ Partial Class Principal
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImportarAcumuladoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NormalizarNombresALetraCapitalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestiónDeContraseñasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeSACToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -68,8 +70,8 @@ Partial Class Principal
         Me.GestionUsuariosToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.GestionUsuariosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.GestionUsuariosToolStripMenuItem.Name = "GestionUsuariosToolStripMenuItem"
-        Me.GestionUsuariosToolStripMenuItem.Size = New System.Drawing.Size(120, 39)
-        Me.GestionUsuariosToolStripMenuItem.Text = "  Asociados  "
+        Me.GestionUsuariosToolStripMenuItem.Size = New System.Drawing.Size(129, 39)
+        Me.GestionUsuariosToolStripMenuItem.Text = "  Asociados     "
         '
         'ComitésToolStripMenuItem
         '
@@ -77,8 +79,8 @@ Partial Class Principal
         Me.ComitésToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ComitésToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ComitésToolStripMenuItem.Name = "ComitésToolStripMenuItem"
-        Me.ComitésToolStripMenuItem.Size = New System.Drawing.Size(110, 39)
-        Me.ComitésToolStripMenuItem.Text = "  Comités  "
+        Me.ComitésToolStripMenuItem.Size = New System.Drawing.Size(119, 39)
+        Me.ComitésToolStripMenuItem.Text = "  Comités     "
         '
         'CertificadosToolStripMenuItem
         '
@@ -86,8 +88,8 @@ Partial Class Principal
         Me.CertificadosToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.CertificadosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CertificadosToolStripMenuItem.Name = "CertificadosToolStripMenuItem"
-        Me.CertificadosToolStripMenuItem.Size = New System.Drawing.Size(130, 39)
-        Me.CertificadosToolStripMenuItem.Text = "  Aportaciones"
+        Me.CertificadosToolStripMenuItem.Size = New System.Drawing.Size(145, 39)
+        Me.CertificadosToolStripMenuItem.Text = "  Aportaciones     "
         '
         'IngresosToolStripMenuItem
         '
@@ -95,8 +97,8 @@ Partial Class Principal
         Me.IngresosToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.IngresosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.IngresosToolStripMenuItem.Name = "IngresosToolStripMenuItem"
-        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(111, 39)
-        Me.IngresosToolStripMenuItem.Text = "   Entradas  "
+        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(117, 39)
+        Me.IngresosToolStripMenuItem.Text = "  Entradas     "
         '
         'SalidasToolStripMenuItem
         '
@@ -104,18 +106,18 @@ Partial Class Principal
         Me.SalidasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.SalidasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SalidasToolStripMenuItem.Name = "SalidasToolStripMenuItem"
-        Me.SalidasToolStripMenuItem.Size = New System.Drawing.Size(102, 39)
-        Me.SalidasToolStripMenuItem.Text = "   Salidas  "
+        Me.SalidasToolStripMenuItem.Size = New System.Drawing.Size(108, 39)
+        Me.SalidasToolStripMenuItem.Text = "  Salidas     "
         '
         'ConfiguraciónToolStripMenuItem
         '
-        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InformaciónCooperativaToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.CodigosDeCuentasToolStripMenuItem, Me.ToolStripMenuItem1, Me.ConsecutivoAsociadosToolStripMenuItem, Me.ToolStripMenuItem4, Me.ReportesToolStripMenuItem, Me.CerrarPeriodoToolStripMenuItem, Me.ToolStripMenuItemReservas, Me.ExcedentesMoverAReservasToolStripMenuItem, Me.CertificadosEnTránsitoToolStripMenuItem, Me.ToolStripMenuItem3, Me.CargarUsuariosToolStripMenuItem, Me.ImportarAcumuladoToolStripMenuItem})
+        Me.ConfiguraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InformaciónCooperativaToolStripMenuItem, Me.PorcentajesReservasToolStripMenuItem, Me.CodigosDeCuentasToolStripMenuItem, Me.ToolStripMenuItem1, Me.ConsecutivoAsociadosToolStripMenuItem, Me.ToolStripMenuItem4, Me.ReportesToolStripMenuItem, Me.CerrarPeriodoToolStripMenuItem, Me.ToolStripMenuItemReservas, Me.ExcedentesMoverAReservasToolStripMenuItem, Me.CertificadosEnTránsitoToolStripMenuItem, Me.ToolStripMenuItem3, Me.CargarUsuariosToolStripMenuItem, Me.ImportarAcumuladoToolStripMenuItem, Me.NormalizarNombresALetraCapitalToolStripMenuItem, Me.GestiónDeContraseñasToolStripMenuItem})
         Me.ConfiguraciónToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.settings1pp
         Me.ConfiguraciónToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ConfiguraciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ConfiguraciónToolStripMenuItem.Name = "ConfiguraciónToolStripMenuItem"
-        Me.ConfiguraciónToolStripMenuItem.Size = New System.Drawing.Size(142, 39)
-        Me.ConfiguraciónToolStripMenuItem.Text = "  Configuración  "
+        Me.ConfiguraciónToolStripMenuItem.Size = New System.Drawing.Size(151, 39)
+        Me.ConfiguraciónToolStripMenuItem.Text = "  Configuración     "
         '
         'InformaciónCooperativaToolStripMenuItem
         '
@@ -201,6 +203,18 @@ Partial Class Principal
         Me.ImportarAcumuladoToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.ImportarAcumuladoToolStripMenuItem.Text = "Importar Acumulado"
         '
+        'NormalizarNombresALetraCapitalToolStripMenuItem
+        '
+        Me.NormalizarNombresALetraCapitalToolStripMenuItem.Name = "NormalizarNombresALetraCapitalToolStripMenuItem"
+        Me.NormalizarNombresALetraCapitalToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.NormalizarNombresALetraCapitalToolStripMenuItem.Text = "Normalizar a letra capital"
+        '
+        'GestiónDeContraseñasToolStripMenuItem
+        '
+        Me.GestiónDeContraseñasToolStripMenuItem.Name = "GestiónDeContraseñasToolStripMenuItem"
+        Me.GestiónDeContraseñasToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.GestiónDeContraseñasToolStripMenuItem.Text = "Gestión de Contraseñas"
+        '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeSACToolStripMenuItem})
@@ -221,9 +235,10 @@ Partial Class Principal
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(110, 392)
+        Me.Label1.Location = New System.Drawing.Point(100, 77)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(740, 57)
         Me.Label1.TabIndex = 34
@@ -233,9 +248,10 @@ Partial Class Principal
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe Print", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(372, 464)
+        Me.Label2.Location = New System.Drawing.Point(387, 131)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(138, 85)
         Me.Label2.TabIndex = 35
@@ -244,8 +260,9 @@ Partial Class Principal
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.LogoTransparente
-        Me.PictureBox1.Location = New System.Drawing.Point(353, 111)
+        Me.PictureBox1.Location = New System.Drawing.Point(356, 224)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(205, 187)
@@ -257,7 +274,9 @@ Partial Class Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Teal
+        Me.BackColor = System.Drawing.Color.Black
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.login3
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(907, 739)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -302,4 +321,6 @@ Partial Class Principal
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConsecutivoAsociadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NormalizarNombresALetraCapitalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestiónDeContraseñasToolStripMenuItem As ToolStripMenuItem
 End Class

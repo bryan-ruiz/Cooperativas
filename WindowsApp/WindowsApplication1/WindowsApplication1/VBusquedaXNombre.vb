@@ -52,7 +52,8 @@ Public Class VBusquedaXNombre
         ListView1.Items.Clear()
         'SQL STMT
         Dim sql As String = "SELECT SOCIOS.numASociado, SOCIOS.nombre, SOCIOS.primerApellido, SOCIOS.segundoApellido 
-                                FROM [SOCIOS] 
+                                FROM [SOCIOS]
+                                WHERE SOCIOS.estado = 'Activo' 
                                 ORDER BY SOCIOS.nombre"
         ' WHERE SOCIOS.estado = 'Activo' 
 

@@ -1137,4 +1137,118 @@ Public Class CertificadosAlDia
             MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
         End Try
     End Sub
+
+
+    ' Recibo ponerse al dia
+    Public Sub imprimirComprobanteCertificadosPonerseAlDia()
+
+        Dim cedulaOnumAsociado As String = VCertificadosPonerseAlDia.CertificadosAlDiaTextboxCedulaNumAsociado.Text
+        Dim nombre As String = VCertificadosPonerseAlDia.CertificadosAlDiaTextboxNombre.Text
+        Dim numAsociado As String = VCertificadosPonerseAlDia.CertificadosAlDiaTextboxNumAsociado.Text
+
+
+        Dim acum As String = VCertificadosPonerseAlDia.CertificadosAlDiaTextboxAcumAnterior.Text
+        Dim total As String = VCertificadosPonerseAlDia.CertificadosAlDiaTextboxTotalPeriodo.Text
+
+        If (cedulaOnumAsociado = "" Or numAsociado = "") Then
+            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Return
+        Else
+            Try
+                BD.ConectarBD()
+                variablesGlobales.numReciboCertificados = Convert.ToInt32(BD.obtenerReciboXTipo("certificado").Item(0))
+
+                If Not Directory.Exists(variablesGlobales.folderPath) Then
+                    Directory.CreateDirectory(variablesGlobales.folderPath)
+                End If
+
+                Dim pdfDoc As New Document()
+                Dim pdfWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(variablesGlobales.pathReporteCertificadosReciboAlDia, FileMode.Create))
+
+                pdfDoc.Open()
+                encabezado.consultarDatos()
+                encabezado.encabezado(pdfWrite, pdfDoc)
+
+                '/////// Encabezado //////////
+                Dim FontStype3 = FontFactory.GetFont("Arial", 8, Font.BOLD, BaseColor.BLACK)
+                pdfDoc.Add(New Paragraph("                                                                                                        N° Recibo C" + Convert.ToString(variablesGlobales.numReciboCertificados), FontStype3))
+                pdfDoc.Add(New Paragraph(" "))
+
+                Dim FontStype = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.WHITE)
+
+                'para el encabezado
+                Dim table2 As PdfPTable = New PdfPTable(3)
+
+
+
+                Dim descripcionR As PdfPCell = New PdfPCell(New Phrase("Descripción: ", FontStype))
+                descripcionR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                descripcionR.Colspan = 1
+                descripcionR.HorizontalAlignment = 1 ' 0 left, 1 center, 2 right
+
+                Dim numAsociadoR As PdfPCell = New PdfPCell(New Phrase("# Asociado: ", FontStype))
+                numAsociadoR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                numAsociadoR.Colspan = 1
+                numAsociadoR.HorizontalAlignment = 1
+
+                Dim nombreR As PdfPCell = New PdfPCell(New Phrase("Nombre Completo: ", FontStype))
+                nombreR.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorEncabezado))
+                nombreR.Colspan = 2
+                nombreR.HorizontalAlignment = 1
+
+
+
+                Dim FontStype2 = FontFactory.GetFont("Arial", 9, Font.NORMAL, BaseColor.BLACK)
+
+                Dim descripcionT As PdfPCell = New PdfPCell(New Phrase("Recibo Acumulado Años Anteriores", FontStype2))
+                descripcionT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                descripcionT.Colspan = 1
+                descripcionT.HorizontalAlignment = 1
+                'descripcionT.FixedHeight = 50.0F
+
+                Dim numAsociadoT As PdfPCell = New PdfPCell(New Phrase(numAsociado, FontStype2))
+                numAsociadoT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                numAsociadoT.Colspan = 1
+                numAsociadoT.HorizontalAlignment = 1
+
+                Dim nombreTotal As String = nombre
+                Dim nombreT As PdfPCell = New PdfPCell(New Phrase(nombreTotal, FontStype2))
+                nombreT.BackgroundColor = New BaseColor(System.Drawing.ColorTranslator.FromHtml(variablesGlobales.colorLineas))
+                nombreT.Colspan = 2
+                nombreT.HorizontalAlignment = 1
+
+                table2.AddCell(descripcionR)
+                table2.AddCell(numAsociadoR)
+                table2.AddCell(nombreR)
+
+                table2.AddCell(descripcionT)
+                table2.AddCell(numAsociadoT)
+                table2.AddCell(nombreT)
+
+
+                'Agrega todos los valores consultados al documento
+                pdfDoc.Add(table2)
+                pdfDoc.Add(New Paragraph(" "))
+
+                pdfDoc.Add(New Paragraph("                        Acumulado: ¢ " + acum.ToString, FontStype3))
+                pdfDoc.Add(New Paragraph("                        Total del Periodo: ¢ " + total.ToString, FontStype3))
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(New Paragraph("                        Firma del Asociado: _________________________________________", FontStype3))
+                pdfDoc.Add(New Paragraph(" "))
+
+                pdfDoc.Close()
+
+                'Incrementa el num recibo ingreso en la BD
+                BD.actualizarReciboXTipo("certificado", variablesGlobales.numReciboCertificados + 1)
+
+                MessageBox.Show(variablesGlobales.reporteGeneradoConExito, "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                Print.Show()
+                Print.abrirReporte(variablesGlobales.pathReporteCertificadosReciboAlDia)
+            Catch ex As Exception
+                MessageBox.Show(variablesGlobales.errorDe + ex.Message)
+                MessageBox.Show(variablesGlobales.favorCerrarAdobeReader)
+            End Try
+        End If
+    End Sub
+
 End Class

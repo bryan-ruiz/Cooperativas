@@ -24,7 +24,10 @@ Partial Class VCertificadosPonerseAlDia
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VCertificadosPonerseAlDia))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImprimirComprobanteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ButtonAsociadosBuscarXNombre = New System.Windows.Forms.Button()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.CertificadosAlDiaTextboxCedulaNumAsociado = New System.Windows.Forms.TextBox()
         Me.CertificadosAlDiaButtonConsultar = New System.Windows.Forms.Button()
@@ -46,6 +49,7 @@ Partial Class VCertificadosPonerseAlDia
         Me.CertificadosAlDiaTextboxNombre = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label31 = New System.Windows.Forms.Label()
+        Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -54,14 +58,29 @@ Partial Class VCertificadosPonerseAlDia
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComprobanteToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1285, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1300, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'ComprobanteToolStripMenuItem
+        '
+        Me.ComprobanteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImprimirComprobanteToolStripMenuItem})
+        Me.ComprobanteToolStripMenuItem.Name = "ComprobanteToolStripMenuItem"
+        Me.ComprobanteToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
+        Me.ComprobanteToolStripMenuItem.Text = "Comprobante"
+        '
+        'ImprimirComprobanteToolStripMenuItem
+        '
+        Me.ImprimirComprobanteToolStripMenuItem.Name = "ImprimirComprobanteToolStripMenuItem"
+        Me.ImprimirComprobanteToolStripMenuItem.Size = New System.Drawing.Size(286, 22)
+        Me.ImprimirComprobanteToolStripMenuItem.Text = "Imprimir recibo del Acumulado Anterior"
+        '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ButtonAsociadosBuscarXNombre)
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Controls.Add(Me.CertificadosAlDiaTextboxCedulaNumAsociado)
         Me.GroupBox1.Controls.Add(Me.CertificadosAlDiaButtonConsultar)
@@ -72,6 +91,21 @@ Partial Class VCertificadosPonerseAlDia
         Me.GroupBox1.Size = New System.Drawing.Size(300, 407)
         Me.GroupBox1.TabIndex = 60
         Me.GroupBox1.TabStop = False
+        '
+        'ButtonAsociadosBuscarXNombre
+        '
+        Me.ButtonAsociadosBuscarXNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonAsociadosBuscarXNombre.ForeColor = System.Drawing.Color.White
+        Me.ButtonAsociadosBuscarXNombre.Image = Global.WindowsApplication1.My.Resources.Resources.search9
+        Me.ButtonAsociadosBuscarXNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonAsociadosBuscarXNombre.Location = New System.Drawing.Point(13, 143)
+        Me.ButtonAsociadosBuscarXNombre.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonAsociadosBuscarXNombre.Name = "ButtonAsociadosBuscarXNombre"
+        Me.ButtonAsociadosBuscarXNombre.Size = New System.Drawing.Size(199, 44)
+        Me.ButtonAsociadosBuscarXNombre.TabIndex = 68
+        Me.ButtonAsociadosBuscarXNombre.Text = "Buscar por Nombre"
+        Me.ButtonAsociadosBuscarXNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonAsociadosBuscarXNombre.UseVisualStyleBackColor = True
         '
         'Label18
         '
@@ -109,10 +143,10 @@ Partial Class VCertificadosPonerseAlDia
         Me.CertificadosAlDiaButtonLimpiar.ForeColor = System.Drawing.Color.White
         Me.CertificadosAlDiaButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
         Me.CertificadosAlDiaButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CertificadosAlDiaButtonLimpiar.Location = New System.Drawing.Point(25, 153)
+        Me.CertificadosAlDiaButtonLimpiar.Location = New System.Drawing.Point(13, 226)
         Me.CertificadosAlDiaButtonLimpiar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosAlDiaButtonLimpiar.Name = "CertificadosAlDiaButtonLimpiar"
-        Me.CertificadosAlDiaButtonLimpiar.Size = New System.Drawing.Size(187, 44)
+        Me.CertificadosAlDiaButtonLimpiar.Size = New System.Drawing.Size(199, 44)
         Me.CertificadosAlDiaButtonLimpiar.TabIndex = 58
         Me.CertificadosAlDiaButtonLimpiar.Text = "Limpiar Campos"
         Me.CertificadosAlDiaButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -324,6 +358,8 @@ Partial Class VCertificadosPonerseAlDia
         Me.Name = "VCertificadosPonerseAlDia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SAC"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -360,4 +396,7 @@ Partial Class VCertificadosPonerseAlDia
     Friend WithEvents Label1 As Label
     Friend WithEvents CertificadosAlDiaTextBoxMontoSumar As TextBox
     Friend WithEvents CertificadosAlDiaButtonSumarAlAcumulado As Button
+    Friend WithEvents ComprobanteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ImprimirComprobanteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ButtonAsociadosBuscarXNombre As Button
 End Class

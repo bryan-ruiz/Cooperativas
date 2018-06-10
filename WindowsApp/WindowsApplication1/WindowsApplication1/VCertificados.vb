@@ -3,7 +3,7 @@
     Dim certificados As Certificados = New Certificados
     Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
 
-    Private Sub CertificadosButtonConsultar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonConsultar.Click
+    Public Sub CertificadosButtonConsultar_Click(sender As Object, e As EventArgs) Handles CertificadosButtonConsultar.Click
         certificados.consultar()
     End Sub
 
@@ -159,7 +159,7 @@
 
         Me.Panel3.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.CertificadosButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
-
+        Me.ButtonAsociadosBuscarXNombre.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
     End Sub
 
     Private Sub ImprimirComprobanteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirComprobanteToolStripMenuItem.Click
@@ -198,5 +198,7 @@
         VCertificadosPonerseAlDia.Show()
     End Sub
 
-
+    Private Sub ButtonAsociadosBuscarXNombre_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscarXNombre.Click
+        VBusquedaXNombreFromCertificados.Show()
+    End Sub
 End Class

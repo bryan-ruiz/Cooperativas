@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
-    <PublishUrlHistory>C:\Users\Aaron\Desktop\1.1.1.8\|C:\Users\Aaron\Desktop\1.1.1.7\|C:\Users\Aaron\Desktop\1.1.1.4\|C:\Users\Aaron\Desktop\1.1.1.3\|C:\Users\Aaron\Desktop\1.1.1.2\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Users\Aaron\Desktop\2.0.0.1\|C:\Users\Aaron\Desktop\1.1.1.8\|C:\Users\Aaron\Desktop\1.1.1.7\|C:\Users\Aaron\Desktop\1.1.1.4\|C:\Users\Aaron\Desktop\1.1.1.3\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />

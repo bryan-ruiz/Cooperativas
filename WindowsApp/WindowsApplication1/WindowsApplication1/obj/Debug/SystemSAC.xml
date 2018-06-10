@@ -202,6 +202,11 @@ SystemSAC
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApplication1.My.Resources.Resources.login3">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApplication1.My.Resources.Resources.loginOrForm3">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

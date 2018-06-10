@@ -9,11 +9,12 @@
         Me.Panel3.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.CertificadosAlDiaButtonLimpiar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.CertificadosAlDiaButtonSumarAlAcumulado.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.ButtonAsociadosBuscarXNombre.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
     End Sub
 
     ''New -----
 
-    Private Sub CertificadosAlDiaButtonConsultar_Click(sender As Object, e As EventArgs) Handles CertificadosAlDiaButtonConsultar.Click
+    Public Sub CertificadosAlDiaButtonConsultar_Click(sender As Object, e As EventArgs) Handles CertificadosAlDiaButtonConsultar.Click
         certificadosAlDia.consultar()
     End Sub
 
@@ -39,5 +40,14 @@
 
     Private Sub CertificadosAlDiaButtonSumarAlAcumulado_Click(sender As Object, e As EventArgs) Handles CertificadosAlDiaButtonSumarAlAcumulado.Click
         certificadosAlDia.actualizarSumarAlAcumAnteriorXSocio()
+    End Sub
+
+    Private Sub ImprimirComprobanteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirComprobanteToolStripMenuItem.Click
+        certificadosAlDia.imprimirComprobanteCertificadosPonerseAlDia()
+
+    End Sub
+
+    Private Sub ButtonAsociadosBuscarXNombre_Click(sender As Object, e As EventArgs) Handles ButtonAsociadosBuscarXNombre.Click
+        VBusquedaXNombreCertificadosPonerseAlDia.Show()
     End Sub
 End Class

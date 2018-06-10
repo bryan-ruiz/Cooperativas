@@ -36,6 +36,7 @@ Partial Class VCertificados
         Me.SalidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PonerseAlDíaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ButtonAsociadosBuscarXNombre = New System.Windows.Forms.Button()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.CertificadosTextboxCedulaNumAsociado = New System.Windows.Forms.TextBox()
         Me.CertificadosButtonConsultar = New System.Windows.Forms.Button()
@@ -201,6 +202,7 @@ Partial Class VCertificados
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ButtonAsociadosBuscarXNombre)
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Controls.Add(Me.CertificadosTextboxCedulaNumAsociado)
         Me.GroupBox1.Controls.Add(Me.CertificadosButtonConsultar)
@@ -211,6 +213,21 @@ Partial Class VCertificados
         Me.GroupBox1.Size = New System.Drawing.Size(280, 407)
         Me.GroupBox1.TabIndex = 60
         Me.GroupBox1.TabStop = False
+        '
+        'ButtonAsociadosBuscarXNombre
+        '
+        Me.ButtonAsociadosBuscarXNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonAsociadosBuscarXNombre.ForeColor = System.Drawing.Color.White
+        Me.ButtonAsociadosBuscarXNombre.Image = Global.WindowsApplication1.My.Resources.Resources.search9
+        Me.ButtonAsociadosBuscarXNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonAsociadosBuscarXNombre.Location = New System.Drawing.Point(13, 150)
+        Me.ButtonAsociadosBuscarXNombre.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.ButtonAsociadosBuscarXNombre.Name = "ButtonAsociadosBuscarXNombre"
+        Me.ButtonAsociadosBuscarXNombre.Size = New System.Drawing.Size(199, 44)
+        Me.ButtonAsociadosBuscarXNombre.TabIndex = 67
+        Me.ButtonAsociadosBuscarXNombre.Text = "Buscar por Nombre"
+        Me.ButtonAsociadosBuscarXNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonAsociadosBuscarXNombre.UseVisualStyleBackColor = True
         '
         'Label18
         '
@@ -248,10 +265,10 @@ Partial Class VCertificados
         Me.CertificadosButtonLimpiar.ForeColor = System.Drawing.Color.White
         Me.CertificadosButtonLimpiar.Image = Global.WindowsApplication1.My.Resources.Resources.cleanlast2
         Me.CertificadosButtonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CertificadosButtonLimpiar.Location = New System.Drawing.Point(25, 153)
+        Me.CertificadosButtonLimpiar.Location = New System.Drawing.Point(13, 227)
         Me.CertificadosButtonLimpiar.Margin = New System.Windows.Forms.Padding(2, 4, 2, 4)
         Me.CertificadosButtonLimpiar.Name = "CertificadosButtonLimpiar"
-        Me.CertificadosButtonLimpiar.Size = New System.Drawing.Size(187, 44)
+        Me.CertificadosButtonLimpiar.Size = New System.Drawing.Size(197, 44)
         Me.CertificadosButtonLimpiar.TabIndex = 58
         Me.CertificadosButtonLimpiar.Text = "Limpiar Campos"
         Me.CertificadosButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1083,7 +1100,7 @@ Partial Class VCertificados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1283, 646)
+        Me.ClientSize = New System.Drawing.Size(1283, 663)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -1201,4 +1218,5 @@ Partial Class VCertificados
     Friend WithEvents CheckBox9 As CheckBox
     Friend WithEvents Label15 As Label
     Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents ButtonAsociadosBuscarXNombre As Button
 End Class
