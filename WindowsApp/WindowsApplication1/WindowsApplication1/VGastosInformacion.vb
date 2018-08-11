@@ -8,6 +8,7 @@
         Me.GastosInformacionBotonBuscar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_GastoInformacionBotonEliminar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.Button_GastoInformacionBotonModificar.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
+        Me.ButtonGastosInformacionBuscarXProveedor.BackColor = ColorTranslator.FromHtml(variablesGlobales.colorDisenoCeleste)
         Me.GastosInformacionInputID.Select()
 
     End Sub
@@ -51,5 +52,9 @@
 
     Private Sub GastosInformacionBotonBuscar_Click(sender As Object, e As EventArgs) Handles GastosInformacionBotonBuscar.Click
         gasto.buscarGasto()
+    End Sub
+
+    Private Sub ButtonGastosInformacionBuscarXProveedor_Click(sender As Object, e As EventArgs) Handles ButtonGastosInformacionBuscarXProveedor.Click
+        VBusquedaGastoXProveedor.Show()
     End Sub
 End Class

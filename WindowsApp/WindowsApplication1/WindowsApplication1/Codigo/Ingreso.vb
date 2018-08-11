@@ -418,6 +418,10 @@ Public Class Ingreso
                     estado = False
                     VIngresos.ComboBox_IngresosCodigCuenta.Items.Clear()
                     VIngresos.ComboBox_IngresosCodigCuenta.Items.Add("No se poseen cuentas")
+
+                    'VIngresoInformacion.ComboBox_IngresosInformacion.Items.Add(valores.Item(3))
+                    'VIngresoInformacion.ComboBox_IngresosInformacion.SelectedIndex = 0
+
                 End If
             Else
                 estado = False
@@ -607,13 +611,13 @@ Public Class Ingreso
         End Try
 
         'Validar que no existen facturas con el mismo ID en el Sistema
-        facturaReciboYaExiste = validarNoExistenFacturasRepetidasIngresos(factura)
-        If facturaReciboYaExiste <> 0 Then
-            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            VIngresos.TextBox_IngresosFacturaRecibos.Text = ""
-            VIngresos.TextBox_IngresosFacturaRecibos.Select()
-            Return
-        End If
+        'facturaReciboYaExiste = validarNoExistenFacturasRepetidasIngresos(factura)
+        'If facturaReciboYaExiste <> 0 Then
+        'MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        'VIngresos.TextBox_IngresosFacturaRecibos.Text = ""
+        'VIngresos.TextBox_IngresosFacturaRecibos.Select()
+        'Return
+        'End If
 
         Try
             BD.ConectarBD()
@@ -667,13 +671,13 @@ Public Class Ingreso
         End Try
 
         'Validar que no existen facturas con el mismo ID en el Sistema
-        facturaReciboYaExiste = validarNoExistenFacturasRepetidasIngresos(factura2)
-        If facturaReciboYaExiste <> 0 Then
-            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            VIngresos.TextBox_IngresosFacturaRecibos2.Text = ""
-            VIngresos.TextBox_IngresosFacturaRecibos2.Select()
-            Return
-        End If
+        'facturaReciboYaExiste = validarNoExistenFacturasRepetidasIngresos(factura2)
+        'If facturaReciboYaExiste <> 0 Then
+        'MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        'VIngresos.TextBox_IngresosFacturaRecibos2.Text = ""
+        'VIngresos.TextBox_IngresosFacturaRecibos2.Select()
+        'Return
+        'End If
 
         Try
             BD.ConectarBD()
@@ -727,13 +731,13 @@ Public Class Ingreso
         End Try
 
         'Validar que no existen facturas con el mismo ID en el Sistema
-        facturaReciboYaExiste = validarNoExistenFacturasRepetidasIngresos(factura3)
-        If facturaReciboYaExiste <> 0 Then
-            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            VIngresos.TextBox_IngresosFacturaRecibos3.Text = ""
-            VIngresos.TextBox_IngresosFacturaRecibos3.Select()
-            Return
-        End If
+        'facturaReciboYaExiste = validarNoExistenFacturasRepetidasIngresos(factura3)
+        'If facturaReciboYaExiste <> 0 Then
+        'MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        'VIngresos.TextBox_IngresosFacturaRecibos3.Text = ""
+        'VIngresos.TextBox_IngresosFacturaRecibos3.Select()
+        'Return
+        'End If
 
         Try
             BD.ConectarBD()
@@ -753,14 +757,16 @@ Public Class Ingreso
 
     End Sub
 
-    Public Sub buscarIngreso()
+    'IngresoInformacionInputID = factura o recibo para buscar el ingreso
+    Public Sub buscarIngreso(ByVal IngresoInformacionInputID As String)
+
 
         Dim valores As New List(Of String)
-        Dim IngresoInformacionInputID As String = VIngresoInformacion.IngresosInformacionInputID.Text
+        'Dim IngresoInformacionInputID As String = VIngresoInformacion.IngresosInformacionInputID.Text
         ' MessageBox.Show("xxxxinput is : " + IngresoInformacionInputID)
 
         If (IngresoInformacionInputID = "") Then
-            MessageBox.Show(variablesGlobales.mensajeCedulaONumAsociado, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             limpiar()
             VIngresoInformacion.IngresosInformacionInputID.Text = ""
         Else
@@ -778,6 +784,7 @@ Public Class Ingreso
                     VIngresoInformacion.DateTimePicker_IngresosInformacion_fecha.Text = Date.Parse(valores.Item(0))
                     VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text = valores.Item(1)
                     VIngresoInformacion.TextBox_IngresosInformacion_Proveedor.Text = valores.Item(2)
+                    VIngresoInformacion.ComboBox_IngresosInformacion.Items.Clear()
                     VIngresoInformacion.ComboBox_IngresosInformacion.Items.Add(valores.Item(3))
                     VIngresoInformacion.ComboBox_IngresosInformacion.SelectedIndex = 0
                     VIngresoInformacion.TextBox_IngresosInformacion_Descripcion.Text = valores.Item(4)
@@ -839,9 +846,11 @@ Public Class Ingreso
             valores = BD.actualizarIngreso(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
             If valores <> 0 Then
                 limpiarInfo()
-                MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                VIngresoInformacion.IngresosInformacionInputID.Text = ""
             Else
-                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                ' MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.errorProveedorNoExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             End If
 
             BD.CerrarConexion()
@@ -851,20 +860,24 @@ Public Class Ingreso
     End Sub
 
     Public Sub eliminarIngresos()
-        Dim factura As String = VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text
+        'Dim factura As String = VIngresoInformacion.TextBox_IngresosInformacion_Factura.Text
+        Dim proveedor As String = VIngresoInformacion.TextBox_IngresosInformacion_Proveedor.Text
+
         Dim valores As Integer
-        If (factura = "") Then
+        If (proveedor = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
         End If
         Try
             BD.ConectarBD()
-            valores = BD.eliminarFacturaIngresos(factura)
+            valores = BD.eliminarFacturaIngresos(proveedor)
             If valores <> 0 Then
                 limpiarInfo()
                 MessageBox.Show(variablesGlobales.datosEliminadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                VIngresoInformacion.IngresosInformacionInputID.Text = ""
+
             Else
-                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.errorProveedorNoExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             End If
 
             BD.CerrarConexion()

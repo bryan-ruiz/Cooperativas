@@ -79,7 +79,6 @@ Partial Class VSignIn
         Me.TextBoxContraseña.Name = "TextBoxContraseña"
         Me.TextBoxContraseña.Size = New System.Drawing.Size(292, 22)
         Me.TextBoxContraseña.TabIndex = 132
-        Me.TextBoxContraseña.Text = "123"
         '
         'Label26
         '
@@ -100,7 +99,6 @@ Partial Class VSignIn
         Me.TextBoxlogin.Name = "TextBoxlogin"
         Me.TextBoxlogin.Size = New System.Drawing.Size(293, 22)
         Me.TextBoxlogin.TabIndex = 131
-        Me.TextBoxlogin.Text = "admin"
         '
         'Label27
         '
@@ -151,7 +149,7 @@ Partial Class VSignIn
         Me.ButtonLicencia.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonLicencia.ForeColor = System.Drawing.Color.White
         Me.ButtonLicencia.Image = Global.WindowsApplication1.My.Resources.Resources.lock4
-        Me.ButtonLicencia.Location = New System.Drawing.Point(3, 538)
+        Me.ButtonLicencia.Location = New System.Drawing.Point(3, 504)
         Me.ButtonLicencia.Name = "ButtonLicencia"
         Me.ButtonLicencia.Size = New System.Drawing.Size(42, 37)
         Me.ButtonLicencia.TabIndex = 149
@@ -175,7 +173,7 @@ Partial Class VSignIn
         Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
-        Me.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False

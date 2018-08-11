@@ -179,7 +179,7 @@ Public Class Principal
 
     End Sub
 
-    Private Sub AcercaDeSACToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeSACToolStripMenuItem.Click
+    Private Sub AcercaDeSACToolStripMenuItem_Click(sender As Object, e As EventArgs)
         VAcercaDe.Show()
     End Sub
 
@@ -220,46 +220,46 @@ Public Class Principal
             Dim connect As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Excel + ";Extended Properties=""Excel 12.0 Xml;HRD=NO"""
 
             Try
-                    'Abro Conexión
-                    BD.ConectarBD()
+                'Abro Conexión
+                BD.ConectarBD()
 
-                    'Borra tabla acum - la que contiene ced, nombre y acum por asociado
-                    BD.borrarTablaAcumulado()
-                    BD.CerrarConexion()
+                'Borra tabla acum - la que contiene ced, nombre y acum por asociado
+                BD.borrarTablaAcumulado()
+                BD.CerrarConexion()
 
-                    'Inserta del Excel a la tabla Acumulado
-                    Using conn As New OleDbConnection(connect)
-                        Using cmd As New OleDbCommand()
-                            cmd.Connection = conn
-                            cmd.CommandText = "INSERT INTO [MS Access;Database=" & baseDatos & ";PWD=C454gr154].[ACUMULADO] SELECT * FROM [Hoja1$]"
-                            If conn.State = ConnectionState.Open Then
-                                conn.Close()
-                            End If
-                            conn.Open()
-                            cmd.ExecuteNonQuery()
-                        End Using
+                'Inserta del Excel a la tabla Acumulado
+                Using conn As New OleDbConnection(connect)
+                    Using cmd As New OleDbCommand()
+                        cmd.Connection = conn
+                        cmd.CommandText = "INSERT INTO [MS Access;Database=" & baseDatos & ";PWD=C454gr154].[ACUMULADO] SELECT * FROM [Hoja1$]"
+                        If conn.State = ConnectionState.Open Then
+                            conn.Close()
+                        End If
+                        conn.Open()
+                        cmd.ExecuteNonQuery()
                     End Using
+                End Using
 
                 BD.ConectarBD()
                 Dim valores As List(Of AcumuladoClase)
                 valores = BD.obtenerDatosAcumuladoXAsociado()
                 Dim contador As Integer = 0
                 While contador < valores.Count
-                        BD.actualizarDatosAcumuladoXAsociado(valores(contador).cedula.ToString, valores(contador).acumuladoAnterior.ToString)
-                        contador = contador + 1
-                    End While
-                    BD.CerrarConexion()
-                    'Cierro conexión
+                    BD.actualizarDatosAcumuladoXAsociado(valores(contador).cedula.ToString, valores(contador).acumuladoAnterior.ToString)
+                    contador = contador + 1
+                End While
+                BD.CerrarConexion()
+                'Cierro conexión
 
 
-                    MessageBox.Show("Los datos de los Acumulados fueron importados con Éxito!")
+                MessageBox.Show("Los datos de los Acumulados fueron importados con Éxito!")
 
-                Catch ex As Exception
-                    MessageBox.Show("Error importando datos, favor verifique el formato del .xlsx en el Manual de Usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
-                    MessageBox.Show("Error causado debido a la excepción : " & vbCrLf & ex.Message)
-                End Try
+            Catch ex As Exception
+                MessageBox.Show("Error importando datos, favor verifique el formato del .xlsx en el Manual de Usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                MessageBox.Show("Error causado debido a la excepción : " & vbCrLf & ex.Message)
+            End Try
 
-            End If
+        End If
 
     End Sub
 
@@ -368,4 +368,7 @@ Public Class Principal
 
     End Sub
 
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
+        VAcercaDe.Show()
+    End Sub
 End Class

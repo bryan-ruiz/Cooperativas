@@ -333,13 +333,13 @@ Public Class Gastos
         End Try
 
         'Validar que no existen facturas con el mismo ID en el Sistema
-        facturaReciboYaExiste = validarNoExistenFacturasRepetidasGastos(factura)
-        If facturaReciboYaExiste <> 0 Then
-            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            VGastos.TextBox_GastosFacturaRecibo.Text = ""
-            VGastos.TextBox_GastosFacturaRecibo.Select()
-            Return
-        End If
+        'facturaReciboYaExiste = validarNoExistenFacturasRepetidasGastos(factura)
+        'If facturaReciboYaExiste <> 0 Then
+        'MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        'VGastos.TextBox_GastosFacturaRecibo.Text = ""
+        'VGastos.TextBox_GastosFacturaRecibo.Select()
+        'Return
+        'End If
 
         Try
             BD.ConectarBD()
@@ -390,13 +390,13 @@ Public Class Gastos
         End Try
 
         'Validar que no existen facturas con el mismo ID en el Sistema
-        facturaReciboYaExiste = validarNoExistenFacturasRepetidasGastos(factura)
-        If facturaReciboYaExiste <> 0 Then
-            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            VGastos.TextBox_GastosFacturaRecibo2.Text = ""
-            VGastos.TextBox_GastosFacturaRecibo2.Select()
-            Return
-        End If
+        'facturaReciboYaExiste = validarNoExistenFacturasRepetidasGastos(factura)
+        'If facturaReciboYaExiste <> 0 Then
+        'MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        'VGastos.TextBox_GastosFacturaRecibo2.Text = ""
+        'VGastos.TextBox_GastosFacturaRecibo2.Select()
+        'Return
+        'End If
 
         Try
             BD.ConectarBD()
@@ -485,9 +485,10 @@ Public Class Gastos
             valores = BD.actualizarGasto(fecha, cliente, descripcion, cantidad, precioUnitario, total, codCuenta, factura)
             If valores <> 0 Then
                 limpiar4()
-                MessageBox.Show(variablesGlobales.datosIngresadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.datosActualizadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                VGastosInformacion.GastosInformacionInputID.Text = ""
             Else
-                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.errorProveedorNoExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             End If
 
             BD.CerrarConexion()
@@ -497,20 +498,22 @@ Public Class Gastos
     End Sub
 
     Public Sub eliminarGasto()
-        Dim factura As String = VGastosInformacion.TextBox_GastosInformacion_Factura.Text
+        'Dim factura As String = VGastosInformacion.TextBox_GastosInformacion_Factura.Text
+        Dim proveedor As String = VGastosInformacion.TextBox_GastosInformacion_Proveedor.Text
         Dim valores As Integer
-        If (factura = "") Then
+        If (proveedor = "") Then
             MessageBox.Show(variablesGlobales.noDebenHaberCamposVacios, " ", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             Return
         End If
         Try
             BD.ConectarBD()
-            valores = BD.eliminarFacturaGastos(factura)
+            valores = BD.eliminarFacturaGastos(proveedor)
             If valores <> 0 Then
                 limpiar4()
                 MessageBox.Show(variablesGlobales.datosEliminadosConExito, " ", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                VGastosInformacion.GastosInformacionInputID.Text = ""
             Else
-                MessageBox.Show(variablesGlobales.errorIngresandoDatos, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                MessageBox.Show(variablesGlobales.errorProveedorNoExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
             End If
 
             BD.CerrarConexion()
@@ -550,13 +553,13 @@ Public Class Gastos
         End Try
 
         'Validar que no existen facturas con el mismo ID en el Sistema
-        facturaReciboYaExiste = validarNoExistenFacturasRepetidasGastos(factura)
-        If facturaReciboYaExiste <> 0 Then
-            MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
-            VGastos.TextBox_GastosFacturaRecibo3.Text = ""
-            VGastos.TextBox_GastosFacturaRecibo3.Select()
-            Return
-        End If
+        'facturaReciboYaExiste = validarNoExistenFacturasRepetidasGastos(factura)
+        'If facturaReciboYaExiste <> 0 Then
+        'MessageBox.Show(variablesGlobales.errorFacturaOReciboExiste, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+        'VGastos.TextBox_GastosFacturaRecibo3.Text = ""
+        'VGastos.TextBox_GastosFacturaRecibo3.Select()
+        'Return
+        'End If
 
         Try
             BD.ConectarBD()

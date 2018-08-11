@@ -47,7 +47,6 @@ Partial Class Principal
         Me.NormalizarNombresALetraCapitalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeContraseñasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AcercaDeSACToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -217,19 +216,12 @@ Partial Class Principal
         '
         'AcercaDeToolStripMenuItem
         '
-        Me.AcercaDeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeSACToolStripMenuItem})
         Me.AcercaDeToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.acercade55
         Me.AcercaDeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.AcercaDeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
         Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(112, 39)
         Me.AcercaDeToolStripMenuItem.Text = "  Acerca de"
-        '
-        'AcercaDeSACToolStripMenuItem
-        '
-        Me.AcercaDeSACToolStripMenuItem.Name = "AcercaDeSACToolStripMenuItem"
-        Me.AcercaDeSACToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
-        Me.AcercaDeSACToolStripMenuItem.Text = "Acerca de SAC"
         '
         'Label1
         '
@@ -249,11 +241,11 @@ Partial Class Principal
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe Print", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe Print", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(374, 224)
+        Me.Label2.Location = New System.Drawing.Point(391, 227)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(138, 85)
+        Me.Label2.Size = New System.Drawing.Size(107, 65)
         Me.Label2.TabIndex = 35
         Me.Label2.Text = "SAC"
         '
@@ -262,10 +254,10 @@ Partial Class Principal
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.LogoTransparente
-        Me.PictureBox1.Location = New System.Drawing.Point(343, 317)
+        Me.PictureBox1.Location = New System.Drawing.Point(366, 314)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(205, 187)
+        Me.PictureBox1.Size = New System.Drawing.Size(152, 135)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 33
         Me.PictureBox1.TabStop = False
@@ -310,7 +302,6 @@ Partial Class Principal
     Friend WithEvents InformaciónCooperativaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CargarUsuariosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AcercaDeSACToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImportarAcumuladoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarPeriodoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem

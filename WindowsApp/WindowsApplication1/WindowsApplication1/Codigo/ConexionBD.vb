@@ -9,6 +9,8 @@ Public Class ConexionBD
     Dim objAdap1 As OleDbDataAdapter 'Lo utilizaremos ejecutar consultas'
     Dim objAdap2 As OleDbDataAdapter 'Lo utilizaremos ejecutar consultas'
     Dim conectadoBD As Boolean = False 'Nos indica si estamos conectados a la BD, inicia como falso'
+    Dim variablesGlobales As MensajesGlobales = New MensajesGlobales
+
     Public SQL As String 'Se utiliza para escribir el Query que se quiere ejecutar'
     'Iniciar Conexion'
     Sub ConectarBD()
@@ -48,7 +50,7 @@ Public Class ConexionBD
             objConexion.Dispose()
             conectadoBD = False
         Catch ex As Exception
-            MessageBox.Show("Se presentó la siguiente exepción: " & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
     End Sub
 
@@ -70,7 +72,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -90,7 +92,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -122,7 +124,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -150,7 +152,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -178,7 +180,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -206,7 +208,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -234,7 +236,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -262,7 +264,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -278,8 +280,8 @@ Public Class ConexionBD
         Dim res As Integer = 0
         Try
 
-            SQL = "UPDATE [INGRESOS] SET fecha = '" & fechap & "', " & "cliente = '" & clientep & "', " & "descripcion = '" & descripcripcionp & "', " & "cantidad = '" & cantidadp & "',  
-            " & "precioUnitario = '" & precioUnitariop & "', " & "total = '" & totalp & "', " & "codigoDeCuenta = '" & codCuentap & "' WHERE ((reciboFactura) = '" & facturaRecibop & "' )"
+            SQL = "UPDATE [INGRESOS] SET fecha = '" & fechap & "', " & "reciboFactura = '" & facturaRecibop & "', " & "descripcion = '" & descripcripcionp & "', " & "cantidad = '" & cantidadp & "',  
+            " & "precioUnitario = '" & precioUnitariop & "', " & "total = '" & totalp & "', " & "codigoDeCuenta = '" & codCuentap & "' WHERE ((cliente) = '" & clientep & "' )"
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -288,14 +290,11 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
     End Function
-
-
-
 
     Function actualizarGasto(fechap As DateTime,
                              ByVal clientep As String,
@@ -308,8 +307,8 @@ Public Class ConexionBD
         Dim res As Integer = 0
         Try
 
-            SQL = "UPDATE [GASTOS] SET fecha = '" & fechap & "', " & "proveedor = '" & clientep & "', " & "descripcion = '" & descripcripcionp & "', " & "cantidad = '" & cantidadp & "',  
-            " & "precioUnitario = '" & precioUnitariop & "', " & "total = '" & totalp & "', " & "codigoDeCuenta = '" & codCuentap & "' WHERE ((reciboFactura) = '" & facturaRecibop & "' )"
+            SQL = "UPDATE [GASTOS] SET fecha = '" & fechap & "', " & "reciboFactura = '" & facturaRecibop & "', " & "descripcion = '" & descripcripcionp & "', " & "cantidad = '" & cantidadp & "',  
+            " & "precioUnitario = '" & precioUnitariop & "', " & "total = '" & totalp & "', " & "codigoDeCuenta = '" & codCuentap & "' WHERE ((proveedor) = '" & clientep & "' )"
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -318,17 +317,17 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
     End Function
 
-    Function eliminarFacturaIngresos(ByVal idFactura As String) As Integer
+    Function eliminarFacturaIngresos(ByVal proveedor As String) As Integer
         Dim res As Integer = 0
         Try
             SQL = "DELETE FROM [INGRESOS]" &
-            "WHERE reciboFactura = ('" + idFactura + "')"
+            "WHERE cliente = ('" + proveedor + "')"
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -337,16 +336,16 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
 
-    Function eliminarFacturaGastos(ByVal idFactura As String) As Integer
+    Function eliminarFacturaGastos(ByVal proveedorp As String) As Integer
         Dim res As Integer = 0
         Try
             SQL = "DELETE FROM [GASTOS]" &
-            "WHERE reciboFactura = ('" + idFactura + "')"
+            "WHERE proveedor = ('" + proveedorp + "')"
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
@@ -355,7 +354,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -378,7 +377,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -408,7 +407,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -436,7 +435,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -461,7 +460,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -488,7 +487,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -514,7 +513,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -546,7 +545,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -579,7 +578,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -612,7 +611,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -654,7 +653,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -690,7 +689,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -717,7 +716,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -745,7 +744,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            'MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.)
+            'MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -774,7 +773,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -803,7 +802,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -823,7 +822,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("ERROR, Se presentó la siguiente exepción:" & ex.Message())
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -849,7 +848,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -881,7 +880,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -902,7 +901,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -938,7 +937,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -966,7 +965,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -994,7 +993,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -1014,7 +1013,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -1034,7 +1033,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -1055,7 +1054,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -1076,7 +1075,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -1095,7 +1094,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -1118,7 +1117,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -1140,7 +1139,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1159,7 +1158,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: La cuenta ya existe en el sistema!", " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1184,7 +1183,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1216,7 +1215,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1261,7 +1260,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de :" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1289,7 +1288,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1310,7 +1309,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1332,7 +1331,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1353,7 +1352,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1374,7 +1373,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1410,7 +1409,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1438,7 +1437,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1469,7 +1468,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1501,7 +1500,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -1551,7 +1550,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -1571,7 +1570,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1598,7 +1597,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1618,7 +1617,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1636,7 +1635,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1657,7 +1656,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1691,7 +1690,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -1735,7 +1734,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1776,7 +1775,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1814,7 +1813,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1853,7 +1852,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -1897,7 +1896,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -2918,7 +2917,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de que madre: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -2963,7 +2962,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -2999,7 +2998,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -3205,7 +3204,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3230,7 +3229,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3284,7 +3283,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3312,7 +3311,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción: " & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -3343,7 +3342,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -3388,7 +3387,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3405,7 +3404,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3422,7 +3421,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3439,7 +3438,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3467,7 +3466,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -3500,7 +3499,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.ToString)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -3644,7 +3643,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3704,7 +3703,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3720,7 +3719,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3737,7 +3736,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message, " ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3756,7 +3755,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return res
     End Function
@@ -3784,7 +3783,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -3814,7 +3813,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -3846,7 +3845,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error en la base de datos: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
         Return MyList
     End Function
@@ -3865,7 +3864,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
@@ -3895,7 +3894,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error de: " + ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return MyList
@@ -3973,7 +3972,7 @@ Public Class ConexionBD
                 MessageBox.Show("No hay conexión con la base de datos")
             End If
         Catch ex As Exception
-            MessageBox.Show("Error, Se presentó la siguiente exepción:" & ex.Message)
+            MessageBox.Show(variablesGlobales.errorDe & ex.Message)
         End Try
 
         Return res
