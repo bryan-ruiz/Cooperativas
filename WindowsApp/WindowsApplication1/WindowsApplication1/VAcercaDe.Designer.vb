@@ -33,9 +33,9 @@ Partial Class VAcercaDe
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -93,7 +93,7 @@ Partial Class VAcercaDe
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(113, 18)
         Me.Label6.TabIndex = 39
-        Me.Label6.Text = "Versión 2.0.0.4"
+        Me.Label6.Text = "Versión 2.0.0.5"
         '
         'Label7
         '
@@ -147,6 +147,16 @@ Partial Class VAcercaDe
         Me.Panel1.Size = New System.Drawing.Size(665, 93)
         Me.Panel1.TabIndex = 50
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logo3
+        Me.PictureBox1.Location = New System.Drawing.Point(185, 21)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(266, 54)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 53
+        Me.PictureBox1.TabStop = False
+        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -168,16 +178,6 @@ Partial Class VAcercaDe
         Me.LinkLabel1.TabIndex = 52
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "www.bran-labs.net"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logo3
-        Me.PictureBox1.Location = New System.Drawing.Point(185, 21)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(266, 54)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 53
-        Me.PictureBox1.TabStop = False
         '
         'VAcercaDe
         '
