@@ -1235,6 +1235,7 @@ Public Class ConexionBD
                     WHERE INGRESOS.fecha BETWEEN Format( #" & fechaDesde & "#, 'mm/dd/yyyy') And Format( #" & fechaHasta & "#, 'mm/dd/yyyy')
                     ORDER BY INGRESOS.fecha"
 
+
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
                 Dim reader = command.ExecuteReader()
@@ -1386,7 +1387,9 @@ Public Class ConexionBD
     Function obtenerGastos(ByVal fechaI As String, ByVal fechaF As String) As List(Of GastoClase)
         Dim MyList As New List(Of GastoClase)
         Try
-            SQL = "SELECT fecha, proveedor, descripcion, cantidad, precioUnitario, total, codigoDeCuenta, reciboFactura FROM [GASTOS]"
+            SQL = "SELECT fecha, proveedor, descripcion, cantidad, precioUnitario, total, codigoDeCuenta, reciboFactura 
+                    FROM [GASTOS]
+                     ORDER BY GASTOS.fecha"
 
             If conectadoBD = True Then
                 Dim command As New OleDbCommand(SQL, objConexion)
