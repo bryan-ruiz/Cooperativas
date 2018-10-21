@@ -625,13 +625,13 @@ Public Class ConexionBD
                 SQL = "SELECT SOCIOS.* 
                         FROM [SOCIOS] 
                         WHERE ((estado) = 'Activo')
-                        ORDER BY SOCIOS.fechaIngreso asc, SOCIOS.numAsociado asc
+                        ORDER BY SOCIOS.numAsociado asc
                          "
                 'ORDER BY numAsociado
             Else
                 SQL = "SELECT SOCIOS.* 
                         FROM [SOCIOS]
-                        ORDER BY SOCIOS.fechaIngreso asc, SOCIOS.numAsociado asc
+                        ORDER BY SOCIOS.numAsociado asc
                          "
                 'ORDER BY numAsociado
             End If
